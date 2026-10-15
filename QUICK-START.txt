@@ -28,7 +28,8 @@ Use Chrome for sound; the Codex in-app browser was silent on this Mac.
 
 OPENAI LIVE VOICE
 Click Connect OpenAI securely and enter your key in the Mac hidden-entry
-dialog. The key stays in local server memory for this run, never JavaScript.
+dialog. Haunt saves it in Mac Keychain and loads it automatically next launch.
+The key is never included in JavaScript, the phone remote or the download.
 Choose a visitor microphone and click Start live conversation. Native Realtime
 uses Marin or Cedar and streams speech directly over WebRTC. Account access
 and API credit are required. Microphone capture starts only after Start.
@@ -83,3 +84,8 @@ launching a different version. Launch/setup logs: Library/Logs/Haunt.
 0.7.1: Fixed chat JSON-format errors. Refresh the desk to use the live fix;
 your connected session key is preserved. Voice layers and reverb default to
 zero for clear acted speech. They remain optional.
+
+KEY STORAGE
+Forget saved OpenAI key is under Character personality & cue writing. It
+stops voice, removes the Keychain credential and disconnects the current key.
+If Keychain saving fails, the app explicitly says the connection is temporary.

@@ -14,7 +14,7 @@ Use Python 3.9+ and a current Chrome browser. Start with:
 python3 server.py
 ```
 
-Open **http://127.0.0.1:8770/**. On a Mac, `Start.command` also launches the desk. Click **Connect OpenAI securely** and enter the key in the private local dialog. It stays in the server's memory for that session. For a development shell, the server also accepts `OPENAI_API_KEY` from its environment; never save it in this repository.
+Open **http://127.0.0.1:8770/**. On a Mac, `Start.command` also launches the desk. Click **Connect OpenAI securely** and enter the key in the private local dialog. On Mac, it is saved in your Keychain and loaded automatically on future launches. For a development shell, the server also accepts `OPENAI_API_KEY` from its environment; never save it in this repository.
 
 Choose **Native live conversation**, select a voice and microphone, then **Start live conversation**. Marin and Cedar are the initial casting choices. Wisp responds with streamed audio and can be interrupted. **Stop All** releases the microphone and stops every performance; **Blackout** also clears the projected picture.
 

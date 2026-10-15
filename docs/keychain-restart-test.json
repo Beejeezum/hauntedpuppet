@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "storage": "native macOS Keychain generic password",
+  "tests": [
+    "save",
+    "read",
+    "update",
+    "retrieve from a fresh Python process",
+    "delete"
+  ],
+  "credentialUsed": "temporary test value in an isolated test service",
+  "temporaryEntryRemoved": true,
+  "actualUserKeyStored": false
+}

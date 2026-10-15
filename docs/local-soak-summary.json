@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "started": "2026-10-15T14:36:43.870Z",
+  "ended": "2026-10-15T15:03:47.074Z",
+  "durationSeconds": 1623,
+  "cycles": 17,
+  "idleActions": 81,
+  "minFps": 108.646011596749,
+  "maxHeap": 157000000,
+  "sourceHashes": {
+    "/app.js": "b91879939eb110f2dc019f23f0b6f5247ac241d845c641b174abf3859d93d14d",
+    "/assets/attract-director.js": "59e530a4cd50d0165d00aab889d582730c9de314adb55557f61abcf246c2ce1b",
+    "/assets/realtime-voice.js": "b0fef5be6520fd339c887fb16594f792e81c33b000204f80894a306b28c12899"
+  },
+  "expressions": [
+    "neutral",
+    "concerned",
+    "blink",
+    "look-left",
+    "half-blink",
+    "delighted",
+    "look-right"
+  ],
+  "mouths": [
+    "rest"
+  ],
+  "providerRequests": [],
+  "errors": []
+}

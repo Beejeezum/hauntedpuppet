@@ -4,8 +4,24 @@ from http.server import ThreadingHTTPServer,SimpleHTTPRequestHandler
 from pathlib import Path
 from urllib.parse import urlsplit,unquote
 import json,secrets,urllib.request,urllib.error,os,sys,subprocess,threading
-import performance,conversation,realtime_voice,phone_bridge
+import performance,conversation,realtime_voice,phone_bridge,credential_store
 CONNECT_LOCK=threading.Lock()
+SAVED_CREDENTIAL=False
+CREDENTIAL_WARNING=''
+def credential_status():return {'savedCredential':SAVED_CREDENTIAL,'credentialWarning':CREDENTIAL_WARNING}
+def restore_credentials():
+ global SAVED_CREDENTIAL,CREDENTIAL_WARNING
+ if os.getenv('OPENAI_API_KEY') or not credential_store.supported():return
+ try:key=credential_store.load()
+ except Exception:
+  CREDENTIAL_WARNING='The saved Mac Keychain credential could not be loaded. Unlock your login Keychain or reconnect securely.';return
+ if key:os.environ['OPENAI_API_KEY']=key;SAVED_CREDENTIAL=True
+def forget_credentials():
+ global SAVED_CREDENTIAL,CREDENTIAL_WARNING
+ if realtime_voice.inspect()['activeCalls']:raise realtime_voice.CallBusy('End live conversation and wait for connection cleanup before forgetting the key.')
+ credential_store.delete();os.environ.pop('OPENAI_API_KEY',None);SAVED_CREDENTIAL=False;CREDENTIAL_WARNING=''
+ return {'forgotten':True,'configured':False,**credential_status()}
+
 ROOT=Path(__file__).resolve().parent;PORT=int(os.getenv('HAUNT_3D_PORT','8770'));TOKEN=secrets.token_urlsafe(32)
 class Handler(SimpleHTTPRequestHandler):
  def __init__(self,*a,**kw):super().__init__(*a,directory=str(ROOT),**kw)
@@ -18,11 +34,11 @@ class Handler(SimpleHTTPRequestHandler):
   if not self.allowed():return self.reply(403,{'error':'Invalid host'})
   path=unquote(urlsplit(self.path).path)
   if path=='/api/status':
-   if os.getenv('OPENAI_API_KEY'):return self.reply(200,{'version':'0.8.0','token':TOKEN,'configured':True,'aligner':bool(performance.Decoder),'mode':'direct','conversation':True,'realtime':realtime_voice.inspect()})
+   if os.getenv('OPENAI_API_KEY'):return self.reply(200,{'version':'0.8.0','token':TOKEN,**credential_status(),'configured':True,'aligner':bool(performance.Decoder),'mode':'direct','conversation':True,'realtime':realtime_voice.inspect()})
    try:
     with urllib.request.urlopen('http://127.0.0.1:8766/api/status',timeout=3) as r:d=json.load(r)
-    return self.reply(200,{'version':'0.8.0','token':TOKEN,'configured':bool(d.get('configured')),'aligner':bool(d.get('aligner')),'conversation':False,'realtime':realtime_voice.inspect()})
-   except Exception:return self.reply(200,{'version':'0.8.0','token':TOKEN,'configured':False,'conversation':False,'realtime':realtime_voice.inspect(),'error':'Start the existing speech/alignment service on 8766. Offline rehearsal is available.'})
+    return self.reply(200,{'version':'0.8.0','token':TOKEN,**credential_status(),'configured':bool(d.get('configured')),'aligner':bool(d.get('aligner')),'conversation':False,'realtime':realtime_voice.inspect()})
+   except Exception:return self.reply(200,{'version':'0.8.0','token':TOKEN,**credential_status(),'configured':False,'conversation':False,'realtime':realtime_voice.inspect(),'error':'Start the existing speech/alignment service on 8766. Offline rehearsal is available.'})
   if path=='/':self.path='/index.html';path='/index.html'
   target=(ROOT/path.lstrip('/')).resolve()
   if path.startswith('/assets/') and (ROOT/'assets').resolve() not in target.parents:return self.reply(403,{'error':'Invalid asset path'})
@@ -32,7 +48,7 @@ class Handler(SimpleHTTPRequestHandler):
   if not self.allowed() or self.headers.get('Origin') not in (f'http://127.0.0.1:{PORT}',f'http://localhost:{PORT}') or self.headers.get('X-Haunt-Token')!=TOKEN:return self.reply(403,{'error':'Invalid local request'})
   phone_actions=('enable','disable','status','pairing','poll','state','ack','revoke');phone_action=self.path.rsplit('/',1)[-1] if self.path.startswith('/api/phone/') else None
   if phone_action is not None and phone_action not in phone_actions:return self.reply(404,{'error':'Not found'})
-  if phone_action is None and self.path not in ('/api/performance','/api/transcribe','/api/reply','/api/connect','/api/shutdown','/api/realtime/session','/api/realtime/end','/api/realtime/heartbeat','/api/realtime/config'):return self.reply(404,{'error':'Not found'})
+  if phone_action is None and self.path not in ('/api/performance','/api/transcribe','/api/reply','/api/connect','/api/credential/forget','/api/shutdown','/api/realtime/session','/api/realtime/end','/api/realtime/heartbeat','/api/realtime/config'):return self.reply(404,{'error':'Not found'})
   try:
    n=int(self.headers.get('Content-Length','0'));limit=150000 if self.path=='/api/phone/state' else 8100000 if self.path=='/api/transcribe' else 110000 if self.path=='/api/realtime/session' else 12000
    if not 0<n<=limit:return self.reply(400,{'error':'Invalid speech request size'})
@@ -45,9 +61,12 @@ class Handler(SimpleHTTPRequestHandler):
    if self.path=='/api/realtime/end':return self.reply(200,realtime_voice.end(parsed))
    if self.path=='/api/shutdown':
     self.reply(200,{'stopped':True});threading.Thread(target=lambda:(phone_bridge.disable(),realtime_voice.shutdown(),self.server.shutdown()),daemon=True).start();return
+   if self.path=='/api/credential/forget':
+    with CONNECT_LOCK:forgotten=forget_credentials()
+    return self.reply(200,forgotten)
    if self.path=='/api/connect':
     with CONNECT_LOCK:connect_voice()
-    return self.reply(200,{'configured':bool(os.getenv('OPENAI_API_KEY'))})
+    return self.reply(200,{'configured':bool(os.getenv('OPENAI_API_KEY')),**credential_status()})
    if self.path=='/api/transcribe':return self.reply(200,conversation.transcribe(parsed))
    if self.path=='/api/reply':return self.reply(200,conversation.reply(parsed))
    if os.getenv('OPENAI_API_KEY'):return self.reply(200,performance.performance(parsed))
@@ -64,12 +83,17 @@ class Handler(SimpleHTTPRequestHandler):
    return self.reply(e.code if e.code in (400,401,403,429) else 502,{'error':msg})
   except Exception:return self.reply(503,{'error':'Speech service unavailable. Keep the voice server and alignment helper running. Offline rehearsal still works.'})
 def connect_voice():
- script='tell application "System Events"\nactivate\nset resultDialog to display dialog "OpenAI key for Haunt. Enables voice and microphone conversation. Kept in memory for this session only." default answer "" with hidden answer with title "Haunt 3D — Voice" buttons {"Cancel", "Connect"} default button "Connect"\nreturn text returned of resultDialog\nend tell'
+ global SAVED_CREDENTIAL,CREDENTIAL_WARNING
+ script='tell application "System Events"\nactivate\nset resultDialog to display dialog "OpenAI key for Haunt. Enables voice and microphone conversation. Saved locally in your Mac login Keychain for future launches. Never included in the app or shared with the phone." default answer "" with hidden answer with title "Haunt 3D — Voice" buttons {"Cancel", "Connect"} default button "Connect"\nreturn text returned of resultDialog\nend tell'
  result=subprocess.run(['/usr/bin/osascript','-e',script],capture_output=True,text=True)
  if result.returncode==0:
   key=result.stdout.strip()
-  if key and not any(c.isspace() for c in key):os.environ['OPENAI_API_KEY']=key
+  if key and not any(c.isspace() for c in key):
+   os.environ['OPENAI_API_KEY']=key;CREDENTIAL_WARNING=''
+   try:credential_store.save(key);SAVED_CREDENTIAL=True
+   except Exception:SAVED_CREDENTIAL=False;CREDENTIAL_WARNING='Connected for this run, but Mac Keychain could not save the key. Unlock your login Keychain and connect again to remember it.'
 if __name__=='__main__':
+ restore_credentials()
  if '--connect-voice' in sys.argv:
   try:
    base=f'http://127.0.0.1:{PORT}'

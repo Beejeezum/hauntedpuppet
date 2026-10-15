@@ -14,4 +14,8 @@
 - Phone browser automation emulates touch layout; a physical phone on the local Wi-Fi still needs confirmation.
 - Theme-park production polish needs authored animation, direction and venue testing beyond automated passing checks.
 
-Long-session soak and GitHub Actions results are recorded separately as they complete. CI never requires a live provider credential.
+Local 27-minute soak passed: 81 idle actions, 17 interrupted rehearsal performances, no clipping, no browser errors, silent projector and controller-loss blackout. See `local-soak-summary.json`.
+
+Mac Keychain add/read/update/delete and retrieval by a fresh process were tested with a temporary isolated credential, which was removed. This verifies persistence behavior without claiming that the actual user key has been entered.
+
+The initial GitHub Actions runs passed. The final hardening pass adds failure paths, reset races, phone cue error feedback and WebKit remote coverage. CI never requires a live provider credential.

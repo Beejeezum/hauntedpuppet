@@ -18,12 +18,14 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci --ignore-scripts
-      - run: npx playwright install --with-deps chromium
+      - run: npx playwright install --with-deps chromium webkit
       - name: Start local rehearsal server
         run: |
           python3 server.py > /tmp/wisp-server.log 2>&1 &
           python3 scripts/wait-for-server.py
       - run: npm test
+      - name: Check phone controls in WebKit
+        run: PHONE_BROWSER=webkit node tests/phone_browser.cjs
       - name: Keep test evidence
         if: always()
         uses: actions/upload-artifact@v4
