@@ -10,7 +10,7 @@ class Status:
  def read(self):return json.dumps({'version':self.version}).encode()
 class Launcher(unittest.TestCase):
  def test_current_server_reused(self):
-  with patch.object(launch.urllib.request,'urlopen',return_value=Status('0.8.0')),patch.object(launch.subprocess,'run') as run,patch.object(launch,'alert') as alert:
+  with patch.object(launch.urllib.request,'urlopen',return_value=Status('0.9.0')),patch.object(launch.subprocess,'run') as run,patch.object(launch,'alert') as alert:
    launch.main();alert.assert_not_called();self.assertEqual(run.call_args.args[0],['/usr/bin/open','-a','Google Chrome',launch.BASE])
  def test_other_server_does_not_silently_open_old_build(self):
   with patch.object(launch.urllib.request,'urlopen',return_value=Status('0.7.1')),patch.object(launch.subprocess,'run') as run,patch.object(launch,'alert') as alert:
