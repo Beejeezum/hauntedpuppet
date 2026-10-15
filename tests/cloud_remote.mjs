@@ -22,7 +22,11 @@ try{
  const code=(await owner('pairing')).data.code;
  const concurrent=await Promise.all([guest('pair',{code},undefined,'one'),guest('pair',{code},undefined,'two')]);assert.deepEqual(concurrent.map(r=>r.status).sort(),[200,403]);const token=concurrent.find(r=>r.status===200).data.token;checks.push('atomic one-use pairing');
  const snap=await guest('state',{},token);assert.equal(snap.status,200);assert(snap.data.connected);assert.equal(snap.data.preview,'data:image/jpeg;base64,/9j/');assert(!('transcript' in snap.data.state));assert(!('apiKey' in snap.data.state));checks.push('whitelisted preview state');
- const id=randomUUID();const both=await Promise.all([guest('command',{id,command:'gesture',value:'wave'},token),guest('command',{id,command:'gesture',value:'wave'},token)]);assert.deepEqual(both.map(r=>r.status).sort(),[202,409]);const seq=both.find(r=>r.status===202).data.seq;assert.equal(typeof seq,'string');checks.push('atomic UUID dedup');
+ // NetlifyDB local uses one engine session; concurrent failing transactions can
+ // roll back each other's work. Validate the API and SQL uniqueness separately.
+ const id=randomUUID(),first=await guest('command',{id,command:'gesture',value:'wave'},token);assert.equal(first.status,202);assert.equal((await guest('command',{id,command:'gesture',value:'wave'},token)).status,409);const seq=first.data.seq;assert.equal(typeof seq,'string');
+ await assert.rejects(db.pool.query('INSERT INTO haunt_remote_commands(room_id,generation,phone_id,command_id,command,value,status,created_at,expires_at) SELECT room_id,generation,phone_id,command_id,command,value,status,created_at,expires_at FROM haunt_remote_commands WHERE seq=$1',[seq]),e=>e.code==='23505');
+ assert.equal((await db.pool.query('SELECT count(*)::int AS count FROM haunt_remote_commands WHERE command_id=$1',[id])).rows[0].count,1);checks.push('sequential UUID dedup + SQL unique constraint');
  const poll=await owner('poll');assert.equal(poll.data.commands.length,1);assert.equal(poll.data.commands[0].seq,seq);assert.equal((await owner('ack',{seq,status:'applied'})).status,200);assert((await guest('state',{},token)).data.acks.some(a=>a.seq===seq&&a.status==='applied'));checks.push('claim then applied acknowledgement');
  for(const [command,value] of [['volume',2],['cue','missing'],['gesture',['wave']],['provider','key']])assert.equal((await guest('command',{id:randomUUID(),command,value},token)).status,400);checks.push('typed allowlist');
  clock+=1100;await owner('poll');await owner('state',{state:{status:'idle'},cues:['hello']});

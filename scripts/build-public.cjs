@@ -22,4 +22,5 @@ function check(dir) {
 }
 check(out);
 if (bad.length) throw new Error('Private files entered the public build');
+fs.writeFileSync(path.join(out, 'build-info.json'), JSON.stringify({version:JSON.parse(fs.readFileSync(path.join(root,'package.json'),'utf8')).version,commit:process.env.COMMIT_REF||null,builtAt:new Date().toISOString()},null,2));
 console.log('Browser-only build ready in dist. Backend functions are bundled separately.');
