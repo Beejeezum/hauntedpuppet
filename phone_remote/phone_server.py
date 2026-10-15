@@ -1,6 +1,7 @@
 """Optional LAN remote. No provider credentials or microphone traffic enters this service."""
 import argparse, collections, hmac, ipaddress, json, secrets, socket, threading, time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from socketserver import TCPServer
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -151,6 +152,10 @@ class BoundedServer(ThreadingHTTPServer):
     def __init__(self,*args,**kwargs):
         self.slots=threading.BoundedSemaphore(32)
         super().__init__(*args,**kwargs)
+    def server_bind(self):
+        # HTTPServer normally performs reverse DNS during bind; no lookup is needed.
+        TCPServer.server_bind(self)
+        self.server_name,self.server_port=self.server_address[:2]
     def process_request(self,request,address):
         if not self.slots.acquire(False):
             self.shutdown_request(request); return

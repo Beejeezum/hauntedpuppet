@@ -9,3 +9,7 @@ Canvas layering, root/shoulder/tail pivots, conservative animation, blink/gaze s
 Eight included friendly show performances were generated through the user-authorized OpenAI speech connection and aligned locally. They contain generated character speech, not visitor recordings. Spectral voice processing is local app code. The local Pocketsphinx helper is installed separately from its pinned public package; its distribution retains its own licensing metadata.
 
 Historical 0.6 archives retain the superseded 3D evaluation model/runtime and their original provenance. Those assets are not included or loaded by the current painted app.
+
+## Optional painted scenery
+
+`assets/scenes/haunted-window.png` is an original image generated with the built-in image generation tool on October15,2026 for this project. It is a separate mansion window background plate, not a modification to the approved Wisp layers. The source generated file was inspected before copying into the repository. Center and outer-edge darkness support projection; this plate is opt-in. It contains no visitor recordings or imported third-party artwork.

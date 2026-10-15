@@ -2,6 +2,8 @@
 
 A painted Wisp character with native voice conversation, a laptop show dashboard, a silent projector view, and a paired phone director.
 
+Hosted desk: https://hauntedpuppet.netlify.app. Hosted phone control uses the paired room described in [Cloud phone control](docs/CLOUD-PHONE.md). The hosted voice backend and operator authentication are described in [Hosted voice setup](docs/CLOUD-VOICE.md). Connecting Netlify does not supply an OpenAI API key; configure the server-side secrets once, redeploy, and sign in as operator.
+
 ![Wisp on the projection stage](docs/wisp-stage.png)
 
 Wisp's approved 2D artwork stays intact. The character floats, blinks, looks toward visitors, reacts and speaks with mouth shapes drawn from transparent painting layers.
@@ -65,3 +67,11 @@ Genuine provider results, device rehearsal limits and remaining production work 
 - `tests/`, `.github/workflows/`: local and CI regressions.
 
 Third-party licenses are retained with their components. Original character art and application code are not automatically relicensed by this public repository. See `ASSET-SOURCES.md` and `docs/OPEN-SOURCE-COMPONENTS.md` for provenance.
+
+## Projection studio and authored moments
+
+Open **Projection studio** to fit Wisp to a physical sheet, window, or portrait frame. Drag the four corners or use arrow keys; Shift + arrow adjusts faster. Exact planar perspective keeps lines straight. Choose brightness, soft edges and an optional oval mask, then save or export the surface. The alignment pattern is for setup only and is suppressed by Blackout. A lost operator desk blanks the projector.
+
+**Enchanted mansion** adds the original painted window scenery. **Floating Wisp** keeps the backdrop pure black. Scenery does not replace or recolor the approved character artwork. Three authored stories combine existing recorded cues, gaze and gentle gestures; they stop on operator takeover and return to waiting.
+
+The built-in mapper currently calibrates one planar surface. It does not solve a room from a camera, drive multiple independently mapped characters, or perform multi-projector edge blending. The [immersive production research](docs/IMMERSIVE-PRODUCTION-RESEARCH.md) describes the next systems and researched libraries, with licenses and integration limits.

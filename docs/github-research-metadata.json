@@ -1,0 +1,95 @@
+{
+  "checkedAt": "2026-10-15",
+  "projects": [
+    {
+      "repo": "jdeboi/p5.mapper",
+      "url": "https://github.com/jdeboi/p5.mapper",
+      "description": "library for projection mapping with p5.js",
+      "license": "MIT",
+      "archived": false,
+      "lastPush": "2026-10-04T19:34:58Z",
+      "defaultBranch": "main"
+    },
+    {
+      "repo": "pixijs/pixijs",
+      "url": "https://github.com/pixijs/pixijs",
+      "description": "The HTML5 Creation Engine: Create beautiful digital content with the fastest, most flexible 2D WebGL renderer.",
+      "license": "MIT",
+      "archived": false,
+      "lastPush": "2026-10-14T20:25:15Z",
+      "defaultBranch": "dev"
+    },
+    {
+      "repo": "theatre-js/theatre",
+      "url": "https://github.com/theatre-js/theatre",
+      "description": "Motion design editor for the web",
+      "license": "Apache-2.0",
+      "archived": false,
+      "lastPush": "2024-08-14T13:20:18Z",
+      "defaultBranch": "main"
+    },
+    {
+      "repo": "jberg/butterchurn",
+      "url": "https://github.com/jberg/butterchurn",
+      "description": "Butterchurn is a WebGL implementation of the Milkdrop Visualizer",
+      "license": "MIT",
+      "archived": false,
+      "lastPush": "2026-04-20T01:09:52Z",
+      "defaultBranch": "master"
+    },
+    {
+      "repo": "mapmapteam/mapmap",
+      "url": "https://github.com/mapmapteam/mapmap",
+      "description": "Open source video mapping software",
+      "license": "GPL-3.0",
+      "archived": false,
+      "lastPush": "2026-09-18T15:34:57Z",
+      "defaultBranch": "dev"
+    },
+    {
+      "repo": "nodecg/nodecg",
+      "url": "https://github.com/nodecg/nodecg",
+      "description": "Create broadcast graphics using Node.js and a browser",
+      "license": "MIT",
+      "archived": false,
+      "lastPush": "2026-06-28T14:44:37Z",
+      "defaultBranch": "main"
+    },
+    {
+      "repo": "bitfocus/companion",
+      "url": "https://github.com/bitfocus/companion",
+      "description": "Bitfocus Companion enables the Elgato Stream Deck and other controllers to be a professional shotbox surface for an increasing amount of different presentation switchers, video playback software and broadcast equipment.",
+      "license": "NOASSERTION",
+      "archived": false,
+      "lastPush": "2026-10-14T22:06:45Z",
+      "defaultBranch": "main"
+    },
+    {
+      "repo": "evanw/glfx.js",
+      "url": "https://github.com/evanw/glfx.js",
+      "description": "An image effects library for JavaScript using WebGL",
+      "license": "MIT",
+      "archived": false,
+      "lastPush": "2023-10-23T13:33:18Z",
+      "defaultBranch": "master"
+    },
+    {
+      "repo": "mrdoob/three.js",
+      "url": "https://github.com/mrdoob/three.js",
+      "description": "JavaScript 3D Library.",
+      "license": "MIT",
+      "archived": false,
+      "lastPush": "2026-10-15T15:52:05Z",
+      "defaultBranch": "dev"
+    },
+    {
+      "repo": "obsproject/obs-studio",
+      "url": "https://github.com/obsproject/obs-studio",
+      "description": "OBS Studio - Free and open source software for live streaming and screen recording",
+      "license": "GPL-2.0",
+      "archived": false,
+      "lastPush": "2026-10-14T23:59:00Z",
+      "defaultBranch": "master"
+    }
+  ]
+}

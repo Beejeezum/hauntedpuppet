@@ -1,0 +1,19 @@
+[build]
+  command = "node scripts/build-public.cjs"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "same-origin"
+    Permissions-Policy = "camera=(), geolocation=()"
+    Cache-Control = "public, max-age=0, must-revalidate"
+

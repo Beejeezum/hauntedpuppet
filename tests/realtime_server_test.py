@@ -44,5 +44,5 @@ class NativeServer(unittest.TestCase):
    with self.assertRaises(ValueError):r.create(data)
   with patch.dict(os.environ,{},clear=True),self.assertRaises(ValueError):r.create({'sdp':SDP,'sessionNonce':NONCE})
  def test_no_unsolicited_turns_or_unbounded_tools(self):
-  c=r.session_config({});self.assertEqual(c['audio']['output']['voice'],'marin');self.assertEqual([t['name'] for t in c['tools']],['end_encounter']);self.assertTrue(c['audio']['input']['turn_detection']['interrupt_response']);self.assertIn('Do not start a conversation',c['instructions'])
+  c=r.session_config({});self.assertEqual(c['audio']['output']['voice'],'marin');self.assertEqual([t['name'] for t in c['tools']],['end_encounter','perform_reaction']);self.assertTrue(c['audio']['input']['turn_detection']['interrupt_response']);self.assertIn('Do not start a conversation',c['instructions'])
 if __name__=='__main__':unittest.main()

@@ -3,15 +3,27 @@
   "version": "0.8.0",
   "private": true,
   "description": "Painted interactive Wisp, native voice and paired projection controls",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22.12"
+  },
   "scripts": {
     "start": "python3 server.py",
     "test:python": "python3 -m unittest discover -s tests -p '*_test.py'",
     "test:browser": "node scripts/run-browser-tests.cjs",
-    "test": "npm run test:python && npm run test:browser"
+    "test": "npm run test:python && npm run test:projection && npm run test:cloud && npm run test:browser",
+    "test:cloud": "node --test tests/cloud_api.test.mjs tests/stage_lease.test.mjs && node tests/cloud_remote.mjs",
+    "build": "node scripts/build-public.cjs",
+    "test:projection": "node tests/projection_math.cjs && node tests/routines.cjs && node tests/public_build.cjs"
   },
   "devDependencies": {
-    "playwright": "1.64.1",
-    "axe-core": "4.14.0"
+    "@netlify/database-dev": "1.0.1",
+    "axe-core": "4.14.0",
+    "playwright": "1.64.1"
+  },
+  "dependencies": {
+    "@netlify/blobs": "11.1.4",
+    "@netlify/database": "2.0.1",
+    "@netlify/functions": "6.0.2",
+    "qrcode": "1.5.4"
   }
 }

@@ -2,7 +2,7 @@
 
 Preserve the approved painted Wisp artwork. Do not replace it with procedural/vector character substitutes. The laptop is the only audible playback and microphone owner; projector and phone controllers remain silent.
 
-Keep provider credentials on the local laptop server. Never commit credentials, request tokens, recordings, private conversations or process environment dumps. Phone remotes receive only paired show-control commands and bounded show state.
+Keep provider credentials on the trusted server: Mac Keychain for the laptop build, Netlify function secrets for the hosted build. Never commit credentials, request tokens, recordings, private conversations or process environment dumps. Phone remotes receive only paired show-control commands and bounded show state.
 
 Production changes need appropriate regression coverage. Test stop/cancellation, interruptions, farewell-to-idle, resource cleanup and projector silence. Distinguish genuine provider tests from mocks and physical-device tests. Do not describe acoustic mouth estimates as phoneme-accurate.
 

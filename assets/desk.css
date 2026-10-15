@@ -1,0 +1,46 @@
+/* The show is the focus. Setup stays accessible without filling the stage. */
+:root{--bg:#0c0d13;--card:#151720;--line:#343746;--dim:#b3b4c5;--mint:#d6c4fc;--text:#f3f0f7}
+.technical-method{display:none}.voice-production-note{margin-top:12px;padding-top:10px}.voice-production-note summary{font-size:12px;color:#bdb6cc}.cloud-connection{padding:14px 16px;border:1px solid #655471;border-radius:12px;margin-bottom:20px;background:#231e30}.cloud-connection p{margin:0 0 12px;line-height:1.6;font-size:13px}.cloud-connection button{min-height:44px}.cloud-connection .row{gap:10px}dialog::backdrop{background:#07060dcc;backdrop-filter:blur(4px)}dialog h2{font-size:25px}dialog p{font-size:13px;line-height:1.6}dialog #cloudLoginError{color:#ffd6c9}
+.authored-routines{border-top:1px solid #393744;margin:20px 0;padding-top:8px}.routine-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.routine-buttons button{text-align:left;padding:14px;background:#292337;border-color:#63506f}.routine-buttons strong{display:block;font-size:13px;line-height:1.4}.routine-buttons small{display:block;margin-top:8px;line-height:1.5;font-size:11px}.authored-routines[data-running=true] #routineStatus{color:#f0d8ff}@media(max-width:600px){.routine-buttons{grid-template-columns:1fr}.routine-buttons button{padding:12px}.routine-buttons small{margin-top:4px}}
+.desk-shortcuts{display:flex;gap:8px;padding:10px 24px;border-bottom:1px solid #292c3a;background:#12131b;flex-wrap:wrap}.desk-shortcuts a{color:#c7bfd7;text-decoration:none;font-size:12px;padding:6px 12px;border-radius:20px;border:1px solid #3c394b}.desk-shortcuts a:hover,.desk-shortcuts a:focus-visible{background:#2e263c;color:#fff}.stage-quick-controls h2{font-size:19px;margin-bottom:12px}.stage-quick-controls .cue{font-size:12px;padding:9px 12px}.stage-quick-controls details{margin-top:12px}.saved-library summary{font-size:14px}.saved-library>div{padding-top:20px}.character-production-note{margin-top:14px}.show-desk,.phone-controls,.projection-mapping{scroll-margin-top:100px}
+body{background:#0c0d13}header{padding:14px 24px;background:#101119f2;gap:10px}
+header small{letter-spacing:.12em;font-size:9px;color:#bcb9ce}header h1{font-size:29px}
+button{border-radius:10px;min-height:42px;background:#242735;border-color:#434657}
+button:disabled{cursor:not-allowed}.primary{background:#d6c4fc;color:#241732}.danger{background:#35242d;border-color:#8e555e}
+.grid{max-width:1720px;grid-template-columns:minmax(440px,1.2fr) minmax(390px,1fr);gap:24px;padding:22px 24px}
+.grid>section,.grid>aside{min-width:0}.stage{border-radius:16px;border-color:#41404f;background:#000}
+.stage .tag{font-size:9px;color:#b6a9c8}.panel{padding:22px;border-radius:16px;background:#151720}
+.conversation{border-color:#665775;box-shadow:none}.conversation h2{font-size:28px;margin-bottom:12px}
+.conversation .eyebrow{color:#d8c6fc}.conversation #conversationStatus{background:#211e2d;border-radius:0 10px 10px 0;line-height:1.6}
+.conversation .twocol{gap:14px}.conversation #startMic{min-height:48px}.conversation select{background:#1d2130}
+.native-controls{border-color:#363747}.native-controls .row button{min-height:42px}.native-phase{background:#282335;border-color:#665a79}
+.show-desk{padding:20px;background:#151720;border-color:#343746;border-radius:16px;margin:20px 0}
+.show-top h2{font-size:25px}.show-top p{font-size:13px;line-height:1.5}.show-columns{grid-template-columns:1fr;gap:6px}
+.show-cues{grid-template-columns:repeat(3,1fr)}.show-cue{min-height:115px;padding:15px;border-radius:12px;background:#1d2030}
+.show-cue strong{font-size:14px;line-height:1.4}.show-cue small{font-size:11px;color:#b7b3c5}
+.show-sliders{display:none}.show-timeline{display:none}.segmented button{padding:12px;font-size:13px}
+.performance-buttons{grid-template-columns:repeat(3,1fr)}.performance-buttons button{padding:11px 7px;font-size:12px}
+.idle-loop-controls{background:#12141e;border-color:#363848;padding:16px}.idle-loop-controls .checkline{min-height:32px}
+.advanced-prepared{background:#12141c}.advanced-prepared>summary{font-size:14px}.painted-rehearsal{font-size:13px}
+summary{font-size:14px;font-weight:600;min-height:32px;line-height:1.7}details>summary small{display:block;font-size:11px;font-weight:400;color:#b0afc1}
+input[type=range]{min-height:22px}select{min-height:42px}label{color:#b9b9c9}.help{line-height:1.65;color:#b0b0c0}
+#status{min-height:48px;font-size:13px;padding:12px;border-radius:0 10px 10px 0;margin:14px 0}
+.projection-mapping{margin-top:18px}.mapping-editor{margin:22px 14px 16px;position:relative;aspect-ratio:16/9;border:1px solid #666074;border-radius:5px;touch-action:none;background:#000}
+.mapping-editor canvas{width:100%;height:100%;display:block}.mapping-handles{position:absolute;inset:0;pointer-events:none}
+.mapping-handle{position:absolute;transform:translate(-50%,-50%);width:36px;height:36px;min-height:36px;border-radius:50%;padding:0;background:#e0ccff;color:#281a3e;border:2px solid #fff;pointer-events:auto;touch-action:none;cursor:grab;box-shadow:0 2px 14px #0008}
+.mapping-handle:hover{transform:translate(-50%,-50%);background:#f1e7ff}.mapping-handle:active{cursor:grabbing}
+.mapping-import{margin:0}.mapping-import input{max-width:100%;font-size:11px;display:block;margin-top:7px}
+.projection-mapping input[type=file]{width:100%}.projection-mapping .row{align-items:center}.projection-mapping .checkline{min-height:42px}
+@media(min-width:1101px){.grid>section>.stage{position:sticky;top:88px;z-index:2}.grid>aside{align-self:start}.conversation{position:relative}.grid>section>.stage+div{position:relative;z-index:1}}
+@media(max-width:1100px){main.grid{display:flex;flex-direction:column;gap:16px}.grid>section{order:-2}.grid>aside{display:contents}.conversation{order:-1}.advanced-prepared{order:2}.grid>section>.stage{position:relative}.show-desk{margin:18px 0}.show-cues{grid-template-columns:repeat(3,1fr)}header{padding:12px 16px}.grid{padding:16px}}
+@media(max-width:600px){.grid{padding:12px;gap:12px}.panel,.show-desk{padding:16px}header{padding:9px 12px}header #connection{display:none}header .audience-pill{max-width:160px;white-space:normal;text-align:center;line-height:1.3}.show-cues{grid-template-columns:repeat(2,1fr)}.show-columns{gap:10px}.segmented{grid-template-columns:repeat(3,1fr)}.segmented button{font-size:11px;padding:10px 6px}.segmented small{font-size:9px}.conversation h2{font-size:25px}.conversation .twocol{grid-template-columns:1fr}.performance-buttons{grid-template-columns:repeat(2,1fr)}.mapping-handle{width:40px;height:40px;min-height:40px}.conversation #startMic{width:100%}.native-state-row{gap:8px}.native-state-row .help{font-size:11px}#liveConversation{scroll-margin-top:130px}}
+@media(prefers-reduced-motion:reduce){button{transition:none}button:hover{transform:none}.mapping-handle:hover{transform:translate(-50%,-50%)}}
+/* On narrow screens, show the character and conversation before technical setup. */
+@media(max-width:1100px){
+  main.grid>section{display:contents}main.grid>aside{display:contents}
+  main.grid .stage{order:-10}main.grid .stage+div{order:-9}main.grid #status{order:-8}
+  main.grid .conversation{order:-7}main.grid .show-desk{order:-6}
+  main.grid .stage-quick-controls{order:-5}main.grid .projection-mapping{order:-4}
+  main.grid .phone-controls{order:-3}main.grid .saved-library{order:1}
+  main.grid .advanced-prepared{order:2}main.grid .painted-rehearsal{order:3}
+}
