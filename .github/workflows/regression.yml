@@ -1,0 +1,33 @@
+name: Character and controller regressions
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps chromium
+      - name: Start local rehearsal server
+        run: |
+          python3 server.py > /tmp/wisp-server.log 2>&1 &
+          python3 scripts/wait-for-server.py
+      - run: npm test
+      - name: Keep test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: regression-evidence
+          path: test-results/
+          if-no-files-found: ignore

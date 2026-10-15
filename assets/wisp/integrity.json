@@ -1,0 +1,28 @@
+{
+  "source": "User-supplied Wisp 1.1, corrected feather exports",
+  "files": {
+    "registered-layers/expressions--blink.png": "90d07ccf9ec35338ebf8a0ad1e7fa0fbb3ca497a181d2e40afd9454560a70d36",
+    "registered-layers/expressions--concerned.png": "ac501dfe9c9c2706d46c87899796e9df572173315ff8dead1042705739da6ba7",
+    "registered-layers/expressions--curious.png": "54534dcb88ffe79bca95854518407c24694ed42f8831636855eb9a5c7d661b87",
+    "registered-layers/expressions--delighted.png": "f3de7ea44031e922adba966b97d088e5b1192a530595a30c0b009c16d82d4534",
+    "registered-layers/expressions--neutral.png": "d568ad229a4380ea47ca25d208a40760319dc4f332145bfef80e4b3565daf979",
+    "registered-layers/layers--arm-left.png": "b92f6175d57b937fc6b39b2a0848108415cc57e1484ff8454bd0fffd823db782",
+    "registered-layers/layers--arm-right.png": "1d57cdfaf1ed169a6d284cc4c3b00de515bdf31348ec7ff368f30dbd5e941be9",
+    "registered-layers/layers--body-core.png": "5e0223cdc85f33ca831386780ee64479d18713bca36112fc833af1bf9e255e7b",
+    "registered-layers/layers--tail.png": "03913461ee0c92dc0692b18910d8aa205acafab3bca0f91ab7d6a8360a749371",
+    "registered-layers/mouths--aa.png": "545ab5ef392ffb17f333d93010cb7cf24657a1008696405844ae4d12d6ce478b",
+    "registered-layers/mouths--ee.png": "ad50b72919ac3fb6e04ff7b6a4e94cc3748ab031893f53a9e1db6686e0b49bba",
+    "registered-layers/mouths--fv.png": "84bdb88ceb4bf6f5dd3d278c184e5a4c5e2015e5a97676a65d889de09486b2d4",
+    "registered-layers/mouths--l.png": "bb5190840ef729e8ccaa55a07677f1f8ce35f88b6fbadb0558c471afa368b1d2",
+    "registered-layers/mouths--mbp.png": "b7860c1aa4de76e46bd8dd044229ce1e88f94d30cffa89430163692a23d4c36f",
+    "registered-layers/mouths--oh.png": "89d90c4e0f390a75853f16f520989bd6e202b914da439929c420d7d9fb517cf3",
+    "registered-layers/mouths--oo.png": "44658733eb10f4d6566eeae08e8af4e48a2091076bde9e04f2dadb4b5352783e",
+    "registered-layers/mouths--rest.png": "65b796f2fa653038a1741cb0ae863c29114da5749a40dac0d45f701ebe90230a",
+    "registered-layers/expressions--half-blink.png": "39fa529cc06cf222ba51aade85c4e2e111ecb717c10e6bb66c1af1a8bb8b7e48",
+    "registered-layers/expressions--look-left.png": "d188e94c4a0f7b69c0eb1b40424003f56e9ca1b52a2fc6e4a36d4eec0cafc947",
+    "registered-layers/expressions--look-right.png": "c2ff0943ece322b56998bb78b7ab242d5e49eecd05e247707f5106d078f1ce6d",
+    "registered-layers/mouths--ss.png": "791e624f86aa98e0e9549a03b9c0fc355fd4275521ca822308d3e5947f137da3",
+    "registered-layers/mouths--ch.png": "083133e610d1b1bb1e90909fc80e7fb39decec1170599acb3b67135c7fbd8129",
+    "registered-layers/mouths--th.png": "b6cb0aa2af97fa3ae1c38b1e3138aac952c620090807a2de5e9bd178d9f34306"
+  }
+}

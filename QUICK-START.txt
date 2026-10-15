@@ -1,0 +1,85 @@
+HAUNT — PAINTED WISP 0.8.0
+
+Unzip the Mac download and open Haunt.app. It launches the local control desk
+in Chrome. Python 3 and Google Chrome are required. First launch may take a
+minute while the pinned local alignment helper installs.
+
+WHAT YOU SEE
+The supplied Wisp paintings: 23 registered PNG layers, 11 speech mouths,
+neutral/curious/concerned/delighted faces, half/full blink and left/right gaze.
+No procedural/3D/vector substitute is displayed. Evil form, a scare lunge and
+transformation are disabled because matching painted assets are not supplied.
+
+TRY WITHOUT AN API KEY
+Use Offline voice rehearsal or the six included friendly show cues. Their
+actual generated speech and phoneme cues are included. Wave hello uses an
+outward shoulder-pivot gesture. Eyes/mood, mouth, body, arms and tail can move
+independently, but all face layers stay attached to the same body transform.
+The artwork rehearsal panel lets you inspect individual painted states.
+
+YOUR TWO DISPLAYS
+Open projector, drag that window to the ViewSonic extended display, click it
+and press F. Keep the desk open on your main screen. Use one operator desk
+per browser profile. The desk owns ONE audio playback clock; the projector
+is silent and follows that clock. Reopening output never replays the audio.
+Use Stage calibration for final placement/scale/corners. The measured painted
+movement envelope includes extended arms, tail, glow and all face variants.
+Use Chrome for sound; the Codex in-app browser was silent on this Mac.
+
+OPENAI LIVE VOICE
+Click Connect OpenAI securely and enter your key in the Mac hidden-entry
+dialog. The key stays in local server memory for this run, never JavaScript.
+Choose a visitor microphone and click Start live conversation. Native Realtime
+uses Marin or Cedar and streams speech directly over WebRTC. Account access
+and API credit are required. Microphone capture starts only after Start.
+
+Wisp listens, responds and can be interrupted. Mute disables capture while
+keeping the connection. Interrupt cuts the reply. End conversation releases
+the microphone. Use Chrome for audible output.
+
+Goodbye -> idle waits for the farewell to finish. Keep listening between
+visitors is checked by default: the mic remains visibly live while the app
+clears encounter memory. Uncheck it to release capture after each farewell.
+Quiet timeout releases capture after 45 seconds by default.
+
+Live mouths follow measured audio, approximately; prepared cues retain actual
+phoneme timing. Advanced assisted, automatic and puppeteer modes remain in
+the Performance mode menu. The app sends audio/text to OpenAI but does not
+save visitor recordings. Keep an adult supervising.
+
+WAITING AND PHONE REMOTE
+Idle float/glances are local and silent; enable occasional wave/shy poses as
+wanted. The optional included greeting is off by default and will not play
+while live voice is connected. No idle action makes an API request.
+
+Expand Phone remote, enable it on trusted Wi-Fi, scan the QR/address and
+enter the pairing code. The phone controls bounded show actions and gets a
+small preview. The laptop retains microphone/audio and provider credentials.
+Disable or revoke phones from the desk. Do not expose port 8771 publicly.
+
+STOP ALL
+Stops speech, clears queue and pending browser requests, cancels gestures,
+releases the mic and returns the mouth to rest. Escape also blacks out.
+New encounter clears the local conversation history. Saved prepared lines
+remain in that browser profile.
+
+WORKING / VALIDATION LIMITS
+Painted assembly, 88 face combinations, aligned prepared speech, projector
+sync, stopping, gaze/blink restore and missing-art behavior have browser tests.
+Native WebRTC testing uses actual browser media with a local simulated
+provider: acoustic mouths, interrupt/mute, goodbye/reset and reconnect pass.
+An actual paid native OpenAI call and your physical outdoor audio setup still
+need rehearsal. Local protocol tests do not prove account/model access.
+
+The character is a painted cutout performer, not a finished mesh-deformation
+rig. Larger turns, seamless continuous facial deformation, evil form and the
+comic visual transformation need more authored art/rigging. Included mouth
+switches use actual phoneme timing, not estimated transcript positions.
+Missing phoneme timing uses a clearly identified audio-volume fallback.
+
+Use Quit local server under Character personality & cue writing before
+launching a different version. Launch/setup logs: Library/Logs/Haunt.
+
+0.7.1: Fixed chat JSON-format errors. Refresh the desk to use the live fix;
+your connected session key is preserved. Voice layers and reverb default to
+zero for clear acted speech. They remain optional.

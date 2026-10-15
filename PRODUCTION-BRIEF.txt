@@ -1,0 +1,32 @@
+WISP — NEXT ART / ANIMATION CONTRACT
+
+CURRENT: The supplied friendly paintings, not a substitute. Registered layers
+use a 1024x1536 shared canvas. Root(512,830), left shoulder(267,795), right
+shoulder(790,795), tail(520,1130), eyes(519,625), mouth(520,758).
+
+DELIVERED: Four body pieces; neutral, curious, concerned, delighted, halfblink,
+closedblink and left/right gaze; rest, MBP, AA, EE, OH, OO, FV, L, SS, CH, TH.
+One expression and one mouth at a time. Blink restores the chosen mood/gaze.
+
+NEXT: A corresponding EVIL Wisp and a funny evil→friendly transition.
+Keep the same character identity, anchors, framing and lighting. Supply paired
+silhouettes and authored transition poses, or a deformation rig with face
+attachments. Do not use an unrelated moving Runway face plus mouth stickers.
+
+STORYBOARD: notice a little visitor → soften immediately → “Oh! A little one.
+Ahem. One moment.” → embarrassed cough → compress and puff vapor → round,
+friendly recovery → “There. Much less haunting.”
+
+MORE ACTING: additional blink in-betweens and gaze/mood combinations; larger
+arm poses with overlap coverage; actual head-angle drawings for turns; laugh
+and cough body actions that do not overwrite speech mouths; authored vapor.
+Large deformation should use a tested cutout/mesh rig and retain registration.
+
+PROJECTION: black background, no rectangular halo or ground. Provide bounding
+limits including all glow/arms/tail. Rehearse artwork at actual visitor distance
+on the ViewSonic and sheet. Do not infer ages from faces/voices; operator sets
+the audience mode. Keep immediate Stop All/friendly reset/blackout.
+
+A painted cutout does not automatically become film-quality continuous acting.
+Preserve artwork, evaluate actual speech and authored animation, add art where
+current poses fail rather than stretching the paintings into a new character.

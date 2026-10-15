@@ -1,0 +1,21 @@
+'use strict';
+let token=sessionStorage.getItem('wispRemoteToken'), connected=false, pending=new Map(), lastSeen=0, polling=false, lastCues='';
+const $=id=>document.getElementById(id), text=(id,value)=>$(id).textContent=value;
+function paired(){ $('pairPanel').hidden=!!token; $('controls').hidden=!token; $('safety').hidden=!token; }
+function connectivity(ok,message){connected=ok;if(!ok){$('preview').hidden=true;$('preview').removeAttribute('src');}text('connection',message);document.querySelectorAll('#controls button[data-command],#volume').forEach(b=>b.disabled=!ok);}
+async function api(path,body){const response=await fetch(path,{method:body?'POST':'GET',headers:{...(body?{'Content-Type':'application/json'}:{}),...(token?{'Authorization':'Bearer '+token}:{})},body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(3500)});const data=await response.json();if(!response.ok){if(response.status===401){token=null;sessionStorage.removeItem('wispRemoteToken');paired();}throw Error(data.error||'Request failed');}return data;}
+$('pairForm').addEventListener('submit',async e=>{e.preventDefault();const button=e.submitter;button.disabled=true;try{const d=await api('/api/pair',{code:$('code').value});token=d.token;sessionStorage.setItem('wispRemoteToken',token);paired();poll();}catch(e){text('connection',e.message);}finally{button.disabled=false;}});
+async function command(kind,value){const id=crypto.randomUUID?crypto.randomUUID():`${Date.now()}-${Math.random().toString(36).slice(2)}`;try{const d=await api('/api/command',{id,command:kind,value});pending.set(d.seq,{at:Date.now(),kind});text('actionStatus','Sent — waiting for the laptop.');}catch(e){text('actionStatus',e.message);}}
+document.addEventListener('click',e=>{const b=e.target.closest('button[data-command]');if(!b)return;let v=b.dataset.value;if(v===undefined)v=null;command(b.dataset.command,v);});
+$('volume').addEventListener('change',e=>command('volume',Number(e.target.value)/100));
+$('unpair').addEventListener('click',()=>{token=null;sessionStorage.removeItem('wispRemoteToken');pending.clear();paired();text('connection','Phone forgotten. Pair again to control Wisp.');});
+async function poll(){if(polling||!token)return;polling=true;try{const d=await api('/api/state');lastSeen=Date.now();connectivity(d.connected,d.connected?'Connected to the laptop':'Laptop disconnected — controls paused.');
+ for(const ack of d.acks||[]){if(pending.has(ack.seq)&&ack.status!=='queued'){pending.delete(ack.seq);text('actionStatus',ack.status==='applied'?'Applied on the laptop.':ack.status==='expired'?'Command expired. Try again once connected.':ack.status==='cancelled'?'Cancelled by Stop or Blackout.':'The laptop could not apply that command.');}}
+ for(const [seq,p] of pending){if(Date.now()-p.at>5000){pending.delete(seq);text('actionStatus','No confirmation from the laptop. Check the show before retrying.');}}
+ const state=d.state||{};document.querySelectorAll('button[data-command]').forEach(b=>{const kind=b.dataset.command;if(['audience','loop','gaze'].includes(kind))b.setAttribute('aria-pressed',String(state[kind]===b.dataset.value));});
+ if(document.activeElement!==$('volume')&&typeof state.volume==='number'){$('volume').value=Math.round(state.volume*100);text('volumeLabel',Math.round(state.volume*100)+'%');}
+ $('blackout').dataset.value=state.blackout?'off':'on';$('blackout').textContent=state.blackout?'Restore picture':'Blackout';
+ if(d.preview){$('preview').src=d.preview;$('preview').hidden=false;}else $('preview').hidden=true;
+ const cues=JSON.stringify(d.cues||[]);if(cues!==lastCues){lastCues=cues;$('cues').replaceChildren();for(const cue of d.cues||[]){const b=document.createElement('button');b.textContent=cue.replace(/[-_]/g,' ');b.dataset.command='cue';b.dataset.value=cue;b.disabled=!connected;$('cues').append(b);}if(!d.cues?.length)$('cues').textContent='No prepared cues enabled on the laptop.';}
+}catch(e){connectivity(false,'Connection lost. Check Wi-Fi and the laptop.');}finally{polling=false;}}
+paired();connectivity(false,token?'Connecting to the laptop…':'Pair with the laptop to begin.');setInterval(()=>{if(token)poll();if(token&&Date.now()-lastSeen>4500)connectivity(false,'Connection lost. Check Wi-Fi and the laptop.');},1000);poll();

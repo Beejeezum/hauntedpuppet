@@ -1,0 +1,850 @@
+{
+  "character": "Wisp",
+  "format": "painted raster cutout character pack",
+  "version": "1.1",
+  "canvas": [
+    1024,
+    1536
+  ],
+  "coordinateSystem": "top-left origin; x right; y down; pixels",
+  "assetStatus": "native transparent PNG illustrations with registered assembly",
+  "notIncluded": [
+    "timed speech animation",
+    "audio-to-viseme driver",
+    "Live2D/Spine/Character Animator rig",
+    "app or voice integration"
+  ],
+  "transformRule": "targetPoint = sourcePoint * scale + translate",
+  "defaultMouth": "rest",
+  "defaultExpression": "neutral",
+  "expressions": {
+    "neutral": "expressions/neutral.png",
+    "curious": "expressions/curious.png",
+    "concerned": "expressions/concerned.png",
+    "delighted": "expressions/delighted.png",
+    "blink": "expressions/blink.png"
+  },
+  "speechMap": {
+    "silence": "rest",
+    "M/B/P": "mbp",
+    "AH/A": "aa",
+    "EE/IH": "ee",
+    "OH": "oh",
+    "OO/W": "oo",
+    "F/V": "fv",
+    "L": "l",
+    "S/Z/T/D/N": "ss",
+    "CH/J/SH": "ch",
+    "TH": "th"
+  },
+  "compositing": {
+    "premultipliedAlpha": "PNG files contain native straight alpha; honor importer color/alpha settings",
+    "drawOrder": "ascending z",
+    "oneAtATime": [
+      "mouth",
+      "upper-face"
+    ],
+    "masks": {
+      "mouth-soft-edge": "soft local feather around mouth; see assembly.svg definition",
+      "expression-soft-edge": "soft face-local rectangle; see assembly.svg definition"
+    }
+  },
+  "limitations": [
+    "Individual painted components are registered by transforms, not identical original pixel extraction.",
+    "Small texture/lighting discontinuities may appear under extreme deformation.",
+    "Mouth drawings are a stylized compact set and have not been evaluated against live dialogue."
+  ],
+  "assets": [
+    {
+      "file": "expressions/blink.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBoundsAlpha128": [
+        188,
+        410,
+        1080,
+        854
+      ],
+      "sha256": "122c24b6fdbfb47763b3a3e70d2f6921f5a405f6a09a5118eff8c4357eeb5ed8",
+      "scale": 0.5515789473684211,
+      "translate": [
+        167.3684210526316,
+        247.34736842105264
+      ],
+      "pivot": [
+        519,
+        625
+      ],
+      "z": 4,
+      "variantGroup": "upper-face",
+      "mask": "expression-soft-edge",
+      "registeredFile": "registered-layers/expressions--blink.png"
+    },
+    {
+      "file": "expressions/concerned.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBoundsAlpha128": [
+        219,
+        422,
+        1025,
+        865
+      ],
+      "sha256": "75fcae0187cc02bd0fdda83bd182db0aa6ea908269729e8abe26fbffceeb2d6c",
+      "scale": 0.7178082191780822,
+      "translate": [
+        68.57534246575341,
+        133.3013698630137
+      ],
+      "pivot": [
+        519,
+        625
+      ],
+      "z": 4,
+      "variantGroup": "upper-face",
+      "mask": "expression-soft-edge",
+      "registeredFile": "registered-layers/expressions--concerned.png"
+    },
+    {
+      "file": "expressions/curious.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBoundsAlpha128": [
+        216,
+        373,
+        1054,
+        871
+      ],
+      "sha256": "21320297b7f78e1d3cfe44d1e13e7d55a2eec90410f8610c161a64dba218df26",
+      "scale": 0.7100271002710027,
+      "translate": [
+        69.90785907859077,
+        142.1815718157182
+      ],
+      "pivot": [
+        519,
+        625
+      ],
+      "z": 4,
+      "variantGroup": "upper-face",
+      "mask": "expression-soft-edge",
+      "registeredFile": "registered-layers/expressions--curious.png"
+    },
+    {
+      "file": "expressions/delighted.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBoundsAlpha128": [
+        227,
+        416,
+        1029,
+        895
+      ],
+      "sha256": "84149710a647af74c90147d0f2f6ce796b6daecbdfbb9a6fc15cf1f301bf103a",
+      "scale": 0.7138964577656676,
+      "translate": [
+        68.17438692098091,
+        121.70299727520438
+      ],
+      "pivot": [
+        519,
+        625
+      ],
+      "z": 4,
+      "variantGroup": "upper-face",
+      "mask": "expression-soft-edge",
+      "registeredFile": "registered-layers/expressions--delighted.png"
+    },
+    {
+      "file": "expressions/neutral.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBoundsAlpha128": [
+        174,
+        417,
+        1070,
+        926
+      ],
+      "sha256": "6ca60b42c948600695b7488fc2ffb76338032b53709d0283f34c420f88d92be5",
+      "scale": 0.7287899860917942,
+      "translate": [
+        67.8425591098748,
+        90.06815020862302
+      ],
+      "pivot": [
+        519,
+        625
+      ],
+      "z": 4,
+      "variantGroup": "upper-face",
+      "mask": "expression-soft-edge",
+      "registeredFile": "registered-layers/expressions--neutral.png"
+    },
+    {
+      "file": "layers/arm-left.png",
+      "pixels": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBoundsAlpha128": [
+        73,
+        637,
+        386,
+        1090
+      ],
+      "sha256": "59c2637bdd7f555f3f151a5ae7173a22b2c8b3cb1ee5ef63456abd34dc2e346b",
+      "scale": 0.75,
+      "translate": [
+        50,
+        265
+      ],
+      "pivot": [
+        267,
+        795
+      ],
+      "z": 1,
+      "registeredFile": "registered-layers/layers--arm-left.png"
+    },
+    {
+      "file": "layers/arm-right.png",
+      "pixels": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBoundsAlpha128": [
+        543,
+        451,
+        884,
+        999
+      ],
+      "sha256": "aa5f6fa2fceb27d02b95d62fcf4287c48e287e2151d1c5ac0d96587d28f6cba4",
+      "scale": 0.65,
+      "translate": [
+        385,
+        442
+      ],
+      "pivot": [
+        790,
+        795
+      ],
+      "z": 2,
+      "registeredFile": "registered-layers/layers--arm-right.png"
+    },
+    {
+      "file": "layers/body-core.png",
+      "pixels": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBoundsAlpha128": [
+        184,
+        75,
+        835,
+        1240
+      ],
+      "sha256": "747df45aae763549aa1da7316076e701ab439d62c0ccdc60c86e51a0575ab4d6",
+      "scale": 1,
+      "translate": [
+        0,
+        0
+      ],
+      "pivot": [
+        512,
+        830
+      ],
+      "z": 3,
+      "registeredFile": "registered-layers/layers--body-core.png"
+    },
+    {
+      "file": "layers/tail.png",
+      "pixels": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBoundsAlpha128": [
+        298,
+        890,
+        809,
+        1279
+      ],
+      "sha256": "17eb44ae453bd0d6aa768d36c5b3794215974f82f067da2bde28efff1f709fd5",
+      "scale": 0.65,
+      "translate": [
+        130,
+        551
+      ],
+      "pivot": [
+        520,
+        1130
+      ],
+      "z": 0,
+      "registeredFile": "registered-layers/layers--tail.png"
+    },
+    {
+      "file": "mouths/aa.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBoundsAlpha128": [
+        284,
+        440,
+        973,
+        890
+      ],
+      "sha256": "6d72f1140b2a676f539593c59b66a113c69a88857c0335aec149a1bfada85f0f",
+      "scale": 0.235,
+      "translate": [
+        373.36,
+        603.605
+      ],
+      "pivot": [
+        520,
+        758
+      ],
+      "z": 5,
+      "variantGroup": "mouth",
+      "mask": "mouth-soft-edge",
+      "registeredFile": "registered-layers/mouths--aa.png"
+    },
+    {
+      "file": "mouths/ee.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBoundsAlpha128": [
+        262,
+        512,
+        1008,
+        859
+      ],
+      "sha256": "7f4a5b43233371180b9cf29cbecd0ac6ccd7ece066033e1c779b64d4f79698bc",
+      "scale": 0.235,
+      "translate": [
+        372.89,
+        598.0825
+      ],
+      "pivot": [
+        520,
+        758
+      ],
+      "z": 5,
+      "variantGroup": "mouth",
+      "mask": "mouth-soft-edge",
+      "registeredFile": "registered-layers/mouths--ee.png"
+    },
+    {
+      "file": "mouths/fv.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBoundsAlpha128": [
+        227,
+        471,
+        1024,
+        844
+      ],
+      "sha256": "1164008621c1f6ebd2e74ebd7ae0497261b9db8d8abd54e26d4836fc1cc541ab",
+      "scale": 0.205,
+      "translate": [
+        391.46500000000003,
+        631.925
+      ],
+      "pivot": [
+        520,
+        758
+      ],
+      "z": 5,
+      "variantGroup": "mouth",
+      "mask": "mouth-soft-edge",
+      "registeredFile": "registered-layers/mouths--fv.png"
+    },
+    {
+      "file": "mouths/l.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBoundsAlpha128": [
+        252,
+        429,
+        1001,
+        869
+      ],
+      "sha256": "50c6033ed0a16576a5a589b79a3698a21d2586dcf9f756dfb083fc324aacd8bf",
+      "scale": 0.25,
+      "translate": [
+        363.125,
+        599.875
+      ],
+      "pivot": [
+        520,
+        758
+      ],
+      "z": 5,
+      "variantGroup": "mouth",
+      "mask": "mouth-soft-edge",
+      "registeredFile": "registered-layers/mouths--l.png"
+    },
+    {
+      "file": "mouths/mbp.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBoundsAlpha128": [
+        289,
+        542,
+        964,
+        798
+      ],
+      "sha256": "8e69ed689fb36b10b800601b0f63c21fbcbad2ded2014ad0e1c4be5296c9437d",
+      "scale": 0.205,
+      "translate": [
+        393.0025,
+        621.1625
+      ],
+      "pivot": [
+        520,
+        758
+      ],
+      "z": 5,
+      "variantGroup": "mouth",
+      "mask": "mouth-soft-edge",
+      "registeredFile": "registered-layers/mouths--mbp.png"
+    },
+    {
+      "file": "mouths/oh.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBoundsAlpha128": [
+        407,
+        405,
+        844,
+        831
+      ],
+      "sha256": "9f30a265f55377642eaaea381698420282a832bc74713bcaf2ac91610736ead4",
+      "scale": 0.34,
+      "translate": [
+        306.99,
+        546.69
+      ],
+      "pivot": [
+        520,
+        758
+      ],
+      "z": 5,
+      "variantGroup": "mouth",
+      "mask": "mouth-soft-edge",
+      "registeredFile": "registered-layers/mouths--oh.png"
+    },
+    {
+      "file": "mouths/oo.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBoundsAlpha128": [
+        336,
+        503,
+        914,
+        831
+      ],
+      "sha256": "3d7862895899df1c18664b1ffdb2046646e12496c56c71b13a5575ee0bbbb263",
+      "scale": 0.4,
+      "translate": [
+        269.4,
+        487.2
+      ],
+      "pivot": [
+        520,
+        758
+      ],
+      "z": 5,
+      "variantGroup": "mouth",
+      "mask": "mouth-soft-edge",
+      "registeredFile": "registered-layers/mouths--oo.png"
+    },
+    {
+      "file": "mouths/rest.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBoundsAlpha128": [
+        329,
+        521,
+        924,
+        798
+      ],
+      "sha256": "fd2ca09746dff242f87ed98a7bb2bf7af22434300682ae6a5508fd0e979d19a2",
+      "scale": 0.235,
+      "translate": [
+        373.9475,
+        605.25
+      ],
+      "pivot": [
+        520,
+        758
+      ],
+      "z": 5,
+      "variantGroup": "mouth",
+      "mask": "mouth-soft-edge",
+      "registeredFile": "registered-layers/mouths--rest.png"
+    },
+    {
+      "file": "wisp-neutral-master.png",
+      "pixels": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBoundsAlpha128": [
+        82,
+        120,
+        942,
+        1361
+      ],
+      "sha256": "fc17b095d3a8c89606433e198916b3c3cba081eb10b3a9419bbd09edf7601f4f"
+    },
+    {
+      "scale": 0.7287899860917942,
+      "translate": [
+        67.8425591098748,
+        90.06815020862302
+      ],
+      "pivot": [
+        519,
+        625
+      ],
+      "z": 4,
+      "variantGroup": "upper-face",
+      "mask": "expression-soft-edge",
+      "file": "expressions/half-blink.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBoundsAlpha128": [
+        115,
+        351,
+        1135,
+        974
+      ],
+      "sha256": "c9f57d7a6325ed4772d2d3de0230ee064bddbd96a89c8c4ea0e5b1b920fe8a2d",
+      "registeredFile": "registered-layers/expressions--half-blink.png",
+      "addedVersion": "1.1"
+    },
+    {
+      "scale": 0.7287899860917942,
+      "translate": [
+        67.8425591098748,
+        90.06815020862302
+      ],
+      "pivot": [
+        519,
+        625
+      ],
+      "z": 4,
+      "variantGroup": "upper-face",
+      "mask": "expression-soft-edge",
+      "file": "expressions/look-left.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBoundsAlpha128": [
+        128,
+        355,
+        1121,
+        972
+      ],
+      "sha256": "b5b942abb95b873deadab98e84232977483d004208416afc222676a3870d91b6",
+      "registeredFile": "registered-layers/expressions--look-left.png",
+      "addedVersion": "1.1"
+    },
+    {
+      "scale": 0.7287899860917942,
+      "translate": [
+        67.8425591098748,
+        90.06815020862302
+      ],
+      "pivot": [
+        519,
+        625
+      ],
+      "z": 4,
+      "variantGroup": "upper-face",
+      "mask": "expression-soft-edge",
+      "file": "expressions/look-right.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBoundsAlpha128": [
+        137,
+        353,
+        1114,
+        971
+      ],
+      "sha256": "264228ad9a63d5ee5b8e6eaf7541d5a21402419f80e591a73a8eb0a027cac692",
+      "registeredFile": "registered-layers/expressions--look-right.png",
+      "addedVersion": "1.1"
+    },
+    {
+      "file": "mouths/ss.png",
+      "scale": 0.205,
+      "translate": [
+        391.77250000000004,
+        628.1325
+      ],
+      "pivot": [
+        520,
+        758
+      ],
+      "z": 5,
+      "variantGroup": "mouth",
+      "mask": "mouth-soft-edge",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBoundsAlpha128": [
+        205,
+        446,
+        1048,
+        853
+      ],
+      "sha256": "af1ea2f30cbf6da9d333be9096b5afb0c62aac5b85dd414ec64321d0335d61f5",
+      "registeredFile": "registered-layers/mouths--ss.png",
+      "addedVersion": "1.1"
+    },
+    {
+      "file": "mouths/ch.png",
+      "scale": 0.235,
+      "translate": [
+        372.3025,
+        602.4300000000001
+      ],
+      "pivot": [
+        520,
+        758
+      ],
+      "z": 5,
+      "variantGroup": "mouth",
+      "mask": "mouth-soft-edge",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBoundsAlpha128": [
+        192,
+        429,
+        1064,
+        896
+      ],
+      "sha256": "f98acac5796002f808cfb874d5c100d663d60775ab779ef297ce3d727609824f",
+      "registeredFile": "registered-layers/mouths--ch.png",
+      "addedVersion": "1.1"
+    },
+    {
+      "file": "mouths/th.png",
+      "scale": 0.205,
+      "translate": [
+        391.1575,
+        624.5450000000001
+      ],
+      "pivot": [
+        520,
+        758
+      ],
+      "z": 5,
+      "variantGroup": "mouth",
+      "mask": "mouth-soft-edge",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBoundsAlpha128": [
+        184,
+        436,
+        1068,
+        877
+      ],
+      "sha256": "efc8d6ec39024509b406778eeeaea42350effb9659a467f168472e7d327ef9e3",
+      "registeredFile": "registered-layers/mouths--th.png",
+      "addedVersion": "1.1"
+    }
+  ],
+  "registeredExport": {
+    "canvas": [
+      1024,
+      1536
+    ],
+    "placement": "All registered PNGs use the same full canvas and can be stacked at x=0,y=0 with no scaling.",
+    "masks": "Assembly soft masks baked into registered exports. Native source PNGs remain unmodified.",
+    "files": [
+      "registered-layers/expressions--blink.png",
+      "registered-layers/expressions--concerned.png",
+      "registered-layers/expressions--curious.png",
+      "registered-layers/expressions--delighted.png",
+      "registered-layers/expressions--neutral.png",
+      "registered-layers/layers--arm-left.png",
+      "registered-layers/layers--arm-right.png",
+      "registered-layers/layers--body-core.png",
+      "registered-layers/layers--tail.png",
+      "registered-layers/mouths--aa.png",
+      "registered-layers/mouths--ee.png",
+      "registered-layers/mouths--fv.png",
+      "registered-layers/mouths--l.png",
+      "registered-layers/mouths--mbp.png",
+      "registered-layers/mouths--oh.png",
+      "registered-layers/mouths--oo.png",
+      "registered-layers/mouths--rest.png",
+      "registered-layers/expressions--half-blink.png",
+      "registered-layers/expressions--look-left.png",
+      "registered-layers/expressions--look-right.png",
+      "registered-layers/mouths--ss.png",
+      "registered-layers/mouths--ch.png",
+      "registered-layers/mouths--th.png"
+    ]
+  },
+  "eyeActionStates": {
+    "halfBlink": "expressions/half-blink.png",
+    "lookLeft": "expressions/look-left.png",
+    "lookRight": "expressions/look-right.png"
+  }
+}

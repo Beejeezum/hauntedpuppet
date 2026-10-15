@@ -1,0 +1,113 @@
+WISP — COMPLETE APP-BUILDER HANDOFF
+READ THIS BEFORE IMPLEMENTING
+
+OBJECTIVE
+Integrate the supplied painted 2D Wisp into Haunt Studio as a layered, speech-driven character. Preserve the supplied artwork. Do not substitute procedural ghosts, redraw the character with vectors, or rebuild the application unnecessarily. This handoff is a specification; it is not an implemented character engine.
+
+WHAT IS ACTUALLY DELIVERED
+18 original transparent PNG illustrations: one complete master, four body components, five upper-face states, and eight mouths. There are also 17 REGISTERED full-canvas layer exports, a layered OpenRaster file, an SVG assembly, an asset manifest, source prompts and visual QA. Native sources and registered exports contain the same art at different placements; do not load both sets as separate parts.
+
+NOT DELIVERED
+No Live2D/Spine/Character Animator rig. No authored animation clips, mesh-deformation rig, in-between blink drawings, gaze directions, timed lip-sync track, audio-to-viseme model, voice credentials, live speech integration, evil form or transformation sequence. The pack enables a first functional cutout character; finished feature-quality acting needs animation and additional drawings/rigging.
+
+1. LOAD AND COMPOSE THE CHARACTER
+Use registered-layers/ for initial integration. Every registered PNG is 1024x1536. Draw all at top-left (0,0), scale 1, in the shared character coordinate system. Feather masks and source registration are ALREADY baked into these exports. Do not apply native-source scale/translate or feather masks again.
+Read asset-manifest.json, especially registeredFile, z and pivot. Preload and decode every required image before declaring the character ready. Fail with a useful missing-file list; do not display a floating mouth while the body is loading.
+
+Back-to-front stack:
+0 layers--tail.png
+1 layers--arm-left.png
+2 layers--arm-right.png
+3 layers--body-core.png
+4 ONE expressions--*.png
+5 ONE mouths--*.png
+All paths above are inside registered-layers/.
+
+Default: expressions--neutral.png + mouths--rest.png.
+Expression choices: neutral, curious, concerned, delighted, blink.
+Mouth choices: rest, mbp, aa, ee, oh, oo, fv, l.
+The body has a blank face. Keeping one eye layer visible is mandatory. The complete master and preview pictures are references, not extra render layers.
+
+Pivots in character canvas pixels:
+root/body (512,830); left shoulder (267,795); right shoulder (790,795); tail root (520,1130); eye layer (519,625); mouth (520,758).
+To rotate a full-canvas PNG about a pivot, transform around that point; do not rotate around the transparent canvas corner. Keep all parts under one root transform. Head/body deformation must also move or deform the face attachment coordinates; otherwise eyes and mouth will slide across the skin.
+
+2. BUILD THESE INDEPENDENT SYSTEMS
+CharacterAssetLoader: validates manifest, loads PNGs, reports readiness.
+CharacterRenderer: composes supplied layers with correct alpha, transforms and draw order.
+PerformanceController: owns state, priorities, interruptions and bounded operator commands.
+MotionController: idle/gesture poses, attachment transforms and transitions.
+SpeechPlayer: actual outgoing audio playback, scheduling, audio clock and interruption.
+LipSyncDriver: converts or loads audio-aligned cues, maps them to supplied mouth names.
+ExpressionController: mood, blink override and expression restoration.
+VoiceAdapter: replaceable generated-speech/live-conversation service; credentials stay on the trusted local backend.
+ProjectionStage: final placement, calibration, masking and safe movement bounds.
+
+These can be modules inside the existing app; a different renderer is not a reason to redraw the character or discard existing calibration.
+
+3. PERFORMANCE STATE AND PRIORITY
+States: loading, idle, listening, preparing, speaking, reacting, hidden, error.
+Error and preparing states must be visibly reported to the operator. Wisp can listen or wait silently while a response is generated.
+Priority: emergency stop/hidden -> explicit show action -> speech articulation -> upper-face expression -> idle motion.
+Speech controls the mouth; mood controls upper face/body style; a blink temporarily overrides the eye layer and then restores the active mood. No independent scripts should fight over the same layer.
+A laugh is a coordinated action; it must not overwrite arbitrary spoken mouth cues unless the active performance calls for it.
+
+4. AUDIO AND LIP SYNC — REQUIRED, NOT AUTOMATIC
+Generated voice supplies audio. The app still needs audio-to-viseme timing. Neither a PNG mouth set nor an AI conversation model creates a character animation rig automatically.
+
+For prepared lines, use actual final audio and an offline audio-to-viseme/phoneme alignment step. Cache the reviewed audio and cues together.
+For live conversation, integrate and evaluate a streaming audio-to-viseme driver with the actual outgoing audio. Define any required look-ahead buffer and measure latency. Transcript arrival is NOT speech timing. Estimating shapes from letter positions is NOT verified lip sync. Audio-volume jaw movement is a preview fallback only and must be labeled as such.
+
+Map driver outputs to rest/mbp/aa/ee/oh/oo/fv/l. This compact stylized set merges many phonemes; add drawings if dialogue testing reveals missing articulation. Do not claim eight drawings reproduce every sound precisely.
+
+Run mouth cues against the same audio playback clock that produces the audible speech. The selected output owner should preferably own both the audio scheduler and projector renderer. The control-screen preview is silent. There must be exactly one audible playback path.
+
+Each performance has a unique ID. Cues belong to that ID and have audio-relative timestamps. Reject stale cues after cancel/replacement. Hold or gently return to rest during silence. Do not keep talking after the audio ends.
+
+5. PERFORMANCE DATA CONTRACT
+Use speech-performance.example.json as an illustrative contract. Its timings are NOT a real alignment track and its example audio path is NOT an included recording.
+A real performance contains: id, actual audio resource/stream, actual sample rate when relevant, ordered audio-relative mouth cues, expression cues, optional body actions and completion/cancellation behavior.
+Validate allowed mouth/mood/action names and numeric ranges. Conversation output may propose a whitelisted mood cue; it does not control arbitrary code or file paths.
+
+6. ANIMATION THAT PRESERVES THE PAINTING
+Start with restrained root hover, small shoulder rotations and delayed tail movement. Use amplitude limits in character coordinates and keep roots concealed beneath the body. Small rotations are safer than extreme waving with the current overlap art.
+Add authored motion curves for idle, listening, greeting wave, curiosity and delight. They are not included merely because PNG layers are separated. Give movements anticipation, a held pose and a settle; avoid one identical sine wave driving every part.
+
+For higher polish, rig the raster parts with a 2D deformation system and keep facial attachments registered. Add in-between blink drawings and gaze variants. Large turns, extreme squash and open arm poses will require additional paintings. Current art is front-facing; do not pretend a rotated flat sprite is a new head angle.
+
+The existing blink is only a fully closed pose. A quick closed/open replacement is possible immediately; a soft multi-frame blink needs additional artwork or a tested deformation rig. Expression crossfades can show doubled eyes; use short controlled transitions and inspect them at projection size.
+
+7. MOOD AND CHARACTER FORM
+Current assets support FRIENDLY Wisp only. Treat neutral/curious/concerned/delighted as moods; blink is a temporary action, not a mood.
+Keep the future form variable separate from mood, but disable evil/scare/transformation controls while those assets are missing. Never substitute the old ugly 3D blockout or stretch friendly eyes into a purported evil character.
+
+8. INTERRUPTION, QUEUE AND STOP
+Define enqueue, replace and cancel policies explicitly. Replacing a performance cancels audio and queued cues from the previous one before starting another.
+Stop All must stop audible output, flush queued audio, discard queued performances and facial cues, cancel body gestures, release mouth to rest and restore a safe friendly idle. A late network response must not restart speech.
+On interruption from a visitor, stop/clear unplayed audio and reconcile the voice provider's conversation playback position as required by that provider. Do not merely hide the mouth while audio continues.
+
+9. TWO-WINDOW AND PROJECTION BEHAVIOR
+Use one authoritative performance state and clock owner. Control window sends bounded commands. Projector output renders synchronized character and audio; control preview mirrors silently. Handle projector window closure/reopening and resynchronization without duplicate audio or replaying an old cue.
+A user gesture may be needed to unlock output audio/fullscreen. Show a clear Enable Output step and confirm readiness before performing.
+
+Apply projection calibration to the FINAL combined character, not to independent facial pieces. Preserve position, maximum scale, corner calibration and screen mask from the existing app. Include arms/tail/glow in the maximum movement envelope. Crop/mask is a last safeguard; default motion should already fit without visibly chopping off limbs.
+
+10. IMPLEMENTATION ORDER
+A. Load and stack registered art; compare screenshot with the supplied transparent assembly.
+B. Implement manual mouth/expression selection, blink restore, pivots and a restrained idle/wave. No AI required for these tests.
+C. Play one real recorded line with reviewed, audio-aligned cues. Verify at projector size and record audio+screen.
+D. Connect generated speech for arbitrary typed lines and add reliable interruption/caching.
+E. Connect live microphone conversation and a streaming facial driver. Verify audible output and mouth timing, not just the session status.
+F. Add authored acting and additional art before expanding to evil Wisp.
+
+11. ACCEPTANCE TESTS — REPORT RESULTS SEPARATELY
+ART: layer stack matches supplied assembly; true transparency; no duplicated eyes/brows; each mouth stays attached; arms and tail stay connected throughout supported movement.
+FACIAL: blink hides both irises and restores current expression; speech and expression work together; no hard skin-patch edge at projection size.
+SPEECH: one recorded sentence with pauses and M/B/P, F/V, rounded O/U and open vowels. Check timing against actual audible audio; mouth returns to rest.
+LIVE VOICE: authenticated provider session, received audio, audible speaker output, microphone reply, typed reply, network failure, interrupt and reconnect. Report missing credentials as BLOCKED, not passed.
+STOP: cancel mid-word, mid-wave and while waiting on network. No continued sound, silent talking, stale gesture or late restart.
+PROJECTION: full movement envelope stays within calibration; output reopen and resize do not duplicate audio or lose alignment.
+PERFORMANCE: profile target Mac with projector attached. Measure frame rate and audio/visual latency rather than assuming the asset pack guarantees either.
+
+HANDOFF RULE
+Do not claim 'Wisp talks' until real audible speech and visible articulation have been tested together. Do not claim finished attraction-quality acting from asset loading or synthetic mouth tests alone. Preserve the artwork, build the performance systems, and name unimplemented pieces honestly.
