@@ -28,6 +28,8 @@ The OpenAI project must have access to the configured Realtime model. Connection
 
 Under **Phone remote**, explicitly enable the LAN service. Put the phone on the same trusted Wi-Fi, scan the displayed address, and enter the six-digit pairing code. The phone can direct gestures, gaze, audience, idle loops, prepared moments, volume, Stop and Blackout. The laptop continues to own the microphone and sound.
 
+![Paired phone director](docs/phone-controller.png)
+
 The local dashboard listens only on loopback port 8770. The optional phone service uses port 8771, paired permissions and a restricted command list. It does not expose provider credentials. This first remote uses HTTP on trusted local Wi-Fi; it is not an internet-facing deployment. Disable it or revoke phones from the laptop when finished.
 
 ## Prepared performances and art
