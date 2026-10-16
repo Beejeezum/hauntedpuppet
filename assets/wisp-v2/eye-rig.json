@@ -1,0 +1,212 @@
+{
+  "canvas": [
+    1024,
+    1536
+  ],
+  "body": "cute-face-free.png",
+  "atlas": "cute-eye-components.png",
+  "components": {
+    "scleraLeft": {
+      "rect": [
+        51,
+        114,
+        327,
+        325
+      ],
+      "cell": [
+        0,
+        0,
+        415,
+        500
+      ]
+    },
+    "scleraRight": {
+      "rect": [
+        489,
+        115,
+        324,
+        327
+      ],
+      "cell": [
+        415,
+        0,
+        416,
+        500
+      ]
+    },
+    "iris": {
+      "rect": [
+        923,
+        181,
+        235,
+        231
+      ],
+      "cell": [
+        831,
+        0,
+        415,
+        500
+      ]
+    },
+    "browLeft": {
+      "rect": [
+        65,
+        615,
+        302,
+        154
+      ],
+      "cell": [
+        0,
+        500,
+        415,
+        375
+      ]
+    },
+    "browRight": {
+      "rect": [
+        510,
+        614,
+        274,
+        158
+      ],
+      "cell": [
+        415,
+        500,
+        416,
+        375
+      ]
+    },
+    "upperLidLeft": {
+      "rect": [
+        866,
+        563,
+        337,
+        238
+      ],
+      "cell": [
+        831,
+        500,
+        415,
+        375
+      ]
+    },
+    "upperLidRight": {
+      "rect": [
+        43,
+        923,
+        338,
+        238
+      ],
+      "cell": [
+        0,
+        875,
+        415,
+        388
+      ]
+    },
+    "lowerLidLeft": {
+      "rect": [
+        489,
+        1002,
+        308,
+        160
+      ],
+      "cell": [
+        415,
+        875,
+        416,
+        388
+      ]
+    },
+    "lowerLidRight": {
+      "rect": [
+        882,
+        1008,
+        313,
+        154
+      ],
+      "cell": [
+        831,
+        875,
+        415,
+        388
+      ]
+    },
+    "irisTexture": {
+      "atlas": "optics",
+      "rect": [
+        100,
+        77,
+        567,
+        565
+      ]
+    },
+    "pupil": {
+      "atlas": "optics",
+      "rect": [
+        855,
+        132,
+        462,
+        461
+      ]
+    },
+    "catchlight": {
+      "atlas": "optics",
+      "rect": [
+        1658,
+        208,
+        325,
+        285
+      ]
+    }
+  },
+  "eyes": {
+    "left": {
+      "center": [
+        391,
+        559
+      ],
+      "size": [
+        170,
+        160
+      ],
+      "irisDiameter": 86,
+      "lidHeight": 20,
+      "browCenter": [
+        394,
+        447
+      ]
+    },
+    "right": {
+      "center": [
+        610,
+        579
+      ],
+      "size": [
+        170,
+        160
+      ],
+      "irisDiameter": 86,
+      "lidHeight": 20,
+      "browCenter": [
+        630,
+        470
+      ]
+    }
+  },
+  "mouthAnchor": [
+    493,
+    661
+  ],
+  "mouthManifest": "cute-mouths.json",
+  "alphaBoundsThreshold": 8,
+  "status": "Painted eye acting study: separate sclera, iris texture, pupil, corneal highlight, eyebrows, and lid artwork. Composition and blink mechanics still require refinement.",
+  "limits": [
+    "Source component art is complete, but a fully polished live speaking-character replacement is not yet validated.",
+    "Separate cap artwork can create double seams if composited as two independently moving lid shapes; current runtime uses an upper blink cap and keeps lower artwork for future refinement.",
+    "Generated mouth skin rims can show blue plate edges; blend locally or refine those before promoting this to the primary talking character.",
+    "Face-free body keeps arms and integrated lower wisps in one painting; not a complete skeletal rig.",
+    "Demon is currently a directional/front art study, not a completed modular speaking kit."
+  ],
+  "opticsAtlas": "cute-optics.png"
+}

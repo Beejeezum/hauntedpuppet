@@ -6,7 +6,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 TTL=90
-COMMANDS={'gesture':{'wave','laugh','shy','surprise'},'gaze':{'left','right','center'},'audience':{'little','family','big'},'loop':{'on','off'},'move':{'enter', 'laugh', 'surprise', 'twirl', 'dance', 'bounce', 'orbit', 'exit', 'celebrate', 'peekaboo', 'shy', 'wave'},'form':{'friendly','haunting'},'welcome':{None},'reveal':{'arm','fire','cancel'},'stop':{None},'blackout':{'on','off'}}
+COMMANDS={'gesture':{'wave','laugh','shy','surprise'},'gaze':{'left','right','center'},'audience':{'little','family','big'},'loop':{'on','off'},'move':{'phantom','enter', 'laugh', 'surprise', 'twirl', 'dance', 'bounce', 'orbit', 'exit', 'celebrate', 'peekaboo', 'shy', 'wave'},'form':{'friendly','haunting'},'welcome':{None},'reveal':{'arm','fire','cancel'},'stop':{None},'blackout':{'on','off'}}
 class Remote:
     def __init__(self, clock=time.monotonic):
         self.clock=clock; self.lock=threading.RLock(); self.secret=secrets.token_urlsafe(32)

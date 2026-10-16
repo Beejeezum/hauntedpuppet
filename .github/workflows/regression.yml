@@ -56,6 +56,11 @@ jobs:
         run: PHONE_BROWSER=webkit node tests/phone_browser.cjs
       - name: Check direct voice effects in WebKit
         run: HAUNT_BROWSER=webkit node tests/puppeteer_voice.cjs
+      - name: Check painted eyes and apparitions in WebKit
+        run: |
+          HAUNT_BROWSER=webkit node tests/character_workshop.cjs
+          HAUNT_BROWSER=webkit node tests/apparition_performance.cjs
+          HAUNT_BROWSER=webkit node tests/spirit_atmosphere.cjs
       - name: Keep WebKit evidence
         if: always()
         uses: actions/upload-artifact@v4

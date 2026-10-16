@@ -111,3 +111,12 @@ The scary rig includes four independently articulated painted body pieces, twelv
 The existing entrance, fly-by and orbit routines now include pronounced apparent depth. **Rush forward** and **Vanish & return** shrink the whole painted character to a distant speck, hold that pose, then rush back toward a near-stage-height foreground silhouette before settling. Both cute and scary rigs share the same perspective-scale choreography. The three routines last 5, 5.4 and 6.4 seconds respectively; motion strength uses exponential depth scaling so ordinary settings still reach a very small distant pose. Reduced-motion preferences retain a restrained lean and scale change.
 
 The animation keeps the existing registered face/mouth stack attached as it scales. Stage fitting bounds the foreground pose and Stop cancels the move with a short settling handoff. Voice continues through these silent moves, and paired phone buttons expose the same actions. This apparent-distance effect uses the2D artwork and existing projector mapping.
+
+
+### Character and eye workshop
+
+Open `/assets/character-workshop.html` from **Apparition tricks** to review the new organic Wisp design, actual front/three-quarter/back paintings, and a modular painted-eye study. The original speaking rig remains the production character while replacement art is refined. The workshop is silent and opens no microphone. Its turns are three authored key views, not a finished full cel sequence.
+
+The console now has **Only the eyes**, a six-second dissolve/watch/reform action. **Body wisps** under Performance movement controls the bounded painted wake; zero disables it. Wisps spawn from the lower character envelope, inherit motion, slow and settle, and clear on Blackout. The extra detached tail cel is disabled by default. Independent local facial acting preserves frozen art references.
+
+See `docs/EYE-ACTING-RESEARCH.md` for eye anatomy/gaze tooling and `docs/CHARACTER-PRODUCTION-V2.md` for the authored animation pipeline and license comparisons. New generated artwork and prompts are versioned under `assets/wisp-v2/` and `assets/spirit-effects/`.

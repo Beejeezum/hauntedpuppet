@@ -1,0 +1,1 @@
+{"image":"vapor-atlas.png","canvas":[1536,1024],"cells":[[0,0,512,512],[512,0,512,512],[1024,0,512,512],[0,512,512,512],[512,512,512,512],[1024,512,512,512]],"method":"builtin imagegen","created":"2026-10-15","purpose":"Six painted alpha vapor elements. Runtime drawImage crops only; original generated RGBA retained."}

@@ -1,0 +1,213 @@
+{
+  "image": "cute-mouth-atlas.png",
+  "canvas": [
+    1448,
+    1086
+  ],
+  "frames": [
+    {
+      "name": "rest",
+      "rect": [
+        38,
+        171,
+        324,
+        180
+      ],
+      "featureRect": [
+        102,
+        214,
+        210,
+        86
+      ]
+    },
+    {
+      "name": "mbp",
+      "rect": [
+        362,
+        171,
+        344,
+        179
+      ],
+      "featureRect": [
+        461,
+        232,
+        181,
+        43
+      ]
+    },
+    {
+      "name": "aa",
+      "rect": [
+        741,
+        124,
+        345,
+        238
+      ],
+      "featureRect": [
+        803,
+        191,
+        188,
+        132
+      ]
+    },
+    {
+      "name": "ee",
+      "rect": [
+        1086,
+        169,
+        332,
+        193
+      ],
+      "featureRect": [
+        1127,
+        207,
+        236,
+        114
+      ]
+    },
+    {
+      "name": "oh",
+      "rect": [
+        89,
+        441,
+        230,
+        244
+      ],
+      "featureRect": [
+        150,
+        502,
+        111,
+        125
+      ]
+    },
+    {
+      "name": "oo",
+      "rect": [
+        456,
+        476,
+        191,
+        187
+      ],
+      "featureRect": [
+        513,
+        536,
+        77,
+        66
+      ]
+    },
+    {
+      "name": "fv",
+      "rect": [
+        733,
+        362,
+        327,
+        317
+      ],
+      "featureRect": [
+        791,
+        533,
+        210,
+        67
+      ]
+    },
+    {
+      "name": "l",
+      "rect": [
+        1111,
+        362,
+        285,
+        362
+      ],
+      "featureRect": [
+        1160,
+        488,
+        189,
+        133
+      ]
+    },
+    {
+      "name": "ss",
+      "rect": [
+        40,
+        776,
+        322,
+        193
+      ],
+      "featureRect": [
+        92,
+        821,
+        230,
+        78
+      ]
+    },
+    {
+      "name": "ch",
+      "rect": [
+        362,
+        743,
+        314,
+        229
+      ],
+      "featureRect": [
+        487,
+        809,
+        132,
+        103
+      ]
+    },
+    {
+      "name": "th",
+      "rect": [
+        741,
+        769,
+        345,
+        200
+      ],
+      "featureRect": [
+        800,
+        812,
+        195,
+        90
+      ]
+    },
+    {
+      "name": "laugh",
+      "rect": [
+        1086,
+        724,
+        344,
+        258
+      ],
+      "featureRect": [
+        1135,
+        753,
+        243,
+        168
+      ]
+    }
+  ],
+  "anchor": [
+    493,
+    661
+  ],
+  "targetWidth": 160,
+  "alphaBoundsThreshold": 8,
+  "speechMap": {
+    "rest": "rest",
+    "MBP": "mbp",
+    "A": "aa",
+    "E": "ee",
+    "O": "oh",
+    "U": "oo",
+    "FV": "fv",
+    "L": "l",
+    "S": "ss",
+    "CH": "ch",
+    "TH": "th"
+  },
+  "limits": [
+    "Distinct painted articulations include softly feathered skin rims; blend locally into matching face texture.",
+    "Live acoustic weights remain estimates, not phoneme-accurate alignment."
+  ],
+  "featureRectUse": "Optional tighter crop around actual articulation with18pxskinpadding, excluding most blue outer plate. Feather its outer8\u201315% during local compositing; inspect before promoting."
+}

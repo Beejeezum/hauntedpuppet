@@ -1,0 +1,112 @@
+{
+  "character": "Wisp V2",
+  "status": "Original painted redesign and modular eye study; primary V1 is preserved",
+  "generator": "Built-in image generation",
+  "images": [
+    {
+      "file": "cute-eye-components.png",
+      "pixels": [
+        1246,
+        1263
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "outerEdgeAlphaMaximum": 1,
+      "bytes": 949727,
+      "sha256": "543f3dd0bee78858af56a11e28ac1bfb598e24b311b40827fd06811858d7700d"
+    },
+    {
+      "file": "cute-face-free.png",
+      "pixels": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "outerEdgeAlphaMaximum": 1,
+      "bytes": 1713759,
+      "sha256": "7f46323c05c16b1cd5708b6755258dc851d19a8ff31ef7c7ed921d385eceb1c3"
+    },
+    {
+      "file": "cute-front.png",
+      "pixels": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "outerEdgeAlphaMaximum": 1,
+      "bytes": 1815122,
+      "sha256": "63903c39af2756b1480bb5d32e73396c39fec711c2f5e763a19593bbc9479b29"
+    },
+    {
+      "file": "cute-mouth-atlas.png",
+      "pixels": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "outerEdgeAlphaMaximum": 2,
+      "bytes": 1882583,
+      "sha256": "c5f440819eaed28351892c4866c69553fee002390bfaa7f1c679c209f6fca371"
+    },
+    {
+      "file": "cute-optics.png",
+      "pixels": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "outerEdgeAlphaMaximum": 0,
+      "bytes": 802047,
+      "sha256": "643aacedab6963a6bfdc7f670d3587e54e5116a5cfa19ab2f705342ed6c4b72e"
+    },
+    {
+      "file": "demon-front.png",
+      "pixels": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "outerEdgeAlphaMaximum": 1,
+      "bytes": 2057914,
+      "sha256": "71bc9355f9bc53b9b183765d45515cb3185e6de2e7ecbe1de00b19b4c3f6257f"
+    },
+    {
+      "file": "turnaround-atlas.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "outerEdgeAlphaMaximum": 1,
+      "bytes": 1474080,
+      "sha256": "75f14156f4a7681ef401d402508d82b98a999ff3b5b45035b313b4b0693d775f"
+    }
+  ]
+}

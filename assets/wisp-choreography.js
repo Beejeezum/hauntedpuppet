@@ -1,12 +1,13 @@
 /** Authored 2D puppet movement. Seconds in, bounded pose out; no timers, audio or randomness. */
 const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
 const ease=x=>{x=clamp(x);return x*x*(3-2*x)};
-export const WISP_CHOREOGRAPHY_ACTIONS=Object.freeze({wave:2.8,shy:3.2,laugh:2.8,surprise:2.6,dance:6.4,twirl:3.6,bounce:3.8,peekaboo:3.8,celebrate:4.2,orbit:6.4,enter:5,exit:5.4});
+export const WISP_CHOREOGRAPHY_ACTIONS=Object.freeze({wave:2.8,shy:3.2,laugh:2.8,surprise:2.6,dance:6.4,twirl:3.6,bounce:3.8,peekaboo:3.8,celebrate:4.2,orbit:6.4,enter:5,exit:5.4,phantom:6});
 export const actionDuration=kind=>typeof kind==='string'&&Object.prototype.hasOwnProperty.call(WISP_CHOREOGRAPHY_ACTIONS,kind)?WISP_CHOREOGRAPHY_ACTIONS[kind]:0;
 const fields=['dx','dy','rotation','scaleX','scaleY','left','right','tail'];
 const pose=(values={})=>Object.assign({dx:0,dy:0,rotation:0,scaleX:1,scaleY:1,left:0,right:0,tail:0},values);
 // Each beat includes anticipation, an unmistakable silhouette, and a complete return to rest.
 const tracks={
+ phantom:[[0,{}],[.35,{dy:18,scaleX:1.06,scaleY:.94}],[1.25,{dy:-45,rotation:-.04}],[3.9,{dy:-45,rotation:.04}],[4.9,{dy:12,scaleX:1.06,scaleY:.94}],[6,{}]],
  wave:[[0,{}],[.22,{dy:18,rotation:.08,scaleX:1.08,scaleY:.9}],[.58,{dy:-32,rotation:-.12,right:-1.55,left:.2}],[1.8,{dy:-24,rotation:-.08,right:-1.55,left:.22}],[2.3,{dy:12,rotation:.035,right:-.18}],[2.8,{}]],
  shy:[[0,{}],[.3,{dy:-12,rotation:.08}],[1,{dx:-44,dy:55,rotation:-.27,scaleX:.92,scaleY:.94,left:.35,right:-.35}],[2,{dx:-35,dy:42,rotation:-.2,left:.32,right:-.28}],[2.65,{dy:-12,rotation:.06}],[3.2,{}]],
  laugh:[[0,{}],[.25,{dy:24,scaleX:1.12,scaleY:.86}],[.6,{dy:-34,rotation:-.1,left:.34,right:-.34}],[2.15,{dy:-20,left:.3,right:-.3}],[2.5,{dy:14,scaleX:1.07,scaleY:.93}],[2.8,{}]],

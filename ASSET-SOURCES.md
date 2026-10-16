@@ -23,3 +23,9 @@ Original raster art was generated with the built-in imagegen tool against the pr
 `assets/wisp-morph/` contains original transparent raster sheets generated with the built-in image tool against the approved cute and scary Wisp references. The morph sheet supplies six single-face anatomy keys; the tail sheet supplies six variations of the curl and smoky contour. Manifests retain source rectangles, alpha bounds, registration anchors, reference paths and SHA-256 provenance. They are generated painted animation assets, not motion or imagery extracted from another production.
 
 `assets/puppeteer-pitch-worklet.js` and `assets/puppeteer-voice.js` implement original local effect presets. Audition recordings in test evidence process the existing AI-generated rehearsal line; they do not contain a newly captured human voice.
+
+## Organic Wisp and ocular study (2026-10-15)
+
+`assets/wisp-v2/` contains seven unchanged built-in-generated transparent raster sources, registered turnaround/eye/mouth/optics manifests, exact prompts and SHA-256 provenance. This version is a separate workshop study. It preserves both original speaking characters. Eye whites, irises, pupils, highlights, brows and lid paintings are independent components; runtime masks/feathers these sources without replacing them with vector character artwork. Three directional views per form are authored keys, not a completed continuous turnaround or demon speech rig.
+
+`assets/spirit-effects/` contains original generated transparent vapor and floating-eye atlases, with generation notes. The app emits a bounded painted wake from the character's transformed lower-body anchor. No third-party effect pack, shader, artwork or runtime was copied in this pass. Research sources and license boundaries are documented in `docs/EYE-ACTING-RESEARCH.md` and `docs/CHARACTER-PRODUCTION-V2.md`.

@@ -1,0 +1,157 @@
+{
+  "image": "turnaround-atlas.png",
+  "canvas": [
+    1254,
+    1254
+  ],
+  "grid": [
+    3,
+    2
+  ],
+  "frames": [
+    {
+      "form": "cute",
+      "view": "front",
+      "facing": "camera",
+      "rect": [
+        0,
+        0,
+        418,
+        627
+      ],
+      "bounds": [
+        47,
+        59,
+        329,
+        520
+      ],
+      "anchor": [
+        209.0,
+        579
+      ]
+    },
+    {
+      "form": "cute",
+      "view": "three-quarter",
+      "facing": "right",
+      "rect": [
+        418,
+        0,
+        418,
+        627
+      ],
+      "bounds": [
+        63,
+        59,
+        311,
+        524
+      ],
+      "anchor": [
+        209.0,
+        583
+      ]
+    },
+    {
+      "form": "cute",
+      "view": "back",
+      "facing": "away",
+      "rect": [
+        836,
+        0,
+        418,
+        627
+      ],
+      "bounds": [
+        46,
+        67,
+        317,
+        519
+      ],
+      "anchor": [
+        209.0,
+        586
+      ]
+    },
+    {
+      "form": "demon",
+      "view": "front",
+      "facing": "camera",
+      "rect": [
+        0,
+        627,
+        418,
+        627
+      ],
+      "bounds": [
+        41,
+        18,
+        376,
+        545
+      ],
+      "anchor": [
+        209.0,
+        563
+      ]
+    },
+    {
+      "form": "demon",
+      "view": "three-quarter",
+      "facing": "right",
+      "rect": [
+        418,
+        627,
+        418,
+        627
+      ],
+      "bounds": [
+        74,
+        17,
+        331,
+        548
+      ],
+      "anchor": [
+        209.0,
+        565
+      ]
+    },
+    {
+      "form": "demon",
+      "view": "back",
+      "facing": "away",
+      "rect": [
+        836,
+        627,
+        418,
+        627
+      ],
+      "bounds": [
+        33,
+        22,
+        353,
+        538
+      ],
+      "anchor": [
+        209.0,
+        560
+      ]
+    }
+  ],
+  "fps": 8,
+  "alphaBoundsThreshold": 8,
+  "registration": "Cell-local centerline and per-frame lower-wisp baseline anchor; preserve shared source scale to retain depth/pose shape.",
+  "status": "Painted directional cels. Speaking face rig is supplied separately; these views are not a complete 360-degree model.",
+  "provenance": {
+    "tool": "Built-in image generation; transparent original PNG preserved",
+    "references": [
+      "../wisp/wisp-assembled-transparent.png",
+      "../wisp-scary/wisp-assembled-transparent.png"
+    ],
+    "sha256": "75f14156f4a7681ef401d402508d82b98a999ff3b5b45035b313b4b0693d775f"
+  },
+  "limits": [
+    "Three distinct angles per form, not every rotational degree.",
+    "Views are separate generated paintings; exact pixel-level anatomy/lighting continuity is not guaranteed.",
+    "Three-quarter views face viewer right despite initial request for left; manifest records actual output.",
+    "Source resolution is1254x1254,418x627percell. Single high-resolution front references are1024x1536."
+  ]
+}
