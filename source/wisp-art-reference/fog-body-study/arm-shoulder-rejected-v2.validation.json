@@ -1,0 +1,15 @@
+{
+  "source": "exec-bf8e7ea8-3984-4887-8b86-ad72728e8f5c.png",
+  "sha256": "18a35dfd3dc6287add5cf8e6e1ce9d25cbda2d1458f8382510611a2b669cf4cf",
+  "size": [
+    1024,
+    1536
+  ],
+  "alpha8Bounds": [
+    67,
+    135,
+    970,
+    1471
+  ],
+  "status": "Rejected: hand scale/placement drifted, halo stronger, original rig landmarks no longer valid. Not used or deployed."
+}

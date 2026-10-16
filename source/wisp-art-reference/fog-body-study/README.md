@@ -59,3 +59,15 @@ review.cjs --full-turn --video completed18settled comparison frames and an11.2se
 `review.cjs --full-turn --face-depth` holds the new fog turnaround and bilateral rig identical on both sides of the comparison, changing only eye projection/occlusion. A guarded source substitution keeps production files unchanged. The numerical test covers continuous0..180degree samples and front/profile/rear visibility. Initial67.5degree visual review removes the overlapping far eye; shoulder and arm defects remain and source-art facial integration still needs refinement. Not shipped.
 
 Controlled eye comparison completed18actual renders with zero page errors; all nine candidate raw-canvas samples pass15%clearance. No voice, webcam, physical projection or production acceptance is implied.
+
+
+## Shoulder partition blend — rejected as a complete fix
+`review.cjs --full-turn --shoulder-blend --video` holds the fog artwork, bilateral limbs and experimental eye projection identical. Candidate broadens the root alpha ramp0..0.18to0..0.45and shifts the fore/back split0.08..0.70to0.30..0.80. This changes actual pixels but reviewed front views remain nearly identical perceptually, including the bright shoulder patch.18frames complete without page errors and nine candidate sampled framing checks pass. Do not adopt it as a seam repair: source shoulder lighting/shape remains the next art task. Recording retained outside repository; no provider or production changes.
+
+
+## Shoulder surface attachment — diagnostic candidate, not adopted
+`shoulder-surface.mjs` releases a root region smoothly from the deformed torso into arm skinning within0.85upper-arm lengths. This is original code motivated by the Live2D Glue technique (official documentation linked in the excellence plan), not copied Cubism implementation or a Cubism integration. Numerical tests check root attachment and smooth outer-boundary release through0..180degrees. The initial exact floating-point equality assertion was corrected to a1e-10coordinate tolerance.
+
+`review.cjs --full-turn --shoulder-weld --video` compares identical fog art and eye projection with only this geometry constraint changed.18actual captures and a short native rehearsal complete without page errors; all nine candidate sampled margins pass15%. Front/profile review still shows pale shoulder patches and overlapping collar-like folds. This does NOT solve shoulder appearance and is NOT adopted. Investigate actual triangle orientation/overlap and source shoulder topology before expanding parameter sweeps. No runtime changes.
+
+`arm-shoulder-rejected-v2.png` preserves one unchanged built-in edit intended to soften the shoulder lighting. It changed hand scale/placement and strengthened the halo; original landmarks no longer register. Rejected, never used by the harness or live app. Provenance/hash and alpha bounds are in its validation file. Do not regenerate the same instruction blindly.
