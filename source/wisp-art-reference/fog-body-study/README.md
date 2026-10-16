@@ -246,3 +246,11 @@ CI38974867844is now terminal FAILURE:mainregressionSUCCESS,WebKitFAILURE. Its or
 
 ## Mouth projection A/B
 `--mouth-surface`isolates a cosine yaw width(8%minimum)instead of the existing1-.65*sin(yaw)width. Center, height, painted mouths and all body/arm/eye parameters stay identical. At45the width factor rises from0.54038to0.70711. Actual full-character181state/6secRAFchecks pass, including front-return identity, guards, body-core support and sampled arm corrections. Controlled front0screenshot matches baseline exactly(changedchannels0,maxdelta0). Reviewed45mouth is less slit-like and more readable, but still a flat dark/outlined patch; it does not establish a volumetric mouth or complete facial surface. Unselected source-only comparison, no production mouth change. A shaped aperture/surface or painted angle variants need to resolve that visual issue before adoption. No API/generation credits.
+
+
+## Protected full-character browser rehearsal
+`--projection`uses the ACTUALSpiritFrame+SpiritAtmosphere around the native character, including body/hand emission points and held complete-effect envelope. Both turn and actual wave/roar methods present through that compositor. The test now navigates to a test-owned black fixture, so setup records no directory listing. It still includes loading/intentional cleanup and is a QArecording, not an approved seamless loop.
+
+Latest combined eye15/surface-shoulder/mouth/gesture/projection run passes context guards, exact raw-front return, core shoulder samples and deformation checks. `check_framing.py`decoded467frames at25fps1280×720. Every NONEMPTYframe passes15%on all edges at maxRGB8/16/32thresholds with connected fragments>=8pixels; zero outer-edge contact. Worst top margin at8is16.67%,bottom18.75%,left34.30%,right32.34%. Bounds of an encoded recording cannot prove upstream fog completeness, physical visibility, source-art approval or projection cadence. Source PNGpadding failures remain documented.
+
+Visible review of the protected wave confirms raised-arm acting, persistent painted lower body and readable face; shoulder light patch/possible small gap and the flat face treatment remain unfinished. No source art or experimental attachment/mouth defaults were promoted. Pending diagnosticCI38976417040remains separately tracked. No provider/Runway calls.
