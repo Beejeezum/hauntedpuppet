@@ -1,0 +1,17 @@
+{
+  "modifiedVertices": 2062,
+  "before": {
+    "maximum": 0.9999990633859852,
+    "edgesAboveQuarter": 289,
+    "edgesAboveHalf": 289
+  },
+  "after": {
+    "maximum": 0.22959508560597897,
+    "edgesAboveQuarter": 0,
+    "edgesAboveHalf": 0
+  },
+  "maximumMergedInfluence": 0.017409876172399207,
+  "maximumMergePositionError": 0.0012777858186593894,
+  "mergePoseCases": 9,
+  "scope": "Localized source shoulder weighting; visual/deformation acceptance required"
+}

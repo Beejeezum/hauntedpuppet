@@ -1,6 +1,6 @@
 {
   "character": "Wisp",
-  "source": "../../source/wisp-3d/Wisp.blend",
+  "source": "../../source/wisp-3d/shoulder-study/Wisp-shoulder-study.blend",
   "body_vertices": 20953,
   "meshes": 20,
   "bones": [
@@ -53,11 +53,17 @@
     "MenacingPace"
   ],
   "painted_sources": [
-    "../wisp-v2/cute-body-core.png",
+    "../../source/wisp-3d/material-study/ivory-paint-v1.png",
     "../wisp-v2/cute-optics.png"
   ],
   "limits": [
     "First sculpt requires visual review against the painted designs; seamless topology does not by itself guarantee artistic likeness.",
     "Live acoustic mouth movement is an estimate, not phoneme alignment."
+  ],
+  "asset_revision": "painted-islands-anatomical-shoulders-v1",
+  "build_stages": [
+    "source/wisp-3d/build_wisp.py",
+    "source/wisp-3d/material-study/build_study.py",
+    "source/wisp-3d/shoulder-study/build_study.py"
   ]
 }
