@@ -1,0 +1,29 @@
+{
+  "originalSize": [
+    1230,
+    1278
+  ],
+  "candidateSize": [
+    1230,
+    1278
+  ],
+  "candidateAlphaRange": [
+    0,
+    254
+  ],
+  "opaqueCorners": 0,
+  "originalBounds": [
+    210,
+    273,
+    1107,
+    1048
+  ],
+  "candidateBounds": [
+    180,
+    246,
+    1114,
+    1047
+  ],
+  "upperArmMeanPremulError255": 33.969138687848364,
+  "upperArmAlphaIntersectionOverUnion": 0.7552284816247582
+}

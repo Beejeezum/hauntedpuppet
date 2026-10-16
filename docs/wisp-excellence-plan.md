@@ -1,10 +1,27 @@
-# Wisp production quality pass
+# Haunted Puppet attraction excellence
 
 ## Working goal
 
-Build Wisp into a finished contemporary entertainment character for a front-door projection: as appealing and coherent as the approved painted concept art, dimensional through its turns, continuously alive throughout its body, convincingly translucent and wispy, emotionally expressive, and immediate to interact with. Judge success by the visitor's experience and recorded visual results. Functional rigging and passing software tests are necessary foundations, not visual acceptance.
+Build Haunted Puppet into a polished contemporary interactive front-door attraction: a beautiful, fully expressive painted Wisp that feels alive, responds naturally to guests, transforms convincingly between friendly and frightening, and gives an operator effortless control over a reliable projection show.
 
-The earlier 16 October 11:10–14:10 UTC pass was a bounded improvement pass; its heartbeat is disabled and its visual acceptance remains incomplete. This revised brief captures the user's subsequent direction. It does not claim the existing candidate has reached animated-film or premium attraction quality.
+This is the active tracked goal, explicitly authorized by the user after the bounded quality pass. Desktop controller software, animation authoring tools and graphics packages are in scope when they demonstrate a material improvement. The platform is a means to the experience; the current browser renderer is not a fixed requirement. Preserve working features and approved art while replacements are evaluated independently.
+
+Success requires character, acting, voice, interaction, operator experience, presentation and reliability together. Software checks cannot approve visual quality. The existing candidate has not reached the requested quality bar; an incremental deployment does not complete this goal.
+
+## Execution and acceptance across the attraction
+
+| Track | Deliverable | Acceptance evidence | Current gap |
+| --- | --- | --- | --- |
+| Character identity | Approved cute/evil hero designs, silhouette, anatomy and complete turnaround | Reference comparison at front, three-quarter, side and rear | Rear shoulder construction and incomplete opposite-side views |
+| Rig and acting | Articulated hands/arms, independently timed face, continuous full-body life, authored anticipation and follow-through | Full-speed and slow-motion 15-second reel plus interrupted performances | Single hand pose, layered joins, incompatible intermediate morph contours |
+| Material and atmosphere | Painted depth, spatial transparency and spirit-origin effects with coherent attachment | Close-up and guest-distance review against black, turning and bending | Living skin shipped; needs stronger art-integrated all-angle review |
+| Voice and persona | Distinctive expressive friendly/scary voices; concise doorstep-aware dialogue | Genuine conversations covering costumes, groups, silence, interruptions and goodbye | No new genuine-provider acceptance in latest pass; compare voices by listening |
+| Guest interaction | Notice, greet, listen, react, recover and return naturally to living idle | Rehearsed guest scenarios and state-transition regression | Technical paths exist; full visitor rehearsal outstanding |
+| Operator experience | Clear laptop performance controls and silent paired phone, immediate Stop/Blackout | Timed operator rehearsal with recoverable mistakes and no guest-facing UI | Assess current controls against actual show tasks before adding more menus |
+| Projection and sound | Correct placement, mapping, brightness, readable silhouettes, intelligible voices | Actual house/laptop/projector/speaker rehearsal and footage | Physical projection evidence unavailable; browser renders are separate |
+| Reliability | Sustained target cadence, bounded resources, reconnect and failure recovery | Target-hardware measurements, evening-length soak, failure drills | Latest full CI green; older 20-minute soak does not establish evening-long reliability |
+
+Work in reviewable slices. First repair the character construction and morph defects that remain visible in footage. Pilot alternative tooling with the same Wisp artwork and performance before committing to migration. Then integrate the winning character path, refine live interaction/operator workflow and run end-to-end rehearsals. Do not expand the animation menu before the core performance is convincing.
 
 ## Non-negotiable visual acceptance
 
@@ -49,3 +66,12 @@ Keep this a selectable candidate until the visual gates pass. Preserve the previ
 ## Evidence and handoff
 
 Store browser render evidence under outputs/wisp-live-rig-proof. Track implementation, test results, rejected approaches and next actions in work/wisp-excellence-status.md. Physical projection footage is unavailable unless the user supplies it.
+
+## Desktop tooling pilot policy
+
+- Blender is an authoring candidate for complete dimensional construction, intentional topology, corrective shapes and painted materials. Grease Pencil armatures can deform drawn strokes, but they do not automatically rig the existing raster paintings or export a finished interactive character. See the [official armature documentation](https://docs.blender.org/manual/en/5.0/grease_pencil/modifiers/deform/armature.html).
+- Inochi Creator is a candidate for author-controlled texture deformation and face parameters. Validate actual Wisp shoulder/hand bending and parameter integration before choosing it; the current app has no Inochi scene importer. See [official documentation](https://docs.inochi2d.com/en/latest/).
+- TouchDesigner is a candidate for projection composition, reactive effects and external show control. It is not a replacement for character art/rigging. Prototype one output/control bridge before introducing it into the show. Its [license rules](https://derivative.ca/UserGuide/Licensing) distinguish personal/noncommercial use from compensated work. No purchase or migration has been made.
+- Retain the existing browser as the control/voice system during pilots. Define a bounded character-state bridge rather than duplicating credentials, microphone ownership or conversation logic in a graphics tool. External output must preserve Stop/Blackout and remain silent unless deliberately assigned laptop audio ownership.
+
+A pilot passes only if it renders the same approved Wisp with visibly better joints/morph/acting, meets measured target cadence with the operator running, supports required controls and has a documented asset/export/license path. A software feature list or demo of a different character does not pass.
