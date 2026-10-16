@@ -58,6 +58,7 @@ jobs:
         run: HAUNT_BROWSER=webkit node tests/puppeteer_voice.cjs
       - name: Check painted eyes and apparitions in WebKit
         run: |
+          HAUNT_BROWSER=webkit node tests/wisp_performance.cjs
           HAUNT_BROWSER=webkit node tests/wisp_3d_browser.cjs
           HAUNT_BROWSER=webkit node tests/fluid_performance.cjs
           HAUNT_BROWSER=webkit node tests/live_rig.cjs
