@@ -46,7 +46,7 @@ def hand_rest(co):
 for side,sign in [('L',-1),('R',1)]:
  pts=[((sign*.31,0,1.73),.155),((sign*.49,-.015,1.60),.15),((sign*.70,-.02,1.48),.13),((sign*.88,-.045,1.50),.13),((sign*1.04,-.07,1.52),.17)]
  pts=[(hand_rest(co),r)for co,r in pts];parts.append(tube('Arm_'+side,pts));bpy.ops.mesh.primitive_uv_sphere_add(segments=24,ring_count=16,location=hand_rest((sign*1.09,-.07,1.52)));palm=bpy.context.object;palm.scale=(.18,.13,.19);bpy.ops.object.transform_apply(location=True,rotation=False,scale=True);parts.append(palm);bone_specs.extend([('UpperArm_'+side,pts[0][0],pts[2][0],'Torso'),('Forearm_'+side,pts[2][0],pts[3][0],'UpperArm_'+side),('Hand_'+side,pts[3][0],pts[4][0],'Forearm_'+side)])
- for n,points in enumerate([[(1.04,-.07,1.60),(1.13,-.08,1.77),(1.24,-.09,1.83),(1.31,-.09,1.79)],[(1.12,-.07,1.58),(1.29,-.08,1.72),(1.41,-.09,1.75),(1.46,-.09,1.69)],[(1.13,-.07,1.49),(1.32,-.08,1.59),(1.44,-.09,1.60),(1.48,-.09,1.54)],[(1.07,-.07,1.42),(1.13,-.17,1.30),(1.24,-.21,1.32),(1.27,-.21,1.40)]]):
+ for n,points in enumerate([[(1.04,-.07,1.60),(1.13,-.08,1.77),(1.24,-.09,1.83),(1.29,-.09,1.83)],[(1.12,-.07,1.58),(1.29,-.08,1.72),(1.41,-.09,1.75),(1.46,-.09,1.74)],[(1.13,-.07,1.49),(1.32,-.08,1.59),(1.44,-.09,1.60),(1.45,-.09,1.59)],[(1.07,-.07,1.42),(1.13,-.17,1.30),(1.24,-.21,1.32),(1.26,-.23,1.34)]]):
   points=[hand_rest((x*sign,y,z))for x,y,z in points];samples=[]
   for i in range(len(points)-1):
    for step in range(4):
@@ -121,8 +121,9 @@ def evil_skin(p):
  if z<1.2:
   fade=max(0,min(1,(1.2-z)/.2));x+=sin(z*5)*.07*fade;y*=1-.10*fade
  # Recess the live mouth region rather than drawing a floating face card.
- d=(x/.43)**2+((z-1.99)/.24)**2
- if y<-.2 and d<1:y+=(1-d)**2*.30
+ u=x/.425;arc=math.sqrt(max(0,1-u*u));upper=2.025+.050*arc+.11*u*u;lower=2.025-.230*arc+.11*u*u
+ half=max(.001,(upper-lower)/2);d=((z-(upper+lower)/2)/half)**2
+ if y<-.2 and abs(u)<1 and d<1:y+=(1-d)**2*(1-u*u)*.30
  return(x,y,z)
 shape(body,'Evil',evil_skin)
 def jaw_skin(p):
@@ -187,18 +188,18 @@ for side,sign in [('L',-1),('R',1)]:
  def evil_brow(p,sign=sign):
   u=max(0,min(1,(abs(p.x)-.06)/.35));i=min(16,round(u*16));center=Vector(pts[i][0]);delta=p-center
   # Substantial fleshy ivory ridge, tapered at its outer end, rather than a tilted line.
-  return Vector((center.x*1.02,center.y-.055,center.z-.22*(1-u)))+Vector((delta.x*1.7,delta.y*3.0,delta.z*3.8))
+  return Vector((center.x*1.02,center.y-.055-.020*(1-u),center.z-.22*(1-u)-.035*(1-u)))+Vector((delta.x*1.7,delta.y*3.0,delta.z*3.8))
  shape(brow,'Evil',evil_brow)
  shape(brow,'BrowUp_'+side,lambda p:(p.x,p.y-.01,p.z+.10));shape(brow,'BrowDown_'+side,lambda p:(p.x,p.y-.02,p.z-.065))
 # The mouth is a real curved cavity with an ivory rim, shape-keyed visemes and growing fangs.
 def mouth_position(angle,radius,kind='Basis',rim=False):
  w,h=.205,.014;smile=.038
- if kind=='Evil':w,h,smile=.425,.205,.10
+ if kind=='Evil':w,h,smile=.425,.230,.11
  if kind=='JawOpen':h=.17
  if kind=='MouthFunnel':w,h=.115,.12
  if kind=='MouthWide':w,h=.29,.07
  if kind=='MouthSmile':w,h,smile=.24,.016,.085
- x=w*cos(angle)*radius;z=2.025+h*sin(angle)*radius+smile*(cos(angle)*radius)**2;depth={'Evil':-.448,'JawOpen':-.448,'MouthFunnel':-.448,'MouthWide':-.448}.get(kind,-.448);y=depth-.006*(radius**2)
+ x=w*cos(angle)*radius;vertical=.050 if kind=='Evil' and sin(angle)>0 else h;z=2.025+vertical*sin(angle)*radius+smile*(cos(angle)*radius)**2;depth={'Evil':-.448,'JawOpen':-.448,'MouthFunnel':-.448,'MouthWide':-.448}.get(kind,-.448);y=depth-.006*(radius**2)
  if rim:y-=.003
  return Vector((x,y,z))
 vv=[mouth_position(0,0)];ff=[]
@@ -223,8 +224,13 @@ for kind in ['Evil','JawOpen','MouthFunnel','MouthWide','MouthSmile']:
  key=rim.shape_key_add(name=kind)
  for i,v in enumerate(key.data):a=(i//8)*2*pi/64;v.co+=mouth_position(a,1,kind,True)-mouth_position(a,1,'Basis',True)
 for sign in [-1,1]:
- vv=[(sign*.28+.045*cos(i*2*pi/16),-.458+.02*sin(i*2*pi/16),2.075)for i in range(16)]+[(sign*.255,-.475,1.91)];ff=[(i,(i+1)%16,16)for i in range(16)];fang=feature('Fang_'+str(sign),[(x,-.25,2.05)for x,y,z in vv],ff,tooth);fang.shape_key_add(name='Basis');k=fang.shape_key_add(name='Evil')
+ angle=math.acos(sign*.28/.425);gum=mouth_position(angle,1,'Evil').z
+ vv=[(sign*.28+.040*cos(i*2*pi/16),-.458+.02*sin(i*2*pi/16),gum+.016)for i in range(16)]+[(sign*.255,-.475,gum-.17)];ff=[(i,(i+1)%16,16)for i in range(16)];fang=feature('Fang_'+str(sign),[(x,-.25,2.05)for x,y,z in vv],ff,tooth);fang.shape_key_add(name='Basis');k=fang.shape_key_add(name='Evil')
  for i,v in enumerate(k.data):v.co=vv[i]
+ # Fangs remain attached to the shared upper gum as speech opens the grin.
+ for kind in ['JawOpen','MouthFunnel','MouthWide','MouthSmile']:
+  dz=mouth_position(angle,1,kind).z-mouth_position(angle,1).z
+  shape(fang,kind,lambda p,dz=dz:(p.x,p.y,p.z+dz))
 # Oral volume and tongue targets remain inside the head at rest.
 tongue_mat=mat('Soft coral tongue',(.46,.12,.16),.55)
 bpy.ops.mesh.primitive_uv_sphere_add(segments=24,ring_count=12,location=(0,-.29,1.99));tongue=bpy.context.object;tongue.name='Tongue';tongue.scale=(.085,.065,.022);bpy.ops.object.transform_apply(location=True,rotation=False,scale=True);tongue.data.materials.append(tongue_mat);attach(tongue);all_meshes.append(tongue)
