@@ -127,3 +127,7 @@ Next deliverable is a mesh authored for the new arm painting, with explicit join
 
 ### Full-character context checkpoint
 The limited source0..45evil turn now runs with native face/arms/body acting. Numerical triangle corrections do not prove a connected shoulder silhouette: actual45review retains a broken near shoulder and pasted mouth. Prioritize an attachment check against actual torso paint/core and face surface projection before generating further turn views. An optional15degree eye-surface normal improves far-eye readability versus35in controlled full-character renders; it is unapproved and notselectedbytheapp. Rear turn art and turned cute/evil form morph remain explicitly unsupported. Full native/browser evidence remains separate from on-site/operator/genuinevoice acceptance.
+
+
+### Startup and preview regression clarification
+Compositor-ready is not character-ready. The app projection test now waits for artwork readiness and first visible paint before performing cues; an explicit held-projector-PNGfixture proves the earlier ready/blank gap. CIWebKituses this controlled startup case without relaxing pixel-margin or visibility assertions. The voice preview sign-out mock now changes the simulated status server to cloud/unauthenticated as well as sending the status event; a server that kept reporting connected local status was an inconsistent sign-out fixture. Localchecks pass; futureCIandgenuineprovider/physical acceptance remain separate.

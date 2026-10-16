@@ -73,7 +73,7 @@ jobs:
           HAUNT_BROWSER=webkit node tests/apparition_performance.cjs
           HAUNT_BROWSER=webkit node tests/spirit_atmosphere.cjs
           HAUNT_BROWSER=webkit node tests/spirit_frame.cjs
-          HAUNT_BROWSER=webkit node tests/spirit_frame_app.cjs
+          HAUNT_BROWSER=webkit node tests/spirit_frame_app.cjs --slow-projector-art
           HAUNT_BROWSER=webkit node tests/wisp_studio_frame.cjs
       - name: Keep WebKit evidence
         if: always()
