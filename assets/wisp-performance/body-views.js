@@ -12,6 +12,9 @@ function silhouette(image){
  for(let y=0;y<c.height;y++){let l=c.width,r=-1,cl=c.width,cr=-1;for(let xx=0;xx<c.width;xx++){const i=(y*c.width+xx)*4;if(p[i+3]>12){l=Math.min(l,xx);r=xx;}if(p[i+3]>140&&p[i]>145&&p[i+1]>155&&p[i+2]>155){cl=Math.min(cl,xx);cr=xx;}}if(r>=l){top=Math.min(top,y);bottom=y;}if(cr-cl>headWidth&&y<c.height*.56){headWidth=cr-cl;headY=y;}rows.push(r>=l?[l,cl<=cr?cl:l,cl<=cr?cr:r,r]:null);}
  if(bottom<=top||headWidth<30)throw Error('Body view has no usable painted silhouette');
  let last=[image.width/2-1,image.width/2-1,image.width/2+1,image.width/2+1];for(let y=top;y<=bottom;y++){if(rows[y])last=rows[y];else rows[y]=last.slice();}for(let y=0;y<top;y++)rows[y]=rows[top].slice();for(let y=bottom+1;y<c.height;y++)rows[y]=rows[bottom].slice();
+ // A one-pixel core detection can have cl===cr in faint terminal mist.
+ // Keep a positive span so the shared interior columns cannot collapse on turns.
+ for(const row of rows)if(row[2]-row[1]<1){const center=(row[1]+row[2])/2;row[1]=center-.5;row[2]=center+.5;}
  const smooth=rows.map((r,y)=>r.map((_,i)=>{let sum=0;for(let d=-3;d<=3;d++)sum+=rows[clamp(y+d,0,c.height-1)][i];return sum/7;}));
  return{rows:smooth,top,bottom,headY,width:image.width,height:image.height};
 }

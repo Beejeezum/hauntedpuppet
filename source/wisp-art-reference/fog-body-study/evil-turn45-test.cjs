@@ -1,8 +1,8 @@
 // Isolated BODY-ONLY art review. No production routes, provider or device access.
-const {chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
+const {chromium,webkit}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const dense=process.argv.includes('--dense'),quantile=process.argv.includes('--quantile'),inbetween=process.argv.includes('--inbetween');
-(async()=>{const out=path.resolve(__dirname,'../../../../wisp-live-rig-proof/fog-evil-turn45-study'+(dense?'-dense':'')+(quantile?'-quantile':'')+(inbetween?'-inbetween':''));fs.mkdirSync(out,{recursive:true});const browser=await chromium.launch(),page=await browser.newPage({viewport:{width:1280,height:720}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
+(async()=>{const out=path.resolve(__dirname,'../../../../wisp-live-rig-proof/fog-evil-turn45-study'+(dense?'-dense':'')+(quantile?'-quantile':'')+(inbetween?'-inbetween':'')+(process.env.HAUNT_BROWSER==='webkit'?'-webkit':''));fs.mkdirSync(out,{recursive:true});const browser=await(process.env.HAUNT_BROWSER==='webkit'?webkit:chromium).launch(),page=await browser.newPage({viewport:{width:1280,height:720}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
 try{
  if(dense||quantile)await page.route('**/wisp-performance/body-views.js',route=>{const source=fs.readFileSync(path.resolve(__dirname,'../../../assets/wisp-performance/body-views.js'),'utf8');let code=source;if(dense){assert(code.includes('rows=72'));code=code.replace('rows=72','rows=216');}if(quantile){const needle='if(r>=l){top=Math.min(top,y);bottom=y;}';assert(code.includes(needle));code=code.replace(needle,`if(r>=l){let total=0;for(let xx=l;xx<=r;xx++){const a=p[(y*c.width+xx)*4+3]/255;total+=a*a;}let sum=0;cl=l;cr=r;let found=false;for(let xx=l;xx<=r;xx++){const a=p[(y*c.width+xx)*4+3]/255;sum+=a*a;if(!found&&sum>=total*.10){cl=xx;found=true;}if(sum>=total*.90){cr=xx;break;}}} `+needle);}return route.fulfill({body:code,contentType:'text/javascript'});});
  // PaintedBodyViews eagerly loads five images. Unused rear slots are placeholders,
