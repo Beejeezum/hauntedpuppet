@@ -2,6 +2,8 @@
 // No production files, provider calls, camera or microphone are changed.
 const fs=require('node:fs'),path=require('node:path');
 const {chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
+const withAreaCorrective=process.argv.includes('--area-corrective');
+const withJointZones=process.argv.includes('--joint-zones');
 const withSmoothBinding=process.argv.includes('--smooth-binding');
 const withMeshAudit=process.argv.includes('--mesh-audit');
 const withVolume=process.argv.includes('--volume');
@@ -19,7 +21,7 @@ const withArm=process.argv.includes('--arm')||withVolume||withJoints;
 const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.json'),'utf8'));
 (async()=>{
  const browser=await chromium.launch();
- const out=path.resolve(__dirname,'../../../../wisp-live-rig-proof/'+(withSmoothBinding?'fog-smooth-binding-study':withMeshAudit?(withPolar?'fog-polar-mesh-audit-study':'fog-mesh-audit-study'):withShoulderWeld?'fog-shoulder-weld-study':withShoulderBlend?'fog-shoulder-blend-study':withFaceDepth?'fog-face-depth-study':withFullTurn?'fog-full-turn-study':withTurn45?'fog-turn45-study':withBilateral?(smallerHands?'fog-bilateral-proportion-study':'fog-bilateral-study'):withCorrective?'fog-arm-corrective-study':withPolar?'fog-arm-polar-study':withJoints?'fog-arm-joint-study':withVolume?'fog-arm-volume-study':withArm?'fog-arm-study':'fog-body-study'));
+ const out=path.resolve(__dirname,'../../../../wisp-live-rig-proof/'+(withAreaCorrective?'fog-area-corrective-study':withJointZones?'fog-joint-zone-study':withSmoothBinding?'fog-smooth-binding-study':withMeshAudit?(withPolar?'fog-polar-mesh-audit-study':'fog-mesh-audit-study'):withShoulderWeld?'fog-shoulder-weld-study':withShoulderBlend?'fog-shoulder-blend-study':withFaceDepth?'fog-face-depth-study':withFullTurn?'fog-full-turn-study':withTurn45?'fog-turn45-study':withBilateral?(smallerHands?'fog-bilateral-proportion-study':'fog-bilateral-study'):withCorrective?'fog-arm-corrective-study':withPolar?'fog-arm-polar-study':withJoints?'fog-arm-joint-study':withVolume?'fog-arm-volume-study':withArm?'fog-arm-study':'fog-body-study'));
  fs.mkdirSync(out,{recursive:true});const results=[];
  try{
   for(const candidate of withMeshAudit?[true]:[false,true]){
@@ -80,6 +82,20 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
      if((candidate||withTurn45)&&smallerHands){
       if(!code.includes('handScale=(1.2+evil*.35)'))throw Error('Hand scale hook changed');
       code=code.replace('handScale=(1.2+evil*.35)','handScale=(.95+evil*.35)');
+     }
+     if(candidate&&withAreaCorrective){
+      code="import {paintedAreaConstraints,correctAreas} from '/source/wisp-art-reference/fog-body-study/area-corrective.mjs';\n"+code;
+      const init='const cute=P.Texture.from(image)',store='uvs:g.uvs,sourceSize:',update='arm.front.vertices.set(vertices);';
+      if(!code.includes(init)||!code.includes(store)||!code.includes(update))throw Error('Area corrective hook changed');
+      code=code.replace(init,'const areaConstraints=paintedAreaConstraints(g,image);const cute=P.Texture.from(image)');
+      code=code.replace(store,'areaConstraints,uvs:g.uvs,sourceSize:');
+      code=code.replace(update,'correctAreas(vertices,arm.areaConstraints);arm.front.vertices.set(vertices);');
+     }
+     if(candidate&&withJointZones){
+      const old=',bindArmPoint,skinArmPoint}';
+      if(!code.includes(old))throw Error('Joint-zone import hook changed');
+      code=code.replace(old,',bindArmPoint as priorBindArmPoint,skinArmPoint as priorSkinArmPoint}');
+      code="import {bindArmJointZones as bindArmPoint,skinArmPointLinear as skinArmPoint} from '/source/wisp-art-reference/fog-body-study/joint-zone-binding.mjs';\n"+code;
      }
      if(candidate&&withSmoothBinding){
       const old=',bindArmPoint,skinArmPoint}';
@@ -151,10 +167,11 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
     await page.click('#reel');await page.waitForTimeout(withFullTurn?11200:8000);
     await page.click('#stop');
    }
+   if(withAreaCorrective)results.push({candidate,correctiveTiming:await page.evaluate(async()=>{const {correctiveTimings}=await import('/source/wisp-art-reference/fog-body-study/area-corrective.mjs');const values=[...correctiveTimings].sort((a,b)=>a-b);return{calls:values.length,mean:values.reduce((a,b)=>a+b,0)/values.length,p95:values[Math.floor(values.length*.95)],max:values.at(-1),scope:'per-arm CPU corrective only; not end-to-end frame cadence'};})});
    results.push({candidate,errors});const video=page.video();await context.close();
    if(video)await video.saveAs(path.join(out,'candidate-motion.webm'));
   }
  }finally{await browser.close();}
- fs.writeFileSync(path.join(out,'review.json'),JSON.stringify({scope:'Local art/rig study only. Old face and evil artwork remain; no production or physical-projection acceptance.',withSmoothBinding,withMeshAudit,withShoulderWeld,withShoulderBlend,withFaceDepth,withFullTurn,withTurn45,withBilateral,smallerHands,withCorrective,withJoints,withPolar,withVolume,results},null,2));
+ fs.writeFileSync(path.join(out,'review.json'),JSON.stringify({scope:'Local art/rig study only. Old face and evil artwork remain; no production or physical-projection acceptance.',withAreaCorrective,withJointZones,withSmoothBinding,withMeshAudit,withShoulderWeld,withShoulderBlend,withFaceDepth,withFullTurn,withTurn45,withBilateral,smallerHands,withCorrective,withJoints,withPolar,withVolume,results},null,2));
  console.log(`Saved ${results.filter(r=>r.state).length} isolated comparison frames. Inspect joins, face placement and fog material.`);
 })().catch(e=>{console.error(e);process.exitCode=1});
