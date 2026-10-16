@@ -6,7 +6,7 @@ const assert=require('node:assert/strict');
  try{
   const page=await browser.newPage(),errors=[];
   page.on('pageerror',e=>errors.push(e.message));
-  await page.goto((process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8800')+'/assets/wisp-3d-studio.html');
+  await page.goto((process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770')+'/assets/wisp-3d-studio.html');
   await page.waitForFunction(()=>window.Wisp3DStudio?.inspect().frames>2);
   const result=await page.evaluate(async()=>{
    const {Wisp3DRuntime}=await import('/assets/wisp-3d-runtime.js');
