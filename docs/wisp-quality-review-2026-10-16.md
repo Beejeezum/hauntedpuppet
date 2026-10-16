@@ -36,7 +36,7 @@ Production code: `172b9b7db679da8ecd1c9de3fb9731232bd76b5e`; character checkpoin
 | Operator/projector | Hosted controls, Stop, native floating eyes, silent projector, friendly reset and all-black Blackout passed |
 | Short paired soak | 84.334 seconds on this machine: about 66.87 render frames/s on each surface; 95th-percentile frame intervals 17.9/17.7 ms; five native surfaces and Blackout preserved |
 | Longer studio soak | 180.16 seconds, stable body/texture/root references; 22 root children including retained fallback meshes |
-| Full regression suite | Character checkpoint `6f9afe7` passed both jobs. Projector-feedback checkpoint `172b9b7` also passed both jobs; subsequent joint correction: **pending** |
+| Full regression suite | Character checkpoint `6f9afe7` passed both jobs. Projector-feedback checkpoint `172b9b7` also passed both jobs; subsequent joint correction: WebKit passed, full regression failed on the existing morph-sprite live-transition timeout; failed job rerun requested, **pending** |
 | Twenty-minute paired retention soak | Previous character checkpoint: 1,200.049 seconds; no retained listener/node growth, net heap changes −45,512/+61,184 bytes, 18 live textures and 28 buffers per surface; silence and Blackout pass. Overlapping tests affected cadence: about 51.5 fps per surface, p95 33.4 ms. This is not the dense-mesh checkpoint. |
 
 The face upload was reduced from 1,572,864 to 680,000 pixels. The shipped body retains 657 vertices and view UV buffers change only when the active pair changes. Original PNG resolution is preserved.
@@ -47,9 +47,12 @@ Static endpoint pixel comparisons had been insufficient evidence for moving-curv
 
 These are isolated browser render tests. Physical projection footage and a new genuine-provider conversation were not available for this pass. Voice regressions use simulated providers or included audio; acoustic mouth shapes remain estimates. Browser render cadence is not a guarantee for another laptop or projector.
 
-Recorded opaque canvas footage was decoded and inspected at greeting, speech, turn, intermediate morph and scary hold. Its encoder produced about 28.5 frames/s despite a 60 frames/s request. It is visual review evidence, not the source of the live-render performance numbers. The earlier transparent capture had encoding fringe and was rejected.
+Recorded opaque canvas footage was decoded and inspected at greeting, speech, turn, intermediate morph and scary hold. The earlier capture encoded about 28.5 frames/s; the current joint-correction capture decoded to 476 frames over approximately 15.24 seconds (~31.2 frames/s), despite a 60 frames/s request. It is visual review evidence, not the source of the live-render performance numbers. The earlier transparent capture had encoding fringe and was rejected.
 
 ## Remaining production art
+
+**The seamless visual-morph acceptance gate is still unmet.** Direct midpoint renders and the latest decoded hosted footage show overlapping eyelid/socket outlines and partially doubled claw silhouettes. The brow-centroid fix improved registration, but does not make different painted contours a true shape morph. These are recorded defects, not approved intermediate designs. The next pass needs matched contour/feature deformation or authored intermediate art; do not hide the issue with faster transitions or added glow.
+
 
 The earlier 3D asset is also a prototype: smooth shading is already enabled, but it uses a voxel-remeshed, decimated sculpt and projected painting. A production rebuild needs artist-directed proportions, deformation topology, volume-preserving correctives and a complete texture unwrap. Adding polygons alone cannot supply those.
 
@@ -70,3 +73,7 @@ The earlier short isolated paired test met the cadence target; the long concurre
 The current source handoff is `assets/wisp-performance/`: `front-rig.js` and `limb-solver.js` own articulation; `body-views.js` owns view correspondence; `front-acting.js` owns authored joint tracks; `morph-face.js` and `brow-morph.js` own feature registration. Source PNGs, component bounds and generation prompts are in `front-kit/`; `asset-manifest.json` records inputs and limits. The runtime reuses pinned Pixi 8.22.0.
 
 Continue from the existing native voice/webcam inputs and operator commands. Keep the laptop as the only audio/microphone owner, and preserve Stop, friendly reset, silent phone/projector and the loading fallback. Credentials and key-owning servers were untouched.
+
+The next production handoff is [wisp-character-art-handoff.md](wisp-character-art-handoff.md). It specifies likeness approval, minimum hand/breakdown art, full-turn views, morph intermediates and the separate 3D reconstruction requirements.
+
+Final regression caveat: run 38911616984 stopped at tests/morph_sprites.cjs waiting for a transient 0.15–0.9 live blend range. The unchanged focused test passed locally. A proposed observer-based test repair did not pass and was discarded; no assertion was weakened or unverified repair shipped. The failed job is being rerun on the same release commit. Treat the full suite as unconfirmed until that run finishes. The goal is not marked complete.
