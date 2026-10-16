@@ -47,5 +47,6 @@ export class PaintedMorphFace{
   paint.globalCompositeOperation='source-over';const top=655-Math.min(18,cuteHeight/2),centerY=top+h/2;
   ctx.drawImage(this.canvas,centerX-200,centerY-120);if(this.parts?.ready&&evil>.001&&h>18&&p.mouth!=='roar'){const fangHeight=Math.min(56,h*.48),fangWidth=fangHeight*.50*perspective;for(const side of [-1,1]){ctx.save();ctx.globalAlpha*=evil;ctx.translate(centerX+side*mouthWidth*.34,top+h*.08);ctx.scale(side===1?-1:1,1);this.parts.part(ctx,'fang',0,fangHeight/2,fangWidth,fangHeight);ctx.restore();}}this.current={sharedEyes:true,paintedDemonParts:!!this.parts?.ready,registeredMouth:true,mouth:p.mouth,mouthWeights:Object.fromEntries(this.mouthWeights),browMorph:this.brows.inspect(),blend:evil,inkBox:{x:centerX-mouthWidth/2,y:top,width:mouthWidth,height:h}};
  }
+ destroy(){this.brows?.destroy();this.canvas.width=this.canvas.height=0;for(const pair of this.mouths.values())for(const source of Object.values(pair))source.canvas.width=source.canvas.height=0;this.mouths.clear();}
  inspect(){return this.current||{sharedEyes:true,registeredMouth:true};}
 }
