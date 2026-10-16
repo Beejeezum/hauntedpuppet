@@ -72,6 +72,7 @@ jobs:
           HAUNT_BROWSER=webkit node tests/spirit_atmosphere.cjs
           HAUNT_BROWSER=webkit node tests/spirit_frame.cjs
           HAUNT_BROWSER=webkit node tests/spirit_frame_app.cjs
+          HAUNT_BROWSER=webkit node tests/wisp_studio_frame.cjs
       - name: Keep WebKit evidence
         if: always()
         uses: actions/upload-artifact@v4

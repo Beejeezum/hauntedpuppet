@@ -1,6 +1,6 @@
 const {chromium,webkit}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
-(async()=>{const browser=await(process.env.HAUNT_BROWSER==='webkit'?webkit:chromium).launch({args:['--mute-audio']});try{
+(async()=>{const browser=await(process.env.HAUNT_BROWSER==='webkit'?webkit:chromium).launch({args:process.env.HAUNT_BROWSER==='webkit'?[]:['--mute-audio']});try{
  const page=await browser.newPage();await page.route('**/frame-pilot',r=>r.fulfill({contentType:'text/html',body:'<body style="background:black">'}));await page.goto((process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8812')+'/frame-pilot');
  const result=await page.evaluate(async()=>{
   const {SpiritAtmosphere}=await import('/assets/spirit-atmosphere.js'),{effectFrame}=await import('/source/wisp-performance-reference/effect-frame.js');
