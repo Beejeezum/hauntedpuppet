@@ -29,7 +29,7 @@ def tube(name,points,material=skin,rings=14):
  faces+=[tuple(reversed(range(rings))),tuple((len(points)-1)*rings+j for j in range(rings))]
  return mesh(name,verts,faces,material)
 def cat(a,b,c,d,t):return .5*((2*b)+(-a+c)*t+(2*a-5*b+4*c-d)*t*t+(-a+3*b-3*c+d)*t*t*t)
-keys=[(.08,.24,.025,.025),(.20,.32,.07,.06),(.38,.13,.16,.11),(.62,-.08,.25,.17),(.92,-.02,.32,.23),(1.22,.05,.33,.27),(1.55,0,.36,.31),(1.82,0,.44,.36),(2.05,0,.60,.42),(2.30,0,.65,.44),(2.55,0,.58,.40),(2.79,0,.46,.32),(3.02,.04,.34,.24),(3.23,.17,.23,.16),(3.43,.21,.14,.10),(3.57,.13,.08,.055),(3.64,.015,.025,.02)]
+keys=[(.08,.24,.025,.025),(.20,.32,.07,.06),(.38,.13,.16,.11),(.62,-.08,.25,.17),(.92,-.02,.32,.23),(1.22,.05,.37,.28),(1.55,0,.43,.33),(1.82,0,.49,.38),(2.05,0,.60,.42),(2.30,0,.68,.44),(2.55,0,.58,.40),(2.79,0,.46,.32),(3.02,.04,.34,.24),(3.23,.17,.23,.16),(3.43,.21,.14,.10),(3.57,.13,.08,.055),(3.64,.015,.025,.02)]
 verts=[];faces=[];segments=64
 for i in range(len(keys)-1):
  for step in range(5):
@@ -68,7 +68,7 @@ for name,a,b,parent in bone_specs:
  bone=armdata.edit_bones.new(name);bone.head=a;bone.tail=b
  if parent:bone.parent=armdata.edit_bones[parent]
 for side,sign in [('L',-1),('R',1)]:
- bone=armdata.edit_bones.new('Eye_'+side);bone.head=(sign*.28,-.35,2.44);bone.tail=(sign*.28,-.55,2.44);bone.parent=armdata.edit_bones['Head']
+ bone=armdata.edit_bones.new('Eye_'+side);bone.head=(sign*.28,-.325,2.44);bone.tail=(sign*.28,-.55,2.44);bone.parent=armdata.edit_bones['Head']
 bpy.ops.object.mode_set(mode='OBJECT');arm.show_in_front=True
 
 def attach(o,bone='Head'):
@@ -125,7 +125,7 @@ def feature(name,verts,faces,material,bone='Head'):
  o=mesh(name,verts,faces,material);attach(o,bone);all_meshes.append(o);return o
 # Eye volumes, original painted iris textures, separate pupil and independent upper-lid surfaces.
 for side,sign in [('L',-1),('R',1)]:
- center=Vector((sign*.28,-.35,2.44));bone='Eye_'+side
+ center=Vector((sign*.28,-.325,2.44));bone='Eye_'+side
  bpy.ops.mesh.primitive_uv_sphere_add(segments=40,ring_count=24,location=center);eye=bpy.context.object;eye.name='Sclera_'+side;eye.scale=(.235,.125,.265);bpy.ops.object.transform_apply(location=False,rotation=False,scale=True);bpy.ops.object.transform_apply(location=True,rotation=False,scale=False);eye.data.materials.append(white)
  for f in eye.data.polygons:f.use_smooth=True
  attach(eye,bone);all_meshes.append(eye)
@@ -168,7 +168,11 @@ for side,sign in [('L',-1),('R',1)]:
  pts=[]
  for i in range(17):u=i/16;x=sign*(.06+.35*u);z=2.77+.08*sin(pi*u)-.04*u;depth=.31*math.sqrt(max(.06,1-(x/.48)**2));pts.append(((x,-depth-.018,z),.020*sin(pi*(.08+.84*u))))
  brow=tube('Brow_'+side,pts,browmat,10);attach(brow);all_meshes.append(brow)
- shape(brow,'Evil',lambda p,sign=sign:(p.x*1.02,p.y-.045, p.z-.21*(1-min(1,max(0,(abs(p.x)-.06)/.35)))))
+ def evil_brow(p,sign=sign):
+  u=max(0,min(1,(abs(p.x)-.06)/.35));i=min(16,round(u*16));center=Vector(pts[i][0]);delta=p-center
+  # Substantial fleshy ivory ridge, tapered at its outer end, rather than a tilted line.
+  return Vector((center.x*1.02,center.y-.055,center.z-.22*(1-u)))+Vector((delta.x*1.7,delta.y*3.0,delta.z*3.8))
+ shape(brow,'Evil',evil_brow)
  shape(brow,'BrowUp_'+side,lambda p:(p.x,p.y-.01,p.z+.10));shape(brow,'BrowDown_'+side,lambda p:(p.x,p.y-.02,p.z-.065))
 # The mouth is a real curved cavity with an ivory rim, shape-keyed visemes and growing fangs.
 def mouth_position(angle,radius,kind='Basis',rim=False):
@@ -178,8 +182,8 @@ def mouth_position(angle,radius,kind='Basis',rim=False):
  if kind=='MouthFunnel':w,h=.115,.12
  if kind=='MouthWide':w,h=.29,.07
  if kind=='MouthSmile':w,h,smile=.24,.016,.085
- x=w*cos(angle)*radius;z=2.025+h*sin(angle)*radius+smile*(cos(angle)*radius)**2;depth={'Evil':-.25,'JawOpen':-.28,'MouthFunnel':-.32,'MouthWide':-.32}.get(kind,-.433);y=depth+(-.447-depth)*(radius**2)
- if rim:y-=.012
+ x=w*cos(angle)*radius;z=2.025+h*sin(angle)*radius+smile*(cos(angle)*radius)**2;depth={'Evil':-.448,'JawOpen':-.448,'MouthFunnel':-.448,'MouthWide':-.448}.get(kind,-.448);y=depth-.006*(radius**2)
+ if rim:y-=.003
  return Vector((x,y,z))
 vv=[mouth_position(0,0)];ff=[]
 for r in range(1,9):
@@ -195,7 +199,7 @@ for kind in ['Evil','JawOpen','MouthFunnel','MouthWide','MouthSmile']:
 vv=[];ff=[]
 for j in range(64):
  a=j*2*pi/64;center=mouth_position(a,1,rim=True)
- for k in range(8):b=k*2*pi/8;vv.append(center+Vector((cos(a)*.010*cos(b),.010*sin(b),sin(a)*.010*cos(b))))
+ for k in range(8):b=k*2*pi/8;vv.append(center+Vector((cos(a)*.004*cos(b),.004*sin(b),sin(a)*.004*cos(b))))
 for j in range(64):
  for k in range(8):a=j*8+k;b=j*8+(k+1)%8;c=((j+1)%64)*8;ff.append((a,b,c+(k+1)%8,c+k))
 rim=feature('MouthRim',vv,ff,lip);rim.shape_key_add(name='Basis')
