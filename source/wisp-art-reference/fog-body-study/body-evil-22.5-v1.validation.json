@@ -1,0 +1,18 @@
+{
+  "source": "/Users/beeje/.codex/generated_images/01a13c94-06f1-7553-b857-c39374b179b9/exec-8ecd5f72-8053-4cfe-873a-c4071bf0630b.png",
+  "sha256": "00a2558fb749357f3531997ae5599c772ff3968cea302f2f153dbcf5109a9aa0",
+  "mode": "RGBA",
+  "size": [
+    1024,
+    1536
+  ],
+  "alpha8Bounds": [
+    325,
+    267,
+    739,
+    1321
+  ],
+  "edgePixelsAbove8": 0,
+  "source15PercentMargin": false,
+  "status": "Unapproved: halfway painting tested;14/181turn samples report4collapsed final-row triangles, measured alpha4..37; quarter-step fog banding persists. Source bottom reserve14.0%fails15%minimum."
+}
