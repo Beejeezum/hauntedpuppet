@@ -21,20 +21,45 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci --ignore-scripts
-      - run: npx playwright install --with-deps chromium webkit
+      - run: npx playwright install --with-deps chromium
       - name: Start local rehearsal server
         run: |
           python3 server.py > /tmp/wisp-server.log 2>&1 &
           python3 scripts/wait-for-server.py
       - run: npm test
-      - name: Check phone controls in WebKit
-        run: PHONE_BROWSER=webkit node tests/phone_browser.cjs
-      - name: Check direct voice effects in WebKit
-        run: HAUNT_BROWSER=webkit node tests/puppeteer_voice.cjs
       - name: Keep test evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: regression-evidence
+          path: test-results/
+          if-no-files-found: ignore
+  webkit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps webkit
+      - name: Start local rehearsal server
+        run: |
+          python3 server.py > /tmp/wisp-server.log 2>&1 &
+          python3 scripts/wait-for-server.py
+      - name: Check phone controls in WebKit
+        run: PHONE_BROWSER=webkit node tests/phone_browser.cjs
+      - name: Check direct voice effects in WebKit
+        run: HAUNT_BROWSER=webkit node tests/puppeteer_voice.cjs
+      - name: Keep WebKit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: webkit-evidence
           path: test-results/
           if-no-files-found: ignore
