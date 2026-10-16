@@ -1,0 +1,17 @@
+{
+  "source": "exec-ae003fd9-4145-4147-a9df-c8a645b12217.png",
+  "sha256": "9f176903d8c96d5ce2b79f19a5572784ece9652f13d9d74359af5a56926a4066",
+  "size": [
+    1024,
+    1536
+  ],
+  "mode": "RGBA",
+  "alpha8Bounds": [
+    245,
+    32,
+    798,
+    1504
+  ],
+  "edgePixelsAbove8": 0,
+  "status": "Unapproved evil front body layer; imagegen output copied unchanged; not yet rigged or morph-tested; side/rear evil views absent."
+}
