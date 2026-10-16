@@ -1,3 +1,4 @@
+import {PaintedBrowMorph} from './brow-morph.js';
 import {PaintedEvilFaceParts} from './evil-face-parts.js';
 const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
 const mix=(a,b,t)=>a+(b-a)*t;
@@ -25,9 +26,9 @@ export class PaintedMorphFace{
    this.mouths.set(frame.name,{cute,evil});
   }
  }
- async load(){this.parts=await new PaintedEvilFaceParts().load();return this;}
+ async load(){this.parts=await new PaintedEvilFaceParts().load();this.brows=new PaintedBrowMorph(this.eyes,this.parts);return this;}
  draw(ctx,p,evil){
-  this.eyes.draw(ctx,{...p,formBlend:evil,evilParts:this.parts,skipMouth:true,skipBody:true});if(p.eyesOnly)return;
+  this.eyes.draw(ctx,{...p,formBlend:evil,evilParts:this.parts,browMorph:this.brows,skipMouth:true,skipBody:true});if(p.eyesOnly)return;
   const selected=this.mouths.has(p.mouth)?p.mouth:'rest',clock=p.clock||0;
   if(!this.mouthWeights||p.freeze||clock<this.lastMouthClock)this.mouthWeights=new Map([[selected,1]]);
   else{const rate=1-Math.exp(-clamp(p.dt??1/60,.001,.05)*60);if(!this.mouthWeights.has(selected))this.mouthWeights.set(selected,0);for(const[name,weight]of this.mouthWeights){const value=weight+((name===selected?1:0)-weight)*rate;if(value<.00001)this.mouthWeights.delete(name);else this.mouthWeights.set(name,value);}const total=[...this.mouthWeights.values()].reduce((a,b)=>a+b,0);for(const[name,weight]of this.mouthWeights)this.mouthWeights.set(name,weight/total);}
@@ -44,7 +45,7 @@ export class PaintedMorphFace{
    gradient.addColorStop(0,'transparent');gradient.addColorStop(14/span,'white');gradient.addColorStop(1-14/span,'white');gradient.addColorStop(1,'transparent');paint.fillStyle=gradient;paint.fillRect(0,0,400,240);
   }
   paint.globalCompositeOperation='source-over';const top=655-Math.min(18,cuteHeight/2),centerY=top+h/2;
-  ctx.drawImage(this.canvas,centerX-200,centerY-120);if(this.parts?.ready&&evil>.001&&h>18&&p.mouth!=='roar'){const fangHeight=Math.min(56,h*.48),fangWidth=fangHeight*.50*perspective;for(const side of [-1,1]){ctx.save();ctx.globalAlpha*=evil;ctx.translate(centerX+side*mouthWidth*.34,top+h*.08);ctx.scale(side===1?-1:1,1);this.parts.part(ctx,'fang',0,fangHeight/2,fangWidth,fangHeight);ctx.restore();}}this.current={sharedEyes:true,paintedDemonParts:!!this.parts?.ready,registeredMouth:true,mouth:p.mouth,mouthWeights:Object.fromEntries(this.mouthWeights),blend:evil,inkBox:{x:centerX-mouthWidth/2,y:top,width:mouthWidth,height:h}};
+  ctx.drawImage(this.canvas,centerX-200,centerY-120);if(this.parts?.ready&&evil>.001&&h>18&&p.mouth!=='roar'){const fangHeight=Math.min(56,h*.48),fangWidth=fangHeight*.50*perspective;for(const side of [-1,1]){ctx.save();ctx.globalAlpha*=evil;ctx.translate(centerX+side*mouthWidth*.34,top+h*.08);ctx.scale(side===1?-1:1,1);this.parts.part(ctx,'fang',0,fangHeight/2,fangWidth,fangHeight);ctx.restore();}}this.current={sharedEyes:true,paintedDemonParts:!!this.parts?.ready,registeredMouth:true,mouth:p.mouth,mouthWeights:Object.fromEntries(this.mouthWeights),browMorph:this.brows.inspect(),blend:evil,inkBox:{x:centerX-mouthWidth/2,y:top,width:mouthWidth,height:h}};
  }
  inspect(){return this.current||{sharedEyes:true,registeredMouth:true};}
 }

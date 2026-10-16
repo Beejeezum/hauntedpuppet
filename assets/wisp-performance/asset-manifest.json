@@ -95,7 +95,8 @@
     "independent": true,
     "cute": "../wisp-v2/eye-rig.json",
     "evil": "../wisp-scary/asset-manifest.json",
-    "hideOnBack": true
+    "hideOnBack": true,
+    "browMorph": "brow-morph.js"
   },
   "inputs": [
     "action.kind",
@@ -130,7 +131,8 @@
     "Hands remain camera-facing through turns; fingers are painted rather than individually rigged",
     "Extreme folded-hand overlap and rear shoulder seams still need art direction",
     "Not yet approved as the default character for all visitors",
-    "Physical projection still needs on-site review"
+    "Physical projection still needs on-site review",
+    "Current turnaround reaches the back and reverses; a full 360 turn needs opposite-side art"
   ],
   "motionDefinition": "motion.js",
   "reviewSequence": "reel.js",
