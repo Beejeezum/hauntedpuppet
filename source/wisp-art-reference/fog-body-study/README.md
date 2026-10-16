@@ -45,3 +45,17 @@ Actual pose captures0/2/5seconds and a short running silent rehearsal render wit
 body-45.png is an unchanged1024×1536RGBAgenerated three-quarter layer using the new fog front body's material and old45degree layer solely as a volume guide. Alpha8bounds[239,39,831,1513], zero edge pixels above8; source hash/provenance in body-45.validation.json. Source padding is not15%all edges; final full-effect framing is separate. No eyes, mouth or arms are painted into this layer.
 
 review.cjs --turn45 uses matching bilateral fog arms and smaller hands for BOTH baseline/candidate, then substitutes only the candidate45degree body layer. A local pose-weight review override requests0/11.25/22.5/33.75/45degree yaw and waits until actual viewAngle is within0.05degrees before capture. Ten actual comparison frames have zero page errors. All FIVEcandidate raw-canvas samples pass15%visible-fog clearance. Reviewed45degree candidate removes the baseline's solid cyan curls; shoulder overlaps remain visibly unfinished. These settled samples do not establish full-speed continuity or completed turn acceptance.90/135/back layers still use old art and must be replaced before adopting the whole turn path. No runtime or public build files changed.
+
+
+## Full fog turnaround study — not shipped
+Added unchanged generated90/135/180degree RGBA candidates with provenance/hash/alpha validation. No edge pixels exceed alpha8, but source reserve does not meet15%all edges. The135degree source approaches the top within7pixels.
+
+review.cjs --full-turn --video completed18settled comparison frames and an11.2second native rehearsal before the evil section. All nine candidate raw-canvas angle samples pass15%clearance. Reviewed67.5and180degree frames retain the soft fog palette, but flattened side facial depth, shoulder seams and patchy joins remain. The135degree drawing needs stronger rear orientation. The25.6second recording includes setup, settled turn captures and11.2seconds of native performance. A timestamp contact review confirms the turn reaches a rear view and returns, with a persistent lower body in sampled frames; continuous full-speed acceptance remains pending. Sampled framing does not establish every-frame safety. No production or hosted change.
+
+
+## Eye surface occlusion experiment
+`eye-turn-surface.mjs` models two painted eye patches on a rounded face with outward normals offset35degrees. The far eye foreshortens and becomes hidden before profile rather than lingering as a second frontal eye. The near eye remains visible in profile. This is an art-directed projection approximation, not reconstructed3Dgeometry.
+
+`review.cjs --full-turn --face-depth` holds the new fog turnaround and bilateral rig identical on both sides of the comparison, changing only eye projection/occlusion. A guarded source substitution keeps production files unchanged. The numerical test covers continuous0..180degree samples and front/profile/rear visibility. Initial67.5degree visual review removes the overlapping far eye; shoulder and arm defects remain and source-art facial integration still needs refinement. Not shipped.
+
+Controlled eye comparison completed18actual renders with zero page errors; all nine candidate raw-canvas samples pass15%clearance. No voice, webcam, physical projection or production acceptance is implied.

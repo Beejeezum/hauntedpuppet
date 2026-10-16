@@ -1,0 +1,19 @@
+{
+  "file": "body-180.png",
+  "source": "exec-1dfb37d5-a14b-4bfe-ae00-05b694168f85.png",
+  "generation": "built-in imagegen; copied unchanged",
+  "sha256": "b5c36d53358b5db7e62dc3f9822e48b42634053aa440692c110196dccb5f2f45",
+  "size": [
+    1024,
+    1536
+  ],
+  "mode": "RGBA",
+  "alpha8Bounds": [
+    221,
+    50,
+    807,
+    1488
+  ],
+  "edgePixelsAbove8": 0,
+  "approval": "unapproved study; not deployed; source buffer and final render framing are separate"
+}

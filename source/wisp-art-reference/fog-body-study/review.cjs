@@ -4,7 +4,9 @@ const fs=require('node:fs'),path=require('node:path');
 const {chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
 const withVolume=process.argv.includes('--volume');
 const withPolar=process.argv.includes('--polar');
-const withTurn45=process.argv.includes('--turn45');
+const withFaceDepth=process.argv.includes('--face-depth');
+const withFullTurn=process.argv.includes('--full-turn');
+const withTurn45=process.argv.includes('--turn45')||withFullTurn;
 const withBilateral=process.argv.includes('--bilateral')||withTurn45;
 const smallerHands=process.argv.includes('--smaller-hands')||withTurn45;
 const withCorrective=process.argv.includes('--corrective')||withBilateral;
@@ -13,7 +15,7 @@ const withArm=process.argv.includes('--arm')||withVolume||withJoints;
 const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.json'),'utf8'));
 (async()=>{
  const browser=await chromium.launch();
- const out=path.resolve(__dirname,'../../../../wisp-live-rig-proof/'+(withTurn45?'fog-turn45-study':withBilateral?(smallerHands?'fog-bilateral-proportion-study':'fog-bilateral-study'):withCorrective?'fog-arm-corrective-study':withPolar?'fog-arm-polar-study':withJoints?'fog-arm-joint-study':withVolume?'fog-arm-volume-study':withArm?'fog-arm-study':'fog-body-study'));
+ const out=path.resolve(__dirname,'../../../../wisp-live-rig-proof/'+(withFaceDepth?'fog-face-depth-study':withFullTurn?'fog-full-turn-study':withTurn45?'fog-turn45-study':withBilateral?(smallerHands?'fog-bilateral-proportion-study':'fog-bilateral-study'):withCorrective?'fog-arm-corrective-study':withPolar?'fog-arm-polar-study':withJoints?'fog-arm-joint-study':withVolume?'fog-arm-volume-study':withArm?'fog-arm-study':'fog-body-study'));
  fs.mkdirSync(out,{recursive:true});const results=[];
  try{
   for(const candidate of [false,true]){
@@ -26,12 +28,22 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
    const page=await context.newPage();const errors=[];
    page.on('pageerror',e=>errors.push(e.message));
    if(candidate||withVolume||withJoints)await page.route('**/wisp-performance/front-kit/body.png',route=>route.fulfill({path:path.join(__dirname,'body.png'),contentType:'image/png'}));
-   if(candidate&&withTurn45)await page.route('**/wisp-performance/front-kit/body-45.png',route=>route.fulfill({path:path.join(__dirname,'body-45.png'),contentType:'image/png'}));
+   if((candidate||withFaceDepth)&&withTurn45)await page.route('**/wisp-performance/front-kit/body-45.png',route=>route.fulfill({path:path.join(__dirname,'body-45.png'),contentType:'image/png'}));
+   if((candidate||withFaceDepth)&&withFullTurn)for(const angle of [90,135,180])await page.route(`**/wisp-performance/front-kit/body-${angle}.png`,route=>route.fulfill({path:path.join(__dirname,`body-${angle}.png`),contentType:'image/png'}));
+   if(candidate&&withFaceDepth)await page.route('**/wisp-eye-rig.js',route=>{
+    let code=fs.readFileSync(path.resolve(__dirname,'../../../assets/wisp-eye-rig.js'),'utf8');
+    const old="perspective=side==='left'?1-.35*Math.sin(yaw):Math.max(.06,Math.cos(yaw))*(1-.15*Math.sin(yaw))";
+    if(!code.includes(old))throw Error('Eye perspective hook changed');
+    code="import {eyeTurnSurface} from '/source/wisp-art-reference/fog-body-study/eye-turn-surface.mjs';\n"+code;
+    code=code.replace(old,"perspective=eyeTurnSurface(view,side).width");
+    code=code.replace("farVisibility=Math.max(0,Math.min(1,(85-view)/30))","farVisibility=eyeTurnSurface(view,'right').visibility");
+    return route.fulfill({body:code,contentType:'text/javascript'});
+   });
    if(withTurn45)await page.route('**/wisp-performance/poses.js',route=>{
     let code=fs.readFileSync(path.resolve(__dirname,'../../../assets/wisp-performance/poses.js'),'utf8');
     const hook=" const beats=BEATS[kind]";
     if(!code.includes(hook))throw Error('Pose review hook changed');
-    code=code.replace(hook," if(Number.isFinite(window.__reviewYaw)){const t=Math.max(0,Math.min(1,window.__reviewYaw/45));return POSES.map(p=>p.id==='welcome'?1-t:p.id==='turn45'?t:0);}\n"+hook);
+    code=code.replace(hook," if(Number.isFinite(window.__reviewYaw)){const a=Math.max(0,Math.min(4,window.__reviewYaw/45)),i=Math.min(3,Math.floor(a)),t=a-i,ids=['welcome','turn45','profile','rear135','back'];return POSES.map(p=>p.id===ids[i]?1-t:p.id===ids[i+1]?t:0);}\n"+hook);
     return route.fulfill({body:code,contentType:'text/javascript'});
    });
    if((candidate||withVolume||withJoints)&&withArm){
@@ -84,7 +96,7 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
    });
    await page.goto((process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8812')+'/assets/wisp-performance-studio.html');
    await page.waitForFunction(()=>window.WispPerformanceStudio?.inspect().outputFrame?.ready);
-   for(const t of withTurn45?[0,11.25,22.5,33.75,45]:[0,2,5]){
+   for(const t of withFullTurn?[0,22.5,45,67.5,90,112.5,135,157.5,180]:withTurn45?[0,11.25,22.5,33.75,45]:[0,2,5]){
     if(withTurn45){
      await page.evaluate(yaw=>{window.__reviewYaw=yaw;WispPerformanceStudio.seek(0);},t);
      await page.waitForFunction(yaw=>Math.abs(WispPerformanceStudio.inspect().frontRig.viewAngle-yaw)<.05,t);
@@ -106,13 +118,14 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
     results.push({candidate,t:withTurn45?null:t,yaw:withTurn45?t:null,pixels,state:await page.evaluate(()=>WispPerformanceStudio.inspect())});
    }
    if(candidate&&process.argv.includes('--video')){
-    await page.click('#reel');await page.waitForTimeout(8000);
+    if(withTurn45)await page.evaluate(()=>{delete window.__reviewYaw;});
+    await page.click('#reel');await page.waitForTimeout(withFullTurn?11200:8000);
     await page.click('#stop');
    }
    results.push({candidate,errors});const video=page.video();await context.close();
    if(video)await video.saveAs(path.join(out,'candidate-motion.webm'));
   }
  }finally{await browser.close();}
- fs.writeFileSync(path.join(out,'review.json'),JSON.stringify({scope:'Local art/rig study only. Old face, remaining turn views and evil artwork remain; no production or physical-projection acceptance.',withTurn45,withBilateral,smallerHands,withCorrective,withJoints,withPolar,withVolume,results},null,2));
+ fs.writeFileSync(path.join(out,'review.json'),JSON.stringify({scope:'Local art/rig study only. Old face and evil artwork remain; no production or physical-projection acceptance.',withFaceDepth,withFullTurn,withTurn45,withBilateral,smallerHands,withCorrective,withJoints,withPolar,withVolume,results},null,2));
  console.log(`Saved ${results.filter(r=>r.state).length} isolated comparison frames. Inspect joins, face placement and fog material.`);
 })().catch(e=>{console.error(e);process.exitCode=1});
