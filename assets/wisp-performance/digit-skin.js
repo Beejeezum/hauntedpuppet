@@ -7,8 +7,8 @@ export const DIGITS={
  right:[{root:[815,800],tip:[850,650],width:88},{root:[910,817],tip:[1045,750],width:82},{root:[940,870],tip:[1060,890],width:78},{root:[880,935],tip:[960,1000],width:80}],
  left:[{root:[410,785],tip:[320,600],width:100},{root:[305,820],tip:[170,740],width:94},{root:[300,900],tip:[170,920],width:86},{root:[350,960],tip:[280,1030],width:86}]
 };
-export function bindDigits(x,y,side){
- const list=DIGITS[side];if(!list)throw Error('Unknown painted hand '+side);
+export function bindDigits(x,y,side,authoredDigits=null){
+ const list=authoredDigits||DIGITS[side];if(!list)throw Error('Unknown painted hand '+side);
  const bindings=[];
  for(let i=0;i<list.length;i++){
   const d=list[i],dx=d.tip[0]-d.root[0],dy=d.tip[1]-d.root[1],length=Math.hypot(dx,dy),u=((x-d.root[0])*dx+(y-d.root[1])*dy)/(length*length),across=Math.abs((x-d.root[0])*dy-(y-d.root[1])*dx)/length;

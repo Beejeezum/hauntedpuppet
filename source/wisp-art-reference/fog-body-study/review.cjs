@@ -48,7 +48,7 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
    if((candidate||withFaceDepth)&&withFullTurn)for(const angle of [90,135,180])await page.route(`**/wisp-performance/front-kit/body-${angle}.png`,route=>route.fulfill({path:path.join(__dirname,`body-${angle}.png`),contentType:'image/png'}));
    if((candidate||withShoulderBlend||withShoulderWeld||withFullerArm)&&withFaceDepth)await page.route('**/wisp-eye-rig.js',route=>{
     let code=fs.readFileSync(path.resolve(__dirname,'../../../assets/wisp-eye-rig.js'),'utf8');
-    const old="perspective=side==='left'?1-.35*Math.sin(yaw):Math.max(.06,Math.cos(yaw))*(1-.15*Math.sin(yaw))";
+    const old="perspective=params.eyeSurface?.(view,side)?.width??(side==='left'?1-.35*Math.sin(yaw):Math.max(.06,Math.cos(yaw))*(1-.15*Math.sin(yaw)))";
     if(!code.includes(old))throw Error('Eye perspective hook changed');
     code="import {eyeTurnSurface} from '/source/wisp-art-reference/fog-body-study/eye-turn-surface.mjs';\n"+code;
     code=code.replace(old,"perspective=eyeTurnSurface(view,side).width");
@@ -83,8 +83,8 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
       code=code.replace(old,`await im.decode();if(url.endsWith('/arm-right.png')){const c=document.createElement('canvas');c.width=im.width;c.height=im.height;const ctx=c.getContext('2d');ctx.translate(c.width,0);ctx.scale(-1,1);ctx.drawImage(im,0,0);return c;}return im;`);
      }
      if((candidate||withTurn45||withFullerArm)&&smallerHands){
-      if(!code.includes('handScale=(1.2+evil*.35)'))throw Error('Hand scale hook changed');
-      code=code.replace('handScale=(1.2+evil*.35)','handScale=(.95+evil*.35)');
+      if(!code.includes('handScale=((this.kit.handScale??1.2)+evil*.35)'))throw Error('Hand scale hook changed');
+      code=code.replace('handScale=((this.kit.handScale??1.2)+evil*.35)','handScale=(.95+evil*.35)');
      }
      if(candidate&&withPoseVolume){
       const old='{preserveVolume:i!==2}';if(!code.includes(old))throw Error('Pose volume bone hook changed');
