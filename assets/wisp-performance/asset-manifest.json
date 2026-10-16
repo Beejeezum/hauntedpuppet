@@ -1,19 +1,136 @@
 {
-  "version": 1,
+  "version": 2,
   "character": "Wisp painted performance candidate",
   "renderer": "painted-pose-space-rig",
-  "registeredCanvas": [1024, 1536],
+  "registeredCanvas": [
+    1024,
+    1536
+  ],
   "atlases": [
-    {"form":"cute","image":"cute-poses.png","canvas":[1254,1254],"columns":3,"rows":2,"poses":["welcome","listen","wave","laugh","swoop","farewell"]},
-    {"form":"evil","image":"evil-poses.png","canvas":[1254,1254],"columns":3,"rows":2,"poses":["welcome","listen","wave","laugh","swoop","farewell"]},
-    {"form":"cute","image":"cute-turns.png","canvas":[1254,1254],"columns":2,"rows":2,"poses":["turn45","profile","rear135","back"]},
-    {"form":"evil","image":"evil-turns.png","canvas":[1254,1254],"columns":2,"rows":2,"poses":["turn45","profile","rear135","back"]}
+    {
+      "form": "cute",
+      "image": "cute-poses.png",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "columns": 3,
+      "rows": 2,
+      "poses": [
+        "welcome",
+        "listen",
+        "wave",
+        "laugh",
+        "swoop",
+        "farewell"
+      ]
+    },
+    {
+      "form": "evil",
+      "image": "evil-poses.png",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "columns": 3,
+      "rows": 2,
+      "poses": [
+        "welcome",
+        "listen",
+        "wave",
+        "laugh",
+        "swoop",
+        "farewell"
+      ]
+    },
+    {
+      "form": "cute",
+      "image": "cute-turns-v2.png",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "columns": 2,
+      "rows": 2,
+      "poses": [
+        "turn45",
+        "profile",
+        "rear135",
+        "back"
+      ]
+    },
+    {
+      "form": "evil",
+      "image": "evil-turns-v2.png",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "columns": 2,
+      "rows": 2,
+      "poses": [
+        "turn45",
+        "profile",
+        "rear135",
+        "back"
+      ]
+    }
   ],
   "rigDefinition": "poses.js",
-  "landmarks": ["head","chest","tail","left","right"],
-  "face": {"independent":true,"cute":"../wisp-v2/eye-rig.json","evil":"../wisp-scary/asset-manifest.json","hideOnBack":true},
-  "inputs": ["action.kind","action.at","state","mood","clock","dt","weights","jaw","performer","gaze","blink","visible","allowEvil","reduced"],
-  "entryPoints": {"rehearsal":"../wisp-performance-studio.html","operator":"/?character=performance"},
-  "provenance": {"method":"Built-in image generation from approved Wisp paintings; original references unchanged","references":["../wisp-v2/cute-front.png","../wisp-v2/demon-front.png"],"background":"transparent RGBA"},
-  "limits": ["2D authored pose-space interpolation, not arbitrary 3D geometry","Needs more painted in-betweens and per-view facial refinement","Not yet approved as the default replacement","Physical projection still needs on-site review"]
+  "landmarks": [
+    "head",
+    "chest",
+    "tail",
+    "left",
+    "right",
+    "crest",
+    "leftShoulder",
+    "leftElbow",
+    "leftWrist",
+    "rightShoulder",
+    "rightElbow",
+    "rightWrist"
+  ],
+  "face": {
+    "independent": true,
+    "cute": "../wisp-v2/eye-rig.json",
+    "evil": "../wisp-scary/asset-manifest.json",
+    "hideOnBack": true
+  },
+  "inputs": [
+    "action.kind",
+    "action.at",
+    "state",
+    "mood",
+    "clock",
+    "dt",
+    "weights",
+    "jaw",
+    "performer",
+    "gaze",
+    "blink",
+    "visible",
+    "allowEvil",
+    "reduced"
+  ],
+  "entryPoints": {
+    "rehearsal": "../wisp-performance-studio.html",
+    "operator": "/?character=performance"
+  },
+  "provenance": {
+    "method": "Built-in image generation from approved Wisp paintings; original references unchanged",
+    "references": [
+      "../wisp-v2/cute-front.png",
+      "../wisp-v2/demon-front.png"
+    ],
+    "background": "transparent RGBA"
+  },
+  "limits": [
+    "2D authored pose-space interpolation, not arbitrary 3D geometry",
+    "Needs more painted in-betweens and per-view facial refinement",
+    "Not yet approved as the default replacement",
+    "Physical projection still needs on-site review"
+  ],
+  "motionDefinition": "motion.js",
+  "reviewSequence": "reel.js"
 }
