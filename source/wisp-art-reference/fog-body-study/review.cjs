@@ -2,18 +2,19 @@
 // No production files, provider calls, camera or microphone are changed.
 const fs=require('node:fs'),path=require('node:path');
 const {chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
-const withArm=process.argv.includes('--arm');
+const withVolume=process.argv.includes('--volume');
+const withArm=process.argv.includes('--arm')||withVolume;
 (async()=>{
  const browser=await chromium.launch();
- const out=path.resolve(__dirname,'../../../../wisp-live-rig-proof/'+(withArm?'fog-arm-study':'fog-body-study'));
+ const out=path.resolve(__dirname,'../../../../wisp-live-rig-proof/'+(withVolume?'fog-arm-volume-study':withArm?'fog-arm-study':'fog-body-study'));
  fs.mkdirSync(out,{recursive:true});const results=[];
  try{
   for(const candidate of [false,true]){
    const context=await browser.newContext({viewport:{width:1280,height:900},...(candidate&&process.argv.includes('--video')?{recordVideo:{dir:out,size:{width:1280,height:900}}}:{})});
    const page=await context.newPage();const errors=[];
    page.on('pageerror',e=>errors.push(e.message));
-   if(candidate)await page.route('**/wisp-performance/front-kit/body.png',route=>route.fulfill({path:path.join(__dirname,'body.png'),contentType:'image/png'}));
-   if(candidate&&withArm){
+   if(candidate||withVolume)await page.route('**/wisp-performance/front-kit/body.png',route=>route.fulfill({path:path.join(__dirname,'body.png'),contentType:'image/png'}));
+   if((candidate||withVolume)&&withArm){
     await page.route('**/wisp-performance/front-kit/arm-left.png',route=>route.fulfill({path:path.join(__dirname,'arm-left-v2.png'),contentType:'image/png'}));
     // Register the new texture to the old rig's source coordinate system in the
     // browser. Original generated PNG stays unchanged. This is a coarse study;
@@ -26,6 +27,15 @@ const withArm=process.argv.includes('--arm');
      return route.fulfill({body:code,contentType:'text/javascript'});
     });
    }
+   if(candidate&&withVolume)await page.route('**/wisp-performance/limb-solver.js',route=>{
+    let code=fs.readFileSync(path.resolve(__dirname,'../../../assets/wisp-performance/limb-solver.js'),'utf8');
+    const old='preserveVolume?1/Math.sqrt(Math.max(.5,scale)):scale';
+    if(!code.includes(old))throw Error('Bone width calculation changed');
+    // Cartoon silhouette study: retain thickness while stretching. This is not
+    // mass conservation and is intentionally not a production solver change.
+    code=code.replace(old,'preserveVolume?Math.max(1.15,1/Math.sqrt(Math.max(.5,scale))):scale');
+    return route.fulfill({body:code,contentType:'text/javascript'});
+   });
    await page.goto((process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8812')+'/assets/wisp-performance-studio.html');
    await page.waitForFunction(()=>window.WispPerformanceStudio?.inspect().outputFrame?.ready);
    for(const t of [0,2,5]){
