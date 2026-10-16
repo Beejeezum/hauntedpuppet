@@ -1,7 +1,9 @@
 import {WispPerformanceRuntime} from '../../assets/wisp-performance-runtime.js';
 import {PaintedArmSurface} from './painted-arm-surface.js';
+import {CuppedArmSurface} from './cupped-arm-surface.js';
+const corrective=new URLSearchParams(location.search).get('arm')==='corrective';
 const r=await new WispPerformanceRuntime().load();if(!r.frontRig?.ready)throw Error(r.frontError||r.error);
-const leftArm=await new PaintedArmSurface(r.P).load('./continuous-arm-left-v1.png',{side:'left'});r.frontRig.container.addChildAt(leftArm.mesh,0);r.frontRig.container.addChild(leftArm.front);
+const leftArm=await new (corrective?CuppedArmSurface:PaintedArmSurface)(r.P).load(corrective?'./bent-cupped-arm-left-v1.png':'./continuous-arm-left-v1.png',{side:'left'});r.frontRig.container.addChildAt(leftArm.mesh,0);r.frontRig.container.addChild(leftArm.front);
 const arm=await new PaintedArmSurface(r.P).load('./continuous-arm-v1.png');r.frontRig.container.addChildAt(arm.mesh,0);r.frontRig.container.addChild(arm.front);document.querySelector('#surface').append(r.canvas);
 // Update all artwork before one final GPU draw; do not render old and replacement arms twice.
 let draws=0,suppressedDraws=0;const nativeRender=r.app.renderer.render.bind(r.app.renderer),drawScene=()=>{draws++;return nativeRender(r.app.stage);};r.app.renderer.render=()=>{suppressedDraws++;};

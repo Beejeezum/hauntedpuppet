@@ -11,7 +11,7 @@ const { chromium } = require(process.env.HAUNT_PLAYWRIGHT || 'playwright');
     const page = await browser.newPage();
     const errors = [];
     page.on('pageerror', e => errors.push(e.message));
-    await page.goto((process.env.HAUNT_STUDY_BASE || 'http://127.0.0.1:8812') + '/source/wisp-performance-arm-study/full-character-review.html');
+    await page.goto((process.env.HAUNT_STUDY_BASE || 'http://127.0.0.1:8812') + '/source/wisp-performance-arm-study/full-character-review.html' + (process.env.HAUNT_CORRECTIVE === '1' ? '?arm=corrective' : ''));
     await page.waitForSelector('canvas');
     const result = await page.evaluate(async () => {
       const source = document.querySelector('canvas');
