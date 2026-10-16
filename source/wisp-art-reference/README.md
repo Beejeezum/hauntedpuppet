@@ -13,3 +13,5 @@ Do not infer production quality from a valid asset, compiled shader, frame-rate 
 ## Lower-body continuity rejection gate
 
 The latest Runway take fails because the bottom/tail disappears at the ending. Framing corrections do not repair this defect. Review the entire take, especially its final second, for a connected, persistent core lower body. A missing, abruptly shortened or dissolved core during ordinary acting rejects the take even when the face and surrounding fog look good. An explicitly requested vanish is a separate animation state; it must not leak into idle or talking loops. Do not approve or loop this rejected ending.
+
+`scary-fog-candidate-v2-safe.png` is a generated framing revision, preserved unchanged. Its1568×1003still passes15%padding at RGB thresholds8/16/32 with connected fragments≥8pixels; faint-fog top/bottom margins are19.84%/20.14%. Inspect identity and pose changes before selecting it; it remains an unapproved candidate, not a registered morph target. The tool did not meet the requested25%reserve, but it meets the current15%still gate. Full motion can still break the buffer or lose anatomy. See its validation JSON.

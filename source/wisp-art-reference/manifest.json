@@ -24,6 +24,18 @@
       "generator": "Built-in imagegen",
       "originalGeneratedBasename": "exec-ce75c280-b7f7-4b6e-98ec-57a28f9a6ec0.png",
       "modified": false
+    },
+    {
+      "file": "scary-fog-candidate-v2-safe.png",
+      "sha256": "66648a7d7f9796df6fe27c3b933f1908be8e5dffc6b52c128416d773d79d3e96",
+      "size": [
+        1568,
+        1003
+      ],
+      "approval": "Unapproved scary endpoint candidate; still framing measured separately",
+      "generator": "Built-in imagegen edit of scary-fog-candidate-v1.png",
+      "originalGeneratedBasename": "exec-26251605-954d-4961-b887-59acc45f41fd.png",
+      "modified": false
     }
   ],
   "motionReference": "Local review outputs/wisp-vision/wisp-fog-motion-v2.mp4; approved look/full-body acting only. Bufferedv4ending explicitly rejected. No prerecorded clip proves live interaction.",

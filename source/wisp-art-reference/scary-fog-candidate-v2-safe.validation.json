@@ -1,0 +1,36 @@
+{
+  "size": [
+    1568,
+    1003
+  ],
+  "levels": {
+    "8": {
+      "margins": {
+        "left": 0.36862244897959184,
+        "top": 0.1984047856430708,
+        "right": 0.3903061224489796,
+        "bottom": 0.20139581256231306
+      },
+      "pass": true
+    },
+    "16": {
+      "margins": {
+        "left": 0.3692602040816326,
+        "top": 0.19940179461615154,
+        "right": 0.39158163265306123,
+        "bottom": 0.2033898305084746
+      },
+      "pass": true
+    },
+    "32": {
+      "margins": {
+        "left": 0.3705357142857143,
+        "top": 0.20139581256231306,
+        "right": 0.39413265306122447,
+        "bottom": 0.20438683948155534
+      },
+      "pass": true
+    }
+  },
+  "scope": "Still-image framing only. Does not prove animation continuity or identity registration."
+}
