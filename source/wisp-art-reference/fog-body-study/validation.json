@@ -1,0 +1,22 @@
+{
+  "size": [
+    1024,
+    1536
+  ],
+  "mode": "RGBA",
+  "sha256": "9f1a37b655e819c624ffa369dc52f724e04b0302f56ec0f5e3945d01132dc6df",
+  "alphaRange": [
+    0,
+    254
+  ],
+  "alpha8Bounds": [
+    209,
+    52,
+    852,
+    1485
+  ],
+  "edgeAlphaOver8": 0,
+  "sourceModified": false,
+  "originalGeneratedBasename": "exec-090983e2-8649-4d78-8f26-ef4722646d35.png",
+  "scope": "Alpha/source integrity only. Not full rig, art approval, motion or projection acceptance."
+}
