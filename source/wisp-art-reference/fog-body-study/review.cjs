@@ -7,7 +7,9 @@ const withAreaCorrective=process.argv.includes('--area-corrective');
 const withJointZones=process.argv.includes('--joint-zones');
 const withSmoothBinding=process.argv.includes('--smooth-binding');
 const withMeshAudit=process.argv.includes('--mesh-audit');
-const withVolume=process.argv.includes('--volume');
+const withPoseVolume=process.argv.includes('--pose-volume');
+const withFullerArm=process.argv.includes('--fuller-arm')||withPoseVolume;
+const withVolume=process.argv.includes('--volume')||withFullerArm;
 const withPolar=process.argv.includes('--polar');
 const withShoulderWeld=process.argv.includes('--shoulder-weld');
 const withShoulderBlend=process.argv.includes('--shoulder-blend');
@@ -22,10 +24,10 @@ const withArm=process.argv.includes('--arm')||withVolume||withJoints;
 const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.json'),'utf8'));
 (async()=>{
  const browser=await chromium.launch();
- const out=path.resolve(__dirname,'../../../../wisp-live-rig-proof/'+(motionOnly?'fog-corrective-motion-study':withAreaCorrective?'fog-area-corrective-study':withJointZones?'fog-joint-zone-study':withSmoothBinding?'fog-smooth-binding-study':withMeshAudit?(withPolar?'fog-polar-mesh-audit-study':'fog-mesh-audit-study'):withShoulderWeld?'fog-shoulder-weld-study':withShoulderBlend?'fog-shoulder-blend-study':withFaceDepth?'fog-face-depth-study':withFullTurn?'fog-full-turn-study':withTurn45?'fog-turn45-study':withBilateral?(smallerHands?'fog-bilateral-proportion-study':'fog-bilateral-study'):withCorrective?'fog-arm-corrective-study':withPolar?'fog-arm-polar-study':withJoints?'fog-arm-joint-study':withVolume?'fog-arm-volume-study':withArm?'fog-arm-study':'fog-body-study'));
+ const out=path.resolve(__dirname,'../../../../wisp-live-rig-proof/'+(withPoseVolume?(motionOnly?'fog-pose-volume-motion-study':'fog-pose-volume-study'):withFullerArm?(motionOnly?'fog-fuller-arm-motion-study':'fog-fuller-arm-study'):motionOnly?'fog-corrective-motion-study':withAreaCorrective?'fog-area-corrective-study':withJointZones?'fog-joint-zone-study':withSmoothBinding?'fog-smooth-binding-study':withMeshAudit?(withPolar?'fog-polar-mesh-audit-study':'fog-mesh-audit-study'):withShoulderWeld?'fog-shoulder-weld-study':withShoulderBlend?'fog-shoulder-blend-study':withFaceDepth?'fog-face-depth-study':withFullTurn?'fog-full-turn-study':withTurn45?'fog-turn45-study':withBilateral?(smallerHands?'fog-bilateral-proportion-study':'fog-bilateral-study'):withCorrective?'fog-arm-corrective-study':withPolar?'fog-arm-polar-study':withJoints?'fog-arm-joint-study':withVolume?'fog-arm-volume-study':withArm?'fog-arm-study':'fog-body-study'));
  fs.mkdirSync(out,{recursive:true});const results=[];
  try{
-  for(const candidate of withMeshAudit?[true]:[false,true]){
+  for(const candidate of (withMeshAudit&&!withFullerArm)||motionOnly?[true]:[false,true]){
    const raised=withCorrective&&(candidate||withBilateral);
    const binding=raised?JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-raised-rig.json'),'utf8')):landmarks;
    const mirror=p=>[binding.sourceSize[0]-p[0],p[1]];
@@ -44,7 +46,7 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
    });
    if((candidate||withFaceDepth)&&withTurn45)await page.route('**/wisp-performance/front-kit/body-45.png',route=>route.fulfill({path:path.join(__dirname,'body-45.png'),contentType:'image/png'}));
    if((candidate||withFaceDepth)&&withFullTurn)for(const angle of [90,135,180])await page.route(`**/wisp-performance/front-kit/body-${angle}.png`,route=>route.fulfill({path:path.join(__dirname,`body-${angle}.png`),contentType:'image/png'}));
-   if((candidate||withShoulderBlend||withShoulderWeld)&&withFaceDepth)await page.route('**/wisp-eye-rig.js',route=>{
+   if((candidate||withShoulderBlend||withShoulderWeld||withFullerArm)&&withFaceDepth)await page.route('**/wisp-eye-rig.js',route=>{
     let code=fs.readFileSync(path.resolve(__dirname,'../../../assets/wisp-eye-rig.js'),'utf8');
     const old="perspective=side==='left'?1-.35*Math.sin(yaw):Math.max(.06,Math.cos(yaw))*(1-.15*Math.sin(yaw))";
     if(!code.includes(old))throw Error('Eye perspective hook changed');
@@ -62,7 +64,7 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
    });
    if((candidate||withVolume||withJoints)&&withArm){
     await page.route('**/wisp-performance/front-kit/arm-left.png',route=>route.fulfill({path:path.join(__dirname,raised?'arm-left-raised-v1.png':'arm-left-v2.png'),contentType:'image/png'}));
-    if((candidate||withTurn45)&&withBilateral)await page.route('**/wisp-performance/front-kit/arm-right.png',route=>route.fulfill({path:path.join(__dirname,'arm-left-raised-v1.png'),contentType:'image/png'}));
+    if((candidate||withTurn45||withFullerArm)&&withBilateral)await page.route('**/wisp-performance/front-kit/arm-right.png',route=>route.fulfill({path:path.join(__dirname,'arm-left-raised-v1.png'),contentType:'image/png'}));
     // Register the new texture to the old rig's source coordinate system in the
     // browser. Original generated PNG stays unchanged. This is a coarse study;
     // matching alpha envelopes does not prove digit landmarks are registered.
@@ -74,23 +76,28 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
       if(!code.includes('function registered('))throw Error('Registration hook changed');
       code=code.replace('function registered(',`Object.assign(ARMS.left,${JSON.stringify(binding.arm)});\nfunction registered(`);
      }else code=code.replace(old,`await im.decode();if(url.endsWith('/arm-left.png')){const c=document.createElement('canvas');c.width=1206;c.height=1305;const ctx=c.getContext('2d');const sx=1060/942,sy=820/834;ctx.setTransform(sx,0,0,sy,96-181*sx,257-275*sy);ctx.drawImage(im,0,0);return c;}return im;`);
-     if((candidate||withTurn45)&&withBilateral){
+     if((candidate||withTurn45||withFullerArm)&&withBilateral){
       code=code.replace('function registered(',`Object.assign(ARMS.right,${JSON.stringify(rightBinding)});\nfunction registered(`);
       // A native texture reflection reuses the same unchanged painting. Each
       // side retains separate skeleton, digit phases and acting controls.
       code=code.replace(old,`await im.decode();if(url.endsWith('/arm-right.png')){const c=document.createElement('canvas');c.width=im.width;c.height=im.height;const ctx=c.getContext('2d');ctx.translate(c.width,0);ctx.scale(-1,1);ctx.drawImage(im,0,0);return c;}return im;`);
      }
-     if((candidate||withTurn45)&&smallerHands){
+     if((candidate||withTurn45||withFullerArm)&&smallerHands){
       if(!code.includes('handScale=(1.2+evil*.35)'))throw Error('Hand scale hook changed');
       code=code.replace('handScale=(1.2+evil*.35)','handScale=(.95+evil*.35)');
      }
-     if(candidate&&withAreaCorrective){
-      code="import {paintedAreaConstraints,correctAreas} from '/source/wisp-art-reference/fog-body-study/area-corrective.mjs';\n"+code;
+     if(candidate&&withPoseVolume){
+      const old='{preserveVolume:i!==2}';if(!code.includes(old))throw Error('Pose volume bone hook changed');
+      code="import {armVolumeFloor} from '/source/wisp-art-reference/fog-body-study/pose-volume.mjs';\n"+code;
+      code=code.replace(old,'{preserveVolume:i!==2,widthFloor:i!==2?armVolumeFloor(result.joints):0}');
+     }
+     if((candidate||withFullerArm)&&withAreaCorrective){
+      code="import {paintedAreaConstraints,correctAreas,correctiveDiagnostics} from '/source/wisp-art-reference/fog-body-study/area-corrective.mjs';\n"+code;
       const init='const cute=P.Texture.from(image)',store='uvs:g.uvs,sourceSize:',update='arm.front.vertices.set(vertices);';
       if(!code.includes(init)||!code.includes(store)||!code.includes(update))throw Error('Area corrective hook changed');
       code=code.replace(init,'const areaConstraints=paintedAreaConstraints(g,image);const cute=P.Texture.from(image)');
       code=code.replace(store,'areaConstraints,uvs:g.uvs,sourceSize:');
-      code=code.replace(update,'correctAreas(vertices,arm.areaConstraints);arm.front.vertices.set(vertices);');
+      code=code.replace(update,'correctAreas(vertices,arm.areaConstraints);if(correctiveDiagnostics.at(-1).remaining){window.__areaFailures??=[];if(window.__areaFailures.length<64)window.__areaFailures.push({clock,side,viewAngle,joints:result.joints,remaining:correctiveDiagnostics.at(-1).remaining});}arm.front.vertices.set(vertices);');
      }
      if(candidate&&withJointZones){
       const old=',bindArmPoint,skinArmPoint}';
@@ -122,7 +129,7 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
     let code=fs.readFileSync(path.resolve(__dirname,'../../../assets/wisp-performance/digit-skin.js'),'utf8');
     if(!code.includes('export function bindDigits'))throw Error('Digit binding hook changed');
     code=code.replace('export function bindDigits',`DIGITS.left=${JSON.stringify(binding.digits)};\nexport function bindDigits`);
-    if((candidate||withTurn45)&&withBilateral)code=code.replace('export function bindDigits',`DIGITS.right=${JSON.stringify(rightDigits)};\nexport function bindDigits`);
+    if((candidate||withTurn45||withFullerArm)&&withBilateral)code=code.replace('export function bindDigits',`DIGITS.right=${JSON.stringify(rightDigits)};\nexport function bindDigits`);
     return route.fulfill({body:code,contentType:'text/javascript'});
    });
    if(candidate&&withVolume)await page.route('**/wisp-performance/limb-solver.js',route=>{
@@ -131,7 +138,11 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
     if(!code.includes(old))throw Error('Bone width calculation changed');
     // Cartoon silhouette study: retain thickness while stretching. This is not
     // mass conservation and is intentionally not a production solver change.
-    code=code.replace(old,'preserveVolume?Math.max(1.15,1/Math.sqrt(Math.max(.5,scale))):scale');
+    if(withPoseVolume){
+     if(!code.includes('{preserveVolume=true}={}'))throw Error('Bone options hook changed');
+     code=code.replace('{preserveVolume=true}={}','{preserveVolume=true,widthFloor=0}={}');
+     code=code.replace(old,'preserveVolume?Math.max(widthFloor,1/Math.sqrt(Math.max(.5,scale))):scale');
+    }else code=code.replace(old,`preserveVolume?Math.max(${withFullerArm?1.35:1.15},1/Math.sqrt(Math.max(.5,scale))):scale`);
     return route.fulfill({body:code,contentType:'text/javascript'});
    });
    await page.goto((process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8812')+'/assets/wisp-performance-studio.html');
@@ -165,9 +176,9 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
    }
    if(candidate&&process.argv.includes('--video')){
     if(withTurn45)await page.evaluate(()=>{delete window.__reviewYaw;});
-    if(withAreaCorrective)await page.evaluate(async()=>{const m=await import('/source/wisp-art-reference/fog-body-study/area-corrective.mjs');m.resetCorrectiveMetrics();window.__auditCadence=[];let last;const frame=t=>{if(last&&window.__auditCadence.length<2048)window.__auditCadence.push(t-last);last=t;window.__auditCadenceId=requestAnimationFrame(frame);};window.__auditCadenceId=requestAnimationFrame(frame);});
+    if(withAreaCorrective)await page.evaluate(async()=>{const m=await import('/source/wisp-art-reference/fog-body-study/area-corrective.mjs');m.resetCorrectiveMetrics();window.__areaFailures=[];window.__auditCadence=[];let last;const frame=t=>{if(last&&window.__auditCadence.length<2048)window.__auditCadence.push(t-last);last=t;window.__auditCadenceId=requestAnimationFrame(frame);};window.__auditCadenceId=requestAnimationFrame(frame);});
     await page.click('#reel');await page.waitForTimeout(withFullTurn?11200:8000);
-    if(withAreaCorrective)results.push({candidate,motionMetrics:await page.evaluate(async()=>{cancelAnimationFrame(window.__auditCadenceId);const m=await import('/source/wisp-art-reference/fog-body-study/area-corrective.mjs');const v=window.__auditCadence.sort((a,b)=>a-b);return{corrective:{...m.correctiveTotals},browserFrameIntervals:{samples:v.length,p50:v[Math.floor(v.length*.5)],p95:v[Math.floor(v.length*.95)],max:v.at(-1)},scope:'isolated headless browser rehearsal, not laptop/projector or physical projection'};})});
+    if(withAreaCorrective)results.push({candidate,motionMetrics:await page.evaluate(async()=>{cancelAnimationFrame(window.__auditCadenceId);const m=await import('/source/wisp-art-reference/fog-body-study/area-corrective.mjs');const v=window.__auditCadence.sort((a,b)=>a-b);return{failures:window.__areaFailures||[],corrective:{...m.correctiveTotals},browserFrameIntervals:{samples:v.length,p50:v[Math.floor(v.length*.5)],p95:v[Math.floor(v.length*.95)],max:v.at(-1)},scope:'isolated headless browser rehearsal, not laptop/projector or physical projection'};})});
     await page.click('#stop');
    }
    if(withAreaCorrective)results.push({candidate,correctiveTiming:await page.evaluate(async()=>{const {correctiveTimings,correctiveDiagnostics}=await import('/source/wisp-art-reference/fog-body-study/area-corrective.mjs');const values=[...correctiveTimings].sort((a,b)=>a-b);return{maximumSweeps:Math.max(...correctiveDiagnostics.map(x=>x.sweeps)),unresolvedCalls:correctiveDiagnostics.filter(x=>x.remaining).length,calls:values.length,mean:values.reduce((a,b)=>a+b,0)/values.length,p95:values[Math.floor(values.length*.95)],max:values.at(-1),scope:'per-arm CPU corrective only; not end-to-end frame cadence'};})});
@@ -175,6 +186,6 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
    if(video)await video.saveAs(path.join(out,'candidate-motion.webm'));
   }
  }finally{await browser.close();}
- fs.writeFileSync(path.join(out,'review.json'),JSON.stringify({scope:'Local art/rig study only. Old face and evil artwork remain; no production or physical-projection acceptance.',motionOnly,withAreaCorrective,withJointZones,withSmoothBinding,withMeshAudit,withShoulderWeld,withShoulderBlend,withFaceDepth,withFullTurn,withTurn45,withBilateral,smallerHands,withCorrective,withJoints,withPolar,withVolume,results},null,2));
+ fs.writeFileSync(path.join(out,'review.json'),JSON.stringify({scope:'Local art/rig study only. Old face and evil artwork remain; no production or physical-projection acceptance.',withPoseVolume,withFullerArm,motionOnly,withAreaCorrective,withJointZones,withSmoothBinding,withMeshAudit,withShoulderWeld,withShoulderBlend,withFaceDepth,withFullTurn,withTurn45,withBilateral,smallerHands,withCorrective,withJoints,withPolar,withVolume,results},null,2));
  console.log(`Saved ${results.filter(r=>r.state).length} isolated comparison frames. Inspect joins, face placement and fog material.`);
 })().catch(e=>{console.error(e);process.exitCode=1});
