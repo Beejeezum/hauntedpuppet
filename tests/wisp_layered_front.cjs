@@ -10,10 +10,13 @@ const{chromium,webkit}=require(process.env.HAUNT_PLAYWRIGHT||'playwright'),asser
    // A one-pixel terminal mist core previously collapsed the interior columns.
    const P=await import('/assets/vendor/pixi/pixi.mjs'),{PaintedBodyViews}=await import('/assets/wisp-performance/body-views.js');
    const tailPainting=document.createElement('canvas');tailPainting.width=128;tailPainting.height=192;const tailInk=tailPainting.getContext('2d');tailInk.fillStyle='rgba(255,255,255,.8)';tailInk.beginPath();tailInk.ellipse(64,50,34,28,0,0,Math.PI*2);tailInk.fill();tailInk.fillRect(64,70,1,100);
-   const tailViews=await new PaintedBodyViews(P).load(tailPainting,new URL('/assets/wisp-performance/front-kit/',location.origin).href);
+   const tailViews=await new PaintedBodyViews(P).load(tailPainting,new URL('/assets/wisp-performance/front-kit/',location.origin).href,{viewURLs:{45:tailPainting.toDataURL('image/png')}});
+   if(tailViews.fields[1].width!==128||tailViews.fields[1].height!==192)throw Error('Explicit turn painting URL was ignored');
    const tailCoreMinimum=Math.min(...tailViews.fields[0].rows.map(row=>row[2]-row[1]));
    if(tailCoreMinimum<.999)throw Error('Terminal painted core has zero-width contour columns');
    tailViews.destroy();tailViews.mesh.destroy({texture:true,textureSource:true});
+   r.render({clock:.5,freeze:true,viewAngle:30,action:{kind:'wave',at:1},state:'idle'},0);const independentTurn=r.inspect();if(independentTurn.frontRig.viewAngle!==30||independentTurn.action!=='wave')throw Error('Independent view intent displaced gesture acting');
+   r.render({clock:.6,freeze:true,reduced:true,viewAngle:30,action:{kind:'wave',at:1},state:'idle'},0);if(r.inspect().frontRig.viewAngle!==0)throw Error('Independent view intent overrides reduced motion');
    document.body.append(r.canvas);let frames=0,maxReachError=0,maxStretch=0;const hands=new Set();
    for(const[kind,duration]of Object.entries(WISP_CHOREOGRAPHY_ACTIONS))for(let n=0;n<=20;n++){
     r.render({clock:frames/60,dt:1/60,freeze:true,action:{kind,at:duration*n/20},state:'speaking',weights:{A:.8},jaw:.5,mood:'amused'},n/20);
@@ -63,7 +66,7 @@ const{chromium,webkit}=require(process.env.HAUNT_PLAYWRIGHT||'playwright'),asser
    r.render({clock:6,freeze:true,action:{kind:'phantom',at:2},state:'idle'},1);if(!r.inspect().nativeFloatingEyes)throw Error('Native phantom eyes inactive');const eyePixels=r.eyesCtx.getImageData(0,0,1280,720).data;let eyeInk=0;for(let n=3;n<eyePixels.length;n+=4)if(eyePixels[n]>30)eyeInk++;if(eyeInk<100)throw Error('Native phantom eyes empty');
    r.render({clock:7,freeze:true,state:'idle'},0);if(r.inspect().nativeFloatingEyes)throw Error('Native phantom eyes not cleared');
    const front=r.frontRig,shaders=front.arms.flatMap(a=>[a.shader,a.frontShader]),sources=[...front.arms.map(a=>a.evil.source),...front.bodyViews.textures.slice(1).map(t=>t.source)];r.dispose();if(ownedBrowCanvases.some(c=>c.width||c.height)||Object.values(ownedBrow.contourCache).some(c=>c.size))throw Error('Brow shape resources retained after disposal');if(r.ready||front.ready||shaders.some(s=>!s._destroyed)||sources.some(s=>!s.destroyed))throw Error('Layered GPU ownership not cleaned');
-   return{frames,tailCoreMinimum,browEndpointContinuityMAE,browCacheBoundaryMAE,browPreparationMs:ownedBrow.preparationMs,digitTravel,unboundDigitTravel,maxReachError,maxStretch,hands:[...hands],maxBlendError,blendSamples,sharedBody:true,bodyVertexCount,faceUploadPixels,attentionLead:true,browEndpointMAE,sharedBrowMorph:true,formTravel,contourTurn:true,nativePhantomEyes:true,profileEyes:profile.eyeVisibility,independentPerformer:true,disposed:true};
+   return{frames,tailCoreMinimum,independentViewAngle:independentTurn.frontRig.viewAngle,browEndpointContinuityMAE,browCacheBoundaryMAE,browPreparationMs:ownedBrow.preparationMs,digitTravel,unboundDigitTravel,maxReachError,maxStretch,hands:[...hands],maxBlendError,blendSamples,sharedBody:true,bodyVertexCount,faceUploadPixels,attentionLead:true,browEndpointMAE,sharedBrowMorph:true,formTravel,contourTurn:true,nativePhantomEyes:true,profileEyes:profile.eyeVisibility,independentPerformer:true,disposed:true};
   });
   await page.route('**/front-kit/body-90.png',route=>route.abort());
   await page.goto(base+'/painted-front-test');

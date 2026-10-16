@@ -7,7 +7,9 @@ const harmonic=(a,b)=>a*b<=0?0:2*a*b/(a+b);
 function gap(previous,a,b,next,t,first,last){const d=b-a,m0=first?d:harmonic(a-previous,d),m1=last?d:harmonic(d,next-b),t2=t*t,t3=t2*t;return(2*t3-3*t2+1)*a+(t3-2*t2+t)*m0+(-2*t3+3*t2)*b+(t3-t2)*m1;}
 export async function createEvilTurnContext(P,fixtureBase){
  const form=await new FrontFormMorph().load(P),image=new Image();image.src=new URL('body-evil-front-v1.png',import.meta.url).href;await image.decode();
- const turns=await new PaintedBodyViews(P).load(image,fixtureBase),a=form.cute.reference,b=turns.reference,cols=form.cute.columns+1,rows=turns.rows;
+ const url=n=>new URL(n,import.meta.url).href;
+ const viewURLs=fixtureBase?{}:{45:url('body-evil-22.5-v1.png'),90:url('body-evil-45-v1.png'),135:url('body-evil-45-v1.png'),180:url('body-evil-45-v1.png')};
+ const turns=await new PaintedBodyViews(P).load(image,fixtureBase||new URL('./',import.meta.url).href,{viewURLs}),a=form.cute.reference,b=turns.reference,cols=form.cute.columns+1,rows=turns.rows;
  const samples=turns.samples.slice(0,3).map((B,index)=>{const out={v:form.from.v.slice(),uv:form.from.uv.slice()},f=turns.fields[index],scale=(b.bottom-b.top)/(f.bottom-f.top);
   for(let k=0;k<out.v.length;k+=2){const y=out.v[k+1],source=y<a.headY?mix(b.top,b.headY,(y-a.top)/(a.headY-a.top)):mix(b.headY,b.bottom,(y-a.headY)/(a.bottom-a.headY)),row=Math.max(0,Math.min(rows,(source-b.top+12)/(b.bottom-b.top+24)*rows)),lo=Math.floor(row),hi=Math.min(rows,lo+1),t=row-lo,col=(k/2)%cols,l=(lo*cols+col)*2,h=(hi*cols+col)*2;out.v[k]=(mix(B.v[l],B.v[h],t)-center(b))*scale+center(a);out.uv[k]=mix(B.uv[l],B.uv[h],t);out.uv[k+1]=mix(B.uv[l+1],B.uv[h+1],t);}return out;});
  let mode='front';const restore=()=>{form.cute.shader.resources.uFrom=form.cute.textures[0].source;form.cute.shader.resources.uTo=form.evil.textures[0].source;form.mesh.geometry.getBuffer('aUV').data.set(form.from.uv);form.mesh.geometry.getBuffer('aUV').update();form.mesh.geometry.getBuffer('aNextUV').data.set(form.to.uv);form.mesh.geometry.getBuffer('aNextUV').update();};

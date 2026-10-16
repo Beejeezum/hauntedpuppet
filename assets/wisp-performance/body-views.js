@@ -22,8 +22,8 @@ function across(row,u){const breaks=[0,.16,.84,1];for(let i=0;i<3;i++)if(u<=brea
 function sourceY(y,source,reference){return y<reference.headY?lerp(source.top,source.headY,(y-reference.top)/(reference.headY-reference.top)):lerp(source.headY,source.bottom,(y-reference.headY)/(reference.bottom-reference.headY));}
 export class PaintedBodyViews{
  constructor(P){this.P=P;this.ready=false;this.textures=[];}
- async load(front,base){
-  const images=[front,...await Promise.all([45,90,135,180].map(async a=>{const im=new Image();im.src=base+'body-'+a+'.png';await im.decode();return im;}))],fields=images.map(silhouette),ref=fields[0];this.fields=fields;this.reference=ref;
+ async load(front,base,{viewURLs={}}={}){
+  const images=[front,...await Promise.all([45,90,135,180].map(async a=>{const im=new Image();im.src=viewURLs[a]||base+'body-'+a+'.png';await im.decode();return im;}))],fields=images.map(silhouette),ref=fields[0];this.fields=fields;this.reference=ref;
   this.textures=images.map(im=>this.P.Texture.from(im));this.samples=[];const stops=[0,.08,.16,.33,.5,.67,.84,.92,1],cols=stops.length-1,rows=72,indices=[];this.columns=cols;this.rows=rows;
   for(const f of fields){const v=[],uv=[];for(let yy=0;yy<=rows;yy++)for(let xx=0;xx<=cols;xx++){const y=lerp(ref.top-12,ref.bottom+12,yy/rows),sy=sourceY(y,f,ref),row=rowAt(f.rows,sy),u=stops[xx],sx=across([row[0]-12,row[1],row[2],row[3]+12],u),head=rowAt(f.rows,f.headY),center=(head[1]+head[2])/2,refHead=rowAt(ref.rows,ref.headY),refCenter=(refHead[1]+refHead[2])/2;v.push(sx-center+refCenter,y);uv.push(clamp(sx/f.width),clamp(sy/f.height));}this.samples.push({v:new Float32Array(v),uv:new Float32Array(uv)});}
   for(let y=0;y<rows;y++)for(let x=0;x<cols;x++){const a=y*(cols+1)+x,b=a+1,c=a+cols+1,d=c+1;indices.push(a,b,d,a,d,c);}
