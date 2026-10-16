@@ -1,4 +1,5 @@
 // Front-only shape correspondence pilot. No evil turnaround is implied.
+import {supportMouth} from './jaw-surface.mjs';
 import {PaintedBodyViews} from '/assets/wisp-performance/body-views.js';
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),mix=(a,b,t)=>a+(b-a)*t;
 const center=f=>{const r=f.rows[Math.round(f.headY)];return(r[1]+r[2])/2;};
@@ -20,10 +21,27 @@ export class FrontFormMorph {
   this.mesh.geometry.getBuffer('aNextUV').data.set(this.to.uv);this.mesh.geometry.getBuffer('aNextUV').update();
   return this;
  }
- render(form){
+ render(form,{mouthBox=null}={}){
   const t=clamp(form,0,1),v=this.mesh.vertices;
   for(let i=0;i<v.length;i+=2){v[i]=mix(this.from.v[i],this.to.v[i],t);v[i+1]=this.from.v[i+1];}
+  if(mouthBox)supportMouth(v,this.cute.columns+1,mouthBox);
   this.mesh.geometry.getBuffer('aPosition').update();this.cute.shader.resources.turnUniforms.uniforms.uBlend=t;
  }
  dispose(){this.cute.destroy();this.evil.destroy();this.mesh.destroy({texture:true,textureSource:true});this.evil.mesh.destroy({texture:true,textureSource:true});}
+}
+
+/** Native-body adapter for this deliberately front-only evil art pilot. */
+export async function createNativeBodyMorph(P){
+ const form=await new FrontFormMorph().load(P);let frontMode=true;
+ return {
+  mesh:form.mesh,samples:form.cute.samples,shader:form.cute.shader,reference:form.cute.reference,
+  render(angle,deform,evil=0){
+   if(angle>1&&evil>.01)throw Error('Evil fog body pilot has no side/rear artwork');
+   if(angle>1){form.cute.render(angle,deform);frontMode=false;return;}
+   if(!frontMode){form.cute.shader.resources.uFrom=form.cute.textures[0].source;form.cute.shader.resources.uTo=form.evil.textures[0].source;form.mesh.geometry.getBuffer('aUV').data.set(form.from.uv);form.mesh.geometry.getBuffer('aUV').update();form.mesh.geometry.getBuffer('aNextUV').data.set(form.to.uv);form.mesh.geometry.getBuffer('aNextUV').update();frontMode=true;}
+   form.render(evil);const v=form.mesh.vertices;for(let i=0;i<v.length;i+=2){const p=deform(v[i],v[i+1]);v[i]=p[0];v[i+1]=p[1];}form.mesh.geometry.getBuffer('aPosition').update();
+  },
+  anchor(y){return form.cute.anchor(y);},
+  destroy(){form.cute.destroy();form.evil.destroy();form.evil.mesh.destroy({texture:true,textureSource:true});}
+ };
 }

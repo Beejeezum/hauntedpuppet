@@ -1,0 +1,17 @@
+{
+  "source": "exec-78ec9cbd-47cb-45bf-b0e0-fc3774ca3d35.png",
+  "sha256": "930e16ae93460e413fdd0b73d829da87036bd05bddaff7d4a0499831eddb28d9",
+  "size": [
+    1024,
+    1536
+  ],
+  "mode": "RGBA",
+  "alpha8Bounds": [
+    79,
+    154,
+    996,
+    1434
+  ],
+  "edgePixelsAbove8": 0,
+  "status": "Unapproved evil arm candidate; material matches new fog, shoulder/elbow/wrist and finger positions drift from cute source. Requires explicit registration and shared-shape test. Not inserted into kit."
+}

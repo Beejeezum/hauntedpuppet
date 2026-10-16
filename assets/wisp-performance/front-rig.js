@@ -37,7 +37,7 @@ export class PaintedFrontRig{
    const names=['body','arm-left','arm-right','arm-left-evil','arm-right-evil'];
    const images=Object.fromEntries(await Promise.all(names.map(async name=>[name,await painting(kit.images?.[name]||base+name+'.png')])));
    for(const name of kit.mirrorImages||[]){const im=images[name];if(!im)throw Error('Unknown mirrored painting '+name);const c=document.createElement('canvas');c.width=im.width;c.height=im.height;const x=c.getContext('2d');x.translate(c.width,0);x.scale(-1,1);x.drawImage(im,0,0);images[name]=c;}
-   this.bodyViews=await new PaintedBodyViews(P).load(images.body,kit.bodyBase||base);
+   this.bodyViews=kit.createBodyViews?await kit.createBodyViews(P,images.body,kit.bodyBase||base):await new PaintedBodyViews(P).load(images.body,kit.bodyBase||base);
    for(const side of ['left','right']){
     const meta=this.armMeta[side],image=images['arm-'+side],joints=meta.joints.map(p=>registered(p,meta));
     const g=paintedGeometry(image,p=>registered(p,meta),36,40,images['arm-'+side+'-evil']),baseVertices=g.vertices.slice(),bindings=[],digitBindings=[];
@@ -71,7 +71,7 @@ export class PaintedFrontRig{
   const yaw=viewAngle*Math.PI/180,cos=Math.cos(yaw),sin=Math.sin(yaw),project=(point,z=120)=>{const xx=(point[0]-512)*(1-z/1400),zz=z*cos-xx*sin,scale=1400/(1400-zz);return [512+(xx*cos+z*sin)*scale,768+(point[1]-768)*(1-z/1400)*scale,scale/(1400/(1400-z))];};
   const faceAnchor=bodyPoint(512,600),solved={};
   if(this.container.visible){
-   this.bodyViews.render(viewAngle,bodyPoint);
+   this.bodyViews.render(viewAngle,bodyPoint,evil);
    for(const arm of this.arms){
     arm.shader.resources.morphUniforms.uniforms.uBlend=evil;arm.frontShader.resources.morphUniforms.uniforms.uBlend=evil;
     const side=arm.side,meta=this.armMeta[side],shoulder=bodyPoint(512+(meta.attach[0]-512)*cos,meta.attach[1]),projected=project(controls[side]),palm=projected.slice(0,2);const depth=clamp(cos+(side==='left'?1:-1)*.8*sin);arm.front.alpha=1;arm.shader.resources.morphUniforms.uniforms.uFrontAmount=depth;arm.frontShader.resources.morphUniforms.uniforms.uFrontAmount=depth;let direction=Math.atan2(palm[1]-shoulder[1],palm[0]-shoulder[0]);if(side==='left'&&direction<0)direction+=Math.PI*2;
