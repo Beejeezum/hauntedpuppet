@@ -1,0 +1,50 @@
+{
+  "hand-open-v1.png": {
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "alpha_range": [
+      0,
+      254
+    ],
+    "alpha_over_128_bounds": [
+      186,
+      258,
+      1094,
+      1042
+    ]
+  },
+  "upper-arm-v1.png": {
+    "dimensions": [
+      887,
+      1774
+    ],
+    "alpha_range": [
+      0,
+      254
+    ],
+    "alpha_over_128_bounds": [
+      205,
+      334,
+      697,
+      1376
+    ]
+  },
+  "forearm-v1.png": {
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "alpha_range": [
+      0,
+      254
+    ],
+    "alpha_over_128_bounds": [
+      310,
+      201,
+      780,
+      1290
+    ]
+  }
+}

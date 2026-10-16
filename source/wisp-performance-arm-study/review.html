@@ -1,0 +1,21 @@
+<!doctype html><meta charset="utf-8"><title>Painted arm assembly study</title>
+<style>body{margin:0;background:#090e18;color:#dcefff;font:16px system-ui}header{padding:20px}button{padding:9px 16px;margin-right:8px}canvas{display:block;width:min(100vw,1100px);height:auto}small{display:block;margin-top:10px;color:#9bb3c8}</style>
+<header>Painted arm assembly · development study<br><button id="play">Pause</button><button id="reach">Reach cycle</button><button id="fold">Fold cycle</button><small>Independent painted upper arm, forearm and hand. Joint registration and visible seams remain under review. Not the live renderer.</small></header><canvas width="1100" height="700"></canvas>
+<script type="module">
+const canvas=document.querySelector('canvas'),ctx=canvas.getContext('2d');
+const load=src=>new Promise((resolve,reject)=>{const i=new Image;i.onload=()=>resolve(i);i.onerror=reject;i.src=src});
+const [upper,fore,hand]=await Promise.all([load('upper-arm-v1.png'),load('forearm-v1.png'),load('hand-open-v1.png')]);
+// Nondestructive runtime overlap feather; original source artwork remains untouched.
+function feather(image,a,b,start,end,inverse=false){const c=document.createElement('canvas');c.width=image.width;c.height=image.height;const x=c.getContext('2d');x.drawImage(image,0,0);const dx=b[0]-a[0],dy=b[1]-a[1],length=Math.hypot(dx,dy),ux=dx/length,uy=dy/length;const g=x.createLinearGradient(a[0]+ux*start,a[1]+uy*start,a[0]+ux*end,a[1]+uy*end);g.addColorStop(0,inverse?'rgba(0,0,0,1)':'rgba(0,0,0,0)');g.addColorStop(1,inverse?'rgba(0,0,0,0)':'rgba(0,0,0,1)');x.globalCompositeOperation='destination-in';x.fillStyle=g;x.fillRect(0,0,c.width,c.height);return c;}
+const featheredUpper=feather(upper,[530,1200],[695,1920],-50,80,true),foreBase=feather(fore,[630,1120],[790,1890],-50,80,true),featheredFore=feather(foreBase,[470,350],[630,1120],-150,0),featheredHand=feather(hand,[320,650],[640,730],-120,30);
+let playing=true,time=0,last=performance.now(),mode='reach';
+document.querySelector('#play').onclick=e=>{playing=!playing;e.target.textContent=playing?'Pause':'Play'};
+document.querySelector('#reach').onclick=()=>{mode='reach'};document.querySelector('#fold').onclick=()=>{mode='fold'};
+// Source-space cap centers measured from visible painting, never requested generator coordinates.
+const source={upper:[[365,480],[530,1200]],fore:[[470,350],[630,1120]],hand:[[320,650],[640,730]]};
+function part(image,a,b,worldA,worldB,width=1,crop=null){const dx=b[0]-a[0],dy=b[1]-a[1],length=Math.hypot(dx,dy),ux=dx/length,uy=dy/length,wx=worldB[0]-worldA[0],wy=worldB[1]-worldA[1],stretch=Math.hypot(wx,wy)/length,angle=Math.atan2(wy,wx)-Math.atan2(dy,dx),c=Math.cos(angle),s=Math.sin(angle);const xx=stretch*ux*ux+width*uy*uy,xy=(stretch-width)*ux*uy,yy=stretch*uy*uy+width*ux*ux;ctx.save();ctx.translate(...worldA);ctx.transform(c*xx-s*xy,s*xx+c*xy,c*xy-s*yy,s*xy+c*yy,0,0);ctx.translate(-a[0],-a[1]);if(crop){ctx.drawImage(image,...crop,...crop)}else ctx.drawImage(image,0,0);ctx.restore()}
+function draw(t){ctx.clearRect(0,0,1100,700);const phase=.5-.5*Math.cos(t*.85),shoulder=[300,270],angle=mode==='fold'?-.2+phase*1.8:.1+phase*.75,elbow=[shoulder[0]+Math.cos(angle)*175,shoulder[1]+Math.sin(angle)*175],foreAngle=mode==='fold'?-1.8+phase*.7:-1.1+phase*.95,wrist=[elbow[0]+Math.cos(foreAngle)*180,elbow[1]+Math.sin(foreAngle)*180],palmAngle=foreAngle+.18*Math.sin(t*.7),palm=[wrist[0]+Math.cos(palmAngle)*65,wrist[1]+Math.sin(palmAngle)*65];
+part(featheredUpper,...source.upper,shoulder,elbow,.265);part(featheredFore,...source.fore,elbow,wrist,.25);part(featheredHand,...source.hand,wrist,palm,.205);
+ctx.fillStyle='#9bb3c8';ctx.font='14px system-ui';ctx.fillText('Concealed overlap test — '+mode,24,650);window.armStudy={time:t,mode,shoulder,elbow,wrist,palm};}
+window.seekArm=t=>{playing=false;time=t;draw(t)};function frame(now){if(playing)time+=Math.min(.04,(now-last)/1000);last=now;draw(time);requestAnimationFrame(frame)}requestAnimationFrame(frame);
+</script>
