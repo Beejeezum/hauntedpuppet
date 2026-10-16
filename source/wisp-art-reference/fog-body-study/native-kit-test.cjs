@@ -1,10 +1,25 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const http=require('node:http');
 const{chromium,webkit}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
 (async()=>{
  const browser=await(process.env.HAUNT_BROWSER==='webkit'?webkit:chromium).launch();const page=await browser.newPage({viewport:{width:1280,height:900}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
  const out=path.resolve(__dirname,'../../../../wisp-live-rig-proof/fog-native-kit-study-'+(process.env.HAUNT_BROWSER||'chromium'));fs.mkdirSync(out,{recursive:true});
+ // Test-owned loopback fixture: production server intentionally rejects source/.
+ const root=path.resolve(__dirname,'../../..'),types={'.mjs':'text/javascript','.js':'text/javascript','.json':'application/json','.png':'image/png','.webp':'image/webp'};
+ const fixture=http.createServer((req,res)=>{
+  const pathname=new URL(req.url,'http://127.0.0.1').pathname;
+  if(pathname==='/native-kit-fixture'){res.setHeader('Content-Type','text/html');return res.end('<!doctype html><body style="margin:0;background:black">');}
+  let target;try{target=path.resolve(root,'.'+decodeURIComponent(pathname));}catch{res.statusCode=404;return res.end();}
+  const allowed=target.startsWith(root+path.sep+'assets'+path.sep)||target.startsWith(__dirname+path.sep);
+  if(!allowed||!types[path.extname(target)]||!fs.existsSync(target)||!fs.statSync(target).isFile()){res.statusCode=404;return res.end();}
+  res.setHeader('Content-Type',types[path.extname(target)]);fs.createReadStream(target).pipe(res);
+ });
+ await new Promise(resolve=>fixture.listen(0,'127.0.0.1',resolve));
+ const fixtureBase='http://127.0.0.1:'+fixture.address().port;
+
  try{
-  await page.goto((process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770')+'/assets/wisp-performance/');
+  for(const file of ['/server.py','/.env','/source/wisp-art-reference/fog-body-study/native-kit-test.cjs'])assert.equal((await fetch(fixtureBase+file)).status,404,'Fixture exposed a private/unsupported file');
+  await page.goto(fixtureBase+'/native-kit-fixture');
   const result=await page.evaluate(async()=>{
    const {WispPerformanceRuntime}=await import('/assets/wisp-performance-runtime.js');
    const {DIGITS}=await import('/assets/wisp-performance/digit-skin.js');const original=JSON.stringify(DIGITS);
@@ -27,5 +42,5 @@ const{chromium,webkit}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
   await page.evaluate(()=>window.__nativePilot.dispose());
   fs.writeFileSync(path.join(out,'review.json'),JSON.stringify({...result,errors,scope:'Direct native kit loader, no browser routes or source substitutions; cute only; not physical projection/voice acceptance'},null,2));
   console.log('PASS direct kit loading, independent default rig, unchanged shared digit metadata, disposal; no request substitution');
- }finally{await browser.close();}
+ }finally{await browser.close();await new Promise(resolve=>fixture.close(resolve));}
 })().catch(e=>{console.error(e);process.exitCode=1});
