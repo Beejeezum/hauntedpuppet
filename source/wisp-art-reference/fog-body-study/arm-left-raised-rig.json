@@ -1,0 +1,84 @@
+{
+  "source": "arm-left-raised-v1.png",
+  "sourceSize": [
+    1024,
+    1536
+  ],
+  "status": "Raised-arm authored joint study, not approved",
+  "arm": {
+    "pivot": [
+      735,
+      1020
+    ],
+    "attach": [
+      375,
+      870
+    ],
+    "scale": 0.6,
+    "rotation": 0,
+    "joints": [
+      [
+        735,
+        1020
+      ],
+      [
+        500,
+        1000
+      ],
+      [
+        435,
+        741
+      ],
+      [
+        428,
+        605
+      ]
+    ]
+  },
+  "digits": [
+    {
+      "root": [
+        340,
+        554
+      ],
+      "tip": [
+        272,
+        507
+      ],
+      "width": 70
+    },
+    {
+      "root": [
+        402,
+        524
+      ],
+      "tip": [
+        381,
+        422
+      ],
+      "width": 70
+    },
+    {
+      "root": [
+        486,
+        548
+      ],
+      "tip": [
+        522,
+        477
+      ],
+      "width": 65
+    },
+    {
+      "root": [
+        505,
+        630
+      ],
+      "tip": [
+        601,
+        631
+      ],
+      "width": 70
+    }
+  ]
+}

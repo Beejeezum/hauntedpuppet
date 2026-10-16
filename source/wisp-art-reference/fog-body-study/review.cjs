@@ -4,21 +4,23 @@ const fs=require('node:fs'),path=require('node:path');
 const {chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
 const withVolume=process.argv.includes('--volume');
 const withPolar=process.argv.includes('--polar');
-const withJoints=process.argv.includes('--joints')||withPolar;
+const withCorrective=process.argv.includes('--corrective');
+const withJoints=process.argv.includes('--joints')||withPolar||withCorrective;
 const withArm=process.argv.includes('--arm')||withVolume||withJoints;
 const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.json'),'utf8'));
 (async()=>{
  const browser=await chromium.launch();
- const out=path.resolve(__dirname,'../../../../wisp-live-rig-proof/'+(withPolar?'fog-arm-polar-study':withJoints?'fog-arm-joint-study':withVolume?'fog-arm-volume-study':withArm?'fog-arm-study':'fog-body-study'));
+ const out=path.resolve(__dirname,'../../../../wisp-live-rig-proof/'+(withCorrective?'fog-arm-corrective-study':withPolar?'fog-arm-polar-study':withJoints?'fog-arm-joint-study':withVolume?'fog-arm-volume-study':withArm?'fog-arm-study':'fog-body-study'));
  fs.mkdirSync(out,{recursive:true});const results=[];
  try{
   for(const candidate of [false,true]){
+   const binding=withCorrective&&candidate?JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-raised-rig.json'),'utf8')):landmarks;
    const context=await browser.newContext({viewport:{width:1280,height:900},...(candidate&&process.argv.includes('--video')?{recordVideo:{dir:out,size:{width:1280,height:900}}}:{})});
    const page=await context.newPage();const errors=[];
    page.on('pageerror',e=>errors.push(e.message));
    if(candidate||withVolume||withJoints)await page.route('**/wisp-performance/front-kit/body.png',route=>route.fulfill({path:path.join(__dirname,'body.png'),contentType:'image/png'}));
    if((candidate||withVolume||withJoints)&&withArm){
-    await page.route('**/wisp-performance/front-kit/arm-left.png',route=>route.fulfill({path:path.join(__dirname,'arm-left-v2.png'),contentType:'image/png'}));
+    await page.route('**/wisp-performance/front-kit/arm-left.png',route=>route.fulfill({path:path.join(__dirname,withCorrective&&candidate?'arm-left-raised-v1.png':'arm-left-v2.png'),contentType:'image/png'}));
     // Register the new texture to the old rig's source coordinate system in the
     // browser. Original generated PNG stays unchanged. This is a coarse study;
     // matching alpha envelopes does not prove digit landmarks are registered.
@@ -26,9 +28,9 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
      let code=fs.readFileSync(path.resolve(__dirname,'../../../assets/wisp-performance/front-rig.js'),'utf8');
      const old='await im.decode();return im;';
      if(!code.includes(old))throw Error('Painting loader changed; review injection needs updating');
-     if((candidate||withPolar)&&withJoints){
+     if((candidate||withPolar||withCorrective)&&withJoints){
       if(!code.includes('function registered('))throw Error('Registration hook changed');
-      code=code.replace('function registered(',`Object.assign(ARMS.left,${JSON.stringify(landmarks.arm)});\nfunction registered(`);
+      code=code.replace('function registered(',`Object.assign(ARMS.left,${JSON.stringify(binding.arm)});\nfunction registered(`);
      }else code=code.replace(old,`await im.decode();if(url.endsWith('/arm-left.png')){const c=document.createElement('canvas');c.width=1206;c.height=1305;const ctx=c.getContext('2d');const sx=1060/942,sy=820/834;ctx.setTransform(sx,0,0,sy,96-181*sx,257-275*sy);ctx.drawImage(im,0,0);return c;}return im;`);
      if(candidate&&withPolar){
       if(!code.includes(',skinArmPoint}'))throw Error('Skinning import changed');
@@ -38,10 +40,10 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
      return route.fulfill({body:code,contentType:'text/javascript'});
     });
    }
-   if((candidate||withPolar)&&withJoints)await page.route('**/wisp-performance/digit-skin.js',route=>{
+   if((candidate||withPolar||withCorrective)&&withJoints)await page.route('**/wisp-performance/digit-skin.js',route=>{
     let code=fs.readFileSync(path.resolve(__dirname,'../../../assets/wisp-performance/digit-skin.js'),'utf8');
     if(!code.includes('export function bindDigits'))throw Error('Digit binding hook changed');
-    code=code.replace('export function bindDigits',`DIGITS.left=${JSON.stringify(landmarks.digits)};\nexport function bindDigits`);
+    code=code.replace('export function bindDigits',`DIGITS.left=${JSON.stringify(binding.digits)};\nexport function bindDigits`);
     return route.fulfill({body:code,contentType:'text/javascript'});
    });
    if(candidate&&withVolume)await page.route('**/wisp-performance/limb-solver.js',route=>{
