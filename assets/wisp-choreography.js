@@ -1,7 +1,7 @@
 /** Authored 2D puppet movement. Seconds in, bounded pose out; no timers, audio or randomness. */
 const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
 const ease=x=>{x=clamp(x);return x*x*(3-2*x)};
-export const WISP_CHOREOGRAPHY_ACTIONS=Object.freeze({wave:2.8,shy:3.2,laugh:2.8,surprise:2.6,dance:6.4,twirl:3.6,bounce:3.8,peekaboo:3.8,celebrate:4.2,orbit:5.2,enter:3.4,exit:3.4});
+export const WISP_CHOREOGRAPHY_ACTIONS=Object.freeze({wave:2.8,shy:3.2,laugh:2.8,surprise:2.6,dance:6.4,twirl:3.6,bounce:3.8,peekaboo:3.8,celebrate:4.2,orbit:6.4,enter:5,exit:5.4});
 export const actionDuration=kind=>typeof kind==='string'&&Object.prototype.hasOwnProperty.call(WISP_CHOREOGRAPHY_ACTIONS,kind)?WISP_CHOREOGRAPHY_ACTIONS[kind]:0;
 const fields=['dx','dy','rotation','scaleX','scaleY','left','right','tail'];
 const pose=(values={})=>Object.assign({dx:0,dy:0,rotation:0,scaleX:1,scaleY:1,left:0,right:0,tail:0},values);
@@ -16,9 +16,10 @@ const tracks={
  bounce:[[0,{}],[.28,{dy:32,scaleX:1.17,scaleY:.8}],[.65,{dy:-115,scaleX:.86,scaleY:1.17,left:.5,right:-.5}],[1.2,{dy:32,scaleX:1.17,scaleY:.8}],[1.65,{dy:-90,scaleX:.9,scaleY:1.12,left:.4,right:-.4}],[2.2,{dy:28,scaleX:1.13,scaleY:.85}],[2.55,{dy:-55,scaleX:.94,scaleY:1.07}],[3.1,{dy:18,scaleX:1.07,scaleY:.94}],[3.8,{}]],
  peekaboo:[[0,{}],[.3,{dy:18,rotation:.08}],[1,{dx:-160,dy:65,rotation:-.38,scaleX:.62,scaleY:.86,left:.4,right:-.45}],[1.7,{dx:-160,dy:65,rotation:-.38,scaleX:.62,scaleY:.86,left:.4,right:-.45}],[2.05,{dx:28,dy:-60,rotation:.16,scaleX:1.12,scaleY:1.1,left:.6,right:-.7}],[2.6,{dx:-12,dy:16,rotation:-.06}],[3.8,{}]],
  celebrate:[[0,{}],[.3,{dy:30,scaleX:1.15,scaleY:.82}],[.7,{dy:-100,rotation:-.18,left:1.8,right:-1.95,scaleX:.92,scaleY:1.08}],[1.25,{dx:70,dy:-30,rotation:.23,left:1.8,right:-1.95}],[1.8,{dx:-70,dy:-55,rotation:-.23,left:1.8,right:-1.95}],[2.35,{dx:55,dy:-25,rotation:.18,left:1.8,right:-1.95}],[2.9,{dy:20,scaleX:1.1,scaleY:.9,left:.35,right:-.35}],[3.5,{dy:-15}],[4.2,{}]],
- orbit:[[0,{}],[.35,{dx:-25,dy:15,rotation:-.1}],[1.25,{dx:-185,dy:-50,rotation:-.32,scaleX:.88,scaleY:.88,left:.5}],[2.3,{dy:-110,rotation:0,scaleX:.82,scaleY:.82,left:.3,right:-.3}],[3.35,{dx:185,dy:-45,rotation:.32,scaleX:.92,scaleY:.92,right:-.5}],[4.2,{dy:42,scaleX:1.12,scaleY:1.08,rotation:-.07}],[5.2,{}]],
- enter:[[0,{}],[.4,{dx:-165,dy:80,rotation:-.28,scaleX:.45,scaleY:.62}],[.85,{dx:-165,dy:80,rotation:-.28,scaleX:.45,scaleY:.62}],[1.65,{dx:35,dy:-65,rotation:.17,scaleX:1.12,scaleY:1.07,left:.45,right:-.5}],[2.2,{dx:-12,dy:20,rotation:-.06,scaleX:1.06,scaleY:.94}],[3.4,{}]],
- exit:[[0,{}],[.4,{dy:20,rotation:.12,left:.2,right:-.7}],[1.2,{dx:160,dy:-70,rotation:.4,scaleX:.6,scaleY:.7,left:.3,right:-.6}],[2,{dx:160,dy:-70,rotation:.4,scaleX:.6,scaleY:.7}],[2.55,{dx:-15,dy:16,rotation:-.06,scaleX:1.05,scaleY:.95}],[3.4,{}]],
+ orbit:[[0,{}],[.3,{dy:24,scaleX:1.1,scaleY:.88,rotation:-.08}],[1.2,{dx:-185,dy:-40,rotation:-.28,scaleX:.5,scaleY:.5,left:.4}],[2.3,{dx:-70,dy:-105,rotation:-.1,scaleX:.12,scaleY:.12}],[2.9,{dx:70,dy:-110,rotation:.1,scaleX:.12,scaleY:.12}],[4,{dx:185,dy:-35,rotation:.28,scaleX:.5,scaleY:.5,right:-.4}],[4.85,{dy:30,rotation:-.06,scaleX:1.5,scaleY:1.5,left:.4,right:-.4}],[5.5,{dy:-15,scaleX:.96,scaleY:1.03}],[6.4,{}]],
+ enter:[[0,{}],[.28,{dy:22,rotation:.08,scaleX:1.1,scaleY:.9}],[1.1,{dx:-140,dy:-95,rotation:-.02,scaleX:.01,scaleY:.01}],[2,{dx:-140,dy:-95,rotation:-.02,scaleX:.01,scaleY:.01}],[2.8,{dx:-60,dy:-55,rotation:-.13,scaleX:.22,scaleY:.22}],[3.35,{dx:20,dy:25,rotation:.09,scaleX:1.5,scaleY:1.5,left:.45,right:-.5}],[3.85,{dx:-12,dy:-16,rotation:-.045,scaleX:.94,scaleY:.98}],[5,{}]],
+ exit:[[0,{}],[.3,{dy:24,rotation:.1,scaleX:1.13,scaleY:.87,left:.2,right:-.7}],[.8,{dx:35,dy:10,rotation:.13,scaleX:1.5,scaleY:1.5,left:.3,right:-.6}],[1.8,{dx:175,dy:-100,rotation:.02,scaleX:.01,scaleY:.01}],[3,{dx:175,dy:-100,rotation:.02,scaleX:.01,scaleY:.01}],[3.65,{dx:80,dy:-55,rotation:.15,scaleX:.22,scaleY:.22}],[4.15,{dx:-20,dy:22,rotation:-.08,scaleX:1.5,scaleY:1.5}],[4.65,{dy:-12,scaleX:.97,scaleY:1.03}],[5.4,{}]],
+
 };
 export function choreographyPose(kind,at,{intensity=1,reducedMotion=false}={}){
  const duration=actionDuration(kind),active=Number.isFinite(at)&&at>=0&&at<duration;
@@ -31,7 +32,9 @@ export function choreographyPose(kind,at,{intensity=1,reducedMotion=false}={}){
  if(kind==='laugh'){out.dy+=Math.sin(at*21)*17*envelope;out.rotation+=Math.sin(at*10)*.075*envelope;}
  if(kind==='dance'){out.tail+=Math.sin(at*9)*.14*envelope;out.left+=Math.sin(at*13)*.08*envelope;}
  const strength=clamp(Number.isFinite(intensity)?intensity:1,0,1.25),motion=reducedMotion?.13:1;
- for(const key of fields){const base=key==='scaleX'||key==='scaleY'?1:0;out[key]=base+(out[key]-base)*strength*motion;}
+ for(const key of fields){const base=key==='scaleX'||key==='scaleY'?1:0;out[key]=base===1&&['enter','exit','orbit'].includes(kind)?1+(Math.exp(Math.log(out[key])*strength)-1)*motion:base+(out[key]-base)*strength*motion;}
+ // Depth never reaches zero or inverts when the operator boosts intensity.
+ out.scaleX=clamp(out.scaleX,.01,1.5);out.scaleY=clamp(out.scaleY,.01,1.5);
  // Reduced motion uses a small expressive lean instead of even a partial spin.
  if(reducedMotion&&kind==='twirl')out.rotation=Math.sin(Math.PI*at/duration)*.07*strength;
  return {...out,active:true,kind,duration,progress:at/duration,expression:['shy','peekaboo'].includes(kind)?'concerned':kind==='orbit'?'curious':'delighted'};

@@ -9,12 +9,13 @@ const assert=require('node:assert/strict'),fs=require('node:fs');
   let maxY=0,maxRotation=0;
   for(let n=0;n<duration*120;n++){
    const p=choreographyPose(kind,n/120,{intensity:1.25});for(const k of ['dx','dy','rotation','scaleX','scaleY','left','right','tail'])assert(Number.isFinite(p[k]),kind+' '+k);
-   assert(p.scaleX>=.3&&p.scaleY>=.5);maxY=Math.max(maxY,Math.abs(p.dy));maxRotation=Math.max(maxRotation,Math.abs(p.rotation));
+   assert(p.scaleX>=.01&&p.scaleY>=.01&&p.scaleX<=1.5&&p.scaleY<=1.5);maxY=Math.max(maxY,Math.abs(p.dy));maxRotation=Math.max(maxRotation,Math.abs(p.rotation));
    const reduced=choreographyPose(kind,n/120,{reducedMotion:true});assert(Math.abs(reduced.dx)<26);assert(Math.abs(reduced.dy)<16);assert(Math.abs(reduced.rotation)<.08);checks++;
   }
   assert(maxY>=39,kind+' needs bold vertical staging');if(kind==='twirl')assert(maxRotation>Math.PI*2);
   const final=choreographyPose(kind,duration-.000001);assert(Math.abs(final.dy)<.00001);assert(Math.abs(Math.sin(final.rotation))<.00001);
  }
+ for(const kind of ['enter','exit']){const poses=Array.from({length:1000},(_,i)=>choreographyPose(kind,i/1000*actionDuration(kind)));assert(Math.min(...poses.map(p=>p.scaleY))<=.031,kind+' retreats to a tiny distant ghost');assert(Math.max(...poses.map(p=>p.scaleY))>=1.24,kind+' rushes into foreground');for(const p of poses){const r=choreographyPose(kind,p.progress*actionDuration(kind),{reducedMotion:true});assert(r.scaleY>.86&&r.scaleY<1.07,'reduced motion restrains depth');}}
  const gazes=new Set();for(let n=0;n<60*120;n++){const attention=idleAttention(n/120);gazes.add(attention.gaze);assert.deepEqual(attention,idleAttention(n/120));}assert.deepEqual([...gazes].sort(),['center','down','left','right']);
  for(const unknown of ['invented','constructor','__proto__','toString',null,{},[]]){assert.equal(actionDuration(unknown),0);assert.equal(choreographyPose(unknown,1).active,false);}
  console.log('PASS authored choreography:',Object.keys(WISP_CHOREOGRAPHY_ACTIONS).length,'routines,',checks,'deterministic samples, anticipation/rest endpoints, reduced motion and finite transforms.');

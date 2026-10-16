@@ -96,7 +96,7 @@ The puppeteer controls emphasize attention, bashfulness, delight and surprise, w
 
 ## Puppet performance console
 
-The left console keeps Wisp visible while you operate. On narrow screens the same canvas becomes a compact bottom monitor when you scroll; it does not start another renderer or audio route. Big moves include dance, twirl, bounce, peekaboo, candy victory, orbit and swoop/fly-by. They are interruptible authored beats with anticipation, squash/stretch and recovery. A twirl is a planar 2D spin, not a fabricated view of the character's back.
+The left console keeps Wisp visible while you operate. On narrow screens the same canvas becomes a compact bottom monitor when you scroll; it does not start another renderer or audio route. Big moves include dance, twirl, bounce, peekaboo, candy victory, a deep orbit, Rush forward and Vanish & return. They are interruptible authored beats with anticipation, squash/stretch and recovery. A twirl is a planar 2D spin, not a fabricated view of the character's back.
 
 **Cute/Scary:** choose Big kids to enable scary Wisp. Little ones and Family remain cute. Voice acting instructions follow the form on an existing live connection without changing voice ID or reconnecting. **Welcome kiddos** immediately restores cute Wisp, gentle audience and a clean visitor context. **Stop All** cancels speech and choreography; **Blackout** also blanks scenery and calibration.
 
@@ -105,3 +105,9 @@ The left console keeps Wisp visible while you operate. On narrow screens the sam
 Paired phones now have the same bounded movement/form/reveal controls and a priority Welcome kiddos command. A priority reset cancels queued scare commands. The laptop remains the only audio and microphone owner. The operator chooses the audience; there is no camera or automatic age detection.
 
 The scary rig includes four independently articulated painted body pieces, twelve mouths including a fanged roar, and ten eye states including downward gaze and sinister eyes. Scary speech owns its mouth just as cute speech does. Actual generated-speech phoneme timing remains distinct from approximate live acoustic mouth animation. The cute rig still uses a downward bow rather than a new downward-eye painting. See [puppeteer experience notes](docs/PUPPETEER-EXPERIENCE.md) and [scary asset handoff](assets/wisp-scary/PRODUCTION-NOTES.md).
+
+## Foreground and distant flight
+
+The existing entrance, fly-by and orbit routines now include pronounced apparent depth. **Rush forward** and **Vanish & return** shrink the whole painted character to a distant speck, hold that pose, then rush back toward a near-stage-height foreground silhouette before settling. Both cute and scary rigs share the same perspective-scale choreography. The three routines last 5, 5.4 and 6.4 seconds respectively; motion strength uses exponential depth scaling so ordinary settings still reach a very small distant pose. Reduced-motion preferences retain a restrained lean and scale change.
+
+The animation keeps the existing registered face/mouth stack attached as it scales. Stage fitting bounds the foreground pose and Stop cancels the move with a short settling handoff. Voice continues through these silent moves, and paired phone buttons expose the same actions. This apparent-distance effect uses the2D artwork and existing projector mapping.
