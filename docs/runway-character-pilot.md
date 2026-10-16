@@ -26,3 +26,11 @@ No developer key was created, no session provisioned, no new dependency installe
 A private custom character named **Wisp — fog visual pilot** was created in the user's existing Runway web account from the approved fog image with optimization disabled. The first processing attempt rejected the description; one friendly-only description and neutral welcome script were accepted after refreshing the source image. It is ready for a conversation, not proof of video quality.
 
 The web page requires microphone access and states that conversations are recorded into the account's assets, billed2credits per6seconds. Camera and microphone were left OFF, and no call started; displayed balance stayed13822. Explicit user approval was requested before granting this new microphone access, with a30-second cap. No developer API key was created or exposed. Web account readiness does not establish developer API access or billing interchangeability.
+
+
+## Controlled transition workflow inspection
+The signed-in web account exposes Apps → Animate Keyframes, with separate First frame and Last frame image slots, a Transition description,16:9aspect,720presolution and4/6/8second options. This was inspected in the actual account after the persistent-core Gen4.5retry failed. A4second morph draft is prepared but has NO images uploaded and has NOT been generated. Cost was not successfully exposed by clicking the cost icon; do not infer its price from Gen4.5or initiate without verifying the quote.
+
+Use matching endpoint scale, face anchors, shoulder/hand positions and core length before submitting. Current scary v2 and friendly references are not registered morph endpoints. Request eye/brow anticipation, face/hand change, body follow-through and a stable final settle, with persistent core and15%complete-effectbuffer. Keyframe controls constrain endpoints, not every intermediate frame; actual anatomy, hands, fog, framing and temporal continuity still require review. This can supply an authored transition clip but does not prove interruptible live morph or talking support.
+
+Primary product source: https://help.runwayml.com/hc/en-us/articles/45570040112531-Creating-with-Apps . Actual current UI inspection is the authority for the options listed above. Do not replace working live paths with an untested generated clip.
