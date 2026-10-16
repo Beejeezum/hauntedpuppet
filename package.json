@@ -13,7 +13,7 @@
     "test": "npm run test:python && npm run test:projection && npm run test:cloud && npm run test:browser",
     "test:cloud": "node --test tests/cloud_api.test.mjs tests/stage_lease.test.mjs && node tests/cloud_remote.mjs",
     "build": "node scripts/build-public.cjs",
-    "test:projection": "node tests/projection_math.cjs && node tests/routines.cjs && node tests/public_build.cjs && node tests/form_director.cjs && node tests/wisp_choreography.cjs && node tests/audience_queue.cjs && node tests/puppeteer_dsp.cjs && node tests/wisp_gaze_mechanics.cjs && node tests/wisp_secondary_motion.cjs"
+    "test:projection": "node tests/projection_math.cjs && node tests/routines.cjs && node tests/public_build.cjs && node tests/form_director.cjs && node tests/wisp_choreography.cjs && node tests/audience_queue.cjs && node tests/puppeteer_dsp.cjs && node tests/wisp_gaze_mechanics.cjs && node tests/wisp_secondary_motion.cjs && node tests/wisp_3d_asset.cjs"
   },
   "devDependencies": {
     "@netlify/database-dev": "1.0.1",
@@ -26,6 +26,7 @@
     "@netlify/database": "2.0.1",
     "@netlify/functions": "6.0.2",
     "pixi.js": "8.22.0",
-    "qrcode": "1.5.4"
+    "qrcode": "1.5.4",
+    "three": "0.186.1"
   }
 }

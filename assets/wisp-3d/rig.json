@@ -1,0 +1,63 @@
+{
+  "character": "Wisp",
+  "source": "../../source/wisp-3d/Wisp.blend",
+  "body_vertices": 20408,
+  "meshes": 20,
+  "bones": [
+    "Root",
+    "Torso",
+    "Head",
+    "Crest_1",
+    "Crest_2",
+    "Eye_L",
+    "Eye_R",
+    "Tail_1",
+    "Tail_2",
+    "Tail_Tip",
+    "UpperArm_L",
+    "Forearm_L",
+    "Hand_L",
+    "Digit0_L",
+    "Digit1_L",
+    "Digit2_L",
+    "Digit3_L",
+    "UpperArm_R",
+    "Forearm_R",
+    "Hand_R",
+    "Digit0_R",
+    "Digit1_R",
+    "Digit2_R",
+    "Digit3_R"
+  ],
+  "morphs": [
+    "BlinkEvil_L",
+    "BlinkEvil_R",
+    "Blink_L",
+    "Blink_R",
+    "BrowDown_L",
+    "BrowDown_R",
+    "BrowUp_L",
+    "BrowUp_R",
+    "Evil",
+    "JawOpen",
+    "MouthFunnel",
+    "MouthSmile",
+    "MouthWide",
+    "TongueOut",
+    "TongueUp"
+  ],
+  "clips": [
+    "Float",
+    "Wave",
+    "TurnAway",
+    "MenacingPace"
+  ],
+  "painted_sources": [
+    "../wisp-v2/cute-body-core.png",
+    "../wisp-v2/cute-optics.png"
+  ],
+  "limits": [
+    "First sculpt requires visual review against the painted designs; seamless topology does not by itself guarantee artistic likeness.",
+    "Live acoustic mouth movement is an estimate, not phoneme alignment."
+  ]
+}

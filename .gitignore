@@ -19,3 +19,5 @@ recordings/
 *.zip
 *.webm
 *.mp4
+# Blender's local autosave backup; keep the editable source .blend.
+source/**/*.blend1
