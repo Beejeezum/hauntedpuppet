@@ -1,0 +1,16 @@
+{
+  "file": "ivory-paint-v1.png",
+  "original": "exec-3f866a6c-e921-4f54-80f9-44b1f69e738c.png",
+  "size": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "alphaRange": null,
+  "sha256": "1b293639f0d44d0dbdd564ac7019ac4c25117d7e338111865ae216e65dbc01d1",
+  "oppositeEdgeMeanAbsoluteRGBError255": {
+    "horizontal": 3.2200956937799043,
+    "vertical": 3.6424774056353004
+  },
+  "status": "Unchanged generated base-paint texture; not exact periodic texture or finished art approval"
+}
