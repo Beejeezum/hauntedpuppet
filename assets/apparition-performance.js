@@ -4,7 +4,7 @@ export class ApparitionPerformance {
  constructor(){this.canvas=document.createElement('canvas');this.canvas.width=1280;this.canvas.height=720;this.ctx=this.canvas.getContext('2d');this.ready=false;this.active=false;this.amount=0;}
  async load(){try{this.eyes=new Image();this.eyes.src='/assets/spirit-effects/floating-eyes.png';await this.eyes.decode();if(this.eyes.width!==1935||this.eyes.height!==813)throw Error('Eye atlas canvas mismatch');this.ready=true;}catch(e){this.error=e.message;}}
  render(source,{action,rig,haunting=false,visible=1,reduced=false}={}){
-  const at=action?.at;this.active=this.ready&&!reduced&&action?.kind==='phantom'&&Number.isFinite(at)&&at>=0&&at<6;
+  const at=action?.at;this.active=this.ready&&!!rig?.bounds&&!!rig?.pose&&!reduced&&action?.kind==='phantom'&&Number.isFinite(at)&&at>=0&&at<6;
   if(!this.active){this.amount=0;return source;}
   const amount=at<1.15?ease(at/1.15):at<3.9?1:1-ease((at-3.9)/2.1);this.amount=amount;const ctx=this.ctx;ctx.clearRect(0,0,1280,720);ctx.drawImage(source,0,0);
   // A feathered top-to-bottom erosion keeps a contour during disappearance/reformation.

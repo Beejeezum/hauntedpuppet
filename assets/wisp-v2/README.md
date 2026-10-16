@@ -32,3 +32,7 @@ The high-resolution fronts preserve the new body anatomy, but the generated mout
 The demon currently has directional and front reference artwork, not a complete separate-eye talking rig. The cute face kit includes painted speech shapes, but live voice integration, acoustic/phoneme timing, physical projector legibility, and every expression combination are not validated merely by supplying these images. The body/arms/lower wisps remain one painting; there is no fully authored skeletal or mesh deformation rig in this asset folder.
 
 All artwork was generated through the built-in image generation tool from the project's own approved references. Original generated PNGs are copied unchanged; source-cell analysis and manifest registration do not repaint the artwork.
+
+## Articulation and extra turn views
+
+The later `articulation.json` pack adds a registered arm-free body and independent left/right arm artwork. See `ARTICULATION.md` for affine transforms, shoulder padding, integrated lower-body deformation guidance, native assembly review and practical limits. `cute-turn-five.json` adds actual profile and rear-three-quarter paintings between the earlier front/back keys. These additions preserve the original single-painting fallback.

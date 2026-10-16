@@ -1,0 +1,171 @@
+{
+  "canvas": [
+    1024,
+    1536
+  ],
+  "body": {
+    "image": "cute-body-core.png",
+    "bounds": [
+      214,
+      47,
+      555,
+      1425
+    ],
+    "transform": "identity; face registration retained"
+  },
+  "arms": {
+    "left": {
+      "image": "cute-arm-left.png",
+      "sourcePivot": [
+        535,
+        825
+      ],
+      "targetPivot": [
+        368,
+        828
+      ],
+      "scale": 0.62,
+      "rotation": 0.12,
+      "sourceJoints": {
+        "shoulder": [
+          535,
+          825
+        ],
+        "elbow": [
+          423,
+          928
+        ],
+        "wrist": [
+          348,
+          966
+        ],
+        "palm": [
+          266,
+          945
+        ]
+      },
+      "bounds": [
+        47,
+        707,
+        601,
+        427
+      ],
+      "joints": {
+        "shoulder": [
+          368.0,
+          828.0
+        ],
+        "elbow": [
+          291.415,
+          883.088
+        ],
+        "wrist": [
+          242.429,
+          900.912
+        ],
+        "palm": [
+          193.513,
+          881.899
+        ]
+      }
+    },
+    "right": {
+      "image": "cute-arm-right.png",
+      "sourcePivot": [
+        450,
+        610
+      ],
+      "targetPivot": [
+        635,
+        855
+      ],
+      "scale": 0.6,
+      "rotation": 0,
+      "sourceJoints": {
+        "shoulder": [
+          450,
+          610
+        ],
+        "elbow": [
+          600,
+          780
+        ],
+        "wrist": [
+          765,
+          835
+        ],
+        "palm": [
+          830,
+          870
+        ]
+      },
+      "bounds": [
+        311,
+        517,
+        669,
+        509
+      ],
+      "joints": {
+        "shoulder": [
+          635.0,
+          855.0
+        ],
+        "elbow": [
+          725.0,
+          957.0
+        ],
+        "wrist": [
+          824.0,
+          990.0
+        ],
+        "palm": [
+          863.0,
+          1011.0
+        ]
+      }
+    }
+  },
+  "drawOrder": [
+    "left",
+    "right",
+    "body",
+    "eyes",
+    "mouth"
+  ],
+  "eyeRig": "eye-rig.json",
+  "alphaBoundsThreshold": 3,
+  "lowerBody": {
+    "integrated": true,
+    "region": [
+      235,
+      760,
+      540,
+      740
+    ],
+    "attachmentBand": [
+      330,
+      740,
+      380,
+      240
+    ],
+    "rule": "Keep upper neck/head fixed; bend and lag the continuous lower-body volume. No separate rear tail or disconnected lower-body sprite."
+  },
+  "registration": "Arm targetPoint=targetPivot+scale*R(rotation)*(sourcePoint-sourcePivot); layer action rotation occurs around targetPivot after registration.",
+  "landmarkVerification": {
+    "leftCheekSpotShiftPixels": [
+      0.344,
+      0.437
+    ],
+    "rightCheekSpotShiftPixels": [
+      0.543,
+      -0.198
+    ],
+    "measurement": "Bright cheek-mark centroids compared with previous face-free source; both under0.6pixel displacement."
+  },
+  "limits": [
+    "Arms are generated painted extractions registered by measured affine transforms, not pixel-identical cutouts.",
+    "Native shoulder/palm joint landmarks are initial rig placements; inspect seam and elbow behavior through full action envelope.",
+    "Arms may need mesh bending or separate hand gestures to avoid rigid limb behavior; source PNGs do not create a skeletal solver by themselves.",
+    "Lower body remains one painted volume so a separate tail seam is not reintroduced."
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "image": "cute-turn-five.png",
+  "canvas": [
+    1983,
+    793
+  ],
+  "frames": [
+    {
+      "view": "front",
+      "angle": 0,
+      "rect": [
+        0,
+        0,
+        407,
+        793
+      ],
+      "bounds": [
+        27,
+        82,
+        362,
+        637
+      ],
+      "anchor": [
+        198.3,
+        719
+      ],
+      "facing": "camera"
+    },
+    {
+      "view": "three-quarter",
+      "angle": 45,
+      "rect": [
+        407,
+        0,
+        421,
+        793
+      ],
+      "bounds": [
+        55,
+        81,
+        334,
+        639
+      ],
+      "anchor": [
+        187.9,
+        720
+      ],
+      "facing": "right"
+    },
+    {
+      "view": "profile",
+      "angle": 90,
+      "rect": [
+        828,
+        0,
+        362,
+        793
+      ],
+      "bounds": [
+        32,
+        84,
+        275,
+        637
+      ],
+      "anchor": [
+        163.5,
+        721
+      ],
+      "facing": "right"
+    },
+    {
+      "view": "rear-three-quarter",
+      "angle": 135,
+      "rect": [
+        1190,
+        0,
+        392,
+        793
+      ],
+      "bounds": [
+        20,
+        81,
+        325,
+        639
+      ],
+      "anchor": [
+        198.1,
+        720
+      ],
+      "facing": "right"
+    },
+    {
+      "view": "back",
+      "angle": 180,
+      "rect": [
+        1582,
+        0,
+        401,
+        793
+      ],
+      "bounds": [
+        12,
+        80,
+        361,
+        641
+      ],
+      "anchor": [
+        202.7,
+        721
+      ],
+      "facing": "away"
+    }
+  ],
+  "nominalGrid": [
+    5,
+    1
+  ],
+  "fps": 10,
+  "alphaBoundsThreshold": 8,
+  "registration": "Source paintings share height/scale. Preserve shared pixel scale rather than stretching narrow profile to front width. Cell-local anchor uses nominal body centerline and visible lower-wisp baseline.",
+  "provenance": {
+    "tool": "Built-in image generation; original transparent PNG preserved",
+    "references": [
+      "cute-front.png",
+      "turnaround-atlas.png"
+    ],
+    "sha256": "c36116df835f4dcf54c79c03ac0d38f3690fdfd633d149e8037204aaa8218dca"
+  },
+  "limits": [
+    "Five genuine directional paintings are keyangles, not a dense360degree animation or a depth model.",
+    "Generator placed a faint hand fringe across the second nominal divider; safe transparent-gutter source rectangles are explicit and slightly unequal in width. Do not reconstruct source rectangles by evenly dividing the atlas.",
+    "Side/rear drawings have baked facial artwork; separate live mouth/eye overlays require matching perspective-specific registration.",
+    "Arms/hands and lower-body curvature vary slightly between generated views; mesh interpolation needs visual validation rather than assuming pixel-exact correspondence."
+  ]
+}
