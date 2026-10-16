@@ -26,7 +26,7 @@ async function installStandalone(page){
  });
 }
 (async()=>{
- const browser=await (process.env.HAUNT_BROWSER==='webkit'?webkit:chromium).launch({args:['--mute-audio','--autoplay-policy=no-user-gesture-required']});let cases=0,dspFrequencies=[];
+ const browser=await (process.env.HAUNT_BROWSER==='webkit'?webkit:chromium).launch(process.env.HAUNT_BROWSER==='webkit'?{}:{args:['--mute-audio','--autoplay-policy=no-user-gesture-required']});let cases=0,dspFrequencies=[];
  try{
   await withPage(browser,async page=>{
    await selectDirect(page,{cloud:true});assert(await page.locator('.cloud-connection').isHidden());await page.click('#startMic');await page.waitForFunction(()=>HauntPuppeteer.inspect().ready&&HauntPuppeteer.inspect().outputRms>.005);await page.waitForFunction(()=>HauntWisp.inspect().state==='speaking'&&HauntWisp.inspect().mouth!=='rest');
