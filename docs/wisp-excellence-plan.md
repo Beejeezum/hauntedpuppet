@@ -10,7 +10,6 @@ One repeatable 15-second sequence: notice a guest, greet, listen, speak a short 
 
 - Identity: consistent silhouette, proportions, hand design and facial placement across both forms and turn views.
 - Art: approved paintings remain the standard; no procedural character substitutes. Newly generated drawings require visual review, not just successful file loading.
-- Curvature: review the silhouette during strong bends at full projected size. Static endpoint similarity cannot justify a sparse deformation mesh. Reject polygonal elbows, angular tail bends and collapsing shoulder volume.
 - Articulation: head, torso, tail and hands have distinct timing. Arms must bend coherently; no rigid whole-body rocking as the main performance.
 - Transitions: inspect intermediate frames, not just endpoints. Reject double limbs, detached hands, face sliding, texture smears and sudden silhouette changes. Prefer authored breakdown drawings for incompatible silhouettes.
 - Acting: anticipation, readable holds, arcs and follow-through. Listening looks different from speaking; idle leaves room for intentional stillness.

@@ -10,7 +10,7 @@ const ARMS={
 };
 function registered(point,arm){const x=(point[0]-arm.pivot[0])*arm.scale,y=(point[1]-arm.pivot[1])*arm.scale,c=Math.cos(arm.rotation),s=Math.sin(arm.rotation);return[arm.attach[0]+x*c-y*s,arm.attach[1]+x*s+y*c];}
 /** Raster-aware mesh: retain cells around painted ink, discard distant empty corners. */
-function paintedGeometry(image,transform,cols=64,rows=72,extra=null){
+function paintedGeometry(image,transform,cols=36,rows=40,extra=null){
  const scan=document.createElement('canvas');scan.width=image.width;scan.height=image.height;
  const ctx=scan.getContext('2d',{willReadFrequently:true});ctx.drawImage(image,0,0);if(extra){ctx.globalCompositeOperation='lighter';ctx.drawImage(extra,0,0,image.width,image.height);}
  const pixels=ctx.getImageData(0,0,scan.width,scan.height).data,w=scan.width,h=scan.height;
@@ -36,7 +36,7 @@ export class PaintedFrontRig{
    this.bodyViews=await new PaintedBodyViews(P).load(images.body,base);
    for(const side of ['left','right']){
     const meta=ARMS[side],image=images['arm-'+side],joints=meta.joints.map(p=>registered(p,meta));
-    const g=paintedGeometry(image,p=>registered(p,meta),64,72,images['arm-'+side+'-evil']),baseVertices=g.vertices.slice(),bindings=[];
+    const g=paintedGeometry(image,p=>registered(p,meta),36,40,images['arm-'+side+'-evil']),baseVertices=g.vertices.slice(),bindings=[];
     for(let k=0;k<baseVertices.length;k+=2)bindings.push(bindArmPoint(baseVertices[k],baseVertices[k+1],joints));
     const cute=P.Texture.from(image),evil=P.Texture.from(images['arm-'+side+'-evil']),shader=paintMorphShader(P,cute,evil),frontShader=paintMorphShader(P,cute,evil,true);
     const mesh=new P.MeshSimple({texture:cute,shader,...g}),front=new P.MeshSimple({texture:cute,shader:frontShader,...g});
