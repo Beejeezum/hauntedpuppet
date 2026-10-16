@@ -2,6 +2,7 @@
 // No production files, provider calls, camera or microphone are changed.
 const fs=require('node:fs'),path=require('node:path');
 const {chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
+const motionOnly=process.argv.includes('--motion-only');
 const withAreaCorrective=process.argv.includes('--area-corrective');
 const withJointZones=process.argv.includes('--joint-zones');
 const withSmoothBinding=process.argv.includes('--smooth-binding');
@@ -21,7 +22,7 @@ const withArm=process.argv.includes('--arm')||withVolume||withJoints;
 const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.json'),'utf8'));
 (async()=>{
  const browser=await chromium.launch();
- const out=path.resolve(__dirname,'../../../../wisp-live-rig-proof/'+(withAreaCorrective?'fog-area-corrective-study':withJointZones?'fog-joint-zone-study':withSmoothBinding?'fog-smooth-binding-study':withMeshAudit?(withPolar?'fog-polar-mesh-audit-study':'fog-mesh-audit-study'):withShoulderWeld?'fog-shoulder-weld-study':withShoulderBlend?'fog-shoulder-blend-study':withFaceDepth?'fog-face-depth-study':withFullTurn?'fog-full-turn-study':withTurn45?'fog-turn45-study':withBilateral?(smallerHands?'fog-bilateral-proportion-study':'fog-bilateral-study'):withCorrective?'fog-arm-corrective-study':withPolar?'fog-arm-polar-study':withJoints?'fog-arm-joint-study':withVolume?'fog-arm-volume-study':withArm?'fog-arm-study':'fog-body-study'));
+ const out=path.resolve(__dirname,'../../../../wisp-live-rig-proof/'+(motionOnly?'fog-corrective-motion-study':withAreaCorrective?'fog-area-corrective-study':withJointZones?'fog-joint-zone-study':withSmoothBinding?'fog-smooth-binding-study':withMeshAudit?(withPolar?'fog-polar-mesh-audit-study':'fog-mesh-audit-study'):withShoulderWeld?'fog-shoulder-weld-study':withShoulderBlend?'fog-shoulder-blend-study':withFaceDepth?'fog-face-depth-study':withFullTurn?'fog-full-turn-study':withTurn45?'fog-turn45-study':withBilateral?(smallerHands?'fog-bilateral-proportion-study':'fog-bilateral-study'):withCorrective?'fog-arm-corrective-study':withPolar?'fog-arm-polar-study':withJoints?'fog-arm-joint-study':withVolume?'fog-arm-volume-study':withArm?'fog-arm-study':'fog-body-study'));
  fs.mkdirSync(out,{recursive:true});const results=[];
  try{
   for(const candidate of withMeshAudit?[true]:[false,true]){
@@ -135,7 +136,7 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
    });
    await page.goto((process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8812')+'/assets/wisp-performance-studio.html');
    await page.waitForFunction(()=>window.WispPerformanceStudio?.inspect().outputFrame?.ready);
-   for(const t of withFullTurn?[0,22.5,45,67.5,90,112.5,135,157.5,180]:withTurn45?[0,11.25,22.5,33.75,45]:[0,2,5]){
+   for(const t of motionOnly?[]:withFullTurn?[0,22.5,45,67.5,90,112.5,135,157.5,180]:withTurn45?[0,11.25,22.5,33.75,45]:[0,2,5]){
     if(withTurn45){
      await page.evaluate(yaw=>{window.__reviewYaw=yaw;WispPerformanceStudio.seek(0);},t);
      await page.waitForFunction(yaw=>Math.abs(WispPerformanceStudio.inspect().frontRig.viewAngle-yaw)<.05,t);
@@ -164,14 +165,16 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
    }
    if(candidate&&process.argv.includes('--video')){
     if(withTurn45)await page.evaluate(()=>{delete window.__reviewYaw;});
+    if(withAreaCorrective)await page.evaluate(async()=>{const m=await import('/source/wisp-art-reference/fog-body-study/area-corrective.mjs');m.resetCorrectiveMetrics();window.__auditCadence=[];let last;const frame=t=>{if(last&&window.__auditCadence.length<2048)window.__auditCadence.push(t-last);last=t;window.__auditCadenceId=requestAnimationFrame(frame);};window.__auditCadenceId=requestAnimationFrame(frame);});
     await page.click('#reel');await page.waitForTimeout(withFullTurn?11200:8000);
+    if(withAreaCorrective)results.push({candidate,motionMetrics:await page.evaluate(async()=>{cancelAnimationFrame(window.__auditCadenceId);const m=await import('/source/wisp-art-reference/fog-body-study/area-corrective.mjs');const v=window.__auditCadence.sort((a,b)=>a-b);return{corrective:{...m.correctiveTotals},browserFrameIntervals:{samples:v.length,p50:v[Math.floor(v.length*.5)],p95:v[Math.floor(v.length*.95)],max:v.at(-1)},scope:'isolated headless browser rehearsal, not laptop/projector or physical projection'};})});
     await page.click('#stop');
    }
-   if(withAreaCorrective)results.push({candidate,correctiveTiming:await page.evaluate(async()=>{const {correctiveTimings}=await import('/source/wisp-art-reference/fog-body-study/area-corrective.mjs');const values=[...correctiveTimings].sort((a,b)=>a-b);return{calls:values.length,mean:values.reduce((a,b)=>a+b,0)/values.length,p95:values[Math.floor(values.length*.95)],max:values.at(-1),scope:'per-arm CPU corrective only; not end-to-end frame cadence'};})});
+   if(withAreaCorrective)results.push({candidate,correctiveTiming:await page.evaluate(async()=>{const {correctiveTimings,correctiveDiagnostics}=await import('/source/wisp-art-reference/fog-body-study/area-corrective.mjs');const values=[...correctiveTimings].sort((a,b)=>a-b);return{maximumSweeps:Math.max(...correctiveDiagnostics.map(x=>x.sweeps)),unresolvedCalls:correctiveDiagnostics.filter(x=>x.remaining).length,calls:values.length,mean:values.reduce((a,b)=>a+b,0)/values.length,p95:values[Math.floor(values.length*.95)],max:values.at(-1),scope:'per-arm CPU corrective only; not end-to-end frame cadence'};})});
    results.push({candidate,errors});const video=page.video();await context.close();
    if(video)await video.saveAs(path.join(out,'candidate-motion.webm'));
   }
  }finally{await browser.close();}
- fs.writeFileSync(path.join(out,'review.json'),JSON.stringify({scope:'Local art/rig study only. Old face and evil artwork remain; no production or physical-projection acceptance.',withAreaCorrective,withJointZones,withSmoothBinding,withMeshAudit,withShoulderWeld,withShoulderBlend,withFaceDepth,withFullTurn,withTurn45,withBilateral,smallerHands,withCorrective,withJoints,withPolar,withVolume,results},null,2));
+ fs.writeFileSync(path.join(out,'review.json'),JSON.stringify({scope:'Local art/rig study only. Old face and evil artwork remain; no production or physical-projection acceptance.',motionOnly,withAreaCorrective,withJointZones,withSmoothBinding,withMeshAudit,withShoulderWeld,withShoulderBlend,withFaceDepth,withFullTurn,withTurn45,withBilateral,smallerHands,withCorrective,withJoints,withPolar,withVolume,results},null,2));
  console.log(`Saved ${results.filter(r=>r.state).length} isolated comparison frames. Inspect joins, face placement and fog material.`);
 })().catch(e=>{console.error(e);process.exitCode=1});

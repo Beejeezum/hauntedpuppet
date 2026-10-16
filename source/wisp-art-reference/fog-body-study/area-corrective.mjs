@@ -15,16 +15,30 @@ export function paintedAreaConstraints(g,image){
  }
  return constraints;
 }
-export const correctiveTimings=[];
-export function correctAreas(p,constraints,iterations=64){
- const started=performance.now();
- for(let iteration=0;iteration<iterations;iteration++)for(const q of constraints){
-  const {a,b,c,sign,minimum}=q,value=signed(p,a,b,c)*sign;if(value>=minimum)continue;
-  const gradients=[[(p[b+1]-p[c+1])*.5*sign,(p[c]-p[b])*.5*sign],[(p[c+1]-p[a+1])*.5*sign,(p[a]-p[c])*.5*sign],[(p[a+1]-p[b+1])*.5*sign,(p[b]-p[a])*.5*sign]];
-  const denominator=gradients.reduce((s,g)=>s+g[0]*g[0]+g[1]*g[1],0);if(denominator<1e-12)continue;
-  const lambda=(minimum-value)/denominator;
-  [a,b,c].forEach((i,k)=>{p[i]+=lambda*gradients[k][0];p[i+1]+=lambda*gradients[k][1];});
+export const correctiveTimings=[],correctiveDiagnostics=[];
+export const correctiveTotals={calls:0,unresolvedCalls:0,maximumRemaining:0,maximumSweeps:0};
+export function resetCorrectiveMetrics(){correctiveTimings.length=0;correctiveDiagnostics.length=0;Object.assign(correctiveTotals,{calls:0,unresolvedCalls:0,maximumRemaining:0,maximumSweeps:0});}
+export function correctAreas(p,constraints,iterations=256){
+ const started=performance.now();let sweeps=0;
+ for(;sweeps<iterations;sweeps++){
+  let corrections=0;
+  // Alternate traversal to avoid always propagating corrections in one direction.
+  for(let k=0;k<constraints.length;k++){
+   const q=constraints[sweeps%2?constraints.length-1-k:k],{a,b,c,sign,minimum}=q;
+   const value=signed(p,a,b,c)*sign;if(value>=minimum*.995)continue;
+   const ax=(p[b+1]-p[c+1])*.5*sign,ay=(p[c]-p[b])*.5*sign;
+   const bx=(p[c+1]-p[a+1])*.5*sign,by=(p[a]-p[c])*.5*sign;
+   const cx=(p[a+1]-p[b+1])*.5*sign,cy=(p[b]-p[a])*.5*sign;
+   const denominator=ax*ax+ay*ay+bx*bx+by*by+cx*cx+cy*cy;
+   if(denominator<1e-12)continue;
+   const lambda=(minimum-value)/denominator;
+   p[a]+=lambda*ax;p[a+1]+=lambda*ay;p[b]+=lambda*bx;p[b+1]+=lambda*by;p[c]+=lambda*cx;p[c+1]+=lambda*cy;corrections++;
+  }
+  if(!corrections){sweeps++;break;}
  }
+ const remaining=constraints.reduce((n,q)=>n+(signed(p,q.a,q.b,q.c)*q.sign<=0?1:0),0);
+ correctiveTotals.calls++;correctiveTotals.unresolvedCalls+=remaining?1:0;correctiveTotals.maximumRemaining=Math.max(correctiveTotals.maximumRemaining,remaining);correctiveTotals.maximumSweeps=Math.max(correctiveTotals.maximumSweeps,sweeps);
  correctiveTimings.push(performance.now()-started);if(correctiveTimings.length>256)correctiveTimings.shift();
+ correctiveDiagnostics.push({sweeps,remaining});if(correctiveDiagnostics.length>256)correctiveDiagnostics.shift();
  return p;
 }
