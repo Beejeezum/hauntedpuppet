@@ -1,6 +1,6 @@
 # Wisp production handoff
 
-The live app supports a real skinned GLB with a continuous cute/evil morph. The current sculpt is an iterated working asset, not final feature-film character art. Preserve the original paintings in assets/wisp-v2/cute-front.png and demon-front.png as the visual targets.
+The live app supports a real skinned GLB with a continuous cute/evil morph. The current sculpt is an iterated working asset, not final feature-film character art. Preserve the original paintings in assets/wisp-v2/cute-front.png and demon-front.png as identity references. The newer user-approved material/appearance target is source/wisp-art-reference/approved-friendly-fog.png: soft volumetric-looking ivory fog edges, with no fixed solid spirals or hard cyan contour. Its source still does not pass framing; do not treat approval of the appearance as approval of every source pixel or animation ending.
 
 ## Retain the working contract
 

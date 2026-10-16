@@ -1,6 +1,6 @@
 # Haunted Puppet
 
-Preserve the approved painted Wisp artwork. Do not replace it with procedural/vector character substitutes. The laptop is the only audible playback and microphone owner; projector and phone controllers remain silent.
+Preserve the approved painted Wisp artwork. Do not replace it with procedural/vector character substitutes. The latest approved soft fog appearance is source/wisp-art-reference/approved-friendly-fog.png; original assets/wisp-v2 paintings remain identity references. Preserve a coherent core lower body during normal acting; fixed solid curls, hard blue outlines, accidental tail disappearance and smoke clipping fail current art direction. See the reference manifest for approval limits. The laptop is the only audible playback and microphone owner; projector and phone controllers remain silent.
 
 Keep provider credentials on the trusted server: Mac Keychain for the laptop build, Netlify function secrets for the hosted build. Never commit credentials, request tokens, recordings, private conversations or process environment dumps. Phone remotes receive only paired show-control commands and bounded show state.
 

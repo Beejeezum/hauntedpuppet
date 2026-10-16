@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "file": "approved-friendly-fog.png",
+      "sha256": "42c2a586c05b69d596d136dae7f0500e5a567619b699d6e02bad0a4c765082f4",
+      "size": [
+        1024,
+        1536
+      ],
+      "approval": "User-approved appearance/material direction; source still framing is NOT approved",
+      "generator": "Built-in imagegen",
+      "originalGeneratedBasename": "exec-5e4b2fae-48dd-4ab0-b41d-881aa61c87c2.png",
+      "modified": false
+    },
+    {
+      "file": "scary-fog-candidate-v1.png",
+      "sha256": "c7310bd02ec11199ceade2c5e258090c798b8739b3a35a5f1fdd789f18e2663e",
+      "size": [
+        1568,
+        1003
+      ],
+      "approval": "Unapproved scary endpoint candidate; framing below15%",
+      "generator": "Built-in imagegen",
+      "originalGeneratedBasename": "exec-ce75c280-b7f7-4b6e-98ec-57a28f9a6ec0.png",
+      "modified": false
+    }
+  ],
+  "motionReference": "Local review outputs/wisp-vision/wisp-fog-motion-v2.mp4; approved look/full-body acting only. Bufferedv4ending explicitly rejected. No prerecorded clip proves live interaction.",
+  "productionGate": "Persistent core lower body, continuously shedding soft fog, recognizable identity, independent face/hands, no hard curls, complete-effect15%buffer through all frames."
+}

@@ -104,3 +104,10 @@ The latest buffered v4 take passes encoded framing but the user explicitly rejec
 
 ## Credit discipline
 Runway remains authorized when useful for targeted motion/asset creation and downstream graphics workflows. Reuse approved outputs and local tests first. Give each paid generation a specific unanswered visual question and stop redundant exploratory reruns. Four initial takes used240existingcredits. No additional Runway generations were made during the local framing integration.
+
+## Evidence-led character path decision
+The user-approved fog material and articulated motion remain the standard; the current native3D sculpt/material does not meet it. The rounded-sculpt and surface-transmission studies were visually rejected, despite technical render success. Do not spend more iterations lowering opacity or adding rim effects to that asset and count them as art progress.
+
+Prioritize a bounded image-driven character pilot against the same requirements: the2-credit prerecorded speech test preserves the approved fog identity after correcting the service's aspect stretch, animates the mouth/face, and retains its lower body in the reviewed ending. All97frames pass the final15%buffer after local whole-shot fitting. This is not live-chat or full-body/voice/morph acceptance. A private realtime character is prepared; its microphone test awaits explicit user permission because the service records calls. Preserve the current voice/controller/projector/fallback paths until a replacement passes actual visual, interruption, cost, latency and integration gates.
+
+The new scary-fog reference is a candidate endpoint, not approved final art. It matches the friendly material direction but needs character/pose registration, lower-body continuity and a controlled cute→evil→cute performance. Runtime shape transformation, native operator reactions, independent face/body control and persistent core anatomy remain mandatory; a pair of attractive videos does not complete those requirements.
