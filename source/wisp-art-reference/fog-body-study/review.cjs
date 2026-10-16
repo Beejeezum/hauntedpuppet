@@ -3,12 +3,13 @@
 const fs=require('node:fs'),path=require('node:path');
 const {chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
 const withVolume=process.argv.includes('--volume');
-const withJoints=process.argv.includes('--joints');
+const withPolar=process.argv.includes('--polar');
+const withJoints=process.argv.includes('--joints')||withPolar;
 const withArm=process.argv.includes('--arm')||withVolume||withJoints;
 const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.json'),'utf8'));
 (async()=>{
  const browser=await chromium.launch();
- const out=path.resolve(__dirname,'../../../../wisp-live-rig-proof/'+(withJoints?'fog-arm-joint-study':withVolume?'fog-arm-volume-study':withArm?'fog-arm-study':'fog-body-study'));
+ const out=path.resolve(__dirname,'../../../../wisp-live-rig-proof/'+(withPolar?'fog-arm-polar-study':withJoints?'fog-arm-joint-study':withVolume?'fog-arm-volume-study':withArm?'fog-arm-study':'fog-body-study'));
  fs.mkdirSync(out,{recursive:true});const results=[];
  try{
   for(const candidate of [false,true]){
@@ -25,14 +26,19 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
      let code=fs.readFileSync(path.resolve(__dirname,'../../../assets/wisp-performance/front-rig.js'),'utf8');
      const old='await im.decode();return im;';
      if(!code.includes(old))throw Error('Painting loader changed; review injection needs updating');
-     if(candidate&&withJoints){
+     if((candidate||withPolar)&&withJoints){
       if(!code.includes('function registered('))throw Error('Registration hook changed');
       code=code.replace('function registered(',`Object.assign(ARMS.left,${JSON.stringify(landmarks.arm)});\nfunction registered(`);
      }else code=code.replace(old,`await im.decode();if(url.endsWith('/arm-left.png')){const c=document.createElement('canvas');c.width=1206;c.height=1305;const ctx=c.getContext('2d');const sx=1060/942,sy=820/834;ctx.setTransform(sx,0,0,sy,96-181*sx,257-275*sy);ctx.drawImage(im,0,0);return c;}return im;`);
+     if(candidate&&withPolar){
+      if(!code.includes(',skinArmPoint}'))throw Error('Skinning import changed');
+      code=code.replace(',skinArmPoint}',',skinArmPoint as priorSkinArmPoint}');
+      code=`import {skinArmPointPolar as skinArmPoint} from '/source/wisp-art-reference/fog-body-study/rotation-skinning.js';\n`+code;
+     }
      return route.fulfill({body:code,contentType:'text/javascript'});
     });
    }
-   if(candidate&&withJoints)await page.route('**/wisp-performance/digit-skin.js',route=>{
+   if((candidate||withPolar)&&withJoints)await page.route('**/wisp-performance/digit-skin.js',route=>{
     let code=fs.readFileSync(path.resolve(__dirname,'../../../assets/wisp-performance/digit-skin.js'),'utf8');
     if(!code.includes('export function bindDigits'))throw Error('Digit binding hook changed');
     code=code.replace('export function bindDigits',`DIGITS.left=${JSON.stringify(landmarks.digits)};\nexport function bindDigits`);
