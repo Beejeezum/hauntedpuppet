@@ -1,0 +1,172 @@
+{
+  "character": "Scary Wisp",
+  "runtimePaintedComponents": 26,
+  "artwork": "Original generated painted raster; registered alpha composition",
+  "images": [
+    {
+      "file": "arm-left.png",
+      "bytes": 1411206,
+      "sha256": "74352b7a701614289c6b6ab699bef34d14ee82d030001e2884a9e8545bfa7296",
+      "pixels": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "outerEdgeAlphaMaximum": 1
+    },
+    {
+      "file": "arm-right.png",
+      "bytes": 1275938,
+      "sha256": "4c50c7b6f1a95f8be092836788f75ad225a033b969f2e00115122d5f322ddfdc",
+      "pixels": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "outerEdgeAlphaMaximum": 2
+    },
+    {
+      "file": "body-core.png",
+      "bytes": 1306641,
+      "sha256": "7f63a43edb70e9c3ea22e883acca4ea24a73ae369746cc7a300936466dde6faf",
+      "pixels": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "outerEdgeAlphaMaximum": 0
+    },
+    {
+      "file": "body.png",
+      "bytes": 1845415,
+      "sha256": "85bd324908f7a28861953884fb8358e1ef21a0e374b14d1df47a45547e08d3f7",
+      "pixels": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "outerEdgeAlphaMaximum": 0
+    },
+    {
+      "file": "eye-atlas.png",
+      "bytes": 1299377,
+      "sha256": "f1afb9b78b9b3ac104fdbc9fd2a75d3e3fc8ecb75c2d8760e5b281a2a1c2e407",
+      "pixels": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "outerEdgeAlphaMaximum": 2
+    },
+    {
+      "file": "eyes-look-down.png",
+      "bytes": 1224452,
+      "sha256": "2273c716f35e37f191c6cf63fc9a5c8e767b46f655c42476c120c3b3e70f179e",
+      "pixels": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "outerEdgeAlphaMaximum": 1
+    },
+    {
+      "file": "eyes-sinister.png",
+      "bytes": 1922785,
+      "sha256": "8112e3fafe9c60d3dd9847a6145632c219ee78369c5c81205f9502390490ad7d",
+      "pixels": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "outerEdgeAlphaMaximum": 2
+    },
+    {
+      "file": "mouth-atlas.png",
+      "bytes": 1574166,
+      "sha256": "695637deb1d05c7fb498e0ae5c18afb23e6aa0d71bb9bcb4f94dbe6b5dce71d7",
+      "pixels": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "outerEdgeAlphaMaximum": 1
+    },
+    {
+      "file": "scary-concept.png",
+      "bytes": 1959554,
+      "sha256": "ee718311505ddf0b3a62f6f601eae018afaa8c1876d4b8443a1650d997799b17",
+      "pixels": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "outerEdgeAlphaMaximum": 1
+    },
+    {
+      "file": "tail.png",
+      "bytes": 1208343,
+      "sha256": "9e8a327f3612e24d66863968c3b4bb8af3734261f7770d2c7412131ecc69ea86",
+      "pixels": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "outerEdgeAlphaMaximum": 0
+    },
+    {
+      "file": "wisp-assembled-transparent.png",
+      "bytes": 1497311,
+      "sha256": "4fb020a0350433e79d98cb74580c3ffd7906caaa364afb546db51ce76cc087f6",
+      "pixels": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "outerEdgeAlphaMaximum": 0
+    }
+  ]
+}

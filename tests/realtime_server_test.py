@@ -43,6 +43,10 @@ class NativeServer(unittest.TestCase):
   for data in ({'sdp':'abc'},{'sdp':SDP,'sessionNonce':NONCE,'audience':'adult'},{'sdp':SDP,'sessionNonce':NONCE,'voice':'unknown'}):
    with self.assertRaises(ValueError):r.create(data)
   with patch.dict(os.environ,{},clear=True),self.assertRaises(ValueError):r.create({'sdp':SDP,'sessionNonce':NONCE})
+ def test_form_voice_requires_operator_big_mode(self):
+  with self.assertRaises(ValueError):r.session_config({'form':'haunting','audience':'little'})
+  c=r.session_config({'form':'haunting','audience':'big'});self.assertIn('raspy cartoon-spirit',c['instructions'])
+  self.assertIn('cute Wisp',r.session_config({})['instructions'])
  def test_no_unsolicited_turns_or_unbounded_tools(self):
   c=r.session_config({});self.assertEqual(c['audio']['output']['voice'],'marin');self.assertEqual([t['name'] for t in c['tools']],['end_encounter','perform_reaction']);self.assertTrue(c['audio']['input']['turn_detection']['interrupt_response']);self.assertIn('Do not start a conversation',c['instructions'])
 if __name__=='__main__':unittest.main()

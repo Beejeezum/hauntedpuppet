@@ -27,6 +27,14 @@ class ServerTest(unittest.TestCase):
         self.assertEqual(self.req('/api/state',token=token)[1]['acks'][0]['status'],'applied')
         self.assertEqual(self.req('/api/command',{'id':'phone-0001','command':'gesture','value':'wave'},token)[0],409)
         self.req('/bridge/revoke',{},bridge=True);self.assertEqual(self.req('/api/state',token=token)[0],401)
+    def test_bold_controls_and_welcome_priority(self):
+        token=self.pair();self.ready()
+        for i,(command,value) in enumerate([('move','dance'),('move','twirl'),('form','haunting'),('reveal','arm'),('reveal','fire')]):
+            self.assertEqual(self.req('/api/command',{'id':f'puppet-command-{i}','command':command,'value':value},token)[0],202)
+        self.assertEqual(self.req('/api/command',{'id':'welcome-kiddos-001','command':'welcome','value':None},token)[0],202)
+        commands=self.req('/bridge/commands',bridge=True)[1]['commands']
+        self.assertEqual(len(commands),1);self.assertEqual(commands[0]['command'],'welcome')
+        self.assertEqual(self.req('/api/command',{'id':'unknown-animation','command':'move','value':'unsafe-device-control'},token)[0],400)
     def test_security_invalid_and_origin(self):
         self.assertEqual(self.req('/bridge/pairing',{})[0],403)
         self.assertEqual(self.req('/api/state')[0],401)

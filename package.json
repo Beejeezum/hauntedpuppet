@@ -1,6 +1,6 @@
 {
   "name": "hauntedpuppet",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "private": true,
   "description": "Painted interactive Wisp, native voice and paired projection controls",
   "engines": {
@@ -13,7 +13,7 @@
     "test": "npm run test:python && npm run test:projection && npm run test:cloud && npm run test:browser",
     "test:cloud": "node --test tests/cloud_api.test.mjs tests/stage_lease.test.mjs && node tests/cloud_remote.mjs",
     "build": "node scripts/build-public.cjs",
-    "test:projection": "node tests/projection_math.cjs && node tests/routines.cjs && node tests/public_build.cjs"
+    "test:projection": "node tests/projection_math.cjs && node tests/routines.cjs && node tests/public_build.cjs && node tests/form_director.cjs && node tests/wisp_choreography.cjs && node tests/audience_queue.cjs"
   },
   "devDependencies": {
     "@netlify/database-dev": "1.0.1",

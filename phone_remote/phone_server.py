@@ -6,7 +6,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 TTL=90
-COMMANDS={'gesture':{'wave','laugh','shy','surprise'},'gaze':{'left','right','center'},'audience':{'little','family','big'},'loop':{'on','off'},'stop':{None},'blackout':{'on','off'}}
+COMMANDS={'gesture':{'wave','laugh','shy','surprise'},'gaze':{'left','right','center'},'audience':{'little','family','big'},'loop':{'on','off'},'move':{'enter', 'laugh', 'surprise', 'twirl', 'dance', 'bounce', 'orbit', 'exit', 'celebrate', 'peekaboo', 'shy', 'wave'},'form':{'friendly','haunting'},'welcome':{None},'reveal':{'arm','fire','cancel'},'stop':{None},'blackout':{'on','off'}}
 class Remote:
     def __init__(self, clock=time.monotonic):
         self.clock=clock; self.lock=threading.RLock(); self.secret=secrets.token_urlsafe(32)
@@ -42,11 +42,11 @@ class Remote:
             now=self.clock(); ident=data.get('id'); kind=data.get('command'); value=data.get('value')
             if not isinstance(ident,str) or not 8<=len(ident)<=80: return 400,{'error':'Invalid command ID.'}
             if ident in s['ids']: return 409,{'error':'Duplicate command ID.','seq':s['ids'][ident]}
-            if not self.snapshot()['connected'] and kind not in ('stop','blackout'): return 503,{'error':'Laptop bridge is disconnected.'}
+            if not self.snapshot()['connected'] and kind not in ('stop','blackout','welcome'): return 503,{'error':'Laptop bridge is disconnected.'}
             valid=(kind in COMMANDS and value in COMMANDS[kind]) or (kind=='volume' and type(value) in (int,float) and 0<=value<=1) or (kind=='cue' and isinstance(value,str) and value in self.cues)
             if not valid: return 400,{'error':'Unsupported command or value.'}
             while s['rate'] and s['rate'][0]<now-1: s['rate'].popleft()
-            emergency=kind=='stop' or (kind=='blackout' and value=='on')
+            emergency=kind in ('stop','welcome') or (kind=='blackout' and value=='on') or (kind=='reveal' and value=='cancel')
             if len(s['rate'])>=12 and not emergency: return 429,{'error':'Controls are arriving too quickly.'}
             if emergency:
                 while self.queue:
@@ -119,7 +119,7 @@ class Handler(BaseHTTPRequestHandler):
                             if len(raw)>100000 or not raw.startswith(b'\xff\xd8\xff'): raise ValueError('Invalid JPEG preview')
                         if not isinstance(state,dict) or not isinstance(cues,list) or len(cues)>40 or any(not isinstance(c,str) or len(c)>64 for c in cues): raise ValueError('Invalid state')
                         # Only projection state. Never forward credentials, transcripts, or arbitrary server data.
-                        r.state={k:v for k,v in state.items() if k in ('mood','audience','loop','blackout','volume','status','gesture','gaze') and isinstance(v,(str,bool,int,float))}
+                        r.state={k:v for k,v in state.items() if k in ('mood','audience','loop','blackout','volume','status','gesture','gaze','form','scaryReady','revealArmed','revealRunning') and isinstance(v,(str,bool,int,float))}
                         r.cues=cues; r.preview=preview; r.state_at=r.clock(); r.bridge_at=r.clock()
                         return self.send_json(200,{'ok':True})
                     if path=='/bridge/ack' and post:

@@ -13,3 +13,7 @@ Historical 0.6 archives retain the superseded 3D evaluation model/runtime and th
 ## Optional painted scenery
 
 `assets/scenes/haunted-window.png` is an original image generated with the built-in image generation tool on October15,2026 for this project. It is a separate mansion window background plate, not a modification to the approved Wisp layers. The source generated file was inspected before copying into the repository. Center and outer-edge darkness support projection; this plate is opt-in. It contains no visitor recordings or imported third-party artwork.
+
+## Scary Wisp painted rig (October 2026)
+
+Original raster art was generated with the built-in imagegen tool against the project's approved Wisp reference, then assembled as a registered front-facing 2D puppet. Sources, generation prompts, manifest and integrity hashes are under `assets/wisp-scary/`. Runtime consists of four body/arm/tail pieces, twelve mouth shapes and ten eye states. No Disney/Pixar imagery or animation files are included. Physical-acting references inform timing and staging only. The existing cute PNGs are unchanged.

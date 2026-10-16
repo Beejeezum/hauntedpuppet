@@ -3,7 +3,7 @@ import QRCode from 'qrcode';
 import {createHmac,randomInt,randomUUID,timingSafeEqual} from 'node:crypto';
 import {operatorAuth,runtimeEnv,ApiError} from './operator-auth.mjs';
 const UUID=/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i;
-const values={gesture:['wave','laugh','shy','surprise'],gaze:['left','right','center'],audience:['little','family','big'],loop:['on','off'],blackout:['on','off'],stop:[null]};
+const values={gesture:['wave','laugh','shy','surprise'],gaze:['left','right','center'],audience:['little','family','big'],loop:['on','off'],blackout:['on','off'],move:['dance', 'twirl', 'bounce', 'peekaboo', 'celebrate', 'orbit', 'enter', 'exit', 'wave', 'shy', 'laugh', 'surprise'],form:['friendly','haunting'],welcome:[null],reveal:['arm','fire','cancel'],stop:[null]};
 const equal=(a,b)=>{const x=Buffer.from(a),y=Buffer.from(b);return x.length===y.length&&timingSafeEqual(x,y)};
 const at=t=>new Date(t),ms=value=>value?new Date(value).getTime():0;
 const safeSeq=value=>String(value); // BIGSERIAL must never lose precision in JSON.
@@ -73,7 +73,7 @@ export function cloudRemote({database,env=runtimeEnv,now=()=>Date.now()}={}){
     rows.sort((a,b)=>BigInt(a.seq)<BigInt(b.seq)?-1:1);return {commands:rows.map(row=>({seq:safeSeq(row.seq),id:row.command_id,command:row.command,value:row.value}))};
    }
    if(action==='state'){
-    const state={};for(const k of ['mood','audience','loop','blackout','volume','status','gesture','gaze']){const v=data.state?.[k];if(typeof v==='boolean'||typeof v==='number'&&Number.isFinite(v)||typeof v==='string'&&v.length<=120)state[k]=v;}
+    const state={};for(const k of ['mood','audience','loop','blackout','volume','status','gesture','gaze','form','scaryReady','revealArmed','revealRunning']){const v=data.state?.[k];if(typeof v==='boolean'||typeof v==='number'&&Number.isFinite(v)||typeof v==='string'&&v.length<=120)state[k]=v;}
     const cues=data.cues||[];if(!Array.isArray(cues)||cues.length>40||cues.some(x=>typeof x!=='string'||x.length>64))throw new ApiError(400,'Invalid prepared cues.');
     const preview=data.preview??null;
     if(preview!==null){if(typeof preview!=='string'||!/^data:image\/jpeg;base64,[A-Za-z0-9+/]*={0,2}$/.test(preview))throw new ApiError(400,'Invalid preview.');const raw=Buffer.from(preview.split(',')[1],'base64');if(raw.length>100000||raw.length<3||raw[0]!==255||raw[1]!==216||raw[2]!==255)throw new ApiError(400,'Invalid JPEG preview.');}
@@ -124,7 +124,7 @@ export function cloudRemote({database,env=runtimeEnv,now=()=>Date.now()}={}){
    const {id,command,value=null}=data;if(!UUID.test(id||''))throw new ApiError(400,'Invalid command ID.');
    const duplicate=await c.query('SELECT seq FROM haunt_remote_commands WHERE room_id=$1 AND generation=$2 AND phone_id=$3 AND command_id=$4',[p.room,p.g,p.sid,id]);if(duplicate.rows.length)throw new ApiError(409,'Duplicate command ID.');
    const valid=values[command]?.includes(value)||(command==='volume'&&typeof value==='number'&&Number.isFinite(value)&&value>=0&&value<=1)||(command==='cue'&&typeof value==='string'&&r.cues.includes(value));if(!valid)throw new ApiError(400,'Unsupported command or value.');
-   const emergency=command==='stop'||command==='blackout'&&value==='on';if(!connected&&!emergency)throw new ApiError(503,'Laptop bridge is disconnected.');
+   const emergency=command==='stop'||command==='welcome'||command==='blackout'&&value==='on'||command==='reveal'&&value==='cancel';if(!connected&&!emergency)throw new ApiError(503,'Laptop bridge is disconnected.');
    const sameWindow=ms(phone.rate_start)>t-1000,count=sameWindow?phone.rate_count:0;
    if(count>=12&&!emergency)throw new ApiError(429,'Controls are arriving too quickly.');
    if(emergency)await c.query("UPDATE haunt_remote_commands SET status='cancelled' WHERE room_id=$1 AND generation=$2 AND status IN ('queued','claimed')",[p.room,p.g]);

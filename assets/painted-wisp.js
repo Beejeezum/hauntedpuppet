@@ -1,4 +1,5 @@
 /** Painted Wisp renderer. Original registered PNGs are never recolored or redrawn. */
+import {choreographyPose, idleAttention, WISP_CHOREOGRAPHY_ACTIONS} from './wisp-choreography.js';
 export const WISP_MOUTHS=['rest','mbp','aa','ee','oh','oo','fv','l','ss','ch','th'];
 export const WISP_EXPRESSIONS=['neutral','curious','concerned','delighted','blink','half-blink','look-left','look-right'];
 const MAP={rest:'rest',MBP:'mbp',FV:'fv',A:'aa',E:'ee',O:'oh',U:'oo',L:'l',TH:'th',CH:'ch',S:'ss'};
@@ -27,24 +28,57 @@ export class PaintedWisp{
  }
  render(p){const ctx=this.ctx;ctx.clearRect(0,0,1280,720);if(!this.ready){this.current.ready=false;return this.canvas}if(p.state!=='speaking'){this.performanceId=null;this.lastSwitch=-Infinity}else if(this.performanceId!==p.id){this.performanceId=p.id;this.lastSwitch=-Infinity;}const dt=clamp(p.dt||1/60,0,.05),t=p.clock||0,freeze=this.manual?.freeze&&p.state!=='speaking',f=freeze?0:clamp(p.motion?.float/100||0,0,1),g=freeze?0:clamp(p.motion?.gesture/100||0,0,1),a=p.acting||{},talking=p.state==='speaking',mouth=this.chooseMouth(p);
   if(mouth.selected!==this.mouth){this.mouth=mouth.selected;this.lastSwitch=p.at||0}
-  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches,roaming=!freeze&&p.gaze==='audience'&&!['speaking','listening','preparing'].includes(p.state),slot=Math.floor(t/2.7),roam=['center','left','center','down','right','center','left','right'],displayGaze=roaming?roam[(slot+Math.floor(slot/8)*3)%roam.length]:p.gaze;
-  const baseExpression=['listening','preparing'].includes(p.state)?'curious':MOOD[p.mood]||'neutral',gazeExpression=displayGaze==='left'?'look-left':displayGaze==='right'?'look-right':baseExpression,reactionExpression=p.action?.at>=0&&p.action.at<1.8?(['wave','laugh','surprise'].includes(p.action.kind)?'delighted':p.action.kind==='shy'?'concerned':null):null,wanted=this.manual?.expression||reactionExpression||gazeExpression;let expression=wanted;
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches,action=p.action||{},authored=freeze?choreographyPose('',-1):choreographyPose(action.kind,action.at,{intensity:g,reducedMotion:reduced}),roaming=!freeze&&p.gaze==='audience'&&!['speaking','listening','preparing'].includes(p.state),attention=idleAttention(t),displayGaze=roaming?attention.gaze:p.gaze;
+  const baseExpression=['listening','preparing'].includes(p.state)?'curious':MOOD[p.mood]||'neutral',gazeExpression=displayGaze==='left'?'look-left':displayGaze==='right'?'look-right':baseExpression,reactionExpression=authored.active?authored.expression:null,wanted=this.manual?.expression||reactionExpression||gazeExpression;let expression=wanted;
   if(wanted!==this.expressionTarget){this.expressionTarget=wanted;this.expressionAt=t;}const transition=t-this.expressionAt;let blinkValue=freeze?0:p.blink||0;if(!freeze&&transition>=0&&transition<.16)blinkValue=Math.max(blinkValue,Math.sin(transition/.16*Math.PI));if(!freeze){if(blinkValue>.70)expression='blink';else if(blinkValue>.12)expression='half-blink';}const blink=expression==='blink'||expression==='half-blink';
   // Everything face-related uses the body root transform; no slipping eye/mouth patches.
-  let wave=0;const action=p.action||{};if(action.kind==='wave'&&action.at>=0&&action.at<2.2){const e=action.at;wave=e<.18?.08*ease(e/.18):e<.52?mix(.08,-.70,ease((e-.18)/.34)):e<1.4?-.70+Math.sin((e-.52)*19)*.085:-.70*(1-ease((e-1.4)/.8));}
-  const target={left:clamp((a.left||0)*.15*g+Math.max(0,-wave)*.22*g,-.05,.35),right:clamp(-(a.right||0)*.20*g+wave*g,-.72,.08),tail:Math.sin(t*.72-.8)*.035*f,tilt:clamp((a.tilt||0)*.12*g,-.022,.022)};
-  for(const k in this.pose)this.pose[k]=mix(this.pose[k],target[k],1-Math.exp(-dt*(k==='tail'?4:9)));
-  const beat=action.at>=0&&action.at<2.2?Math.sin(Math.PI*action.at/2.2)**2:0,energy=reduced?.15:1;
-  let dx=(Math.sin(t*.43)*90*f+Math.sin(t*.19)*12*f)*energy,down=!freeze&&displayGaze==='down'?18:0;
+  const target={left:clamp((a.left||0)*.15*g+authored.left,-.3,2.1),right:clamp(-(a.right||0)*.20*g+authored.right,-2.2,.3),tail:Math.sin(t*.72-.8)*.06*f+authored.tail,tilt:clamp((a.tilt||0)*.18*g,-.045,.045)};
+  for(const k in this.pose)this.pose[k]=mix(this.pose[k],target[k],1-Math.exp(-dt*(k==='tail'?7:18)));
+  // An interrupted routine settles by the shortest rotation rather than rewinding a whole spin.
+  if(freeze){this.lastChoreography=null;this.choreographyHandoff=null;this.displayedChoreography=null;}
+  if(authored.active){
+   const restarted=this.choreographyKind!==action.kind||action.at<(this.choreographyAt||0)-.05;
+   if(restarted&&this.displayedChoreography){this.choreographyHandoff={...this.displayedChoreography,rotation:Math.atan2(Math.sin(this.displayedChoreography.rotation),Math.cos(this.displayedChoreography.rotation))};this.handoffAge=0;}
+   if(this.choreographyHandoff){this.handoffAge+=dt;const amount=ease(this.handoffAge/.22);for(const k of ['dx','dy','rotation','scaleX','scaleY'])authored[k]=mix(this.choreographyHandoff[k],authored[k],amount);if(amount>=1)this.choreographyHandoff=null;}
+   this.lastChoreography={...authored};this.choreographyRelease=0;this.choreographyKind=action.kind;this.choreographyAt=action.at;
+  }else{
+   this.choreographyKind=null;this.choreographyHandoff=null;
+   if(this.lastChoreography){this.choreographyRelease=(this.choreographyRelease||0)+dt;const amount=1-ease(this.choreographyRelease/.26),last=this.lastChoreography;if(amount>0){for(const k of ['dx','dy'])authored[k]=last[k]*amount;authored.rotation=Math.atan2(Math.sin(last.rotation),Math.cos(last.rotation))*amount;authored.scaleX=1+(last.scaleX-1)*amount;authored.scaleY=1+(last.scaleY-1)*amount;}else this.lastChoreography=null;}
+  }
+  this.displayedChoreography={...authored};
+  const energy=reduced?.15:1;
+  let dx=(Math.sin(t*.43)*90*f+Math.sin(t*.19)*12*f)*energy+authored.dx,down=!freeze&&displayGaze==='down'?24:0;
   this.bow=mix(this.bow||0,down,1-Math.exp(-dt*5));
-  let dy=(Math.sin(t*.61)*65*f+clamp((a.nod||0)*100*g,-12,12)+this.bow+(action.kind==='surprise'?-22*beat:action.kind==='laugh'?Math.sin(action.at*17)*8*beat:action.kind==='shy'?14*beat:0))*energy;
-  const rotation=clamp((Math.sin(t*.37)*.075*f+this.pose.tilt+(action.kind==='shy'?-.06*beat:action.kind==='surprise'?.055*beat:0))*energy,-.13,.13),breath=freeze?1:1+Math.sin(t*1.18)*.006*f,scale=.40*breath;
-  const footprint=this.boundsFor({rotation,scale,pose:this.pose,mouth:this.mouth,expression});dx=clamp(dx,12-footprint.minX,1268-footprint.maxX);dy=clamp(dy,12-footprint.minY,708-footprint.maxY);
-  ctx.save();ctx.globalAlpha=clamp(p.visible??1,0,1)*clamp(p.density??1,.55,1);ctx.translate(640+dx,360+dy);ctx.rotate(rotation);ctx.scale(scale,scale);ctx.translate(-512,-768);this.drawStack(ctx,this.mouth,expression,this.pose);ctx.restore();
-  const bounds=this.boundsFor({dx,dy,rotation,scale,pose:this.pose,mouth:this.mouth,expression});
-  this.current={renderer:'painted-wisp',ready:true,assetCount:this.layers.size,mouth:this.mouth,expression,baseExpression,blink,source:mouth.source,phonemeAccurate:mouth.source==='audio-aligned-visemes',performanceId:talking?p.id:null,audioAt:talking?p.at:0,state:p.state,gaze:displayGaze||'audience',expressionTarget:wanted,weights:mouth.weights,activeLayers:['layers--tail','layers--arm-left','layers--arm-right','layers--body-core','expressions--'+expression,'mouths--'+this.mouth],pose:{...this.pose,dx,dy,rotation,scale},bounds,frames:++this.frames,manual:!!this.manual};return this.canvas;
+  let dy=(Math.sin(t*.61)*65*f+clamp((a.nod||0)*100*g,-16,16)+this.bow)*energy+authored.dy;
+  const rotation=(Math.sin(t*.37)*.095*f+this.pose.tilt)*energy+authored.rotation,breath=freeze?1:1+Math.sin(t*1.18)*.009*f,scale=.40*breath,scaleX=scale*authored.scaleX,scaleY=scale*authored.scaleY;
+  // Zoom out only when a rotated stretched silhouette exceeds the usable stage; then clamp its root.
+  let footprint=this.boundsFor({rotation,scaleX,scaleY,pose:this.pose,mouth:this.mouth,expression});
+  const fit=Math.min(1,1256/(footprint.maxX-footprint.minX),696/(footprint.maxY-footprint.minY)),sx=scaleX*fit,sy=scaleY*fit;
+  if(fit<1)footprint=this.boundsFor({rotation,scaleX:sx,scaleY:sy,pose:this.pose,mouth:this.mouth,expression});
+  dx=clamp(dx,12-footprint.minX,1268-footprint.maxX);dy=clamp(dy,12-footprint.minY,708-footprint.maxY);
+  ctx.save();ctx.globalAlpha=clamp(p.visible??1,0,1)*clamp(p.density??1,.55,1);ctx.translate(640+dx,360+dy);ctx.rotate(rotation);ctx.scale(sx,sy);ctx.translate(-512,-768);this.drawStack(ctx,this.mouth,expression,this.pose);ctx.restore();
+  const bounds=this.boundsFor({dx,dy,rotation,scaleX:sx,scaleY:sy,pose:this.pose,mouth:this.mouth,expression});
+  this.current={renderer:'painted-wisp',ready:true,assetCount:this.layers.size,mouth:this.mouth,expression,baseExpression,blink,source:mouth.source,phonemeAccurate:mouth.source==='audio-aligned-visemes',performanceId:talking?p.id:null,audioAt:talking?p.at:0,state:p.state,gaze:displayGaze||'audience',expressionTarget:wanted,weights:mouth.weights,activeLayers:['layers--tail','layers--arm-left','layers--arm-right','layers--body-core','expressions--'+expression,'mouths--'+this.mouth],pose:{...this.pose,dx,dy,rotation,scale,scaleX:sx,scaleY:sy},choreography:{kind:authored.kind,active:authored.active,progress:authored.progress,reducedMotion:reduced},bounds,frames:++this.frames,manual:!!this.manual};return this.canvas;
  }
- boundsFor({dx=0,dy=0,rotation=0,scale=.4,pose={},mouth='rest',expression='neutral'}){let minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity;for(const id of ['layers--tail','layers--arm-left','layers--arm-right','layers--body-core','expressions--'+expression,'mouths--'+mouth]){const l=this.layers.get(id);if(!l)continue;const angle=id==='layers--tail'?pose.tail||0:id==='layers--arm-left'?pose.left||0:id==='layers--arm-right'?pose.right||0:0,[px,py]=l.pivot;for(const x of [l.bounds[0],l.bounds[2]])for(const y of [l.bounds[1],l.bounds[3]]){const u=px+(x-px)*Math.cos(angle)-(y-py)*Math.sin(angle)-512,v=py+(x-px)*Math.sin(angle)+(y-py)*Math.cos(angle)-768,xx=640+dx+scale*(u*Math.cos(rotation)-v*Math.sin(rotation)),yy=360+dy+scale*(u*Math.sin(rotation)+v*Math.cos(rotation));minX=Math.min(minX,xx);minY=Math.min(minY,yy);maxX=Math.max(maxX,xx);maxY=Math.max(maxY,yy)}}return {minX,minY,maxX,maxY,inside:minX>=0&&minY>=0&&maxX<=1280&&maxY<=720};}
- verifyEnvelope(){if(!this.ready)return {inside:false,error:this.error||'Loading'};let checks=0,b={minX:Infinity,minY:Infinity,maxX:-Infinity,maxY:-Infinity};for(const dx of [-102,102])for(const dy of [-100,110])for(const rotation of [-.13,.13])for(const left of [-.05,.35])for(const right of [-.72,.08])for(const tail of [-.035,.035])for(const mouth of WISP_MOUTHS)for(const expression of WISP_EXPRESSIONS){const zero=this.boundsFor({rotation,scale:.403,pose:{left,right,tail},mouth,expression}),n=this.boundsFor({dx:clamp(dx,12-zero.minX,1268-zero.maxX),dy:clamp(dy,12-zero.minY,708-zero.maxY),rotation,scale:.403,pose:{left,right,tail},mouth,expression});for(const k of ['minX','minY'])b[k]=Math.min(b[k],n[k]);for(const k of ['maxX','maxY'])b[k]=Math.max(b[k],n[k]);checks++}return {...b,inside:b.minX>=0&&b.minY>=0&&b.maxX<=1280&&b.maxY<=720,checks,scope:'All painted expressions/mouths, alpha bounds >1, maximum supported hover, arms, tail and root tilt'};}
+ boundsFor({dx=0,dy=0,rotation=0,scale=.4,scaleX=scale,scaleY=scale,pose={},mouth='rest',expression='neutral'}){let minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity;for(const id of ['layers--tail','layers--arm-left','layers--arm-right','layers--body-core','expressions--'+expression,'mouths--'+mouth]){const l=this.layers.get(id);if(!l)continue;const angle=id==='layers--tail'?pose.tail||0:id==='layers--arm-left'?pose.left||0:id==='layers--arm-right'?pose.right||0:0,[px,py]=l.pivot;for(const x of [l.bounds[0],l.bounds[2]])for(const y of [l.bounds[1],l.bounds[3]]){const u=px+(x-px)*Math.cos(angle)-(y-py)*Math.sin(angle)-512,v=py+(x-px)*Math.sin(angle)+(y-py)*Math.cos(angle)-768,xx=640+dx+scaleX*u*Math.cos(rotation)-scaleY*v*Math.sin(rotation),yy=360+dy+scaleX*u*Math.sin(rotation)+scaleY*v*Math.cos(rotation);minX=Math.min(minX,xx);minY=Math.min(minY,yy);maxX=Math.max(maxX,xx);maxY=Math.max(maxY,yy)}}return {minX,minY,maxX,maxY,inside:minX>=0&&minY>=0&&maxX<=1280&&maxY<=720};}
+ verifyEnvelope(){
+  if(!this.ready)return {inside:false,error:this.error||'Loading'};
+  let checks=0;const b={minX:Infinity,minY:Infinity,maxX:-Infinity,maxY:-Infinity};
+  const check=({dx,dy,rotation,scaleX=.403,scaleY=.403,pose,mouth,expression})=>{
+   let zero=this.boundsFor({rotation,scaleX,scaleY,pose,mouth,expression});const fit=Math.min(1,1256/(zero.maxX-zero.minX),696/(zero.maxY-zero.minY));scaleX*=fit;scaleY*=fit;
+   if(fit<1)zero=this.boundsFor({rotation,scaleX,scaleY,pose,mouth,expression});
+   const n=this.boundsFor({dx:clamp(dx,12-zero.minX,1268-zero.maxX),dy:clamp(dy,12-zero.minY,708-zero.maxY),rotation,scaleX,scaleY,pose,mouth,expression});
+   for(const k of ['minX','minY'])b[k]=Math.min(b[k],n[k]);for(const k of ['maxX','maxY'])b[k]=Math.max(b[k],n[k]);checks++;
+  };
+  for(const dx of [-102,102])for(const dy of [-100,110])for(const rotation of [-.13,.13])for(const left of [-.3,2.1])for(const right of [-2.2,.3])for(const tail of [-.2,.2])for(const mouth of WISP_MOUTHS)for(const expression of WISP_EXPRESSIONS)check({dx,dy,rotation,pose:{left,right,tail},mouth,expression});
+  const idleChecks=checks;
+  for(const [kind,duration]of Object.entries(WISP_CHOREOGRAPHY_ACTIONS))for(let n=0;n<=12;n++){
+   const a=choreographyPose(kind,duration*n/12,{intensity:1.25});
+   for(const direction of [-1,1])for(const mouth of WISP_MOUTHS)for(const expression of WISP_EXPRESSIONS)check({dx:direction*102+a.dx,dy:direction*110+a.dy,rotation:a.rotation+direction*.14,scaleX:.403*a.scaleX,scaleY:.403*a.scaleY,pose:{left:clamp(a.left,-.3,2.1),right:clamp(a.right,-2.2,.3),tail:a.tail+direction*.06},mouth,expression});
+  }
+  return {...b,inside:b.minX>=0&&b.minY>=0&&b.maxX<=1280&&b.maxY<=720,checks,idleChecks,choreographyChecks:checks-idleChecks,scope:'All registered mouths/expressions at idle extremes and 13 samples of every authored routine; transformed alpha bounds, squash/stretch, root fit and stage clamp.'};
+ }
+
+ get choreographyActions(){return {...WISP_CHOREOGRAPHY_ACTIONS}}
  inspect(){return structuredClone(this.current)}
 }

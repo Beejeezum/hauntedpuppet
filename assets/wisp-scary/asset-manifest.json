@@ -1,0 +1,126 @@
+{
+  "character": "Scary Wisp",
+  "version": "1.0",
+  "canvas": [
+    1024,
+    1536
+  ],
+  "format": "painted alpha body plus registered raster facial atlases",
+  "images": {
+    "body": "body-core.png",
+    "mouths": "mouth-atlas.png",
+    "eyes": "eye-atlas.png",
+    "left": "arm-left.png",
+    "right": "arm-right.png",
+    "tail": "tail.png",
+    "lookDown": "eyes-look-down.png",
+    "sinister": "eyes-sinister.png"
+  },
+  "atlases": {
+    "mouths": {
+      "columns": 4,
+      "rows": 3,
+      "names": [
+        "rest",
+        "mbp",
+        "aa",
+        "ee",
+        "oh",
+        "oo",
+        "fv",
+        "l",
+        "ss",
+        "ch",
+        "th",
+        "roar"
+      ],
+      "anchor": [
+        512,
+        650
+      ],
+      "targetWidth": 370
+    },
+    "eyes": {
+      "columns": 4,
+      "rows": 2,
+      "names": [
+        "neutral",
+        "curious",
+        "delighted",
+        "concerned",
+        "blink",
+        "half-blink",
+        "look-left",
+        "look-right"
+      ],
+      "anchor": [
+        512,
+        494
+      ],
+      "targetWidth": 380
+    }
+  },
+  "provenance": {
+    "tool": "Built-in image generation",
+    "reference": "../wisp/wisp-assembled-transparent.png",
+    "sourceConcept": "scary-concept.png",
+    "style": "Original dimensional painted ivory spirit with turquoise edge glow"
+  },
+  "limitations": [
+    "Arms/tail/body are separate generated painted pieces registered by affine transforms; extreme joint rotations can reveal texture variation.",
+    "Atlas facial drawings share registered anchors but are distinct paintings; expression changes can vary eye silhouette.",
+    "Live acoustic mouth estimates are not phoneme accurate.",
+    "Transform compositor provides theatrical transitions, not a 3D anatomical morph."
+  ],
+  "rig": {
+    "tail": {
+      "scale": 0.6,
+      "translate": [
+        270,
+        575
+      ],
+      "pivot": [
+        512,
+        1040
+      ]
+    },
+    "left": {
+      "scale": 0.65,
+      "translate": [
+        -10,
+        440
+      ],
+      "pivot": [
+        305,
+        685
+      ]
+    },
+    "right": {
+      "scale": 0.65,
+      "translate": [
+        330,
+        390
+      ],
+      "pivot": [
+        720,
+        685
+      ]
+    },
+    "body": {
+      "scale": 1,
+      "translate": [
+        0,
+        0
+      ],
+      "pivot": [
+        512,
+        768
+      ]
+    }
+  },
+  "extraEyes": {
+    "look-down": "lookDown",
+    "sinister": "sinister"
+  },
+  "defaultExpression": "sinister"
+}

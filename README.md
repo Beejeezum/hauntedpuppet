@@ -38,7 +38,7 @@ The local dashboard listens only on loopback port 8770. The optional phone servi
 
 Included rehearsal and show cues work offline. Preparing new spoken lines uses OpenAI and can retain forced phoneme timing. Install the optional English aligner with `python3 -m pip install -r requirements.txt` or use `Setup Alignment.command` on Mac.
 
-Native streaming mouth motion is an acoustic estimate driven by the audible signal. It is not phoneme recognition. The first character is friendly Wisp; evil artwork and a painted transformation sequence remain future production assets.
+Native streaming mouth motion is an acoustic estimate driven by the audible signal. It is not phoneme recognition. Both cute and scary Wisp now use painted rigs. Form changes use a brief staged squeeze and sequential raster blend; these are not hand-drawn in-between transformation cels.
 
 ## Development and tests
 
@@ -85,3 +85,15 @@ The searchable costume board contains 100 curated possibilities and original bri
 This is a practical shortlist, not a measured top-100 ranking. [NRF's October 2026 report](https://cdn.nrf.com/blog/top-halloween-costume-trends-for-2026) supports prioritizing Spider-Man, superheroes and KPop Demon Hunters; the rest balances classics, family favorites and an unknown-costume fallback. The catalog and all quips are in [assets/costume-cues.json](assets/costume-cues.json). Wisp does not have a camera or identify costumes automatically.
 
 The puppeteer controls emphasize attention, bashfulness, delight and surprise, with recorded speeches tucked away. Disney publicly describes studying puppeteers' pantomime and gesture in [Imagineering's character work](https://sites.disney.com/waltdisneyimagineering/autonomous-characters/); the exact internal attraction button layouts are not claimed here. The character prompt uses labeled performance, turn-length and exit instructions following [OpenAI's voice prompting guidance](https://developers.openai.com/api/docs/guides/voice-prompting). Prompted voice acting still needs a real-room listening test; it is not a new custom voice.
+
+## Puppet performance console
+
+The left console keeps Wisp visible while you operate. On narrow screens the same canvas becomes a compact bottom monitor when you scroll; it does not start another renderer or audio route. Big moves include dance, twirl, bounce, peekaboo, candy victory, orbit and swoop/fly-by. They are interruptible authored beats with anticipation, squash/stretch and recovery. A twirl is a planar 2D spin, not a fabricated view of the character's back.
+
+**Cute/Scary:** choose Big kids to enable scary Wisp. Little ones and Family remain cute. Voice acting instructions follow the form on an existing live connection without changing voice ID or reconnecting. **Welcome kiddos** immediately restores cute Wisp, gentle audience and a clean visitor context. **Stop All** cancels speech and choreography; **Blackout** also blanks scenery and calibration.
+
+**Arm reveal → Reveal! BOO:** explicit Big-kids-only operator cue. Arming expires after ten seconds and plays nothing by itself. The routine gives a friendly setup, a suspicious pause, a scary pop and goofy recovery. With native voice connected it waits for actual spoken audio to finish before the reveal; otherwise it runs silently. A visitor interruption, Welcome, Stop or cancellation prevents later queued reveal beats. The growly BOO is voice acting requested from the model, not a guaranteed or pre-recorded sound effect.
+
+Paired phones now have the same bounded movement/form/reveal controls and a priority Welcome kiddos command. A priority reset cancels queued scare commands. The laptop remains the only audio and microphone owner. The operator chooses the audience; there is no camera or automatic age detection.
+
+The scary rig includes four independently articulated painted body pieces, twelve mouths including a fanged roar, and ten eye states including downward gaze and sinister eyes. Scary speech owns its mouth just as cute speech does. Actual generated-speech phoneme timing remains distinct from approximate live acoustic mouth animation. The cute rig still uses a downward bow rather than a new downward-eye painting. See [puppeteer experience notes](docs/PUPPETEER-EXPERIENCE.md) and [scary asset handoff](assets/wisp-scary/PRODUCTION-NOTES.md).
