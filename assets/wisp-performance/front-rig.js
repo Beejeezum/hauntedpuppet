@@ -43,7 +43,7 @@ export class PaintedFrontRig{
     const g=paintedGeometry(image,p=>registered(p,meta),36,40,images['arm-'+side+'-evil']),baseVertices=g.vertices.slice(),bindings=[],digitBindings=[];
     for(let k=0;k<g.uvs.length;k+=2)digitBindings.push(bindDigits(g.uvs[k]*image.width,g.uvs[k+1]*image.height,side,kit.digits?.[side]));
     for(let k=0;k<baseVertices.length;k+=2)bindings.push(bindArmPoint(baseVertices[k],baseVertices[k+1],joints));
-    const cute=P.Texture.from(image),evil=P.Texture.from(images['arm-'+side+'-evil']),shader=paintMorphShader(P,cute,evil),frontShader=paintMorphShader(P,cute,evil,true);
+    const cute=P.Texture.from(image),evil=P.Texture.from(images['arm-'+side+'-evil']),shader=kit.createArmShader?.(P,cute,evil,false,{side,image,evilImage:images['arm-'+side+'-evil']})||paintMorphShader(P,cute,evil),frontShader=kit.createArmShader?.(P,cute,evil,true,{side,image,evilImage:images['arm-'+side+'-evil']})||paintMorphShader(P,cute,evil,true);
     const mesh=new P.MeshSimple({texture:cute,shader,...g}),front=new P.MeshSimple({texture:cute,shader:frontShader,...g});
     const upperX=joints[1][0]-joints[0][0],upperY=joints[1][1]-joints[0][1],upperLengthSquared=upperX*upperX+upperY*upperY;
     mesh.autoUpdate=front.autoUpdate=false;

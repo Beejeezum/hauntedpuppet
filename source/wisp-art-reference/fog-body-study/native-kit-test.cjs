@@ -1,10 +1,10 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const http=require('node:http');
 const{chromium,webkit}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
-const bodyMorph=process.argv.includes('--body-morph'),pairedArms=process.argv.includes('--paired-arms');
+const bodyMorph=process.argv.includes('--body-morph'),pairedArms=process.argv.includes('--paired-arms'),implicitHands=process.argv.includes('--implicit-hands');
 (async()=>{
  const browser=await(process.env.HAUNT_BROWSER==='webkit'?webkit:chromium).launch();const page=await browser.newPage({viewport:{width:1280,height:900}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
- const out=path.resolve(__dirname,'../../../../wisp-live-rig-proof/fog-native-kit-study-'+(process.env.HAUNT_BROWSER||'chromium')+(bodyMorph?'-morph':'')+(pairedArms?'-paired-arms':''));fs.mkdirSync(out,{recursive:true});
+ const out=path.resolve(__dirname,'../../../../wisp-live-rig-proof/fog-native-kit-study-'+(process.env.HAUNT_BROWSER||'chromium')+(bodyMorph?'-morph':'')+(pairedArms?'-paired-arms':'')+(implicitHands?'-implicit-hands':''));fs.mkdirSync(out,{recursive:true});
  // Test-owned loopback fixture: production server intentionally rejects source/.
  const root=path.resolve(__dirname,'../../..'),types={'.mjs':'text/javascript','.js':'text/javascript','.json':'application/json','.png':'image/png','.webp':'image/webp'};
  const fixture=http.createServer((req,res)=>{
@@ -21,11 +21,11 @@ const bodyMorph=process.argv.includes('--body-morph'),pairedArms=process.argv.in
  try{
   for(const file of ['/server.py','/.env','/source/wisp-art-reference/fog-body-study/native-kit-test.cjs'])assert.equal((await fetch(fixtureBase+file)).status,404,'Fixture exposed a private/unsupported file');
   await page.goto(fixtureBase+'/native-kit-fixture');
-  const result=await page.evaluate(async({bodyMorph,pairedArms})=>{
+  const result=await page.evaluate(async({bodyMorph,pairedArms,implicitHands})=>{
    const {WispPerformanceRuntime}=await import('/assets/wisp-performance-runtime.js');
    const {DIGITS}=await import('/assets/wisp-performance/digit-skin.js');const original=JSON.stringify(DIGITS);
    const {createFogStudyKit}=await import('/source/wisp-art-reference/fog-body-study/native-kit.mjs');
-   const kit=await createFogStudyKit({pairedArms});if(bodyMorph){const {createNativeBodyMorph}=await import('/source/wisp-art-reference/fog-body-study/front-form-morph.mjs');kit.createBodyViews=createNativeBodyMorph;kit.eyeMaterial=t=>{const u=Math.max(0,Math.min(1,(t-.4)/.6));return u*u*(3-2*u);};}const pilot=await new WispPerformanceRuntime({frontKit:kit}).load();
+   const kit=await createFogStudyKit({pairedArms,implicitHands});if(bodyMorph){const {createNativeBodyMorph}=await import('/source/wisp-art-reference/fog-body-study/front-form-morph.mjs');kit.createBodyViews=createNativeBodyMorph;kit.eyeMaterial=t=>{const u=Math.max(0,Math.min(1,(t-.4)/.6));return u*u*(3-2*u);};}const pilot=await new WispPerformanceRuntime({frontKit:kit}).load();
    if(!pilot.ready||!pilot.frontRig?.ready)throw Error(pilot.error||pilot.frontError||'Native kit failed');
    const frames=[];for(const clock of [0,2,5]){pilot.render({clock,freeze:true,allowEvil:false});frames.push(pilot.frontRig.inspect());}
    const {performanceFrame}=await import('/assets/wisp-performance/reel.js');
@@ -37,12 +37,22 @@ const bodyMorph=process.argv.includes('--body-morph'),pairedArms=process.argv.in
     const capture=r=>{r.render({clock:4,freeze:true,action:{kind:'wave',at:1.6},state:'idle',mood:'angry'},1);const c=document.createElement('canvas');c.width=1280;c.height=720;const x=c.getContext('2d');x.drawImage(r.canvas,0,0);return x.getImageData(0,0,1280,720).data;};
     const before=capture(pilot),second=await new WispPerformanceRuntime({frontKit:kit}).load();if(!second.frontRig?.ready)throw Error(second.frontError);capture(second);second.dispose();const after=capture(pilot);let changed=0;for(let i=0;i<before.length;i++)if(before[i]!==after[i])changed++;sharedKitLifecycle={changedChannels:changed,ready:pilot.ready};
    }
+   let endpointIdentity=null;
+   if(implicitHands){
+    const referenceKit=await createFogStudyKit({pairedArms:true});
+    referenceKit.createBodyViews=kit.createBodyViews;referenceKit.eyeMaterial=kit.eyeMaterial;
+    const reference=await new WispPerformanceRuntime({frontKit:referenceKit}).load();
+    if(!reference.frontRig?.ready)throw Error(reference.frontError||'Endpoint reference failed');
+    const pixels=(r,value)=>{r.render({clock:12,dt:1/60,freeze:true,action:{kind:'wave',at:1.6},state:'speaking',weights:{A:1},jaw:1,mood:'angry'},value);const c=document.createElement('canvas');c.width=1280;c.height=720;const x=c.getContext('2d');x.drawImage(r.canvas,0,0);return x.getImageData(0,0,1280,720).data;};
+    endpointIdentity=[0,1].map(value=>{const a=pixels(pilot,value),b=pixels(reference,value);let changedChannels=0,maxDelta=0;for(let i=0;i<a.length;i++){const d=Math.abs(a[i]-b[i]);if(d)changedChannels++;maxDelta=Math.max(maxDelta,d);}return{value,changedChannels,maxDelta};});reference.dispose();
+   }
    // Load default after the candidate: per-kit metadata must not leak into it.
    const fallback=await new WispPerformanceRuntime().load();if(!fallback.frontRig?.ready)throw Error(fallback.frontError||'Default failed');
    fallback.render({clock:2,freeze:true});
-   const result={sharedKitLifecycle,registrationReports:kit.registrationReports,nativeMotion,pilotReady:pilot.ready,pilotKit:pilot.frontRig.inspect().kitId,defaultKit:fallback.frontRig.inspect().kitId,digitsUnchanged:original===JSON.stringify(DIGITS),defaultHandScale:fallback.frontRig.inspect().arms.left.handScale,frames};
+   const result={implicitHands,endpointIdentity,shapeReports:kit.shapeReports,sharedKitLifecycle,registrationReports:kit.registrationReports,nativeMotion,pilotReady:pilot.ready,pilotKit:pilot.frontRig.inspect().kitId,defaultKit:fallback.frontRig.inspect().kitId,digitsUnchanged:original===JSON.stringify(DIGITS),defaultHandScale:fallback.frontRig.inspect().arms.left.handScale,frames};
    document.body.replaceChildren(pilot.canvas);window.__nativePilot=pilot;fallback.dispose();pilot.render({clock:3,freeze:true,allowEvil:false});return result;
-  },{bodyMorph,pairedArms});
+  },{bodyMorph,pairedArms,implicitHands});
+  if(implicitHands)for(const endpoint of result.endpointIdentity)assert.equal(endpoint.changedChannels,0,'Contour shader changed an endpoint');
   if(pairedArms)assert.equal(result.sharedKitLifecycle.changedChannels,0,'Disposing a shared-kit renderer changed the survivor');
   assert.equal(result.nativeMotion.corrective.unresolvedCalls,0);assert.equal(result.pilotKit,'fog-cute-study');assert.equal(result.defaultKit,'painted-original');assert.equal(result.digitsUnchanged,true);assert.equal(result.defaultHandScale,1.2);assert.equal(errors.length,0);
   await page.screenshot({path:path.join(out,'native-cute.png')});

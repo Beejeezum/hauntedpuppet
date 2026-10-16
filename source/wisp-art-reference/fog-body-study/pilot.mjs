@@ -4,7 +4,8 @@ import {SpiritFrame} from '/assets/spirit-frame.js';
 import {createFogStudyKit} from './native-kit.mjs';
 import {createNativeBodyMorph} from './front-form-morph.mjs';
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-const $=s=>document.querySelector(s),kit=await createFogStudyKit({pairedArms:true});
+const implicitHands=new URLSearchParams(location.search).get('hands')==='contour';
+const $=s=>document.querySelector(s),kit=await createFogStudyKit({pairedArms:true,implicitHands});
 kit.createBodyViews=createNativeBodyMorph;kit.eyeMaterial=t=>{const u=Math.max(0,Math.min(1,(t-.4)/.6));return u*u*(3-2*u);};
 const rig=await new WispPerformanceRuntime({frontKit:kit}).load();if(!rig.frontRig?.ready)throw Error(rig.frontError||rig.error);
 const fog=await new SpiritAtmosphere().load(),framed=new SpiritFrame(),stage={x:0,y:0,scale:100,margin:15};$('#stage').append(framed.canvas);
@@ -24,5 +25,5 @@ function frame(now){if(disposed)return;try{
  $('#status').textContent=blackout?'Blackout':`Live rehearsal · ${Math.round(blend*100)}% spooky`;
  }catch(e){error=e.message;$('#status').textContent='Rehearsal stopped: '+error;return;}handle=requestAnimationFrame(frame);}
 handle=requestAnimationFrame(frame);
-window.FogPilot={inspect:()=>({ready:rig.ready,blend,target,clock,talking,blackout,error,rig:rig.inspect(),frame:framed.inspect(),fog:fog.inspect()}),dispose(){if(disposed)return;disposed=true;cancelAnimationFrame(handle);rig.dispose();fog.clear();framed.dispose();}};
+window.FogPilot={inspect:()=>({ready:rig.ready,implicitHands,blend,target,clock,talking,blackout,error,rig:rig.inspect(),frame:framed.inspect(),fog:fog.inspect()}),dispose(){if(disposed)return;disposed=true;cancelAnimationFrame(handle);rig.dispose();fog.clear();framed.dispose();}};
 window.addEventListener('pagehide',()=>window.FogPilot.dispose(),{once:true});
