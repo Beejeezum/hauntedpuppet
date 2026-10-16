@@ -47,7 +47,7 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci --ignore-scripts
-      - run: npx playwright install --with-deps webkit
+      - run: npx playwright install --with-deps chromium webkit
       - name: Start local rehearsal server
         run: |
           python3 server.py > /tmp/wisp-server.log 2>&1 &
