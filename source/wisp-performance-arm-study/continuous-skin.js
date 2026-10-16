@@ -1,0 +1,20 @@
+// Local production-art study: one continuous C1 arm path, textured with untouched paintings.
+import * as P from '../../assets/vendor/pixi/pixi.mjs';
+const canvasHost=document.querySelector('#surface');
+const app=new P.Application();await app.init({width:1100,height:700,backgroundAlpha:0,antialias:true,autoStart:false,preference:'webgl',preserveDrawingBuffer:true});app.stop();canvasHost.append(app.canvas);
+const load=async name=>{const i=new Image();i.src=name;await i.decode();return i};
+function feather(image,a,b,start,end,inverse=false){const c=document.createElement('canvas');c.width=image.width;c.height=image.height;const x=c.getContext('2d');x.drawImage(image,0,0);const dx=b[0]-a[0],dy=b[1]-a[1],l=Math.hypot(dx,dy),g=x.createLinearGradient(a[0]+dx/l*start,a[1]+dy/l*start,a[0]+dx/l*end,a[1]+dy/l*end);g.addColorStop(0,inverse?'#000':'#0000');g.addColorStop(1,inverse?'#0000':'#000');x.globalCompositeOperation='destination-in';x.fillStyle=g;x.fillRect(0,0,c.width,c.height);return c;}
+const [u,f,h]=await Promise.all(['upper-arm-v1.png','forearm-v1.png','hand-open-v1.png'].map(load));
+const textures=[feather(u,[530,1200],[695,1920],-50,80,true),feather(feather(f,[630,1120],[790,1890],-50,80,true),[470,350],[630,1120],-150,0),feather(h,[320,650],[640,730],-120,30)];
+const parts=[];
+for(let j=0;j<2;j++){const image=textures[j],v=[],uv=[],ix=[],bindings=[],cols=40,rows=64;for(let y=0;y<=rows;y++)for(let x=0;x<=cols;x++){const px=x/cols*image.width,py=y/rows*image.height,a=j?[470,350]:[365,480],b=j?[630,1120]:[530,1200],t=(py-a[1])/(b[1]-a[1]),center=a[0]+(b[0]-a[0])*(t+.10*Math.sin(Math.PI*t));bindings.push({t:j*.5+t*.5,offset:(px-center)*.25});v.push(0,0);uv.push(x/cols,y/rows)}for(let y=0;y<rows;y++)for(let x=0;x<cols;x++){const a=y*(cols+1)+x,b=a+1,c=a+cols+1,d=c+1;ix.push(a,b,d,a,d,c)}const mesh=new P.MeshSimple({texture:P.Texture.from(image),vertices:new Float32Array(v),uvs:new Float32Array(uv),indices:new Uint32Array(ix)});mesh.autoUpdate=false;app.stage.addChild(mesh);parts.push({mesh,bindings});}
+const hand=new P.Sprite(P.Texture.from(textures[2]));hand.pivot.set(320,650);hand.scale.set(.205);app.stage.addChild(hand);
+function unit(a,b){const x=b[0]-a[0],y=b[1]-a[1],l=Math.hypot(x,y);return[x/l,y/l]}
+function hermite(a,b,ta,tb,t){const t2=t*t,t3=t2*t;return[0,1].map(k=>(2*t3-3*t2+1)*a[k]+(t3-2*t2+t)*ta[k]+(-2*t3+3*t2)*b[k]+(t3-t2)*tb[k])}
+function path(s,e,w,t){const middle=unit(s,w),first=unit(s,e),last=unit(e,w),tangent=middle.map(x=>x*177.5);if(t<0)return s.map((x,k)=>x+first[k]*t*350);if(t>1)return w.map((x,k)=>x+last[k]*(t-1)*360);return t<=.5?hermite(s,e,first.map(x=>x*175),tangent,t*2):hermite(e,w,tangent,last.map(x=>x*180),(t-.5)*2)}
+let time=0,playing=true,last=performance.now(),mode='reach';
+function draw(t){const phase=.5-.5*Math.cos(t*.85),s=[300,270],a=mode==='fold'?-.2+phase*1.8:.1+phase*.75,e=[s[0]+Math.cos(a)*175,s[1]+Math.sin(a)*175],fa=mode==='fold'?-1.8+phase*.7:-1.1+phase*.95,w=[e[0]+Math.cos(fa)*180,e[1]+Math.sin(fa)*180];let finite=true;for(const{mesh,bindings}of parts){const v=mesh.vertices;bindings.forEach((b,i)=>{const p=path(s,e,w,b.t),before=path(s,e,w,b.t-.001),after=path(s,e,w,b.t+.001),normal=unit(before,after);v[i*2]=p[0]-normal[1]*b.offset;v[i*2+1]=p[1]+normal[0]*b.offset;if(!Number.isFinite(v[i*2]+v[i*2+1]))finite=false});mesh.geometry.getBuffer('aPosition').update();}hand.position.set(...w);hand.rotation=fa-Math.atan2(80,320)+.12*Math.sin(t*.7);app.render();window.armStudy={time:t,mode,finite,shoulder:s,elbow:e,wrist:w,vertices:parts.reduce((n,p)=>n+p.bindings.length,0)};}
+window.seekArm=t=>{playing=false;time=t;draw(t)};window.armMode=m=>{mode=m;draw(time)};
+document.querySelector('#play').onclick=e=>{playing=!playing;e.target.textContent=playing?'Pause':'Play'};for(const name of ['reach','fold'])document.querySelector('#'+name).onclick=()=>{mode=name};
+function frame(now){if(playing)time+=Math.min(.04,(now-last)/1000);last=now;draw(time);requestAnimationFrame(frame)}requestAnimationFrame(frame);
+window.disposeStudy=()=>{playing=false;app.destroy(true,{children:true,texture:true,textureSource:true});};
