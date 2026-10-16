@@ -1,0 +1,21 @@
+{
+  "file": "bent-cupped-arm-left-v1.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alphaRange": [
+    0,
+    254
+  ],
+  "alphaBounds": [
+    0,
+    0,
+    1527,
+    1024
+  ],
+  "sha256": "45de67da6a32c8b1c26b610ca0113e5f39910391f0a1a4bc7d4bd589e9c9dc62",
+  "original": "exec-3ff6f4ec-9532-4695-8190-8a6599f76f41.png",
+  "status": "Unchanged imagegen corrective study; not rigged or production accepted"
+}
