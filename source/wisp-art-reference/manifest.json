@@ -36,6 +36,18 @@
       "generator": "Built-in imagegen edit of scary-fog-candidate-v1.png",
       "originalGeneratedBasename": "exec-26251605-954d-4961-b887-59acc45f41fd.png",
       "modified": false
+    },
+    {
+      "file": "friendly-morph-candidate-v1.png",
+      "sha256": "1154ec19509b3a4e31dd226dd66e0689520262f7ba4192c56f0ddbeabfd08793",
+      "size": [
+        1568,
+        1003
+      ],
+      "approval": "Unapproved friendly morph endpoint candidate; derived pose from scary v2, identity from approved friendly source",
+      "generator": "Built-in imagegen",
+      "originalGeneratedBasename": "exec-7a30c51c-36b2-446b-ae59-53481bce3cb1.png",
+      "modified": false
     }
   ],
   "motionReference": "Local review outputs/wisp-vision/wisp-fog-motion-v2.mp4; approved look/full-body acting only. Bufferedv4ending explicitly rejected. No prerecorded clip proves live interaction.",

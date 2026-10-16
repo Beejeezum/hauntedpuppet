@@ -1,0 +1,38 @@
+{
+  "size": [
+    1568,
+    1003
+  ],
+  "levels": {
+    "8": {
+      "margins": {
+        "left": 0.36607142857142855,
+        "top": 0.1984047856430708,
+        "right": 0.3934948979591837,
+        "bottom": 0.2023928215353938
+      },
+      "pass": true
+    },
+    "16": {
+      "margins": {
+        "left": 0.367984693877551,
+        "top": 0.19940179461615154,
+        "right": 0.39413265306122447,
+        "bottom": 0.2033898305084746
+      },
+      "pass": true
+    },
+    "32": {
+      "margins": {
+        "left": 0.37244897959183676,
+        "top": 0.20139581256231306,
+        "right": 0.39732142857142855,
+        "bottom": 0.20438683948155534
+      },
+      "pass": true
+    }
+  },
+  "scope": "Still-image framing and silhouette comparison only, not semantic registration or temporal continuity.",
+  "silhouetteIoU": 0.9407919588746366,
+  "lowerHalfSilhouetteIoU": 0.9304571372070796
+}
