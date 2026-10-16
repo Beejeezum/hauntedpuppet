@@ -1,0 +1,58 @@
+{
+  "image": "evil-face-parts.png",
+  "canvas": [
+    1024,
+    1536
+  ],
+  "components": {
+    "ridgeLeft": {
+      "rect": [
+        33,
+        137,
+        454,
+        328
+      ]
+    },
+    "ridgeRight": {
+      "rect": [
+        546,
+        142,
+        446,
+        324
+      ]
+    },
+    "socket": {
+      "rect": [
+        74,
+        628,
+        396,
+        271
+      ]
+    },
+    "iris": {
+      "rect": [
+        608,
+        612,
+        313,
+        308
+      ]
+    },
+    "fang": {
+      "rect": [
+        151,
+        1041,
+        226,
+        336
+      ]
+    },
+    "lowerLid": {
+      "rect": [
+        525,
+        1139,
+        473,
+        216
+      ]
+    }
+  },
+  "source": "Painted ivory-ridge/dark-socket/cyan-orb study from approved demon-front.png; built-in image generation; cleaned ridges contain no baked iris"
+}

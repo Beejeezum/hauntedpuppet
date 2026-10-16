@@ -1,0 +1,49 @@
+const{chromium,webkit}=require(process.env.HAUNT_PLAYWRIGHT||'playwright'),assert=require('node:assert/strict'),fs=require('node:fs');
+(async()=>{
+ const browser=await(process.env.HAUNT_BROWSER==='webkit'?webkit:chromium).launch({args:process.env.HAUNT_BROWSER==='webkit'?[]:['--mute-audio']}),page=await browser.newPage(),errors=[];
+ page.on('pageerror',e=>errors.push(e.message));
+ try{
+  const base=process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770';await page.route('**/painted-front-test',r=>r.fulfill({contentType:'text/html',body:'<!doctype html><body style="margin:0;background:black"></body>'}));await page.goto(base+'/painted-front-test');
+  const report=await page.evaluate(async()=>{
+   const{WispPerformanceRuntime}=await import('/assets/wisp-performance-runtime.js'),{WISP_CHOREOGRAPHY_ACTIONS}=await import('/assets/wisp-choreography.js');
+   const r=await new WispPerformanceRuntime({layered:true}).load();if(!r.ready||!r.frontRig?.ready||!r.morphFace?.parts?.ready)throw Error(r.frontError||r.error||'Layered rig unavailable');
+   document.body.append(r.canvas);let frames=0,maxReachError=0,maxStretch=0;const hands=new Set();
+   for(const[kind,duration]of Object.entries(WISP_CHOREOGRAPHY_ACTIONS))for(let n=0;n<=20;n++){
+    r.render({clock:frames/60,dt:1/60,freeze:true,action:{kind,at:duration*n/20},state:'speaking',weights:{A:.8},jaw:.5,mood:'amused'},n/20);
+    const s=r.inspect();if(!s.bounds.inside)throw Error('Layered stage clipping '+kind+' '+n);
+    for(const node of [r.frontRig.body,...r.frontRig.arms.flatMap(a=>[a.mesh,a.front])])if(!node.vertices.every(Number.isFinite))throw Error('Nonfinite actual painted skin');
+    if(s.frontRig.alpha>.99&&r.meshes.some(m=>m.index<6&&m.mesh.visible))throw Error('Whole-body pose ghosts underneath shared torso');
+    for(const[side,arm]of Object.entries(s.frontRig.arms)){maxReachError=Math.max(maxReachError,arm.reachError);maxStretch=Math.max(maxStretch,arm.stretch);if(Math.hypot(arm.joints[0][0]-arm.shoulderOnBody[0],arm.joints[0][1]-arm.shoulderOnBody[1])>1e-6)throw Error('Detached shoulder');hands.add(side);}
+    if(s.pose==='back'&&s.poseWeights[9]>.999&&r.face.alpha>.001)throw Error('Face on back');frames++;
+   }
+   // The torso is one unchanged painting/geometry across form changes, not two silhouettes.
+   const texture=r.frontRig.body.texture,bodyPoses=[];for(const evil of [0,.25,.5,.75,1]){r.render({clock:1,freeze:true,state:'idle'},evil);bodyPoses.push([...r.frontRig.body.vertices]);if(r.frontRig.body.texture!==texture)throw Error('Body texture swapped during morph');if(!r.inspect().faceRig.paintedDemonParts)throw Error('Demon anatomy missing');}
+   const reference=bodyPoses[0];const formTravel=Math.max(...bodyPoses.at(-1).map((v,i)=>Math.abs(v-reference[i])));if(formTravel<10||formTravel>70)throw Error('Shared body form sculpt missing or excessive '+formTravel);
+   for(let n=1;n<bodyPoses.length;n++)if(bodyPoses[n].length!==reference.length)throw Error('Morph topology changed');
+   for(let angle=0;angle<=180;angle+=2){r.frontRig.bodyViews.render(angle,(x,y)=>[x,y]);const v=r.frontRig.body.vertices,ix=r.frontRig.body.geometry.getIndex().data;for(let n=0;n<ix.length;n+=3){const a=ix[n]*2,b=ix[n+1]*2,c=ix[n+2]*2,area=(v[b]-v[a])*(v[c+1]-v[a+1])-(v[b+1]-v[a+1])*(v[c]-v[a]);if(area<-.01)throw Error('Body turn mesh folds '+angle+' '+area);}}
+   for(const angle of [45,90,135]){r.frontRig.bodyViews.render(angle-.001,(x,y)=>[x,y]);const before=[...r.frontRig.body.vertices];r.frontRig.bodyViews.render(angle+.001,(x,y)=>[x,y]);if(r.frontRig.body.vertices.some((v,i)=>Math.abs(v-before[i])>.02))throw Error('Body view handoff pops');}
+   for(const angle of [45,90,135]){const h=.01,samples=[];for(const a of [angle-h,angle,angle+h]){r.frontRig.bodyViews.render(a,(x,y)=>[x,y]);samples.push([...r.frontRig.body.vertices]);}let kink=0;for(let k=0;k<samples[0].length;k++)kink=Math.max(kink,Math.abs((samples[1][k]-samples[0][k])/h-(samples[2][k]-samples[1][k])/h));if(kink>.04)throw Error('Turn contour velocity kink '+kink);}
+   r.render({clock:1.5,freeze:true,state:'idle',performer:{jawOpen:.4}},.5);for(const side of ['left','right'])if(!Number.isFinite(r.eyes.inspect()[side].blink))throw Error('Partial performer sample corrupts eye rig');
+   r.render({clock:2,freeze:true,state:'idle',performer:{eyeLookX:.5,eyeLookY:-.3,eyeBlinkLeft:.8,eyeBlinkRight:0,jawOpen:.5,headRoll:.1}},1);
+   const live=r.eyes.inspect();if(live.left.blink===live.right.blink||r.inspect().mouth!=='aa')throw Error('Independent performer channels lost');
+   r.render({clock:3,freeze:true,action:{kind:'twirl',at:.85},state:'idle'},1);const profile=r.eyes.inspect();if(profile.eyeVisibility.right>.01||profile.eyeVisibility.left!==1)throw Error('Profile has two visible eyes');
+   r.render({clock:4,freeze:true,action:{kind:'surprise',at:.7},state:'idle'},1);if(r.inspect().mouth!=='roar')throw Error('Scare mouth missing');
+   // Hold geometry fixed and verify the actual GPU two-painting blend, not a second source-over pass.
+   r.render({clock:5,freeze:true,state:'idle'},0);r.face.visible=false;r.frontRig.body.visible=false;
+   for(const arm of r.frontRig.arms){arm.front.visible=false;arm.mesh.vertices.set(arm.base);arm.mesh.geometry.getBuffer('aPosition').update();}
+   const scan=document.createElement('canvas');scan.width=1280;scan.height=720;const ctx=scan.getContext('2d',{willReadFrequently:true}),images=[];
+   for(const blend of [0,.5,1]){for(const arm of r.frontRig.arms){arm.shader.resources.morphUniforms.uniforms.uBlend=blend;arm.frontShader.resources.morphUniforms.uniforms.uBlend=blend;}r.app.renderer.render(r.app.stage);ctx.clearRect(0,0,1280,720);ctx.drawImage(r.canvas,0,0);images.push(ctx.getImageData(0,0,1280,720).data);}
+   let maxBlendError=0,blendSamples=0;for(let k=0;k<images[0].length;k+=4){if(images[0][k+3]<245||images[2][k+3]<245)continue;for(let c=0;c<3;c++){const a=images[0][k+c]*images[0][k+3]/255,b=images[2][k+c]*images[2][k+3]/255,m=images[1][k+c]*images[1][k+3]/255;maxBlendError=Math.max(maxBlendError,Math.abs(m-(a+b)/2));}blendSamples++;}
+   if(blendSamples<500||maxBlendError>3)throw Error('Form blend dims painted arms '+JSON.stringify({blendSamples,maxBlendError}));
+   r.render({clock:6,freeze:true,action:{kind:'phantom',at:2},state:'idle'},1);if(!r.inspect().nativeFloatingEyes)throw Error('Native phantom eyes inactive');const eyePixels=r.eyesCtx.getImageData(0,0,1280,720).data;let eyeInk=0;for(let n=3;n<eyePixels.length;n+=4)if(eyePixels[n]>30)eyeInk++;if(eyeInk<100)throw Error('Native phantom eyes empty');
+   r.render({clock:7,freeze:true,state:'idle'},0);if(r.inspect().nativeFloatingEyes)throw Error('Native phantom eyes not cleared');
+   const front=r.frontRig,shaders=front.arms.flatMap(a=>[a.shader,a.frontShader]),sources=front.arms.map(a=>a.evil.source);r.dispose();if(r.ready||front.ready||shaders.some(s=>!s._destroyed)||sources.some(s=>!s.destroyed))throw Error('Layered GPU ownership not cleaned');
+   return{frames,maxReachError,maxStretch,hands:[...hands],maxBlendError,blendSamples,sharedBody:true,formTravel,contourTurn:true,nativePhantomEyes:true,profileEyes:profile.eyeVisibility,independentPerformer:true,disposed:true};
+  });
+  await page.route('**/front-kit/body-90.png',route=>route.abort());
+  await page.goto(base+'/painted-front-test');
+  const fallback=await page.evaluate(async()=>{const{WispPerformanceRuntime}=await import('/assets/wisp-performance-runtime.js');const r=await new WispPerformanceRuntime().load();r.render({clock:1,freeze:true,state:'idle'},.5);const s=r.inspect();if(!s.ready||r.frontRig||!s.frontRig.error||r.root.children.length!==21||!s.bounds.inside)throw Error('Layered asset failure did not preserve legacy paintings '+JSON.stringify(s.frontRig));const result={ready:s.ready,paintedFallback:true,children:r.root.children.length};r.dispose();return result;});
+  report.assetFailureFallback=fallback;
+  assert.equal(report.hands.length,2);assert(report.maxStretch<=1.75);assert(report.maxReachError<1e-5);assert.deepEqual(errors,[]);fs.mkdirSync('test-results',{recursive:true});fs.writeFileSync('test-results/wisp-layered-front.json',JSON.stringify(report,null,2));console.log('PASS real layered skin, shared morph, registered face, independent performer, GPU midpoint brightness and disposal',report);
+ }finally{await browser.close();}
+})().catch(e=>{console.error(e);process.exitCode=1});

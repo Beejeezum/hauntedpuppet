@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "character": "Wisp painted performance candidate",
   "renderer": "painted-pose-space-rig",
   "registeredCanvas": [
@@ -126,11 +126,33 @@
     "background": "transparent RGBA"
   },
   "limits": [
-    "2D authored pose-space interpolation, not arbitrary 3D geometry",
-    "Needs more painted in-betweens and per-view facial refinement",
-    "Not yet approved as the default replacement",
+    "Painted 2.5D view correspondence and articulated skin, not arbitrary 3D geometry",
+    "Hands remain camera-facing through turns; fingers are painted rather than individually rigged",
+    "Extreme folded-hand overlap and rear shoulder seams still need art direction",
+    "Not yet approved as the default character for all visitors",
     "Physical projection still needs on-site review"
   ],
   "motionDefinition": "motion.js",
-  "reviewSequence": "reel.js"
+  "reviewSequence": "reel.js",
+  "layeredRig": {
+    "defaultWithinCandidate": true,
+    "bodyViews": [
+      "front-kit/body.png",
+      "front-kit/body-45.png",
+      "front-kit/body-90.png",
+      "front-kit/body-135.png",
+      "front-kit/body-180.png"
+    ],
+    "arms": [
+      "front-kit/arm-left.png",
+      "front-kit/arm-right.png",
+      "front-kit/arm-left-evil.png",
+      "front-kit/arm-right-evil.png"
+    ],
+    "faceParts": "front-kit/evil-face-parts.json",
+    "bodyDefinition": "body-views.js",
+    "limbDefinition": "limb-solver.js",
+    "actingDefinition": "front-acting.js",
+    "fallback": "Twenty whole-pose paintings; studio ?rig=poses forces fallback for review"
+  }
 }

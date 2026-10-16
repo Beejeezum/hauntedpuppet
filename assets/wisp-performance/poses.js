@@ -30,7 +30,7 @@ export function landmarks(weights){const out={};for(const key of['head','chest',
 
 for(const[id,faceVisible,faceScale]of[['turn45',.85,.72],['profile',.25,.23],['rear135',0,0],['back',0,0]])POSES.push({id,head:[570,590],chest:[545,940],tail:[560,1380],left:[300,970],right:[790,990],roll:0,faceVisible,faceScale});
 BEATS.twirl=[[0,'welcome'],[.4,'turn45'],[.85,'profile'],[1.25,'rear135'],[1.75,'back'],[2.2,'rear135'],[2.65,'profile'],[3.1,'turn45'],[3.6,'welcome']];
-BEATS.exit=[[0,'welcome'],[.4,'farewell'],[.85,'turn45'],[1.3,'profile'],[1.8,'rear135'],[2.4,'back'],[3.6,'back']];
+BEATS.exit=[[0,'welcome'],[.4,'farewell'],[.8,'turn45'],[1.15,'profile'],[1.5,'rear135'],[1.85,'back'],[2.95,'back'],[3.2,'rear135'],[3.5,'profile'],[3.9,'turn45'],[4.25,'welcome'],[5.4,'welcome']];
 
 BEATS.laugh=[[0,'welcome'],[.25,'laugh'],[1.2,'laugh'],[1.7,'welcome']];
 BEATS.shy=[[0,'welcome'],[.4,'listen'],[1.3,'laugh'],[2,'farewell'],[3.2,'welcome']];

@@ -40,7 +40,7 @@ export class PerformanceMotionRig{
   move('head',headTurn+(listening?12:0),inhale*5+(listening?9:0));
   move('crest',headTurn+Math.sin(t*1.35-.8)*11,inhale*7+(listening?9:0));
   move('tail',Math.sin(t*1.35-1.15)*21,Math.sin(t*1.35-.75)*6);
-  move('head',0,tension*18);move('crest',tension*6,tension*24);move('chest',0,tension*5);
+  move('head',0,tension*18);move('crest',tension*6,-tension*32);move('chest',0,tension*5);
   const angles={};
   for(const side of ['left','right']){
    const sign=side==='left'?-1:1;

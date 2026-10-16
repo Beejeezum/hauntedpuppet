@@ -1,0 +1,31 @@
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+const lerp=(a,b,t)=>a+(b-a)*t;
+function harmonic(a,b){return a*b<=0?0:2*a*b/(a+b);}
+// Monotone Hermite on positive contour gaps preserves both C1 motion and mesh ordering.
+function gapMix(previous,a,b,next,t,first,last){const d=b-a,m0=first?d:harmonic(a-previous,d),m1=last?d:harmonic(d,next-b),t2=t*t,t3=t2*t;return(2*t3-3*t2+1)*a+(t3-2*t2+t)*m0+(-2*t3+3*t2)*b+(t3-t2)*m1;}
+
+function rowAt(rows,y){const a=clamp(Math.floor(y),0,rows.length-1),b=Math.min(a+1,rows.length-1),t=clamp(y-a);return rows[a].map((v,i)=>lerp(v,rows[b][i],t));}
+/** Read painted silhouettes; mesh correspondence moves ink rather than fading two outlines. */
+function silhouette(image){
+ const c=document.createElement('canvas');c.width=image.width;c.height=image.height;const x=c.getContext('2d',{willReadFrequently:true});x.drawImage(image,0,0);const p=x.getImageData(0,0,c.width,c.height).data,rows=[];if([0,c.width-1,(c.height-1)*c.width,c.width*c.height-1].some(i=>p[i*4+3]>8))throw Error('Body view background is opaque');let top=c.height,bottom=0,headY=0,headWidth=0;
+ for(let y=0;y<c.height;y++){let l=c.width,r=-1,cl=c.width,cr=-1;for(let xx=0;xx<c.width;xx++){const i=(y*c.width+xx)*4;if(p[i+3]>12){l=Math.min(l,xx);r=xx;}if(p[i+3]>140&&p[i]>145&&p[i+1]>155&&p[i+2]>155){cl=Math.min(cl,xx);cr=xx;}}if(r>=l){top=Math.min(top,y);bottom=y;}if(cr-cl>headWidth&&y<c.height*.56){headWidth=cr-cl;headY=y;}rows.push(r>=l?[l,cl<=cr?cl:l,cl<=cr?cr:r,r]:null);}
+ if(bottom<=top||headWidth<30)throw Error('Body view has no usable painted silhouette');
+ let last=[image.width/2-1,image.width/2-1,image.width/2+1,image.width/2+1];for(let y=top;y<=bottom;y++){if(rows[y])last=rows[y];else rows[y]=last.slice();}for(let y=0;y<top;y++)rows[y]=rows[top].slice();for(let y=bottom+1;y<c.height;y++)rows[y]=rows[bottom].slice();
+ const smooth=rows.map((r,y)=>r.map((_,i)=>{let sum=0;for(let d=-3;d<=3;d++)sum+=rows[clamp(y+d,0,c.height-1)][i];return sum/7;}));
+ return{rows:smooth,top,bottom,headY,width:image.width,height:image.height};
+}
+function across(row,u){const breaks=[0,.16,.84,1];for(let i=0;i<3;i++)if(u<=breaks[i+1])return lerp(row[i],row[i+1],(u-breaks[i])/(breaks[i+1]-breaks[i]));return row[3];}
+function sourceY(y,source,reference){return y<reference.headY?lerp(source.top,source.headY,(y-reference.top)/(reference.headY-reference.top)):lerp(source.headY,source.bottom,(y-reference.headY)/(reference.bottom-reference.headY));}
+export class PaintedBodyViews{
+ constructor(P){this.P=P;this.ready=false;this.textures=[];}
+ async load(front,base){
+  const images=[front,...await Promise.all([45,90,135,180].map(async a=>{const im=new Image();im.src=base+'body-'+a+'.png';await im.decode();return im;}))],fields=images.map(silhouette),ref=fields[0];this.fields=fields;this.reference=ref;
+  this.textures=images.map(im=>this.P.Texture.from(im));this.samples=[];const cols=40,rows=72,indices=[];
+  for(const f of fields){const v=[],uv=[];for(let yy=0;yy<=rows;yy++)for(let xx=0;xx<=cols;xx++){const y=lerp(ref.top-12,ref.bottom+12,yy/rows),sy=sourceY(y,f,ref),row=rowAt(f.rows,sy),u=xx/cols,sx=across([row[0]-12,row[1],row[2],row[3]+12],u),head=rowAt(f.rows,f.headY),center=(head[1]+head[2])/2,refHead=rowAt(ref.rows,ref.headY),refCenter=(refHead[1]+refHead[2])/2;v.push(sx-center+refCenter,y);uv.push(clamp(sx/f.width),clamp(sy/f.height));}this.samples.push({v:new Float32Array(v),uv:new Float32Array(uv)});}
+  for(let y=0;y<rows;y++)for(let x=0;x<cols;x++){const a=y*(cols+1)+x,b=a+1,c=a+cols+1,d=c+1;indices.push(a,b,d,a,d,c);}
+  const P=this.P;this.shader=new P.Shader({glProgram:P.GlProgram.from({name:'wisp-contour-turn',vertex:`in vec2 aPosition;in vec2 aUV;in vec2 aNextUV;uniform mat3 uProjectionMatrix;uniform mat3 uWorldTransformMatrix;uniform mat3 uTransformMatrix;uniform vec4 uColor;uniform vec4 uWorldColorAlpha;out vec2 vUV;out vec2 vNextUV;out vec4 vColor;void main(){vec3 p=uProjectionMatrix*uWorldTransformMatrix*uTransformMatrix*vec3(aPosition,1.0);gl_Position=vec4(p.xy,0.,1.);vUV=aUV;vNextUV=aNextUV;vColor=uColor*uWorldColorAlpha;}`,fragment:`in vec2 vUV;in vec2 vNextUV;in vec4 vColor;uniform sampler2D uFrom;uniform sampler2D uTo;uniform float uBlend;out vec4 finalColor;void main(){finalColor=mix(texture(uFrom,vUV),texture(uTo,vNextUV),uBlend)*vColor;}`}),resources:{uFrom:this.textures[0].source,uTo:this.textures[1].source,turnUniforms:{uBlend:{value:0,type:'f32'}}}});
+  this.mesh=new P.MeshSimple({texture:this.textures[0],shader:this.shader,vertices:this.samples[0].v.slice(),uvs:this.samples[0].uv.slice(),indices:new Uint32Array(indices)});this.mesh.geometry.addAttribute('aNextUV',{buffer:this.samples[1].uv.slice(),format:'float32x2'});this.mesh.autoUpdate=false;this.ready=true;return this;
+ }
+ render(angle,bodyPoint){const a=clamp(angle/45,0,4),i=Math.min(3,Math.floor(a)),mix=a-i,A=this.samples[i],B=this.samples[i+1],v=this.mesh.vertices;this.shader.resources.uFrom=this.textures[i].source;this.shader.resources.uTo=this.textures[i+1].source;this.shader.resources.turnUniforms.uniforms.uBlend=mix;const previous=this.samples[Math.max(0,i-1)].v,next=this.samples[Math.min(4,i+2)].v;let rowX=0;for(let k=0;k<v.length;k+=2){const firstColumn=(k/2)%41===0;if(firstColumn)rowX=gapMix(previous[k],A.v[k],B.v[k],next[k],mix,i===0,i===3);else rowX+=gapMix(previous[k]-previous[k-2],A.v[k]-A.v[k-2],B.v[k]-B.v[k-2],next[k]-next[k-2],mix,i===0,i===3);const q=bodyPoint(rowX,lerp(A.v[k+1],B.v[k+1],mix));v[k]=q[0];v[k+1]=q[1];}this.mesh.geometry.getBuffer('aPosition').update();this.mesh.geometry.getBuffer('aUV').data.set(A.uv);this.mesh.geometry.getBuffer('aUV').update();this.mesh.geometry.getBuffer('aNextUV').data.set(B.uv);this.mesh.geometry.getBuffer('aNextUV').update();this.angle=angle;}
+ destroy(){this.ready=false;this.shader?.destroy();for(const t of this.textures.slice(1))t.destroy(true);}
+}

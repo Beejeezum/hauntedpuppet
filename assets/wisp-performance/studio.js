@@ -1,6 +1,6 @@
 import {WispPerformanceRuntime} from '../wisp-performance-runtime.js';
 import {performanceFrame,REEL_DURATION} from './reel.js';
-const $=s=>document.querySelector(s),rig=await new WispPerformanceRuntime().load();
+const $=s=>document.querySelector(s),rig=await new WispPerformanceRuntime({layered:new URLSearchParams(location.search).get('rig')!=='poses'}).load();
 if(rig.ready)$('#stage').append(rig.canvas);
 let frameHandle=0;
 let original=null,mode='custom',kind='',state='idle',actionStart=0,reelStart=0,heldAt=0,last=performance.now(),phase='Idle';
