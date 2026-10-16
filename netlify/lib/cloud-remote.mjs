@@ -3,7 +3,7 @@ import QRCode from 'qrcode';
 import {createHmac,randomInt,randomUUID,timingSafeEqual} from 'node:crypto';
 import {operatorAuth,runtimeEnv,ApiError} from './operator-auth.mjs';
 const UUID=/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i;
-const values={gesture:['wave','laugh','shy','surprise'],gaze:['left','right','center'],audience:['little','family','big'],loop:['on','off'],blackout:['on','off'],move:['dance', 'twirl', 'bounce', 'peekaboo', 'celebrate', 'orbit', 'enter', 'exit', 'wave', 'shy', 'laugh', 'surprise'],form:['friendly','haunting'],welcome:[null],reveal:['arm','fire','cancel'],stop:[null]};
+const values={gesture:['wave','laugh','shy','surprise'],gaze:['left','right','center'],audience:['little','family','big'],loop:['on','off'],blackout:['on','off'],move:['phantom','dance', 'twirl', 'bounce', 'peekaboo', 'celebrate', 'orbit', 'enter', 'exit', 'wave', 'shy', 'laugh', 'surprise'],form:['friendly','haunting'],welcome:[null],reveal:['arm','fire','cancel'],stop:[null]};
 const equal=(a,b)=>{const x=Buffer.from(a),y=Buffer.from(b);return x.length===y.length&&timingSafeEqual(x,y)};
 const at=t=>new Date(t),ms=value=>value?new Date(value).getTime():0;
 const safeSeq=value=>String(value); // BIGSERIAL must never lose precision in JSON.
