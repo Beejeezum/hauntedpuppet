@@ -63,6 +63,7 @@ jobs:
           HAUNT_BROWSER=webkit node tests/wisp_performance_continuity.cjs
           HAUNT_BROWSER=webkit node tests/wisp_layered_front.cjs
           HAUNT_BROWSER=webkit node tests/wisp_native_kit.cjs
+          HAUNT_BROWSER=webkit node tests/wisp_native_morph.cjs
           HAUNT_BROWSER=webkit node tests/wisp_performance.cjs
           HAUNT_BROWSER=webkit node tests/wisp_3d_browser.cjs
           HAUNT_BROWSER=webkit node tests/wisp_3d_bounds.cjs

@@ -35,7 +35,7 @@ export class PaintedFrontRig{
   const P=this.P;this.container=new P.Container();this.arms=[];
   try{
    const names=['body','arm-left','arm-right','arm-left-evil','arm-right-evil'];
-   const images=Object.fromEntries(await Promise.all(names.map(async name=>[name,await painting(kit.images?.[name]||base+name+'.png')])));
+   const images=Object.fromEntries(await Promise.all(names.map(async name=>{const image=await painting(kit.images?.[name]||base+name+'.png');return[name,kit.preparePainting?await kit.preparePainting(name,image):image];})));
    for(const name of kit.mirrorImages||[]){const im=images[name];if(!im)throw Error('Unknown mirrored painting '+name);const c=document.createElement('canvas');c.width=im.width;c.height=im.height;const x=c.getContext('2d');x.translate(c.width,0);x.scale(-1,1);x.drawImage(im,0,0);images[name]=c;}
    this.bodyViews=kit.createBodyViews?await kit.createBodyViews(P,images.body,kit.bodyBase||base):await new PaintedBodyViews(P).load(images.body,kit.bodyBase||base);
    for(const side of ['left','right']){
@@ -49,7 +49,7 @@ export class PaintedFrontRig{
     mesh.autoUpdate=front.autoUpdate=false;
     const frontWeights=new Float32Array(baseVertices.length/2);for(let k=0;k<baseVertices.length;k+=2)frontWeights[k/2]=clamp(((baseVertices[k]-joints[0][0])*upperX+(baseVertices[k+1]-joints[0][1])*upperY)/upperLengthSquared);
     for(const part of [mesh,front])part.geometry.addAttribute('aFrontWeight',{buffer:frontWeights,format:'float32'});
-    this.container.addChild(mesh);this.arms.push({side,mesh,front,shader,frontShader,evil,base:baseVertices,joints,bindings,digitBindings,corrective:kit.prepareArm?.(g,image,side),uvs:g.uvs,sourceSize:[image.width,image.height]});
+    this.container.addChild(mesh);this.arms.push({side,mesh,front,shader,frontShader,evil,base:baseVertices,joints,bindings,digitBindings,corrective:kit.prepareArm?.(g,image,side,images['arm-'+side+'-evil']),uvs:g.uvs,sourceSize:[image.width,image.height]});
    }
    this.body=this.bodyViews.mesh;this.body.autoUpdate=false;this.bodyBase=this.bodyViews.samples[0].v.slice();this.container.addChild(this.body);
    for(const arm of this.arms)this.container.addChild(arm.front);

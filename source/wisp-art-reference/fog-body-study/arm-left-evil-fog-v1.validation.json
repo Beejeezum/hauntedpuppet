@@ -13,5 +13,6 @@
     1434
   ],
   "edgePixelsAbove8": 0,
-  "status": "Unapproved evil arm candidate; material matches new fog, shoulder/elbow/wrist and finger positions drift from cute source. Requires explicit registration and shared-shape test. Not inserted into kit."
+  "status": "Unapproved evil arm used only by the local registered paired-arm pilot. Midpoint fingertip contours remain unmatched; no public character selection.",
+  "sourceModified": false
 }
