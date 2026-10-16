@@ -1,0 +1,18 @@
+{
+  "source": "/Users/beeje/.codex/generated_images/01a13c94-06f1-7553-b857-c39374b179b9/exec-13cb6b91-6b39-400d-8cde-cf1c57e04a8c.png",
+  "sha256": "13d877e258f0e801888c58315727427d5064b81fa74ce52a9a0bfe94aa4c4f8a",
+  "mode": "RGBA",
+  "size": [
+    1024,
+    1536
+  ],
+  "alpha8Bounds": [
+    241,
+    46,
+    832,
+    1496
+  ],
+  "edgePixelsAbove8": 0,
+  "source15PercentMargin": false,
+  "status": "Candidate: three-quarter body-only evil layer, visually angled cheek/jaw retained; not yet registered or turn-tested.15%source padding fails; final compositor required, no promotion."
+}

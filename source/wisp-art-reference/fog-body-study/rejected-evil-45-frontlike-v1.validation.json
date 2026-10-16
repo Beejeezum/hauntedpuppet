@@ -1,0 +1,18 @@
+{
+  "source": "/Users/beeje/.codex/generated_images/01a13c94-06f1-7553-b857-c39374b179b9/exec-bcb448d4-61a2-4368-b16d-f2609aa96305.png",
+  "sha256": "7bf26233af6640ad13a0296500b525162771bc6849e48404d54c66dcdfd0a88e",
+  "mode": "RGBA",
+  "size": [
+    1024,
+    1536
+  ],
+  "alpha8Bounds": [
+    305,
+    56,
+    799,
+    1494
+  ],
+  "edgePixelsAbove8": 0,
+  "source15PercentMargin": false,
+  "status": "REJECTED: remains front-like rather than clearly three-quarter, does not meet15%source padding; not rigged or selected"
+}
