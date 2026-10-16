@@ -1,0 +1,12 @@
+{
+  "size": [
+    1205,
+    1305
+  ],
+  "alphaMin": 0,
+  "edgeAlphaOver8": 98,
+  "status": "Rejected: generated fog touches source edges; blue halo remains. Not loaded in production.",
+  "sha256": "2c993d334c431bd8df79064441ddd3774ba8b386ef3d9cb4b2d129a6ccc92a92",
+  "originalGeneratedBasename": "exec-da18a729-c28c-4472-bc77-01d7bc6db76d.png",
+  "sourceModified": false
+}

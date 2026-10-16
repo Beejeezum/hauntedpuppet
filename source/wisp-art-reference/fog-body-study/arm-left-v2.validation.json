@@ -1,0 +1,30 @@
+{
+  "size": [
+    1205,
+    1306
+  ],
+  "edgeAlphaOver8": 0,
+  "bounds": {
+    "8": [
+      169,
+      259,
+      1133,
+      1124
+    ],
+    "128": [
+      181,
+      275,
+      1123,
+      1109
+    ],
+    "220": [
+      192,
+      292,
+      1117,
+      1083
+    ]
+  },
+  "sha256": "a4ae4dd681455a0f2f1dbb877bacdc33879f1205ca416fd336681f57351929d2",
+  "originalGeneratedBasename": "exec-ffa0ef95-6828-484b-a612-f583c36df04b.png",
+  "sourceModified": false
+}
