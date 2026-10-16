@@ -14,5 +14,9 @@ const assert=require('node:assert/strict'),fs=require('node:fs');
  // Skin and skeleton share the exact wrist and palm, including a large articulated turn.
  const target=[[30,40],[20,-80],[-60,-180],[-80,-240]],transforms=[0,1,2].map(i=>boneTransform(joints[i],joints[i+1],target[i],target[i+1]));
  for(const i of [0,1,2,3]){const p=skinArmPoint(...joints[i],bindArmPoint(...joints[i],joints),transforms);assert(distance(p,target[i])<1e-6);}
- console.log('PASS bounded two-link reach, segment lengths, fixed hand volume, finite extreme poses, identity skin, shared joints',samples,'samples',maxError);
+ // A right-angle elbow should retain a round cross-section rather than lose half its area.
+ const straight=[[0,-100],[0,0],[0,100],[0,150]],folded=[[0,-100],[0,0],[100,0],[150,0]],foldBones=[0,1,2].map(i=>boneTransform(straight[i],straight[i+1],folded[i],folded[i+1]));
+ const center=skinArmPoint(0,0,[.5,.5,0],foldBones);assert(distance(center,[0,0])<1e-9);
+ for(let angle=0;angle<Math.PI*2;angle+=.05){const p=skinArmPoint(10*Math.cos(angle),10*Math.sin(angle),[.5,.5,0],foldBones);assert(distance(p,center)>9.5,'Elbow cross-section collapses during a right-angle bend');assert(distance(p,center)<10.01,'Elbow correction over-expands the cross-section');}
+ console.log('PASS bounded two-link reach, segment lengths, fixed hand volume, finite extreme poses, identity skin, shared joints and rounded elbow cross-section',samples,'samples',maxError);
 })().catch(e=>{console.error(e);process.exitCode=1});

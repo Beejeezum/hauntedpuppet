@@ -24,7 +24,9 @@ export function boneTransform(a,b,c,d,{preserveVolume=true}={}){
  const length=Math.max(1e-6,distance(a,b)),targetLength=distance(c,d),sx=(b[0]-a[0])/length,sy=(b[1]-a[1])/length;
  const tx=(d[0]-c[0])/Math.max(1e-6,targetLength),ty=(d[1]-c[1])/Math.max(1e-6,targetLength);
  const scale=targetLength/length,width=preserveVolume?1/Math.sqrt(Math.max(.5,scale)):scale;
- return{source:a,target:c,sx,sy,tx,ty,scale,width};
+ return{source:a,target:c,sx,sy,tx,ty,scale,width,
+  m00:tx*scale*sx+ty*width*sy,m01:tx*scale*sy-ty*width*sx,
+  m10:ty*scale*sx-tx*width*sy,m11:ty*scale*sy+tx*width*sx};
 }
 export function transformPoint(x,y,bone){
  const dx=x-bone.source[0],dy=y-bone.source[1],along=(dx*bone.sx+dy*bone.sy)*bone.scale,across=(-dx*bone.sy+dy*bone.sx)*bone.width;
@@ -44,5 +46,17 @@ export function bindArmPoint(x,y,joints){
  return[0,0,1];
 }
 export function skinArmPoint(x,y,weights,bones){
- let px=0,py=0;for(let i=0;i<3;i++){if(!weights[i])continue;const q=transformPoint(x,y,bones[i]);px+=q[0]*weights[i];py+=q[1]*weights[i];}return[px,py];
+ let px=0,py=0,a=0,b=0,c=0,d=0,area=0,count=0,last=0;
+ for(let i=0;i<3;i++){
+  const w=weights[i];if(!w)continue;const bone=bones[i],dx=x-bone.source[0],dy=y-bone.source[1];
+  px+=(bone.target[0]+bone.m00*dx+bone.m01*dy)*w;py+=(bone.target[1]+bone.m10*dx+bone.m11*dy)*w;
+  a+=bone.m00*w;b+=bone.m01*w;c+=bone.m10*w;d+=bone.m11*w;area+=bone.scale*bone.width*w;count++;last=i;
+ }
+ if(count>1&&area>1e-9){
+  // Adjacent transforms share this joint. Compensate bounded blend-area loss
+  // around that exact anchor instead of allowing the painted elbow to pinch.
+  const anchor=bones[last].target,det=Math.abs(a*d-b*c),gain=Math.max(1,Math.sqrt(area/Math.max(area/(1.35*1.35),det)));
+  px=anchor[0]+(px-anchor[0])*gain;py=anchor[1]+(py-anchor[1])*gain;
+ }
+ return[px,py];
 }
