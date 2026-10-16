@@ -20,6 +20,6 @@ export async function createEvilTurnContext(P,fixtureBase){
    }
    if(angle>.001){if(mode!=='cute')form.cute.pair=undefined;form.cute.render(angle,deform);mode='cute';return;}
    if(mode!=='front')restore();mode='front';form.render(evil);const v=form.mesh.vertices;for(let k=0;k<v.length;k+=2){const p=deform(v[k],v[k+1]);v[k]=p[0];v[k+1]=p[1];}form.mesh.geometry.getBuffer('aPosition').update();
-  },anchor:y=>form.cute.anchor(y),destroy(){form.cute.destroy();form.evil.destroy();form.evil.mesh.destroy({texture:true,textureSource:true});turns.destroy();turns.mesh.destroy({texture:true,textureSource:true});}
+  },shoulderSurface(side,y){const row=Math.max(0,Math.min(form.cute.rows,(y-a.top+12)/(a.bottom-a.top+24)*form.cute.rows)),lo=Math.floor(row),hi=Math.min(form.cute.rows,lo+1),t=row-lo,v=form.mesh.vertices,u=side==='left'?.18:.82;const point=col=>[0,1].map(axis=>mix(v[(lo*cols+col)*2+axis],v[(hi*cols+col)*2+axis],t)),left=point(2),right=point(6);return left.map((value,axis)=>mix(value,right[axis],u));},anchor:y=>form.cute.anchor(y),destroy(){form.cute.destroy();form.evil.destroy();form.evil.mesh.destroy({texture:true,textureSource:true});turns.destroy();turns.mesh.destroy({texture:true,textureSource:true});}
  };
 }
