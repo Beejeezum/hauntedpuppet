@@ -1,6 +1,6 @@
 # Painted material / UV construction study
 
-This is an isolated editable Blender/GLB candidate. Production assets and the approved paintings are unchanged. The candidate is a cleaner base, NOT finished character art or a live replacement.
+This builder writes an isolated editable Blender/GLB candidate. A derivative with the localized shoulder correction was promoted in e130bdb; see production rig.json for the selected source. The approved paintings remain preserved. The candidate is a cleaner base, NOT finished character art or a live replacement.
 
 ## Source and reproducibility
 

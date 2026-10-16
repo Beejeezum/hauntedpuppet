@@ -1,0 +1,12 @@
+const {chromium,webkit}=require(process.env.HAUNT_PLAYWRIGHT||'playwright'),assert=require('node:assert/strict');
+(async()=>{const b=await(process.env.HAUNT_BROWSER==='webkit'?webkit:chromium).launch({args:['--mute-audio']});try{const p=await b.newPage();await p.route('**/spirit-frame-test',r=>r.fulfill({contentType:'text/html',body:'<body style="background:black">'}));await p.goto((process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8812')+'/spirit-frame-test');const result=await p.evaluate(async()=>{
+ const {SpiritFrame}=await import('/assets/spirit-frame.js'),{SpiritAtmosphere}=await import('/assets/spirit-atmosphere.js');const fx=await new SpiritAtmosphere().load();if(!fx.ready)throw Error(fx.error);const frame=new SpiritFrame(),source=document.createElement('canvas');source.width=1280;source.height=720;const ctx=source.getContext('2d');const stage={x:0,y:0,scale:100,margin:15};let checkedPixels=0,maxSurface=0,priorScale=Infinity;
+ for(let i=0;i<600;i++){
+  const x=640+Math.sin(i*.025)*450,y=360+Math.cos(i*.019)*220;
+  ctx.clearRect(0,0,1280,720);ctx.fillStyle='#fff';ctx.fillRect(x-40,y-50,80,100);
+  const body={minX:x-40,maxX:x+40,minY:y-50,maxY:y+50};const out=frame.render(source,fx,{clock:i/60,visible:1,body,emissionPoints:[{id:'head',x,y:y-50},{id:'tail',x,y:y+50}],amount:1},stage);const info=frame.inspect();
+  if(info.frame.scale>priorScale+1e-10)throw Error('Envelope pumped upward during one shot');priorScale=info.frame.scale;maxSurface=Math.max(maxSurface,info.overscan.width*info.overscan.height);
+  if(i%15===0){const d=out.getContext('2d').getImageData(0,0,1280,720).data;for(let yy=0;yy<720;yy++)for(let xx=0;xx<1280;xx++){if(xx>=192&&xx<1088&&yy>=108&&yy<612)continue;const k=(yy*1280+xx)*4;if(d[k+3]>1)throw Error('Rendered pixels escaped 15% safe area at '+i+':'+xx+','+yy);}checkedPixels++;}
+ }
+ frame.render(source,fx,{clock:10,visible:0,body:{minX:0,minY:0,maxX:1280,maxY:720}},stage);const black=frame.ctx.getImageData(0,0,1280,720).data.every(n=>n===0),cleared=fx.bounds()===null&&!frame.inspect().ready;frame.dispose();return{frames:600,pixelFrames:checkedPixels,maxSurfacePixels:maxSurface,black,cleared,disposed:frame.canvas.width===1&&frame.surface.width===1,scope:'Actual overscan compositor pixels with moving test geometry and real painted vapor; not character art or physical projection acceptance'};
+ });assert(result.black&&result.cleared&&result.disposed);console.log('PASS',result);}finally{await b.close()}})().catch(e=>{console.error(e);process.exitCode=1});

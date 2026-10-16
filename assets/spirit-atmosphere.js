@@ -20,5 +20,24 @@ export class SpiritAtmosphere {
   for(const p of this.particles){p.age+=dt;const damping=Math.exp(-dt*2.4);p.vx*=damping;p.vy=p.vy*damping+dt*7;p.x+=p.vx*dt;p.y+=p.vy*dt;const q=p.age/p.life,fade=Math.sin(Math.PI*clamp(q,0,1))**1.3,extent=p.size*(1+q*.45),cell=this.manifest.cells[p.cell];ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.angle);ctx.globalAlpha=clamp(visible,0,1)*fade*(.17+.16*strength);ctx.drawImage(this.image,...cell,-extent*.52,-extent*.33,extent,extent*.66);ctx.restore();}
   ctx.restore();this.particles=this.particles.filter(p=>p.age<p.life);this.frames++;
  }
- inspect(){return{ready:this.ready,error:this.error||null,particles:this.particles.length,maxParticles:48,source:'painted-raster-vapor',emission:'body-local origins, world-space wake',motion:'inherited velocity, drag and settling',frames:this.frames};}
+ /** Conservative world-space bounds of the exact rotated raster quads, including
+  * faint wake particles. Call after draw: simulation advances during that call.
+  * Includes transparent atlas padding deliberately; never crops visible vapor.
+  */
+ bounds(){
+  if(!this.ready||!this.particles.length)return null;
+  const b={minX:Infinity,minY:Infinity,maxX:-Infinity,maxY:-Infinity};
+  for(const p of this.particles){
+   if(p.age>=p.life)continue;
+   const extent=p.size*(1+p.age/p.life*.45),c=Math.cos(p.angle),s=Math.sin(p.angle);
+   // Match drawImage's asymmetric horizontal origin exactly.
+   for(const x of[-extent*.52,extent*.48])for(const y of[-extent*.33,extent*.33]){
+    const px=p.x+x*c-y*s,py=p.y+x*s+y*c;
+    b.minX=Math.min(b.minX,px);b.maxX=Math.max(b.maxX,px);
+    b.minY=Math.min(b.minY,py);b.maxY=Math.max(b.maxY,py);
+   }
+  }
+  return Number.isFinite(b.minX)?b:null;
+ }
+ inspect(){return{ready:this.ready,error:this.error||null,particles:this.particles.length,maxParticles:48,bounds:this.bounds(),source:'painted-raster-vapor',emission:'body-local origins, world-space wake',motion:'inherited velocity, drag and settling',frames:this.frames};}
 }

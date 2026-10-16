@@ -64,11 +64,14 @@ jobs:
           HAUNT_BROWSER=webkit node tests/wisp_layered_front.cjs
           HAUNT_BROWSER=webkit node tests/wisp_performance.cjs
           HAUNT_BROWSER=webkit node tests/wisp_3d_browser.cjs
+          HAUNT_BROWSER=webkit node tests/wisp_3d_bounds.cjs
           HAUNT_BROWSER=webkit node tests/fluid_performance.cjs
           HAUNT_BROWSER=webkit node tests/live_rig.cjs
           HAUNT_BROWSER=webkit node tests/character_workshop.cjs
           HAUNT_BROWSER=webkit node tests/apparition_performance.cjs
           HAUNT_BROWSER=webkit node tests/spirit_atmosphere.cjs
+          HAUNT_BROWSER=webkit node tests/spirit_frame.cjs
+          HAUNT_BROWSER=webkit node tests/spirit_frame_app.cjs
       - name: Keep WebKit evidence
         if: always()
         uses: actions/upload-artifact@v4

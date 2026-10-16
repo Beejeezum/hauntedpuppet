@@ -38,7 +38,7 @@ const assert=require('node:assert/strict');
         rig.dispose();rig.dispose();
         const until=performance.now()+2000;
         while(!contextLost&&performance.now()<until)await new Promise(resolve=>setTimeout(resolve,20));
-        cycles.push({expected,disposed,memoryBefore,memoryAfter:{...rig.renderer.info.memory},contextLost,isContextLost:gl.isContextLost(),ready:rig.ready,modelCleared:rig.model===null,bonesCleared:Object.keys(rig.bones).length===0,activeContexts});
+        cycles.push({expected,disposed,memoryBefore,memoryAfter:{...rig.renderer.info.memory},contextLost,isContextLost:gl.isContextLost(),ready:rig.ready,modelCleared:rig.model===null,envelopeCleared:rig.envelopeBounds===null,bonesCleared:Object.keys(rig.bones).length===0,activeContexts});
         canvas.remove();
       }
       return {cycles,maxActiveContexts,activeContexts,captureElements:document.querySelectorAll('audio,video').length};
@@ -48,7 +48,7 @@ const assert=require('node:assert/strict');
       assert(sample.expected.geometry>0&&sample.expected.texture>0&&sample.expected.skeleton>0,'Actual model resources must be observed');
       assert.deepEqual(sample.disposed,sample.expected,'Every unique model resource disposed exactly once on cycle '+cycle);
       assert.equal(sample.contextLost,1,'One explicit context loss per disposed rig');
-      assert(sample.isContextLost&&!sample.ready&&sample.modelCleared&&sample.bonesCleared);
+      assert(sample.isContextLost&&!sample.ready&&sample.modelCleared&&sample.envelopeCleared&&sample.bonesCleared);
       assert.equal(sample.activeContexts,0);
       assert(sample.memoryAfter.geometries<sample.memoryBefore.geometries,'Rendered geometry allocations released');
       assert(sample.memoryAfter.textures<sample.memoryBefore.textures,'Rendered texture allocations released');

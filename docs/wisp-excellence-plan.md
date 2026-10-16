@@ -87,3 +87,20 @@ Keep capture→normalized performer state→Wisp rig/animation director separate
 The unbundled local Chromium import completed in193ms in one run, loading250localresources/~5.96MB; no external requests, camera/microphone calls or browser exceptions. This is module-load evidence only. Bundle/tree-shake before deployment; avoid importing the full Three Addons graph unbundled. Declared peer versions do not match production Three0.186.1/MediaPipe1.1.1, so do not directly install it into the show.
 
 Actual Wisp GLB has24bones, including UpperArm/Forearm/Hand and four single-joint Digit0–3 bones per hand; the library expects five human fingers with three phalanges. It also expects MediaPipe-named facial targets while Wisp uses names such asJawOpen/Blink_L/BrowUp_L across separate meshes. A semantic adapter must aggregate finger curls and map facial values instead of repeatedly binding several human joints onto one ghost bone. Candidate mapping: human thumb/index/middle→ghost0/1/2; combine ring/pinky deliberately forghost3; ignore legs, retain tail/crest/float as character-authored motion. Must test missing landmarks, calibration, handedness and tracking loss→idle before any live-camera adoption.
+
+## Approved moving reference and vapor correction (2026-10-16)
+
+The user approved the full-body acting quality of the five-second Runway sample at `../wisp-vision/wisp-wave-runway-v1.mp4` as the motion benchmark. It is generated video, not a controllable rig or live-app acceptance. Preserve its dimensional body bends, articulated gestures, facial acting and follow-through while correcting changing fingers and out-of-frame motion.
+
+The user explicitly rejected the persistent curled lower-body tips: they read like fish fins or a decorative solid tail. The lower body must instead disperse into spatially varying translucent FOG/SMOKE: soft expanding volume, shearing wisps and detached dissipating fragments, with no fixed spiral silhouette. Transient turbulent eddies are acceptable; persistent sculpted curls are not. Keep the face and hands readable while the lower torso loses coherent surface into vapor. Review this in motion, including the final settled pose, against black and the intended projection surface.
+
+### Full effect framing gate
+Reserve at least15% of final width/height on EACH edge for the complete visible character AND emitted fog throughout every animation, morph and interruption. A root/mesh box alone does not satisfy this requirement. Include hand extrema, crest vapor and detached dissipating fragments; use a stable shot envelope to avoid per-frame scale pumping. Smoke must fade naturally before reaching the safe boundary. Previously clipped pixels cannot be restored by padding a finished clip.
+
+`source/wisp-performance-reference/check_framing.py` decodes every frame of black-background reference videos and reports15% margins at max-RGB thresholds8/16/32, rejecting isolated fragments smaller than8pixels as codec noise. This detector is evidence about encoded visibility only, not physical projection or smoke that was cut off upstream. Approvedfogv2 fails121/121frames at threshold8: approve its art/motion, reject its framing.
+
+## User rejection: lower-body continuity
+The latest buffered v4 take passes encoded framing but the user explicitly rejected its ending because the lower body disappears. It is NOT an accepted complete animation asset. Soft fog may shed and disperse; the recognizable core lower-body silhouette must persist through ordinary idle, listening and gestures. Only an explicit vanish cue may remove the character. Approvals of v2 softness/acting remain visual direction; do not count a margin pass as anatomy/continuity approval.
+
+## Credit discipline
+Runway remains authorized when useful for targeted motion/asset creation and downstream graphics workflows. Reuse approved outputs and local tests first. Give each paid generation a specific unanswered visual question and stop redundant exploratory reruns. Four initial takes used240existingcredits. No additional Runway generations were made during the local framing integration.
