@@ -65,8 +65,29 @@ const assert=require('node:assert/strict');
     for(let i=0;i<first.points.length;i++)maxIdleDrift=Math.max(maxIdleDrift,first.points[i].distanceTo(last.points[i]));
     clock=rest.clock+1;
    }
+   // The operator app supplies a clock without dt. Slow rendering must retain real-time turns.
+   const cadenceResults=[];
+   for(const fps of [15,30]){
+    clock+=1;
+    rig.render({clock,freeze:true,viewYaw:0,state:'idle',motion:{float:0}},0);
+    let maxYaw=0,closestBack=Math.PI,midTurnYaw=null,finiteBounds=true,inside=true;
+    const started=clock,startYaw=rig.inspect().viewYaw;
+    for(let n=1;n<=fps*6;n++){
+     clock=started+n/fps;
+     const at=n/fps;
+     rig.render({clock,state:'idle',motion:{gesture:100,float:100},action:at<3.6?{kind:'twirl',at}:undefined},0);
+     const info=rig.inspect(),yaw=info.viewYaw-startYaw;
+     maxYaw=Math.max(maxYaw,yaw);
+     if(Math.abs(at-1.8)<1e-6)midTurnYaw=yaw;
+     closestBack=Math.min(closestBack,Math.abs(Math.atan2(Math.sin(yaw-Math.PI),Math.cos(yaw-Math.PI))));
+     finiteBounds=finiteBounds&&['minX','minY','maxX','maxY'].every(k=>Number.isFinite(info.bounds[k]));
+     inside=inside&&info.bounds.inside;
+    }
+    const final=rig.inspect();
+    cadenceResults.push({fps,maxYaw,closestBack,midTurnYaw,finiteBounds,inside,idleAction:final.action,finalYawError:Math.abs(Math.atan2(Math.sin(final.viewYaw),Math.cos(final.viewYaw)))});
+   }
    rig.dispose();
-   return {frames,maxPixelStep,maxJointStep,maxQuaternionError,maxIdleDrift,worst,sequenceResults,disposed:!rig.ready};
+   return {frames,maxPixelStep,maxJointStep,maxQuaternionError,maxIdleDrift,worst,sequenceResults,cadenceResults,disposed:!rig.ready};
   });
   assert(result.maxPixelStep<60,`Visible per-frame snap: ${JSON.stringify(result)}`);
   assert(result.maxJointStep<.18,`Joint discontinuity: ${JSON.stringify(result)}`);
@@ -74,6 +95,11 @@ const assert=require('node:assert/strict');
   assert(result.maxIdleDrift<1e-5,'Repeated identical rest poses must not accumulate deformation');
   assert(result.sequenceResults.every(s=>s.idleAction===null&&s.finalDepth===0),'Interrupted actions must fully return to idle and foreground');
   assert(result.sequenceResults.find(s=>s.kind==='exit').minDepth < -100,'Exit interruption must exercise genuine deep flight');
+  for(const cadence of result.cadenceResults){
+   assert(cadence.maxYaw>2.5&&cadence.closestBack<.35&&cadence.midTurnYaw>2.5&&cadence.midTurnYaw<3.5,`Clock-only ${cadence.fps}FPS must show the real back: ${JSON.stringify(cadence)}`);
+   assert(cadence.finiteBounds&&cadence.inside,`Clock-only ${cadence.fps}FPS must remain finite and framed`);
+   assert(cadence.idleAction===null&&cadence.finalYawError<.05,`Clock-only ${cadence.fps}FPS must settle facing front`);
+  }
   assert(result.disposed);assert.deepEqual(errors,[]);
   console.log('PASS deterministic 3D action interruption, morph-in-motion, return to idle and no pose accumulation',result);
  }finally{await browser.close();}

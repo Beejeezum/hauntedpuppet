@@ -107,12 +107,16 @@ def evil_skin(p):
  x,y,z=p;head=max(0,min(1,(z-1.8)/.25))*max(0,min(1,(3.0-z)/.25));x*=1+.09*head
  if z>2.9:x+=(z-2.9)*.18;z+=(z-2.9)*.12
  if abs(x)>.88 and z<1.95:
-  side='L'if x<0 else'R';best=None
+  side='L'if x<0 else'R';delta=Vector((0,0,0));total=0
   for name,line in fingerlines.items():
    if not name.endswith(side):continue
-   a,b=Vector(line[0]),Vector(line[-1]);d=b-a;t=max(0,min(1,(p-a).dot(d)/d.length_squared));c=a+t*d;distance=(p-c).length
-   if best is None or distance<best[0]:best=(distance,t,c)
-  distance,t,c=best;amount=max(0,min(1,(abs(p.x)-.95)/.20));q=c+(p-c)*(1-.84*t*t)+Vector((math.copysign(.16*t*t,x),-.07*t*t,-.13*t*t));q=p.lerp(q,amount);x,y,z=q
+   best=None
+   for i in range(len(line)-1):
+    a,b=Vector(line[i]),Vector(line[i+1]);d=b-a;local=max(0,min(1,(p-a).dot(d)/d.length_squared));c=a+local*d;t=(i+local)/(len(line)-1);distance=(p-c).length
+    if best is None or distance<best[0]:best=(distance,t,c)
+   distance,t,c=best;weight=exp(-(distance/.105)**2);q=c+(p-c)*(1-.84*t*t)+Vector((math.copysign(.16*t*t,x),-.07*t*t,-.13*t*t));delta+=(q-p)*weight;total+=weight
+  amount=max(0,min(1,(abs(p.x)-.95)/.20));q=p+delta*(amount/max(1,total));x,y,z=q
+
 
  if z<1.2:
   fade=max(0,min(1,(1.2-z)/.2));x+=sin(z*5)*.07*fade;y*=1-.10*fade
@@ -154,7 +158,13 @@ for side,sign in [('L',-1),('R',1)]:
  for label,pos,scale,material in [('Pupil',(0,-.145,0),(.073,.015,.097),pupilmat),('Catchlight',(-.048,-.165,.068),(.025,.008,.027),shine),('CatchlightSmall',(.046,-.150,-.048),(.010,.005,.011),shine)]:
   bpy.ops.mesh.primitive_uv_sphere_add(segments=20,ring_count=12,location=center+Vector(pos));o=bpy.context.object;o.name=label+'_'+side;o.scale=scale;bpy.ops.object.transform_apply(location=True,rotation=False,scale=True);o.data.materials.append(material)
   for f in o.data.polygons:f.use_smooth=True
-  attach(o,bone);all_meshes.append(o);shape(o,'Evil',eye_evil)
+  attach(o,bone);all_meshes.append(o)
+  def feature_evil(p,label=label,center=center):
+   q=eye_evil(p)
+   if label=='Pupil':
+    d=q-center;d.x*=.58;d.z*=.58;q=center+d
+   return q
+  shape(o,'Evil',feature_evil)
  # Lid cap covers the front hemisphere continuously as its blink shape reaches one.
  def lid_point(u,v,cover):
   zz=1-2*v*cover;xx=u*math.sqrt(max(0,1-zz*zz));yy=-math.sqrt(max(0,1-xx*xx-zz*zz));return center+Vector((xx*.241,yy*.131-.005,zz*.271))
@@ -167,7 +177,7 @@ for side,sign in [('L',-1),('R',1)]:
  for loop in lid.data.loops:uv.data[loop.index].uv=(.5,.61)
  key=lid.shape_key_add(name='Basis');blink=lid.shape_key_add(name='Blink_'+side);evil=lid.shape_key_add(name='Evil')
  for i,v in enumerate(blink.data):v.co=lid_point((i%25)/12-1,(i//25)/18,1)
- for i,v in enumerate(evil.data):v.co=eye_evil(lid_point((i%25)/12-1,(i//25)/18,.44))
+ for i,v in enumerate(evil.data):v.co=eye_evil(lid_point((i%25)/12-1,(i//25)/18,.56))
  compound=lid.shape_key_add(name='BlinkEvil_'+side)
  for i,v in enumerate(compound.data):v.co=2*key.data[i].co+eye_evil(lid_point((i%25)/12-1,(i//25)/18,1))-blink.data[i].co-evil.data[i].co
  # Sculpted brow ribbon with independent up/down targets and a menacing inner pinch.
