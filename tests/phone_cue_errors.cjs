@@ -3,7 +3,7 @@ const assert=require('node:assert/strict');
 (async()=>{
  const browser=await chromium.launch(),desktopContext=await browser.newContext(),desk=await desktopContext.newPage();desk.setDefaultTimeout(20000);
  await desk.route('**/api/performance',route=>route.fulfill({status:503,json:{error:'Controlled cue-generation failure.'}}));
- await desk.goto('http://127.0.0.1:8770');await desk.waitForFunction(()=>window.HauntPhone&&HauntWisp.inspect().ready);await desk.evaluate(()=>HauntPhone.disable());
+ await desk.goto((process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770')+'');await desk.waitForFunction(()=>window.HauntPhone&&HauntWisp.inspect().ready);await desk.evaluate(()=>HauntPhone.disable());
  await desk.locator('#customCueTitle').evaluate(el=>el.closest('details').open=true);await desk.fill('#customCueTitle','Cue failure regression');await desk.fill('#customCueWords','This line deliberately tests recovery from an unavailable voice service.');await desk.click('#addShowCue');
  const cueId=await desk.evaluate(()=>HauntShow.remoteState().cues.at(-1));await desk.locator('.phone-controls').evaluate(e=>e.open=true);await desk.click('#phoneEnable');await desk.waitForFunction(()=>/^\d{6}$/.test(document.getElementById('phoneCode').textContent));const code=await desk.locator('#phoneCode').textContent();
  const mobile=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true}),phone=await mobile.newPage();phone.setDefaultTimeout(20000);await phone.goto('http://127.0.0.1:8771');await phone.fill('#code',code);await phone.locator('#pairForm button').click();await phone.waitForFunction(()=>document.getElementById('connection').textContent==='Connected to the laptop');

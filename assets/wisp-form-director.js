@@ -12,7 +12,9 @@ export class WispFormDirector{
 export class WispFormComposite{
  constructor(morph=null){this.canvas=document.createElement('canvas');this.canvas.width=1280;this.canvas.height=720;this.ctx=this.canvas.getContext('2d');this.frames=0;this.morph=morph;}
  loadMorph(){return this.morph?.load();}
- render(cute,scary,blend,options={}){const ctx=this.ctx;ctx.clearRect(0,0,1280,720);blend=scary?clamp(blend):0;if(blend<=.001){ctx.drawImage(cute,0,0);return this.canvas}if(blend>=.999){ctx.drawImage(scary,0,0);return this.canvas}if(this.morph?.draw(ctx,blend,options)){this.frames++;return this.canvas}const pulse=Math.sin(blend*Math.PI);ctx.save();ctx.translate(640,360+8*pulse);ctx.scale(1-.24*pulse,1-.12*pulse);ctx.translate(-640,-360);ctx.globalAlpha=1-ease(blend/.55);ctx.drawImage(cute,0,0);ctx.globalAlpha=ease((blend-.45)/.55);ctx.drawImage(scary,0,0);ctx.restore();this.frames++;return this.canvas;}
+ render(cute,scary,blend,options={}){const ctx=this.ctx;ctx.clearRect(0,0,1280,720);blend=scary?clamp(blend):0;if(blend<=.001){ctx.drawImage(cute,0,0);return this.canvas}if(blend>=.999){ctx.drawImage(scary,0,0);return this.canvas}// Continuous endpoint handoffs retain the exact live puppet at both ends.
+ const entrance=ease(blend/.22),exit=ease((blend-.78)/.22),morphWeight=entrance*(1-exit);ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=1-entrance;ctx.drawImage(cute,0,0);ctx.globalAlpha=exit;ctx.drawImage(scary,0,0);ctx.globalAlpha=1;
+ if(!this.morph?.draw(ctx,blend,{...options,opacity:(options.opacity??1)*morphWeight})){ctx.globalAlpha=(1-blend)*morphWeight;ctx.drawImage(cute,0,0);ctx.globalAlpha=blend*morphWeight;ctx.drawImage(scary,0,0);}ctx.restore();this.frames++;return this.canvas;}
 }
 /** Abortable authored beat runner. Generation checks prevent a late reveal after welcome/Stop. */
 export class WispRevealRunner{

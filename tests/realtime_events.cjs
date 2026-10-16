@@ -1,5 +1,5 @@
 const {chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright'),assert=require('assert');
-(async()=>{const browser=await chromium.launch(),page=await browser.newPage();await page.goto('http://127.0.0.1:8770');const result=await page.evaluate(async()=>{
+(async()=>{const browser=await chromium.launch(),page=await browser.newPage();await page.goto((process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770')+'');const result=await page.evaluate(async()=>{
  const {RealtimeVoice}=await import('/assets/realtime-voice.js'),events=[],calls=[];const v=new RealtimeVoice({},{});v.dc={readyState:'open',send:raw=>events.push(JSON.parse(raw))};v.sink={stopOutput:()=>calls.push('stop'),listening:()=>calls.push('listen'),startOutput:()=>calls.push('start'),thinking:()=>calls.push('think'),rms:()=>0};v.ready=true;v.connection='connected';v.keepListening=true;v.phase='waiting';const track={enabled:true,readyState:'live'};v.mic={getAudioTracks:()=>[track]};
  const check=(yes,message)=>{if(!yes)throw Error(message)};
  v.handle({type:'response.created',response:{id:'first'}});v.handle({type:'output_audio_buffer.started',response_id:'first'});v.handle({type:'response.done',response:{id:'first',status:'completed'}});check(v.outputActive&&v.phase==='speaking','Generation must not close audio');
