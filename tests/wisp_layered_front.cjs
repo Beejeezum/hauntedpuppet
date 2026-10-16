@@ -38,7 +38,7 @@ const{chromium,webkit}=require(process.env.HAUNT_PLAYWRIGHT||'playwright'),asser
    r.render({clock:4.1,dt:1/60,reduced:true,action:{kind:'twirl',at:1.7},state:'idle'},0);if(r.frontRig.inspect().viewAngle!==0||r.inspect().pose!=='welcome')throw Error('Reduced motion retains animated turn');
    // Hold geometry fixed and verify the actual GPU two-painting blend, not a second source-over pass.
    r.render({clock:5,freeze:true,state:'idle'},0);r.face.visible=false;r.frontRig.body.visible=false;
-   for(const arm of r.frontRig.arms){arm.front.visible=false;arm.mesh.vertices.set(arm.base);arm.mesh.geometry.getBuffer('aPosition').update();}
+   for(const arm of r.frontRig.arms){arm.front.visible=false;arm.shader.resources.morphUniforms.uniforms.uFrontAmount=0;arm.mesh.vertices.set(arm.base);arm.mesh.geometry.getBuffer('aPosition').update();}
    const scan=document.createElement('canvas');scan.width=1280;scan.height=720;const ctx=scan.getContext('2d',{willReadFrequently:true}),images=[];
    for(const blend of [0,.5,1]){for(const arm of r.frontRig.arms){arm.shader.resources.morphUniforms.uniforms.uBlend=blend;arm.frontShader.resources.morphUniforms.uniforms.uBlend=blend;}r.app.renderer.render(r.app.stage);ctx.clearRect(0,0,1280,720);ctx.drawImage(r.canvas,0,0);images.push(ctx.getImageData(0,0,1280,720).data);}
    let maxBlendError=0,blendSamples=0;for(let k=0;k<images[0].length;k+=4){if(images[0][k+3]<245||images[2][k+3]<245)continue;for(let c=0;c<3;c++){const a=images[0][k+c]*images[0][k+3]/255,b=images[2][k+c]*images[2][k+3]/255,m=images[1][k+c]*images[1][k+3]/255;maxBlendError=Math.max(maxBlendError,Math.abs(m-(a+b)/2));}blendSamples++;}

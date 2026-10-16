@@ -1,6 +1,22 @@
 # Wisp production quality pass
 
-Working window: 2026-10-16 11:10–14:10 UTC. Goal: make one convincing painted character performance, then expand only after it survives review. This is an improvement target, not a claim of feature-animation quality.
+## Working goal
+
+Build Wisp into a finished contemporary entertainment character for a front-door projection: as appealing and coherent as the approved painted concept art, dimensional through its turns, continuously alive throughout its body, convincingly translucent and wispy, emotionally expressive, and immediate to interact with. Judge success by the visitor's experience and recorded visual results. Functional rigging and passing software tests are necessary foundations, not visual acceptance.
+
+The earlier 16 October 11:10–14:10 UTC pass was a bounded improvement pass; its heartbeat is disabled and its visual acceptance remains incomplete. This revised brief captures the user's subsequent direction. It does not claim the existing candidate has reached animated-film or premium attraction quality.
+
+## Non-negotiable visual acceptance
+
+- **Whole-body life:** head, shoulders, arms, wrists, hands, torso, sides, crest and tail have coherent overlapping motion. The silhouette and volumes change continuously within clear intentional poses; moving the entire image does not satisfy this gate.
+- **Apparitional material:** meaningful spatially varying body transparency, readable face, painterly surface detail and body-attached wisps. Effects must turn and deform with the spirit. No rectangular haze layer or generic image wobble may substitute for body animation.
+- **Dimensional construction:** convincing side/rear views, consistent proportions and texture, correct arm/torso overlap and no visible cutout joins or collapsing joints. The five-view candidate remains incomplete for arbitrary full turns.
+- **Expression and personality:** independent eye/lid/brow/cheek/mouth acting, expressive hands and distinct friendly/scary behavior. Listening, speaking, noticing, playing and departing should read without interface labels.
+- **One continuous transformation:** cute and evil are the same character changing shape. Intermediate eyes, mouth, fingers, skin and silhouette must remain coherent; doubled contours and fading between incompatible drawings fail this gate.
+- **Fluid playback:** target sustained 60 fps on the intended laptop with operator and projector together; report frame intervals and stalls. Quality should hold through interaction, interruptions and idle. A video encoder's requested frame rate is not proof.
+- **Finished audience experience:** strong readability at street/doorway distance, quick voice interaction, a living return to idle after goodbye, expressive operator control and immediate Stop/Blackout. Physical projection and genuine voice tests remain separate acceptance steps.
+
+A release can be a documented incremental improvement while the goal remains unfinished. Do not declare the character production-complete until visual review against approved art, full-speed/slow-motion recordings, live interaction and on-site projection satisfy these gates.
 
 ## Acceptance sequence
 

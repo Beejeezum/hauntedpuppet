@@ -36,21 +36,21 @@ export class PerformanceMotionRig{
   const move=(k,x,y)=>{target[k][0]+=x*energy;target[k][1]+=y*energy;};
   // Thorax leads; the head, crest and tail settle at different rates.
   const inhale=Math.sin(t*1.35),headTurn=clamp(p.performer?.headYaw||0,-1,1)*20+(p.performer?0:(p.attention?.x||0)*130),attentionY=p.performer?0:(p.attention?.y||0)*100;
-  move('chest',Math.sin(t*.63)*3,inhale*3);
-  move('head',headTurn+(listening?12:0),inhale*5+(listening?9:0)+attentionY);
-  move('crest',headTurn+Math.sin(t*1.35-.8)*11,inhale*7+(listening?9:0)+attentionY);
-  move('tail',Math.sin(t*1.35-1.15)*21,Math.sin(t*1.35-.75)*6);
+  move('chest',Math.sin(t*.63)*6,inhale*6);
+  move('head',headTurn+(listening?12:0),inhale*7+(listening?9:0)+attentionY);
+  move('crest',headTurn+Math.sin(t*1.35-.8)*16,inhale*7+(listening?9:0)+attentionY);
+  move('tail',Math.sin(t*1.35-1.15)*28,Math.sin(t*1.35-.75)*6);
   move('head',0,tension*18);move('crest',tension*6,-tension*32);move('chest',0,tension*5);
   const angles={};
   for(const side of ['left','right']){
-   const sign=side==='left'?-1:1;
+   const sign=side==='left'?-1:1,phase=side==='left'?0:1.4;
    const wave=side==='left'?envelope:0,beat=Math.sin(at*8.5);
    // Hand and elbow have separate arcs. Right hand supplies a smaller counterbalance.
    move(side+'Shoulder',sign*tension*7,inhale*2+tension*8);
-   move(side+'Elbow',sign*(Math.sin(t*1.1-.4)*4+tension*14)+wave*beat*7,inhale*4-wave*9-tension*4);
-   move(side+'Wrist',sign*(Math.sin(t*1.1-.7)*6+tension*27)+wave*beat*16,inhale*5-wave*12-tension*7);
-   move(side,sign*(Math.sin(t*1.1-.95)*8+tension*38)+wave*beat*35,inhale*6-wave*11-tension*10);
-   angles[side]=energy*(wave*beat*.18+Math.sin(t*1.1-1.1)*.022*sign+tension*sign*.045);
+   move(side+'Elbow',sign*(Math.sin(t*1.1-.4+phase)*10+tension*14)+wave*beat*7,inhale*4-wave*9-tension*4);
+   move(side+'Wrist',sign*(Math.sin(t*1.1-.7+phase)*14+tension*27)+wave*beat*16,inhale*5-wave*12-tension*7);
+   move(side,sign*(Math.sin(t*1.1-.95+phase)*24+tension*38)+wave*beat*35,inhale*6-wave*11-tension*10);
+   angles[side]=energy*(wave*beat*.18+Math.sin(t*1.1-1.1+phase)*.065*sign+tension*sign*.045);
    if(speaking)move(side,sign*Math.sin(t*2.6+(side==='left'?0:1.3))*6,Math.sin(t*2.6)*3);
   }
   const points={},rotations={};

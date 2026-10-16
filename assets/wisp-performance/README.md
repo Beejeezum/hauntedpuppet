@@ -29,3 +29,13 @@ Graphics recovery is exercised with the browser’s [WebGL context-loss simulati
 The brow morph registers the friendly pigment and demon ridge to a shared painted centroid, principal axis and length. This removes the separated intermediate brow seen in footage; endpoint pixels are checked against the original components (zero measured error in Chromium and WebKit). Webcam gaze also drives lid follow and iris foreshortening rather than only moving the iris.
 
 The elbow/wrist skin now applies a bounded correction for area lost when adjacent bone transforms blend. It expands around the exact shared joint by at most 1.35×; rest identity and joint locations stay unchanged. A right-angle test retains more than 95% of the original cross-section radius. Per-bone affine coefficients are computed once per frame, avoiding temporary point arrays during skinning. This is a small 2D joint correction, not full dual-quaternion skinning or artist-authored corrective drawings. Extreme folds and individual finger poses remain art/rig work.
+
+## Continuous spirit skin
+
+The painted performance candidate now has continuous local spine/crest deformation, changing torso width, stronger independently phased hand/wrist motion and animated body-space transmission. These run from the existing character clock between cues, without adding timers or increasing the 657-vertex body mesh. The moving alpha field is attached to the registered turn surface; it preserves more opacity around the face and more of the original painted cyan edge while letting the lower body become substantially translucent. Original PNGs are unchanged.
+
+Translucency also requires complementary front/rear arm coverage. The shader partitions one painted arm around the body rather than drawing its translucent hand twice. A GPU test compares this split against a single arm using fixed, non-overlapping source geometry; folded-limb overlaps remain an art/rig limitation. Shoulder overlap caps fade near their attachment.
+
+The studio returns to a living idle after the reel, with a continuous clock handoff. Explicit timeline scrubbing still holds a review pose. Reduced motion freezes skin motion and material phase; the frozen artwork reference disables the new material. Stop, Blackout, original fallbacks and laptop-only audio ownership are retained.
+
+This remains painted 2.5D: it does not complete missing opposite-side views, individual finger articulation, true volumetric scattering or the production 3D sculpt. Follow docs/wisp-excellence-plan.md for visual acceptance rather than treating this improvement as completion.
