@@ -41,11 +41,17 @@ for i in range(rows-1):
 faces+=[tuple(reversed(range(segments))),tuple((rows-1)*segments+j for j in range(segments))]
 body=mesh('Wisp_Skin',verts,faces,skin);parts=[body];bone_specs=[('Root',(0,0,0),(0,0,.25),None),('Torso',(0,0,1.15),(0,0,1.8),'Root'),('Head',(0,0,1.8),(0,0,2.75),'Torso'),('Crest_1',(0,0,2.75),(.14,0,3.25),'Head'),('Crest_2',(.14,0,3.25),(.02,0,3.64),'Crest_1'),('Tail_1',(0,0,1.15),(-.06,0,.7),'Torso'),('Tail_2',(-.06,0,.7),(.16,0,.3),'Tail_1'),('Tail_Tip',(.16,0,.3),(.24,0,.08),'Tail_2')]
 parts.append(tube('CrestCurl',[((.035,0,3.57),.045),((-.07,0,3.65),.04),((-.18,0,3.63),.032),((-.23,0,3.56),.02),((-.18,0,3.52),.009)]));parts.append(tube('TailCurl',[((.19,0,.31),.075),((.31,0,.18),.06),((.28,0,.07),.047),((.16,0,.04),.032),((.12,0,.12),.02),((.19,0,.17),.009)]));fingerlines={}
+def hand_rest(co):
+ x,y,z=co;t=max(0,min(1,(abs(x)-.35)/.75));return (x,y-.12*t if x<0 else y,z+(.08 if x<0 else -.20)*t)
 for side,sign in [('L',-1),('R',1)]:
  pts=[((sign*.31,0,1.73),.155),((sign*.49,-.015,1.60),.15),((sign*.70,-.02,1.48),.13),((sign*.88,-.045,1.50),.13),((sign*1.04,-.07,1.52),.17)]
- parts.append(tube('Arm_'+side,pts));bpy.ops.mesh.primitive_uv_sphere_add(segments=24,ring_count=16,location=(sign*1.09,-.07,1.52));palm=bpy.context.object;palm.scale=(.18,.13,.19);bpy.ops.object.transform_apply(location=True,rotation=False,scale=True);parts.append(palm);bone_specs.extend([('UpperArm_'+side,pts[0][0],pts[2][0],'Torso'),('Forearm_'+side,pts[2][0],pts[3][0],'UpperArm_'+side),('Hand_'+side,pts[3][0],pts[4][0],'Forearm_'+side)])
- for n,points in enumerate([[(1.04,-.07,1.60),(1.10,-.07,1.78),(1.21,-.07,1.83)],[(1.12,-.07,1.58),(1.31,-.07,1.67),(1.40,-.07,1.64)],[(1.13,-.07,1.49),(1.33,-.07,1.47),(1.37,-.07,1.40)],[(1.07,-.07,1.42),(1.21,-.07,1.29),(1.20,-.07,1.22)]]):
-  points=[(x*sign,y,z)for x,y,z in points];parts.append(tube('Finger',[(co,r)for co,r in zip(points,[.085,.073,.060])],rings=16));bpy.ops.mesh.primitive_uv_sphere_add(segments=16,ring_count=12,location=points[-1],radius=.061);parts.append(bpy.context.object);name='Digit%d_%s'%(n,side);bone_specs.append((name,points[0],points[-1],'Hand_'+side));fingerlines[name]=points
+ pts=[(hand_rest(co),r)for co,r in pts];parts.append(tube('Arm_'+side,pts));bpy.ops.mesh.primitive_uv_sphere_add(segments=24,ring_count=16,location=hand_rest((sign*1.09,-.07,1.52)));palm=bpy.context.object;palm.scale=(.18,.13,.19);bpy.ops.object.transform_apply(location=True,rotation=False,scale=True);parts.append(palm);bone_specs.extend([('UpperArm_'+side,pts[0][0],pts[2][0],'Torso'),('Forearm_'+side,pts[2][0],pts[3][0],'UpperArm_'+side),('Hand_'+side,pts[3][0],pts[4][0],'Forearm_'+side)])
+ for n,points in enumerate([[(1.04,-.07,1.60),(1.13,-.08,1.77),(1.24,-.09,1.83),(1.31,-.09,1.79)],[(1.12,-.07,1.58),(1.29,-.08,1.72),(1.41,-.09,1.75),(1.46,-.09,1.69)],[(1.13,-.07,1.49),(1.32,-.08,1.59),(1.44,-.09,1.60),(1.48,-.09,1.54)],[(1.07,-.07,1.42),(1.13,-.17,1.30),(1.24,-.21,1.32),(1.27,-.21,1.40)]]):
+  points=[hand_rest((x*sign,y,z))for x,y,z in points];samples=[]
+  for i in range(len(points)-1):
+   for step in range(4):
+    t=step/4;co=cat(Vector(points[max(0,i-1)]),Vector(points[i]),Vector(points[i+1]),Vector(points[min(len(points)-1,i+2)]),t);f=(i+t)/(len(points)-1);samples.append((co,.082-.026*f))
+  samples.append((points[-1],.056));parts.append(tube('Finger',samples,rings=16));bpy.ops.mesh.primitive_uv_sphere_add(segments=16,ring_count=12,location=points[-1],radius=.057);parts.append(bpy.context.object);name='Digit%d_%s'%(n,side);bone_specs.append((name,points[0],points[-1],'Hand_'+side));fingerlines[name]=points
 bpy.ops.object.select_all(action='DESELECT')
 for o in parts:o.select_set(True)
 bpy.context.view_layer.objects.active=body;bpy.ops.object.join();rem=body.modifiers.new('Continuous sculpted skin','REMESH');rem.mode='VOXEL';rem.voxel_size=.020;rem.use_smooth_shade=True;bpy.ops.object.modifier_apply(modifier=rem.name)

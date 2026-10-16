@@ -1,6 +1,6 @@
 # Wisp: shared 3D performance rig
 
-`wisp.glb` is an actual volume mesh with skin weights and morph targets, not a turntable video or stacked sprite. The connected body has 20,609 vertices. A 24-bone skeleton controls head, crest, torso, tail, arms, wrists, four digits per hand and independent eyes. Four skeletal animation clips are exported.
+`wisp.glb` is an actual volume mesh with skin weights and morph targets, not a turntable video or stacked sprite. The connected body has 21,104 vertices. A 24-bone skeleton controls head, crest, torso, tail, arms, wrists, four digits per hand and independent eyes. Four skeletal animation clips are exported.
 
 The cute and evil endpoints share vertex/index topology. `Evil` changes the same body, eyes, brows, mouth cavity, fangs and claws continuously. Each mesh retains its own matching target name. The runtime applies one normalized form value across those targets. Separate eyelid targets plus `BlinkEvil_L/R` correctives allow blinks through the change. Mouth controls are `JawOpen`, `MouthFunnel`, `MouthWide`, `MouthSmile`, `TongueUp`, and `TongueOut`; they accept the app's acoustic estimates or performer input. They are not an audio-to-phoneme solver.
 

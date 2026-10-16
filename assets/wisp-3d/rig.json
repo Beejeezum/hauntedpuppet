@@ -1,7 +1,7 @@
 {
   "character": "Wisp",
   "source": "../../source/wisp-3d/Wisp.blend",
-  "body_vertices": 20609,
+  "body_vertices": 21104,
   "meshes": 20,
   "bones": [
     "Root",
