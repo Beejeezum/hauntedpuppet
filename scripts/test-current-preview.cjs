@@ -6,6 +6,6 @@ if(process.argv[2]==='--suite'){
  const source=fs.readFileSync(file,'utf8').replaceAll('127.0.0.1:8770','127.0.0.1:'+port).replaceAll('localhost:8770','localhost:'+port);
  const test=new Module(file,module);test.filename=file;test.paths=Module._nodeModulePaths(path.dirname(file));test._compile(source,file);
 }else{
- const suites=['connection_health.cjs','key_dialog_ui.cjs','forget_key.cjs','casting.cjs','attract.cjs','realtime_microphone_errors.cjs','realtime_events.cjs','realtime_failures.cjs','wisp.cjs','wisp_resilience.cjs','microphone.cjs','realtime_browser.cjs','phone_browser.cjs','phone_cue_errors.cjs','accessibility.cjs','realtime_timeouts.cjs','realtime_reactions.cjs','cloud_browser.cjs','projection_browser.cjs','cloud_remote_browser.mjs'];
+ const suites=['doorstep_performance.cjs','costume_board.cjs','connection_health.cjs','key_dialog_ui.cjs','forget_key.cjs','casting.cjs','attract.cjs','realtime_microphone_errors.cjs','realtime_events.cjs','realtime_failures.cjs','wisp.cjs','wisp_resilience.cjs','microphone.cjs','realtime_browser.cjs','phone_browser.cjs','phone_cue_errors.cjs','accessibility.cjs','realtime_timeouts.cjs','realtime_reactions.cjs','cloud_browser.cjs','projection_browser.cjs','cloud_remote_browser.mjs'];
  for(const name of suites){const result=spawnSync(process.execPath,[__filename,'--suite',path.join(__dirname,'../tests',name)],{stdio:'inherit',env:process.env});if(result.status!==0)process.exit(result.status||1);}
 }

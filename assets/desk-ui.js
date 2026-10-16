@@ -20,6 +20,7 @@ export function arrangeDesk(){
   if(show){const form=document.querySelector('#friendlyForm')?.parentElement,heading=form?.previousElementSibling;
     if(form&&heading?.tagName==='H3'){const details=document.createElement('details');details.className='character-production-note';details.innerHTML='<summary>Character forms & production</summary>';heading.before(details);details.append(heading,form);}
   }
+  if(show){const heading=show.querySelector('.cue-heading'),note=document.getElementById('includedVoiceNote'),cues=document.getElementById('showCues');if(heading&&cues){const details=document.createElement('details');details.className='recorded-cue-library';details.innerHTML='<summary>Recorded lines & saved scripts · optional</summary>';heading.before(details);details.append(heading);if(note)details.append(note);details.append(cues);}}
   const nav=document.createElement('nav');nav.className='desk-shortcuts';nav.setAttribute('aria-label','Show desk sections');
   nav.innerHTML='<a href="#liveConversation">Live voice</a><a href="#showMoments">Show moments</a><a href="#projectionSetup">Projection studio</a><a href="#phoneControls">Phone remote</a>';
   if(show)show.id='showMoments';const phone=document.querySelector('.phone-controls');if(phone)phone.id='phoneControls';

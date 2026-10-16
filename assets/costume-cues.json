@@ -1,0 +1,1131 @@
+{
+  "edition": "2026-doorstep-shortlist",
+  "description": "100 operator-selected costume possibilities, not a measured top-100 ranking. Original friendly quips; no automatic visual identification.",
+  "sources": [
+    "https://cdn.nrf.com/blog/top-halloween-costume-trends-for-2026",
+    "https://nrf.com/media-center/press-releases/nrf-halloween-survey-shows-consumer-spending-expected-to-reach-13-5-billion"
+  ],
+  "costumes": [
+    {
+      "id": "costume-001",
+      "name": "Spider-Man",
+      "category": "Heroes",
+      "aliases": "spiderman peter parker miles morales",
+      "lines": [
+        "Spider webs? Finally, someone can fix my curtains.",
+        "Eight legs would make trick-or-treating wonderfully efficient.",
+        "My cobwebs finally have a supervisor!",
+        "Could you swing by the candy department?",
+        "Your web delivery service sounds extremely useful."
+      ],
+      "featured": true
+    },
+    {
+      "id": "costume-002",
+      "name": "Superhero",
+      "category": "Heroes",
+      "aliases": "super hero cape",
+      "lines": [
+        "A hero! My candy is in very capable hands.",
+        "My superpower is forgetting where I put my feet."
+      ],
+      "featured": true
+    },
+    {
+      "id": "costume-003",
+      "name": "Batman",
+      "category": "Heroes",
+      "aliases": "bruce wayne dark knight",
+      "lines": [
+        "A bat cape! Mine keeps turning into a bedsheet.",
+        "You handle the shadows. I'll supervise the candy.",
+        "Your bat signal needs a ghost-shaped little button.",
+        "Finally, someone who understands the night shift."
+      ],
+      "featured": true
+    },
+    {
+      "id": "costume-004",
+      "name": "Superman",
+      "category": "Heroes",
+      "aliases": "clark kent",
+      "lines": [
+        "You fly too? We should start a little club.",
+        "That cape has excellent floating potential."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-005",
+      "name": "Wonder Woman",
+      "category": "Heroes",
+      "aliases": "diana",
+      "lines": [
+        "A wonderful hero! My bravery just grew three sizes.",
+        "Could your shield protect my very tiny boo?"
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-006",
+      "name": "Captain America",
+      "category": "Heroes",
+      "aliases": "steve rogers",
+      "lines": [
+        "A shield! Perfect protection from runaway candy corn.",
+        "I salute you. My hand went through my forehead."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-007",
+      "name": "Iron Man",
+      "category": "Heroes",
+      "aliases": "tony stark",
+      "lines": [
+        "Shiny armor! Mine is mostly moonlight and nerves.",
+        "Does that suit have a candy compartment?"
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-008",
+      "name": "Hulk",
+      "category": "Heroes",
+      "aliases": "bruce banner",
+      "lines": [
+        "Such mighty muscles! I struggle with marshmallows.",
+        "Please open my candy wrapper. It's terribly formidable."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-009",
+      "name": "Thor",
+      "category": "Heroes",
+      "aliases": "thunder hammer",
+      "lines": [
+        "Thunder? I thought my tummy was rumbling.",
+        "Your hammer makes my tiny boo feel rather modest."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-010",
+      "name": "Black Panther",
+      "category": "Heroes",
+      "aliases": "wakanda",
+      "lines": [
+        "A royal hero! I'll try my most dignified float.",
+        "Quiet paws. Quiet ghost. Excellent sneaking team."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-011",
+      "name": "Deadpool",
+      "category": "Heroes",
+      "aliases": "red suit",
+      "lines": [
+        "Red suit, big entrance! I admire the commitment.",
+        "I practice heroic entrances. Mostly I bump the curtains."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-012",
+      "name": "Harley Quinn",
+      "category": "Heroes",
+      "aliases": "harley",
+      "lines": [
+        "That is a very mischievous entrance. I approve.",
+        "My idea of chaos is mismatching my ghost socks."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-013",
+      "name": "Princess",
+      "category": "Magic & royalty",
+      "aliases": "royal queen king prince",
+      "lines": [
+        "Your Majesty! Please excuse my extremely floaty bow.",
+        "A royal visitor! I'll polish the moon immediately.",
+        "A royal bow! Mind the extremely fluffy tail.",
+        "This doorstep is now officially a tiny castle.",
+        "Your royal candy inspection may begin."
+      ],
+      "featured": true
+    },
+    {
+      "id": "costume-014",
+      "name": "Elsa",
+      "category": "Magic & royalty",
+      "aliases": "frozen snow queen",
+      "lines": [
+        "Snow magic! My goosebumps have goosebumps.",
+        "Please don't freeze the candy. My teeth are imaginary."
+      ],
+      "featured": true
+    },
+    {
+      "id": "costume-015",
+      "name": "Anna",
+      "category": "Magic & royalty",
+      "aliases": "frozen",
+      "lines": [
+        "A brave adventurer! I got lost behind one curtain.",
+        "Your courage deserves a very grand little bow."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-016",
+      "name": "Moana",
+      "category": "Magic & royalty",
+      "aliases": "ocean wayfinder",
+      "lines": [
+        "An ocean explorer! I get seasick in a teacup.",
+        "Could you teach my tail some proper wave etiquette?"
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-017",
+      "name": "Ariel",
+      "category": "Magic & royalty",
+      "aliases": "mermaid little mermaid",
+      "lines": [
+        "A mermaid! My swimming technique is mostly floating.",
+        "Underwater candy must get terribly soggy."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-018",
+      "name": "Belle",
+      "category": "Magic & royalty",
+      "aliases": "beauty beast",
+      "lines": [
+        "A book lover! My favorite chapter has snacks.",
+        "Please pardon the dust. It's vintage ghost glitter."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-019",
+      "name": "Cinderella",
+      "category": "Magic & royalty",
+      "aliases": "glass slipper",
+      "lines": [
+        "A royal visitor! I misplaced both invisible slippers.",
+        "Your carriage has wheels? Mine is a pumpkin."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-020",
+      "name": "Rapunzel",
+      "category": "Magic & royalty",
+      "aliases": "tangled",
+      "lines": [
+        "Such a grand adventure! Mine involves one stubborn curtain.",
+        "My hair routine is wonderfully quick. No hair."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-021",
+      "name": "Snow White",
+      "category": "Magic & royalty",
+      "aliases": "snowwhite",
+      "lines": [
+        "Welcome! I asked seven dust bunnies to tidy up.",
+        "I recommend candy over suspicious apples tonight."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-022",
+      "name": "Tinker Bell",
+      "category": "Magic & royalty",
+      "aliases": "tinkerbell fairy pixie",
+      "lines": [
+        "A fairy! Finally, someone understands airborne glitter.",
+        "Your wings are splendid. Mine are purely imaginary."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-023",
+      "name": "Unicorn",
+      "category": "Magic & royalty",
+      "aliases": "pegasus",
+      "lines": [
+        "A unicorn! My sparkle budget is suddenly inadequate.",
+        "I would offer a rainbow, but I ate it."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-024",
+      "name": "Witch",
+      "category": "Magic & royalty",
+      "aliases": "broom sorceress",
+      "lines": [
+        "A broom! My ceiling needs a terribly good sweep.",
+        "Do your spells include unwrapping stubborn candy?",
+        "I tried a broom. Fell straight through it.",
+        "One tiny spell for extra chocolate, please.",
+        "Your hat has excellent moon-catching potential."
+      ],
+      "featured": true
+    },
+    {
+      "id": "costume-025",
+      "name": "Wizard",
+      "category": "Magic & royalty",
+      "aliases": "sorcerer mage",
+      "lines": [
+        "A wizard! Can you turn my hiccups into confetti?",
+        "My strongest spell is misplacing my own hat."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-026",
+      "name": "Harry Potter",
+      "category": "Magic & royalty",
+      "aliases": "hogwarts gryffindor hermione ron",
+      "lines": [
+        "A magical student! I failed advanced walking-through-doors.",
+        "Please don't turn me into homework."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-027",
+      "name": "KPop Demon Hunters",
+      "category": "Screen favorites",
+      "aliases": "k-pop huntrix rumi mira zoey saja",
+      "lines": [
+        "A demon hunter? I'm strictly the friendly kind!",
+        "Your concert needs a ghost. I work for candy.",
+        "My dance moves are mostly haunted wiggling.",
+        "Could your next concert include a tiny ghost solo?",
+        "I promise my boo is completely fan-friendly."
+      ],
+      "featured": true
+    },
+    {
+      "id": "costume-028",
+      "name": "Wednesday Addams",
+      "category": "Screen favorites",
+      "aliases": "wednesday",
+      "lines": [
+        "Such magnificent seriousness. My giggles feel rather underdressed.",
+        "I've practiced a solemn stare. Then I sneezed."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-029",
+      "name": "Ghostface",
+      "category": "Screen favorites",
+      "aliases": "scream",
+      "lines": [
+        "A fellow dramatic face! Mine specializes in tiny squeaks.",
+        "Let's keep tonight's surprises candy-sized and friendly."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-030",
+      "name": "Beetlejuice",
+      "category": "Screen favorites",
+      "aliases": "beetle juice",
+      "lines": [
+        "A fellow spooky show-off! Shall we compare tiny boos?",
+        "My haunting paperwork is mostly candy wrappers."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-031",
+      "name": "Jack Skellington",
+      "category": "Screen favorites",
+      "aliases": "nightmare christmas pumpkin king",
+      "lines": [
+        "Such splendid bones! I misplaced my entire skeleton.",
+        "Halloween royalty! My bow needs a little rehearsal."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-032",
+      "name": "Sally",
+      "category": "Screen favorites",
+      "aliases": "nightmare christmas ragdoll",
+      "lines": [
+        "Those stitches are excellent. My sheet has terrible seams.",
+        "A kind spooky soul! My favorite sort of visitor."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-033",
+      "name": "Chucky",
+      "category": "Screen favorites",
+      "aliases": "good guy doll",
+      "lines": [
+        "A doll-sized visitor! This doorstep welcomes gentle mischief.",
+        "Tiny costumes can make very grand entrances."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-034",
+      "name": "Pennywise",
+      "category": "Screen favorites",
+      "aliases": "clown it",
+      "lines": [
+        "A clown! My funniest trick is accidental hiccups.",
+        "Let's trade scary surprises for silly little giggles."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-035",
+      "name": "Michael Myers",
+      "category": "Screen favorites",
+      "aliases": "halloween mask",
+      "lines": [
+        "A mysterious mask! Mine is permanently rather surprised.",
+        "Welcome, quiet visitor. The candy does the talking."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-036",
+      "name": "Ghostbuster",
+      "category": "Screen favorites",
+      "aliases": "ghost busters proton",
+      "lines": [
+        "Ghostbusters? I'm the cuddly, curtain-tidying department!",
+        "Please inspect my excellent friendly-ghost credentials."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-037",
+      "name": "Barbie",
+      "category": "Screen favorites",
+      "aliases": "pink doll",
+      "lines": [
+        "So much style! My sheet suddenly feels underdressed.",
+        "My dream house has one hundred candy cupboards."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-038",
+      "name": "Minion",
+      "category": "Screen favorites",
+      "aliases": "minions despicable gru",
+      "lines": [
+        "A little mischief expert! We should compare giggles.",
+        "Bananas? I thought tonight was strictly candy."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-039",
+      "name": "Stitch",
+      "category": "Screen favorites",
+      "aliases": "lilo alien 626",
+      "lines": [
+        "A tiny troublemaker! My curtains have met their match.",
+        "We can share the mischief. I'll keep the hiccups."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-040",
+      "name": "Bluey",
+      "category": "Screen favorites",
+      "aliases": "blue heeler",
+      "lines": [
+        "A playful visitor! My favorite game is hide-and-boo.",
+        "I keep losing hide-and-seek. I'm slightly see-through."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-041",
+      "name": "Bingo",
+      "category": "Screen favorites",
+      "aliases": "bluey orange heeler",
+      "lines": [
+        "A little adventurer! Shall I perform my tiniest bow?",
+        "My tail is very excited to meet you."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-042",
+      "name": "PAW Patrol pup",
+      "category": "Screen favorites",
+      "aliases": "chase skye marshall rubble rocky zuma",
+      "lines": [
+        "A rescue pup! My bravery needs a little rescuing.",
+        "Excellent paws! I seem to have misplaced mine."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-043",
+      "name": "Gabby",
+      "category": "Screen favorites",
+      "aliases": "gabbys dollhouse cat ears",
+      "lines": [
+        "A dollhouse explorer! My ghost house needs more snacks.",
+        "Tiny adventures are my very favorite size."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-044",
+      "name": "Mario",
+      "category": "Games & space",
+      "aliases": "super mario plumber",
+      "lines": [
+        "A plumber! My haunted sink goes boo all night.",
+        "Jumping is impressive. I mostly hover and hope.",
+        "The candy princess is definitely at this doorstep.",
+        "Please check the pipes. One keeps saying boo."
+      ],
+      "featured": true
+    },
+    {
+      "id": "costume-045",
+      "name": "Luigi",
+      "category": "Games & space",
+      "aliases": "mario luigis mansion",
+      "lines": [
+        "A ghost hunter! Please check the friendly-ghost box.",
+        "We can both be brave after a little snack."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-046",
+      "name": "Princess Peach",
+      "category": "Games & space",
+      "aliases": "mario peach",
+      "lines": [
+        "Royalty at my doorstep! I'll straighten my invisible crown.",
+        "Your castle probably has excellent candy cupboards."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-047",
+      "name": "Yoshi",
+      "category": "Games & space",
+      "aliases": "mario dinosaur",
+      "lines": [
+        "A dinosaur friend! Please don't eat my curtains.",
+        "Your adventure deserves a very enthusiastic tiny wave."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-048",
+      "name": "Bowser",
+      "category": "Games & space",
+      "aliases": "mario koopa",
+      "lines": [
+        "Such grand spikes! My sheet feels terribly unarmored.",
+        "Big entrance! Let's make this a friendly candy treaty."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-049",
+      "name": "Minecraft Steve",
+      "category": "Games & space",
+      "aliases": "minecraft alex block",
+      "lines": [
+        "A blocky builder! Can you craft me some knees?",
+        "My house needs repairs. Mostly imaginary ghost stairs."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-050",
+      "name": "Minecraft Creeper",
+      "category": "Games & space",
+      "aliases": "creeper minecraft",
+      "lines": [
+        "A quiet green visitor! Let's surprise the candy instead.",
+        "Excellent sneaking. My tail keeps giving me away.",
+        "My house is fragile. Please use your indoor surprises.",
+        "I can disappear too. Extremely useful during cleanup."
+      ],
+      "featured": true
+    },
+    {
+      "id": "costume-051",
+      "name": "Minecraft Enderman",
+      "category": "Games & space",
+      "aliases": "enderman minecraft",
+      "lines": [
+        "A tall mystery! I appreciate a dramatic entrance.",
+        "Please leave my candy blocks exactly where they are."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-052",
+      "name": "Roblox avatar",
+      "category": "Games & space",
+      "aliases": "roblox dress impress",
+      "lines": [
+        "An adventure avatar! Mine keeps floating through the menu.",
+        "That outfit deserves an extra-fancy ghost twirl."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-053",
+      "name": "Fortnite character",
+      "category": "Games & space",
+      "aliases": "fortnite battle royale",
+      "lines": [
+        "An adventure champion! My victory dance is mostly wiggling.",
+        "My special equipment is one extremely brave bedsheet."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-054",
+      "name": "Pikachu",
+      "category": "Games & space",
+      "aliases": "pokemon electric",
+      "lines": [
+        "Electric cheeks! My goosebumps just lit up.",
+        "Please charge my boo. It's running a little low."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-055",
+      "name": "Charizard",
+      "category": "Games & space",
+      "aliases": "pokemon dragon",
+      "lines": [
+        "A fiery friend! Please spare the marshmallow curtains.",
+        "Your wings make my floating look delightfully lazy."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-056",
+      "name": "Eevee",
+      "category": "Games & space",
+      "aliases": "pokemon evolution",
+      "lines": [
+        "So many possibilities! I only evolve into sleepier ghosts.",
+        "That tail deserves its very own tiny wave."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-057",
+      "name": "Ash / Pok\u00e9mon trainer",
+      "category": "Games & space",
+      "aliases": "ash ketchum pokemon trainer",
+      "lines": [
+        "A creature collector! Am I in the friendly section?",
+        "My special move is hiding behind this curtain."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-058",
+      "name": "Sonic",
+      "category": "Games & space",
+      "aliases": "hedgehog sonic",
+      "lines": [
+        "So speedy! My tail hasn't caught up yet.",
+        "Please leave some candy for the slower little ghosts."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-059",
+      "name": "Ninja Turtle",
+      "category": "Games & space",
+      "aliases": "tmnt leonardo donatello raphael michelangelo",
+      "lines": [
+        "A shell hero! Is pizza a Halloween candy?",
+        "I trained in ghost karate. Mostly invisible kicks."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-060",
+      "name": "Jedi",
+      "category": "Games & space",
+      "aliases": "star wars lightsaber luke rey",
+      "lines": [
+        "A glowing sword! My nightlight suddenly feels inadequate.",
+        "May your candy bag be wonderfully full tonight."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-061",
+      "name": "Darth Vader",
+      "category": "Games & space",
+      "aliases": "star wars vader",
+      "lines": [
+        "Such dramatic breathing! Mine is mainly tiny hiccups.",
+        "Your cape and my sheet should compare notes."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-062",
+      "name": "Stormtrooper",
+      "category": "Games & space",
+      "aliases": "star wars trooper",
+      "lines": [
+        "Shiny armor! Please guard the chocolate division.",
+        "I would salute, but my hand went through me."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-063",
+      "name": "Mandalorian",
+      "category": "Games & space",
+      "aliases": "mando din djarin",
+      "lines": [
+        "A helmeted adventurer! My armor is strictly decorative.",
+        "Excellent helmet. Does it have a candy hatch?"
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-064",
+      "name": "Grogu",
+      "category": "Games & space",
+      "aliases": "baby yoda star wars",
+      "lines": [
+        "Tiny ears, mighty charm! My tail is applauding.",
+        "The candy is strong with this little visitor."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-065",
+      "name": "Astronaut",
+      "category": "Games & space",
+      "aliases": "space nasa moon",
+      "lines": [
+        "A space explorer! I already walk like zero gravity.",
+        "Please wave at the moon. We're old neighbors."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-066",
+      "name": "Alien",
+      "category": "Games & space",
+      "aliases": "extraterrestrial ufo",
+      "lines": [
+        "An out-of-this-world guest! My doorstep feels very honored.",
+        "Does your planet have ghost-sized candy wrappers?"
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-067",
+      "name": "Robot",
+      "category": "Games & space",
+      "aliases": "android transformer optimus bumblebee",
+      "lines": [
+        "A robot! My operating system runs on moonlight.",
+        "Beep boo. I'm practicing my very best robot."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-068",
+      "name": "Woody",
+      "category": "Toy box & adventures",
+      "aliases": "toy story cowboy woody",
+      "lines": [
+        "A brave cowboy! My boots are entirely imaginary.",
+        "This doorstep is big enough for both our candy."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-069",
+      "name": "Buzz Lightyear",
+      "category": "Toy box & adventures",
+      "aliases": "toy story space ranger",
+      "lines": [
+        "A space ranger! My floating finally feels official.",
+        "Please inspect the candy galaxy for tasty discoveries."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-070",
+      "name": "Jessie",
+      "category": "Toy box & adventures",
+      "aliases": "toy story cowgirl",
+      "lines": [
+        "A lively cowgirl! My ghost boots are tapping.",
+        "Your adventure deserves a very enthusiastic howdy-boo."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-071",
+      "name": "Cowboy / cowgirl",
+      "category": "Toy box & adventures",
+      "aliases": "western sheriff",
+      "lines": [
+        "Howdy-boo! That's my entire cowboy vocabulary.",
+        "My trusty steed is a rather stubborn dust bunny."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-072",
+      "name": "Pirate",
+      "category": "Toy box & adventures",
+      "aliases": "buccaneer captain jack sparrow",
+      "lines": [
+        "A pirate! My treasure chest contains suspiciously little candy.",
+        "Arrr you ready for my tiniest ghost wave?"
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-073",
+      "name": "Ninja",
+      "category": "Toy box & adventures",
+      "aliases": "stealth warrior",
+      "lines": [
+        "A sneaky visitor! My tail keeps ruining my stealth.",
+        "I trained in vanishing. Then forgot to reappear."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-074",
+      "name": "Knight",
+      "category": "Toy box & adventures",
+      "aliases": "armor medieval warrior",
+      "lines": [
+        "A noble knight! Please rescue the gummy bears.",
+        "Your armor is magnificent. Mine is drafty."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-075",
+      "name": "Dragon",
+      "category": "Toy box & adventures",
+      "aliases": "dragon rider wings",
+      "lines": [
+        "A dragon! Please toast the marshmallows, not my curtains.",
+        "Those wings deserve a very grand little bow."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-076",
+      "name": "Greek god / goddess",
+      "category": "Toy box & adventures",
+      "aliases": "greek roman zeus athena",
+      "lines": [
+        "A legendary visitor! I'll polish the stars immediately.",
+        "My own lightning bolt is slightly out of batteries."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-077",
+      "name": "Ghost",
+      "category": "Classic Halloween",
+      "aliases": "casper sheet spirit",
+      "lines": [
+        "Another ghost! Finally, someone understands sheet laundry.",
+        "Your boo or mine? Mine is still in training.",
+        "A family reunion! Nobody told the curtains.",
+        "I admire your commitment to professional floating.",
+        "Shall we form a very tiny boo choir?"
+      ],
+      "featured": true
+    },
+    {
+      "id": "costume-078",
+      "name": "Vampire",
+      "category": "Classic Halloween",
+      "aliases": "dracula fangs",
+      "lines": [
+        "A vampire! I recommend gummy bats for dinner.",
+        "Those fangs could open the toughest candy wrapper."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-079",
+      "name": "Skeleton",
+      "category": "Classic Halloween",
+      "aliases": "bones skull",
+      "lines": [
+        "A skeleton! I've been looking everywhere for my knees.",
+        "Excellent bones. My entire skeleton took the night off."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-080",
+      "name": "Zombie",
+      "category": "Classic Halloween",
+      "aliases": "undead walking dead",
+      "lines": [
+        "A sleepy shuffler! I look like that before candy.",
+        "Let's wake up those feet with a friendly wiggle."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-081",
+      "name": "Werewolf",
+      "category": "Classic Halloween",
+      "aliases": "wolf wolfman",
+      "lines": [
+        "A fluffy moon fan! The moon sends its regards.",
+        "Your howl makes my tiny boo feel rather shy."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-082",
+      "name": "Mummy",
+      "category": "Classic Halloween",
+      "aliases": "bandages wrapped",
+      "lines": [
+        "A mummy! Your wrapping is much tidier than mine.",
+        "Please teach the candy wrappers your excellent technique."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-083",
+      "name": "Devil",
+      "category": "Classic Halloween",
+      "aliases": "devil horns demon",
+      "lines": [
+        "Little horns, big entrance! Friendly mischief only tonight.",
+        "My troublemaking license expires at bedtime."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-084",
+      "name": "Angel",
+      "category": "Classic Halloween",
+      "aliases": "halo wings",
+      "lines": [
+        "A glowing guest! Your halo has excellent nightlight potential.",
+        "Please excuse the dust. It's slightly haunted glitter."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-085",
+      "name": "Pumpkin",
+      "category": "Classic Halloween",
+      "aliases": "jack o lantern",
+      "lines": [
+        "A pumpkin! Your grin is wonderfully well carved.",
+        "My pumpkin carriage keeps turning into soup."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-086",
+      "name": "Scarecrow",
+      "category": "Classic Halloween",
+      "aliases": "straw farm",
+      "lines": [
+        "A scarecrow! Could you teach my boo some confidence?",
+        "The crows keep borrowing my bedsheet. Very rude."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-087",
+      "name": "Cat",
+      "category": "Animals & everyday fun",
+      "aliases": "kitty kitten black cat",
+      "lines": [
+        "A cat! Please don't chase my extremely tempting tail.",
+        "Those whiskers give your sneaking excellent direction."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-088",
+      "name": "Dog",
+      "category": "Animals & everyday fun",
+      "aliases": "puppy dalmatian",
+      "lines": [
+        "A friendly pup! My tail would wag if it behaved.",
+        "Please forgive the floating. I misplaced my walking paws."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-089",
+      "name": "Bat",
+      "category": "Animals & everyday fun",
+      "aliases": "bat wings",
+      "lines": [
+        "A bat! We share excellent nighttime office hours.",
+        "Your wings have very impressive spooky swoosh potential."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-090",
+      "name": "Spider",
+      "category": "Animals & everyday fun",
+      "aliases": "tarantula",
+      "lines": [
+        "Eight feet! Your sock drawer must be enormous.",
+        "Please help with the cobwebs. Mine are getting ambitious."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-091",
+      "name": "Dinosaur",
+      "category": "Animals & everyday fun",
+      "aliases": "t rex trex triceratops",
+      "lines": [
+        "A dinosaur! I suddenly feel delightfully snack-sized.",
+        "Tiny arms? I have no legs. We improvise."
+      ],
+      "featured": true
+    },
+    {
+      "id": "costume-092",
+      "name": "Butterfly",
+      "category": "Animals & everyday fun",
+      "aliases": "wings insect",
+      "lines": [
+        "A butterfly! My fluttering suddenly feels rather clumsy.",
+        "Those wings deserve a tiny moonlight parade."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-093",
+      "name": "Bunny",
+      "category": "Animals & everyday fun",
+      "aliases": "rabbit easter",
+      "lines": [
+        "A bunny! Your hopping makes my hovering feel lazy.",
+        "Please keep those ears tuned for runaway giggles."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-094",
+      "name": "Shark",
+      "category": "Animals & everyday fun",
+      "aliases": "baby shark jaws",
+      "lines": [
+        "A shark! I'll keep my toes safely imaginary.",
+        "Please inspect the gummy fish. Very serious business."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-095",
+      "name": "Firefighter",
+      "category": "Animals & everyday fun",
+      "aliases": "fireman firewoman",
+      "lines": [
+        "A rescue hero! My courage needs a little boosting.",
+        "Please extinguish my embarrassing little blush."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-096",
+      "name": "Police officer",
+      "category": "Animals & everyday fun",
+      "aliases": "cop detective",
+      "lines": [
+        "An officer! Please investigate these disappearing chocolates.",
+        "My alibi is floating right here all evening."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-097",
+      "name": "Doctor / nurse",
+      "category": "Animals & everyday fun",
+      "aliases": "medic surgeon scrubs",
+      "lines": [
+        "A doctor! Is excessive floating terribly contagious?",
+        "My heartbeat is missing. Occupational ghost hazard."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-098",
+      "name": "Athlete",
+      "category": "Animals & everyday fun",
+      "aliases": "football baseball soccer cheerleader",
+      "lines": [
+        "A sporty visitor! My favorite event is competitive hovering.",
+        "I tried kicking a ball. No feet. Complicated."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-099",
+      "name": "Inflatable / funny costume",
+      "category": "Animals & everyday fun",
+      "aliases": "inflatable banana hot dog food",
+      "lines": [
+        "What a wonderfully ridiculous entrance! My giggle escaped.",
+        "That costume deserves a very silly ghost salute."
+      ],
+      "featured": false
+    },
+    {
+      "id": "costume-100",
+      "name": "Mystery costume",
+      "category": "Animals & everyday fun",
+      "aliases": "unknown homemade creative",
+      "lines": [
+        "A mysterious visitor! Tell me your costume's secret identity.",
+        "Your imagination deserves a tiny round of ghost applause."
+      ],
+      "featured": true
+    }
+  ]
+}
