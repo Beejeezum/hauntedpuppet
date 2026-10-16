@@ -136,18 +136,18 @@ def feature(name,verts,faces,material,bone='Head'):
 # Eye volumes, original painted iris textures, separate pupil and independent upper-lid surfaces.
 for side,sign in [('L',-1),('R',1)]:
  center=Vector((sign*.28,-.325,2.44));bone='Eye_'+side
- bpy.ops.mesh.primitive_uv_sphere_add(segments=40,ring_count=24,location=center);eye=bpy.context.object;eye.name='Sclera_'+side;eye.scale=(.235,.125,.265);bpy.ops.object.transform_apply(location=False,rotation=False,scale=True);bpy.ops.object.transform_apply(location=True,rotation=False,scale=False);eye.data.materials.append(white)
+ bpy.ops.mesh.primitive_uv_sphere_add(segments=40,ring_count=24,location=center);eye=bpy.context.object;eye.name='Sclera_'+side;eye.scale=(.245,.10,.215);bpy.ops.object.transform_apply(location=False,rotation=False,scale=True);bpy.ops.object.transform_apply(location=True,rotation=False,scale=False);eye.data.materials.append(white)
  for f in eye.data.polygons:f.use_smooth=True
  attach(eye,bone);all_meshes.append(eye)
  def eye_evil(p,sign=sign,center=center):
   d=p-center;d.z*=.70;d.z+=sign*d.x*.50;d.x*=.95;return center+d
  shape(eye,'Evil',eye_evil)
  # A curved iris dome, textured from the approved painted iris atlas.
- vv=[tuple(center+Vector((0,-.132,0)))];ff=[];uvcoords=[((100+567/2)/2172,1-(77+565/2)/724)]
+ vv=[tuple(center+Vector((0,-.110,0)))];ff=[];uvcoords=[((100+567/2)/2172,1-(77+565/2)/724)]
  for ring in range(1,9):
   r=ring/8
   for j in range(48):
-   a=j*2*pi/48;vv.append(tuple(center+Vector((.164*r*cos(a),-.133+.020*r*r,.164*r*sin(a)))));uvcoords.append(((100+567/2+567/2*r*cos(a))/2172,1-(77+565/2+565/2*r*sin(a))/724))
+   a=j*2*pi/48;vv.append(tuple(center+Vector((.164*r*cos(a),-.111+.014*r*r,.164*r*sin(a)))));uvcoords.append(((100+567/2+567/2*r*cos(a))/2172,1-(77+565/2+565/2*r*sin(a))/724))
  for j in range(48):ff.append((0,1+j,1+(j+1)%48))
  for r in range(7):
   for j in range(48):a=1+r*48+j;b=1+r*48+(j+1)%48;ff.append((a,b,b+48,a+48))
@@ -155,7 +155,7 @@ for side,sign in [('L',-1),('R',1)]:
  for loop in iris.data.loops:uv.data[loop.index].uv=uvcoords[loop.vertex_index]
  shape(iris,'Evil',eye_evil)
  # Deep pupils are actual convex geometry; catchlights track with the eye.
- for label,pos,scale,material in [('Pupil',(0,-.145,0),(.073,.015,.097),pupilmat),('Catchlight',(-.048,-.165,.068),(.025,.008,.027),shine),('CatchlightSmall',(.046,-.150,-.048),(.010,.005,.011),shine)]:
+ for label,pos,scale,material in [('Pupil',(0,-.122,0),(.073,.015,.097),pupilmat),('Catchlight',(-.048,-.142,.068),(.025,.008,.027),shine),('CatchlightSmall',(.046,-.132,-.048),(.010,.005,.011),shine)]:
   bpy.ops.mesh.primitive_uv_sphere_add(segments=20,ring_count=12,location=center+Vector(pos));o=bpy.context.object;o.name=label+'_'+side;o.scale=scale;bpy.ops.object.transform_apply(location=True,rotation=False,scale=True);o.data.materials.append(material)
   for f in o.data.polygons:f.use_smooth=True
   attach(o,bone);all_meshes.append(o)
@@ -167,7 +167,7 @@ for side,sign in [('L',-1),('R',1)]:
   shape(o,'Evil',feature_evil)
  # Lid cap covers the front hemisphere continuously as its blink shape reaches one.
  def lid_point(u,v,cover):
-  zz=1-2*v*cover;xx=u*math.sqrt(max(0,1-zz*zz));yy=-math.sqrt(max(0,1-xx*xx-zz*zz));return center+Vector((xx*.241,yy*.131-.005,zz*.271))
+  zz=1-2*v*cover;xx=u*math.sqrt(max(0,1-zz*zz));yy=-math.sqrt(max(0,1-xx*xx-zz*zz));return center+Vector((xx*.251,yy*.106-.005-.065*max(0,(cover-.055)/.945),zz*.221))
  vv=[];ff=[]
  for row in range(19):
   for col in range(25):vv.append(lid_point(col/12-1,row/18,.055))
@@ -177,7 +177,7 @@ for side,sign in [('L',-1),('R',1)]:
  for loop in lid.data.loops:uv.data[loop.index].uv=(.5,.61)
  key=lid.shape_key_add(name='Basis');blink=lid.shape_key_add(name='Blink_'+side);evil=lid.shape_key_add(name='Evil')
  for i,v in enumerate(blink.data):v.co=lid_point((i%25)/12-1,(i//25)/18,1)
- for i,v in enumerate(evil.data):v.co=eye_evil(lid_point((i%25)/12-1,(i//25)/18,.56))
+ for i,v in enumerate(evil.data):v.co=eye_evil(lid_point((i%25)/12-1,(i//25)/18,.46))
  compound=lid.shape_key_add(name='BlinkEvil_'+side)
  for i,v in enumerate(compound.data):v.co=2*key.data[i].co+eye_evil(lid_point((i%25)/12-1,(i//25)/18,1))-blink.data[i].co-evil.data[i].co
  # Sculpted brow ribbon with independent up/down targets and a menacing inner pinch.
