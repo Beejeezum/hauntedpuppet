@@ -15,3 +15,9 @@ Run review.cjs --arm --video for the isolated body+one-arm study. The browser no
 
 ## Stretch-width study
 review.cjs --volume compares identical candidate art with the original solver versus a local width floor. The original bone transform narrows a stretched limb by1/sqrt(stretch); the study uses max(1.15,1/sqrt(stretch))for the two arm bones, leaving hand scaling intact. Both use identical textures and pose clocks. Six actual comparison frames render with zero page errors. The raised arm becomes fuller but still reads tubular; shoulder shape and landmark binding remain unfinished. This is stylized width retention, not physical mass conservation or proof of solved anatomy. No production solver was changed. Do not promote this study from a numeric width or error-free rendering alone.
+
+
+## Authored joint placement
+arm-left-rig.json records source-pixel shoulder/elbow/wrist/palm and four digit root/tip landmarks for the generated1205×1306painting, plus attachment/scale. review.cjs --joints --video compares identical body/arm artwork with the coarse old-rig envelope mapping versus these actual-art landmarks; the latter uses the PNG directly, without intermediate image normalization. Original PNGs and production rig remain unchanged.
+
+Six pose captures and a short silent running rehearsal render without page errors. The sampled wave's maximum segment stretch falls from1.3697to1.3128, with the new wrist/palm landmarks. This is not a quality score: the raised arm is still tubular, the shoulder join is unfinished, and the opposite arm/turn views still use old art. Review gesture silhouettes and corrective shoulder/elbow drawings before considering adoption. Do not infer a complete rig or correct fingers from finite bone coordinates.

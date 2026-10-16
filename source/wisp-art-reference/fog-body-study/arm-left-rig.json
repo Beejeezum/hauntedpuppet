@@ -1,0 +1,18 @@
+{
+  "source": "arm-left-v2.png",
+  "sourceSize": [1205, 1306],
+  "status": "Authored landmark study; not production-approved",
+  "arm": {
+    "pivot": [991, 420],
+    "attach": [375, 870],
+    "scale": 0.405,
+    "rotation": 0.21,
+    "joints": [[991, 420], [883, 819], [558, 903], [410, 930]]
+  },
+  "digits": [
+    {"root": [422, 822], "tip": [391, 697], "width": 88},
+    {"root": [335, 862], "tip": [259, 818], "width": 78},
+    {"root": [331, 941], "tip": [263, 968], "width": 74},
+    {"root": [390, 983], "tip": [356, 1030], "width": 72}
+  ]
+}
