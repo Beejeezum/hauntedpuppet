@@ -17,3 +17,5 @@ The friendly renderer no longer discards updates behind a 30Hz gate. Its face up
 Morph drawings are continuously interpolated and eased into the actual live endpoint puppets. Turn keys also interpolate; these remain painted keys with limited pose correspondence, not a 3D anatomical reconstruction. A true unrestricted 360-degree performer still requires a purpose-built 3D model or a substantially richer authored rig.
 
 The added browser regression samples actual mesh deformation, display-paced updates, nonblank intermediate artwork, pixel continuity around morph endpoints and keys, action bounds, friendly reset and Stop/blackout. Timing measurements characterize the test machine only, not every projector/laptop. Hosted tests do not capture a real webcam or call the speech provider.
+
+The final surface-envelope sweep samples all 13 scary routines at 21 phases with maximum gesture intensity (273 poses). The enlarged transparent render targets retain claw extensions beyond the original 1024-pixel artwork canvas, while the stage fit still bounds the projected silhouette. Friendly Wisp also has a padded surface matching its existing conservative envelope.
