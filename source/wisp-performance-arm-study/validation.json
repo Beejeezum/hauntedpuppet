@@ -46,5 +46,21 @@
       780,
       1290
     ]
+  },
+  "continuous-arm-v1.png": {
+    "dimensions": [
+      1774,
+      887
+    ],
+    "alpha_range": [
+      0,
+      254
+    ],
+    "alpha_over_128_bounds": [
+      85,
+      224,
+      1689,
+      774
+    ]
   }
 }
