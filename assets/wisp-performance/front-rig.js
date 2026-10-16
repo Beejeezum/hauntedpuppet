@@ -1,3 +1,4 @@
+import {bindDigits,digitAngles,bendDigit} from './digit-skin.js';
 import {spiritOffset} from './spirit-flow.js';
 import {PaintedBodyViews} from './body-views.js';
 import {paintMorphShader} from './paint-morph-shader.js';
@@ -37,7 +38,8 @@ export class PaintedFrontRig{
    this.bodyViews=await new PaintedBodyViews(P).load(images.body,base);
    for(const side of ['left','right']){
     const meta=ARMS[side],image=images['arm-'+side],joints=meta.joints.map(p=>registered(p,meta));
-    const g=paintedGeometry(image,p=>registered(p,meta),36,40,images['arm-'+side+'-evil']),baseVertices=g.vertices.slice(),bindings=[];
+    const g=paintedGeometry(image,p=>registered(p,meta),36,40,images['arm-'+side+'-evil']),baseVertices=g.vertices.slice(),bindings=[],digitBindings=[];
+    for(let k=0;k<g.uvs.length;k+=2)digitBindings.push(bindDigits(g.uvs[k]*image.width,g.uvs[k+1]*image.height,side));
     for(let k=0;k<baseVertices.length;k+=2)bindings.push(bindArmPoint(baseVertices[k],baseVertices[k+1],joints));
     const cute=P.Texture.from(image),evil=P.Texture.from(images['arm-'+side+'-evil']),shader=paintMorphShader(P,cute,evil),frontShader=paintMorphShader(P,cute,evil,true);
     const mesh=new P.MeshSimple({texture:cute,shader,...g}),front=new P.MeshSimple({texture:cute,shader:frontShader,...g});
@@ -45,14 +47,14 @@ export class PaintedFrontRig{
     mesh.autoUpdate=front.autoUpdate=false;
     const frontWeights=new Float32Array(baseVertices.length/2);for(let k=0;k<baseVertices.length;k+=2)frontWeights[k/2]=clamp(((baseVertices[k]-joints[0][0])*upperX+(baseVertices[k+1]-joints[0][1])*upperY)/upperLengthSquared);
     for(const part of [mesh,front])part.geometry.addAttribute('aFrontWeight',{buffer:frontWeights,format:'float32'});
-    this.container.addChild(mesh);this.arms.push({side,mesh,front,shader,frontShader,evil,base:baseVertices,joints,bindings});
+    this.container.addChild(mesh);this.arms.push({side,mesh,front,shader,frontShader,evil,base:baseVertices,joints,bindings,digitBindings,uvs:g.uvs,sourceSize:[image.width,image.height]});
    }
    this.body=this.bodyViews.mesh;this.body.autoUpdate=false;this.bodyBase=this.bodyViews.samples[0].v.slice();this.container.addChild(this.body);
    for(const arm of this.arms)this.container.addChild(arm.front);
    this.ready=true;return this;
   }catch(error){this.error=error.message;this.destroy();this.container.destroy({children:true,texture:true,textureSource:true});throw error;}
  }
- render({controls,rotations,roll=0,evil=0,alpha=1,performer=null,jaw=0,viewAngle=0,clock=0,flow=0,translucency=0}){
+ render({controls,rotations,roll=0,evil=0,alpha=1,performer=null,jaw=0,viewAngle=0,clock=0,flow=0,translucency=0,digitEnergy=flow}){
   if(!this.ready)return null;this.container.visible=alpha>.001;this.container.alpha=clamp(alpha);
   const head=[controls.head[0]-REST.head[0],controls.head[1]-REST.head[1]+(performer?.headPitch||0)*12],chest=controls.chest.map((v,i)=>v-REST.chest[i]),tail=controls.tail.map((v,i)=>v-REST.tail[i]),crest=controls.crest.map((v,i)=>v-REST.crest[i]-head[i]);
   const c=Math.cos(roll),s=Math.sin(roll),form=evil*(.65+.35*Math.abs(Math.cos(viewAngle*Math.PI/180)));
@@ -74,8 +76,8 @@ export class PaintedFrontRig{
     const handAngle=(side==='left'?3.35:-.2)+(direction-(side==='left'?2.65:.5))+(rotations[side]||0);
     const rest=arm.joints,handScale=(1.2+evil*.35)*projected[2],foreshorten=.7+.3*Math.abs(cos),result=solveArm(shoulder,palm,{upper:distance(rest[0],rest[1])*foreshorten,lower:distance(rest[1],rest[2])*foreshorten,hand:distance(rest[2],rest[3])*handScale,side,handAngle});
     const bones=[0,1,2].map(i=>boneTransform(rest[i],rest[i+1],result.joints[i],result.joints[i+1],{preserveVolume:i!==2}));
-    const vertices=arm.mesh.vertices;for(let k=0;k<vertices.length;k+=2){const q=skinArmPoint(arm.base[k],arm.base[k+1],arm.bindings[k/2],bones);vertices[k]=q[0];vertices[k+1]=q[1];}arm.front.vertices.set(vertices);arm.mesh.geometry.getBuffer('aPosition').update();arm.front.geometry.getBuffer('aPosition').update();
-    solved[side]={...result,handAngle:result.handAngle,handScale,shoulderOnBody:shoulder};
+    const angles=digitAngles(clock,side,digitEnergy,evil),vertices=arm.mesh.vertices;for(let k=0;k<vertices.length;k+=2){let restX=arm.base[k],restY=arm.base[k+1];if(digitEnergy&&arm.digitBindings[k/2].length){const local=bendDigit(arm.uvs[k]*arm.sourceSize[0],arm.uvs[k+1]*arm.sourceSize[1],arm.digitBindings[k/2],angles),restPoint=registered(local,meta);restX=restPoint[0];restY=restPoint[1];}const q=skinArmPoint(restX,restY,arm.bindings[k/2],bones);vertices[k]=q[0];vertices[k+1]=q[1];}arm.front.vertices.set(vertices);arm.mesh.geometry.getBuffer('aPosition').update();arm.front.geometry.getBuffer('aPosition').update();
+    solved[side]={...result,digitAngles:angles,independentDigits:true,handAngle:result.handAngle,handScale,shoulderOnBody:shoulder};
    }
   }
   this.current={ready:true,sharedBody:true,contourTurn:true,viewAngle,alpha,faceAnchor,arms:solved,surfaces:5,premultipliedFormMix:true,foregroundHands:true,livingSkin:{flow,translucency,clock,bodyAttached:true},vertices:this.bodyBase.length/2+this.arms.reduce((n,a)=>n+a.base.length/2,0)};

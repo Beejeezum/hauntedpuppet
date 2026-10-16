@@ -39,3 +39,9 @@ Translucency also requires complementary front/rear arm coverage. The shader par
 The studio returns to a living idle after the reel, with a continuous clock handoff. Explicit timeline scrubbing still holds a review pose. Reduced motion freezes skin motion and material phase; the frozen artwork reference disables the new material. Stop, Blackout, original fallbacks and laptop-only audio ownership are retained.
 
 This remains painted 2.5D: it does not complete missing opposite-side views, individual finger articulation, true volumetric scattering or the production 3D sculpt. Follow docs/wisp-excellence-plan.md for visual acceptance rather than treating this improvement as completion.
+
+## Independently timed painted digits
+
+`digit-skin.js` defines four artist-placed roots/tips in each original arm's source coordinates. Bounded overlapping influences flex the existing painted digit geometry before arm skinning. Each digit and hand has distinct timing; evil adds a small faster tension component. The wrist/upper arm outside the influence remains unchanged. Binding is computed once at load; geometry count, textures and GPU surfaces are unchanged. Normal motion energy controls the effect, with zero deformation for frozen/reference and reduced-motion modes.
+
+This is local secondary flex of one painted hand pose, not a full per-phalange hand rig, authored open-to-fist transformation, or new palm/back art. Source hand studies remain separate and are not texture-swapped into the live rig. Tests check positive local area over 1.34 million samples, bounded tip travel, exact zero-energy identity and actual locked-arm GPU vertex movement in both browser engines; recorded review evidence remains separate from physical projection.
