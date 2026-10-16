@@ -10,5 +10,6 @@ const assert=require('node:assert/strict'),path=require('node:path'),{pathToFile
  const h=.0001;assert((sample(.67+h).left[1]-sample(.67-h).left[1])/(2*h)<-400,'Arm should flow through the raised-arm breakdown');
  assert.deepEqual(sample(1.2).left,sample(1.6).left);assert.equal(frontActingPose(base,{reduced:true,action:{kind:'wave',at:1}}),base);
  assert(poseWeights({kind:'exit',at:2.2})[9]>.99);assert(poseWeights({kind:'exit',at:4.4})[0]>.99,'Reform facing guests before farewell routine settles');
+ const threat=frontActingPose(base,{action:{kind:'surprise',at:.48},evilBlend:1});assert(threat.left[1]<700&&threat.right[1]<700,'Scary reveal needs two raised claws');const gentle=frontActingPose(base,{action:{kind:'surprise',at:.48},evilBlend:0});assert.equal(gentle,base);const half=frontActingPose(base,{action:{kind:'surprise',at:.48},evilBlend:.5});for(const side of ['left','right'])assert(Math.abs(half[side][1]-(base[side][1]+threat[side][1])/2)<1e-6);
  console.log('PASS authored continuous wave breakdowns, intentional hold, exact rest endpoints, reduced motion and departure/return direction');
 })().catch(e=>{console.error(e);process.exitCode=1});

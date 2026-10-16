@@ -35,10 +35,10 @@ export class PerformanceMotionRig{
   const speaking=p.state==='speaking',listening=p.state==='listening',tension=clamp(p.evilBlend??0);
   const move=(k,x,y)=>{target[k][0]+=x*energy;target[k][1]+=y*energy;};
   // Thorax leads; the head, crest and tail settle at different rates.
-  const inhale=Math.sin(t*1.35),headTurn=clamp(p.performer?.headYaw||0,-1,1)*20;
+  const inhale=Math.sin(t*1.35),headTurn=clamp(p.performer?.headYaw||0,-1,1)*20+(p.performer?0:(p.attention?.x||0)*130),attentionY=p.performer?0:(p.attention?.y||0)*100;
   move('chest',Math.sin(t*.63)*3,inhale*3);
-  move('head',headTurn+(listening?12:0),inhale*5+(listening?9:0));
-  move('crest',headTurn+Math.sin(t*1.35-.8)*11,inhale*7+(listening?9:0));
+  move('head',headTurn+(listening?12:0),inhale*5+(listening?9:0)+attentionY);
+  move('crest',headTurn+Math.sin(t*1.35-.8)*11,inhale*7+(listening?9:0)+attentionY);
   move('tail',Math.sin(t*1.35-1.15)*21,Math.sin(t*1.35-.75)*6);
   move('head',0,tension*18);move('crest',tension*6,-tension*32);move('chest',0,tension*5);
   const angles={};
@@ -66,7 +66,8 @@ export class PerformanceMotionRig{
    if(reset||still){cell.x=value;cell.v=0;}else spring(cell,value,dt,16);
    rotations[key]=cell.x;
   }
-  return{points,rotations,controlCount:CONTROL_KEYS.length};
+  const rollTarget=(base.roll||0)+(p.performer?.headRoll||0)*.12;let roll=this.channels.get('poseRoll');if(!roll){roll={x:rollTarget,v:0};this.channels.set('poseRoll',roll);}if(reset||still){roll.x=rollTarget;roll.v=0;}else spring(roll,rollTarget,dt,18);
+  return{points,rotations,roll:roll.x,controlCount:CONTROL_KEYS.length};
  }
  reset(){this.channels.clear();this.lastTime=null;}
 }

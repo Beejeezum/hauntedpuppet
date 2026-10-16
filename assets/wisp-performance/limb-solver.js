@@ -3,21 +3,22 @@ const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
 const smooth=x=>{x=clamp(x);return x*x*(3-2*x);};
 export const distance=(a,b)=>Math.hypot(b[0]-a[0],b[1]-a[1]);
 export function solveArm(shoulder,palm,{upper,lower,hand,side,handAngle,maxStretch=1.75}){
- // Let the wrist turn before moving a requested palm target during a tight fold.
- const palmDistance=distance(shoulder,palm),minimum=Math.abs(upper-lower)+.5;
- if(palmDistance>1e-6){const limit=(palmDistance*palmDistance+hand*hand-minimum*minimum)/(2*palmDistance*hand),direction=Math.atan2(palm[1]-shoulder[1],palm[0]-shoulder[0]);if(limit>-1&&limit<1&&Math.cos(handAngle-direction)>limit)handAngle=direction+(side==='left'?1:-1)*Math.acos(limit);}
  const finger=[Math.cos(handAngle)*hand,Math.sin(handAngle)*hand];
  const desired=[palm[0]-finger[0],palm[1]-finger[1]];
  let dx=desired[0]-shoulder[0],dy=desired[1]-shoulder[1],raw=Math.hypot(dx,dy);
  if(raw<1e-6){dx=side==='left'?-1:1;dy=0;raw=1e-6;}
  const ux=dx/Math.hypot(dx,dy),uy=dy/Math.hypot(dx,dy);
  // Stretch before the chain becomes straight, preserving a readable bent elbow.
- const stretch=clamp(raw/((upper+lower)*.92),1,maxStretch),a=upper*stretch,b=lower*stretch;
- const d=clamp(raw,Math.abs(a-b)+.01,(a+b)*.97),along=(a*a-b*b+d*d)/(2*d);
+ // In a tight fold, extend the shorter ghost segment instead of snapping wrist orientation.
+ // The extension fades continuously as the wrist leaves the shoulder; both bones stay bounded.
+ let a=upper,b=lower;if(a>b)b=clamp(a-raw*.98,b,lower*maxStretch);else a=clamp(b-raw*.98,a,upper*maxStretch);
+ const shared=clamp(raw/((a+b)*.92),1,maxStretch);a=Math.min(upper*maxStretch,a*shared);b=Math.min(lower*maxStretch,b*shared);
+ const upperStretch=a/upper,lowerStretch=b/lower,stretch=Math.max(upperStretch,lowerStretch);
+ const d=clamp(raw,Math.abs(a-b)+.000001,(a+b)*.97),along=(a*a-b*b+d*d)/(2*d);
  const height=Math.sqrt(Math.max(0,a*a-along*along)),bend=side==='left'?-1:1;
  const elbow=[shoulder[0]+ux*along-uy*height*bend,shoulder[1]+uy*along+ux*height*bend];
  const wrist=[shoulder[0]+ux*d,shoulder[1]+uy*d],actualPalm=[wrist[0]+finger[0],wrist[1]+finger[1]];
- return{joints:[shoulder,elbow,wrist,actualPalm],stretch,handAngle,reachError:distance(palm,actualPalm)};
+ return{joints:[shoulder,elbow,wrist,actualPalm],stretch,upperStretch,lowerStretch,handAngle,reachError:distance(palm,actualPalm)};
 }
 export function boneTransform(a,b,c,d,{preserveVolume=true}={}){
  const length=Math.max(1e-6,distance(a,b)),targetLength=distance(c,d),sx=(b[0]-a[0])/length,sy=(b[1]-a[1])/length;

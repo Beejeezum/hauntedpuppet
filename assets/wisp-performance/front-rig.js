@@ -68,7 +68,7 @@ export class PaintedFrontRig{
    for(const arm of this.arms){
     arm.shader.resources.morphUniforms.uniforms.uBlend=evil;arm.frontShader.resources.morphUniforms.uniforms.uBlend=evil;
     const side=arm.side,meta=ARMS[side],shoulder=bodyPoint(512+(meta.attach[0]-512)*cos,meta.attach[1]),projected=project(controls[side]),palm=projected.slice(0,2);const depth=clamp(cos+(side==='left'?1:-1)*.8*sin);arm.front.alpha=depth;let direction=Math.atan2(palm[1]-shoulder[1],palm[0]-shoulder[0]);if(side==='left'&&direction<0)direction+=Math.PI*2;
-    const handAngle=(side==='left'?3.35:-.2)+(direction-(side==='left'?2.65:.5))*.8+(rotations[side]||0);
+    const handAngle=(side==='left'?3.35:-.2)+(direction-(side==='left'?2.65:.5))+(rotations[side]||0);
     const rest=arm.joints,handScale=(1.2+evil*.35)*projected[2],foreshorten=.7+.3*Math.abs(cos),result=solveArm(shoulder,palm,{upper:distance(rest[0],rest[1])*foreshorten,lower:distance(rest[1],rest[2])*foreshorten,hand:distance(rest[2],rest[3])*handScale,side,handAngle});
     const bones=[0,1,2].map(i=>boneTransform(rest[i],rest[i+1],result.joints[i],result.joints[i+1],{preserveVolume:i!==2}));
     const vertices=arm.mesh.vertices;for(let k=0;k<vertices.length;k+=2){const q=skinArmPoint(arm.base[k],arm.base[k+1],arm.bindings[k/2],bones);vertices[k]=q[0];vertices[k+1]=q[1];}arm.front.vertices.set(vertices);arm.mesh.geometry.getBuffer('aPosition').update();arm.front.geometry.getBuffer('aPosition').update();
@@ -76,7 +76,7 @@ export class PaintedFrontRig{
    }
   }
   this.current={ready:true,sharedBody:true,contourTurn:true,viewAngle,alpha,faceAnchor,arms:solved,surfaces:5,premultipliedFormMix:true,foregroundHands:true,vertices:this.bodyBase.length/2+this.arms.reduce((n,a)=>n+a.base.length/2,0)};
-  return{faceAnchor};
+  return{faceAnchor,anchors:{head:this.bodyViews.anchor(600),tail:this.bodyViews.anchor(1370),left:solved.left?.joints[3]||controls.left,right:solved.right?.joints[3]||controls.right}};
  }
  destroy(){this.ready=false;this.bodyViews?.destroy();for(const arm of this.arms){arm.shader.destroy();arm.frontShader.destroy();arm.evil.destroy(true);}}
  inspect(){return{...this.current,error:this.error||null};}

@@ -13,9 +13,11 @@ const{chromium,webkit}=require(process.env.HAUNT_PLAYWRIGHT||'playwright'),asser
     const s=r.inspect();if(!s.bounds.inside)throw Error('Layered stage clipping '+kind+' '+n);
     for(const node of [r.frontRig.body,...r.frontRig.arms.flatMap(a=>[a.mesh,a.front])])if(!node.vertices.every(Number.isFinite))throw Error('Nonfinite actual painted skin');
     if(s.frontRig.alpha>.99&&r.meshes.some(m=>m.index<6&&m.mesh.visible))throw Error('Whole-body pose ghosts underneath shared torso');
-    for(const[side,arm]of Object.entries(s.frontRig.arms)){maxReachError=Math.max(maxReachError,arm.reachError);maxStretch=Math.max(maxStretch,arm.stretch);if(Math.hypot(arm.joints[0][0]-arm.shoulderOnBody[0],arm.joints[0][1]-arm.shoulderOnBody[1])>1e-6)throw Error('Detached shoulder');hands.add(side);}
+    for(const[side,arm]of Object.entries(s.frontRig.arms)){maxReachError=Math.max(maxReachError,arm.reachError);maxStretch=Math.max(maxStretch,arm.stretch);if(Math.hypot(arm.joints[0][0]-arm.shoulderOnBody[0],arm.joints[0][1]-arm.shoulderOnBody[1])>1e-6)throw Error('Detached shoulder');hands.add(side);const emission=s.emissionPoints.find(p=>p.id===side),actual=r.root.toGlobal({x:arm.joints[3][0],y:arm.joints[3][1]});if(Math.hypot(actual.x-emission.x,actual.y-emission.y)>.001)throw Error('Wisp emitter detached from live hand');}
     if(s.pose==='back'&&s.poseWeights[9]>.999&&r.face.alpha>.001)throw Error('Face on back');frames++;
    }
+   const bodyVertexCount=r.frontRig.body.vertices.length/2,faceUploadPixels=r.faceCanvas.width*r.faceCanvas.height;if(bodyVertexCount>1000||faceUploadPixels>700000)throw Error('Layered render budget regressed');
+   r.render({clock:2,freeze:true,state:'idle',gaze:'audience'},0);const neutralHead=r.inspect().controls.head[0];let earlyAttention=null;for(let n=1;n<=48;n++){const clock=2+n/60;r.render({clock,dt:1/60,state:'idle',gaze:'audience'},0);if(n===24)earlyAttention={eye:r.eyes.inspect().left.x,head:r.inspect().controls.head[0]};}if(!(earlyAttention.eye<-.2&&Math.abs(earlyAttention.head-neutralHead)<1&&r.inspect().controls.head[0]<neutralHead-8))throw Error('Live attention does not move eyes before head '+JSON.stringify(earlyAttention));
    // The torso is one unchanged painting/geometry across form changes, not two silhouettes.
    const texture=r.frontRig.body.texture,bodyPoses=[];for(const evil of [0,.25,.5,.75,1]){r.render({clock:1,freeze:true,state:'idle'},evil);bodyPoses.push([...r.frontRig.body.vertices]);if(r.frontRig.body.texture!==texture)throw Error('Body texture swapped during morph');if(!r.inspect().faceRig.paintedDemonParts)throw Error('Demon anatomy missing');}
    const reference=bodyPoses[0];const formTravel=Math.max(...bodyPoses.at(-1).map((v,i)=>Math.abs(v-reference[i])));if(formTravel<10||formTravel>70)throw Error('Shared body form sculpt missing or excessive '+formTravel);
@@ -28,6 +30,10 @@ const{chromium,webkit}=require(process.env.HAUNT_PLAYWRIGHT||'playwright'),asser
    const live=r.eyes.inspect();if(live.left.blink===live.right.blink||r.inspect().mouth!=='aa')throw Error('Independent performer channels lost');
    r.render({clock:3,freeze:true,action:{kind:'twirl',at:.85},state:'idle'},1);const profile=r.eyes.inspect();if(profile.eyeVisibility.right>.01||profile.eyeVisibility.left!==1)throw Error('Profile has two visible eyes');
    r.render({clock:4,freeze:true,action:{kind:'surprise',at:.7},state:'idle'},1);if(r.inspect().mouth!=='roar')throw Error('Scare mouth missing');
+   r.render({clock:4,freeze:true,state:'speaking',weights:{A:1}},.5);const openBox=r.inspect().faceRig.inkBox;
+   r.render({clock:4+1/60,dt:1/60,state:'speaking',weights:{U:1}},.5);const transition=r.inspect().faceRig;if(!(transition.mouthWeights.aa>0&&transition.mouthWeights.oo>0&&transition.mouthWeights.oo<1))throw Error('Mouth snaps between speech shapes');if(Math.abs(Object.values(transition.mouthWeights).reduce((a,b)=>a+b,0)-1)>1e-6)throw Error('Mouth paint weights not normalized');
+   for(let n=0;n<10;n++)r.render({clock:4.1+n/60,dt:1/60,state:'idle'},.5);if(r.inspect().faceRig.mouthWeights.rest<.999)throw Error('Mouth does not settle promptly after speech');
+   r.render({clock:4.1,dt:1/60,reduced:true,action:{kind:'twirl',at:1.7},state:'idle'},0);if(r.frontRig.inspect().viewAngle!==0||r.inspect().pose!=='welcome')throw Error('Reduced motion retains animated turn');
    // Hold geometry fixed and verify the actual GPU two-painting blend, not a second source-over pass.
    r.render({clock:5,freeze:true,state:'idle'},0);r.face.visible=false;r.frontRig.body.visible=false;
    for(const arm of r.frontRig.arms){arm.front.visible=false;arm.mesh.vertices.set(arm.base);arm.mesh.geometry.getBuffer('aPosition').update();}
@@ -37,8 +43,8 @@ const{chromium,webkit}=require(process.env.HAUNT_PLAYWRIGHT||'playwright'),asser
    if(blendSamples<500||maxBlendError>3)throw Error('Form blend dims painted arms '+JSON.stringify({blendSamples,maxBlendError}));
    r.render({clock:6,freeze:true,action:{kind:'phantom',at:2},state:'idle'},1);if(!r.inspect().nativeFloatingEyes)throw Error('Native phantom eyes inactive');const eyePixels=r.eyesCtx.getImageData(0,0,1280,720).data;let eyeInk=0;for(let n=3;n<eyePixels.length;n+=4)if(eyePixels[n]>30)eyeInk++;if(eyeInk<100)throw Error('Native phantom eyes empty');
    r.render({clock:7,freeze:true,state:'idle'},0);if(r.inspect().nativeFloatingEyes)throw Error('Native phantom eyes not cleared');
-   const front=r.frontRig,shaders=front.arms.flatMap(a=>[a.shader,a.frontShader]),sources=front.arms.map(a=>a.evil.source);r.dispose();if(r.ready||front.ready||shaders.some(s=>!s._destroyed)||sources.some(s=>!s.destroyed))throw Error('Layered GPU ownership not cleaned');
-   return{frames,maxReachError,maxStretch,hands:[...hands],maxBlendError,blendSamples,sharedBody:true,formTravel,contourTurn:true,nativePhantomEyes:true,profileEyes:profile.eyeVisibility,independentPerformer:true,disposed:true};
+   const front=r.frontRig,shaders=front.arms.flatMap(a=>[a.shader,a.frontShader]),sources=[...front.arms.map(a=>a.evil.source),...front.bodyViews.textures.slice(1).map(t=>t.source)];r.dispose();if(r.ready||front.ready||shaders.some(s=>!s._destroyed)||sources.some(s=>!s.destroyed))throw Error('Layered GPU ownership not cleaned');
+   return{frames,maxReachError,maxStretch,hands:[...hands],maxBlendError,blendSamples,sharedBody:true,bodyVertexCount,faceUploadPixels,attentionLead:true,formTravel,contourTurn:true,nativePhantomEyes:true,profileEyes:profile.eyeVisibility,independentPerformer:true,disposed:true};
   });
   await page.route('**/front-kit/body-90.png',route=>route.abort());
   await page.goto(base+'/painted-front-test');
