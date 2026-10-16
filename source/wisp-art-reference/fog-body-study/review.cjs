@@ -4,15 +4,16 @@ const fs=require('node:fs'),path=require('node:path');
 const {chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
 const withVolume=process.argv.includes('--volume');
 const withPolar=process.argv.includes('--polar');
-const withBilateral=process.argv.includes('--bilateral');
-const smallerHands=process.argv.includes('--smaller-hands');
+const withTurn45=process.argv.includes('--turn45');
+const withBilateral=process.argv.includes('--bilateral')||withTurn45;
+const smallerHands=process.argv.includes('--smaller-hands')||withTurn45;
 const withCorrective=process.argv.includes('--corrective')||withBilateral;
 const withJoints=process.argv.includes('--joints')||withPolar||withCorrective;
 const withArm=process.argv.includes('--arm')||withVolume||withJoints;
 const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.json'),'utf8'));
 (async()=>{
  const browser=await chromium.launch();
- const out=path.resolve(__dirname,'../../../../wisp-live-rig-proof/'+(withBilateral?(smallerHands?'fog-bilateral-proportion-study':'fog-bilateral-study'):withCorrective?'fog-arm-corrective-study':withPolar?'fog-arm-polar-study':withJoints?'fog-arm-joint-study':withVolume?'fog-arm-volume-study':withArm?'fog-arm-study':'fog-body-study'));
+ const out=path.resolve(__dirname,'../../../../wisp-live-rig-proof/'+(withTurn45?'fog-turn45-study':withBilateral?(smallerHands?'fog-bilateral-proportion-study':'fog-bilateral-study'):withCorrective?'fog-arm-corrective-study':withPolar?'fog-arm-polar-study':withJoints?'fog-arm-joint-study':withVolume?'fog-arm-volume-study':withArm?'fog-arm-study':'fog-body-study'));
  fs.mkdirSync(out,{recursive:true});const results=[];
  try{
   for(const candidate of [false,true]){
@@ -25,9 +26,17 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
    const page=await context.newPage();const errors=[];
    page.on('pageerror',e=>errors.push(e.message));
    if(candidate||withVolume||withJoints)await page.route('**/wisp-performance/front-kit/body.png',route=>route.fulfill({path:path.join(__dirname,'body.png'),contentType:'image/png'}));
+   if(candidate&&withTurn45)await page.route('**/wisp-performance/front-kit/body-45.png',route=>route.fulfill({path:path.join(__dirname,'body-45.png'),contentType:'image/png'}));
+   if(withTurn45)await page.route('**/wisp-performance/poses.js',route=>{
+    let code=fs.readFileSync(path.resolve(__dirname,'../../../assets/wisp-performance/poses.js'),'utf8');
+    const hook=" const beats=BEATS[kind]";
+    if(!code.includes(hook))throw Error('Pose review hook changed');
+    code=code.replace(hook," if(Number.isFinite(window.__reviewYaw)){const t=Math.max(0,Math.min(1,window.__reviewYaw/45));return POSES.map(p=>p.id==='welcome'?1-t:p.id==='turn45'?t:0);}\n"+hook);
+    return route.fulfill({body:code,contentType:'text/javascript'});
+   });
    if((candidate||withVolume||withJoints)&&withArm){
     await page.route('**/wisp-performance/front-kit/arm-left.png',route=>route.fulfill({path:path.join(__dirname,raised?'arm-left-raised-v1.png':'arm-left-v2.png'),contentType:'image/png'}));
-    if(candidate&&withBilateral)await page.route('**/wisp-performance/front-kit/arm-right.png',route=>route.fulfill({path:path.join(__dirname,'arm-left-raised-v1.png'),contentType:'image/png'}));
+    if((candidate||withTurn45)&&withBilateral)await page.route('**/wisp-performance/front-kit/arm-right.png',route=>route.fulfill({path:path.join(__dirname,'arm-left-raised-v1.png'),contentType:'image/png'}));
     // Register the new texture to the old rig's source coordinate system in the
     // browser. Original generated PNG stays unchanged. This is a coarse study;
     // matching alpha envelopes does not prove digit landmarks are registered.
@@ -39,13 +48,13 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
       if(!code.includes('function registered('))throw Error('Registration hook changed');
       code=code.replace('function registered(',`Object.assign(ARMS.left,${JSON.stringify(binding.arm)});\nfunction registered(`);
      }else code=code.replace(old,`await im.decode();if(url.endsWith('/arm-left.png')){const c=document.createElement('canvas');c.width=1206;c.height=1305;const ctx=c.getContext('2d');const sx=1060/942,sy=820/834;ctx.setTransform(sx,0,0,sy,96-181*sx,257-275*sy);ctx.drawImage(im,0,0);return c;}return im;`);
-     if(candidate&&withBilateral){
+     if((candidate||withTurn45)&&withBilateral){
       code=code.replace('function registered(',`Object.assign(ARMS.right,${JSON.stringify(rightBinding)});\nfunction registered(`);
       // A native texture reflection reuses the same unchanged painting. Each
       // side retains separate skeleton, digit phases and acting controls.
       code=code.replace(old,`await im.decode();if(url.endsWith('/arm-right.png')){const c=document.createElement('canvas');c.width=im.width;c.height=im.height;const ctx=c.getContext('2d');ctx.translate(c.width,0);ctx.scale(-1,1);ctx.drawImage(im,0,0);return c;}return im;`);
      }
-     if(candidate&&smallerHands){
+     if((candidate||withTurn45)&&smallerHands){
       if(!code.includes('handScale=(1.2+evil*.35)'))throw Error('Hand scale hook changed');
       code=code.replace('handScale=(1.2+evil*.35)','handScale=(.95+evil*.35)');
      }
@@ -61,7 +70,7 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
     let code=fs.readFileSync(path.resolve(__dirname,'../../../assets/wisp-performance/digit-skin.js'),'utf8');
     if(!code.includes('export function bindDigits'))throw Error('Digit binding hook changed');
     code=code.replace('export function bindDigits',`DIGITS.left=${JSON.stringify(binding.digits)};\nexport function bindDigits`);
-    if(candidate&&withBilateral)code=code.replace('export function bindDigits',`DIGITS.right=${JSON.stringify(rightDigits)};\nexport function bindDigits`);
+    if((candidate||withTurn45)&&withBilateral)code=code.replace('export function bindDigits',`DIGITS.right=${JSON.stringify(rightDigits)};\nexport function bindDigits`);
     return route.fulfill({body:code,contentType:'text/javascript'});
    });
    if(candidate&&withVolume)await page.route('**/wisp-performance/limb-solver.js',route=>{
@@ -75,9 +84,14 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
    });
    await page.goto((process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8812')+'/assets/wisp-performance-studio.html');
    await page.waitForFunction(()=>window.WispPerformanceStudio?.inspect().outputFrame?.ready);
-   for(const t of [0,2,5]){
-    await page.evaluate(t=>WispPerformanceStudio.seek(t),t);
-    await page.waitForFunction(t=>Math.abs(WispPerformanceStudio.rig.lastClock-t)<1e-8,t);
+   for(const t of withTurn45?[0,11.25,22.5,33.75,45]:[0,2,5]){
+    if(withTurn45){
+     await page.evaluate(yaw=>{window.__reviewYaw=yaw;WispPerformanceStudio.seek(0);},t);
+     await page.waitForFunction(yaw=>Math.abs(WispPerformanceStudio.inspect().frontRig.viewAngle-yaw)<.05,t);
+    }else{
+     await page.evaluate(t=>WispPerformanceStudio.seek(t),t);
+     await page.waitForFunction(t=>Math.abs(WispPerformanceStudio.rig.lastClock-t)<1e-8,t);
+    }
     await page.locator('#stage canvas').screenshot({path:path.join(out,`${candidate?'candidate':'baseline'}-${t}.png`)});
     const pixels=await page.evaluate(()=>{
      const c=document.querySelector('#stage canvas'),w=c.width,h=c.height,d=c.getContext('2d').getImageData(0,0,w,h).data;
@@ -89,7 +103,7 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
      const margins=visible?[minX/w,minY/h,(w-maxX-1)/w,(h-maxY-1)/h]:null;
      return{size:[w,h],visible,bounds:visible?[minX,minY,maxX+1,maxY+1]:null,margins,inside15Percent:!!margins&&Math.min(...margins)>=.15};
     });
-    results.push({candidate,t,pixels,state:await page.evaluate(()=>WispPerformanceStudio.inspect())});
+    results.push({candidate,t:withTurn45?null:t,yaw:withTurn45?t:null,pixels,state:await page.evaluate(()=>WispPerformanceStudio.inspect())});
    }
    if(candidate&&process.argv.includes('--video')){
     await page.click('#reel');await page.waitForTimeout(8000);
@@ -99,6 +113,6 @@ const landmarks=JSON.parse(fs.readFileSync(path.join(__dirname,'arm-left-rig.jso
    if(video)await video.saveAs(path.join(out,'candidate-motion.webm'));
   }
  }finally{await browser.close();}
- fs.writeFileSync(path.join(out,'review.json'),JSON.stringify({scope:'Local front-view art/rig study only. Old face, turn views and evil artwork remain; no production or physical-projection acceptance.',withBilateral,smallerHands,withCorrective,withJoints,withPolar,withVolume,results},null,2));
- console.log('Saved six isolated front-body comparison frames. Inspect joins, face placement and fog material.');
+ fs.writeFileSync(path.join(out,'review.json'),JSON.stringify({scope:'Local art/rig study only. Old face, remaining turn views and evil artwork remain; no production or physical-projection acceptance.',withTurn45,withBilateral,smallerHands,withCorrective,withJoints,withPolar,withVolume,results},null,2));
+ console.log(`Saved ${results.filter(r=>r.state).length} isolated comparison frames. Inspect joins, face placement and fog material.`);
 })().catch(e=>{console.error(e);process.exitCode=1});
