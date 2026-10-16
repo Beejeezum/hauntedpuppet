@@ -24,6 +24,14 @@ A clear goodbye finishes a short farewell and returns Wisp to idle loops. The op
 
 The OpenAI project must have access to the configured Realtime model. Connection failures are shown at the desk; native conversation is not silently replaced by slower speech.
 
+## Direct live puppeteering and voice kits
+
+Choose **Puppeteer · my live voice** in the main Performance mode selector. Select the private operator microphone and press **Start puppeteering**. Your speech passes through a local AudioWorklet into the existing show audio and mouth-animation path. It does not record a turn, transcribe, call OpenAI, or wait for an AI response. It works without an operator cloud login or API key.
+
+Cute Wisp selects **Little cartoon ghost** (+4.5 semitones, bright presence, light ambience). Scary Wisp selects **Ghastly spirit** (−8 semitones, a blended lower voice, soft distortion and darker ambience). Form changes smoothly update the processor. **Fine-tune the character voice** adjusts pitch, character strength and ambience; setting strength to zero gives the unshifted voice. These are original local effect presets, not trained custom voices or voice cloning. AI conversation keeps its separate native casting and acting instructions.
+
+**Mute live mic** silences the local route while retaining the device. **Stop puppeteering**, **Stop All**, changing mode/input, page close and processor failure release microphone tracks. Silence restores idle animation without closing the direct session; speaking resumes mouth motion. The projector and paired phone remain silent. Use a close operator microphone separated from the show speaker, and rehearse the speaker level before opening the show. Actual hardware and browser buffering add latency; no physical round-trip latency is claimed by synthetic tests.
+
 ## Projector and phone
 
 **Open projector** creates a separate silent view. Move it to the projector display, click it, and press **F** for fullscreen. Loss of the laptop controller blanks the output.
@@ -38,7 +46,7 @@ The local dashboard listens only on loopback port 8770. The optional phone servi
 
 Included rehearsal and show cues work offline. Preparing new spoken lines uses OpenAI and can retain forced phoneme timing. Install the optional English aligner with `python3 -m pip install -r requirements.txt` or use `Setup Alignment.command` on Mac.
 
-Native streaming mouth motion is an acoustic estimate driven by the audible signal. It is not phoneme recognition. Both cute and scary Wisp now use painted rigs. Form changes use a brief staged squeeze and sequential raster blend; these are not hand-drawn in-between transformation cels.
+Native streaming mouth motion is an acoustic estimate driven by the audible signal. It is not phoneme recognition. Both cute and scary Wisp now use painted rigs. Form changes use six generated painted morph keyframes, played forward or backward between the exact existing endpoints. The face, hands, silhouette and tail evolve through those drawings. Cute Wisp also has a six-cel painted tail cycle during floating and active movement; it retains the original tail when optional art is unavailable and holds still under reduced motion. This is a short six-key cel sequence, not a fully hand-inbetweened 24fps animation. If its optional atlas cannot load, the staged raster transition remains available.
 
 ## Development and tests
 

@@ -1,0 +1,122 @@
+{
+  "image": "morph-atlas.png",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "frames": [
+    {
+      "rect": [
+        0,
+        0,
+        512,
+        494
+      ],
+      "bounds": [
+        102,
+        32,
+        312,
+        438
+      ],
+      "progress": 0.0
+    },
+    {
+      "rect": [
+        512,
+        0,
+        512,
+        494
+      ],
+      "bounds": [
+        93,
+        14,
+        318,
+        462
+      ],
+      "progress": 0.2
+    },
+    {
+      "rect": [
+        1024,
+        0,
+        512,
+        494
+      ],
+      "bounds": [
+        80,
+        9,
+        350,
+        482
+      ],
+      "progress": 0.4
+    },
+    {
+      "rect": [
+        0,
+        494,
+        512,
+        530
+      ],
+      "bounds": [
+        72,
+        8,
+        381,
+        507
+      ],
+      "progress": 0.6
+    },
+    {
+      "rect": [
+        512,
+        494,
+        512,
+        530
+      ],
+      "bounds": [
+        65,
+        8,
+        383,
+        512
+      ],
+      "progress": 0.8
+    },
+    {
+      "rect": [
+        1024,
+        494,
+        512,
+        530
+      ],
+      "bounds": [
+        62,
+        14,
+        378,
+        505
+      ],
+      "progress": 1.0
+    }
+  ],
+  "fps": 10,
+  "alphaBoundsThreshold": 3,
+  "nominalGrid": [
+    3,
+    2
+  ],
+  "rowSplit": 494,
+  "direction": "cute-to-scary; reverse frames for scary-to-cute",
+  "endpointPolicy": "Use exact existing approved cute/scary runtime artwork as endpoints. These are generated painted morph keyframes, not pixel-identical endpoints.",
+  "registration": "Per-frame alpha bounds mapped to interpolated stage character envelope. One character/one eye pair per frame.",
+  "provenance": {
+    "tool": "Built-in image generation",
+    "references": [
+      "../wisp/wisp-assembled-transparent.png",
+      "../wisp-scary/wisp-assembled-transparent.png"
+    ],
+    "sha256": "9f707baa210a11eae4250bed0dc504e9d82a821813177861f312908f57f5d3f7"
+  },
+  "limitations": [
+    "Six distinct painted keyframes, not a dense hand-inbetweened24fps sequence.",
+    "The generated atlas lower row begins above its nominal512px boundary; source rectangles use a494px safe gutter split to retain complete crests.",
+    "Body/face features evolve between frames; root should avoid extra eye/mouth overlays during this short transition."
+  ]
+}

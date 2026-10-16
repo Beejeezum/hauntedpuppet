@@ -9,7 +9,7 @@ def alert(message):
 def main():
  try:
   with urllib.request.urlopen(BASE+'/api/status',timeout=2) as r:status=json.load(r)
-  compatible=status.get('version')=='0.10.0'
+  compatible=status.get('version')=='0.11.0'
   if not compatible:alert('A different Haunt version is already running. Close its Terminal, or use Quit local server in its app, then open this version again.');return
   subprocess.run(['/usr/bin/open','-a','Google Chrome',BASE]);return
  except (OSError,ValueError):pass

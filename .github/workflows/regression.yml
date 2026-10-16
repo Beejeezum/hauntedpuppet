@@ -29,6 +29,8 @@ jobs:
       - run: npm test
       - name: Check phone controls in WebKit
         run: PHONE_BROWSER=webkit node tests/phone_browser.cjs
+      - name: Check direct voice effects in WebKit
+        run: HAUNT_BROWSER=webkit node tests/puppeteer_voice.cjs
       - name: Keep test evidence
         if: always()
         uses: actions/upload-artifact@v4

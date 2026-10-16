@@ -10,8 +10,9 @@ export class WispFormDirector{
  inspect(){return{form:this.blend>=.5?'haunting':'friendly',blend:this.blend,target:this.target,audience:this.audience,ready:this.ready,revision:this.revision,transitioning:Math.abs(this.target-this.blend)>.001};}
 }
 export class WispFormComposite{
- constructor(){this.canvas=document.createElement('canvas');this.canvas.width=1280;this.canvas.height=720;this.ctx=this.canvas.getContext('2d');this.frames=0;}
- render(cute,scary,blend){const ctx=this.ctx;ctx.clearRect(0,0,1280,720);blend=scary?clamp(blend):0;if(blend<=.001){ctx.drawImage(cute,0,0);return this.canvas}if(blend>=.999){ctx.drawImage(scary,0,0);return this.canvas}const pulse=Math.sin(blend*Math.PI);ctx.save();ctx.translate(640,360+8*pulse);ctx.scale(1-.24*pulse,1-.12*pulse);ctx.translate(-640,-360);ctx.globalAlpha=1-ease(blend/.55);ctx.drawImage(cute,0,0);ctx.globalAlpha=ease((blend-.45)/.55);ctx.drawImage(scary,0,0);ctx.restore();this.frames++;return this.canvas;}
+ constructor(morph=null){this.canvas=document.createElement('canvas');this.canvas.width=1280;this.canvas.height=720;this.ctx=this.canvas.getContext('2d');this.frames=0;this.morph=morph;}
+ loadMorph(){return this.morph?.load();}
+ render(cute,scary,blend,options={}){const ctx=this.ctx;ctx.clearRect(0,0,1280,720);blend=scary?clamp(blend):0;if(blend<=.001){ctx.drawImage(cute,0,0);return this.canvas}if(blend>=.999){ctx.drawImage(scary,0,0);return this.canvas}if(this.morph?.draw(ctx,blend,options)){this.frames++;return this.canvas}const pulse=Math.sin(blend*Math.PI);ctx.save();ctx.translate(640,360+8*pulse);ctx.scale(1-.24*pulse,1-.12*pulse);ctx.translate(-640,-360);ctx.globalAlpha=1-ease(blend/.55);ctx.drawImage(cute,0,0);ctx.globalAlpha=ease((blend-.45)/.55);ctx.drawImage(scary,0,0);ctx.restore();this.frames++;return this.canvas;}
 }
 /** Abortable authored beat runner. Generation checks prevent a late reveal after welcome/Stop. */
 export class WispRevealRunner{

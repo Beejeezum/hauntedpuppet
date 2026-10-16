@@ -1,0 +1,9 @@
+// Two overlapping delay heads: bounded-latency pitch shift without changing speech speed.
+class WispPitch extends AudioWorkletProcessor {
+ static get parameterDescriptors(){return [{name:'pitch',defaultValue:4.5,minValue:-12,maxValue:12,automationRate:'k-rate'},{name:'mix',defaultValue:.85,minValue:0,maxValue:1,automationRate:'k-rate'},{name:'growl',defaultValue:0,minValue:0,maxValue:1,automationRate:'k-rate'}]}
+ constructor(){super();this.ring=new Float32Array(32768);this.write=0;this.phase=0;this.subPhase=0;this.ratio=1;this.alive=true;this.port.onmessage=event=>{if(event.data==='stop')this.alive=false;};}
+ read(delay){const x=(this.write-delay+this.ring.length)%this.ring.length,a=Math.floor(x),t=x-a;return this.ring[a]*(1-t)+this.ring[(a+1)%this.ring.length]*t;}
+ heads(phase,window){const q=(phase+.5)%1,w=.5-.5*Math.cos(phase*2*Math.PI);return this.read(128+phase*window)*w+this.read(128+q*window)*(1-w);}
+ process(inputs,outputs,params){if(!this.alive)return false;const input=inputs[0],out=outputs[0];if(!out?.length)return true;const mono=input?.[0],window=sampleRate*.045,desired=2**(params.pitch[0]/12),mix=params.mix[0],growl=params.growl[0];for(let n=0;n<out[0].length;n++){const sample=mono?.[n]||0,raw=Number.isFinite(sample)?sample:0;this.ring[this.write]=raw;this.ratio+=(desired-this.ratio)*.002;this.phase=(this.phase+(1-this.ratio)/window+1)%1;this.subPhase=(this.subPhase+(1-this.ratio*.5)/window+1)%1;let wet=this.heads(this.phase,window);if(growl>.001){const low=this.heads(this.subPhase,window);wet=(wet+low*growl*.38)/(1+growl*.38);wet=Math.tanh(wet*(1+growl*2))/(1+growl*.9);}const value=Math.max(-1,Math.min(1,raw*(1-mix)+wet*mix));for(const channel of out)channel[n]=value;this.write=(this.write+1)%this.ring.length;}return true;}
+}
+registerProcessor('wisp-pitch',WispPitch);

@@ -1,0 +1,151 @@
+{
+  "image": "tail-atlas.png",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "frames": [
+    {
+      "rect": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "bounds": [
+        62,
+        67,
+        378,
+        361
+      ],
+      "anchor": [
+        278.0,
+        90
+      ],
+      "neckWidth": 299
+    },
+    {
+      "rect": [
+        512,
+        0,
+        512,
+        512
+      ],
+      "bounds": [
+        64,
+        67,
+        373,
+        367
+      ],
+      "anchor": [
+        276.0,
+        90
+      ],
+      "neckWidth": 297
+    },
+    {
+      "rect": [
+        1024,
+        0,
+        512,
+        512
+      ],
+      "bounds": [
+        32,
+        67,
+        428,
+        370
+      ],
+      "anchor": [
+        297.5,
+        90
+      ],
+      "neckWidth": 298
+    },
+    {
+      "rect": [
+        0,
+        512,
+        512,
+        512
+      ],
+      "bounds": [
+        97,
+        68,
+        344,
+        363
+      ],
+      "anchor": [
+        278.0,
+        90
+      ],
+      "neckWidth": 299
+    },
+    {
+      "rect": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "bounds": [
+        108,
+        67,
+        330,
+        353
+      ],
+      "anchor": [
+        276.0,
+        90
+      ],
+      "neckWidth": 299
+    },
+    {
+      "rect": [
+        1024,
+        512,
+        512,
+        512
+      ],
+      "bounds": [
+        70,
+        67,
+        376,
+        360
+      ],
+      "anchor": [
+        284.0,
+        90
+      ],
+      "neckWidth": 297
+    }
+  ],
+  "fps": 8,
+  "loop": true,
+  "grid": [
+    3,
+    2
+  ],
+  "alphaBoundsThreshold": 3,
+  "referenceTargetRect": [
+    292,
+    931,
+    405,
+    478
+  ],
+  "referencePivot": [
+    520,
+    1130
+  ],
+  "registration": "Use per-frame neck anchor at local y90 and common scale; draw behind existing body-core. Do not independently stretch each frame to its own alpha bounds.",
+  "provenance": {
+    "tool": "Built-in image generation",
+    "reference": "../wisp/registered-layers/layers--tail.png",
+    "sha256": "2f41b95b3a15a318613971c0c7da910ace2d8988c86ea19c05f31cfcd6470ba4"
+  },
+  "limitations": [
+    "Generated cels preserve material/curl identity, not pixel-identical reference shape.",
+    "Neck varies horizontally across cells; supplied anchor cancels that drift.",
+    "Opaque upper neck must remain behind the approved body core; verify seam at the target size."
+  ]
+}

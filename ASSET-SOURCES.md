@@ -17,3 +17,9 @@ Historical 0.6 archives retain the superseded 3D evaluation model/runtime and th
 ## Scary Wisp painted rig (October 2026)
 
 Original raster art was generated with the built-in imagegen tool against the project's approved Wisp reference, then assembled as a registered front-facing 2D puppet. Sources, generation prompts, manifest and integrity hashes are under `assets/wisp-scary/`. Runtime consists of four body/arm/tail pieces, twelve mouth shapes and ten eye states. No Disney/Pixar imagery or animation files are included. Physical-acting references inform timing and staging only. The existing cute PNGs are unchanged.
+
+## Painted morph and wispy cel studies
+
+`assets/wisp-morph/` contains original transparent raster sheets generated with the built-in image tool against the approved cute and scary Wisp references. The morph sheet supplies six single-face anatomy keys; the tail sheet supplies six variations of the curl and smoky contour. Manifests retain source rectangles, alpha bounds, registration anchors, reference paths and SHA-256 provenance. They are generated painted animation assets, not motion or imagery extracted from another production.
+
+`assets/puppeteer-pitch-worklet.js` and `assets/puppeteer-voice.js` implement original local effect presets. Audition recordings in test evidence process the existing AI-generated rehearsal line; they do not contain a newly captured human voice.

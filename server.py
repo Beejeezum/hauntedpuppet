@@ -34,11 +34,11 @@ class Handler(SimpleHTTPRequestHandler):
   if not self.allowed():return self.reply(403,{'error':'Invalid host'})
   path=unquote(urlsplit(self.path).path)
   if path=='/api/status':
-   if os.getenv('OPENAI_API_KEY'):return self.reply(200,{'version':'0.10.0','token':TOKEN,**credential_status(),'configured':True,'aligner':bool(performance.Decoder),'mode':'direct','conversation':True,'realtime':realtime_voice.inspect()})
+   if os.getenv('OPENAI_API_KEY'):return self.reply(200,{'version':'0.11.0','token':TOKEN,**credential_status(),'configured':True,'aligner':bool(performance.Decoder),'mode':'direct','conversation':True,'realtime':realtime_voice.inspect()})
    try:
     with urllib.request.urlopen('http://127.0.0.1:8766/api/status',timeout=3) as r:d=json.load(r)
-    return self.reply(200,{'version':'0.10.0','token':TOKEN,**credential_status(),'configured':bool(d.get('configured')),'aligner':bool(d.get('aligner')),'conversation':False,'realtime':realtime_voice.inspect()})
-   except Exception:return self.reply(200,{'version':'0.10.0','token':TOKEN,**credential_status(),'configured':False,'conversation':False,'realtime':realtime_voice.inspect(),'error':'Start the existing speech/alignment service on 8766. Offline rehearsal is available.'})
+    return self.reply(200,{'version':'0.11.0','token':TOKEN,**credential_status(),'configured':bool(d.get('configured')),'aligner':bool(d.get('aligner')),'conversation':False,'realtime':realtime_voice.inspect()})
+   except Exception:return self.reply(200,{'version':'0.11.0','token':TOKEN,**credential_status(),'configured':False,'conversation':False,'realtime':realtime_voice.inspect(),'error':'Start the existing speech/alignment service on 8766. Offline rehearsal is available.'})
   if path=='/':self.path='/index.html';path='/index.html'
   target=(ROOT/path.lstrip('/')).resolve()
   if path.startswith('/assets/') and (ROOT/'assets').resolve() not in target.parents:return self.reply(403,{'error':'Invalid asset path'})
