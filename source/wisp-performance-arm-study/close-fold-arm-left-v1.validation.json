@@ -1,0 +1,20 @@
+{
+  "file": "close-fold-arm-left-v1.png",
+  "original": "exec-0b2f3bfd-2a1f-4590-a5d1-af95398335f1.png",
+  "size": [
+    1254,
+    1254
+  ],
+  "alphaRange": [
+    0,
+    254
+  ],
+  "alphaBounds": [
+    0,
+    23,
+    1254,
+    1254
+  ],
+  "sha256": "e0c543af20d454e9babea3d2c029662de08391bb4d93d2d5a17ffcabf8c127e2",
+  "status": "Unchanged authored close-fold source; not rigged or accepted"
+}
