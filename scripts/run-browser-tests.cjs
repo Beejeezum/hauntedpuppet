@@ -4,6 +4,6 @@ const suites=['wisp_living_skin.cjs','wisp_performance_graphics.cjs','wisp_perfo
 for(const suite of suites){
  const file=path.join(__dirname,'..','tests',suite);
  if(!require('node:fs').existsSync(file))throw Error('Required regression suite missing: '+suite);
- const result=spawnSync(process.execPath,[file],{stdio:'inherit',env:process.env});
+ const result=spawnSync(process.execPath,[file],{stdio:'inherit',env:{...process.env,...(suite==='face_tracker.cjs'?{HAUNT_FACE_MODEL_SMOKE:'1'}:{})}});
  if(result.status!==0)process.exit(result.status||1);
 }
