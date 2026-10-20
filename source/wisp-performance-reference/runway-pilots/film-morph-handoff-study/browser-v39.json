@@ -1,0 +1,9 @@
+{
+  "ended": true,
+  "muted": true,
+  "duration": 15.166667,
+  "currentTime": 15.166667,
+  "totalVideoFrames": 364,
+  "droppedVideoFrames": 0,
+  "scope": "Isolated muted browser decode only; not human seam or physical projection acceptance"
+}

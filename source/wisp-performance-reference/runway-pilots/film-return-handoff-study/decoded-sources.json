@@ -1,0 +1,16 @@
+[
+  {
+    "label": "scary-end",
+    "source": "source/wisp-performance-reference/runway-pilots/motion-transfer-study/wisp-scary-motion-transfer-v35.mp4",
+    "sourceSha256": "21e8efec67ec7e024fc954cc16af458cad8f8427553a998341ff9d37286ca35a",
+    "frame": 120,
+    "decoded": "scary-end-decoded.png"
+  },
+  {
+    "label": "friendly-start",
+    "source": "source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4",
+    "sourceSha256": "52d54d03c0f0406a9724c7c04b9e2fa0557a675486edfaa40fd0ca2e24a682bd",
+    "frame": 0,
+    "decoded": "friendly-start-decoded.png"
+  }
+]
