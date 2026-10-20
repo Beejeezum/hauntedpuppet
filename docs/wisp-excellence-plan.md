@@ -186,3 +186,11 @@ The source show now optionally reuses two existing Coral recordings, with eight 
 Commit6678d34 is published through the existing Git/Netlify workflow. Its production code supports48prepared performances, checks capacity before generation, and keeps save-only preparation from creating an AudioContext; optional rig hooks retain default behavior. Both full regression and WebKit passed before promotion. The live build-info commit was verified, followed by fresh isolated hosted prepared-library and projector-ownership checks. Voice/auth responses in the library test were mocked; this does not prove genuine login, microphone conversation, voice quality or on-site projection.
 
 Newer guided-turn films and source-output recovery work remain candidates outside the public build. Background-window experiments did not obtain a hidden operator document even after disabling test-framework focus emulation; treat that coverage as inconclusive. Do not equate a visible-window test or simulated drawing-loop stall with actual background, GPU or physical projector acceptance.
+
+## Native avatar-video research checkpoint
+
+Runway documents a LiveKit plugin that turns an external agent's synthesized speech into avatar video; the agent retains voice and personality control. It needs a Runway API project, LiveKit transport and a server agent. Workers remain billable until shut down, so session caps and cleanup matter. Source: https://docs.dev.runwayml.com/characters/livekit/.
+
+Treat this as a candidate visual provider, not a drop-in replacement for the current browser voice connection. Before adding app dependencies, test at most30seconds with fictional generated speech, no microphone/camera, and a hard shutdown. Inspect full-body identity, mouth readability, body-attached fog, framing, latency, interruption and cleanup. Preserve the working voice/fallback paths. No such API test has run and no new account/key has been created.
+
+Runway's web guidance favors shoulder-up references, so its documented non-human support does not establish whole-body Wisp quality. Source: https://help.runwayml.com/hc/en-us/articles/49557780326163-Runway-Characters. A successful visual comparison must precede any integration decision.
