@@ -1,5 +1,5 @@
 {
-  "status": "Prepared inputs only; not submitted or accepted by Act-Two",
+  "status": "Generating0percent; confirmed same single submission",
   "files": [
     {
       "role": "driver",
@@ -45,5 +45,19 @@
       "frames": 90,
       "reserveFailuresRGB4_8_16": 0
     }
-  }
+  },
+  "uiPreflight": {
+    "originalDriver": "Rejected before generation: Unable to detect face.",
+    "revision": "One tighter driver-only crop420x540at748,200, scaled720x926; wholebodycharacter input remains unchanged. Crop inspected; fictional face and hands visible.",
+    "croppedDriver": "Accepted: no face error; character video settings show Motion from your character video will be used.",
+    "creditsBefore": 10140,
+    "generationSubmitted": true,
+    "croppedDriverSha256": "06555310ad638ff620b7a0017ed5c6a8f7bc21b32d8e3676d716aafa4a4f2404",
+    "quotedCredits": 20,
+    "submissionCount": 1
+  },
+  "sessionId": "f55de024-4317-4dee-82d9-9a43162057f0",
+  "parentId": "042f37b6-e042-433e-89f9-c14ed6051d99",
+  "creditsAfter": 10120,
+  "observedDebit": 20
 }
