@@ -1,7 +1,10 @@
 const pw=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 (async()=>{
- const browser=await pw[process.env.HAUNT_BROWSER||'chromium'].launch({args:['--mute-audio']});
+ const browserName=process.env.HAUNT_BROWSER||'chromium';
+ // Linux WebKit rejects Chromium's --mute-audio flag. The fixture sets the
+ // actual show volume to zero before any source can start in either browser.
+ const browser=await pw[browserName].launch(browserName==='chromium'?{args:['--mute-audio']}:{});
  try{
   const page=await browser.newPage({viewport:{width:1280,height:720}});page.setDefaultTimeout(8000);const errors=[];let paidRequests=0;
   page.on('pageerror',e=>errors.push(e.message));
