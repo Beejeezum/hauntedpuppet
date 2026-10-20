@@ -1,0 +1,343 @@
+{
+  "schema": 1,
+  "approval": "Source rehearsal only. Existing films and joins remain unapproved. No generated dialogue in this silent pilot.",
+  "performances": [
+    {
+      "id": "watch",
+      "name": "Watch the path",
+      "status": "candidate-footage",
+      "clip": "scary",
+      "brief": "Silent eyes scanning the path",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "pace",
+      "name": "Menacing pacing",
+      "status": "planned",
+      "clip": null,
+      "brief": "Slow shoulder-led pacing with weight",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "loom",
+      "name": "Loom forward",
+      "status": "planned",
+      "clip": null,
+      "brief": "Approach with anticipation and soft fog drag",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "recede",
+      "name": "Drift into darkness",
+      "status": "planned",
+      "clip": null,
+      "brief": "Turn away and retreat in depth",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "inspect",
+      "name": "Suspicious inspection",
+      "status": "planned",
+      "clip": null,
+      "brief": "Lean down and inspect an imaginary visitor",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "listen",
+      "name": "Hear something",
+      "status": "planned",
+      "clip": null,
+      "brief": "Earless listening tilt and eye lead",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "growl",
+      "name": "Playful growl",
+      "status": "planned",
+      "clip": null,
+      "brief": "Short theatrical growl with body compression",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "peek",
+      "name": "Peek from fog",
+      "status": "planned",
+      "clip": null,
+      "brief": "Eyes appear before full body reforms",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "eyes",
+      "name": "Floating eyes",
+      "status": "planned",
+      "clip": null,
+      "brief": "Body dissolves while independent eyes linger",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "vanish",
+      "name": "Vanish and reform",
+      "status": "planned",
+      "clip": null,
+      "brief": "Whole-body vapor loss and coherent return",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "beckon",
+      "name": "Spooky beckon",
+      "status": "planned",
+      "clip": null,
+      "brief": "One hand curls invitingly with delayed shoulder",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "startle",
+      "name": "False-safety reveal",
+      "status": "planned",
+      "clip": null,
+      "brief": "Operator-armed big-kid reveal; never automatic",
+      "audioStatus": "not-recorded",
+      "safety": "operator-armed-big-kids-only"
+    },
+    {
+      "id": "chuckle",
+      "name": "Evil chuckle",
+      "status": "planned",
+      "clip": null,
+      "brief": "Shoulders and hands overlap with a short laugh",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "shiver",
+      "name": "Ghost shiver",
+      "status": "planned",
+      "clip": null,
+      "brief": "Compression and ripple travel through body",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "turn",
+      "name": "Turn and leave",
+      "status": "planned",
+      "clip": null,
+      "brief": "Actual side and back reveal with departing sweep",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "transform",
+      "name": "Become scary",
+      "status": "candidate-footage",
+      "clip": "morph",
+      "brief": "One continuous cute-to-scary transformation",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "soften",
+      "name": "Become friendly",
+      "status": "candidate-footage",
+      "clip": "return",
+      "brief": "Hands, teeth and eyes soften coherently",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "welcome",
+      "name": "Welcome wave",
+      "status": "candidate-footage",
+      "clip": "greeting",
+      "brief": "One broad friendly wave",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "idle",
+      "name": "Friendly listening",
+      "status": "candidate-footage",
+      "clip": "idle",
+      "brief": "Continuous fuller body life; existing clip is provisional",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "costume",
+      "name": "Costume delight",
+      "status": "planned",
+      "clip": null,
+      "brief": "Notice costume, brighten and gesture",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "pirate",
+      "name": "Pirate greeting",
+      "status": "planned",
+      "clip": null,
+      "brief": "Ahoy! Guarding any treasure?",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "witch",
+      "name": "Witch greeting",
+      "status": "planned",
+      "clip": null,
+      "brief": "Love the hat. Is your broom parked?",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "superhero",
+      "name": "Hero greeting",
+      "status": "planned",
+      "clip": null,
+      "brief": "A hero! My candy is safe!",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "skeleton",
+      "name": "Skeleton greeting",
+      "status": "planned",
+      "clip": null,
+      "brief": "Nice bones. Very fashionable.",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "pumpkin",
+      "name": "Pumpkin greeting",
+      "status": "planned",
+      "clip": null,
+      "brief": "You look gourd-geous!",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "trick",
+      "name": "Trick or treat",
+      "status": "planned",
+      "clip": null,
+      "brief": "A little boo, a little treat!",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "boo",
+      "name": "Boo rehearsal",
+      "status": "planned",
+      "clip": null,
+      "brief": "Boo! Was that spooky enough?",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "dance",
+      "name": "Halloween dance",
+      "status": "planned",
+      "clip": null,
+      "brief": "Two playful dance phrases, wrists and body following",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "thanks",
+      "name": "Treat gratitude",
+      "status": "planned",
+      "clip": null,
+      "brief": "Happy haunting! Save me a sweet.",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    },
+    {
+      "id": "goodbye",
+      "name": "Goodbye bow",
+      "status": "planned",
+      "clip": null,
+      "brief": "Bye, little boo! Then return to living idle",
+      "audioStatus": "not-recorded",
+      "safety": "theatrical-no-contact"
+    }
+  ],
+  "shows": [
+    {
+      "id": "doorstep-150",
+      "name": "Haunted doorstep \u00b7 2:30",
+      "steps": [
+        {
+          "clip": "scary",
+          "seconds": 45
+        },
+        {
+          "clip": "return",
+          "seconds": 5
+        },
+        {
+          "clip": "greeting",
+          "seconds": 5
+        },
+        {
+          "clip": "idle",
+          "seconds": 10
+        },
+        {
+          "clip": "morph",
+          "seconds": 5
+        },
+        {
+          "clip": "scary",
+          "seconds": 55
+        },
+        {
+          "clip": "return",
+          "seconds": 5
+        },
+        {
+          "clip": "greeting",
+          "seconds": 5
+        },
+        {
+          "clip": "idle",
+          "seconds": 10
+        },
+        {
+          "clip": "morph",
+          "seconds": 5
+        }
+      ],
+      "spokenLinesPlanned": [
+        "Who dares approach my haunted house?",
+        "Oh! Hello, little boos!",
+        "What a brilliant costume!",
+        "Happy Halloween!",
+        "Goodbye\u2014and happy haunting!"
+      ]
+    }
+  ],
+  "productionIntegration": {
+    "status": "planned; not connected to live voice or phone in this source rehearsal",
+    "rules": [
+      "Guest speech and operator cues preempt attract shows.",
+      "Only the laptop owns audible playback and microphone.",
+      "Phone and projector remain silent.",
+      "Little-ones mode bypasses menacing clips; no automatic age detection.",
+      "Goodbye closes the conversation and returns to an approved living idle before the show resumes.",
+      "Resume at an approved idle boundary, never halfway through a spoken sentence.",
+      "No crossfade of incompatible body silhouettes or doubled ghosts."
+    ]
+  }
+}
