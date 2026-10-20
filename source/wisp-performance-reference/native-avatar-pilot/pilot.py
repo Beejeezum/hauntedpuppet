@@ -89,34 +89,37 @@ class OneShotGate:
         self.claimed = True
 
 
-def create_server():
+async def pilot_entrypoint(ctx):
+    # Module-level function is required by the SDK's spawn/forkserver job transfer.
     from livekit import rtc
-    from livekit.agents import Agent, AgentServer, AgentSession, APIConnectOptions, room_io
+    from livekit.agents import Agent, AgentSession, APIConnectOptions, room_io
     from livekit.plugins import runway
     gate = OneShotGate(os.environ.get('WISP_PILOT_ROOM_NAME'), os.environ.get('WISP_PILOT_CLAIM_FILE'))
-    server = AgentServer()
+    gate.claim(ctx.job.room.name)
+    await asyncio.wait_for(ctx.connect(), timeout=10)
+    inspect_driver()
+    session = AgentSession()  # No STT, LLM, TTS or user input is configured.
+    avatar = runway.AvatarSession(
+        avatar_id=os.environ['WISP_RUNWAY_AVATAR_ID'], max_duration=PROVIDER_SECONDS,
+        conn_options=APIConnectOptions(max_retry=0, timeout=10),
+    )
+    options = room_io.RoomOptions(audio_input=False, video_input=False, text_input=False,
+                                  text_output=False, close_on_disconnect=True)
+    try:
+        events = await bounded_pilot(session, avatar, ctx.room,
+            agent=Agent(instructions='Synthetic audio visual compatibility pilot only.'),
+            options=options, frames=audio_frames(rtc.AudioFrame))
+        # Only lifecycle labels; never tokens, request bodies or visitor data.
+        print(json.dumps({'pilotEvents': events}))
+    finally:
+        ctx.shutdown(reason='Synthetic pilot finished or failed')
+        Path(os.environ['WISP_PILOT_DONE_FILE']).touch(mode=0o600)
 
-    @server.rtc_session(agent_name='wisp-synthetic-visual-pilot')
-    async def entrypoint(ctx):
-        gate.claim(ctx.job.room.name)
-        await asyncio.wait_for(ctx.connect(), timeout=10)
-        inspect_driver()
-        session = AgentSession()  # No STT, LLM, TTS or user input is configured.
-        avatar = runway.AvatarSession(
-            avatar_id=os.environ['WISP_RUNWAY_AVATAR_ID'], max_duration=PROVIDER_SECONDS,
-            conn_options=APIConnectOptions(max_retry=0, timeout=10),
-        )
-        options = room_io.RoomOptions(audio_input=False, video_input=False, text_input=False,
-                                      text_output=False, close_on_disconnect=True)
-        try:
-            events = await bounded_pilot(session, avatar, ctx.room,
-                agent=Agent(instructions='Synthetic audio visual compatibility pilot only.'),
-                options=options, frames=audio_frames(rtc.AudioFrame))
-            # Only lifecycle labels; never tokens, request bodies or visitor data.
-            print(json.dumps({'pilotEvents': events}))
-        finally:
-            ctx.shutdown(reason='Synthetic pilot finished or failed')
-            Path(os.environ['WISP_PILOT_DONE_FILE']).touch(mode=0o600)
+
+def create_server():
+    from livekit.agents import AgentServer
+    server = AgentServer()
+    server.rtc_session(pilot_entrypoint, agent_name='wisp-synthetic-visual-pilot')
     return server
 
 
