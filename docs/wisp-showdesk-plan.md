@@ -263,3 +263,10 @@ Exact5000d83 CI39472111843 showdeskjob118798782036 completedSUCCESS. Completedlo
 Existing scripts/soak-showdesk.cjs run session35125 completed20/20actualcute→scary→cutecycles (60cue transitions) on current source runtime. Eachcycle retained2ownervideos,0owneraudioelements,0outputmedia; effectcount0, videosmuted. FinalBlackoutoutputpixels andownernavigation stopped/blanked output passed, no pageerrors. Heap samples are observations, not leakproof; this run neverenabledSFX and doesnotbyitself count AudioContexts. Earlier dedicatedrealWebAudio/output tests prove those separately. Evidence test-results/showdesk-soak-progress.json and unique work/showdesk-soak-*.json. No additionalcredits orproductionchanges.
 
 Exact5000d83 CI39472111843 nowhasWebKit,showdesk,native-avatar-offline SUCCESS. Onlyregressionjob118798781975 remainsauthoritativelylive inRun npm test (started18:09:34UTC); at18:16UTC it hadnotreached25minutejoblimit. Do not restart/cancel for waiting. Allcurrentrequiredchecks stillnotcomplete, productione44697a remains. Localheadde228cc containsunpublishedsource-reviewfollow-ups beyond5000d83; no newruntimecandidate push.
+
+
+## Rear three-quarter material guide v3
+
+One built-inimagegen edit from scaryfrontv34 produced rear135degree guidewisp-rear-three-quarter-v3.png, SHA939f164c809d4ac4de6f72251d50d067d1d6e845d455790e8a3bf07932fae19d. RGB1672x941 onblack (nottransparent), originaldefaultimagepreserved, fullprompt-v3.txt saved. Viewshowsroundheadbulbundercrest, nofacevisiblethroughback, asymmetricforeshortenedattachedarms andfinevaporinstead ofv2'slumpyoutline. Clawtipsremainbright/hard; singleviewdoesnotprovevideo/turn/identityconsistency. No publicpromotionornewRunwayturnspend.
+
+RawRGB4marginsleft37.02/top16.90/right36.18/bottom18.17percentpass15butfail20target. Requireadditionalfixedwhole-frame staging beforeusingasendpoint, notanothermaterialgenerationjustforframing. This is acandidateguide, notfinishedturnaroundoranimation. Fullgoalstillrequiresrealbacks/swoops/depthacting andactualseamreview. Currentexact5000d83 CI39472111843 finalregression remainsauthoritativelyrunning; other3passed. Productione44697a unchanged.

@@ -1,0 +1,30 @@
+{
+  "file": "wisp-rear-three-quarter-v3.png",
+  "sha256": "939f164c809d4ac4de6f72251d50d067d1d6e845d455790e8a3bf07932fae19d",
+  "size": [
+    1672,
+    941
+  ],
+  "mode": "RGB",
+  "marginsLTRB_RGB4": [
+    0.37021531100478466,
+    0.1689691817215728,
+    0.3618421052631579,
+    0.18172157279489903
+  ],
+  "review": {
+    "status": "Reference candidate; not approved or public",
+    "positive": [
+      "Rear three-quarter head orientation, no face visible through rear",
+      "Round head bulb retained below crest instead of conical tower",
+      "Fine vapor texture through connected arms and lower core, no obvious spine/ribs"
+    ],
+    "limitations": [
+      "Single still does not prove turning mechanics, articulation or material persistence in video",
+      "Claw tips remain bright and relatively hard",
+      "Needs additional fixed stage reserve before motion generation",
+      "No source-film start/end join established"
+    ]
+  },
+  "method": "One built-in imagegen edit of frontv34; black background; no CLI/API fallback or new Runway generation"
+}
