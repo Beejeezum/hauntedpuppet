@@ -17,16 +17,16 @@
     {
       "source": "source/wisp-performance-reference/tonight-demo/tonight.css",
       "destination": "tonight.css",
-      "bytes": 1187,
-      "sha256": "e678b0e3305e1ee8eb5049de9c78a83a5f9b68163e18902aa1e550a1cbde4bab",
-      "publishedSha256": "e678b0e3305e1ee8eb5049de9c78a83a5f9b68163e18902aa1e550a1cbde4bab"
+      "bytes": 2052,
+      "sha256": "92345b8b3463ee922bf8be3375dae71130d59e508a15c13551158be37f514ea4",
+      "publishedSha256": "92345b8b3463ee922bf8be3375dae71130d59e508a15c13551158be37f514ea4"
     },
     {
       "source": "source/wisp-performance-reference/tonight-demo/tonight.mjs",
       "destination": "tonight.mjs",
-      "bytes": 3668,
-      "sha256": "b9924c9fc480edfe545b53ec62e9ba9debcc3148aefd97cafb20edb3a570feb0",
-      "publishedSha256": "9670ed18b45b9bcd4290be02f6e6596d939d6c97a320ab30315e51fa9bb11f41",
+      "bytes": 5063,
+      "sha256": "a9c50c779c61a9e1067d6503f5cbd15fb4853d37a29aa732c6f6042a4c880dac",
+      "publishedSha256": "28b82491bde59d1aa2a88867ce0273df97696476787bac82e9efe035fad29465",
       "rewrites": [
         {
           "from": "../runway-pilots/wisp-film-output.js",
@@ -37,16 +37,16 @@
     {
       "source": "source/wisp-performance-reference/tonight-demo/puppet.html",
       "destination": "puppet.html",
-      "bytes": 1536,
-      "sha256": "4efd8f67b458a07a978977faa6e1197087e4460b49a43d165418c120d1febb40",
-      "publishedSha256": "4efd8f67b458a07a978977faa6e1197087e4460b49a43d165418c120d1febb40"
+      "bytes": 2390,
+      "sha256": "21db1e60d51331bc5cda7cc2e468573dbe8a5c4750972aed836af48663de543c",
+      "publishedSha256": "21db1e60d51331bc5cda7cc2e468573dbe8a5c4750972aed836af48663de543c"
     },
     {
       "source": "source/wisp-performance-reference/tonight-demo/puppet.mjs",
       "destination": "puppet.mjs",
-      "bytes": 5128,
-      "sha256": "500ad695b9aa28612f3b2af155729168dc8e755e0cb41f887cf4145cd025c891",
-      "publishedSha256": "c18d396cc033fb51d1c2aeef90f1a32d0ecfed86f0c5c8c9b10914ce32544ebc",
+      "bytes": 7295,
+      "sha256": "a674d2be1c8ad0073562c476b5db3698e7457e7413eff72eada55e84012f1d1b",
+      "publishedSha256": "63b161c0bfdf27aeae096ef35f244647ba97619f01bfdc3ec07330522983b809",
       "rewrites": [
         {
           "from": "../runway-pilots/wisp-film-output.js",
@@ -107,6 +107,19 @@
       "bytes": 1691,
       "sha256": "06f1e86733a761a5019fbc1bda16de7632eed9a907d49a0f7acc8f763001e076",
       "publishedSha256": "06f1e86733a761a5019fbc1bda16de7632eed9a907d49a0f7acc8f763001e076"
+    },
+    {
+      "source": "source/wisp-performance-reference/tonight-demo/paired-controls.mjs",
+      "destination": "paired-controls.mjs",
+      "rewrites": [
+        {
+          "from": "../ambient-show/operator-access.mjs",
+          "to": "../wisp-showdesk/operator-access.mjs"
+        }
+      ],
+      "bytes": 2180,
+      "sha256": "e94abaebc1fcfe8077ee13065d5427e0a2827dc95613933bbf35c400fb40bf66",
+      "publishedSha256": "7d4f1752cac0ede078dcb38e6444d585ea4a5f11572ba689fa6bf34a7eb85540"
     }
   ]
 }

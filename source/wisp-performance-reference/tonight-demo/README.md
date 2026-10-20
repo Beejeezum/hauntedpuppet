@@ -9,3 +9,11 @@ First assembly uses existing arrival-to-idle, round-trip morph and idle-to-wave 
 Puppet mode must expose operator microphone permission explicitly, drive a calibrated mouth envelope without claiming phoneme recognition, offer gaze/blink/expression controls, stop capture on exit, and match the latest approved fog identity. Video-embedded eyes/mouth cannot simply become a tracked facial rig: separate artwork/clean face plate and aligned mouth/eye assets are required. Keep film motion and the puppet face coherent; no floating facial stickers. Existing live puppeteering stays available until the new one passes review.
 
 Acceptance: review entire assembled film and its exact visible cuts at normal/slow speed; inspect all-frame smoke clearance and complete empty boundaries; inspect/preview the mixed audio; real browser cue changes, sound cancellation, silence on outputs, repeat/end behavior and device cleanup. Physical projection and actual operator microphone performance require separate acceptance. Do not label source studies as finished or seamless from synthetic tests.
+
+## Operator controls added after the first preview
+
+All eight painted mouth shapes are selectable. Expressions choose the painted articulation style, while pointer and slider gaze remain independent. These controls do not yet add anatomical eyelids or a new arm rig. Gaze and mouth smoothing now use elapsed time rather than a fixed per-frame fraction.
+
+The existing phone service can pair with each page. Story controls include play, pause, resume, repeat and Stop. Puppet controls include expression, gaze and restoring the picture. A phone cannot request microphone access or enable sound. Operator sign-out stops the performance and revokes phones before ending the session. Existing live controls stay separate.
+
+The same named, canvas-only output window can be reclaimed by a new page. Old projection owners detach their listeners and animation callback; disposing a former owner cannot stop the new owner. Fullscreen placement is retained where the browser permits it; physical display behavior still needs testing. Pressing Play again during a running story is a no-op rather than a visible restart.
