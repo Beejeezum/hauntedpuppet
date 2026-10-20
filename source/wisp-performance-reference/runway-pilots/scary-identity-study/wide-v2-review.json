@@ -1,0 +1,61 @@
+{
+  "status": "Framing candidate; identity and motion not approved by this measurement",
+  "file": "wisp-scary-wide-v2.png",
+  "sha256": "bc049a22ac9850f4d314555c424cd516beb04712a6cfa0c2440c9429513d5e8b",
+  "size": [
+    1672,
+    941
+  ],
+  "bounds": [
+    {
+      "threshold": 4,
+      "margins": {
+        "left": 0.36782296650717705,
+        "right": 0.3815789473684211,
+        "top": 0.2051009564293305,
+        "bottom": 0.2104144527098831
+      },
+      "passes15percent": true
+    },
+    {
+      "threshold": 8,
+      "margins": {
+        "left": 0.3684210526315789,
+        "right": 0.38217703349282295,
+        "top": 0.2051009564293305,
+        "bottom": 0.21147715196599362
+      },
+      "passes15percent": true
+    },
+    {
+      "threshold": 16,
+      "margins": {
+        "left": 0.3684210526315789,
+        "right": 0.38217703349282295,
+        "top": 0.2051009564293305,
+        "bottom": 0.21147715196599362
+      },
+      "passes15percent": true
+    }
+  ],
+  "scope": "Single-image RGB envelope, not animation or physical projection acceptance",
+  "provenance": "Built-in imagegen framing-only edit of endorsed scary concept, original output unchanged",
+  "runwayMotionPilot": {
+    "sessionId": "acda91c3-38fd-42ed-ba56-fda1ed9d8eec",
+    "assetParentId": "70e86666-dadc-49dc-984b-f0bf7d850dee",
+    "model": "Kling 2.5 Turbo Pro",
+    "seconds": 5,
+    "status": "queued; not reviewed footage",
+    "observedCreditsBefore": 10895,
+    "observedCreditsAfter": 10835,
+    "observedDebit": 60,
+    "task": "Articulated side/back turn and depth retreat, fixed camera, black stage",
+    "acceptance": [
+      "Side/back remains recognizable same being",
+      "Independent shoulder, elbow, wrist and core motion",
+      "Entire smoke stays within15percent reserve every frame",
+      "Connected lower core never accidentally disappears",
+      "No camera zoom/pan or cutout shrink substitute"
+    ]
+  }
+}
