@@ -37,7 +37,12 @@ while True:
             'reservePass': min(margins) >= args.reserve,
             'boundsXYXY': [int(x.min()), int(y.min()), int(x.max()+1), int(y.max()+1)],
             'visibleFraction': float(len(x)/(w*h))}
-    thumb = cv2.resize(frame, (480, 270), interpolation=cv2.INTER_AREA)
+    # Letterbox diagnostic thumbnails: portrait/squarer avatar outputs must not look stretched.
+    fit = min(480/w, 270/h)
+    tw, th = max(1, round(w*fit)), max(1, round(h*fit))
+    thumb = np.zeros((270, 480, 3), dtype=np.uint8)
+    tx, ty = (480-tw)//2, (270-th)//2
+    thumb[ty:ty+th, tx:tx+tw] = cv2.resize(frame, (tw, th), interpolation=cv2.INTER_AREA)
     if previous is not None:
         mask = (previous.max(axis=2) > 16) | (thumb.max(axis=2) > 16)
         differences.append(float(np.abs(previous.astype(float)-thumb.astype(float))[mask].mean()) if mask.any() else 0.)
