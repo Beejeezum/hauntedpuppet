@@ -1,0 +1,33 @@
+{
+  "status": "Unregistered endpoint comparison only; no automatic handoff approval",
+  "frames": [
+    {
+      "label": "New idle ending",
+      "source": "continuous-loop-study/wisp-continuous-loop-v28.mp4",
+      "frame": 121,
+      "sha256": "52d54d03c0f0406a9724c7c04b9e2fa0557a675486edfaa40fd0ca2e24a682bd",
+      "rgb16BoundsXYXY": [
+        772,
+        276,
+        1117,
+        842
+      ]
+    },
+    {
+      "label": "Existing morph opening",
+      "source": "identity-morph-study/wisp-identity-performance-review-v2.mp4",
+      "frame": 122,
+      "sha256": "aed1898a46b43f129458070f8391978d3e33d9cc3bdb029888486384905750d9",
+      "rgb16BoundsXYXY": [
+        773,
+        274,
+        1118,
+        841
+      ]
+    }
+  ],
+  "visibleRGBDifference": 6.0385048643113155,
+  "silhouetteIoU": 0.9831119544592031,
+  "scope": "Same final canvas, no alignment, blending, repaint or normalization. Placement and pose both affect these diagnostics.",
+  "visualReview": "Sampled poses align closely without registration: bounds differ1\u20132pixels, silhouetteIoU0.9831. This supports a combined review, not velocity continuity or a finished live morph."
+}
