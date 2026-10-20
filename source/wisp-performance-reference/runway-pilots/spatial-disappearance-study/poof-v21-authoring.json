@@ -9,7 +9,7 @@
   "creditsBefore": 10511,
   "creditsAfter": 10451,
   "observedDebit": 60,
-  "observedProgressPercent": 3,
+  "observedProgressPercent": 17,
   "intent": "New whole-character anticipation, localized fog poof and intentional complete absence; not another failed-return retry",
   "choreography": {
     "0\u20131s": "Eyes glance down, shoulders rise, elbows bend, hands draw inward with overlap",
@@ -30,5 +30,6 @@
     "All-frame smoke reserve including expansion",
     "Normal-speed human review before show promotion"
   ],
-  "nextAction": "Poll same Runway job. No duplicate generation on observation timeout. Download original and assess before more credits."
+  "nextAction": "Poll same Runway job. No duplicate generation on observation timeout. Download original and assess before more credits.",
+  "title": "Ghost Wisp Vanishing Act"
 }
