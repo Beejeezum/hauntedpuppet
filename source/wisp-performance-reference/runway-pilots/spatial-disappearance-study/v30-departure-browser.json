@@ -1,0 +1,10 @@
+{
+  "result": {
+    "ended": true,
+    "muted": true,
+    "duration": 5.083333,
+    "dropped": 0
+  },
+  "errors": [],
+  "scope": "Muted browser decoding, not human smoothness or physical projection acceptance"
+}
