@@ -23,5 +23,7 @@
     "Clipped smoke or missing full-effect reserve",
     "Frozen ending or abrupt joins"
   ],
-  "limits": "No native voice, operator override latency, child interaction or physical projection proven; not installed in live renderer"
+  "limits": "No native voice, operator override latency, child interaction or physical projection proven; not installed in live renderer",
+  "creditsAfter": 10511,
+  "observedDebit": 60
 }

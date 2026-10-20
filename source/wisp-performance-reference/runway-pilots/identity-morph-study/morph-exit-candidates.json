@@ -1,0 +1,62 @@
+{
+  "candidates": [
+    {
+      "frame": 82,
+      "seconds": 3.4166666666666665,
+      "visibleRGBJump": 36.67703525465748
+    },
+    {
+      "frame": 86,
+      "seconds": 3.5833333333333335,
+      "visibleRGBJump": 32.83789315685338
+    },
+    {
+      "frame": 90,
+      "seconds": 3.75,
+      "visibleRGBJump": 29.024765888672338
+    },
+    {
+      "frame": 94,
+      "seconds": 3.9166666666666665,
+      "visibleRGBJump": 23.720202709287594
+    },
+    {
+      "frame": 98,
+      "seconds": 4.083333333333333,
+      "visibleRGBJump": 18.91461322777503
+    },
+    {
+      "frame": 102,
+      "seconds": 4.25,
+      "visibleRGBJump": 15.28836085043743
+    },
+    {
+      "frame": 106,
+      "seconds": 4.416666666666667,
+      "visibleRGBJump": 11.622964714657444
+    },
+    {
+      "frame": 110,
+      "seconds": 4.583333333333333,
+      "visibleRGBJump": 7.636456667182636
+    },
+    {
+      "frame": 114,
+      "seconds": 4.75,
+      "visibleRGBJump": 5.280921338548457
+    },
+    {
+      "frame": 118,
+      "seconds": 4.916666666666667,
+      "visibleRGBJump": 4.4516884774418015
+    },
+    {
+      "frame": 121,
+      "seconds": 5.041666666666667,
+      "visibleRGBJump": 3.6012522612712297
+    }
+  ],
+  "scope": "Pose matching only; no approved cut or velocity proof",
+  "decision": "Retain the untrimmed v2 review for now. Early exits show larger image differences; normal-speed cut review is still needed.",
+  "limitations": "RGB difference can include fog/material change; this does not prove skeletal pose displacement, velocity continuity or subjective visual quality."
+}
