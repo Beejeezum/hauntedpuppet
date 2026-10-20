@@ -146,6 +146,7 @@ jobs:
       - name: Check queue and editorial contracts
         run: |
           node tests/cue_director.cjs
+          node tests/film_transport_readiness.cjs
           node tests/ambient_show_plan.cjs
           node tests/stage_compositor.cjs
           node tests/stage_geometry.cjs

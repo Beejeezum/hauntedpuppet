@@ -1,0 +1,18 @@
+{
+  "taskId": "40afc00d-4b48-4878-88c8-742d981862db",
+  "status": "SUCCEEDED",
+  "model": "seedance-2",
+  "duration": 8,
+  "resolution": "720p",
+  "nativeAudio": true,
+  "submissionCap": 1,
+  "creditsBefore": 18162,
+  "creditsAfter": 17922,
+  "observedDebit": 240,
+  "sourceAnchor": "../runway-pilots/film-return-handoff-study/friendly-start-staged.png",
+  "prompt": "Animate the EXACT friendly painted fog Wisp in the supplied image in one eight-second locked-camera shot, with native synchronized English dialogue. Preserve this character, framing, soft ivory-blue porous fog, big blue eyes, small attached hands and coherent tapering vapor core. Pure black projection void with absolutely no floor, horizon, room, background illumination or rectangular smoke. The whole character and ALL wisps always remain inside the central60percent width and height, leaving20percent empty black on every edge. He has just tried to be scary and is embarrassed. First a tiny sheepish shoulder drop, hands relax toward his chest, a downward glance, then affectionate eye contact with visitors and a little apologetic smile. His arms, shoulders, head and lower fog have connected fluid follow-through throughout; gentle living mist edges, no rigid hovering sticker, hard curls or detached hands. In a warm, playful, lightly airy cartoon-character voice, naturally acted and clearly intelligible, he says EXACTLY: \"Oops! Hope I didn't scare you. I'm just trying to be tough.\" Start speaking around0.7seconds and finish by6seconds, with expressive mouth articulation synchronized to the words. Friendly embarrassed humor, no crying or dramatic sadness. No robotic modulation, metallic processing, growl, loud echo, music, other voices, extra dialogue, subtitles or text. Only the single character's clear voice and an extremely quiet airy rustle. After speaking he gives a small reassuring hand gesture and remains gently alive in a relaxed forward-facing pose through the ending, never freezes or disappears. No camera movement or zoom.",
+  "releaseApproved": false,
+  "scope": "One source-only natural voice and apology acting proof. Human audio/identity/motion, exact dialogue, margins and joins unreviewed.",
+  "artifact": "apology-proof-v1.mp4",
+  "sha256": "d4dfefcfb62bbff4f32ba7b047a28a4bda5ab7b4def711c368f08d23213e819d"
+}
