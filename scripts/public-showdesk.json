@@ -11,9 +11,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.css",
       "destination": "showdesk.css",
-      "sha256": "aee54ef38dbaf8d49685772209b810b2d6c817f0294ca995a9e28f471b4a0497",
-      "bytes": 3518,
-      "publishedSha256": "aee54ef38dbaf8d49685772209b810b2d6c817f0294ca995a9e28f471b4a0497"
+      "sha256": "4c526a4802b23f314b3ba2f11bfb55b899ea1c0b3cfec7c7e5cc1143aabdd6b4",
+      "bytes": 4088,
+      "publishedSha256": "4c526a4802b23f314b3ba2f11bfb55b899ea1c0b3cfec7c7e5cc1143aabdd6b4"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.mjs",
@@ -81,9 +81,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/owner-sound-controls.mjs",
       "destination": "owner-sound-controls.mjs",
-      "sha256": "e40ca402e47dea560a048865ac069535f990edb19bd86651b7f68a3959622957",
-      "bytes": 3056,
-      "publishedSha256": "e40ca402e47dea560a048865ac069535f990edb19bd86651b7f68a3959622957"
+      "sha256": "4005469db9e8bf763123a15255e269309a72d807f875e4342471ba1dcac0b3ab",
+      "bytes": 3110,
+      "publishedSha256": "4005469db9e8bf763123a15255e269309a72d807f875e4342471ba1dcac0b3ab"
     }
   ]
 }
