@@ -45,3 +45,10 @@ The rapid cue-change browser case now also passes with actual films: a destinati
 `public-showdesk.json` explicitly pins seven source/media files and their published checksums. The public build copies only this desk bundle; source-only paths are rewritten once and verified, rejected v36 is excluded, and the entire source tree stays off the CDN. The main console gains an Animation show desk workspace link; Live puppet & voice and its APIs/phone/projector controls remain intact. Phone control is not connected to the new film desk yet and is labelled accordingly.
 
 Local built-dist Chromium rehearsal passed with actual films and layers. Existing puppet-console mobile overflow/default-mode/axe checks passed on the source static host (no provider or microphone test). The local WebKit executable is missing; do not call that a WebKit pass. A separate showdesk CI job installs Chromium/WebKit and tests the built bundle on both. Test server cleanup was corrected for browser-launch failure. Main release requires all exact-head CI jobs before merging and hosted verification afterward.
+
+
+## Linux WebKit diagnostic checkpoint
+
+CI39456394216 at4a24d326: showdesk job118744283430 passed Chromium, then failed Linux WebKit waiting for the synthetic blue layer to reach the stage at test line18. The native-avatar-offline job passed; no deployment permitted from this head. Saved completed-job logs in work/showdesk-ci-39456394216.log while other jobs were still running.
+
+Installed official pinned Playwright WebKit26.5 build2336 locally (77.4MB). The exact built-dist rehearsal passed on Mac WebKit. Do not infer Linux success from that pass or loosen the pixel condition without observing its value. The next test revision records visibility, full desk state, exact pixel and actual media timing when the Linux wait fails. This supersedes a known failed check, not a timeout-only restart. Sound-study remains source-only and is excluded by public allowlist.
