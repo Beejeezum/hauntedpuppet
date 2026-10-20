@@ -2,87 +2,110 @@
   "schema": 1,
   "id": "ghost-at-the-door",
   "title": "The Ghost at the Door",
-  "status": "revised-story-review-pending",
+  "status": "spoken-fixed-framing-review-pending",
   "releaseApproved": false,
   "fps": 24,
-  "frames": 1137,
-  "durationSeconds": 47.375,
+  "frames": 1257,
+  "durationSeconds": 52.375,
   "picture": {
-    "file": "tonight-story-v3-picture.mp4",
-    "sha256": "1749bbd0b84f8414b5c4631b7e62f8ffe619ae3b4fa63dd3d48170d85c302be2",
+    "file": "tonight-story-v5-picture.mp4",
+    "sha256": "678f1add05e406f1c5eed1a8c3dfe99c8df29ef49f84ef8135666a3b8f4dc6ef",
     "silent": true
   },
   "sound": {
-    "file": "tonight-story-v3-sound.m4a",
-    "sha256": "70d324131995794728cd15aa90a966ad2fafe63a522a68d3bb6f9995dcd0abab",
+    "file": "tonight-story-v5-sound.m4a",
+    "sha256": "be2ead50035b9be34bcb9cdbc57afdedf3c91549964d45fc125af09aec3917db",
     "owner": "laptop",
     "speech": true,
-    "dialogue": "Oops! Hope I didn\u2019t scare you. I\u2019m just trying to be tough.",
+    "dialogue": "Oh! Visitors! Welcome to my haunt! / Oops! Hope I didn\u2019t scare you. I\u2019m just trying to be tough. / Happy Halloween! Boo-bye!",
     "enable": "explicit operator action",
     "stop": "cancel on pause, Blackout, exit or puppet takeover"
   },
   "chapters": [
     {
-      "title": "A little showing off",
+      "title": "Welcome",
       "startSeconds": 0.0,
-      "endSeconds": 15.166666666666666
+      "endSeconds": 6.041666666666667
     },
     {
-      "title": "Too tough for his own good",
-      "startSeconds": 15.166666666666666,
-      "endSeconds": 19.208333333333332
+      "title": "Showing off",
+      "startSeconds": 6.041666666666667,
+      "endSeconds": 16.125
     },
     {
-      "title": "The apology",
-      "startSeconds": 19.208333333333332,
-      "endSeconds": 27.25
+      "title": "Scare and apology",
+      "startSeconds": 16.125,
+      "endSeconds": 28.208333333333332
     },
     {
-      "title": "A ghostly greeting",
-      "startSeconds": 27.25,
-      "endSeconds": 33.291666666666664
+      "title": "Smoke greeting",
+      "startSeconds": 28.208333333333332,
+      "endSeconds": 34.25
     },
     {
-      "title": "Until next Halloween",
-      "startSeconds": 33.291666666666664,
-      "endSeconds": 38.833333333333336
+      "title": "Boo-bye",
+      "startSeconds": 34.25,
+      "endSeconds": 38.291666666666664
     },
     {
-      "title": "A flutter in the fog",
-      "startSeconds": 38.833333333333336,
-      "endSeconds": 45.375
+      "title": "Drift into mist",
+      "startSeconds": 38.291666666666664,
+      "endSeconds": 43.833333333333336
+    },
+    {
+      "title": "Bats in the fog",
+      "startSeconds": 43.833333333333336,
+      "endSeconds": 50.375
     },
     {
       "title": "Empty stage",
-      "startSeconds": 45.375,
-      "endSeconds": 47.375
+      "startSeconds": 50.375,
+      "endSeconds": 52.375
     }
   ],
   "soundEvents": [
     {
-      "label": "First act and approved scare/apology",
+      "label": "spoken-welcome-native-v1.mp4",
       "atFrame": 0,
+      "gain": 0.7036535116824271,
+      "samples": 290000
+    },
+    {
+      "label": "spoken-goodbye-native-v1.mp4",
+      "atFrame": 822,
+      "gain": 0.5,
+      "samples": 194000
+    },
+    {
+      "label": "Morph and menace",
+      "atFrame": 145,
       "gain": 1,
-      "samples": 1598000
+      "samples": 484000
     },
     {
-      "label": "Curved departure",
-      "atFrame": 823,
+      "label": "Approved scare and apology",
+      "atFrame": 387,
+      "gain": 1,
+      "samples": 580000
+    },
+    {
+      "label": "Smoke writing",
+      "atFrame": 677,
+      "gain": 1,
+      "samples": 290000
+    },
+    {
+      "label": "Drift air",
+      "atFrame": 919,
       "gain": 0.12,
-      "samples": 96000
+      "samples": 119040
     },
     {
-      "label": "Local vapor phase-out",
-      "atFrame": 895,
-      "gain": 0.1,
-      "samples": 96000
-    },
-    {
-      "label": "Bats disrupt the smoke greeting",
-      "atFrame": 932,
+      "label": "Bat rush",
+      "atFrame": 1052,
       "gain": 0.6,
       "samples": 314000
     }
   ],
-  "review": "User approved the12sec scare/recovery/apology sequence and mix direction. Revised departure and editorial bat ending await full-context review. Constant safety fit and authored whole-character depth staging; bat source-clipped span108..159 omitted, uncropped rush dissolves into native fog footage. Physical projection and loudspeaker playback unverified."
+  "review": "Approved scare/apology retained. New native lip-synced welcome and goodbye, fixed whole-film framing, smoke drift and contained editorial bat transition await human full-context review. No animated safety zoom. Physical projection and loudspeaker rehearsal unavailable."
 }

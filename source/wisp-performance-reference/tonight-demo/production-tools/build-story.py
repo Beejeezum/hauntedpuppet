@@ -22,6 +22,7 @@ parser.add_argument('--departure', required=True)
 parser.add_argument('--bats', required=True)
 parser.add_argument('--bat-audio', required=True)
 parser.add_argument('--version', required=True, type=int)
+parser.add_argument('--connected-sound', action='store_true', help='Blend a quiet apparition bed and soften effect boundaries; retain voice content')
 args = parser.parse_args()
 root = Path('source/wisp-performance-reference/tonight-demo')
 ff = os.environ.get('HAUNT_FFMPEG') or shutil.which('ffmpeg') or 'work/animation-tools/imageio_ffmpeg/binaries/ffmpeg-macos-aarch64-v7.1'
@@ -84,7 +85,13 @@ def place(samples, at, gain, label, maximum=None):
     length = min(len(samples),len(mix)-at*2000)
     if maximum is not None:
         length = min(length,maximum*2000)
-    mix[at*2000:at*2000+length] += samples[:length]*gain
+    selected=samples[:length].copy()
+    if args.connected_sound:
+        # Never reshape the accepted dialogue; only the late first-act effects
+        # and new nonverbal cue tails receive a gentle boundary fade.
+        fade=min(round(.2*48000),length)
+        selected[-fade:]*=np.linspace(1,0,fade)[:,None]
+    mix[at*2000:at*2000+length] += selected*gain
     events.append({'label':label, 'atFrame':at, 'gain':gain, 'samples':length})
 
 # Preserve the already approved scare/apology mix and first-act sound unchanged.
@@ -93,6 +100,32 @@ effect = audio(Path('source/wisp-performance-reference/ambient-show/sound-study/
 place(effect,clips[1]['startFrame']+24,.12,'Curved departure',48)
 place(effect,clips[1]['startFrame']+96,.1,'Local vapor phase-out',48)
 place(audio(Path(args.bat_audio)),clips[2]['startFrame'],.6,'Bats disrupt the smoke greeting',clips[2]['frames'])
+if args.connected_sound:
+    # Continuous, low-level air from an existing nonverbal asset; no speech,
+    # provider generation or repetitive hard audio splice. Crossfade cycles.
+    raw=subprocess.check_output([ff,'-hide_banner','-loglevel','error','-i','source/wisp-performance-reference/ambient-show/sound-study/wisp-soft-apparition-v1.mp3','-af','atempo=0.6','-ar','48000','-ac','2','-f','f32le','pipe:1'])
+    texture=np.frombuffer(raw,dtype='<f4').reshape(-1,2).copy()
+    overlap=min(round(.8*48000),len(texture)//3)
+    window=np.ones(len(texture),dtype=np.float64)
+    window[:overlap]=np.linspace(0,1,overlap);window[-overlap:]=np.linspace(1,0,overlap)
+    bed=np.zeros_like(mix);weights=np.zeros(len(mix))
+    for start in range(0,len(mix),len(texture)-overlap):
+        count=min(len(texture),len(mix)-start)
+        bed[start:start+count]+=texture[:count]*window[:count,None]
+        weights[start:start+count]+=window[:count]
+    bed/=np.maximum(weights,.001)[:,None]
+    rms=float(np.sqrt(np.mean(bed*bed)))
+    bed*=.0035/max(rms,.00001)
+    # Track the existing foreground envelope, leaving speech and the roar clear.
+    envelope=np.sqrt(np.mean(mix*mix,axis=1))
+    step=960;blocks=np.array([np.sqrt(np.mean(envelope[i:i+step]**2)) for i in range(0,len(envelope),step)])
+    duck=np.interp(np.arange(len(mix)),np.arange(len(blocks))*step,1/(1+(blocks/.007)**2))
+    duck=np.maximum(.12,duck)
+    bed*=duck[:,None]
+    fade=round(.8*48000);bed[:fade]*=np.linspace(0,1,fade)[:,None]
+    end=(frames-48)*2000;bed[end-fade:end]*=np.linspace(1,0,fade)[:,None];bed[end:]=0
+    mix+=bed
+    events.append({'label':'Connected apparition air, ducked under foreground/voice','atFrame':0,'targetUnduckedRMS':.0035,'source':'existing wisp-soft-apparition-v1.mp3','noNewSpeech':True,'loopCrossfadeSeconds':overlap/48000})
 # The last 48 frames remain rigorously silent even if an effect was long.
 mix[-48*2000:] = 0
 peak = float(np.abs(mix).max())

@@ -91,5 +91,7 @@
   "pictureSha256": "1749bbd0b84f8414b5c4631b7e62f8ffe619ae3b4fa63dd3d48170d85c302be2",
   "movieSha256": "d74465249df75dc37aa42629dd4c33efd53daed5fbc95abf5a96f4caaa56abf0",
   "blackTailFrames": 48,
-  "scope": "Preserves all selected source frames; no temporal interpolation or crossfade. Candidate is not approval of source motion, framing, audio mix, joins or physical projection."
+  "scope": "Preserves all selected source frames; no temporal interpolation or crossfade. Candidate is not approval of source motion, framing, audio mix, joins or physical projection.",
+  "humanReview": "Departure still needs work",
+  "reviewScope": "Complete47.375sec story candidate viewed; departure explicitly rejected. No new approval of final motion or bat mix inferred."
 }

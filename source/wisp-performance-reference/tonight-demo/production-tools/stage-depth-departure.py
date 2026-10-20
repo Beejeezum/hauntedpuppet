@@ -1,15 +1,15 @@
-"""Stage native whole-body acting along a depth path behind the native lettering.
+"""Stage native whole-body acting along a fixed-scale drift behind the lettering.
 
 No new provider call. Retains the real wave/backturn, full body/arm motion and
-smoke puff. Only the separated whole-character layer follows an authored depth
-path. This is 2.5D compositing, not an autonomous 3D character rig.
+smoke puff. Only the separated whole-character layer follows an authored translation
+path, without shrinking. This is 2.5D compositing, not an autonomous 3D character rig.
 """
 from pathlib import Path
 import hashlib,json,os,shutil,subprocess
 import cv2
 import numpy as np
 root=Path('source/wisp-performance-reference/tonight-demo')
-output=root/'departure-depth-staged-v5.mp4';report=output.with_suffix('.json')
+output=root/'departure-drift-staged-v7.mp4';report=output.with_suffix('.json')
 if output.exists() or report.exists():raise SystemExit('Preserve existing departure export')
 sources=[(root/'departure-story-revised-v2.mp4',36),(root/'departure-flight-revised-v3.mp4',None)]
 for path,_ in sources:
@@ -34,8 +34,8 @@ try:
             ghost=f.copy();ghost[:,470:]=0
             letters=f.copy();letters[:,:470]=0
             if limit is None:
-                t=n/24;p=smooth(t/2.6);depth=1-.85*p
-                x=390+300*p;y=340-80*np.sin(p*np.pi/2)
+                t=n/24;p=smooth(t/2.6);depth=1
+                x=390+80*p;y=340+35*p
                 transform=np.array([[depth,0,x-depth*270],[0,depth,y-depth*340]],np.float32)
             else:
                 # Counter the native leftward turn with a continuous rightward
@@ -51,5 +51,5 @@ try:
     encoder.stdin.close();assert encoder.wait()==0
 except BaseException:
     encoder.kill();encoder.wait();raise
-report.write_text(json.dumps({'frames':count,'fps':24,'sources':clips,'stageFit':.85,'depth':'whole native ghost layer1→.15 over first2.6seconds of flight, stops shrinking before native puff','path':'wave/backturn lead120px smoothly over36frames, then curved upward/right from source(390,340) to(690,260), behind native translucent letters','blackGapLayerSplitX':470,'releaseApproved':False,'scope':'Authored2.5D depth staging of real full-body video; no separate body-part puppeting or retiming. Must inspect anatomy/layer separation, actual joins, scale and vapor motion, bounds and human direction before final acceptance.','sha256':hashlib.sha256(output.read_bytes()).hexdigest()},indent=2))
+report.write_text(json.dumps({'frames':count,'fps':24,'sources':clips,'stageFit':.85,'depth':'NO animated scale: whole-character transform linear scale stays1.0; constant outerstage fit.85','path':'wave/backturn lead120px over36frames, then gentle80px right/35px down drift over2.6sec; native body and vapor motion preserved','blackGapLayerSplitX':470,'releaseApproved':False,'scope':'Authored2.5D depth staging of real full-body video; no separate body-part puppeting or retiming. Must inspect anatomy/layer separation, actual joins, scale and vapor motion, bounds and human direction before final acceptance.','sha256':hashlib.sha256(output.read_bytes()).hexdigest()},indent=2))
 print(output)

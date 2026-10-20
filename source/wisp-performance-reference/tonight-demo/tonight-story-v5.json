@@ -1,0 +1,157 @@
+{
+  "status": "candidate: human voice, joins and physical projection review pending",
+  "releaseApproved": false,
+  "fps": 24,
+  "frames": 1257,
+  "durationSeconds": 52.375,
+  "clips": [
+    {
+      "title": "Welcome",
+      "file": "spoken-welcome-staged-v1.mp4",
+      "sourceStartFrame": 0,
+      "startFrame": 0,
+      "frames": 145,
+      "sha256": "a881a9a895204878707934159de9108801ad1d0b7a39165861873fddaad632d5"
+    },
+    {
+      "title": "Showing off",
+      "file": "story-prefix-picture-v1.mp4",
+      "sourceStartFrame": 122,
+      "startFrame": 145,
+      "frames": 242,
+      "sha256": "62e5ecdc5911ffdf716e24fbb50af9f941aa606b853168c3c28b9b5a50e39cd0"
+    },
+    {
+      "title": "Scare and apology",
+      "file": "scare-apology-picture-review-v1.mp4",
+      "sourceStartFrame": 0,
+      "startFrame": 387,
+      "frames": 290,
+      "sha256": "e3adad18585fa88c094906432e527a7598de274b3071f041644f187515e7f520"
+    },
+    {
+      "title": "Smoke greeting",
+      "file": "writing-fixed-scale-v2.mp4",
+      "sourceStartFrame": 0,
+      "startFrame": 677,
+      "frames": 145,
+      "sha256": "f79e45b3b078640db571275945d1bbb8b51e6aea2b53f326a5bef24b2e9ff2e5"
+    },
+    {
+      "title": "Boo-bye",
+      "file": "spoken-goodbye-staged-v1.mp4",
+      "sourceStartFrame": 0,
+      "startFrame": 822,
+      "frames": 97,
+      "sha256": "43d58174f2d792495cce48e9d3efeac0daad286232d958765321d6c50779b76e"
+    },
+    {
+      "title": "Drift into mist",
+      "file": "departure-drift-staged-v7.mp4",
+      "sourceStartFrame": 0,
+      "startFrame": 919,
+      "frames": 133,
+      "sha256": "585e6e5c899baab4738c5e665bfb2117c3d248ed211b134e116b017d1d25e8ed"
+    },
+    {
+      "title": "Bats in the fog",
+      "file": "bat-contained-edit-study-v4-picture.mp4",
+      "sourceStartFrame": 0,
+      "startFrame": 1052,
+      "frames": 157,
+      "sha256": "91c36548ec9c048caad4a5f1879f2c263a52b28967d3abfac99758b297e7e8ab"
+    }
+  ],
+  "chapters": [
+    {
+      "title": "Welcome",
+      "startSeconds": 0.0,
+      "endSeconds": 6.041666666666667
+    },
+    {
+      "title": "Showing off",
+      "startSeconds": 6.041666666666667,
+      "endSeconds": 16.125
+    },
+    {
+      "title": "Scare and apology",
+      "startSeconds": 16.125,
+      "endSeconds": 28.208333333333332
+    },
+    {
+      "title": "Smoke greeting",
+      "startSeconds": 28.208333333333332,
+      "endSeconds": 34.25
+    },
+    {
+      "title": "Boo-bye",
+      "startSeconds": 34.25,
+      "endSeconds": 38.291666666666664
+    },
+    {
+      "title": "Drift into mist",
+      "startSeconds": 38.291666666666664,
+      "endSeconds": 43.833333333333336
+    },
+    {
+      "title": "Bats in the fog",
+      "startSeconds": 43.833333333333336,
+      "endSeconds": 50.375
+    },
+    {
+      "title": "Empty stage",
+      "startSeconds": 50.375,
+      "endSeconds": 52.375
+    }
+  ],
+  "soundEvents": [
+    {
+      "label": "spoken-welcome-native-v1.mp4",
+      "atFrame": 0,
+      "gain": 0.7036535116824271,
+      "samples": 290000
+    },
+    {
+      "label": "spoken-goodbye-native-v1.mp4",
+      "atFrame": 822,
+      "gain": 0.5,
+      "samples": 194000
+    },
+    {
+      "label": "Morph and menace",
+      "atFrame": 145,
+      "gain": 1,
+      "samples": 484000
+    },
+    {
+      "label": "Approved scare and apology",
+      "atFrame": 387,
+      "gain": 1,
+      "samples": 580000
+    },
+    {
+      "label": "Smoke writing",
+      "atFrame": 677,
+      "gain": 1,
+      "samples": 290000
+    },
+    {
+      "label": "Drift air",
+      "atFrame": 919,
+      "gain": 0.12,
+      "samples": 119040
+    },
+    {
+      "label": "Bat rush",
+      "atFrame": 1052,
+      "gain": 0.6,
+      "samples": 314000
+    }
+  ],
+  "samplePeak": 0.21753740728496074,
+  "masterFit": 0.74,
+  "animatedStageScaling": false,
+  "blackTailFrames": 48,
+  "pictureSha256": "678f1add05e406f1c5eed1a8c3dfe99c8df29ef49f84ef8135666a3b8f4dc6ef",
+  "soundSha256": "be2ead50035b9be34bcb9cdbc57afdedf3c91549964d45fc125af09aec3917db"
+}

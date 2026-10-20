@@ -1,0 +1,23 @@
+{
+  "frames": 133,
+  "fps": 24,
+  "sources": [
+    {
+      "file": "departure-story-revised-v2.mp4",
+      "frames": 36,
+      "sha256": "ba0e29938e5e0a5c575a68f3e45c6685f550456a227f38bd2e4e25239603ad88"
+    },
+    {
+      "file": "departure-flight-revised-v3.mp4",
+      "frames": 97,
+      "sha256": "72ce0823def81ac3b956eb8a933c613ddae3857a4290e739b8c1acc16edb5023"
+    }
+  ],
+  "stageFit": 0.85,
+  "depth": "NO animated scale: whole-character transform linear scale stays1.0; constant outerstage fit.85",
+  "path": "wave/backturn lead120px over36frames, then gentle80px right/35px down drift over2.6sec; native body and vapor motion preserved",
+  "blackGapLayerSplitX": 470,
+  "releaseApproved": false,
+  "scope": "Authored2.5D depth staging of real full-body video; no separate body-part puppeting or retiming. Must inspect anatomy/layer separation, actual joins, scale and vapor motion, bounds and human direction before final acceptance.",
+  "sha256": "585e6e5c899baab4738c5e665bfb2117c3d248ed211b134e116b017d1d25e8ed"
+}

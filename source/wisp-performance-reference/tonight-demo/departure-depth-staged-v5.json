@@ -19,5 +19,7 @@
   "blackGapLayerSplitX": 470,
   "releaseApproved": false,
   "scope": "Authored2.5D depth staging of real full-body video; no separate body-part puppeting or retiming. Must inspect anatomy/layer separation, actual joins, scale and vapor motion, bounds and human direction before final acceptance.",
-  "sha256": "0a2b7a20d1c65c9329cfa40dfc7e63a723ab1301ca8aaaac878ab9217b343f28"
+  "sha256": "0a2b7a20d1c65c9329cfa40dfc7e63a723ab1301ca8aaaac878ab9217b343f28",
+  "humanReview": "Departure still needs work",
+  "reviewScope": "Complete47.375sec story candidate viewed; departure explicitly rejected. No new approval of final motion or bat mix inferred."
 }

@@ -4,9 +4,9 @@
     {
       "source": "source/wisp-performance-reference/tonight-demo/index.html",
       "destination": "index.html",
-      "bytes": 2144,
-      "sha256": "80490d09a5ba5db5a8bd97b9672273588e42537dc954d44d58018a11b80a6479",
-      "publishedSha256": "814844bd4b39d61298b245d8ad1c691880798d20ff7ef5fe245861de6e19a31b",
+      "bytes": 2195,
+      "sha256": "998ed7163fa17cd7516f2ce5c00a6ff9679632728cac1efc416211c20ce37645",
+      "publishedSha256": "06e8b9886144404579100eb200f90d57866f2da22eddcec447b214ccb5767597",
       "rewrites": [
         {
           "from": "../ambient-show/showdesk.html",
@@ -108,9 +108,9 @@
     {
       "source": "source/wisp-performance-reference/tonight-demo/show.json",
       "destination": "show.json",
-      "bytes": 2503,
-      "sha256": "f2999aa28dd86133c058a893cea763e3e1487100a9c68929830fc97c60ee9c4f",
-      "publishedSha256": "f2999aa28dd86133c058a893cea763e3e1487100a9c68929830fc97c60ee9c4f"
+      "bytes": 2875,
+      "sha256": "82488b564fa922fde30b6183c324dd29c082bea4c80aa47f1a7af54475536526",
+      "publishedSha256": "82488b564fa922fde30b6183c324dd29c082bea4c80aa47f1a7af54475536526"
     },
     {
       "source": "source/wisp-performance-reference/tonight-demo/paired-controls.mjs",
@@ -126,18 +126,18 @@
       "publishedSha256": "7d4f1752cac0ede078dcb38e6444d585ea4a5f11572ba689fa6bf34a7eb85540"
     },
     {
-      "source": "source/wisp-performance-reference/tonight-demo/tonight-story-v3-picture.mp4",
-      "destination": "tonight-story-v3-picture.mp4",
-      "bytes": 1874707,
-      "sha256": "1749bbd0b84f8414b5c4631b7e62f8ffe619ae3b4fa63dd3d48170d85c302be2",
-      "publishedSha256": "1749bbd0b84f8414b5c4631b7e62f8ffe619ae3b4fa63dd3d48170d85c302be2"
+      "source": "source/wisp-performance-reference/tonight-demo/tonight-story-v5-picture.mp4",
+      "destination": "tonight-story-v5-picture.mp4",
+      "bytes": 1799651,
+      "sha256": "678f1add05e406f1c5eed1a8c3dfe99c8df29ef49f84ef8135666a3b8f4dc6ef",
+      "publishedSha256": "678f1add05e406f1c5eed1a8c3dfe99c8df29ef49f84ef8135666a3b8f4dc6ef"
     },
     {
-      "source": "source/wisp-performance-reference/tonight-demo/tonight-story-v3-sound.m4a",
-      "destination": "tonight-story-v3-sound.m4a",
-      "bytes": 800768,
-      "sha256": "70d324131995794728cd15aa90a966ad2fafe63a522a68d3bb6f9995dcd0abab",
-      "publishedSha256": "70d324131995794728cd15aa90a966ad2fafe63a522a68d3bb6f9995dcd0abab"
+      "source": "source/wisp-performance-reference/tonight-demo/tonight-story-v5-sound.m4a",
+      "destination": "tonight-story-v5-sound.m4a",
+      "bytes": 1229530,
+      "sha256": "be2ead50035b9be34bcb9cdbc57afdedf3c91549964d45fc125af09aec3917db",
+      "publishedSha256": "be2ead50035b9be34bcb9cdbc57afdedf3c91549964d45fc125af09aec3917db"
     }
   ]
 }
