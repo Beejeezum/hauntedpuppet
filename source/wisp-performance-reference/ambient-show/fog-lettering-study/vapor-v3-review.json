@@ -23,5 +23,12 @@
     0.1689691817215728
   ],
   "review": "Fresh generation removes sharp serif skeleton and gives variable fog density; still needs human material approval and20percent staged reserve before paid motion. No public promotion.",
-  "approved": false
+  "approved": false,
+  "followupVisualReview": {
+    "observation": "Fresh full-resolution review still shows dense grey letter cores and decorative edge curls despite softer cloudy outlines. This is not yet convincing dispersed vapor throughout the letters.",
+    "productionDecision": "Keep source-only. Do not buy another motion pass or animate opacity alone from this still; lettering needs varying local density, physical breakup and advection rather than disappearance of an intact word silhouette.",
+    "humanApproval": false,
+    "pendingHumanQuestionUnchanged": true,
+    "newRunwaySpend": 0
+  }
 }
