@@ -43,7 +43,7 @@
   "frontEndpoint": "wisp-scary-wide-v2.png",
   "provenance": "Built-in imagegen guided by corrected v17 back pose and endorsed scary front; original output unchanged",
   "controlledTurnPilot": {
-    "status": "Completed; motion candidate awaiting human review, not a loop or production replacement",
+    "status": "Completed; human endorsed motion direction, not a finished loop or production replacement",
     "sessionId": "aeb90327-f7a9-4b66-a7a4-dcbb99938278",
     "assetParentId": "a24641da-5ceb-4e7f-9e4f-71e1f85ba5ed",
     "model": "Kling 2.5 Turbo Pro",
@@ -76,9 +76,19 @@
         "Side and back presentation with articulated arms/hands",
         "Connected irregular fog rather than the v17 smooth ribbon",
         "Ridged skeletal back/shoulders remain an identity concern",
-        "Visible continuity must still be judged at speed by a human"
+        "Human endorsed this motion direction; final loop and anatomy acceptance remain open"
       ],
-      "humanFeedback": "Requested; no answer yet"
+      "humanFeedback": {
+        "answer": "Yes\u2014keep this motion direction",
+        "scope": "Padded v18 turn: same-being identity, fluid fog and full-body motion direction",
+        "notApproved": [
+          "Finished loop joins",
+          "Final back/shoulder anatomy",
+          "Seamless cute/evil transformation",
+          "Live replacement",
+          "Physical projection"
+        ]
+      }
     },
     "derivation": {
       "filter": "scale=1628:918:flags=lanczos,pad=1916:1080:144:81:black",
