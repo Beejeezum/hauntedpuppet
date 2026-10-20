@@ -85,13 +85,13 @@
   "rehearsalFiles": [
     {
       "file": "wisp-clip-player.js",
-      "bytes": 11888,
-      "sha256": "2ea35251ff1fe0963d2a94d8415abbd1777fd1b3d603bc7ef9252345ae3e1200"
+      "bytes": 11881,
+      "sha256": "4b781483af46efaf807e0791171e04e8026034f5662abcf789ac636616351428"
     },
     {
       "file": "wisp-motion-review.html",
-      "bytes": 3897,
-      "sha256": "9fee61b17f4b7bf20414301c9333571e9e9e08e0a2820aa2a38f912465ac27fd"
+      "bytes": 3905,
+      "sha256": "a113abf77fb79f58a97786e4cfc1872f815a82b7102768b00d755aa7787df885"
     },
     {
       "file": "wisp-timed-speech-review.html",
