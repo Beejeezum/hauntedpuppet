@@ -77,5 +77,15 @@
     "pipelines": "https://github.com/Lightricks/LTX-2/blob/main/packages/ltx-pipelines/docs/pipelines.md",
     "localResources": "Observed 24GiB memory and about7.7GiB free disk; documented model download about66GiB. No install/download performed.",
     "runwayInspection": "LTX-2.5 Pro UI showed first/last/reference images and FPS; explicit intermediate timestamp binding not observed. No video submitted."
+  },
+  "reviewBoard": {
+    "file": "wisp-return-pose-review-v1.png",
+    "sha256": "29332319cb1b995f5222845d909ff46ae1f9388054314f1b2a65ead9bde9054b",
+    "scope": "Labeled unretouched thumbnail comparisons; no animation, no approval inferred"
+  },
+  "hostedCandidate": {
+    "url": "https://fal.ai/models/fal-ai/ltx-video-v095/multiconditioning/api",
+    "observed": "Older LTX Video0.9.5 exposes images with start_frame_num. This is not the LTX2 pipeline and must not inherit its parameter contract or a quality claim.",
+    "decision": "Not selected without visual quality proof and existing authorized access; no signup, credentials or generation attempted."
   }
 }
