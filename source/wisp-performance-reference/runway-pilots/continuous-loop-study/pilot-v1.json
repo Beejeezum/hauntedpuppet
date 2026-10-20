@@ -27,5 +27,13 @@
   },
   "prompt": "One continuous five-second painted ghost idle cycle, locked camera and pure black stage. Same complete friendly Wisp at supplied first AND final pose. Keep the character small in this exact framing; every emitted smoke wisp stays inside the central60percent of frame. The WHOLE connected body is continuously alive: torso bends and gently counterbalances, shoulders roll, both elbows and wrists articulate through soft small greeting arcs, four rounded fingers flex independently, head listens with a curious tilt, eyes glance then blink, crest and lower core billow with overlapping vapor drag. Build a flowing closed motion phrase that arrives naturally at the supplied final pose while the fog is still moving. Keep expressive full-body motion through the last second, not a frozen end hold; no reversal or boomerang. Preserve exact face, blue eyes, painterly ivory translucent volume, connected soft arms, coherent lower core. No fish curls, muscular anatomy, detached hands, camera motion, zoom, hard outlines, stars, text or new objects. Face stays friendly. All smoke must fade before the safe boundary.",
   "creditsAfter": 10080,
-  "observedDebit": 60
+  "observedDebit": 60,
+  "lastObservedProgressPercent": 80,
+  "baseline": {
+    "file": "wisp-continuous-idle-v15.mp4",
+    "seamToAdjacentRatio": 6.4785084230147305,
+    "last12MedianRGBStep": 10.22920860123746,
+    "middleMedianRGBStep": 10.916392516736131,
+    "scope": "Pixel diagnostics only; retain actual seam footage review."
+  }
 }

@@ -12,6 +12,7 @@ parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('input', type=Path)
 parser.add_argument('output', type=Path)
 parser.add_argument('--reserve', type=float, default=.15)
+parser.add_argument('--loop-review', action='store_true', help='Add endpoint motion diagnostics and unblended seam contact sheet')
 args = parser.parse_args()
 if not 0 <= args.reserve < .5:
     parser.error('reserve must be between zero and one half')
@@ -68,6 +69,19 @@ report = {'file': args.input.name, 'sha256': hashlib.sha256(args.input.read_byte
     'endpointVisibleRGBDifference': float(np.abs(first.astype(float)-last.astype(float))[mask].mean()) if mask.any() else 0.,
     'scope': 'Decoded RGB bounds and thumbnails only. Empty frames are diagnostics: inspect intentional vanishing separately. Does not prove anatomy, velocity continuity, camera lock, depth, voice, human approval or physical projection.',
     'frames': rows}
+if args.loop_review and len(thumbs) >= 4:
+    # Pixel differences expose a jump or near-hold; they do not infer skeletal velocity.
+    first_step = thumbs[1].astype(float)-thumbs[0].astype(float)
+    last_step = thumbs[-1].astype(float)-thumbs[-2].astype(float)
+    moving = np.logical_or.reduce([t.max(axis=2)>16 for t in (thumbs[0],thumbs[1],thumbs[-2],thumbs[-1])])
+    adjacent = report['adjacentVisibleRGBMedian']
+    middle = differences[len(differences)//4:3*len(differences)//4]
+    report['loopDiagnostics'] = {
+        'seamToAdjacentRatio': report['endpointVisibleRGBDifference']/adjacent if adjacent else None,
+        'last12MedianRGBStep': float(np.median(differences[-12:])),
+        'middleMedianRGBStep': float(np.median(middle)) if middle else None,
+        'endpointStepDifferenceRGB': float(np.abs(first_step-last_step)[moving].mean()) if moving.any() else 0.,
+        'scope': 'Unmodified letterboxed samples and pixel differences, not optical-flow/joint velocity, automatic loop approval or human smoothness acceptance.'}
 args.output.parent.mkdir(parents=True, exist_ok=True)
 args.output.with_suffix('.json').write_text(json.dumps(report, indent=2)+'\n')
 sheet = Image.new('RGB', (1440, 3*302), '#16161b')
@@ -77,4 +91,15 @@ for cell, index in enumerate(np.linspace(0, len(rows)-1, 9).astype(int)):
     sheet.paste(Image.fromarray(cv2.cvtColor(thumbs[index], cv2.COLOR_BGR2RGB)), (x, y))
     draw.text((x+8, y+276), f'Frame {index} | {index/fps:.2f}s' if fps else f'Frame {index}', fill='white')
 sheet.save(args.output.with_suffix('.png'))
+if args.loop_review:
+    seam = Image.new('RGB', (1920, 604), '#16161b')
+    text = ImageDraw.Draw(seam)
+    indices = list(range(max(0,len(thumbs)-4),len(thumbs)))+list(range(min(4,len(thumbs))))
+    for cell,index in enumerate(indices):
+        x,y=(cell%4)*480,(cell//4)*302
+        seam.paste(Image.fromarray(cv2.cvtColor(thumbs[index],cv2.COLOR_BGR2RGB)),(x,y))
+        cycle='Ending' if cell<min(4,len(thumbs)) else 'Next beginning'
+        text.text((x+8,y+276),f'{cycle} | frame {index}',fill='white')
+    seam.save(args.output.with_name(args.output.name+'-seam').with_suffix('.png'))
+
 print(json.dumps({k:v for k,v in report.items() if k != 'frames'}, indent=2))
