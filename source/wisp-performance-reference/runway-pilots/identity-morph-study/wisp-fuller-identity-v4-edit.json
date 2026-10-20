@@ -1,0 +1,31 @@
+{
+  "file": "wisp-fuller-identity-performance-v4-edit.mp4",
+  "sha256": "819f7287bb65291df429cf8812bc9ea7c078e585c578b86a8672f21171783dba",
+  "status": "Pacing edit candidate; not approved or live",
+  "source": "wisp-fuller-identity-performance-v3.mp4",
+  "keptSourceFrames": [
+    "0..231",
+    "244..365"
+  ],
+  "removedSourceFrames": "232..243: twelve settling frames at morph ending",
+  "frameCount": 354,
+  "fps": 24,
+  "durationSeconds": 14.75,
+  "method": "Whole source frames selected and re-encoded at original24fps; no interpolation, reverse, crossfade, pose registration or component overlay. Originals retained.",
+  "decodedReserveFailuresRGB4_8_16": 0,
+  "newJoinVisibleRGBDifference": 8.152536794094136,
+  "followingOriginalStepVisibleRGBDifference": 12.926738371544486,
+  "limits": [
+    "Pixel bounds and differences are not motion continuity acceptance.",
+    "Friendly motion separately endorsed; combined edit unreviewed.",
+    "Scary back anatomy remains too solid.",
+    "Not reverse morph, live speech, finished loop or physical projection acceptance."
+  ],
+  "creditsSpent": 0,
+  "browserPlayback": {
+    "ended": true,
+    "muted": true,
+    "durationSeconds": 14.75,
+    "reportedDroppedFrames": 0
+  }
+}
