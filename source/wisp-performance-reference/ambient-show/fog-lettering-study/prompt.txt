@@ -1,0 +1,8 @@
+Use case: stylized-concept
+Asset type: transparent painted fog-lettering layer for Haunted Puppet, a premium Halloween house projection.
+Primary request: the exact words "HAPPY HALLOWEEN" formed from beautiful luminous spectral fog, ready to be animated later as a composited layer.
+Scene/backdrop: genuinely transparent background, no backdrop or rectangular haze.
+Text (verbatim): "HAPPY" on the first line, "HALLOWEEN" on the second. Spell H-A-P-P-Y and H-A-L-L-O-W-E-E-N exactly. No other text.
+Style/medium: contemporary cinematic storybook apparition, painted volumetric lettering rather than flat vector graphics. Elegant, slightly irregular spooky serif letterforms; legible at street distance. Letters have coherent readable cores and soft translucent fog edges, with fine vapor filaments peeling away gently. Smoke must feel like vapor, never solid fish tails, tubing, rope or carved stone. Cool white luminous fog with a restrained pale-blue halo consistent with the painted Wisp.
+Composition/framing: wide landscape 16:9 canvas. Center the two-line phrase. All lettering, glow and even faint smoke fit strictly within the central 60 percent of the canvas in both width and height, leaving 20 percent completely transparent breathing room on every edge. Keep the whole phrase visible and uncropped.
+Constraints: only the fog lettering; no ghost character, faces, eyes, bats, stars, pumpkins, border, poster, scenery or watermark. Preserve alpha including soft translucent fog. This is a clean reusable projection asset, not a mockup.
