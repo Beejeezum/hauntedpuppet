@@ -1,0 +1,18 @@
+{
+  "status": "Matched3:4 input and output; unpaid initial face preflight accepted",
+  "source": "wisp-fuller-body-portrait-v1.mp4",
+  "output": "wisp-fuller-body-3x4-v2.mp4",
+  "sha256": "3aa3f9b9bbd93a0c25b1f473f35f50e29ee54af41aa993d62dc673fd1352288a",
+  "transform": "Add90 blackpixels each horizontal side; original painted rectangle and time unchanged. Reencoded122frames24fps,1620x2160.",
+  "review": "All122decodedframes RGB4/8/16 pass15percent reserve; lowest18.796percent bottom. Padding does not prove smoke never clipped upstream.",
+  "preflight": {
+    "sessionId": "f55de024-4317-4dee-82d9-9a43162057f0",
+    "tabId": "1941618749",
+    "observed": "Detectingface transitioned to normalcharactercontrols with preservedmotionmessage. Outputautomatically3:4 matchesinput. Historicalfailedoutputstillvisible, notnewgenerationfailure.",
+    "balance": 9950,
+    "generationSubmitted": false
+  },
+  "remaining": "Independentlyvalidatedactor driver still needed before charged transfer; preflight acceptance does not guarantee generation. Voices tab offers GenerateVoice but no evidence this replaces performance-driver need.",
+  "newCredits": 0,
+  "liveReplacement": false
+}
