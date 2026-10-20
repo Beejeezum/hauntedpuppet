@@ -19,7 +19,7 @@ This document is the current plan. Earlier experiments, sources, release checkpo
 | Short-run playback | Two-minute headless Mac browser rehearsal:2880decoded frames, zero reported drops/corruption, output stalls0, errors0. | Evening soak, foreground/background/GPU behavior, physical-device rehearsal or leak absence.120Hz draw sampling does not create120unique poses from24fps film. |
 | Hosted voice | Actual hosted generation status and completed preview observed with microphone off and output muted, after existing cache paths. | Audible voice quality, native visitor conversation, barge-in/latency or physical speaker quality. |
 | Native-avatar pilot | Isolated pinned SDK draft, bounded worker lifecycle and separate user-run Keychain setup.22offline checks pass using synthetic audio/configuration; no actual Keychain access occurred. | Runway Developer/LiveKit project access, avatar provisioning, actual SDK dispatch, provider cancellation/billing or visual benefit. |
-| Release | Production789f509 has prior full regression and hosted synthetic/silent recovery evidence. PR5 preview revisionf2a7c73 has WebKit success; its exact full regression is still running. | Permission to infer new revision success from older green tests. No merge until exact revision passes. |
+| Release | Production4b586604 publishes optional preview from exactly testedf2a7c73. Both full regression/WebKit passed; fresh hosted playback/output checks and asset hashes passed. Main HTML/script are byte-identical to prior789f509. | Attraction completion, native-avatar behavior or physical acceptance. Later local prototype/art commits are outside this release. |
 
 ## Acceptance gates — all remain required
 
@@ -47,7 +47,7 @@ Use the repeatable15-second visual reel: notice a guest, greet, listen, speak a 
 
 ## Critical path from here
 
-1. Wait on the existing exact PR5 CI run39378372940. Do not restart, cancel, supersede or infer completion from an observation timeout. If it passes, publish the optional preview from the tested revision and verify hosted assets, playback, silent output and default-app preservation.
+1. Optional preview release4b586604 is published and verified after exact PR5 CI39378372940 passed. Keep it nondefault, gather human visual/listening feedback, and preserve the main app. Later changes still require their own exact-revision validation; do not infer completion from older green tests.
 2. Obtain human review of the existing talking and scary-v35 candidates before buying variants of the same experiment. Keep v35 as a single performance until its seam and identity are accepted; do not force a loop by reversal or a freeze.
 3. Resolve private Runway Developer/LiveKit project availability (question pending). The prepared SDK pilot must use fictional audio only, inputs off, one admitted job, declared30-second provider cap and bounded local shutdown. Verify actual SDK lifecycle, debited cost and full-body video against v28 before app integration. Web subscription readiness is not developer access.
 4. Correct the coordinated return morph and side/rear material using authored full-character assets and proven conditioning controls. Preserve rejection evidence; do not repeat a failed prompt or claim that reference images bind to exact intermediate timestamps when the UI does not expose that control.
