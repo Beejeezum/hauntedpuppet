@@ -10,7 +10,8 @@
     "minimumCompleteEffectReserve": 0.15,
     "generationTargetReserve": 0.2,
     "text": "Happy Halloween is designed and composited lettering with a tracked hand/stroke reveal; not generated illegible lettering",
-    "completion": "planned slots and approved direction do not establish finished clips or join acceptance"
+    "completion": "planned slots and approved direction do not establish finished clips or join acceptance",
+    "productionStudies": "Source-only candidate evidence. These entries never make a planned card ready or authorize playback/joins."
   },
   "ports": {
     "friendly-rest": {
@@ -512,6 +513,45 @@
       ],
       "targetSecondsWithoutBridges": 145,
       "notes": "Mostly spooky; a short friendly writing interlude; no automatic lunge; return from empty to scary-reform only after reviewed entry. Bridge durations can extend the edit; trim the final authored master to 120\u2013180 seconds without speed-changing acting."
+    }
+  ],
+  "productionStudies": [
+    {
+      "plannedClipIds": [
+        "cute-to-evil"
+      ],
+      "media": "../runway-pilots/film-morph-handoff-study/wisp-forward-film-morph-v39.mp4",
+      "sha256": "ca6209524bb5cec338fe71f807700dab4a7925cd75341e351dc8a317a17599f8",
+      "status": "review-pending",
+      "scope": "Authored forward film; both exact-media joins in round-trip review, human identity/motion/join approval pending."
+    },
+    {
+      "plannedClipIds": [
+        "evil-to-cute"
+      ],
+      "media": "../runway-pilots/film-return-handoff-study/wisp-return-film-morph-v40.mp4",
+      "sha256": "d958fc38d9defd583feb871b673c73600f329fec7d26bc93e84b96bee0edb084",
+      "status": "review-pending",
+      "scope": "Authored return film; both exact-media joins in round-trip review, human identity/motion/join approval pending."
+    },
+    {
+      "plannedClipIds": [
+        "scary-retreat"
+      ],
+      "media": "../runway-pilots/fog-rear-departure-study/wisp-turn-and-departure-review.mp4",
+      "sha256": "18693fb0a7917a699ee5650c37b09bea3ae442b87873339c23fe5ed1a78ccd19",
+      "status": "review-pending",
+      "scope": "Fog turn plus curved rear departure and editorial black hold; all-frame20percent reserve and65exact-black tail frames. Turn direction endorsed; new departure and join need human review. Starting join from original scary study has changed material and is not approved."
+    },
+    {
+      "plannedClipIds": [
+        "friendly-wave",
+        "friendly-depart"
+      ],
+      "media": "../runway-pilots/friendly-wave-departure-study/wisp-idle-wave-handoff-review.mp4",
+      "sha256": "4e2f15c44767e382bbb4091d8e0f5f166676c5c3062693757047474015b1d662",
+      "status": "partial-study-only",
+      "scope": "One wave-and-dispersal candidate, not two finished clips. Does not fulfil wave rest-to-rest or departing turn-away/depth brief; starting join pending."
     }
   ]
 }
