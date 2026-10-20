@@ -1,0 +1,35 @@
+{
+  "purpose": "Explicit public opt-in whole-character preview; not the default renderer or native conversation",
+  "files": [
+    {
+      "source": "source/wisp-performance-reference/runway-pilots/wisp-whole-film-player.js",
+      "destination": "wisp-whole-film-player.js",
+      "sha256": "9c321616bd3cb57871678120e47ab036de8704fe38354101f09bb995fb5d5e06",
+      "bytes": 3767
+    },
+    {
+      "source": "source/wisp-performance-reference/runway-pilots/wisp-whole-film-output.js",
+      "destination": "wisp-whole-film-output.js",
+      "sha256": "45e688882678b147e030bc956c0052caa624d9145a458116bb4897aff046bcb0",
+      "bytes": 1381
+    },
+    {
+      "source": "source/wisp-performance-reference/runway-pilots/wisp-film-output.js",
+      "destination": "wisp-film-output.js",
+      "sha256": "73a6d6f50a27b4f6becbf3f5ff7042b35092beb0dee1ff6ad1f011cf894f6a95",
+      "bytes": 2810
+    },
+    {
+      "source": "source/wisp-performance-reference/runway-pilots/audiovisual-study/wisp-audiovisual-v1.mp4",
+      "destination": "speaking.mp4",
+      "sha256": "9077601aee7624d286e692a7f086f0488f9aec2357fe9609bc7dbd5fda666c0e",
+      "bytes": 1440905
+    },
+    {
+      "source": "source/wisp-performance-reference/runway-pilots/audiovisual-study/wisp-approved-motion-720p-v1.mp4",
+      "destination": "idle.mp4",
+      "sha256": "e759b4183f3fd4e468af30bf00e399704f162a121d949d15064068198ae4c1ca",
+      "bytes": 327587
+    }
+  ]
+}

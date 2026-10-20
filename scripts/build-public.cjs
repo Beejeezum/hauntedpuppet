@@ -7,6 +7,16 @@ fs.rmSync(out, { recursive: true, force: true });
 fs.mkdirSync(out, { recursive: true });
 for (const file of ['index.html', 'app.js']) fs.copyFileSync(path.join(root, file), path.join(out, file));
 for (const dir of ['assets', 'vendor']) fs.cpSync(path.join(root, dir), path.join(out, dir), { recursive: true, filter: file => !/\.(py|key|pem|log)$|\/\.env/.test(file) });
+// Explicitly approved opt-in preview only; never publish the entire source tree.
+const preview = JSON.parse(fs.readFileSync(path.join(root, 'scripts/public-film-preview.json'), 'utf8'));
+const previewOut = path.join(out, 'assets/wisp-film-preview');
+fs.mkdirSync(previewOut, {recursive:true});
+for (const item of preview.files) {
+  if (!item.source.startsWith('source/wisp-performance-reference/runway-pilots/') || path.basename(item.destination) !== item.destination) throw Error('Invalid preview asset path');
+  const bytes = fs.readFileSync(path.join(root, item.source));
+  if (bytes.length !== item.bytes || require('node:crypto').createHash('sha256').update(bytes).digest('hex') !== item.sha256) throw Error('Unreviewed preview asset: '+item.destination);
+  fs.writeFileSync(path.join(previewOut, item.destination), bytes);
+}
 fs.mkdirSync(path.join(out, 'phone_remote'), { recursive: true });
 for (const file of ['index.html', 'phone.js', 'phone.css']) {
   const source = path.join(root, 'phone_remote', file);

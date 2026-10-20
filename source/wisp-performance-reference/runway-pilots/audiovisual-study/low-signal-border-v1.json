@@ -1,0 +1,125 @@
+{
+  "scope": "Threshold4 boundary fails in20frames, threshold8/16pass. Low signalbordercomponentsdiagnostic only; no pixels removed and no automatic fog/noisefinalclassification.",
+  "frames": [
+    {
+      "frame": 43,
+      "borderPixelsRGB5to8": 1,
+      "largestConnectedArea": 1,
+      "maxBorderSignal": 5
+    },
+    {
+      "frame": 57,
+      "borderPixelsRGB5to8": 1,
+      "largestConnectedArea": 1,
+      "maxBorderSignal": 5
+    },
+    {
+      "frame": 58,
+      "borderPixelsRGB5to8": 1,
+      "largestConnectedArea": 1,
+      "maxBorderSignal": 5
+    },
+    {
+      "frame": 60,
+      "borderPixelsRGB5to8": 1,
+      "largestConnectedArea": 1,
+      "maxBorderSignal": 5
+    },
+    {
+      "frame": 64,
+      "borderPixelsRGB5to8": 1,
+      "largestConnectedArea": 1,
+      "maxBorderSignal": 5
+    },
+    {
+      "frame": 65,
+      "borderPixelsRGB5to8": 1,
+      "largestConnectedArea": 1,
+      "maxBorderSignal": 5
+    },
+    {
+      "frame": 66,
+      "borderPixelsRGB5to8": 1,
+      "largestConnectedArea": 1,
+      "maxBorderSignal": 5
+    },
+    {
+      "frame": 68,
+      "borderPixelsRGB5to8": 1,
+      "largestConnectedArea": 1,
+      "maxBorderSignal": 5
+    },
+    {
+      "frame": 69,
+      "borderPixelsRGB5to8": 2,
+      "largestConnectedArea": 1,
+      "maxBorderSignal": 5
+    },
+    {
+      "frame": 73,
+      "borderPixelsRGB5to8": 4,
+      "largestConnectedArea": 3,
+      "maxBorderSignal": 5
+    },
+    {
+      "frame": 87,
+      "borderPixelsRGB5to8": 1,
+      "largestConnectedArea": 1,
+      "maxBorderSignal": 5
+    },
+    {
+      "frame": 88,
+      "borderPixelsRGB5to8": 1,
+      "largestConnectedArea": 1,
+      "maxBorderSignal": 5
+    },
+    {
+      "frame": 89,
+      "borderPixelsRGB5to8": 1,
+      "largestConnectedArea": 1,
+      "maxBorderSignal": 5
+    },
+    {
+      "frame": 90,
+      "borderPixelsRGB5to8": 1,
+      "largestConnectedArea": 1,
+      "maxBorderSignal": 5
+    },
+    {
+      "frame": 91,
+      "borderPixelsRGB5to8": 1,
+      "largestConnectedArea": 1,
+      "maxBorderSignal": 5
+    },
+    {
+      "frame": 100,
+      "borderPixelsRGB5to8": 1,
+      "largestConnectedArea": 1,
+      "maxBorderSignal": 5
+    },
+    {
+      "frame": 116,
+      "borderPixelsRGB5to8": 2,
+      "largestConnectedArea": 2,
+      "maxBorderSignal": 5
+    },
+    {
+      "frame": 117,
+      "borderPixelsRGB5to8": 2,
+      "largestConnectedArea": 2,
+      "maxBorderSignal": 5
+    },
+    {
+      "frame": 118,
+      "borderPixelsRGB5to8": 3,
+      "largestConnectedArea": 2,
+      "maxBorderSignal": 5
+    },
+    {
+      "frame": 119,
+      "borderPixelsRGB5to8": 2,
+      "largestConnectedArea": 2,
+      "maxBorderSignal": 5
+    }
+  ]
+}

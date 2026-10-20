@@ -1,0 +1,9 @@
+{
+  "scope": "20msRMSenvelopealignmentdiagnostic, +/-0.5ssearch. Correlation is not transcript, voice identity, lip sync, naturalness or human listening proof.",
+  "referenceDurationSeconds": 4.6506875,
+  "resultDurationSeconds": 5.056,
+  "bestEnvelopeCorrelation": 0.3423854445549091,
+  "resultEnvelopeLagSeconds": 0.4,
+  "referencePeak": 0.9390869140625,
+  "resultPeak": 0.86761474609375
+}

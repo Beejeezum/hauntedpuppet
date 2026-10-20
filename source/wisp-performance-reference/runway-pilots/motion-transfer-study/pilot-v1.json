@@ -1,0 +1,45 @@
+{
+  "status": "Generating; same submitted job verified at37percent",
+  "sessionId": "eaa709ca-87e4-406a-bdc2-dfc57f1e7d43",
+  "hypothesis": "Use approved v28 whole-body motion as a video reference and softer scary v34 as image identity; avoid v29 frozen identical-endpoint method",
+  "settings": {
+    "model": "Seedance 2.0",
+    "seconds": 5,
+    "resolution": "720p",
+    "aspect": "16:9",
+    "audio": false,
+    "mode": "Reference"
+  },
+  "quotedCredits": 150,
+  "creditsBefore": 9798,
+  "submissionCount": 1,
+  "inputs": [
+    {
+      "role": "Video 1",
+      "file": "../audiovisual-study/wisp-approved-motion-720p-v1.mp4",
+      "sha256": "e759b4183f3fd4e468af30bf00e399704f162a121d949d15064068198ae4c1ca"
+    },
+    {
+      "role": "Image 1",
+      "file": "../scary-identity-study/wisp-scary-vapor-anchor-v34.png",
+      "sha256": "75f39a292fb856a5021c0f88a3eefe9ca04768201344aa68ad2a71f7ff412f7f"
+    }
+  ],
+  "humanApproved": false,
+  "liveReplacement": false,
+  "failIf": [
+    "Friendly face leaks into scary performance",
+    "Hard ribbed anatomy or detached hands",
+    "Last-second body freeze",
+    "Core vanishes unintentionally",
+    "Complete fog reserve under15percent",
+    "Unnatural motion or identity drift"
+  ],
+  "review": "All decoded frames and full-speed motion; no automatic retry",
+  "parentId": "3b0ba88e-2ee4-46dc-968c-a260158cbca7",
+  "creditsAfter": 9648,
+  "observedDebit": 150,
+  "observedAt": "2026-10-20T06:03:15.411407+00:00",
+  "prompt": "One continuous five-second painted scary Wisp performance. Image 1 supplies the exact frightening character identity and soft luminous vapor material. Video 1 supplies ONLY the continuously flowing whole-body acting, timing, camera lock and small buffered stage scale: torso counterbalance, shoulder rolls, distinct elbow/wrist bends, finger articulation, curious head turns and overlapping crest/core billowing. Reinterpret that motion as a menacing spirit, with narrowed glowing blue eyes, a wicked grin and controlled reaching spectral hands, never a friendly face. Keep Image 1 recognizable throughout. Preserve a coherent soft connected body and lower core; the arms are vapor volumes, not bones, ribs or muscular flesh. Keep all faint smoke inside the central 60 percent of the black 16:9 frame, fixed camera, no approach or zoom. Motion continues naturally through the entire last second; no frozen end hold or reversal. One being, no detached components, cuts, text, stars, hard fish curls or background haze. Silent video.",
+  "lastObservedProgressPercent": 37
+}
