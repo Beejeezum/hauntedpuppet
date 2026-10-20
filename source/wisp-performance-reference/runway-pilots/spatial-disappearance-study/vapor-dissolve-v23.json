@@ -1,0 +1,23 @@
+{
+  "file": "wisp-turn-vapor-dissolve-v23.mp4",
+  "sha256": "f3b5d309a2a97ac31dcd159216632d0637f15fc3a0fa01499b5db08b4c7151d1",
+  "source": "source/wisp-performance-reference/runway-pilots/scary-identity-study/wisp-scary-guided-turn-v18-safe-framing.mp4",
+  "sourceSha256": "61aa3a56b325d12a8eb53b3dcf1683bfdc8dda89ad759e83e8ee071c763ffe07",
+  "frames": 170,
+  "fps": 24,
+  "dissolveFrames": [
+    97,
+    121
+  ],
+  "emptyHoldFrames": 48,
+  "method": "Whole painted source film, deterministic multiscale coherent cloud-modulated opacity extinction during final second, then48 authored black frames. No interpolation, part displacement or generated starburst.",
+  "limits": "Compositing study, not native fluid simulation or new hand-drawn animation; does not create an outward poof, additional depth retreat, reappearance or a seamless loop. Needs normal-speed visual approval.",
+  "review": {
+    "status": "Compositing feasibility study; not a finished poof or accepted show performance",
+    "all170FramesReservePassRGB4_8_16": true,
+    "last48AuthoredBlackFrames": true,
+    "decodedEmptyFramesRGB4": 50,
+    "browser": "Muted isolated Chromium reached end with0reported dropped frames. Browser totalVideoFrames174 differs from170decoded source frames; do not equate playback counters with file frame count.",
+    "visual": "Original articulated turn retained; final second uses coherent dimming with cloud-scale opacity variation, avoiding v22 isolated claw remnants. Still reads as a controlled fade, not an outward simulated fog poof. Original back anatomy limitation remains."
+  }
+}
