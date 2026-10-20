@@ -1,0 +1,59 @@
+{
+  "file": "wisp-departure-friendly-return-v27.mp4",
+  "sha256": "2aa5bd4a534ac6c1fa1e70f31c2285d63595416a0b5d753f9f70136a45adaa1d",
+  "frameCount": 303,
+  "fps": 24.0,
+  "size": [
+    1916,
+    1080
+  ],
+  "reserve": 0.15,
+  "thresholdSummaries": {
+    "4": {
+      "emptyFrames": 64,
+      "reserveFailures": 0,
+      "minimumMarginsLTRB": [
+        0.3303757828810021,
+        0.3173277661795407,
+        0.21851851851851853,
+        0.2074074074074074
+      ]
+    },
+    "8": {
+      "emptyFrames": 64,
+      "reserveFailures": 0,
+      "minimumMarginsLTRB": [
+        0.33089770354906056,
+        0.31941544885177453,
+        0.21944444444444444,
+        0.20925925925925926
+      ]
+    },
+    "16": {
+      "emptyFrames": 66,
+      "reserveFailures": 0,
+      "minimumMarginsLTRB": [
+        0.33194154488517746,
+        0.319937369519833,
+        0.22962962962962963,
+        0.21203703703703702
+      ]
+    }
+  },
+  "adjacentVisibleRGBMedian": 19.985030461679816,
+  "endpointVisibleRGBDifference": 82.85022680062741,
+  "scope": "Decoded RGB bounds and thumbnails only. Empty frames are diagnostics: inspect intentional vanishing separately. Does not prove anatomy, velocity continuity, camera lock, depth, voice, human approval or physical projection.",
+  "emptySpansRGB4": [
+    [
+      120,
+      183
+    ]
+  ],
+  "joinFrame": 170,
+  "sourceClips": [
+    "wisp-turn-vapor-dissolve-v24.mp4",
+    "wisp-friendly-arrival-v26.mp4"
+  ],
+  "method": "Straight concatenation at24fps, no reversal/interpolation or visible-pose crossfade. Input frames retained.",
+  "limits": "Review sequence, not a loop or visible cute/evil morph. v24direction feedback pending; v15 fuller-motion approval does not approve v26 spatial path. No physical projection or live speech proven."
+}

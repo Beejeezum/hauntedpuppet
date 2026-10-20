@@ -1,5 +1,5 @@
 {
-  "status": "Generating; not a completed clip",
+  "status": "Completed; improved soft-fog study, not production-approved",
   "sessionId": "fedc4316-6c84-44fd-9a65-75a931164da3",
   "assetParentId": "f5b7e49e-a1aa-4073-bfe0-c2966635237b",
   "model": "Kling2.5TurboPro",
@@ -19,9 +19,35 @@
     "All-frame full-effect reserve",
     "No assumed time control from endpoint reference alone"
   ],
-  "nextAction": "Poll same job; never resubmit on observation timeout. Download original before accepting or spending again.",
+  "nextAction": "Normal-speed visual review of soft fog and anatomy; no additional blind generation. Not installed as fast friendly override.",
   "creditsAfter": 10241,
   "observedDebit": 60,
-  "observedProgressPercent": 3,
-  "title": "Wisp Ghost Dissolution Performance"
+  "title": "Wisp Ghost Dissolution Performance",
+  "file": "wisp-poof-v25.mp4",
+  "sha256": "624f4f06d91241ff3bc4e4c58e3998f77a3f1a76cf5da1b652dce6ff6a8e3bfd",
+  "review": {
+    "rawFrames": 122,
+    "fps": 24,
+    "rawRGB4ReserveFailures": 57,
+    "rawRGB8ReserveFailures": 53,
+    "rawRGB4EmptyFrames": 10,
+    "visual": [
+      "No v21-style sharp starburst in9-frame contact review",
+      "Body and hands curl, then billowing cloud envelopes and dims the face",
+      "Still visible after3.5seconds, missing requested empty-stage timing",
+      "Upper arms become more humanoid/solid; identity/anatomy refinement remains",
+      "Pure black ending reached; lowlight remnants linger before it"
+    ],
+    "limits": "Contact/all-frame diagnostic review only; no full-speed human or physical acceptance"
+  },
+  "safeReviewCopy": {
+    "file": "wisp-poof-v25-safe-framing.mp4",
+    "sha256": "55da756d933601721994fc6b79a0f788e9111ed63be90db3b130f87e92daef35",
+    "filter": "scale=1628:918:flags=lanczos,pad=1916:1080:144:81:black,tpad=stop_mode=add:stop=48:color=black",
+    "frames": 170,
+    "fps": 24,
+    "reserveFailuresRGB4_8_16": 0,
+    "extraBlackFrames": 48,
+    "scope": "Fixed85percent display fit and2second authored empty hold. All original122frames retained; does not fix late dissolution or anatomy."
+  }
 }

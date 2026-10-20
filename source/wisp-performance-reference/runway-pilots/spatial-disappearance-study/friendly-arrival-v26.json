@@ -1,0 +1,11 @@
+{
+  "file": "wisp-friendly-arrival-v26.mp4",
+  "sha256": "707a00fd52dc21b0512296c3f3b6aec28298187a640d39677ce99c5826730b9f",
+  "source": "source/wisp-performance-reference/runway-pilots/wisp-continuous-idle-v15.mp4",
+  "sourceSha256": "07f9ca935ea024d5d0342bbcf5e38e2dbb84306be031467a1f9ff69a3da67595",
+  "frames": 133,
+  "fps": 24,
+  "authoredOpeningBlackFrames": 12,
+  "method": "Unretimed fuller articulated v15 footage, fixed-camera curved perspective approach with6degree bank, safe70percent near fit,12black opening frames and18-frame opacity reformation. No interpolation or reversal.",
+  "limits": "Existing painted pose motion plus2.5D compositing, not additional3D articulation or an outward poof. Ending has no validated join to another film; not a finished loop or live interaction proof."
+}
