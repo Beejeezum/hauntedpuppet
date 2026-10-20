@@ -1,0 +1,29 @@
+{
+  "status": "Single Kling2.5TurboPro generation queued",
+  "anchor": "wisp-fuller-loop-anchor-v1.png",
+  "sha256": "681333d01e4ead7cd3be6845963844d0ad5ecfe80cef23a48c5f19a017ccec81",
+  "source": "wisp-continuous-idle-v15.mp4 frame0",
+  "method": "Unmodified decoded painting, stable85percent fit to create fog buffer; no illustration repaint or pose manipulation.",
+  "hypothesis": "Identical endpoint references constrain loop pose while authored overlapping arm/core/crest motion continues between anchors; need actual velocity/seam review.",
+  "failIf": [
+    "Ending freezes or reverses",
+    "Anatomy or identity drifts",
+    "Complete fog reserve under15percent",
+    "Visible jump at three repeated boundaries",
+    "Independent hands or fog detach"
+  ],
+  "plannedDurationSeconds": 5,
+  "creditQuote": "Not yet inspected",
+  "sessionId": "c1401fe7-0b4d-4241-91b1-3478901dc3fe",
+  "parentId": "0cac5b9c-d172-4281-ba14-615d4444de8d",
+  "quotedCredits": 60,
+  "creditsBefore": 10140,
+  "submissionCount": 1,
+  "settings": {
+    "model": "Kling2.5TurboPro",
+    "duration": 5,
+    "aspect": "16:9",
+    "firstAndLast": "Same buffered anchor uploaded into both distinct slots"
+  },
+  "prompt": "One continuous five-second painted ghost idle cycle, locked camera and pure black stage. Same complete friendly Wisp at supplied first AND final pose. Keep the character small in this exact framing; every emitted smoke wisp stays inside the central60percent of frame. The WHOLE connected body is continuously alive: torso bends and gently counterbalances, shoulders roll, both elbows and wrists articulate through soft small greeting arcs, four rounded fingers flex independently, head listens with a curious tilt, eyes glance then blink, crest and lower core billow with overlapping vapor drag. Build a flowing closed motion phrase that arrives naturally at the supplied final pose while the fog is still moving. Keep expressive full-body motion through the last second, not a frozen end hold; no reversal or boomerang. Preserve exact face, blue eyes, painterly ivory translucent volume, connected soft arms, coherent lower core. No fish curls, muscular anatomy, detached hands, camera motion, zoom, hard outlines, stars, text or new objects. Face stays friendly. All smoke must fade before the safe boundary."
+}
