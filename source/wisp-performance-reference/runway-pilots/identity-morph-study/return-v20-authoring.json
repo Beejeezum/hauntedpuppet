@@ -1,5 +1,5 @@
 {
-  "status": "Queued; not a completed or accepted return",
+  "status": "Completed; rejected for fast friendly override",
   "sessionId": "128b4365-88d1-4581-939c-d059060c47bf",
   "assetParentId": "c00866db-e88b-4ba9-a9a7-560a87a30b4b",
   "model": "Kling2.5TurboPro",
@@ -25,5 +25,22 @@
   ],
   "limits": "No native voice, operator override latency, child interaction or physical projection proven; not installed in live renderer",
   "creditsAfter": 10511,
-  "observedDebit": 60
+  "observedDebit": 60,
+  "file": "wisp-friendly-return-v20.mp4",
+  "sha256": "0757dc8a0d41a20164aa8ea0cf11c3a76085e88275d01fb2d6c06c5b118afee4",
+  "review": {
+    "frames": 122,
+    "fps": 24,
+    "allFrameRGB4_8_16ReservePass": true,
+    "emptyFrames": 0,
+    "visualFailure": [
+      "Still frightening at1.5seconds instead of fully friendly",
+      "Sweet blue eyes visible around1.75seconds while elongated hands/claws persist through2.5seconds",
+      "Fully rounded friendly presentation occurs around2.75\u20133seconds",
+      "Ending slows toward near-hold; last12RGBmedian0.876versusmiddle5.279"
+    ],
+    "sampling": "Timing contact every0.25seconds through3seconds; source retained for further inspection",
+    "limits": "No full-speed human approval, no child interaction test; framing pass cannot override choreography failure"
+  },
+  "nextStep": "Stop same-prompt paid retries. Demonstrate authored intermediate-pose/timing control before another return generation. Keep existing immediate friendly fallback available."
 }
