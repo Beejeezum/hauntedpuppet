@@ -1,0 +1,15 @@
+{
+  "status": "User endorsed scary direction; still illustration, not animation-ready approval",
+  "image": "wisp-scary-revealed-v1.png",
+  "sha256": "256eecaf7265722625055541b0a9b9477f3df2f900fe2cd7a08539161f4fb0d2",
+  "provenance": "Generated fictional Wisp identity study, original unchanged",
+  "knownFailures": [
+    "Visible smoke reserve is below requested 15 percent; framing fails animation acceptance.",
+    "No side/back, motion, morph or speaking performance established."
+  ],
+  "identity": [
+    "Same crest, connected core, blue eyes and attached hands",
+    "Hollow sockets, predatory mouth and claws",
+    "Soft vapor edges, no solid curled tail"
+  ]
+}

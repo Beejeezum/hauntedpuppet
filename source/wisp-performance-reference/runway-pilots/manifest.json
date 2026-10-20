@@ -85,13 +85,13 @@
   "rehearsalFiles": [
     {
       "file": "wisp-clip-player.js",
-      "bytes": 10843,
-      "sha256": "405666aadf8380325458d45b1a6dcf46e61b7c737e44b5ec3fe41d3791d7b8c7"
+      "bytes": 11888,
+      "sha256": "2ea35251ff1fe0963d2a94d8415abbd1777fd1b3d603bc7ef9252345ae3e1200"
     },
     {
       "file": "wisp-motion-review.html",
-      "bytes": 3672,
-      "sha256": "a436388ab0e55226880893e3d3e36bf61809bffb5fb327ce61303e7e7d6fcb81"
+      "bytes": 3897,
+      "sha256": "9fee61b17f4b7bf20414301c9333571e9e9e08e0a2820aa2a38f912465ac27fd"
     },
     {
       "file": "wisp-timed-speech-review.html",
@@ -135,8 +135,13 @@
     },
     {
       "file": "wisp-show-library.json",
-      "bytes": 9421,
-      "sha256": "aa3c10a092164b0bd8a986b95aab623e1d21e894bbb5ac7abad8cd91dc2598e5"
+      "bytes": 11745,
+      "sha256": "68168ae11bf3e0a48854ab8bb755f6974b285de06c61276c404c309207b626c2"
+    },
+    {
+      "file": "wisp-show-speech.js",
+      "bytes": 2881,
+      "sha256": "b746e8f279061fc0737463a40a7e690be302e853999f452c68ba0e8e58033895"
     }
   ]
 }

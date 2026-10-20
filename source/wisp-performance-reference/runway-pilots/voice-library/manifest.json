@@ -1,0 +1,2707 @@
+{
+  "source": "assets/show-performances.json",
+  "sourceSha256": "f918582b7d1c834627ee6809928d697fb4f511c7f965019efebfd31d91893101",
+  "provenance": "Existing generated fictional speech, not guest/microphone recordings. No new provider requests. Legacy Coral casting; not a new scary voice.",
+  "performances": [
+    {
+      "id": "welcome",
+      "file": "welcome.wav",
+      "text": "Well, hello there! You can actually see me? How wonderfully spooky.",
+      "voice": "coral",
+      "duration": 5.7,
+      "visemes": [
+        {
+          "start": 0,
+          "end": 0.04,
+          "shape": "rest",
+          "phoneme": "W"
+        },
+        {
+          "start": 0.04,
+          "end": 0.12,
+          "shape": "U",
+          "phoneme": "W"
+        },
+        {
+          "start": 0.12,
+          "end": 0.26,
+          "shape": "E",
+          "phoneme": "EH"
+        },
+        {
+          "start": 0.26,
+          "end": 0.42,
+          "shape": "L",
+          "phoneme": "L"
+        },
+        {
+          "start": 0.42,
+          "end": 0.82,
+          "shape": "rest",
+          "phoneme": "L"
+        },
+        {
+          "start": 0.82,
+          "end": 0.86,
+          "shape": "A",
+          "phoneme": "HH"
+        },
+        {
+          "start": 0.86,
+          "end": 0.9,
+          "shape": "E",
+          "phoneme": "EH"
+        },
+        {
+          "start": 0.9,
+          "end": 1.01,
+          "shape": "L",
+          "phoneme": "L"
+        },
+        {
+          "start": 1.01,
+          "end": 1.17,
+          "shape": "O",
+          "phoneme": "OW"
+        },
+        {
+          "start": 1.17,
+          "end": 1.23,
+          "shape": "TH",
+          "phoneme": "DH"
+        },
+        {
+          "start": 1.23,
+          "end": 1.32,
+          "shape": "E",
+          "phoneme": "EH"
+        },
+        {
+          "start": 1.32,
+          "end": 1.44,
+          "shape": "U",
+          "phoneme": "R"
+        },
+        {
+          "start": 1.44,
+          "end": 2.13,
+          "shape": "rest",
+          "phoneme": "R"
+        },
+        {
+          "start": 2.13,
+          "end": 2.22,
+          "shape": "E",
+          "phoneme": "Y"
+        },
+        {
+          "start": 2.22,
+          "end": 2.27,
+          "shape": "U",
+          "phoneme": "UW"
+        },
+        {
+          "start": 2.27,
+          "end": 2.31,
+          "shape": "rest",
+          "phoneme": "K"
+        },
+        {
+          "start": 2.31,
+          "end": 2.39,
+          "shape": "A",
+          "phoneme": "K"
+        },
+        {
+          "start": 2.39,
+          "end": 2.43,
+          "shape": "S",
+          "phoneme": "N"
+        },
+        {
+          "start": 2.43,
+          "end": 2.56,
+          "shape": "A",
+          "phoneme": "AE"
+        },
+        {
+          "start": 2.56,
+          "end": 2.58,
+          "shape": "rest",
+          "phoneme": "K"
+        },
+        {
+          "start": 2.58,
+          "end": 2.6,
+          "shape": "A",
+          "phoneme": "K"
+        },
+        {
+          "start": 2.6,
+          "end": 2.68,
+          "shape": "CH",
+          "phoneme": "SH"
+        },
+        {
+          "start": 2.68,
+          "end": 2.72,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 2.72,
+          "end": 2.77,
+          "shape": "L",
+          "phoneme": "L"
+        },
+        {
+          "start": 2.77,
+          "end": 2.87,
+          "shape": "E",
+          "phoneme": "IY"
+        },
+        {
+          "start": 2.87,
+          "end": 3.05,
+          "shape": "S",
+          "phoneme": "S"
+        },
+        {
+          "start": 3.05,
+          "end": 3.2,
+          "shape": "E",
+          "phoneme": "IY"
+        },
+        {
+          "start": 3.2,
+          "end": 3.26,
+          "shape": "MBP",
+          "phoneme": "M"
+        },
+        {
+          "start": 3.26,
+          "end": 3.46,
+          "shape": "E",
+          "phoneme": "IY"
+        },
+        {
+          "start": 3.46,
+          "end": 3.87,
+          "shape": "rest",
+          "phoneme": "IY"
+        },
+        {
+          "start": 3.87,
+          "end": 4.13,
+          "shape": "A",
+          "phoneme": "HH"
+        },
+        {
+          "start": 4.13,
+          "end": 4.37,
+          "shape": "U",
+          "phoneme": "W"
+        },
+        {
+          "start": 4.37,
+          "end": 4.44,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 4.44,
+          "end": 4.55,
+          "shape": "S",
+          "phoneme": "N"
+        },
+        {
+          "start": 4.55,
+          "end": 4.61,
+          "shape": "E",
+          "phoneme": "ER"
+        },
+        {
+          "start": 4.61,
+          "end": 4.67,
+          "shape": "FV",
+          "phoneme": "F"
+        },
+        {
+          "start": 4.67,
+          "end": 4.72,
+          "shape": "rest",
+          "phoneme": "F"
+        },
+        {
+          "start": 4.72,
+          "end": 4.78,
+          "shape": "L",
+          "phoneme": "L"
+        },
+        {
+          "start": 4.78,
+          "end": 4.84,
+          "shape": "E",
+          "phoneme": "IY"
+        },
+        {
+          "start": 4.84,
+          "end": 4.99,
+          "shape": "S",
+          "phoneme": "S"
+        },
+        {
+          "start": 4.99,
+          "end": 5.06,
+          "shape": "rest",
+          "phoneme": "P"
+        },
+        {
+          "start": 5.06,
+          "end": 5.19,
+          "shape": "U",
+          "phoneme": "UW"
+        },
+        {
+          "start": 5.19,
+          "end": 5.28,
+          "shape": "rest",
+          "phoneme": "K"
+        },
+        {
+          "start": 5.28,
+          "end": 5.46,
+          "shape": "E",
+          "phoneme": "IY"
+        },
+        {
+          "start": 5.46,
+          "end": 5.69,
+          "shape": "rest",
+          "phoneme": "IY"
+        }
+      ],
+      "syncMode": "forced-phoneme-alignment",
+      "alignmentWarning": "Automatic English alignment. Review names, whispers and unusually theatrical delivery.",
+      "sha256": "fc9cd01c474f49280ca14f39549e00327f75d888914db23e68927d63e0b59286"
+    },
+    {
+      "id": "candy",
+      "file": "candy.wav",
+      "text": "An important ghost question. Is there candy? I am conducting extremely serious research.",
+      "voice": "coral",
+      "duration": 8.45,
+      "visemes": [
+        {
+          "start": 0,
+          "end": 0.21,
+          "shape": "rest",
+          "phoneme": "SIL"
+        },
+        {
+          "start": 0.21,
+          "end": 0.33,
+          "shape": "A",
+          "phoneme": "AE"
+        },
+        {
+          "start": 0.33,
+          "end": 0.38,
+          "shape": "S",
+          "phoneme": "N"
+        },
+        {
+          "start": 0.38,
+          "end": 0.45,
+          "shape": "E",
+          "phoneme": "IH"
+        },
+        {
+          "start": 0.45,
+          "end": 0.57,
+          "shape": "MBP",
+          "phoneme": "M"
+        },
+        {
+          "start": 0.57,
+          "end": 0.65,
+          "shape": "rest",
+          "phoneme": "P"
+        },
+        {
+          "start": 0.65,
+          "end": 0.67,
+          "shape": "MBP",
+          "phoneme": "P"
+        },
+        {
+          "start": 0.67,
+          "end": 0.72,
+          "shape": "rest",
+          "phoneme": "P"
+        },
+        {
+          "start": 0.72,
+          "end": 0.83,
+          "shape": "O",
+          "phoneme": "AO"
+        },
+        {
+          "start": 0.83,
+          "end": 0.87,
+          "shape": "U",
+          "phoneme": "R"
+        },
+        {
+          "start": 0.87,
+          "end": 0.95,
+          "shape": "rest",
+          "phoneme": "R"
+        },
+        {
+          "start": 0.95,
+          "end": 0.96,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 0.96,
+          "end": 1.04,
+          "shape": "S",
+          "phoneme": "N"
+        },
+        {
+          "start": 1.04,
+          "end": 1.19,
+          "shape": "A",
+          "phoneme": "G"
+        },
+        {
+          "start": 1.19,
+          "end": 1.33,
+          "shape": "O",
+          "phoneme": "OW"
+        },
+        {
+          "start": 1.33,
+          "end": 1.44,
+          "shape": "S",
+          "phoneme": "S"
+        },
+        {
+          "start": 1.44,
+          "end": 1.46,
+          "shape": "rest",
+          "phoneme": "T"
+        },
+        {
+          "start": 1.46,
+          "end": 1.48,
+          "shape": "S",
+          "phoneme": "T"
+        },
+        {
+          "start": 1.48,
+          "end": 1.53,
+          "shape": "rest",
+          "phoneme": "T"
+        },
+        {
+          "start": 1.53,
+          "end": 1.56,
+          "shape": "A",
+          "phoneme": "K"
+        },
+        {
+          "start": 1.56,
+          "end": 1.62,
+          "shape": "U",
+          "phoneme": "W"
+        },
+        {
+          "start": 1.62,
+          "end": 1.68,
+          "shape": "E",
+          "phoneme": "EH"
+        },
+        {
+          "start": 1.68,
+          "end": 1.78,
+          "shape": "S",
+          "phoneme": "S"
+        },
+        {
+          "start": 1.78,
+          "end": 1.84,
+          "shape": "rest",
+          "phoneme": "S"
+        },
+        {
+          "start": 1.84,
+          "end": 1.87,
+          "shape": "CH",
+          "phoneme": "CH"
+        },
+        {
+          "start": 1.87,
+          "end": 1.94,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 1.94,
+          "end": 2.08,
+          "shape": "S",
+          "phoneme": "N"
+        },
+        {
+          "start": 2.08,
+          "end": 2.76,
+          "shape": "rest",
+          "phoneme": "N"
+        },
+        {
+          "start": 2.76,
+          "end": 2.84,
+          "shape": "E",
+          "phoneme": "IH"
+        },
+        {
+          "start": 2.84,
+          "end": 2.88,
+          "shape": "S",
+          "phoneme": "Z"
+        },
+        {
+          "start": 2.88,
+          "end": 3.01,
+          "shape": "TH",
+          "phoneme": "DH"
+        },
+        {
+          "start": 3.01,
+          "end": 3.05,
+          "shape": "E",
+          "phoneme": "EH"
+        },
+        {
+          "start": 3.05,
+          "end": 3.15,
+          "shape": "U",
+          "phoneme": "R"
+        },
+        {
+          "start": 3.15,
+          "end": 3.23,
+          "shape": "rest",
+          "phoneme": "K"
+        },
+        {
+          "start": 3.23,
+          "end": 3.48,
+          "shape": "A",
+          "phoneme": "K"
+        },
+        {
+          "start": 3.48,
+          "end": 3.58,
+          "shape": "S",
+          "phoneme": "N"
+        },
+        {
+          "start": 3.58,
+          "end": 3.74,
+          "shape": "E",
+          "phoneme": "IY"
+        },
+        {
+          "start": 3.74,
+          "end": 4.84,
+          "shape": "rest",
+          "phoneme": "IY"
+        },
+        {
+          "start": 4.84,
+          "end": 5.08,
+          "shape": "A",
+          "phoneme": "AY"
+        },
+        {
+          "start": 5.08,
+          "end": 5.17,
+          "shape": "MBP",
+          "phoneme": "M"
+        },
+        {
+          "start": 5.17,
+          "end": 5.21,
+          "shape": "rest",
+          "phoneme": "K"
+        },
+        {
+          "start": 5.21,
+          "end": 5.29,
+          "shape": "A",
+          "phoneme": "K"
+        },
+        {
+          "start": 5.29,
+          "end": 5.42,
+          "shape": "S",
+          "phoneme": "N"
+        },
+        {
+          "start": 5.42,
+          "end": 5.53,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 5.53,
+          "end": 5.64,
+          "shape": "rest",
+          "phoneme": "K"
+        },
+        {
+          "start": 5.64,
+          "end": 5.68,
+          "shape": "E",
+          "phoneme": "IH"
+        },
+        {
+          "start": 5.68,
+          "end": 5.78,
+          "shape": "S",
+          "phoneme": "NG"
+        },
+        {
+          "start": 5.78,
+          "end": 5.89,
+          "shape": "rest",
+          "phoneme": "NG"
+        },
+        {
+          "start": 5.89,
+          "end": 5.94,
+          "shape": "E",
+          "phoneme": "EH"
+        },
+        {
+          "start": 5.94,
+          "end": 5.96,
+          "shape": "A",
+          "phoneme": "K"
+        },
+        {
+          "start": 5.96,
+          "end": 6.02,
+          "shape": "rest",
+          "phoneme": "K"
+        },
+        {
+          "start": 6.02,
+          "end": 6.24,
+          "shape": "S",
+          "phoneme": "S"
+        },
+        {
+          "start": 6.24,
+          "end": 6.3,
+          "shape": "rest",
+          "phoneme": "T"
+        },
+        {
+          "start": 6.3,
+          "end": 6.31,
+          "shape": "S",
+          "phoneme": "T"
+        },
+        {
+          "start": 6.31,
+          "end": 6.49,
+          "shape": "U",
+          "phoneme": "R"
+        },
+        {
+          "start": 6.49,
+          "end": 6.59,
+          "shape": "E",
+          "phoneme": "IY"
+        },
+        {
+          "start": 6.59,
+          "end": 6.69,
+          "shape": "MBP",
+          "phoneme": "M"
+        },
+        {
+          "start": 6.69,
+          "end": 6.75,
+          "shape": "L",
+          "phoneme": "L"
+        },
+        {
+          "start": 6.75,
+          "end": 6.87,
+          "shape": "E",
+          "phoneme": "IY"
+        },
+        {
+          "start": 6.87,
+          "end": 7.09,
+          "shape": "S",
+          "phoneme": "S"
+        },
+        {
+          "start": 7.09,
+          "end": 7.16,
+          "shape": "E",
+          "phoneme": "IH"
+        },
+        {
+          "start": 7.16,
+          "end": 7.27,
+          "shape": "U",
+          "phoneme": "R"
+        },
+        {
+          "start": 7.27,
+          "end": 7.4,
+          "shape": "E",
+          "phoneme": "IY"
+        },
+        {
+          "start": 7.4,
+          "end": 7.44,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 7.44,
+          "end": 7.58,
+          "shape": "S",
+          "phoneme": "S"
+        },
+        {
+          "start": 7.58,
+          "end": 7.62,
+          "shape": "rest",
+          "phoneme": "S"
+        },
+        {
+          "start": 7.62,
+          "end": 7.73,
+          "shape": "U",
+          "phoneme": "R"
+        },
+        {
+          "start": 7.73,
+          "end": 7.81,
+          "shape": "E",
+          "phoneme": "IY"
+        },
+        {
+          "start": 7.81,
+          "end": 7.93,
+          "shape": "S",
+          "phoneme": "S"
+        },
+        {
+          "start": 7.93,
+          "end": 7.94,
+          "shape": "rest",
+          "phoneme": "S"
+        },
+        {
+          "start": 7.94,
+          "end": 8.02,
+          "shape": "E",
+          "phoneme": "ER"
+        },
+        {
+          "start": 8.02,
+          "end": 8.16,
+          "shape": "rest",
+          "phoneme": "ER"
+        },
+        {
+          "start": 8.16,
+          "end": 8.26,
+          "shape": "CH",
+          "phoneme": "CH"
+        },
+        {
+          "start": 8.26,
+          "end": 8.44,
+          "shape": "rest",
+          "phoneme": "CH"
+        }
+      ],
+      "syncMode": "forced-phoneme-alignment",
+      "alignmentWarning": "Automatic English alignment. Review names, whispers and unusually theatrical delivery.",
+      "sha256": "b34171e9c4079975c341b439c7ed7fe11bf87065694abbb23e45874ee234d950"
+    },
+    {
+      "id": "joke",
+      "file": "joke.wav",
+      "text": "Why did the ghost take the elevator? To lift his spirits! I have been practising that for a hundred years.",
+      "voice": "coral",
+      "duration": 7.15,
+      "visemes": [
+        {
+          "start": 0,
+          "end": 0.02,
+          "shape": "rest",
+          "phoneme": "W"
+        },
+        {
+          "start": 0.02,
+          "end": 0.15,
+          "shape": "U",
+          "phoneme": "W"
+        },
+        {
+          "start": 0.15,
+          "end": 0.34,
+          "shape": "A",
+          "phoneme": "AY"
+        },
+        {
+          "start": 0.34,
+          "end": 0.38,
+          "shape": "S",
+          "phoneme": "D"
+        },
+        {
+          "start": 0.38,
+          "end": 0.4,
+          "shape": "rest",
+          "phoneme": "D"
+        },
+        {
+          "start": 0.4,
+          "end": 0.44,
+          "shape": "E",
+          "phoneme": "IH"
+        },
+        {
+          "start": 0.44,
+          "end": 0.49,
+          "shape": "S",
+          "phoneme": "D"
+        },
+        {
+          "start": 0.49,
+          "end": 0.52,
+          "shape": "TH",
+          "phoneme": "DH"
+        },
+        {
+          "start": 0.52,
+          "end": 0.59,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 0.59,
+          "end": 0.65,
+          "shape": "rest",
+          "phoneme": "G"
+        },
+        {
+          "start": 0.65,
+          "end": 0.68,
+          "shape": "A",
+          "phoneme": "G"
+        },
+        {
+          "start": 0.68,
+          "end": 0.81,
+          "shape": "O",
+          "phoneme": "OW"
+        },
+        {
+          "start": 0.81,
+          "end": 0.94,
+          "shape": "S",
+          "phoneme": "S"
+        },
+        {
+          "start": 0.94,
+          "end": 0.99,
+          "shape": "rest",
+          "phoneme": "T"
+        },
+        {
+          "start": 0.99,
+          "end": 1.05,
+          "shape": "S",
+          "phoneme": "T"
+        },
+        {
+          "start": 1.05,
+          "end": 1.11,
+          "shape": "E",
+          "phoneme": "EY"
+        },
+        {
+          "start": 1.11,
+          "end": 1.13,
+          "shape": "A",
+          "phoneme": "K"
+        },
+        {
+          "start": 1.13,
+          "end": 1.23,
+          "shape": "rest",
+          "phoneme": "K"
+        },
+        {
+          "start": 1.23,
+          "end": 1.37,
+          "shape": "E",
+          "phoneme": "IY"
+        },
+        {
+          "start": 1.37,
+          "end": 1.46,
+          "shape": "L",
+          "phoneme": "L"
+        },
+        {
+          "start": 1.46,
+          "end": 1.49,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 1.49,
+          "end": 1.53,
+          "shape": "FV",
+          "phoneme": "V"
+        },
+        {
+          "start": 1.53,
+          "end": 1.55,
+          "shape": "rest",
+          "phoneme": "V"
+        },
+        {
+          "start": 1.55,
+          "end": 1.65,
+          "shape": "E",
+          "phoneme": "EY"
+        },
+        {
+          "start": 1.65,
+          "end": 1.69,
+          "shape": "S",
+          "phoneme": "T"
+        },
+        {
+          "start": 1.69,
+          "end": 1.79,
+          "shape": "E",
+          "phoneme": "ER"
+        },
+        {
+          "start": 1.79,
+          "end": 2.59,
+          "shape": "rest",
+          "phoneme": "ER"
+        },
+        {
+          "start": 2.59,
+          "end": 2.65,
+          "shape": "S",
+          "phoneme": "T"
+        },
+        {
+          "start": 2.65,
+          "end": 2.69,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 2.69,
+          "end": 2.88,
+          "shape": "L",
+          "phoneme": "L"
+        },
+        {
+          "start": 2.88,
+          "end": 2.97,
+          "shape": "E",
+          "phoneme": "IH"
+        },
+        {
+          "start": 2.97,
+          "end": 3.04,
+          "shape": "FV",
+          "phoneme": "F"
+        },
+        {
+          "start": 3.04,
+          "end": 3.06,
+          "shape": "S",
+          "phoneme": "T"
+        },
+        {
+          "start": 3.06,
+          "end": 3.08,
+          "shape": "rest",
+          "phoneme": "T"
+        },
+        {
+          "start": 3.08,
+          "end": 3.11,
+          "shape": "S",
+          "phoneme": "T"
+        },
+        {
+          "start": 3.11,
+          "end": 3.17,
+          "shape": "A",
+          "phoneme": "HH"
+        },
+        {
+          "start": 3.17,
+          "end": 3.21,
+          "shape": "E",
+          "phoneme": "IH"
+        },
+        {
+          "start": 3.21,
+          "end": 3.39,
+          "shape": "S",
+          "phoneme": "Z"
+        },
+        {
+          "start": 3.39,
+          "end": 3.41,
+          "shape": "MBP",
+          "phoneme": "P"
+        },
+        {
+          "start": 3.41,
+          "end": 3.47,
+          "shape": "rest",
+          "phoneme": "P"
+        },
+        {
+          "start": 3.47,
+          "end": 3.48,
+          "shape": "MBP",
+          "phoneme": "P"
+        },
+        {
+          "start": 3.48,
+          "end": 3.55,
+          "shape": "E",
+          "phoneme": "IH"
+        },
+        {
+          "start": 3.55,
+          "end": 3.64,
+          "shape": "U",
+          "phoneme": "R"
+        },
+        {
+          "start": 3.64,
+          "end": 3.71,
+          "shape": "E",
+          "phoneme": "IH"
+        },
+        {
+          "start": 3.71,
+          "end": 3.77,
+          "shape": "rest",
+          "phoneme": "T"
+        },
+        {
+          "start": 3.77,
+          "end": 3.92,
+          "shape": "S",
+          "phoneme": "T"
+        },
+        {
+          "start": 3.92,
+          "end": 4.47,
+          "shape": "rest",
+          "phoneme": "S"
+        },
+        {
+          "start": 4.47,
+          "end": 4.7,
+          "shape": "A",
+          "phoneme": "AY"
+        },
+        {
+          "start": 4.7,
+          "end": 4.74,
+          "shape": "FV",
+          "phoneme": "V"
+        },
+        {
+          "start": 4.74,
+          "end": 4.8,
+          "shape": "rest",
+          "phoneme": "V"
+        },
+        {
+          "start": 4.8,
+          "end": 4.85,
+          "shape": "E",
+          "phoneme": "IH"
+        },
+        {
+          "start": 4.85,
+          "end": 4.91,
+          "shape": "S",
+          "phoneme": "N"
+        },
+        {
+          "start": 4.91,
+          "end": 5.04,
+          "shape": "rest",
+          "phoneme": "P"
+        },
+        {
+          "start": 5.04,
+          "end": 5.08,
+          "shape": "U",
+          "phoneme": "R"
+        },
+        {
+          "start": 5.08,
+          "end": 5.16,
+          "shape": "A",
+          "phoneme": "AE"
+        },
+        {
+          "start": 5.16,
+          "end": 5.22,
+          "shape": "rest",
+          "phoneme": "K"
+        },
+        {
+          "start": 5.22,
+          "end": 5.24,
+          "shape": "S",
+          "phoneme": "T"
+        },
+        {
+          "start": 5.24,
+          "end": 5.28,
+          "shape": "E",
+          "phoneme": "IH"
+        },
+        {
+          "start": 5.28,
+          "end": 5.37,
+          "shape": "S",
+          "phoneme": "S"
+        },
+        {
+          "start": 5.37,
+          "end": 5.41,
+          "shape": "E",
+          "phoneme": "IH"
+        },
+        {
+          "start": 5.41,
+          "end": 5.5,
+          "shape": "S",
+          "phoneme": "NG"
+        },
+        {
+          "start": 5.5,
+          "end": 5.53,
+          "shape": "TH",
+          "phoneme": "DH"
+        },
+        {
+          "start": 5.53,
+          "end": 5.69,
+          "shape": "A",
+          "phoneme": "AE"
+        },
+        {
+          "start": 5.69,
+          "end": 5.86,
+          "shape": "rest",
+          "phoneme": "T"
+        },
+        {
+          "start": 5.86,
+          "end": 5.94,
+          "shape": "E",
+          "phoneme": "ER"
+        },
+        {
+          "start": 5.94,
+          "end": 6.05,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 6.05,
+          "end": 6.07,
+          "shape": "rest",
+          "phoneme": "HH"
+        },
+        {
+          "start": 6.07,
+          "end": 6.23,
+          "shape": "A",
+          "phoneme": "HH"
+        },
+        {
+          "start": 6.23,
+          "end": 6.33,
+          "shape": "S",
+          "phoneme": "N"
+        },
+        {
+          "start": 6.33,
+          "end": 6.4,
+          "shape": "U",
+          "phoneme": "R"
+        },
+        {
+          "start": 6.4,
+          "end": 6.43,
+          "shape": "E",
+          "phoneme": "IH"
+        },
+        {
+          "start": 6.43,
+          "end": 6.52,
+          "shape": "S",
+          "phoneme": "D"
+        },
+        {
+          "start": 6.52,
+          "end": 6.79,
+          "shape": "E",
+          "phoneme": "Y"
+        },
+        {
+          "start": 6.79,
+          "end": 6.95,
+          "shape": "S",
+          "phoneme": "Z"
+        },
+        {
+          "start": 6.95,
+          "end": 7.14,
+          "shape": "rest",
+          "phoneme": "Z"
+        }
+      ],
+      "syncMode": "forced-phoneme-alignment",
+      "alignmentWarning": "Automatic English alignment. Review names, whispers and unusually theatrical delivery.",
+      "sha256": "0a90915d5bd2e9cb6d28ac6cc780002eb046ea4c7df2cecf05f8862170e409c8"
+    },
+    {
+      "id": "squeak",
+      "file": "squeak.wav",
+      "text": "Behold my terrifying ghost voice. Ahem. Oh dear. That was more of a squeak.",
+      "voice": "coral",
+      "duration": 7.75,
+      "visemes": [
+        {
+          "start": 0,
+          "end": 0.29,
+          "shape": "rest",
+          "phoneme": "SIL"
+        },
+        {
+          "start": 0.29,
+          "end": 0.31,
+          "shape": "MBP",
+          "phoneme": "B"
+        },
+        {
+          "start": 0.31,
+          "end": 0.36,
+          "shape": "rest",
+          "phoneme": "B"
+        },
+        {
+          "start": 0.36,
+          "end": 0.47,
+          "shape": "E",
+          "phoneme": "IH"
+        },
+        {
+          "start": 0.47,
+          "end": 0.55,
+          "shape": "A",
+          "phoneme": "HH"
+        },
+        {
+          "start": 0.55,
+          "end": 0.61,
+          "shape": "rest",
+          "phoneme": "HH"
+        },
+        {
+          "start": 0.61,
+          "end": 0.63,
+          "shape": "A",
+          "phoneme": "HH"
+        },
+        {
+          "start": 0.63,
+          "end": 0.78,
+          "shape": "O",
+          "phoneme": "OW"
+        },
+        {
+          "start": 0.78,
+          "end": 0.94,
+          "shape": "L",
+          "phoneme": "L"
+        },
+        {
+          "start": 0.94,
+          "end": 0.96,
+          "shape": "S",
+          "phoneme": "D"
+        },
+        {
+          "start": 0.96,
+          "end": 0.98,
+          "shape": "rest",
+          "phoneme": "D"
+        },
+        {
+          "start": 0.98,
+          "end": 1.02,
+          "shape": "S",
+          "phoneme": "D"
+        },
+        {
+          "start": 1.02,
+          "end": 1.09,
+          "shape": "MBP",
+          "phoneme": "M"
+        },
+        {
+          "start": 1.09,
+          "end": 1.23,
+          "shape": "A",
+          "phoneme": "AY"
+        },
+        {
+          "start": 1.23,
+          "end": 1.35,
+          "shape": "rest",
+          "phoneme": "T"
+        },
+        {
+          "start": 1.35,
+          "end": 1.48,
+          "shape": "S",
+          "phoneme": "T"
+        },
+        {
+          "start": 1.48,
+          "end": 1.54,
+          "shape": "E",
+          "phoneme": "EH"
+        },
+        {
+          "start": 1.54,
+          "end": 1.67,
+          "shape": "U",
+          "phoneme": "R"
+        },
+        {
+          "start": 1.67,
+          "end": 1.71,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 1.71,
+          "end": 1.73,
+          "shape": "FV",
+          "phoneme": "F"
+        },
+        {
+          "start": 1.73,
+          "end": 1.81,
+          "shape": "rest",
+          "phoneme": "F"
+        },
+        {
+          "start": 1.81,
+          "end": 1.99,
+          "shape": "A",
+          "phoneme": "AY"
+        },
+        {
+          "start": 1.99,
+          "end": 2.02,
+          "shape": "E",
+          "phoneme": "IH"
+        },
+        {
+          "start": 2.02,
+          "end": 2.16,
+          "shape": "S",
+          "phoneme": "NG"
+        },
+        {
+          "start": 2.16,
+          "end": 2.18,
+          "shape": "A",
+          "phoneme": "G"
+        },
+        {
+          "start": 2.18,
+          "end": 2.2,
+          "shape": "rest",
+          "phoneme": "G"
+        },
+        {
+          "start": 2.2,
+          "end": 2.24,
+          "shape": "A",
+          "phoneme": "G"
+        },
+        {
+          "start": 2.24,
+          "end": 2.35,
+          "shape": "O",
+          "phoneme": "OW"
+        },
+        {
+          "start": 2.35,
+          "end": 2.47,
+          "shape": "S",
+          "phoneme": "S"
+        },
+        {
+          "start": 2.47,
+          "end": 2.49,
+          "shape": "rest",
+          "phoneme": "T"
+        },
+        {
+          "start": 2.49,
+          "end": 2.51,
+          "shape": "S",
+          "phoneme": "T"
+        },
+        {
+          "start": 2.51,
+          "end": 2.55,
+          "shape": "FV",
+          "phoneme": "V"
+        },
+        {
+          "start": 2.55,
+          "end": 2.57,
+          "shape": "rest",
+          "phoneme": "V"
+        },
+        {
+          "start": 2.57,
+          "end": 2.58,
+          "shape": "FV",
+          "phoneme": "V"
+        },
+        {
+          "start": 2.58,
+          "end": 2.76,
+          "shape": "O",
+          "phoneme": "OY"
+        },
+        {
+          "start": 2.76,
+          "end": 2.8,
+          "shape": "rest",
+          "phoneme": "S"
+        },
+        {
+          "start": 2.8,
+          "end": 3.0,
+          "shape": "S",
+          "phoneme": "S"
+        },
+        {
+          "start": 3.0,
+          "end": 3.73,
+          "shape": "rest",
+          "phoneme": "S"
+        },
+        {
+          "start": 3.73,
+          "end": 3.89,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 3.89,
+          "end": 4.02,
+          "shape": "E",
+          "phoneme": "EH"
+        },
+        {
+          "start": 4.02,
+          "end": 4.18,
+          "shape": "MBP",
+          "phoneme": "M"
+        },
+        {
+          "start": 4.18,
+          "end": 5.01,
+          "shape": "rest",
+          "phoneme": "M"
+        },
+        {
+          "start": 5.01,
+          "end": 5.14,
+          "shape": "O",
+          "phoneme": "OW"
+        },
+        {
+          "start": 5.14,
+          "end": 5.18,
+          "shape": "S",
+          "phoneme": "D"
+        },
+        {
+          "start": 5.18,
+          "end": 5.22,
+          "shape": "rest",
+          "phoneme": "D"
+        },
+        {
+          "start": 5.22,
+          "end": 5.24,
+          "shape": "S",
+          "phoneme": "D"
+        },
+        {
+          "start": 5.24,
+          "end": 5.36,
+          "shape": "E",
+          "phoneme": "IH"
+        },
+        {
+          "start": 5.36,
+          "end": 5.46,
+          "shape": "U",
+          "phoneme": "R"
+        },
+        {
+          "start": 5.46,
+          "end": 6.37,
+          "shape": "rest",
+          "phoneme": "R"
+        },
+        {
+          "start": 6.37,
+          "end": 6.4,
+          "shape": "TH",
+          "phoneme": "DH"
+        },
+        {
+          "start": 6.4,
+          "end": 6.5,
+          "shape": "A",
+          "phoneme": "AE"
+        },
+        {
+          "start": 6.5,
+          "end": 6.55,
+          "shape": "S",
+          "phoneme": "T"
+        },
+        {
+          "start": 6.55,
+          "end": 6.6,
+          "shape": "U",
+          "phoneme": "W"
+        },
+        {
+          "start": 6.6,
+          "end": 6.63,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 6.63,
+          "end": 6.71,
+          "shape": "S",
+          "phoneme": "Z"
+        },
+        {
+          "start": 6.71,
+          "end": 6.72,
+          "shape": "rest",
+          "phoneme": "Z"
+        },
+        {
+          "start": 6.72,
+          "end": 6.78,
+          "shape": "MBP",
+          "phoneme": "M"
+        },
+        {
+          "start": 6.78,
+          "end": 6.89,
+          "shape": "O",
+          "phoneme": "AO"
+        },
+        {
+          "start": 6.89,
+          "end": 6.92,
+          "shape": "U",
+          "phoneme": "R"
+        },
+        {
+          "start": 6.92,
+          "end": 6.95,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 6.95,
+          "end": 6.97,
+          "shape": "FV",
+          "phoneme": "V"
+        },
+        {
+          "start": 6.97,
+          "end": 7.0,
+          "shape": "rest",
+          "phoneme": "V"
+        },
+        {
+          "start": 7.0,
+          "end": 7.04,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 7.04,
+          "end": 7.2,
+          "shape": "S",
+          "phoneme": "S"
+        },
+        {
+          "start": 7.2,
+          "end": 7.28,
+          "shape": "rest",
+          "phoneme": "K"
+        },
+        {
+          "start": 7.28,
+          "end": 7.31,
+          "shape": "U",
+          "phoneme": "W"
+        },
+        {
+          "start": 7.31,
+          "end": 7.41,
+          "shape": "E",
+          "phoneme": "IY"
+        },
+        {
+          "start": 7.41,
+          "end": 7.74,
+          "shape": "rest",
+          "phoneme": "IY"
+        }
+      ],
+      "syncMode": "forced-phoneme-alignment",
+      "alignmentWarning": "Automatic English alignment. Review names, whispers and unusually theatrical delivery.",
+      "sha256": "180586a87b4c2779694335ba5992248d31daf362e7458cd5c8624a2a2ecaa413"
+    },
+    {
+      "id": "pardon",
+      "file": "pardon.wav",
+      "text": "My ghost ears got a little foggy. Could you say that once more?",
+      "voice": "coral",
+      "duration": 5.45,
+      "visemes": [
+        {
+          "start": 0,
+          "end": 0.04,
+          "shape": "rest",
+          "phoneme": "M"
+        },
+        {
+          "start": 0.04,
+          "end": 0.16,
+          "shape": "MBP",
+          "phoneme": "M"
+        },
+        {
+          "start": 0.16,
+          "end": 0.54,
+          "shape": "A",
+          "phoneme": "AY"
+        },
+        {
+          "start": 0.54,
+          "end": 0.6,
+          "shape": "rest",
+          "phoneme": "G"
+        },
+        {
+          "start": 0.6,
+          "end": 0.64,
+          "shape": "A",
+          "phoneme": "G"
+        },
+        {
+          "start": 0.64,
+          "end": 0.76,
+          "shape": "O",
+          "phoneme": "OW"
+        },
+        {
+          "start": 0.76,
+          "end": 0.9,
+          "shape": "S",
+          "phoneme": "S"
+        },
+        {
+          "start": 0.9,
+          "end": 1.01,
+          "shape": "rest",
+          "phoneme": "T"
+        },
+        {
+          "start": 1.01,
+          "end": 1.13,
+          "shape": "E",
+          "phoneme": "IY"
+        },
+        {
+          "start": 1.13,
+          "end": 1.27,
+          "shape": "U",
+          "phoneme": "R"
+        },
+        {
+          "start": 1.27,
+          "end": 1.39,
+          "shape": "S",
+          "phoneme": "Z"
+        },
+        {
+          "start": 1.39,
+          "end": 1.59,
+          "shape": "rest",
+          "phoneme": "Z"
+        },
+        {
+          "start": 1.59,
+          "end": 1.7,
+          "shape": "A",
+          "phoneme": "G"
+        },
+        {
+          "start": 1.7,
+          "end": 1.74,
+          "shape": "S",
+          "phoneme": "T"
+        },
+        {
+          "start": 1.74,
+          "end": 1.78,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 1.78,
+          "end": 1.92,
+          "shape": "L",
+          "phoneme": "L"
+        },
+        {
+          "start": 1.92,
+          "end": 1.97,
+          "shape": "E",
+          "phoneme": "IH"
+        },
+        {
+          "start": 1.97,
+          "end": 2.01,
+          "shape": "S",
+          "phoneme": "T"
+        },
+        {
+          "start": 2.01,
+          "end": 2.05,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 2.05,
+          "end": 2.11,
+          "shape": "L",
+          "phoneme": "L"
+        },
+        {
+          "start": 2.11,
+          "end": 2.15,
+          "shape": "FV",
+          "phoneme": "F"
+        },
+        {
+          "start": 2.15,
+          "end": 2.27,
+          "shape": "rest",
+          "phoneme": "F"
+        },
+        {
+          "start": 2.27,
+          "end": 2.49,
+          "shape": "A",
+          "phoneme": "AA"
+        },
+        {
+          "start": 2.49,
+          "end": 2.67,
+          "shape": "E",
+          "phoneme": "IY"
+        },
+        {
+          "start": 2.67,
+          "end": 3.5,
+          "shape": "rest",
+          "phoneme": "IY"
+        },
+        {
+          "start": 3.5,
+          "end": 3.53,
+          "shape": "A",
+          "phoneme": "K"
+        },
+        {
+          "start": 3.53,
+          "end": 3.59,
+          "shape": "U",
+          "phoneme": "UH"
+        },
+        {
+          "start": 3.59,
+          "end": 3.63,
+          "shape": "S",
+          "phoneme": "D"
+        },
+        {
+          "start": 3.63,
+          "end": 3.65,
+          "shape": "rest",
+          "phoneme": "D"
+        },
+        {
+          "start": 3.65,
+          "end": 3.66,
+          "shape": "S",
+          "phoneme": "D"
+        },
+        {
+          "start": 3.66,
+          "end": 3.71,
+          "shape": "E",
+          "phoneme": "Y"
+        },
+        {
+          "start": 3.71,
+          "end": 3.76,
+          "shape": "U",
+          "phoneme": "UW"
+        },
+        {
+          "start": 3.76,
+          "end": 3.92,
+          "shape": "S",
+          "phoneme": "S"
+        },
+        {
+          "start": 3.92,
+          "end": 4.04,
+          "shape": "E",
+          "phoneme": "EY"
+        },
+        {
+          "start": 4.04,
+          "end": 4.09,
+          "shape": "TH",
+          "phoneme": "DH"
+        },
+        {
+          "start": 4.09,
+          "end": 4.19,
+          "shape": "A",
+          "phoneme": "AE"
+        },
+        {
+          "start": 4.19,
+          "end": 4.22,
+          "shape": "S",
+          "phoneme": "T"
+        },
+        {
+          "start": 4.22,
+          "end": 4.24,
+          "shape": "rest",
+          "phoneme": "W"
+        },
+        {
+          "start": 4.24,
+          "end": 4.35,
+          "shape": "U",
+          "phoneme": "W"
+        },
+        {
+          "start": 4.35,
+          "end": 4.38,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 4.38,
+          "end": 4.53,
+          "shape": "S",
+          "phoneme": "N"
+        },
+        {
+          "start": 4.53,
+          "end": 4.54,
+          "shape": "rest",
+          "phoneme": "S"
+        },
+        {
+          "start": 4.54,
+          "end": 4.6,
+          "shape": "MBP",
+          "phoneme": "M"
+        },
+        {
+          "start": 4.6,
+          "end": 4.75,
+          "shape": "O",
+          "phoneme": "AO"
+        },
+        {
+          "start": 4.75,
+          "end": 4.85,
+          "shape": "U",
+          "phoneme": "R"
+        },
+        {
+          "start": 4.85,
+          "end": 5.44,
+          "shape": "rest",
+          "phoneme": "R"
+        }
+      ],
+      "syncMode": "forced-phoneme-alignment",
+      "alignmentWarning": "Automatic English alignment. Review names, whispers and unusually theatrical delivery.",
+      "sha256": "a8672c0a2e20083d8e7b8d03182546fa22ce348c1d2fafaa5daf8d6f18caca6f"
+    },
+    {
+      "id": "wishes",
+      "file": "wishes.wav",
+      "text": "May your candy be plentiful and your socks stay dry. Happy haunting, my friend!",
+      "voice": "coral",
+      "duration": 5.6,
+      "visemes": [
+        {
+          "start": 0,
+          "end": 0.02,
+          "shape": "rest",
+          "phoneme": "M"
+        },
+        {
+          "start": 0.02,
+          "end": 0.11,
+          "shape": "MBP",
+          "phoneme": "M"
+        },
+        {
+          "start": 0.11,
+          "end": 0.32,
+          "shape": "E",
+          "phoneme": "EY"
+        },
+        {
+          "start": 0.32,
+          "end": 0.44,
+          "shape": "U",
+          "phoneme": "UH"
+        },
+        {
+          "start": 0.44,
+          "end": 0.52,
+          "shape": "rest",
+          "phoneme": "K"
+        },
+        {
+          "start": 0.52,
+          "end": 0.76,
+          "shape": "A",
+          "phoneme": "K"
+        },
+        {
+          "start": 0.76,
+          "end": 0.88,
+          "shape": "S",
+          "phoneme": "N"
+        },
+        {
+          "start": 0.88,
+          "end": 1.0,
+          "shape": "E",
+          "phoneme": "IY"
+        },
+        {
+          "start": 1.0,
+          "end": 1.02,
+          "shape": "MBP",
+          "phoneme": "B"
+        },
+        {
+          "start": 1.02,
+          "end": 1.04,
+          "shape": "rest",
+          "phoneme": "B"
+        },
+        {
+          "start": 1.04,
+          "end": 1.06,
+          "shape": "MBP",
+          "phoneme": "B"
+        },
+        {
+          "start": 1.06,
+          "end": 1.16,
+          "shape": "E",
+          "phoneme": "IY"
+        },
+        {
+          "start": 1.16,
+          "end": 1.22,
+          "shape": "rest",
+          "phoneme": "P"
+        },
+        {
+          "start": 1.22,
+          "end": 1.26,
+          "shape": "MBP",
+          "phoneme": "P"
+        },
+        {
+          "start": 1.26,
+          "end": 1.3,
+          "shape": "rest",
+          "phoneme": "P"
+        },
+        {
+          "start": 1.3,
+          "end": 1.33,
+          "shape": "L",
+          "phoneme": "L"
+        },
+        {
+          "start": 1.33,
+          "end": 1.39,
+          "shape": "E",
+          "phoneme": "EH"
+        },
+        {
+          "start": 1.39,
+          "end": 1.49,
+          "shape": "S",
+          "phoneme": "N"
+        },
+        {
+          "start": 1.49,
+          "end": 1.53,
+          "shape": "E",
+          "phoneme": "IH"
+        },
+        {
+          "start": 1.53,
+          "end": 1.55,
+          "shape": "FV",
+          "phoneme": "F"
+        },
+        {
+          "start": 1.55,
+          "end": 1.63,
+          "shape": "rest",
+          "phoneme": "F"
+        },
+        {
+          "start": 1.63,
+          "end": 1.65,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 1.65,
+          "end": 1.77,
+          "shape": "L",
+          "phoneme": "L"
+        },
+        {
+          "start": 1.77,
+          "end": 2.13,
+          "shape": "rest",
+          "phoneme": "L"
+        },
+        {
+          "start": 2.13,
+          "end": 2.18,
+          "shape": "A",
+          "phoneme": "AE"
+        },
+        {
+          "start": 2.18,
+          "end": 2.26,
+          "shape": "S",
+          "phoneme": "N"
+        },
+        {
+          "start": 2.26,
+          "end": 2.31,
+          "shape": "E",
+          "phoneme": "Y"
+        },
+        {
+          "start": 2.31,
+          "end": 2.41,
+          "shape": "U",
+          "phoneme": "UH"
+        },
+        {
+          "start": 2.41,
+          "end": 2.43,
+          "shape": "rest",
+          "phoneme": "S"
+        },
+        {
+          "start": 2.43,
+          "end": 2.61,
+          "shape": "S",
+          "phoneme": "S"
+        },
+        {
+          "start": 2.61,
+          "end": 2.75,
+          "shape": "A",
+          "phoneme": "AA"
+        },
+        {
+          "start": 2.75,
+          "end": 2.85,
+          "shape": "rest",
+          "phoneme": "K"
+        },
+        {
+          "start": 2.85,
+          "end": 2.86,
+          "shape": "A",
+          "phoneme": "K"
+        },
+        {
+          "start": 2.86,
+          "end": 3.0,
+          "shape": "S",
+          "phoneme": "S"
+        },
+        {
+          "start": 3.0,
+          "end": 3.04,
+          "shape": "rest",
+          "phoneme": "T"
+        },
+        {
+          "start": 3.04,
+          "end": 3.06,
+          "shape": "S",
+          "phoneme": "T"
+        },
+        {
+          "start": 3.06,
+          "end": 3.2,
+          "shape": "E",
+          "phoneme": "EY"
+        },
+        {
+          "start": 3.2,
+          "end": 3.24,
+          "shape": "S",
+          "phoneme": "D"
+        },
+        {
+          "start": 3.24,
+          "end": 3.26,
+          "shape": "rest",
+          "phoneme": "D"
+        },
+        {
+          "start": 3.26,
+          "end": 3.27,
+          "shape": "S",
+          "phoneme": "D"
+        },
+        {
+          "start": 3.27,
+          "end": 3.37,
+          "shape": "U",
+          "phoneme": "R"
+        },
+        {
+          "start": 3.37,
+          "end": 3.53,
+          "shape": "A",
+          "phoneme": "AY"
+        },
+        {
+          "start": 3.53,
+          "end": 4.13,
+          "shape": "rest",
+          "phoneme": "AY"
+        },
+        {
+          "start": 4.13,
+          "end": 4.27,
+          "shape": "A",
+          "phoneme": "HH"
+        },
+        {
+          "start": 4.27,
+          "end": 4.33,
+          "shape": "rest",
+          "phoneme": "P"
+        },
+        {
+          "start": 4.33,
+          "end": 4.43,
+          "shape": "E",
+          "phoneme": "IY"
+        },
+        {
+          "start": 4.43,
+          "end": 4.5,
+          "shape": "A",
+          "phoneme": "HH"
+        },
+        {
+          "start": 4.5,
+          "end": 4.58,
+          "shape": "O",
+          "phoneme": "AO"
+        },
+        {
+          "start": 4.58,
+          "end": 4.66,
+          "shape": "S",
+          "phoneme": "N"
+        },
+        {
+          "start": 4.66,
+          "end": 4.68,
+          "shape": "rest",
+          "phoneme": "T"
+        },
+        {
+          "start": 4.68,
+          "end": 4.72,
+          "shape": "S",
+          "phoneme": "T"
+        },
+        {
+          "start": 4.72,
+          "end": 4.77,
+          "shape": "E",
+          "phoneme": "IH"
+        },
+        {
+          "start": 4.77,
+          "end": 4.85,
+          "shape": "S",
+          "phoneme": "NG"
+        },
+        {
+          "start": 4.85,
+          "end": 4.88,
+          "shape": "MBP",
+          "phoneme": "M"
+        },
+        {
+          "start": 4.88,
+          "end": 4.97,
+          "shape": "A",
+          "phoneme": "AY"
+        },
+        {
+          "start": 4.97,
+          "end": 5.01,
+          "shape": "FV",
+          "phoneme": "F"
+        },
+        {
+          "start": 5.01,
+          "end": 5.08,
+          "shape": "rest",
+          "phoneme": "F"
+        },
+        {
+          "start": 5.08,
+          "end": 5.12,
+          "shape": "U",
+          "phoneme": "R"
+        },
+        {
+          "start": 5.12,
+          "end": 5.23,
+          "shape": "E",
+          "phoneme": "EH"
+        },
+        {
+          "start": 5.23,
+          "end": 5.35,
+          "shape": "S",
+          "phoneme": "N"
+        },
+        {
+          "start": 5.35,
+          "end": 5.59,
+          "shape": "rest",
+          "phoneme": "D"
+        }
+      ],
+      "syncMode": "forced-phoneme-alignment",
+      "alignmentWarning": "Automatic English alignment. Review names, whispers and unusually theatrical delivery.",
+      "sha256": "0b244824f0a965a91ac74cf788f007220ef1c844024c0d27e1a6953a05c1319a"
+    },
+    {
+      "id": "little-one",
+      "file": "little-one.wav",
+      "text": "Oh! A little one. Ahem. One moment.",
+      "voice": "coral",
+      "duration": 4.8,
+      "visemes": [
+        {
+          "start": 0,
+          "end": 0.36,
+          "shape": "O",
+          "phoneme": "OW"
+        },
+        {
+          "start": 0.36,
+          "end": 0.38,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 0.38,
+          "end": 1.06,
+          "shape": "rest",
+          "phoneme": "AH"
+        },
+        {
+          "start": 1.06,
+          "end": 1.2,
+          "shape": "L",
+          "phoneme": "L"
+        },
+        {
+          "start": 1.2,
+          "end": 1.26,
+          "shape": "E",
+          "phoneme": "IH"
+        },
+        {
+          "start": 1.26,
+          "end": 1.29,
+          "shape": "S",
+          "phoneme": "T"
+        },
+        {
+          "start": 1.29,
+          "end": 1.34,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 1.34,
+          "end": 1.44,
+          "shape": "L",
+          "phoneme": "L"
+        },
+        {
+          "start": 1.44,
+          "end": 1.55,
+          "shape": "U",
+          "phoneme": "W"
+        },
+        {
+          "start": 1.55,
+          "end": 1.64,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 1.64,
+          "end": 1.76,
+          "shape": "S",
+          "phoneme": "N"
+        },
+        {
+          "start": 1.76,
+          "end": 2.45,
+          "shape": "rest",
+          "phoneme": "N"
+        },
+        {
+          "start": 2.45,
+          "end": 2.64,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 2.64,
+          "end": 2.75,
+          "shape": "E",
+          "phoneme": "EH"
+        },
+        {
+          "start": 2.75,
+          "end": 2.87,
+          "shape": "MBP",
+          "phoneme": "M"
+        },
+        {
+          "start": 2.87,
+          "end": 3.5,
+          "shape": "rest",
+          "phoneme": "M"
+        },
+        {
+          "start": 3.5,
+          "end": 3.62,
+          "shape": "U",
+          "phoneme": "W"
+        },
+        {
+          "start": 3.62,
+          "end": 3.67,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 3.67,
+          "end": 3.72,
+          "shape": "S",
+          "phoneme": "N"
+        },
+        {
+          "start": 3.72,
+          "end": 3.81,
+          "shape": "MBP",
+          "phoneme": "M"
+        },
+        {
+          "start": 3.81,
+          "end": 3.92,
+          "shape": "O",
+          "phoneme": "OW"
+        },
+        {
+          "start": 3.92,
+          "end": 3.96,
+          "shape": "MBP",
+          "phoneme": "M"
+        },
+        {
+          "start": 3.96,
+          "end": 4.04,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 4.04,
+          "end": 4.06,
+          "shape": "S",
+          "phoneme": "N"
+        },
+        {
+          "start": 4.06,
+          "end": 4.79,
+          "shape": "rest",
+          "phoneme": "N"
+        }
+      ],
+      "syncMode": "forced-phoneme-alignment",
+      "alignmentWarning": "Automatic English alignment. Review names, whispers and unusually theatrical delivery.",
+      "sha256": "de0ddae31b8a6d91c708f5a96fa4188163152dcbe49d78470284dc2a7b4ad6ae"
+    },
+    {
+      "id": "less-haunting",
+      "file": "less-haunting.wav",
+      "text": "There. Much less haunting. Excellent shoes, by the way!",
+      "voice": "coral",
+      "duration": 4.55,
+      "visemes": [
+        {
+          "start": 0,
+          "end": 0.04,
+          "shape": "rest",
+          "phoneme": "DH"
+        },
+        {
+          "start": 0.04,
+          "end": 0.17,
+          "shape": "TH",
+          "phoneme": "DH"
+        },
+        {
+          "start": 0.17,
+          "end": 0.32,
+          "shape": "E",
+          "phoneme": "EH"
+        },
+        {
+          "start": 0.32,
+          "end": 0.42,
+          "shape": "U",
+          "phoneme": "R"
+        },
+        {
+          "start": 0.42,
+          "end": 1.12,
+          "shape": "rest",
+          "phoneme": "R"
+        },
+        {
+          "start": 1.12,
+          "end": 1.27,
+          "shape": "MBP",
+          "phoneme": "M"
+        },
+        {
+          "start": 1.27,
+          "end": 1.35,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 1.35,
+          "end": 1.41,
+          "shape": "rest",
+          "phoneme": "CH"
+        },
+        {
+          "start": 1.41,
+          "end": 1.5,
+          "shape": "CH",
+          "phoneme": "CH"
+        },
+        {
+          "start": 1.5,
+          "end": 1.59,
+          "shape": "L",
+          "phoneme": "L"
+        },
+        {
+          "start": 1.59,
+          "end": 1.65,
+          "shape": "E",
+          "phoneme": "EH"
+        },
+        {
+          "start": 1.65,
+          "end": 1.76,
+          "shape": "S",
+          "phoneme": "S"
+        },
+        {
+          "start": 1.76,
+          "end": 1.83,
+          "shape": "A",
+          "phoneme": "HH"
+        },
+        {
+          "start": 1.83,
+          "end": 1.93,
+          "shape": "O",
+          "phoneme": "AO"
+        },
+        {
+          "start": 1.93,
+          "end": 1.99,
+          "shape": "S",
+          "phoneme": "N"
+        },
+        {
+          "start": 1.99,
+          "end": 2.01,
+          "shape": "rest",
+          "phoneme": "T"
+        },
+        {
+          "start": 2.01,
+          "end": 2.05,
+          "shape": "S",
+          "phoneme": "T"
+        },
+        {
+          "start": 2.05,
+          "end": 2.13,
+          "shape": "E",
+          "phoneme": "IH"
+        },
+        {
+          "start": 2.13,
+          "end": 2.23,
+          "shape": "S",
+          "phoneme": "NG"
+        },
+        {
+          "start": 2.23,
+          "end": 2.86,
+          "shape": "rest",
+          "phoneme": "NG"
+        },
+        {
+          "start": 2.86,
+          "end": 2.95,
+          "shape": "E",
+          "phoneme": "EH"
+        },
+        {
+          "start": 2.95,
+          "end": 2.99,
+          "shape": "rest",
+          "phoneme": "K"
+        },
+        {
+          "start": 2.99,
+          "end": 3.02,
+          "shape": "A",
+          "phoneme": "K"
+        },
+        {
+          "start": 3.02,
+          "end": 3.12,
+          "shape": "S",
+          "phoneme": "S"
+        },
+        {
+          "start": 3.12,
+          "end": 3.15,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 3.15,
+          "end": 3.22,
+          "shape": "L",
+          "phoneme": "L"
+        },
+        {
+          "start": 3.22,
+          "end": 3.25,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 3.25,
+          "end": 3.33,
+          "shape": "S",
+          "phoneme": "N"
+        },
+        {
+          "start": 3.33,
+          "end": 3.46,
+          "shape": "CH",
+          "phoneme": "SH"
+        },
+        {
+          "start": 3.46,
+          "end": 3.63,
+          "shape": "U",
+          "phoneme": "UW"
+        },
+        {
+          "start": 3.63,
+          "end": 3.69,
+          "shape": "S",
+          "phoneme": "Z"
+        },
+        {
+          "start": 3.69,
+          "end": 3.73,
+          "shape": "MBP",
+          "phoneme": "B"
+        },
+        {
+          "start": 3.73,
+          "end": 3.75,
+          "shape": "rest",
+          "phoneme": "B"
+        },
+        {
+          "start": 3.75,
+          "end": 3.78,
+          "shape": "MBP",
+          "phoneme": "B"
+        },
+        {
+          "start": 3.78,
+          "end": 3.88,
+          "shape": "A",
+          "phoneme": "AY"
+        },
+        {
+          "start": 3.88,
+          "end": 3.92,
+          "shape": "TH",
+          "phoneme": "DH"
+        },
+        {
+          "start": 3.92,
+          "end": 3.97,
+          "shape": "A",
+          "phoneme": "AH"
+        },
+        {
+          "start": 3.97,
+          "end": 4.06,
+          "shape": "U",
+          "phoneme": "W"
+        },
+        {
+          "start": 4.06,
+          "end": 4.2,
+          "shape": "E",
+          "phoneme": "EY"
+        },
+        {
+          "start": 4.2,
+          "end": 4.54,
+          "shape": "rest",
+          "phoneme": "EY"
+        }
+      ],
+      "syncMode": "forced-phoneme-alignment",
+      "alignmentWarning": "Automatic English alignment. Review names, whispers and unusually theatrical delivery.",
+      "sha256": "1f90f7774604874477b2ace234f7e89700fa69a965299f005576dccb6a9f84be"
+    }
+  ]
+}
