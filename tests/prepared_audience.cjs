@@ -14,6 +14,10 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
   const scary={...fixture,key:'synthetic-scary-recording',spec:{text:'Synthetic scary recording',form:'haunting',audience:'big',voice:'cedar',mood:'sinister',intensity:.7}};
   const friendly={...fixture,key:'synthetic-friendly-recording',spec:{...scary.spec,text:'Synthetic friendly recording',form:'friendly',audience:'little',mood:'amused',intensity:.2}};
   await page.goto(process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770/');await page.waitForFunction(()=>window.HauntShow&&HauntWisp.inspect().ready);
+  // This test intentionally reloads after seeding IndexedDB. Let optional
+  // artwork loading settle first so WebKit does not report a navigation-cancelled
+  // fetch from the old document as an audio safety failure. Errors stay asserted.
+  await page.waitForFunction(()=>{const rig=HauntWisp.inspect().rig;return rig?.ready||!!rig?.error;},null,{timeout:20000});
   await page.evaluate(async items=>{const db=await new Promise(resolve=>{const r=indexedDB.open('haunt-3d-performances',1);r.onsuccess=()=>resolve(r.result)});await new Promise(resolve=>{const tx=db.transaction('lines','readwrite');for(const item of items)tx.objectStore('lines').put(item);tx.oncomplete=resolve});db.close()},[scary,friendly]);
   await page.reload();await page.waitForFunction(()=>window.HauntShow&&window.Haunt3D?.debug().ready&&document.querySelectorAll('#prepared .row').length===2);await page.evaluate(()=>{const volume=document.getElementById('volume');volume.value=0;volume.dispatchEvent(new Event('input'))});
   const row=text=>page.locator('#prepared .row').filter({hasText:text});

@@ -135,3 +135,12 @@ Release head765502fd0851450db85001fe23a6bfadfa49db0d is the only current deploy 
 Pending paid departure8d3a9ccc-d8e1-47ba-baa0-3572c91da7ea is one10second true turn/back/curved-depth exit from scary actualending to emptyblack. Observed170credits; no batch/retry. Fetch exact existing task, retain original, review every-frame bounds, back material/core/attached hands, actual start join and empty ending before any integration.
 
 The source review page now has complete25second roundtrip plusbat/SFX proof and is locally browser-tested. No additional user feedback is required merely to keep working; existing visual/join/listening questions remain pending, so do not silently mark these assets human-approved. The library, film-desk phone integration and physical acceptance remain incomplete.
+
+
+## Release765502f failures and targeted repairs
+
+CI39465015030 is terminal failure, with showdesk/native-avatar-offline success and fullregression/WebKit failed. Retained failed logs work/failed-ci-39465015030.log. Fullregression caught a second source checksum manifest (runway-pilots/manifest.json) still pinning the old helper after explicit output stop was added; public-film-preview.json had already been refreshed. Updated only the affected helper checksum in that source manifest. Existing tests/wisp_film_speech.cjs now passes source hashes plus real muted fixture playback/interruption/disposal.
+
+LinuxWebKit prepared_audience.cjs reported a cute-mouths.json access-control pageerror during its intentional seed/reload sequence. Initial core-ready is earlier than optional eye/mouth rig loading. The test now waits for that rig to settle (ready or explicit error) before intentional reload, keeping all pageerror, no-provider/no-capture and audio-safety assertions unchanged. Local pinnedWebKit prepared_audience passes including known scary saved audio rejection, Welcome stop, queued/delayed-decode rejection and friendly recovery. This supports a navigation-race hypothesis; only new LinuxCI can verify the original case. Do not call the prior CI green or deploy it.
+
+One depth-departure task8d3a9ccc-d8e1-47ba-baa0-3572c91da7ea remains RUNNING at latest authoritative poll; preserve same handle, no retry. Source review page has25sec roundtrip and5sec bat/SFX proof; human all-join/listening feedback and physical projection remain unverified.
