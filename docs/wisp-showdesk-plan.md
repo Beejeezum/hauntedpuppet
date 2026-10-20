@@ -306,3 +306,10 @@ CompletedLinuxWebKitjob118808340278 inCI39474937902 failed again inpuppeteer_voi
 Productionfix assets/show-controls.js nowsetsMute disabled/text/ariaonlywhenvaluesactuallychange, preservingthebutton'scontentsbetweenpointerpress/release. No forcedclick, syntheticdispatch, retries, errorfilter or gateweakening. BothpinnedChromeandMacWebKit full6-caseAudioWorkletpuppeteer tests PASS with0steadyMute mutations andactualpointer mute/unmute, silence/recovery, formpresets, outputsilence, cleanup/errorcases. Publicbuildprivacy/importcheckPASS. This provesunnecessaryDOMmutationremoved and localbehavior; causalLinuxclickresolution stillrequiresfreshCI.
 
 Newfixisunpushedbeyondcurrentb5c5dbf. CI39474937902alreadyhasterminalWebKitfailure, showdesk/nativeSUCCESS, fullregressionstilllive. Retainthatremainingjobfornewforget_keydrainverificationbefore superseding ifpossible. Hostedpreviewevidenceatb5doesNOTincludeMuteproductionfix. Productione44697a unchanged. NoactiveRunwayjobs; sideframeporousfoghumanfeedbackpendingbeforefullvideoedit.
+
+
+## Human-approved fog material, bounded full-video proof
+
+The user explicitly approved the corrected side-frame material: “Yes—use this fog material.” This approves porous fog appearance, not the whole turn, its temporal consistency or any joins. One full-video material edit is submitted as task 4e04aaf5-6264-45b0-8907-659ac9a1fab8, using the actual guided turn and approved frame60 at2.5seconds. Observed balance18909→18769:140credits. Preserve original motion, proportions, hands, continuous core, timing, framing and black background. No batch or repeat generation.
+
+Before promotion, retain and hash the completed original, review normal-speed motion and middle-frame materials, measure every frame at RGB4/8/16 against the20percent target reserve, and compare both endpoints with the original. Changed endpoints require new exact-media transition review. Human still approval does not establish film or transition acceptance. Public two-film beta remains unchanged.

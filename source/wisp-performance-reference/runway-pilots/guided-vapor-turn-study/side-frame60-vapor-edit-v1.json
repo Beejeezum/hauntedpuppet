@@ -19,8 +19,10 @@
   "maskIoUAfterUniformResize_RGB16": 0.90859700676553,
   "review": {
     "positive": "Porous varying fog density replaces uniform white skull/neck/arm surfaces; profile and finger pose broadly retained",
-    "limitations": "Still only; no temporal material/identity or endpoint preservation demonstrated. Exact pose alignment and human material approval required before full video edit.",
-    "humanApproved": false,
-    "videoEditSubmitted": false
+    "limitations": "Still approval does not establish temporal material consistency, exact endpoint preservation or finished-film acceptance.",
+    "humanApproved": true,
+    "videoEditSubmitted": true,
+    "humanApprovalScope": "Porous fog material direction in this still only; full turn and transitions remain unapproved.",
+    "humanApprovalQuote": "Yes\u2014use this fog material"
   }
 }
