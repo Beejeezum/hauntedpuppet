@@ -1,0 +1,11 @@
+The Ghost at the Door — complete revised story candidate v3
+
+47.375 seconds,1137frames at24fps,1280x720 silent picture plus laptop-owned48kHz AAC sound. Latest human narrative overrides the original nonverbal-only brief for the single approved apology line. User approved the12-second scare/cute-recovery/apology sequence and mix direction; that segment remains unchanged in timing/gain. User rejected the old departure and approved corrected bat still size/framing only.
+
+Closing source results: the targeted bat edit and one replacement native bat generation still clip wings and are REJECTED as full films. No clipped native frames are in this candidate. The original bat source's safe0..107 span dissolves into its fog-only160..192 span. That transition uses an advected dissolve, whole-effect contraction and slower graded native fog; it is an authored editorial effect, not a successful full native video repair. All body/wing action remains native film; fog-only in-between frames are blended. No more paid batches queued.
+
+The departure retains the newly generated wave/backturn0..35 and exact-pose native4s continuation. Whole-character depth staging moves that intact animated character behind the native translucent letters and stops scale at.15 before the native smoke puff. It is2.5D compositing, not a complete3D rig. No separate limb puppeting. No patterned-surface dissolve from the rejected later part of the6s raw study is used.
+
+First act and both closing studies pass all-frame20%reserve checks atRGB4/8/16. Complete candidate's1137encoded frames also pass;89final frames are exact black. Runtime has a planned48-frame silent reset, with additional naturally black source tail. Peak pre-encode mix.3548, no clipping; human loudspeaker balance remains unverified.
+
+Revised ending awaits full-context visual feedback. App preview must run actual film/audio, Stop/Blackout/recovery/repeat, silent output/phone and capture-cleanup regressions before release. Physical projection footage and actual human microphone acceptance are unavailable. Preserve the old film, painted fallback and full live voice/webcam paths. Do not call this final approved production or count planned library cues as completed.

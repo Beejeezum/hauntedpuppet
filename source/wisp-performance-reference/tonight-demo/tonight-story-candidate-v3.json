@@ -1,0 +1,95 @@
+{
+  "status": "complete candidate, actual-film review pending",
+  "releaseApproved": false,
+  "frames": 1137,
+  "fps": 24,
+  "durationSeconds": 47.375,
+  "clips": [
+    {
+      "file": "source/wisp-performance-reference/tonight-demo/story-act-one-review-v1-picture.mp4",
+      "startFrame": 0,
+      "frames": 799,
+      "sha256": "054cba6d5e5c808436934b43b46a632b3a0d04550c67e22ee224d263e745b5cb"
+    },
+    {
+      "file": "source/wisp-performance-reference/tonight-demo/departure-depth-staged-v5.mp4",
+      "startFrame": 799,
+      "frames": 133,
+      "sha256": "0a2b7a20d1c65c9329cfa40dfc7e63a723ab1301ca8aaaac878ab9217b343f28"
+    },
+    {
+      "file": "source/wisp-performance-reference/tonight-demo/bat-contained-edit-study-v2-picture.mp4",
+      "startFrame": 932,
+      "frames": 157,
+      "sha256": "ebec0673713eee02b6303ef6917c02598fdb4ead4db360d4da0dd40c5206fdc5"
+    }
+  ],
+  "chapters": [
+    {
+      "title": "A little showing off",
+      "startSeconds": 0.0,
+      "endSeconds": 15.166666666666666
+    },
+    {
+      "title": "Too tough for his own good",
+      "startSeconds": 15.166666666666666,
+      "endSeconds": 19.208333333333332
+    },
+    {
+      "title": "The apology",
+      "startSeconds": 19.208333333333332,
+      "endSeconds": 27.25
+    },
+    {
+      "title": "A ghostly greeting",
+      "startSeconds": 27.25,
+      "endSeconds": 33.291666666666664
+    },
+    {
+      "title": "Until next Halloween",
+      "startSeconds": 33.291666666666664,
+      "endSeconds": 38.833333333333336
+    },
+    {
+      "title": "A flutter in the fog",
+      "startSeconds": 38.833333333333336,
+      "endSeconds": 45.375
+    },
+    {
+      "title": "Empty stage",
+      "startSeconds": 45.375,
+      "endSeconds": 47.375
+    }
+  ],
+  "soundEvents": [
+    {
+      "label": "First act and approved scare/apology",
+      "atFrame": 0,
+      "gain": 1,
+      "samples": 1598000
+    },
+    {
+      "label": "Curved departure",
+      "atFrame": 823,
+      "gain": 0.12,
+      "samples": 96000
+    },
+    {
+      "label": "Local vapor phase-out",
+      "atFrame": 895,
+      "gain": 0.1,
+      "samples": 96000
+    },
+    {
+      "label": "Bats disrupt the smoke greeting",
+      "atFrame": 932,
+      "gain": 0.6,
+      "samples": 314000
+    }
+  ],
+  "samplePeak": 0.3547119200229645,
+  "pictureSha256": "1749bbd0b84f8414b5c4631b7e62f8ffe619ae3b4fa63dd3d48170d85c302be2",
+  "movieSha256": "d74465249df75dc37aa42629dd4c33efd53daed5fbc95abf5a96f4caaa56abf0",
+  "blackTailFrames": 48,
+  "scope": "Preserves all selected source frames; no temporal interpolation or crossfade. Candidate is not approval of source motion, framing, audio mix, joins or physical projection."
+}

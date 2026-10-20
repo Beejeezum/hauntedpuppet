@@ -4,9 +4,9 @@
     {
       "source": "source/wisp-performance-reference/tonight-demo/index.html",
       "destination": "index.html",
-      "bytes": 2260,
-      "sha256": "1b26a47978044b70407a23372b7a56f17d45e5c37cb62cda83a5551bd0fbcc46",
-      "publishedSha256": "59f65bff4f9770dc4991ac2ae7e493aa39fae9deb6e9c27cc68a2a14bc965f07",
+      "bytes": 2144,
+      "sha256": "80490d09a5ba5db5a8bd97b9672273588e42537dc954d44d58018a11b80a6479",
+      "publishedSha256": "814844bd4b39d61298b245d8ad1c691880798d20ff7ef5fe245861de6e19a31b",
       "rewrites": [
         {
           "from": "../ambient-show/showdesk.html",
@@ -108,9 +108,9 @@
     {
       "source": "source/wisp-performance-reference/tonight-demo/show.json",
       "destination": "show.json",
-      "bytes": 1691,
-      "sha256": "06f1e86733a761a5019fbc1bda16de7632eed9a907d49a0f7acc8f763001e076",
-      "publishedSha256": "06f1e86733a761a5019fbc1bda16de7632eed9a907d49a0f7acc8f763001e076"
+      "bytes": 2503,
+      "sha256": "f2999aa28dd86133c058a893cea763e3e1487100a9c68929830fc97c60ee9c4f",
+      "publishedSha256": "f2999aa28dd86133c058a893cea763e3e1487100a9c68929830fc97c60ee9c4f"
     },
     {
       "source": "source/wisp-performance-reference/tonight-demo/paired-controls.mjs",
@@ -124,6 +124,20 @@
       "bytes": 2180,
       "sha256": "e94abaebc1fcfe8077ee13065d5427e0a2827dc95613933bbf35c400fb40bf66",
       "publishedSha256": "7d4f1752cac0ede078dcb38e6444d585ea4a5f11572ba689fa6bf34a7eb85540"
+    },
+    {
+      "source": "source/wisp-performance-reference/tonight-demo/tonight-story-candidate-v3-picture.mp4",
+      "destination": "tonight-story-v3-picture.mp4",
+      "bytes": 1874707,
+      "sha256": "1749bbd0b84f8414b5c4631b7e62f8ffe619ae3b4fa63dd3d48170d85c302be2",
+      "publishedSha256": "1749bbd0b84f8414b5c4631b7e62f8ffe619ae3b4fa63dd3d48170d85c302be2"
+    },
+    {
+      "source": "source/wisp-performance-reference/tonight-demo/tonight-story-v3-sound.m4a",
+      "destination": "tonight-story-v3-sound.m4a",
+      "bytes": 800768,
+      "sha256": "70d324131995794728cd15aa90a966ad2fafe63a522a68d3bb6f9995dcd0abab",
+      "publishedSha256": "70d324131995794728cd15aa90a966ad2fafe63a522a68d3bb6f9995dcd0abab"
     }
   ]
 }

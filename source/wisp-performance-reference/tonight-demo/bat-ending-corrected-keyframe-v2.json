@@ -1,7 +1,7 @@
 {
   "mode": "Built-in imagegen edit of actualbat-sourceframe120 at5seconds",
   "source": "bat-ending-source-frame120.png",
-  "status": "human keyframe review pending; full video edit NOTsubmitted",
+  "status": "User approved size and framing; targeted full video edit authorized, finished motion not yet approved",
   "sha256": "37715d5581578bfd80bfabe797abd916bd62ab01e75818d5edf6db21cff1ce01",
   "size": [
     1672,
@@ -36,5 +36,6 @@
       "minimumMargin": 0.22210414452709884
     }
   },
-  "scope": "A still is not proof of fullvideo motion, wingclearance or finalclip approval."
+  "scope": "A still is not proof of fullvideo motion, wingclearance or finalclip approval.",
+  "humanReview": "Yes\u2014use this size and framing"
 }

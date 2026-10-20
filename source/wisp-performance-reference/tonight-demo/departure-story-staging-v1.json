@@ -13,5 +13,8 @@
   "additionalDepthScale": "1 to .4, smoothstep between2and4seconds; fixed.4duringactualvaporphase",
   "vaporDissipation": "opacity smoothstep1to0 between4.25and5.3seconds over alreadydeforming nativefog, not intactbodyfade",
   "blackMatte": "same smoothstep12..24 maxRGB asapprovedscare/apology",
-  "scope": "Existing generated backturn/curvedflight retained; authored screen-space depth staging corrects raw25percentbodytoward10percent, no retiming/reversal/crop, finalvaporspeckremovedwithplannedfogdissipation. Not autonomous3Drig or physicalprojection acceptance."
+  "scope": "Existing generated backturn/curvedflight retained; authored screen-space depth staging corrects raw25percentbodytoward10percent, no retiming/reversal/crop, finalvaporspeckremovedwithplannedfogdissipation. Not autonomous3Drig or physicalprojection acceptance.",
+  "humanReview": "The flight or vaporizing needs work",
+  "releaseApproved": false,
+  "nextDirection": "Retain body bank and back-facing departure; revise flight and vapor transformation before final assembly. Do not treat old path as approved."
 }

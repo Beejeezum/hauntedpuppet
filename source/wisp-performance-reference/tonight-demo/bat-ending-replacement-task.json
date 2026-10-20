@@ -1,0 +1,18 @@
+{
+  "taskId": "3de6214e-8280-4dbe-a3e3-badde710ab10",
+  "status": "SUCCEEDED",
+  "creditsBefore": 16598,
+  "creditsAfter": 16418,
+  "observedDebit": 180,
+  "model": "seedance-2",
+  "duration": 6,
+  "resolution": "720p",
+  "nativeAudio": true,
+  "startAnchor": "writing-final-letter-layer-frame.png",
+  "endAnchor": "authored-empty-first-frame.png",
+  "releaseApproved": false,
+  "note": "Initial combined start/end+reference-image request was rejected INVALID_ARGUMENT before task creation. Successful submission uses start/end only and explicit approved smaller scale/clearance.",
+  "artifact": "bat-ending-replacement-v2.mp4",
+  "sha256": "21ff94865cec9a5fc9ab513115190a1bf552ba02a7ea2cc4944093eca47eb6c7",
+  "review": "REJECTED: forward flight still clips complete wings; no runtime use."
+}

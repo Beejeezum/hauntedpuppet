@@ -2,66 +2,87 @@
   "schema": 1,
   "id": "ghost-at-the-door",
   "title": "The Ghost at the Door",
-  "status": "assembly-review-pending",
+  "status": "revised-story-review-pending",
   "releaseApproved": false,
   "fps": 24,
-  "frames": 1168,
-  "durationSeconds": 48.666666666666664,
+  "frames": 1137,
+  "durationSeconds": 47.375,
   "picture": {
-    "file": "tonight-picture-review-v1.mp4",
-    "sha256": "0506155d272b0f6b2753530ee40c46d28d6ccb186dba725c224012ab82b30a02",
+    "file": "tonight-story-v3-picture.mp4",
+    "sha256": "1749bbd0b84f8414b5c4631b7e62f8ffe619ae3b4fa63dd3d48170d85c302be2",
     "silent": true
   },
   "sound": {
-    "file": "tonight-sound-review-v1.m4a",
-    "sha256": "fddbae1648ba58989ede3817eb5d296de9802d4b5e99ad847d7e85fd82190f5f",
+    "file": "tonight-story-v3-sound.m4a",
+    "sha256": "70d324131995794728cd15aa90a966ad2fafe63a522a68d3bb6f9995dcd0abab",
     "owner": "laptop",
-    "speech": false,
+    "speech": true,
+    "dialogue": "Oops! Hope I didn\u2019t scare you. I\u2019m just trying to be tough.",
     "enable": "explicit operator action",
     "stop": "cancel on pause, Blackout, exit or puppet takeover"
   },
   "chapters": [
     {
-      "title": "A visitor in the mist",
-      "startSeconds": 0,
-      "endSeconds": 11.333333333333334
+      "title": "A little showing off",
+      "startSeconds": 0.0,
+      "endSeconds": 15.166666666666666
     },
     {
-      "title": "A mischievous haunting",
-      "startSeconds": 11.333333333333334,
-      "endSeconds": 37.333333333333336
+      "title": "Too tough for his own good",
+      "startSeconds": 15.166666666666666,
+      "endSeconds": 19.208333333333332
     },
     {
-      "title": "A friendly goodbye",
-      "startSeconds": 37.333333333333336,
-      "endSeconds": 48.666666666666664
+      "title": "The apology",
+      "startSeconds": 19.208333333333332,
+      "endSeconds": 27.25
+    },
+    {
+      "title": "A ghostly greeting",
+      "startSeconds": 27.25,
+      "endSeconds": 33.291666666666664
+    },
+    {
+      "title": "Until next Halloween",
+      "startSeconds": 33.291666666666664,
+      "endSeconds": 38.833333333333336
+    },
+    {
+      "title": "A flutter in the fog",
+      "startSeconds": 38.833333333333336,
+      "endSeconds": 45.375
+    },
+    {
+      "title": "Empty stage",
+      "startSeconds": 45.375,
+      "endSeconds": 47.375
     }
   ],
   "soundEvents": [
     {
-      "at": 1.0,
-      "gain": 0.48,
-      "rate": 1.0,
-      "beat": "A glimmer gathers"
+      "label": "First act and approved scare/apology",
+      "atFrame": 0,
+      "gain": 1,
+      "samples": 1598000
     },
     {
-      "at": 16.3,
-      "gain": 0.55,
-      "rate": 0.72,
-      "beat": "The mischievous change"
+      "label": "Curved departure",
+      "atFrame": 823,
+      "gain": 0.12,
+      "samples": 96000
     },
     {
-      "at": 26.5,
-      "gain": 0.38,
-      "rate": 1.12,
-      "beat": "The friendly return"
+      "label": "Local vapor phase-out",
+      "atFrame": 895,
+      "gain": 0.1,
+      "samples": 96000
     },
     {
-      "at": 43.1,
-      "gain": 0.42,
-      "rate": 0.9,
-      "beat": "A wave into the mist"
+      "label": "Bats disrupt the smoke greeting",
+      "atFrame": 932,
+      "gain": 0.6,
+      "samples": 314000
     }
   ],
-  "review": "Internal visible joins and acoustic mix need human review; chapter boundaries pass deliberately through black. Physical projection untested."
+  "review": "User approved the12sec scare/recovery/apology sequence and mix direction. Revised departure and editorial bat ending await full-context review. Constant safety fit and authored whole-character depth staging; bat source-clipped span108..159 omitted, uncropped rush dissolves into native fog footage. Physical projection and loudspeaker playback unverified."
 }
