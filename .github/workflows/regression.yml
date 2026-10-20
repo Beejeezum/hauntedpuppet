@@ -146,6 +146,7 @@ jobs:
       - name: Check queue and editorial contracts
         run: |
           node tests/cue_director.cjs
+          node tests/film_transport_readiness.cjs
           node tests/ambient_show_plan.cjs
           node tests/stage_compositor.cjs
           node tests/stage_geometry.cjs
@@ -163,6 +164,8 @@ jobs:
         run: node tests/film_phone_cloud_browser.mjs
       - name: Rehearse tonight story and newest painted face study
         run: |
+          HAUNT_TONIGHT_ROOT=dist node tests/film_output_handoff.cjs
+          HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/film_output_handoff.cjs
           HAUNT_TONIGHT_ROOT=dist node tests/tonight_demo.cjs
           HAUNT_TONIGHT_ROOT=dist node tests/tonight_puppet.cjs
           HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/tonight_demo.cjs
@@ -179,5 +182,6 @@ jobs:
             test-results/workspace-entry*
             test-results/film-operator-access*
             test-results/tonight-*.json
+            test-results/film-output-handoff-*.json
             work/showdesk-rehearsal-*.png
           if-no-files-found: ignore

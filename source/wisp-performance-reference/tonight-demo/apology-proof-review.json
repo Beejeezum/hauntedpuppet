@@ -1,0 +1,51 @@
+{
+  "taskId": "40afc00d-4b48-4878-88c8-742d981862db",
+  "status": "SUCCEEDED",
+  "fps": 24.0,
+  "frames": 193,
+  "size": [
+    1280,
+    720
+  ],
+  "sha256": "d4dfefcfb62bbff4f32ba7b047a28a4bda5ab7b4def711c368f08d23213e819d",
+  "threshold": 8,
+  "allFrameBounds": [
+    528,
+    182,
+    746,
+    549
+  ],
+  "fails20percentReserve": 0,
+  "releaseApproved": false,
+  "humanAudioReview": "User approved voice and acting: Yes\u2014keep this voice and acting",
+  "clearanceByRGBThreshold": {
+    "4": {
+      "minX": 526,
+      "minY": 182,
+      "maxX": 747,
+      "maxY": 550,
+      "framesOutside20Percent": 0
+    },
+    "8": {
+      "minX": 528,
+      "minY": 182,
+      "maxX": 746,
+      "maxY": 549,
+      "framesOutside20Percent": 0
+    },
+    "16": {
+      "minX": 528,
+      "minY": 183,
+      "maxX": 744,
+      "maxY": 548,
+      "framesOutside20Percent": 0
+    }
+  },
+  "contactSheetReview": "Connected gestures and sheepish eye/head poses visible in nine sampled frames; no approval of full temporal motion, lip sync or dialogue from stills.",
+  "audioMeasurements": {
+    "meanDbFS": -34.8,
+    "peakDbFS": -15.7,
+    "note": "File-level measurement only; audibility, voice character and exact words require listening review."
+  },
+  "remaining": "Exact edit joins, assembled sound mix and final-story context still pending"
+}

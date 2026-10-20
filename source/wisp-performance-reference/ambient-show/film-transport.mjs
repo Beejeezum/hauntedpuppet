@@ -2,9 +2,17 @@
 export class FilmTransport {
  constructor(compositor,clips,{mediaHost}={}){this.compositor=compositor;this.clips=clips;this.active=null;this.videos=[document.createElement('video'),document.createElement('video')];this.disposed=false;for(const v of this.videos){v.muted=true;v.playsInline=true;v.preload='auto';v.setAttribute('aria-hidden','true');v.className='source-preview';v.title='Muted film preview';mediaHost?.append(v);}compositor.add({id:'character',source:()=>this.active,kind:'character'});}
  async frame(video){
-  let callback,timer,playing,failed;
-  const ready=new Promise((resolve,reject)=>{const cleanup=()=>{clearTimeout(timer);if(callback!==undefined)video.cancelVideoFrameCallback?.(callback);video.removeEventListener('playing',playing);video.removeEventListener('error',failed);};playing=()=>{cleanup();resolve();};failed=()=>{cleanup();reject(Error('Film unavailable'));};timer=setTimeout(failed,6000);video.addEventListener('error',failed,{once:true});if(video.requestVideoFrameCallback)callback=video.requestVideoFrameCallback(playing);else video.addEventListener('playing',playing,{once:true});});
-  try{await Promise.all([ready,video.play()]);}catch(error){failed();throw error;}
+  // A delivered frame is the readiness signal. Some WebKit media pipelines
+  // leave play() pending even while the short film advances to its ending.
+  await new Promise((resolve,reject)=>{
+   let callback,timer,settled=false;
+   const cleanup=()=>{clearTimeout(timer);if(callback!==undefined)video.cancelVideoFrameCallback?.(callback);video.removeEventListener('playing',playing);video.removeEventListener('error',failed);};
+   const playing=()=>{if(settled)return;settled=true;cleanup();resolve();};
+   const failed=error=>{if(settled)return;settled=true;cleanup();reject(error instanceof Error?error:Error('Film unavailable'));};
+   timer=setTimeout(()=>failed(Error('Film did not deliver a frame')),6000);video.addEventListener('error',failed,{once:true});
+   if(video.requestVideoFrameCallback)callback=video.requestVideoFrameCallback(playing);else video.addEventListener('playing',playing,{once:true});
+   try{Promise.resolve(video.play()).catch(failed);}catch(error){failed(error);}
+  });
  }
  async prepare(id){const clip=this.clips.find(c=>c.id===id);if(!clip)throw Error('Unknown cue');const video=this.videos.find(v=>v!==this.active);video.pause();video.muted=true;video.loop=!!clip.loop;video.src=clip.src;video.load();await this.frame(video);video.pause();return{id,clip,video,dispose:()=>{if(video!==this.active){video.pause();video.removeAttribute('src');video.load();}}};}
  async activate(prepared,live){const previous=this.active;await this.frame(prepared.video);if(!live())return;this.active=prepared.video;this.active.dataset.cue=prepared.id;this.compositor.reveal();if(previous&&previous!==this.active){previous.pause();previous.removeAttribute('src');previous.load();}}
