@@ -23,7 +23,7 @@
     "audioEnabled": true,
     "pickerSupports": "image, video or audio"
   },
-  "nextGate": "Do not infer art or model incompatibility from provider technical error. Any further attempt must be separately bounded after checking service/input state; no automatic duplicate or variants.",
+  "nextGate": "Review comparison at full speed and listen to speech; no extra variant before review. Prepared speech only, not realtime rig/native arbitrary speech acceptance.",
   "generationSubmitted": true,
   "newCredits": 150,
   "liveReplacement": false,
@@ -43,7 +43,7 @@
   "creditsAfterFailure": 9948,
   "netObservedCredits": 0,
   "technicalRetry": {
-    "status": "Queued as second output in same session",
+    "status": "Completed; original retained and sampled visual review performed",
     "reason": "First attempt terminal explicit provider technical error/no policy violation and refund verified; officialstatusRunwayAllSystemsOperational/AppBackendPublicAPIOperational/Oct20noincident, not proof of thirdpartyhealth.",
     "serviceSource": "https://status.runwayml.com",
     "settings": "Same Video1/Audio1/Seedance2.0/5s720p16:9/audioon, promptand150quote reverified",
@@ -53,6 +53,22 @@
     "submissionCount": 1,
     "maximumFurtherRetries": 0,
     "browserTabId": "1941618776",
-    "lastObservedState": "SecondoutputInqueue"
+    "lastObservedState": "Secondoutput completed with video player and native Download",
+    "file": "wisp-audiovisual-v1.mp4",
+    "sha256": "9077601aee7624d286e692a7f086f0488f9aec2357fe9609bc7dbd5fda666c0e",
+    "frames": 121,
+    "fps": 24,
+    "size": [
+      1280,
+      720
+    ],
+    "visualReview": [
+      "Nine evenly spaced frames retain familiar painted Wisp, hand/torso motions and connected fog; mouth changes visible. This is sampled review, not speech-timing or human approval.",
+      "RGB8/16 allframes15percentreservePASS. RGB4 fails20frames due1..4borderpixels/frame, largestcomponent3pixels, signal5/255. Original unaltered; no threshold silently relaxed.",
+      "Silent Chromium playback5.056s ended,121browserframes,0drops. Not audible or physical acceptance."
+    ],
+    "comparison": "Sibling outputs/wisp-vision/wisp-whole-body-speech-comparison-v1.mp4; left original motion reference, right generated speech film, audio copied from generated original. No interpolation/retiming; original left trimmed to121frames for comparison.",
+    "humanApproval": false,
+    "voiceApproval": false
   }
 }
