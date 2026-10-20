@@ -63,6 +63,14 @@
       "sha256": "6370b3ea7669d7137ef6cab081e7904946a18659f8be42ae3ba397d0644b360d",
       "approval": "unapproved candidate",
       "limitations": "Left original24fps repeated into48fps container, right interpolated48fps. Silent synchronized5.083sec comparison."
+    },
+    {
+      "file": "wisp-continuous-idle-v15.mp4",
+      "role": "continuous-body-motion-study",
+      "bytes": 2603212,
+      "sha256": "07f9ca935ea024d5d0342bbcf5e38e2dbb84306be031467a1f9ff69a3da67595",
+      "approval": "rejected as seamless idle replacement; unapproved motion study",
+      "limitations": "Original24fps121frames. Ending remains moving but pose differs from start. Raw15percentbufferfails76framesRGB8/minbottom12.59percent. Not loaded by player or production. Runway single5second test60credits; no microphone or guest recording."
     }
   ],
   "speechRehearsal": {

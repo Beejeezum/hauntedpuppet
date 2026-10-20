@@ -1,0 +1,65 @@
+{
+  "best": [
+    {
+      "start": 33,
+      "end": 111,
+      "seconds": 3.25,
+      "poseRgb": 28.772459030151367,
+      "velocityRgbDifference": 11.991105079650879,
+      "nearbyMotionRgb": 10.159934997558594,
+      "seamToMotionRatio": 2.8319530624029894,
+      "score": 34.76801156997681
+    },
+    {
+      "start": 32,
+      "end": 110,
+      "seconds": 3.25,
+      "poseRgb": 28.535640716552734,
+      "velocityRgbDifference": 13.396041870117188,
+      "nearbyMotionRgb": 10.834599494934082,
+      "seamToMotionRatio": 2.6337513195476308,
+      "score": 35.23366165161133
+    },
+    {
+      "start": 31,
+      "end": 109,
+      "seconds": 3.25,
+      "poseRgb": 28.93678092956543,
+      "velocityRgbDifference": 13.072501182556152,
+      "nearbyMotionRgb": 10.552660942077637,
+      "seamToMotionRatio": 2.7421312111131164,
+      "score": 35.473031520843506
+    },
+    {
+      "start": 34,
+      "end": 112,
+      "seconds": 3.25,
+      "poseRgb": 29.645736694335938,
+      "velocityRgbDifference": 12.132840156555176,
+      "nearbyMotionRgb": 9.883052825927734,
+      "seamToMotionRatio": 2.999653772623952,
+      "score": 35.712156772613525
+    },
+    {
+      "start": 34,
+      "end": 111,
+      "seconds": 3.2083333333333335,
+      "poseRgb": 29.447891235351562,
+      "velocityRgbDifference": 12.8006591796875,
+      "nearbyMotionRgb": 9.872091293334961,
+      "seamToMotionRatio": 2.98294356893083,
+      "score": 35.84822082519531
+    },
+    {
+      "start": 31,
+      "end": 110,
+      "seconds": 3.2916666666666665,
+      "poseRgb": 29.66522789001465,
+      "velocityRgbDifference": 12.563323974609375,
+      "nearbyMotionRgb": 10.80055046081543,
+      "seamToMotionRatio": 2.7466403677887135,
+      "score": 35.946889877319336
+    }
+  ],
+  "scope": "Cost-free subsequence search, minimum1.5seconds, RGB endpoint and temporal-difference diagnostics only. Not joint motion, optical flow or visual approval; no frames altered."
+}

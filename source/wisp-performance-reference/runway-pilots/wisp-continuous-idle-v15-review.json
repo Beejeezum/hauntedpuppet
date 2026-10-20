@@ -1,0 +1,53 @@
+{
+  "file": "wisp-continuous-idle-v15.mp4",
+  "sha256": "07f9ca935ea024d5d0342bbcf5e38e2dbb84306be031467a1f9ff69a3da67595",
+  "frames": 121,
+  "fps": 24.0,
+  "marginsMin": {
+    "8": [
+      0.3408141962421712,
+      0.17222222222222222,
+      0.3423799582463466,
+      0.12592592592592589
+    ],
+    "16": [
+      0.34133611691022964,
+      0.17314814814814813,
+      0.3423799582463466,
+      0.12685185185185188
+    ],
+    "32": [
+      0.34342379958246344,
+      0.175,
+      0.3434237995824635,
+      0.12870370370370365
+    ]
+  },
+  "marginFailures15Percent": {
+    "8": 76,
+    "16": 63,
+    "32": 47
+  },
+  "motionRgb": {
+    "middleMedian": 11.846138816729951,
+    "last12Median": 10.718450275588914,
+    "last6": [
+      10.19017129552636,
+      10.348409713900024,
+      10.462665952007917,
+      10.301165053829298,
+      10.752483025260597,
+      9.878117006579398
+    ],
+    "endStartVisibleRgb": 74.03176170652209
+  },
+  "scope": "Decoded pixels only. RGB change is not joint velocity; framing does not approve anatomy, temporal continuity, live responsiveness or physical projection.",
+  "decision": "Rejected as seamless idle replacement; retain unapproved whole-body motion study.",
+  "visualFindings": [
+    "Sampled frames show independent shoulder/arm/hand/torso changes and blink; lower core remains visible.",
+    "No ending near-hold in RGB diagnostic; full-speed human approval still needed.",
+    "End pose differs substantially from start; looping as-is would snap.",
+    "Lower fog enters required15percentbuffer: minimum12.59percent at RGB8; 76of121frames fail. No edge clipping observed by these bounds.",
+    "No interpolation or live-site promotion."
+  ]
+}
