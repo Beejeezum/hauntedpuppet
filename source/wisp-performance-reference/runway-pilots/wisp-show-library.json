@@ -34,9 +34,19 @@
       "name": "Drift into darkness",
       "status": "planned",
       "clip": null,
-      "brief": "Eyes lead a three-quarter turn; show the back, sweep diagonally into depth until tiny, dissolve completely, hold black, then return through a coherent fog reformation.",
+      "brief": "Look toward a destination, turn through profile to a real back view, bank on a curved diagonal path into depth, become tiny, dissolve fully and leave an intentionally empty stage before a later entrance. Never a rigid frontal shrink.",
       "audioStatus": "not-recorded",
-      "safety": "theatrical-no-contact"
+      "safety": "theatrical-no-contact",
+      "spatialAuthoring": {
+        "beats": [
+          "Anticipation and gaze toward destination",
+          "Articulated profile-to-back bank",
+          "Curved retreat with changing foreshortening",
+          "Complete vapor dissolution",
+          "Intentional absence, 4\u20138 seconds"
+        ],
+        "exitState": "absent"
+      }
     },
     {
       "id": "inspect",
@@ -70,9 +80,20 @@
       "name": "Peek from fog",
       "status": "planned",
       "clip": null,
-      "brief": "Eyes appear before full body reforms",
+      "brief": "A tiny distant spark of eyes emerges, approaches on a curved path and turns to inspect the audience; body forms from attached fog and hands open as the ghost settles into a readable pose.",
       "audioStatus": "not-recorded",
-      "safety": "theatrical-no-contact"
+      "safety": "theatrical-no-contact",
+      "spatialAuthoring": {
+        "beats": [
+          "Empty stage",
+          "Tiny distant eye glint",
+          "Curved approach and three-quarter turn",
+          "Coherent body reformation",
+          "Continuous hovering settle"
+        ],
+        "entryState": "absent",
+        "exitState": "visible"
+      }
     },
     {
       "id": "eyes",
@@ -88,9 +109,18 @@
       "name": "Vanish and reform",
       "status": "planned",
       "clip": null,
-      "brief": "Anticipatory compression, full-body vapor dissolution including hands and core, brief empty black stage, eyes emerge and body reforms; no accidental tail loss.",
+      "brief": "Compress with hands and torso, burst softly into a localized puff, let all attached vapor dissipate, then stay absent. A separate entrance can poof into a different safe location; do not automatically ping-pong back.",
       "audioStatus": "not-recorded",
-      "safety": "theatrical-no-contact"
+      "safety": "theatrical-no-contact",
+      "spatialAuthoring": {
+        "beats": [
+          "Whole-body anticipation",
+          "Localized vapor poof",
+          "Fog dissipates without a leftover face or tail",
+          "Intentional absence, 4\u20138 seconds"
+        ],
+        "exitState": "absent"
+      }
     },
     {
       "id": "beckon",
@@ -251,9 +281,20 @@
       "name": "Halloween dance",
       "status": "planned",
       "clip": null,
-      "brief": "A playful corkscrew with actual side/back views, independent arms and wrist follow-through, a small somersault and buoyant recovery; keep all vapor inside reserve.",
+      "brief": "Poof into a safe offset location, anticipate a playful trick, corkscrew through side/back views with independent arms, bank in depth and recover with weight; bow and dissolve, leaving empty space.",
       "audioStatus": "not-recorded",
-      "safety": "theatrical-no-contact"
+      "safety": "theatrical-no-contact",
+      "spatialAuthoring": {
+        "beats": [
+          "Local puff entrance",
+          "Anticipation",
+          "Articulated corkscrew and depth bank",
+          "Overshoot and buoyant recovery",
+          "Bow, dissolve, intentional absence"
+        ],
+        "entryState": "absent",
+        "exitState": "absent"
+      }
     },
     {
       "id": "thanks",
@@ -373,6 +414,8 @@
       "Inspect side/back identity and hand/fog occlusion during depth motion.",
       "Approve joins at playback speed; frame similarity alone is insufficient.",
       "Rehearse actual mapped surface before claiming floating illusion works on site."
-    ]
+    ],
+    "intentionalAbsence": "Planned, authored visible-to-absent and absent-to-visible states. Absence is a performance beat, not a frozen frame or broken playback. Existing rehearsal does not yet implement these new clips.",
+    "projectionConstraint": "Locked camera and projection registration; stage geometry stays fixed. Character articulation, occlusion, foreshortening and curved trajectories sell depth. All vapor and poof envelopes remain inside buffered mapped bounds. No camera shake or frame-edge exits."
   }
 }

@@ -1,0 +1,42 @@
+{
+  "file": "wisp-scary-back-vapor-v2.png",
+  "sha256": "addca71bd2fe2e45410f0e8da62253ee4ab959e1d533091193b352ff3a8156cc",
+  "tool": "Built-in imagegen",
+  "editTarget": "wisp-scary-back-wide-v1.png",
+  "promptIntent": "Change only skeletal back/shoulder/upper-arm ridges into coherent soft translucent rounded vapor; preserve back-facing pose, hands, crest, lower cloud trail, pure black and buffered framing.",
+  "status": "Reference study only; partial correction, not approved replacement",
+  "visualReview": [
+    "Back softened into rounded cloud mass",
+    "Upper arms still too solid; vapor-body problem not fully solved",
+    "No video generated or live character changed"
+  ],
+  "bounds": {
+    "4": {
+      "marginsLTRB": [
+        0.27005988023952093,
+        0.27365269461077846,
+        0.21549893842887474,
+        0.18365180467091294
+      ],
+      "reservePass": true
+    },
+    "8": {
+      "marginsLTRB": [
+        0.27005988023952093,
+        0.2748502994011976,
+        0.21549893842887474,
+        0.18471337579617833
+      ],
+      "reservePass": true
+    },
+    "16": {
+      "marginsLTRB": [
+        0.27065868263473053,
+        0.2748502994011976,
+        0.21549893842887474,
+        0.18471337579617833
+      ],
+      "reservePass": true
+    }
+  }
+}
