@@ -1,0 +1,77 @@
+{
+  "pairs": [
+    {
+      "from": "idle",
+      "to": "greeting",
+      "visibleRgbJump": 1.482280191228435,
+      "adjacentMedianRgb": 0.34847060294704557,
+      "jumpRatio": 4.253673562971065,
+      "silhouetteIoU": 0.9929588443151112
+    },
+    {
+      "from": "greeting",
+      "to": "idle",
+      "visibleRgbJump": 1.4370202886497914,
+      "adjacentMedianRgb": 0.8148397988682297,
+      "jumpRatio": 1.7635617340313252,
+      "silhouetteIoU": 0.9930609699048807
+    },
+    {
+      "from": "idle",
+      "to": "morph",
+      "visibleRgbJump": 1.5277597304157244,
+      "adjacentMedianRgb": 1.3350619084259416,
+      "jumpRatio": 1.1443362444644807,
+      "silhouetteIoU": 0.9930611502377921
+    },
+    {
+      "from": "morph",
+      "to": "scary",
+      "visibleRgbJump": 2.715988069543108,
+      "adjacentMedianRgb": 2.406870705175228,
+      "jumpRatio": 1.1284312296889147,
+      "silhouetteIoU": 0.9910312021960982
+    },
+    {
+      "from": "scary",
+      "to": "return",
+      "visibleRgbJump": 1.666520094364644,
+      "adjacentMedianRgb": 5.37450966216337,
+      "jumpRatio": 0.3100785372286091,
+      "silhouetteIoU": 0.9921897901922191
+    },
+    {
+      "from": "return",
+      "to": "idle",
+      "visibleRgbJump": 2.1713075792930603,
+      "adjacentMedianRgb": 0.43942806905458326,
+      "jumpRatio": 4.941212754034046,
+      "silhouetteIoU": 0.9916256157635468
+    }
+  ],
+  "scope": "Decoded original whole-character endpoint comparison at common raster size. Diagnostics only; no human visual acceptance or physical projection. No blended or repaired frames.",
+  "visualReview": "All six sampled endpoint pairs retain broadly matching silhouette and pose. This does not establish full-speed temporal continuity.",
+  "motionObservation": {
+    "idle": {
+      "middleMedianVisibleRgbStep": 5.132,
+      "last12MedianVisibleRgbStep": 0.236,
+      "interpretation": "Much less pixel change near endpoint; consistent with settling/near-hold, not proof of smooth loop or optical-flow velocity."
+    },
+    "return": {
+      "middleMedianVisibleRgbStep": 12.4,
+      "last12MedianVisibleRgbStep": 0.655
+    },
+    "limitations": [
+      "RGB change combines texture, illumination and movement; not a measured joint velocity.",
+      "No human motion approval, native conversation or physical projection evidence.",
+      "No interpolation, retiming or generated replacement promoted."
+    ]
+  },
+  "sourceHashes": {
+    "wisp-controlled-scary-idle-v9.mp4": "7ec092bff98dc36f57b3d529fcd75532ae1c010960c11c85d6278ccbfde18d45",
+    "wisp-controlled-return-v11.mp4": "d8ab1e2b62c6aa19fbd63842bca812012c0d4dc154c699cd8a3021a89c77c17a",
+    "wisp-controlled-greeting-v8.mp4": "526a0106379f2b86f80474edbe192c56115d32ac37b3dc2a4c4743d25ade95b0",
+    "wisp-controlled-idle-v7.mp4": "6127d5c222004388959b85f11ce61c98ddb82cecee138a18514f35e1340b6570",
+    "wisp-controlled-morph-v10.mp4": "a60ec26aa3e6911ba4a8a39567756336dcfd927cad69ec1b4610b7141701b503"
+  }
+}
