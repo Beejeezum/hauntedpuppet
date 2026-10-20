@@ -1,0 +1,30 @@
+{
+  "comparisons": [
+    {
+      "frame": 0,
+      "maskIoU": 0.9858593068443176,
+      "visibleRGBMAE": 14.369992333518386
+    },
+    {
+      "frame": 30,
+      "maskIoU": 0.9878823080105662,
+      "visibleRGBMAE": 17.984866808822126
+    },
+    {
+      "frame": 60,
+      "maskIoU": 0.9489634179289973,
+      "visibleRGBMAE": 23.190892607335627
+    },
+    {
+      "frame": 90,
+      "maskIoU": 0.9905868520247605,
+      "visibleRGBMAE": 13.567465504720406
+    },
+    {
+      "frame": 120,
+      "maskIoU": 0.979599908407752,
+      "visibleRGBMAE": 11.099449290044431
+    }
+  ],
+  "scope": "Exact decoded-frame same-position RGB and mask comparison; not velocity or human acceptance."
+}
