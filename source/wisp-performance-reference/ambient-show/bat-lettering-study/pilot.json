@@ -1,0 +1,124 @@
+{
+  "taskId": "ccbf9c7f-0108-4d4a-bd56-10882cffb7ed",
+  "status": "review candidate; not approved/public",
+  "submissionCap": 1,
+  "model": "kling-o3-pro",
+  "requested": {
+    "duration": 5,
+    "resolution": "720p",
+    "audio": false
+  },
+  "prompt": "A five-second magical projection vignette, locked camera on pure black. Start with the exact designed glowing blue-white fog lettering HAPPY HALLOWEEN from the supplied artwork, perfectly spelled in the same two-line layout, fully readable for the first second. Its soft smoky edges breathe gently. At one second a small flock of five painted spectral bats emerges from tiny distant fog knots around the lettering; articulated wings flap through genuinely changing poses as they arc in depth through the words. Their narrow turbulent wakes tear apart ONLY the letters they have crossed, breaking luminous letter strokes into soft irregular vapor. No destruction before a bat reaches that region. By four seconds every letter has dispersed; the last bats shrink into depth and dissolve, leaving the provided completely black ending by4.5seconds. Keep ALL fog and entire wingspans within the central60percent width and60percent height for every frame; nothing exits through image edges. Preserve the supplied lettering until each part is physically disrupted. Bats have charcoal bodies with subtle luminous blue rim light, visible against black; no cute cartoon icons, no flat static wing cutouts. No camera motion, no background clouds, no extra words, ghost, objects, music or speech. High quality painterly spectral vapor; no solid ribbon trails.",
+  "startFrame": "../fog-lettering-study/happy-halloween-staged-v1.png",
+  "endFrame": "../fog-lettering-study/empty-stage-v1.png",
+  "observedCreditsAfter": 20963,
+  "scope": "Short exit-story proof only; no generated soundtrack yet; not a finished14second film or public cue",
+  "file": "bats-through-letters-v38.mp4",
+  "sha256": "c68a47ae8d388e73b980c80bc28acc2e0d8f45ecc90a28fffb66e0c675e15685",
+  "observedDebit": 85,
+  "actualOutput": {
+    "size": [
+      1920,
+      1080
+    ],
+    "frames": 121,
+    "fps": 24,
+    "audio": false
+  },
+  "staging": {
+    "file": "bats-through-letters-v38-buffered.mp4",
+    "sha256": "59c199b27f7377ce3a81ce750259209be2b2e62d4241ffe7262456094326d7ba",
+    "method": "Original full shot scaled80percent and centered on1920x1080 black; no crop, frame interpolation, reversal or acting retime",
+    "reason": "Raw5frames fail15percent reserve; all stagedframes pass20percent atRGB4/8/16",
+    "minimumReserve": 0.20729166666666668
+  },
+  "visualReview": {
+    "spelling": "Sampled opening reads HAPPY HALLOWEEN correctly before deliberate letter destruction",
+    "bats": "Sampled frames show changing wing poses and multiple scales; needs human playback review",
+    "dispersal": "Letter regions break around flock; detailed wake causality still needs motion review",
+    "approval": false,
+    "physicalProjection": false
+  },
+  "tailPixelReview": [
+    {
+      "frame": 105,
+      "maxRGB": 16,
+      "sumRGB": 58564
+    },
+    {
+      "frame": 106,
+      "maxRGB": 11,
+      "sumRGB": 20895
+    },
+    {
+      "frame": 107,
+      "maxRGB": 8,
+      "sumRGB": 6731
+    },
+    {
+      "frame": 108,
+      "maxRGB": 2,
+      "sumRGB": 291
+    },
+    {
+      "frame": 109,
+      "maxRGB": 1,
+      "sumRGB": 81
+    },
+    {
+      "frame": 110,
+      "maxRGB": 0,
+      "sumRGB": 0
+    },
+    {
+      "frame": 111,
+      "maxRGB": 0,
+      "sumRGB": 0
+    },
+    {
+      "frame": 112,
+      "maxRGB": 0,
+      "sumRGB": 0
+    },
+    {
+      "frame": 113,
+      "maxRGB": 0,
+      "sumRGB": 0
+    },
+    {
+      "frame": 114,
+      "maxRGB": 0,
+      "sumRGB": 0
+    },
+    {
+      "frame": 115,
+      "maxRGB": 0,
+      "sumRGB": 0
+    },
+    {
+      "frame": 116,
+      "maxRGB": 0,
+      "sumRGB": 0
+    },
+    {
+      "frame": 117,
+      "maxRGB": 0,
+      "sumRGB": 0
+    },
+    {
+      "frame": 118,
+      "maxRGB": 0,
+      "sumRGB": 0
+    },
+    {
+      "frame": 119,
+      "maxRGB": 0,
+      "sumRGB": 0
+    },
+    {
+      "frame": 120,
+      "maxRGB": 0,
+      "sumRGB": 0
+    }
+  ]
+}
