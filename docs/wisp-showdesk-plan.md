@@ -2,7 +2,7 @@
 
 ## Current release checkpoint · 2026-10-20
 
-Production is e44697a27fc2eda96c6445c4a5f7cc4606486bab. The opt-in two-film showdesk is live at https://hauntedpuppet.netlify.app/assets/wisp-showdesk/index.html; root remains the separate live-puppeteering app. PR9 adds paired film controls and laptop-owned local sound effects. Its older b5c5dbf preview passed hosted exact-build/hash, silent-output and sound tests; a later local Mute-button stability fix passed all71 local browser checks but still requires exact-head Linux CI. No additional source study is a finished public cue.
+Production is692286e7b3492487202b5d701b107a6de20f79a1 (2026-10-20). The opt-in two-film showdesk is live at https://hauntedpuppet.netlify.app/assets/wisp-showdesk/index.html; root remains the separate live-puppeteering app. PR9 is merged: paired film controls, laptop-owned local sound effects and stable live Mute updates. All four Linux CI jobs passed exacte5c27dc, all71 local browser checks passed, and production passed exact-build/all10asset-hash checks, actual film changes, silent synthetic sound enable/import/play/cancellation, silent output, Blackout, cleanup and mobile layout. The live-control script also matches its exact merged hash. No additional source study is a finished public cue. Human/acoustic/physical acceptance remains separate.
 
 The remaining sections are a chronological development log. Earlier release IDs, process handles, pending jobs and “not deployed” statements describe their checkpoint only; use this summary and the latest durable work log for current status. The full goal remains incomplete: finished asset library, reviewed joins/reels, animation-first main entry and human/physical acceptance still require work.
 
