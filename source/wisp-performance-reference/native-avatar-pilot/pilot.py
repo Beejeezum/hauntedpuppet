@@ -125,7 +125,10 @@ def main():
     parser.add_argument('--run', action='store_true', help='Start one supervised private pilot after configuration')
     parser.add_argument('--sdk-child', action='store_true', help=argparse.SUPPRESS)
     parser.add_argument('--keychain', action='store_true', help='Use the separately saved private pilot configuration; requires --run')
+    parser.add_argument('--viewer', action='store_true', help='Wait for a private silent viewer before starting the single pilot')
     args = parser.parse_args()
+    if args.viewer and not args.run:
+        parser.error('--viewer requires an explicit --run')
     if args.keychain and not args.run:
         parser.error('--keychain requires an explicit --run')
     audio = inspect_driver()
@@ -151,12 +154,22 @@ def main():
         parser.error('Private configuration missing: ' + ', '.join(missing))
     OneShotGate(os.environ['WISP_PILOT_ROOM_NAME'])
     from supervisor import supervise
-    with tempfile.TemporaryDirectory(prefix='wisp-pilot-') as directory:
+    from contextlib import nullcontext
+    from viewer_server import ViewerServer, viewer_token
+    viewer_context = ViewerServer(lambda: {'url': os.environ['LIVEKIT_URL'],
+                                          'token': viewer_token(os.environ)}) if args.viewer else nullcontext(None)
+    with viewer_context as viewer, tempfile.TemporaryDirectory(prefix='wisp-pilot-') as directory:
+        if viewer:
+            print('Open this local-only silent viewer and connect within60seconds: '+viewer.origin+'/', flush=True)
+            if not viewer.wait_ready(timeout=60):
+                print('Viewer not connected. No worker or provider session started.')
+                return
         env = dict(os.environ)
         env['WISP_PILOT_CLAIM_FILE'] = str(Path(directory) / 'claimed')
         env['WISP_PILOT_DONE_FILE'] = str(Path(directory) / 'done')
         result = supervise([sys.executable, str(Path(__file__).resolve()), '--sdk-child'],
-                           env=env, done_file=env['WISP_PILOT_DONE_FILE'])
+                           env=env, done_file=env['WISP_PILOT_DONE_FILE'],
+                           stop_event=viewer.stop_requested if viewer else None)
         print(json.dumps({'localSupervisor': result, 'remoteCancellationVerified': False}))
 
 
