@@ -1,0 +1,25 @@
+{
+  "scope": "Unregistered final-speaking frame to approved idle first-frame image comparison only. Does not prove velocity continuity, natural motion, mouth-audio timing or an accepted transition.",
+  "spokenLastFrame": 120,
+  "idleFirstFrame": 0,
+  "visibleRGBDifference": 11.90403349331155,
+  "silhouetteIoUAt16": 0.9609721229449607,
+  "candidateJoin": "Direct corresponding phase endpoint; must view at full speed and inspect residual mouth pose before enabling automatic idle return.",
+  "file": "wisp-speaking-to-idle-v1.mp4",
+  "sha256": "48d63d7128968b4b087c7c404acdf59f3b359ed0868874a25eceafb717660b75",
+  "composition": [
+    "All121speakingframes",
+    "All122approvedidleframes",
+    "All122approvedidleframes"
+  ],
+  "fps": 24,
+  "frames": 365,
+  "durationSeconds": 15.208333333333334,
+  "audioPacketSha256": "3c20afc433aa9c7de1a92c5f6ffef6d6717fdfebbaec9deae8710c4c46fdd9cf",
+  "audioPreserved": "Original speaking AAC packet hash equals final edit; no repeated speech or audio time stretch. Audio track ends while visual idle continues.",
+  "visualReview": "Boundaryframes117..124 inspected: neutral settled smile acrosscut; small fog/detail/brightness difference remains. Still needs normal-speed human flow review.",
+  "framing": "All365RGB8/16reservepass;RGB4fails10framesdue lowsignalbordercaveat retained in report.",
+  "browserEvidence": "SilentChromium15.208333sended365browserframes0drops, no audible/physicalacceptance.",
+  "humanApproval": false,
+  "liveReplacement": false
+}

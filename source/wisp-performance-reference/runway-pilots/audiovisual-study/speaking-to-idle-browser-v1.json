@@ -1,0 +1,13 @@
+{
+  "scope": "Isolated silent Chromium decode, not audible or physical acceptance",
+  "duration": 15.208333,
+  "ended": true,
+  "muted": true,
+  "size": [
+    1280,
+    720
+  ],
+  "total": 365,
+  "dropped": 0,
+  "errors": []
+}
