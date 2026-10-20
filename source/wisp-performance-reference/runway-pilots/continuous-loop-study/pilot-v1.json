@@ -1,5 +1,5 @@
 {
-  "status": "Completed candidate; not approved as live idle",
+  "status": "Human-endorsed friendly loop motion and natural repeated flow; not live attraction acceptance",
   "anchor": "wisp-fuller-loop-anchor-v1.png",
   "sha256": "52d54d03c0f0406a9724c7c04b9e2fa0557a675486edfaa40fd0ca2e24a682bd",
   "source": "wisp-continuous-idle-v15.mp4 frame0",
@@ -66,5 +66,10 @@
       "decodedSourceFramesPerCycle": 122,
       "scope": "Muted decode/playback only; browser counter is not source frame count or subjective seamlessness."
     }
+  },
+  "humanReview": {
+    "question": "In the new three-cycle Wisp video below, does the fuller body motion flow naturally through each repeat, or does the ending feel like a pause?",
+    "answer": "Flows naturally\u2014keep this direction",
+    "scope": "Friendly v28 fuller-body motion and repeated flow endorsed. Does not approve scary v29, reverse morph, live speech, operator/physical rehearsal or replacing the whole live character."
   }
 }
