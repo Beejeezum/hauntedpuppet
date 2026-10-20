@@ -29,3 +29,24 @@ Primary references:
 Private configuration names are RUNWAYML_API_SECRET, LIVEKIT_URL, LIVEKIT_API_KEY, LIVEKIT_API_SECRET, WISP_RUNWAY_AVATAR_ID and WISP_PILOT_ROOM_NAME (must start with wisp-pilot-). Values belong only in private server configuration. Use the isolated Python 3.12 environment, not the production app runtime.
 
 Next acceptance: privately establish approved access and verify the actual SDK single-session lifecycle. A real run can incur provider and infrastructure charges even if it fails. Review its full-body motion against approved v28 and record actual startup, cleanup, visual and cost evidence before considering app integration.
+
+
+## Private setup, when projects are ready
+
+The user can run `python3 source/wisp-performance-reference/native-avatar-pilot/private_setup.py` in their own terminal. All five inputs are hidden and saved together in the separate service `com.beejeezum.hauntedpuppet.native-avatar-pilot`, using the existing native Keychain wrapper. This never reads or overwrites the OpenAI entry. No credential file or shell argument is written. The helper does not start a provider session. It requires macOS and can prompt for Keychain access; the agent has not run it or accessed any actual credential.
+
+After private setup, the isolated Python3.12 interpreter can run `pilot.py --run --keychain`. That explicitly loads the separate entry, creates a fresh disposable room name and launches the bounded pilot. Default offline preflight never reads Keychain, and `--keychain` alone is rejected. Alternatively keep using explicit server environment configuration. Never paste values into chat or commit them. Five additional tests use only a fake store and synthetic values; they cover store isolation, fresh room names, invalid/mixed-provider rejection and error redaction. Actual Keychain persistence and provider access remain untested.
+
+
+## Silent local receiver
+
+Add `--viewer` to the explicitly started isolated pilot, for example `pilot.py --run --keychain --viewer`. The launcher prints a loopback-only URL, never a token. Open it and press Connect silent preview within60seconds; no worker starts until the viewer confirms room connection. Stop before readiness prevents worker startup. During the pilot, Stop, Escape, owner closure or a frame stall signal the local worker supervisor as well as clearing/disconnecting the picture. The local viewer window is capped at35seconds. Remote cancellation and billing still require a real provider test; a local shutdown signal is not proof that the provider accepted cancellation.
+
+The viewer binds only127.0.0.1 on a temporary port, accepts one connection issuance, rejects foreign Host/Origin and query data, sends no-store and device-denial headers, and exposes only its exact static allowlist. It does not publish tracks, enumerate devices, create local input tracks or attach audio. Its45-second room-specific token grants subscription but disables media/data publishing and metadata updates. Real secrets stay in the worker/server; only the narrowly scoped receiver token reaches the local browser, through a POST response, never in the URL. Stop prevents further connection issuance. Server/API lifecycle remains unverified against real infrastructure.
+
+The browser SDK is livekit-client2.23.0, extracted from the official npm registry only after verifying its SHA512 integrity. The exact UMD hash, package metadata and Apache2.0 license are retained under viewer/vendor. No production package/lock or renderer changes. Primary documentation: https://docs.livekit.io/reference/client-sdk-js/ and https://docs.livekit.io/frontends/reference/tokens-grants/ .
+
+Validation:30isolated Python checks, including actual Python SDK token grants with synthetic signing material; three browser cases cover actual pinned SDK offline loading and fake-SDK/canvas-stream Stop and stall behavior, with zero camera/microphone attempts or provider connections. These do not establish actual LiveKit dispatch, remote frames, voice sync, visual quality or physical projection. Browser fixture test: tests/native_avatar_viewer.cjs. Default preflight remains offline and never opens Keychain.
+
+
+Actual SDK process-transfer correction: the original factory-local entrypoint failed ForkingPickler with “Cannot get local object.” It is now a module-level function. Tests register it with the installed SDK, serialize/restore it, and pass it into real spawn and forkserver child processes without executing a room job. These checks pass; they do not prove room connection, avatar startup or provider cancellation.

@@ -1,5 +1,5 @@
 {
-  "status": "Generating; same submitted job verified at37percent",
+  "status": "Completed; retained as full-body acting candidate, not a seamless loop",
   "sessionId": "eaa709ca-87e4-406a-bdc2-dfc57f1e7d43",
   "hypothesis": "Use approved v28 whole-body motion as a video reference and softer scary v34 as image identity; avoid v29 frozen identical-endpoint method",
   "settings": {
@@ -41,5 +41,28 @@
   "observedDebit": 150,
   "observedAt": "2026-10-20T06:03:15.411407+00:00",
   "prompt": "One continuous five-second painted scary Wisp performance. Image 1 supplies the exact frightening character identity and soft luminous vapor material. Video 1 supplies ONLY the continuously flowing whole-body acting, timing, camera lock and small buffered stage scale: torso counterbalance, shoulder rolls, distinct elbow/wrist bends, finger articulation, curious head turns and overlapping crest/core billowing. Reinterpret that motion as a menacing spirit, with narrowed glowing blue eyes, a wicked grin and controlled reaching spectral hands, never a friendly face. Keep Image 1 recognizable throughout. Preserve a coherent soft connected body and lower core; the arms are vapor volumes, not bones, ribs or muscular flesh. Keep all faint smoke inside the central 60 percent of the black 16:9 frame, fixed camera, no approach or zoom. Motion continues naturally through the entire last second; no frozen end hold or reversal. One being, no detached components, cuts, text, stars, hard fish curls or background haze. Silent video.",
-  "lastObservedProgressPercent": 37
+  "lastObservedProgressPercent": 100,
+  "file": "wisp-scary-motion-transfer-v35.mp4",
+  "sha256": "21e8efec67ec7e024fc954cc16af458cad8f8427553a998341ff9d37286ca35a",
+  "frames": 121,
+  "fps": 24.0,
+  "size": [
+    1280,
+    720
+  ],
+  "decodedReserveFailuresRGB4_8_16": 0,
+  "loopDiagnostics": {
+    "seamToAdjacentRatio": 2.5850893799197316,
+    "last12MedianRGBStep": 4.445049693705759,
+    "middleMedianRGBStep": 15.572369393400244,
+    "endpointStepDifferenceRGB": 4.724098193707456,
+    "scope": "Unmodified letterboxed samples and pixel differences, not optical-flow/joint velocity, automatic loop approval or human smoothness acceptance."
+  },
+  "visualReview": [
+    "Sampled arms, wrists, head and core change coherently through the performance; no friendly face appears in sampled frames.",
+    "Chest is softer and less ribbed than rejected v29 midpoint, although bright claw tips and opaque central regions remain.",
+    "Last12 median RGBstep4.445 versus middle15.572; substantially more ending activity than v29(.141) but not joint-velocity proof.",
+    "Endpoint difference/seam ratio2.585 means no seamless-loop acceptance.",
+    "No live replacement, native speech, reverse morph or physical projection approval."
+  ]
 }

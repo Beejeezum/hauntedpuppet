@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 import sys
 import tempfile
+import threading
 import time
 import unittest
 from unittest.mock import patch
@@ -65,6 +66,19 @@ class Supervisor(unittest.TestCase):
     def test_denied_signal_with_verified_absent_group(self):
         with patch('supervisor.os.killpg', side_effect=PermissionError), patch('supervisor.group_absent', return_value=True):
             result = supervise([sys.executable, '-c', 'pass'], wall_seconds=2, grace_seconds=.05)
+        self.assertEqual(result['cleanupErrors'], [])
+
+    def test_viewer_stop_interrupts_worker(self):
+        event = threading.Event()
+        timer = threading.Timer(.15, event.set)
+        timer.start()
+        try:
+            result = supervise([sys.executable, '-c', 'import time;time.sleep(10)'],
+                               wall_seconds=2, grace_seconds=.05, stop_event=event)
+        finally:
+            timer.cancel()
+        self.assertTrue(result['stopRequested'])
+        self.assertFalse(result['timedOut'])
         self.assertEqual(result['cleanupErrors'], [])
 
     def test_cannot_increase_cap(self):

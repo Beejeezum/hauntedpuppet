@@ -18,7 +18,7 @@ def group_absent(group):
         return False  # Unknown is not successful cleanup.
 
 
-def supervise(command, *, env=None, wall_seconds=MAX_WALL_SECONDS, grace_seconds=2, done_file=None):
+def supervise(command, *, env=None, wall_seconds=MAX_WALL_SECONDS, grace_seconds=2, done_file=None, stop_event=None):
     """Stop the entire child group on completion, timeout or parent cancellation.
 
     Output is intentionally suppressed: SDK logging must not expose private setup.
@@ -33,10 +33,14 @@ def supervise(command, *, env=None, wall_seconds=MAX_WALL_SECONDS, grace_seconds
                                stderr=subprocess.DEVNULL)
     started = time.monotonic()
     timed_out = False
+    stop_requested = False
     cleanup_errors = []
     try:
         completed = False
         while process.poll() is None:
+            if stop_event is not None and stop_event.is_set():
+                stop_requested = True
+                break
             if done_file and os.path.exists(done_file):
                 completed = True
                 break
@@ -71,4 +75,4 @@ def supervise(command, *, env=None, wall_seconds=MAX_WALL_SECONDS, grace_seconds
             except subprocess.TimeoutExpired:
                 cleanup_errors.append('root-still-running')
     return {'returnCode': return_code, 'timedOut': timed_out,
-            'completionSignal': completed, 'cleanupErrors': cleanup_errors, 'elapsedSeconds': round(time.monotonic() - started, 3)}
+            'completionSignal': completed, 'stopRequested': stop_requested, 'cleanupErrors': cleanup_errors, 'elapsedSeconds': round(time.monotonic() - started, 3)}

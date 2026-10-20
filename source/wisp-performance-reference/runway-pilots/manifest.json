@@ -71,6 +71,14 @@
       "sha256": "07f9ca935ea024d5d0342bbcf5e38e2dbb84306be031467a1f9ff69a3da67595",
       "approval": "User endorsed fuller body/hand motion direction; NOT approved as seamless idle or finished asset.",
       "limitations": "Original24fps121frames. Ending remains moving but pose differs from start. Raw15percentbufferfails76framesRGB8/minbottom12.59percent. Not loaded by player or production. Runway single5second test60credits; no microphone or guest recording."
+    },
+    {
+      "file": "motion-transfer-study/wisp-scary-motion-transfer-v35.mp4",
+      "role": "scary-full-body-motion-study",
+      "bytes": 1738247,
+      "sha256": "21e8efec67ec7e024fc954cc16af458cad8f8427553a998341ff9d37286ca35a",
+      "approval": "unapproved candidate",
+      "limitations": "All121frames pass15% RGB4/8/16 reserve; articulated source-film study only. Endpoint mismatch; not seamless loop or morph. Human approval pending."
     }
   ],
   "speechRehearsal": {
@@ -145,8 +153,8 @@
     },
     {
       "file": "wisp-latest-review.html",
-      "bytes": 5188,
-      "sha256": "72b64163ea5d5fa316d2cf6fca81e9ab12cedcd1234b8801896dc3f3c4bfee02"
+      "bytes": 5626,
+      "sha256": "90a60a3fe78dc26ba20142778ca4d9de797a95fa884dc23649d5d7eaa6a9bc29"
     },
     {
       "file": "wisp-whole-film-handoff.html",

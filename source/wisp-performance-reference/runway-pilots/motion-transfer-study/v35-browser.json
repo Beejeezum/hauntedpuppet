@@ -1,0 +1,11 @@
+{
+  "scope": "isolated muted browser playback of original v35, not human or physical approval",
+  "muted": true,
+  "ended": true,
+  "duration": 5.041667,
+  "totalVideoFrames": 121,
+  "droppedVideoFrames": 0,
+  "errors": [],
+  "externalRequests": 0,
+  "blackoutUnloads": true
+}

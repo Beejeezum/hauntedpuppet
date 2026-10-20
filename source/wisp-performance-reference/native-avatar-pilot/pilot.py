@@ -89,34 +89,37 @@ class OneShotGate:
         self.claimed = True
 
 
-def create_server():
+async def pilot_entrypoint(ctx):
+    # Module-level function is required by the SDK's spawn/forkserver job transfer.
     from livekit import rtc
-    from livekit.agents import Agent, AgentServer, AgentSession, APIConnectOptions, room_io
+    from livekit.agents import Agent, AgentSession, APIConnectOptions, room_io
     from livekit.plugins import runway
     gate = OneShotGate(os.environ.get('WISP_PILOT_ROOM_NAME'), os.environ.get('WISP_PILOT_CLAIM_FILE'))
-    server = AgentServer()
+    gate.claim(ctx.job.room.name)
+    await asyncio.wait_for(ctx.connect(), timeout=10)
+    inspect_driver()
+    session = AgentSession()  # No STT, LLM, TTS or user input is configured.
+    avatar = runway.AvatarSession(
+        avatar_id=os.environ['WISP_RUNWAY_AVATAR_ID'], max_duration=PROVIDER_SECONDS,
+        conn_options=APIConnectOptions(max_retry=0, timeout=10),
+    )
+    options = room_io.RoomOptions(audio_input=False, video_input=False, text_input=False,
+                                  text_output=False, close_on_disconnect=True)
+    try:
+        events = await bounded_pilot(session, avatar, ctx.room,
+            agent=Agent(instructions='Synthetic audio visual compatibility pilot only.'),
+            options=options, frames=audio_frames(rtc.AudioFrame))
+        # Only lifecycle labels; never tokens, request bodies or visitor data.
+        print(json.dumps({'pilotEvents': events}))
+    finally:
+        ctx.shutdown(reason='Synthetic pilot finished or failed')
+        Path(os.environ['WISP_PILOT_DONE_FILE']).touch(mode=0o600)
 
-    @server.rtc_session(agent_name='wisp-synthetic-visual-pilot')
-    async def entrypoint(ctx):
-        gate.claim(ctx.job.room.name)
-        await asyncio.wait_for(ctx.connect(), timeout=10)
-        inspect_driver()
-        session = AgentSession()  # No STT, LLM, TTS or user input is configured.
-        avatar = runway.AvatarSession(
-            avatar_id=os.environ['WISP_RUNWAY_AVATAR_ID'], max_duration=PROVIDER_SECONDS,
-            conn_options=APIConnectOptions(max_retry=0, timeout=10),
-        )
-        options = room_io.RoomOptions(audio_input=False, video_input=False, text_input=False,
-                                      text_output=False, close_on_disconnect=True)
-        try:
-            events = await bounded_pilot(session, avatar, ctx.room,
-                agent=Agent(instructions='Synthetic audio visual compatibility pilot only.'),
-                options=options, frames=audio_frames(rtc.AudioFrame))
-            # Only lifecycle labels; never tokens, request bodies or visitor data.
-            print(json.dumps({'pilotEvents': events}))
-        finally:
-            ctx.shutdown(reason='Synthetic pilot finished or failed')
-            Path(os.environ['WISP_PILOT_DONE_FILE']).touch(mode=0o600)
+
+def create_server():
+    from livekit.agents import AgentServer
+    server = AgentServer()
+    server.rtc_session(pilot_entrypoint, agent_name='wisp-synthetic-visual-pilot')
     return server
 
 
@@ -124,7 +127,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--run', action='store_true', help='Start one supervised private pilot after configuration')
     parser.add_argument('--sdk-child', action='store_true', help=argparse.SUPPRESS)
+    parser.add_argument('--keychain', action='store_true', help='Use the separately saved private pilot configuration; requires --run')
+    parser.add_argument('--viewer', action='store_true', help='Wait for a private silent viewer before starting the single pilot')
     args = parser.parse_args()
+    if args.viewer and not args.run:
+        parser.error('--viewer requires an explicit --run')
+    if args.keychain and not args.run:
+        parser.error('--keychain requires an explicit --run')
     audio = inspect_driver()
     if args.sdk_child:
         for name in ('WISP_PILOT_CLAIM_FILE', 'WISP_PILOT_DONE_FILE'):
@@ -140,17 +149,30 @@ def main():
                           'inputs': {'microphone': False, 'camera': False, 'text': False},
                           'workerStarted': False, 'sessionCreated': False}))
         return
+    if args.keychain:
+        from private_setup import load_private
+        os.environ.update(load_private())
     missing = [name for name in (*REQUIRED, 'WISP_PILOT_ROOM_NAME') if not os.environ.get(name)]
     if missing:
         parser.error('Private configuration missing: ' + ', '.join(missing))
     OneShotGate(os.environ['WISP_PILOT_ROOM_NAME'])
     from supervisor import supervise
-    with tempfile.TemporaryDirectory(prefix='wisp-pilot-') as directory:
+    from contextlib import nullcontext
+    from viewer_server import ViewerServer, viewer_token
+    viewer_context = ViewerServer(lambda: {'url': os.environ['LIVEKIT_URL'],
+                                          'token': viewer_token(os.environ)}) if args.viewer else nullcontext(None)
+    with viewer_context as viewer, tempfile.TemporaryDirectory(prefix='wisp-pilot-') as directory:
+        if viewer:
+            print('Open this local-only silent viewer and connect within60seconds: '+viewer.origin+'/', flush=True)
+            if not viewer.wait_ready(timeout=60):
+                print('Viewer not connected. No worker or provider session started.')
+                return
         env = dict(os.environ)
         env['WISP_PILOT_CLAIM_FILE'] = str(Path(directory) / 'claimed')
         env['WISP_PILOT_DONE_FILE'] = str(Path(directory) / 'done')
         result = supervise([sys.executable, str(Path(__file__).resolve()), '--sdk-child'],
-                           env=env, done_file=env['WISP_PILOT_DONE_FILE'])
+                           env=env, done_file=env['WISP_PILOT_DONE_FILE'],
+                           stop_event=viewer.stop_requested if viewer else None)
         print(json.dumps({'localSupervisor': result, 'remoteCancellationVerified': False}))
 
 
