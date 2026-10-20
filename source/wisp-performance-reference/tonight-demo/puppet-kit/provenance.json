@@ -1,0 +1,30 @@
+{
+  "status": "new painted face study, not a complete body rig",
+  "files": [
+    {
+      "file": "friendly-fog-neutral-v1.png",
+      "sha256": "a7c20493f394704f7fef3932c99a73faee09cdc9b07f4feadc17256aa52c70c9",
+      "source": "Built-in image generation edit/derived mouth sprite sheet from approved-friendly-fog.png",
+      "humanApproved": false
+    },
+    {
+      "file": "friendly-fog-reference.png",
+      "sha256": "42c2a586c05b69d596d136dae7f0500e5a567619b699d6e02bad0a4c765082f4",
+      "source": "Original approved-friendly-fog.png copy",
+      "humanApproved": "Original reference only"
+    },
+    {
+      "file": "friendly-mouths-v1.png",
+      "sha256": "cbc51f99141c08ff66081d6e2fdfa7e96359c0d59f9a4909a2b02a8e5ec8c746",
+      "source": "Built-in image generation edit/derived mouth sprite sheet from approved-friendly-fog.png",
+      "humanApproved": false
+    }
+  ],
+  "limits": [
+    "No independent arm/finger articulation",
+    "No evil kit yet",
+    "No eyelid mechanics yet",
+    "Mic estimates amplitude, not phonemes",
+    "No human voice/physical projection acceptance"
+  ]
+}

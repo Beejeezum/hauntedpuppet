@@ -4,6 +4,10 @@ const build=spawnSync(process.execPath,[path.join(root,'scripts/build-public.cjs
 for(const name of ['server.py','credential_store.py','realtime_voice.py','.env','package.json','netlify/functions/api.mts','phone_remote/phone_server.py','vendor/qrcodegen.py'])assert(!fs.existsSync(path.join(out,name)),name+' must stay off the CDN');
 for(const name of ['index.html','speaking.mp4','idle.mp4','wisp-whole-film-player.js','wisp-whole-film-output.js','wisp-film-output.js'])assert(fs.existsSync(path.join(out,'assets/wisp-film-preview',name)),name+' preview asset missing');
 assert(!fs.existsSync(path.join(out,'source')),'Entire source tree must remain private to the repo');
+for(const name of ['index.html','tonight.mjs','puppet.html','puppet.mjs','friendly-fog-neutral-v1.png','friendly-fog-reference.png','friendly-mouths-v1.png','tonight-picture-review-v1.mp4','tonight-sound-review-v1.m4a','show.json'])assert(fs.existsSync(path.join(out,'assets/wisp-tonight',name)),name+' tonight asset missing');
+const tonightShow=JSON.parse(fs.readFileSync(path.join(out,'assets/wisp-tonight/show.json'),'utf8'));
+for(const asset of [tonightShow.picture,tonightShow.sound])assert.equal(require('node:crypto').createHash('sha256').update(fs.readFileSync(path.join(out,'assets/wisp-tonight',asset.file))).digest('hex'),asset.sha256,'Runtime show points at exact published media');
+assert.equal(tonightShow.releaseApproved,false,'Review export must not claim final visual acceptance');
 for(const name of ['index.html','showdesk.css','showdesk.mjs','film-transport.mjs','cue-director.mjs','friendly.mp4','scary.mp4'])assert(fs.existsSync(path.join(out,'assets/wisp-showdesk',name)),name+' show desk asset missing');
 assert(!fs.existsSync(path.join(out,'assets/wisp-showdesk/wisp-scary-return-bridge-v36.mp4')),'Rejected bridge must stay off CDN');
 for(const file of ['showdesk.mjs','film-transport.mjs','cue-director.mjs'])assert(!fs.readFileSync(path.join(out,'assets/wisp-showdesk',file),'utf8').includes('runway-pilots/'),'Unresolved source path in published desk');

@@ -1,0 +1,27 @@
+import {mountFilmOutput} from '../runway-pilots/wisp-film-output.js';
+const $=id=>document.getElementById(id),canvas=$('stage'),ctx=canvas.getContext('2d'),frame=document.createElement('canvas');frame.width=1024;frame.height=1536;const f=frame.getContext('2d');
+let disposed=false,black=false,ready=false,draws=0,raf,stream=null,context=null,source=null,analyser=null,monitor=null,epoch=0,pending=false,level=0,gaze={x:0,y:0},target={x:0,y:0};
+const output=mountFilmOutput(canvas,()=>({black: black||!ready,paused:false,disposed,metrics:{draws}}));
+const load=async path=>{const i=new Image();i.src=path;await i.decode();return i;};let base,ref,mouths;
+Promise.all([load('puppet-kit/friendly-fog-neutral-v1.png'),load('puppet-kit/friendly-fog-reference.png'),load('puppet-kit/friendly-mouths-v1.png')]).then(images=>{if(disposed)return;[base,ref,mouths]=images;ready=true;$('status').textContent='Ready · microphone off';}).catch(()=>{$('status').textContent='Painted kit unavailable';black=true;});
+function clear(){ctx.clearRect(0,0,1280,720);output.blackout();}
+async function stopMic(message='Microphone off'){
+ epoch++;pending=false;const oldContext=context;stream?.getTracks().forEach(t=>{t.onended=null;t.stop();});stream=null;for(const n of [source,analyser,monitor])try{n?.disconnect();}catch{}source=analyser=monitor=null;context=null;level=0;$('startMic').disabled=false;$('stopMic').disabled=true;$('status').textContent=message;if(oldContext&&oldContext.state!=='closed')await oldContext.close();
+}
+$('startMic').onclick=async()=>{
+ if(stream||pending||disposed)return;const token=++epoch;pending=true;$('startMic').disabled=true;$('stopMic').disabled=false;$('status').textContent='Waiting for microphone permission';let acquired;
+ try{context=new AudioContext();let resumeError;const resumed=context.resume().catch(e=>{resumeError=e;});acquired=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:false},video:false});if(token!==epoch||disposed){acquired.getTracks().forEach(t=>t.stop());return;}stream=acquired;await resumed;if(resumeError)throw resumeError;if(token!==epoch||disposed)return;source=context.createMediaStreamSource(stream);analyser=context.createAnalyser();analyser.fftSize=512;source.connect(analyser);monitor=context.createGain();monitor.gain.value=$('monitor').checked?.25:0;analyser.connect(monitor);monitor.connect(context.destination);for(const t of stream.getTracks())t.onended=()=>stopMic('Microphone disconnected');pending=false;$('status').textContent='Microphone live · mouth follows your voice';}
+ catch(e){acquired?.getTracks().forEach(t=>t.stop());if(token===epoch)await stopMic(e.name==='NotAllowedError'?'Microphone permission declined':'Microphone could not start');}
+};
+$('stopMic').onclick=()=>stopMic();$('monitor').onchange=()=>{if(monitor)monitor.gain.setTargetAtTime($('monitor').checked?.25:0,context.currentTime,.02);};
+function blackout(){black=true;clear();stopMic('Stage black · microphone off');} $('blackout').onclick=blackout;$('show').onclick=()=>{black=false;};document.addEventListener('keydown',e=>{if(e.key==='Escape')blackout();});
+canvas.onpointermove=e=>{const r=canvas.getBoundingClientRect();target={x:Math.max(-1,Math.min(1,(e.clientX-r.left)/r.width*2-1)),y:Math.max(-1,Math.min(1,(e.clientY-r.top)/r.height*2-1))};};canvas.onpointerleave=()=>{target={x:0,y:0};};
+const samples=new Float32Array(512);
+function draw(now){if(disposed)return;gaze.x+=(target.x-gaze.x)*.12;gaze.y+=(target.y-gaze.y)*.12;let amount=Number($('mouth').value)/100;if(analyser){analyser.getFloatTimeDomainData(samples);const rms=Math.sqrt(samples.reduce((s,x)=>s+x*x,0)/samples.length);amount=Math.min(1,Math.max(0,rms-.012)*Number($('sensitivity').value));}level+=(amount-level)*(amount>level?.4:.18);
+ if(ready&&!black){f.clearRect(0,0,1024,1536);f.drawImage(base,0,0,1024,1536);
+ for(const eye of [{cx:417,cy:552,sx:375,sy:511,w:80,h:82},{cx:578,cy:584,sx:543,sy:545,w:74,h:78}]){f.save();f.beginPath();f.ellipse(eye.cx,eye.cy,eye.w/2,eye.h/2,0,0,Math.PI*2);f.clip();f.drawImage(ref,eye.sx,eye.sy,eye.w,eye.h,eye.cx-eye.w/2+gaze.x*9,eye.cy-eye.h/2+gaze.y*7,eye.w,eye.h);f.restore();}
+ const tile=level<.08?0:level<.3?1:level<.65?2:3,cw=mouths.width/4,ch=mouths.height/2;f.save();f.translate(488,644);f.rotate(.12);f.drawImage(mouths,tile*cw,0,cw,ch,-69,-ch/cw*69,138,ch/cw*138);f.restore();
+ ctx.clearRect(0,0,1280,720);ctx.save();ctx.translate(640+Math.sin(now*.00063)*8,360+Math.sin(now*.0011)*7);ctx.rotate(Math.sin(now*.0007)*.012);const scale=.278*(1+Math.sin(now*.0015)*.008);ctx.scale(scale,scale);ctx.drawImage(frame,-512,-768);ctx.restore();draws++;
+ }else clear();raf=requestAnimationFrame(draw);}
+window.FogPuppet={blackout,stopMic,inspect:()=>({ready,black,disposed,mic:!!stream,pending,audioContext:context?.state||'not-created',tracks:stream?.getTracks().filter(t=>t.readyState==='live').length||0,mouth:level,gaze:{...gaze},draws})};draw(performance.now());
+window.addEventListener('pagehide',()=>{disposed=true;black=true;stopMic();cancelAnimationFrame(raf);clear();output.dispose();},{once:true});

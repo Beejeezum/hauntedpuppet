@@ -4,9 +4,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.html",
       "destination": "index.html",
-      "sha256": "ea0a4eb003f32b6314064d439b39eebea96b8d970bc60dde1b478d61d767796f",
-      "bytes": 3162,
-      "publishedSha256": "ea0a4eb003f32b6314064d439b39eebea96b8d970bc60dde1b478d61d767796f"
+      "sha256": "1faec22e3b9265edf1e9b8ea9222468bb223dd228b8ed43537aea7ab281009ec",
+      "bytes": 3250,
+      "publishedSha256": "1faec22e3b9265edf1e9b8ea9222468bb223dd228b8ed43537aea7ab281009ec"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.css",

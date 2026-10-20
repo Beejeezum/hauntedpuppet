@@ -31,9 +31,13 @@ const root=process.env.HAUNT_DESK_ROOT||path.resolve(__dirname,'..'),mime={'.htm
   const pauseState=await bounded(page.evaluate(()=>{window.__testActive=document.querySelector('#mediaSources video[data-cue="'+WispDesk.inspect().director.current+'"]');if(!window.__testActive||window.__testActive.paused)throw Error('Expected connected playing character video');window.__testActive.pause();return{visibility:document.visibilityState,time:__testActive.currentTime,paused:__testActive.paused,connected:__testActive.isConnected,cue:__testActive.dataset.cue};}),3000);step('character pause returned '+JSON.stringify(pauseState));
   await page.waitForFunction(()=>WispDesk.inspect().composition.suspended,null,{timeout:5000});step('owner stall gate suspended');
   await output.waitForFunction(()=>{const c=document.querySelector('canvas');return !c.getContext('2d').getImageData(0,0,c.width,c.height).data.some((v,i)=>i%4!==3&&v);},null,{timeout:5000});step('stalled output is black');
-  await bounded(page.evaluate(()=>window.__testActive.play()),6000);step('character resume promise returned');
+  // Linux WebKit can advance through a loop while leaving play() pending.
+  // Verify delivered playback rather than treating promise settlement as a frame.
+  const resumeFrom=await page.evaluate(()=>{window.__resumeErrors=[];const at=window.__testActive.currentTime;window.__testActive.play().catch(e=>window.__resumeErrors.push(e.message));return at;});
+  await page.waitForFunction(at=>!window.__testActive.paused&&window.__testActive.currentTime!==at,resumeFrom,{timeout:5000});step('character media clock resumed');
   await page.waitForFunction(()=>!WispDesk.inspect().composition.suspended,null,{timeout:5000});step('owner recovered from stall');
   await output.waitForFunction(()=>document.querySelector('canvas').getContext('2d').getImageData(640,360,1,1).data[2]===255,null,{timeout:5000});
+  assert.deepEqual(await page.evaluate(()=>window.__resumeErrors),[],'Resume must not reject playback');
   }
   step('stall recovery complete');await page.getByRole('button',{name:'Hide synthetic-blue.png'}).click();assert.equal(await page.evaluate(()=>WispDesk.inspect().composition.layers[1].visible),false);
   await page.locator('#pace').selectOption('500');await page.getByRole('button',{name:/Menacing Wisp/}).click();await page.waitForFunction(()=>WispDesk.inspect().director.current==='scary'&&WispDesk.inspect().director.phase==='playing');

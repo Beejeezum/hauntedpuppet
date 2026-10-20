@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parent
 WORKSPACES = {
     '/assets/wisp-showdesk/': 'public-showdesk.json',
     '/assets/wisp-film-preview/': 'public-film-preview.json',
+    '/assets/wisp-tonight/': 'public-tonight-demo.json',
 }
 
 
@@ -43,13 +44,15 @@ def asset(path):
         item = next((f for f in manifest['files'] if f['destination'] == name), None)
         if item is None:
             raise FileNotFoundError('Unknown workspace asset')
-        allowed = (r'^source/wisp-performance-reference/(ambient-show|runway-pilots)/'
+        allowed = (r'^source/wisp-performance-reference/tonight-demo/'
+                   if manifest_name == 'public-tonight-demo.json' else
+                   r'^source/wisp-performance-reference/(ambient-show|runway-pilots)/'
                    if manifest_name == 'public-showdesk.json' else
                    r'^source/wisp-performance-reference/runway-pilots/')
         if not re.match(allowed, item['source']):
             raise FileNotFoundError('Invalid workspace source')
         source = (ROOT / item['source']).resolve()
-        folders = ('ambient-show', 'runway-pilots') if manifest_name == 'public-showdesk.json' else ('runway-pilots',)
+        folders = ('tonight-demo',) if manifest_name == 'public-tonight-demo.json' else ('ambient-show', 'runway-pilots') if manifest_name == 'public-showdesk.json' else ('runway-pilots',)
         roots = [ROOT / 'source' / 'wisp-performance-reference' / folder for folder in folders]
         if not any(folder.resolve() in source.parents for folder in roots):
             raise FileNotFoundError('Invalid workspace asset')

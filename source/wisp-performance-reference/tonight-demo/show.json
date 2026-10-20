@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "id": "ghost-at-the-door",
+  "title": "The Ghost at the Door",
+  "status": "assembly-review-pending",
+  "releaseApproved": false,
+  "fps": 24,
+  "frames": 1168,
+  "durationSeconds": 48.666666666666664,
+  "picture": {
+    "file": "tonight-picture-review-v1.mp4",
+    "sha256": "0506155d272b0f6b2753530ee40c46d28d6ccb186dba725c224012ab82b30a02",
+    "silent": true
+  },
+  "sound": {
+    "file": "tonight-sound-review-v1.m4a",
+    "sha256": "fddbae1648ba58989ede3817eb5d296de9802d4b5e99ad847d7e85fd82190f5f",
+    "owner": "laptop",
+    "speech": false,
+    "enable": "explicit operator action",
+    "stop": "cancel on pause, Blackout, exit or puppet takeover"
+  },
+  "chapters": [
+    {
+      "title": "A visitor in the mist",
+      "startSeconds": 0,
+      "endSeconds": 11.333333333333334
+    },
+    {
+      "title": "A mischievous haunting",
+      "startSeconds": 11.333333333333334,
+      "endSeconds": 37.333333333333336
+    },
+    {
+      "title": "A friendly goodbye",
+      "startSeconds": 37.333333333333336,
+      "endSeconds": 48.666666666666664
+    }
+  ],
+  "soundEvents": [
+    {
+      "at": 1.0,
+      "gain": 0.48,
+      "rate": 1.0,
+      "beat": "A glimmer gathers"
+    },
+    {
+      "at": 16.3,
+      "gain": 0.55,
+      "rate": 0.72,
+      "beat": "The mischievous change"
+    },
+    {
+      "at": 26.5,
+      "gain": 0.38,
+      "rate": 1.12,
+      "beat": "The friendly return"
+    },
+    {
+      "at": 43.1,
+      "gain": 0.42,
+      "rate": 0.9,
+      "beat": "A wave into the mist"
+    }
+  ],
+  "review": "Internal visible joins and acoustic mix need human review; chapter boundaries pass deliberately through black. Physical projection untested."
+}

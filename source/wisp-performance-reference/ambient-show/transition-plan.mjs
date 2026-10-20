@@ -31,7 +31,7 @@ export function planShow(catalog, showId) {
     return clip;
   });
   const transitions = clips.map((clip, i) => planJoin(clip, clips[(i + 1) % clips.length], {
-    joins: catalog.reviewedJoins, bridges: catalog.clips.filter(c => c.form === 'transition')
+    joins: catalog.reviewedJoins, bridges: catalog.clips.filter(c => c.form === 'transition' && !c.manualOnly)
   }));
   return {id: show.id, clips: clips.map(c => c.id), transitions};
 }

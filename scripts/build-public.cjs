@@ -37,6 +37,23 @@ for (const item of desk.files) {
   if (hash(bytes) !== item.publishedSha256) throw Error('Show desk publication checksum mismatch');
   fs.writeFileSync(path.join(deskOut, item.destination), bytes);
 }
+// Tonight's opt-in review is an exact file list, not general source publication.
+const tonight = JSON.parse(fs.readFileSync(path.join(root, 'scripts/public-tonight-demo.json'), 'utf8'));
+const tonightOut = path.join(out, 'assets/wisp-tonight');
+fs.mkdirSync(tonightOut, {recursive:true});
+for (const item of tonight.files) {
+  if (!item.source.startsWith('source/wisp-performance-reference/tonight-demo/') || path.basename(item.destination) !== item.destination) throw Error('Invalid tonight asset path');
+  let bytes = fs.readFileSync(path.join(root,item.source));
+  const hash = b => require('node:crypto').createHash('sha256').update(b).digest('hex');
+  if (bytes.length !== item.bytes || hash(bytes) !== item.sha256) throw Error('Unreviewed tonight asset: '+item.destination);
+  if (item.rewrites) {
+    let text=bytes.toString('utf8');
+    for(const rewrite of item.rewrites){if(text.split(rewrite.from).length!==2)throw Error('Ambiguous tonight rewrite');text=text.replace(rewrite.from,rewrite.to);}
+    bytes=Buffer.from(text);
+  }
+  if(hash(bytes)!==item.publishedSha256)throw Error('Tonight publication checksum mismatch');
+  fs.writeFileSync(path.join(tonightOut,item.destination),bytes);
+}
 fs.mkdirSync(path.join(out, 'phone_remote'), { recursive: true });
 for (const file of ['index.html', 'phone.js', 'phone.css']) {
   const source = path.join(root, 'phone_remote', file);

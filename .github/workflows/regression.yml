@@ -161,6 +161,12 @@ jobs:
           HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_sound.cjs
       - name: Check paired film controls with actual local cloud service
         run: node tests/film_phone_cloud_browser.mjs
+      - name: Rehearse tonight story and newest painted face study
+        run: |
+          HAUNT_TONIGHT_ROOT=dist node tests/tonight_demo.cjs
+          HAUNT_TONIGHT_ROOT=dist node tests/tonight_puppet.cjs
+          HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/tonight_demo.cjs
+          HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/tonight_puppet.cjs
       - name: Keep show desk evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -172,5 +178,6 @@ jobs:
             test-results/stage-geometry*
             test-results/workspace-entry*
             test-results/film-operator-access*
+            test-results/tonight-*.json
             work/showdesk-rehearsal-*.png
           if-no-files-found: ignore
