@@ -540,8 +540,8 @@
       ],
       "media": "../runway-pilots/fog-rear-departure-study/wisp-turn-and-departure-review.mp4",
       "sha256": "18693fb0a7917a699ee5650c37b09bea3ae442b87873339c23fe5ed1a78ccd19",
-      "status": "review-pending",
-      "scope": "Fog turn plus curved rear departure and editorial black hold; all-frame20percent reserve and65exact-black tail frames. Turn direction endorsed; new departure and join need human review. Starting join from original scary study has changed material and is not approved."
+      "status": "revision-required",
+      "scope": "Human review: departure or body motion needs work. Retain as rejected motion study; not a finished cue or approved transition. Fog-material direction remains endorsed. Numeric bounds and endpoint matching do not establish performance quality."
     },
     {
       "plannedClipIds": [

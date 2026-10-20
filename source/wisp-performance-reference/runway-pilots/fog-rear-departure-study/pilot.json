@@ -1,6 +1,6 @@
 {
   "taskId": "8cb7612e-c451-4a48-bd45-6aca15f332d1",
-  "status": "rendered-review-pending",
+  "status": "revision-required",
   "model": "kling-o3-pro",
   "duration": 5,
   "resolution": "720p",
@@ -36,7 +36,7 @@
     "rawNearBlackTailFramesMax4": 27
   },
   "review": {
-    "motion": "Temporal samples show leaning rear-facing retreat with changing shoulder/arm posture and shrinking spatial path toward upper right; normal-speed human motion acceptance pending.",
+    "motion": "Human review failed departure/body motion. Contact sheet suggests abrupt extension into a narrow flight silhouette and rapid loss of readable acting; this diagnosis is provisional, not a quoted user explanation.",
     "bounds": "All raw RGB4/8/16 frames pass20percent; minimumtop21.85percent.",
     "material": "Approved source fog retained in broad motion; small distant anatomy still requires human review.",
     "publicApproved": false
@@ -57,5 +57,10 @@
     "joinSilhouetteIoU": 0.9801517165871588,
     "joinVisibleRGBDifference": 4.729678579807617,
     "humanJoinApproved": false
+  },
+  "humanFeedback": {
+    "verbatim": "The departure or body motion needs work",
+    "scope": "22-second scary-exit/friendly-arrival review; departure/body motion failed. Arrival and joins are not separately approved.",
+    "releaseApproved": false
   }
 }
