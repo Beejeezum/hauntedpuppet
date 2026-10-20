@@ -133,8 +133,8 @@
     },
     {
       "file": "wisp-film-output.js",
-      "bytes": 2810,
-      "sha256": "73a6d6f50a27b4f6becbf3f5ff7042b35092beb0dee1ff6ad1f011cf894f6a95"
+      "bytes": 3408,
+      "sha256": "94288cdc8168165226d5773c1f6fb30c67b807bd17e33d650b677c38075d4c65"
     },
     {
       "file": "wisp-show-director.js",
@@ -168,8 +168,8 @@
     },
     {
       "file": "wisp-whole-film-output.js",
-      "bytes": 1381,
-      "sha256": "45e688882678b147e030bc956c0052caa624d9145a458116bb4897aff046bcb0"
+      "bytes": 1416,
+      "sha256": "0cee230ac6c0f1498fc36011ff3f5e5743df07902451d4e24243718d5dc0703f"
     }
   ]
 }

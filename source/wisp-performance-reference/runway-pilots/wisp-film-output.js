@@ -4,6 +4,8 @@ export function mountFilmOutput(stage, inspect) {
  stage.after(button);const outputs=new Set();let disposed=false;
  button.onclick=()=>{
   if(disposed)return;
+  // Keep the existing projector placement; rearming is an explicit operator action.
+  for(const existing of outputs){try{if(!existing.closed&&existing.WispFilmOutput?.inspect().owner){if(existing.WispFilmOutput.inspect().stopped)existing.WispFilmOutput.resume();existing.focus();return;}}catch{}outputs.delete(existing);}
   const output=window.open('about:blank','_blank','popup,width=960,height=540');
   if(!output){button.textContent='Popup blocked · allow and retry';return;}
   outputs.add(output);const d=output.document;d.title='Wisp · silent rehearsal output';
@@ -18,7 +20,7 @@ export function mountFilmOutput(stage, inspect) {
   function paint(){if(stopped)return;let state;try{state=!window.closed&&!disposed&&inspect();}catch{}if(!state||state.disposed){clear();stopped=true;return;}const now=output.performance.now(),draws=state.metrics?.draws;if(draws!==lastDraw){lastDraw=draws;lastChange=now;}const nextStale=Number.isFinite(draws)&&!state.black&&now-lastChange>1200;if(nextStale&&!stale)stalls++;stale=nextStale;if(state.black||stale)clear();else context.drawImage(stage,0,0);frame=output.requestAnimationFrame(paint);}
   output.addEventListener('keydown',event=>{if(event.key==='Escape'){clear();stopped=true;output.cancelAnimationFrame(frame);}});
   output.addEventListener('pagehide',()=>{stopped=true;output.cancelAnimationFrame(frame);outputs.delete(output);});
-  output.WispFilmOutput={inspect:()=>({silent:true,stopped,stale,stalls,width:canvas.width,height:canvas.height,owner:!window.closed&&!disposed}),blackout:clear};
+  output.WispFilmOutput={inspect:()=>({silent:true,stopped,stale,stalls,width:canvas.width,height:canvas.height,owner:!window.closed&&!disposed}),resume:()=>{let state;try{state=inspect();}catch{}if(!state||state.disposed||state.black||state.paused){clear();return false;}stopped=false;stale=false;lastDraw=state.metrics?.draws;lastChange=output.performance.now();output.cancelAnimationFrame(frame);paint();return true;},blackout:clear};
   paint();
  };
  function dispose(){disposed=true;button.disabled=true;for(const output of outputs)if(!output.closed)output.WispFilmOutput?.blackout();outputs.clear();window.removeEventListener('pagehide',dispose);}
