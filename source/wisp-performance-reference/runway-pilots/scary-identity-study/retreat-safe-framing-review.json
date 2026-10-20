@@ -1,0 +1,61 @@
+{
+  "file": "wisp-scary-retreat-v17-safe-framing.mp4",
+  "sha256": "da9b6480acc970bcf3f627da5b33bf2e9ff3bfc95bed686f533abf172b9d49f8",
+  "frameCount": 121,
+  "fps": 24.0,
+  "size": [
+    1916,
+    1080
+  ],
+  "reserve": 0.15,
+  "thresholdSummaries": {
+    "4": {
+      "emptyFrames": 0,
+      "reserveFailures": 0,
+      "minimumMarginsLTRB": [
+        0.2985386221294363,
+        0.27505219206680587,
+        0.16574074074074074,
+        0.18518518518518517
+      ]
+    },
+    "8": {
+      "emptyFrames": 0,
+      "reserveFailures": 0,
+      "minimumMarginsLTRB": [
+        0.2990605427974948,
+        0.27505219206680587,
+        0.17222222222222222,
+        0.18703703703703703
+      ]
+    },
+    "16": {
+      "emptyFrames": 0,
+      "reserveFailures": 0,
+      "minimumMarginsLTRB": [
+        0.302713987473904,
+        0.2755741127348643,
+        0.17592592592592593,
+        0.18888888888888888
+      ]
+    }
+  },
+  "adjacentVisibleRGBMedian": 18.627750443887514,
+  "endpointVisibleRGBDifference": 119.29556823786373,
+  "scope": "Decoded RGB bounds and thumbnails only. Empty frames are diagnostics: inspect intentional vanishing separately. Does not prove anatomy, velocity continuity, camera lock, depth, voice, human approval or physical projection.",
+  "status": "Projection-safe framing study only; original material failures remain",
+  "parent": "wisp-scary-retreat-v17.mp4",
+  "parentSha256": "cf0f24c9bd9ff8f1a20ddb992dfbd6a46419180792eec63a428302e3743e27f4",
+  "derivedOutput": "outputs/wisp-vision/wisp-scary-retreat-v17-safe-framing.mp4",
+  "derivation": {
+    "tool": "FFmpeg7.1 libx264",
+    "filter": "scale=1340:756:flags=lanczos,pad=1916:1080:288:162:black",
+    "encoding": "-an -c:v libx264 -crf18 -pix_fmt yuv420p",
+    "changes": "Constant display scale and black padding only; no interpolation, temporal edits or character retouching"
+  },
+  "limitations": [
+    "Lower vapor ribbon and skeletal anatomy are not repaired",
+    "Not an approved loop or full show",
+    "No physical projection readability test"
+  ]
+}
