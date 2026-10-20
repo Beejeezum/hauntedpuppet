@@ -1,5 +1,5 @@
 {
-  "status": "Queued; not a completed clip",
+  "status": "Generating; not a completed clip",
   "sessionId": "fedc4316-6c84-44fd-9a65-75a931164da3",
   "assetParentId": "f5b7e49e-a1aa-4073-bfe0-c2966635237b",
   "model": "Kling2.5TurboPro",
@@ -19,5 +19,9 @@
     "All-frame full-effect reserve",
     "No assumed time control from endpoint reference alone"
   ],
-  "nextAction": "Poll same job; never resubmit on observation timeout. Download original before accepting or spending again."
+  "nextAction": "Poll same job; never resubmit on observation timeout. Download original before accepting or spending again.",
+  "creditsAfter": 10241,
+  "observedDebit": 60,
+  "observedProgressPercent": 3,
+  "title": "Wisp Ghost Dissolution Performance"
 }
