@@ -5,6 +5,7 @@ import sys
 import tempfile
 import time
 import unittest
+from unittest.mock import patch
 from supervisor import supervise
 
 
@@ -13,11 +14,13 @@ class Supervisor(unittest.TestCase):
     def test_normal_exit(self):
         result = supervise([sys.executable, '-c', 'pass'], wall_seconds=2, grace_seconds=.05)
         self.assertEqual(result['returnCode'], 0)
+        self.assertEqual(result['cleanupErrors'], [])
         self.assertFalse(result['timedOut'])
 
     def test_failure_exit(self):
         result = supervise([sys.executable, '-c', 'raise SystemExit(7)'], wall_seconds=2, grace_seconds=.05)
         self.assertEqual(result['returnCode'], 7)
+        self.assertEqual(result['cleanupErrors'], [])
 
     def test_ignoring_term_cannot_outlive_deadline(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -26,6 +29,7 @@ class Supervisor(unittest.TestCase):
                       f'time.sleep(.7);pathlib.Path({str(marker)!r}).touch()')
             result = supervise([sys.executable, '-c', script], wall_seconds=.15, grace_seconds=.05)
             self.assertTrue(result['timedOut'])
+            self.assertEqual(result['cleanupErrors'], [])
             self.assertLess(result['elapsedSeconds'], .6)
             time.sleep(.75)
             self.assertFalse(marker.exists())
@@ -37,6 +41,7 @@ class Supervisor(unittest.TestCase):
             root = f'import subprocess,sys;subprocess.Popen([sys.executable,"-c",{child!r}])'
             result = supervise([sys.executable, '-c', root], wall_seconds=2, grace_seconds=.05)
             self.assertEqual(result['returnCode'], 0)
+            self.assertEqual(result['cleanupErrors'], [])
             time.sleep(.75)
             self.assertFalse(marker.exists())
 
@@ -47,8 +52,20 @@ class Supervisor(unittest.TestCase):
             result = supervise([sys.executable, '-c', script], wall_seconds=2,
                                grace_seconds=.05, done_file=done)
             self.assertTrue(result['completionSignal'])
+            self.assertEqual(result['cleanupErrors'], [])
             self.assertFalse(result['timedOut'])
             self.assertLess(result['elapsedSeconds'], 1)
+
+    def test_permission_failure_is_reported_not_a_success(self):
+        # Child exits normally; mock only cleanup signals, so this cannot strand work.
+        with patch('supervisor.os.killpg', side_effect=PermissionError), patch('supervisor.group_absent', return_value=False):
+            result = supervise([sys.executable, '-c', 'pass'], wall_seconds=2, grace_seconds=.05)
+        self.assertEqual(result['cleanupErrors'], ['terminate-group-denied', 'kill-group-denied'])
+
+    def test_denied_signal_with_verified_absent_group(self):
+        with patch('supervisor.os.killpg', side_effect=PermissionError), patch('supervisor.group_absent', return_value=True):
+            result = supervise([sys.executable, '-c', 'pass'], wall_seconds=2, grace_seconds=.05)
+        self.assertEqual(result['cleanupErrors'], [])
 
     def test_cannot_increase_cap(self):
         with self.assertRaises(ValueError):

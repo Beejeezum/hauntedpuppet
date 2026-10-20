@@ -140,7 +140,6 @@ def main():
                           'inputs': {'microphone': False, 'camera': False, 'text': False},
                           'workerStarted': False, 'sessionCreated': False}))
         return
-    parser.error('Live execution disabled: local process-group termination has an unresolved intermittent permission failure.')
     missing = [name for name in (*REQUIRED, 'WISP_PILOT_ROOM_NAME') if not os.environ.get(name)]
     if missing:
         parser.error('Private configuration missing: ' + ', '.join(missing))

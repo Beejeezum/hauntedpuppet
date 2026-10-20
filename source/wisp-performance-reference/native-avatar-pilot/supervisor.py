@@ -7,6 +7,17 @@ import time
 MAX_WALL_SECONDS = 35
 
 
+def group_absent(group):
+    """A denied signal can race an already-removed macOS group; verify, don't retry."""
+    try:
+        result = subprocess.run(['ps', '-axo', 'pgid='], capture_output=True,
+                                text=True, check=True, timeout=1)
+        groups = [int(row.strip()) for row in result.stdout.splitlines() if row.strip()]
+        return bool(groups) and group not in groups
+    except (OSError, ValueError, subprocess.SubprocessError):
+        return False  # Unknown is not successful cleanup.
+
+
 def supervise(command, *, env=None, wall_seconds=MAX_WALL_SECONDS, grace_seconds=2, done_file=None):
     """Stop the entire child group on completion, timeout or parent cancellation.
 
@@ -41,7 +52,8 @@ def supervise(command, *, env=None, wall_seconds=MAX_WALL_SECONDS, grace_seconds
         except ProcessLookupError:
             pass
         except PermissionError:
-            cleanup_errors.append('terminate-group-denied')
+            if not group_absent(process.pid):
+                cleanup_errors.append('terminate-group-denied')
         try:
             process.wait(timeout=grace_seconds)
         except subprocess.TimeoutExpired:
@@ -52,7 +64,8 @@ def supervise(command, *, env=None, wall_seconds=MAX_WALL_SECONDS, grace_seconds
             except ProcessLookupError:
                 pass
             except PermissionError:
-                cleanup_errors.append('kill-group-denied')
+                if not group_absent(process.pid):
+                    cleanup_errors.append('kill-group-denied')
             try:
                 process.wait(timeout=grace_seconds)
             except subprocess.TimeoutExpired:
