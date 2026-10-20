@@ -1,5 +1,5 @@
 {
-  "status": "Authoring one forward morph; no motion approval inferred from references",
+  "status": "Completed forward morph and assembled review sequence; not production-approved",
   "startImage": "wisp-friendly-v7-first.png",
   "startSha256": "2af544a100df1229a17b3692884601570803c73f2d2a031ed9105a4606e70dea",
   "startProvenance": "Unretouched decoded frame0 of fictional Runway v7 friendly idle; appearance direction from approved-friendly-fog.png",
@@ -55,7 +55,7 @@
     "title": "Friendly to Menacing Ghost",
     "model": "Kling2.5TurboPro",
     "seconds": 5,
-    "status": "Queued; no finished motion review yet",
+    "status": "Completed; motion candidate with known timing/framing defects",
     "creditsBefore": 10757,
     "creditsAfter": 10697,
     "observedDebit": 60,
@@ -65,6 +65,45 @@
       "Every-frame smoke margins, no clipped head or hands",
       "Continuous acting at ends and full-speed human review",
       "No automatic promotion to production or reversal into a claimed natural return"
+    ],
+    "file": "wisp-identity-morph-v19.mp4",
+    "sha256": "597e69b0ecd40233989489150e048ba525880d84161be144abf75b3a4cce0682"
+  },
+  "review": {
+    "rawFrames": 122,
+    "rawFps": 24,
+    "rawRGB8ReserveFailures": 58,
+    "emptyFrames": 0,
+    "morphWindowSeconds": [
+      2.65,
+      3.4
+    ],
+    "observations": [
+      "One connected apparition through the sampled transition; eyes darken, hands lengthen and teeth appear progressively",
+      "Lower body remains fog rather than v17 smooth ribbon",
+      "Ending slows toward a near-hold; last12stepRGBmedian0.606versusmiddle6.294",
+      "Contact-sheet review does not establish full-speed human motion acceptance"
+    ]
+  },
+  "assembledReview": {
+    "file": "wisp-identity-performance-review-v2.mp4",
+    "sha256": "aed1898a46b43f129458070f8391978d3e33d9cc3bdb029888486384905750d9",
+    "frames": 366,
+    "fps": 24,
+    "seconds": 15.25,
+    "inputOrder": [
+      "../wisp-controlled-idle-v7.mp4",
+      "wisp-identity-morph-v19.mp4",
+      "../scary-identity-study/wisp-scary-guided-turn-v18.mp4"
+    ],
+    "constantDisplayFit": 0.85,
+    "allFrameRGB4_8_16ReservePass": true,
+    "editing": "Straight cuts, shared display fit, no interpolation/crossfade/reversal or hold trimming; fixed24fpsexport",
+    "knownFailures": [
+      "Idle and post-morph near-holds remain visible",
+      "Scary back has skeletal anatomy requiring refinement",
+      "Ends back-facing; not a loop",
+      "No voice or interactive integration demonstrated"
     ]
   }
 }

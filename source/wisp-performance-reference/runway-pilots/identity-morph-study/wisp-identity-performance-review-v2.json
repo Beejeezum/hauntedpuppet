@@ -1,0 +1,45 @@
+{
+  "clips": [
+    {
+      "file": "wisp-controlled-idle-v7.mp4",
+      "sha256": "6127d5c222004388959b85f11ce61c98ddb82cecee138a18514f35e1340b6570",
+      "frames": 122
+    },
+    {
+      "file": "wisp-identity-morph-v19.mp4",
+      "sha256": "597e69b0ecd40233989489150e048ba525880d84161be144abf75b3a4cce0682",
+      "frames": 122
+    },
+    {
+      "file": "wisp-scary-guided-turn-v18.mp4",
+      "sha256": "310485042f5e00bd1cff9384017d73fadb915569ed54de8e9aee37859951dd26",
+      "frames": 122
+    }
+  ],
+  "expectedFrames": 366,
+  "durationSeconds": 15.25,
+  "displayFit": 0.85,
+  "scaledSize": [
+    1628,
+    918
+  ],
+  "filter": "[0:v]scale=1628:918:flags=lanczos,pad=1916:1080:(ow-iw)/2:(oh-ih)/2:black,setpts=PTS-STARTPTS[v0];[1:v]scale=1628:918:flags=lanczos,pad=1916:1080:(ow-iw)/2:(oh-ih)/2:black,setpts=PTS-STARTPTS[v1];[2:v]scale=1628:918:flags=lanczos,pad=1916:1080:(ow-iw)/2:(oh-ih)/2:black,setpts=PTS-STARTPTS[v2];[v0][v1][v2]concat=n=3:v=1:a=0[joined]",
+  "outputSha256": "aed1898a46b43f129458070f8391978d3e33d9cc3bdb029888486384905750d9",
+  "joins": [
+    {
+      "from": "wisp-controlled-idle-v7.mp4",
+      "to": "wisp-identity-morph-v19.mp4",
+      "visibleRGBJump": 3.357806368718964,
+      "nearbyMotionRGBMedian": 2.831781335002863,
+      "ratio": 1.185757645625406
+    },
+    {
+      "from": "wisp-identity-morph-v19.mp4",
+      "to": "wisp-scary-guided-turn-v18.mp4",
+      "visibleRGBJump": 3.6012522612712297,
+      "nearbyMotionRGBMedian": 7.796355609474103,
+      "ratio": 0.46191482811469
+    }
+  ],
+  "scope": "Straight source-film assembly, constant common display fit, no interpolation, crossfade, reversal or temporal repair. Endpoint diagnostics do not prove continuous velocity, identity, human approval, live voice or physical projection. Ending is back-facing; this is not a loop."
+}

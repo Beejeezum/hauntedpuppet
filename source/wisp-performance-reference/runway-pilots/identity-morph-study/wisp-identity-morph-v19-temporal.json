@@ -1,0 +1,6 @@
+{
+  "middleStepMedian": 6.293552572966901,
+  "last12StepMedian": 0.6063878720973022,
+  "last24StepMedian": 1.0333241337904053,
+  "scope": "RGB change diagnostic, not optical flow/joint velocity or human acceptance"
+}
