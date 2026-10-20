@@ -1,5 +1,5 @@
 {
-  "status": "References prepared; actual Seedance2.0 reference-mode controls verified; not submitted",
+  "status": "Queued: single5second720p native audiovisual benchmark",
   "video": "wisp-approved-motion-720p-v1.mp4",
   "videoSha256": "e759b4183f3fd4e468af30bf00e399704f162a121d949d15064068198ae4c1ca",
   "motionSource": "../continuous-loop-study/wisp-continuous-loop-v28.mp4",
@@ -23,8 +23,21 @@
     "audioEnabled": true,
     "pickerSupports": "image, video or audio"
   },
-  "nextGate": "Bind both exactreferences, inspect role names, prompt preservewholebodyacting+identity+allsmokebuffer and supplieddialogueonly. Inspect actualquote/modebeforeoneboundedgeneration.",
-  "generationSubmitted": false,
-  "newCredits": 0,
-  "liveReplacement": false
+  "nextGate": "Poll same saved session; no duplicate. Retain original and inspect fullbodymotion/identity/speech/fog/core/crop/allframebounds. No rollout or additional variants until result reviewed.",
+  "generationSubmitted": true,
+  "newCredits": 150,
+  "liveReplacement": false,
+  "sessionId": "a149ad77-64e3-41c3-8c93-95aa96522061",
+  "parentId": "b25dd39b-89b6-413c-953d-ef917810f804",
+  "browserTabId": "1941618764",
+  "binding": {
+    "Video 1": "wisp-approved-motion-720p-v1.mp4",
+    "Audio 1": "fictional-dialogue-driver-v1.wav"
+  },
+  "quotedCredits": 150,
+  "creditsBefore": 9948,
+  "creditsAfter": 9798,
+  "observedDebit": 150,
+  "submissionCount": 1,
+  "lastObservedState": "In queue; will start in a few minutes"
 }
