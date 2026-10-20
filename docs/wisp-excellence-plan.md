@@ -208,3 +208,6 @@ Human review update: the padded v18 scary turn received “Yes—keep this motio
 
 
 Source rehearsal now supports explicit timed `absent` steps, with presence reporting, silent cleared output, subsequent scheduled entrance and immediate friendly interruption. Synthetic-clock and isolated muted browser tests cover absence beyond the watchdog interval and cancellation of a later scary entrance. The existing150-second show is unchanged: no hard-cut placeholder is presented as a finished poof or depth departure. Actual authored disappearance/reformation films and full-speed acceptance remain required.
+
+
+Character consistency pass: the local recorded-conversation fallback previously allowed45 words while native streaming targeted3–12. The fallback now shares the doorstep context, short one-idea turns, varied openings, no-camera grounding and brief farewell guidance. Overlong generated text keeps a complete short opening sentence or uses a bounded recovery line instead of truncating mid-thought. Eight mocked Python contract/recovery tests pass; no genuine provider, acoustic casting or latency improvement is claimed. Native streaming instructions and hosted voice remain unchanged. Primary prompting guidance: https://developers.openai.com/api/docs/guides/voice-prompting (context-specific length and variety guidance; this does not guarantee model compliance).
