@@ -1,0 +1,51 @@
+{
+  "file": "wisp-scary-back-material-edit-v4.png",
+  "sha256": "2b70c38a385f1c88ae20a3a6ca12c50b3f35ab0215a3ea907d8eed3fc3fb63ad",
+  "tool": "Built-in imagegen, single targeted edit",
+  "references": [
+    "wisp-scary-back-vapor-v3.png",
+    "approved-friendly-fog.png (material only)"
+  ],
+  "status": "Rejected as material correction; retained evidence, not animation reference or live asset",
+  "review": [
+    "Rear orientation, connected core and overall composition retained.",
+    "Shoulder-to-wrist bright solid tubes and muscle-like back construction remain visibly too close to source.",
+    "Soft particulate texture alone does not solve anatomical volume/material design.",
+    "No further same-edit retry; needs a deliberately different shoulder construction before motion generation."
+  ],
+  "envelopes": {
+    "4": {
+      "marginsLTRB": [
+        0.2652694610778443,
+        0.2694610778443114,
+        0.2059447983014862,
+        0.1751592356687898
+      ],
+      "reserve15Pass": true,
+      "requested20Pass": false
+    },
+    "8": {
+      "marginsLTRB": [
+        0.26646706586826346,
+        0.27065868263473053,
+        0.208067940552017,
+        0.1762208067940552
+      ],
+      "reserve15Pass": true,
+      "requested20Pass": false
+    },
+    "16": {
+      "marginsLTRB": [
+        0.26766467065868266,
+        0.2718562874251497,
+        0.21337579617834396,
+        0.17834394904458598
+      ],
+      "reserve15Pass": true,
+      "requested20Pass": false
+    }
+  },
+  "runwayCreditsSpent": 0,
+  "humanApproval": false,
+  "liveReplacement": false
+}
