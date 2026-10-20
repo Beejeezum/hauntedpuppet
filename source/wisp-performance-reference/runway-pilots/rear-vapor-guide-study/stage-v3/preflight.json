@@ -1,0 +1,40 @@
+{
+  "status": "Prepared and used as endpoint in one unreviewed turn proof",
+  "scale": 0.85,
+  "canvas": [
+    1280,
+    720
+  ],
+  "method": "Painted reference images staged at85percent whole-frame fit through the actual compositor; not decoded film endpoints. No repaint, crop or pose registration.",
+  "sources": [
+    {
+      "label": "rear-v3",
+      "kind": "painted-reference",
+      "decoded": "../wisp-rear-three-quarter-v3.png",
+      "sourceSha256": "939f164c809d4ac4de6f72251d50d067d1d6e845d455790e8a3bf07932fae19d",
+      "staged": "rear-v3-staged.png",
+      "stagedSha256": "966c4ceb86dfe48be6af55c4d1b75873fd5ee2b3ba60b3a29e66abcd770c31a8",
+      "margins": {
+        "4": [
+          0.38984375,
+          0.21805555555555556,
+          0.3828125,
+          0.22916666666666666
+        ],
+        "8": [
+          0.390625,
+          0.21805555555555556,
+          0.3828125,
+          0.22916666666666666
+        ],
+        "16": [
+          0.390625,
+          0.21944444444444444,
+          0.38359375,
+          0.22916666666666666
+        ]
+      }
+    }
+  ],
+  "generationTaskId": "84153e6b-d7b8-42c4-9ac2-be3125bbab40"
+}

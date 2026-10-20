@@ -18,7 +18,7 @@ const {chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
    if(Object.values(result.checks).some(m=>Math.min(...m)<.2))throw Error('Endpoint misses20percent reserve');
    const bytes=Buffer.from(result.png.split(',')[1],'base64');fs.writeFileSync(file,bytes);rows.push({...source,staged:path.basename(file),stagedSha256:crypto.createHash('sha256').update(bytes).digest('hex'),margins:result.checks});
   }
-  fs.writeFileSync(path.join(root,'preflight.json'),JSON.stringify({status:'prepared; no generation submitted',scale:.85,canvas:[1280,720],method:'Exact decoded film endpoints staged at identical85percent fit; source films must use this same fit in the join review. No pose repaint or registration.',sources:rows},null,2)+'\n');
-  console.log('Prepared two actual-film anchors with20percent reserve.');
+  fs.writeFileSync(path.join(root,'preflight.json'),JSON.stringify({status:'prepared; no generation submitted',scale:.85,canvas:[1280,720],method:sources.some(s=>s.kind==='painted-reference')?'Painted reference images staged at85percent whole-frame fit through the actual compositor; not decoded film endpoints. No repaint, crop or pose registration.':'Exact decoded film endpoints staged at identical85percent fit; source films must use this same fit in the join review. No pose repaint or registration.',sources:rows},null,2)+'\n');
+  console.log('Prepared '+rows.length+' staged reference(s) with20percent reserve.');
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

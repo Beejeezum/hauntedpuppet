@@ -270,3 +270,12 @@ Exact5000d83 CI39472111843 nowhasWebKit,showdesk,native-avatar-offline SUCCESS. 
 One built-inimagegen edit from scaryfrontv34 produced rear135degree guidewisp-rear-three-quarter-v3.png, SHA939f164c809d4ac4de6f72251d50d067d1d6e845d455790e8a3bf07932fae19d. RGB1672x941 onblack (nottransparent), originaldefaultimagepreserved, fullprompt-v3.txt saved. Viewshowsroundheadbulbundercrest, nofacevisiblethroughback, asymmetricforeshortenedattachedarms andfinevaporinstead ofv2'slumpyoutline. Clawtipsremainbright/hard; singleviewdoesnotprovevideo/turn/identityconsistency. No publicpromotionornewRunwayturnspend.
 
 RawRGB4marginsleft37.02/top16.90/right36.18/bottom18.17percentpass15butfail20target. Requireadditionalfixedwhole-frame staging beforeusingasendpoint, notanothermaterialgenerationjustforframing. This is acandidateguide, notfinishedturnaroundoranimation. Fullgoalstillrequiresrealbacks/swoops/depthacting andactualseamreview. Currentexact5000d83 CI39472111843 finalregression remainsauthoritativelyrunning; other3passed. Productione44697a unchanged.
+
+
+## Guided rear turn preflight and capped test
+
+Generalized existing prepare-film-morph-anchors.cjs provenance text/count so a painted-reference is explicitly distinguished from decoded actualfilmframes. Stagedv3rear through actualStageCompositor at85percent1280x720, allRGB4/8/16margins>=21.81percent. StagedSHA966c4ceb86dfe48be6af55c4d1b75873fd5ee2b3ba60b3a29e66abcd770c31a8; no repaint/crop/pose registration. OriginalRGBart preserved.
+
+Runwaymetadata-only upload first returnedchatgpt_missing_file_param (noasset); usingdocumentedfileparameter withactualprojectPNG completedoneupload. One5secondguidedturntask84153e6b-d7b8-42c4-9ac2-be3125bbab40 submitted inworkspace1709631,85observedcredits19519→19434. Firstendpointactualscaryv35endstaged, lastendpointnewdesignedrear135degreeguide. This differs materially from priorfront-only faileddepthdeparture; tests correctfaceocclusion andmaterialthroughmiddle. No furtherturnpaidretry unless actualreviewjustifiesdifferentinput. Pendingrender, notfinished/public, loop ordeparture. AllnewfilesexcludeprivateassetURLs.
+
+CI39472111843 exact5000d83 finalregression stillconfirmedrunning; other3SUCCESS. Preserve samehandle andproductione44697a. Localartpreflightfollow-upmustnotcancelitsremainingjob.
