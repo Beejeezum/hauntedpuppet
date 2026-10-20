@@ -166,5 +166,6 @@ jobs:
             test-results/showdesk-*.json
             test-results/film-phone-cloud*
             test-results/stage-geometry*
+            test-results/workspace-entry*
             work/showdesk-rehearsal-*.png
           if-no-files-found: ignore
