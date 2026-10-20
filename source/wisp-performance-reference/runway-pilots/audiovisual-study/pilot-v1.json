@@ -1,0 +1,30 @@
+{
+  "status": "References prepared; actual Seedance2.0 reference-mode controls verified; not submitted",
+  "video": "wisp-approved-motion-720p-v1.mp4",
+  "videoSha256": "e759b4183f3fd4e468af30bf00e399704f162a121d949d15064068198ae4c1ca",
+  "motionSource": "../continuous-loop-study/wisp-continuous-loop-v28.mp4",
+  "videoTransform": "Fixed near-proportional integer scale1276x720,2pxhorizontalpadding1280x720; all122sourceframes24fpsretained, no interpolation or new motion.",
+  "audio": "fictional-dialogue-driver-v1.wav",
+  "audioSha256": "af6bdca816fed8d7845a174d4e89bcac75ad004068546d42392c3147a2b851e4",
+  "audioSource": "../performance-transfer-study/human-faced-driver-v1.mp4",
+  "audioInfo": {
+    "frames": 223232,
+    "sampleRate": 48000,
+    "channels": 1,
+    "durationSeconds": 4.650666666666667
+  },
+  "scope": "Synthetic Katie dialogue for compatibility; not approved Wisp casting. No human image required for this route.",
+  "ui": {
+    "model": "Seedance2.0",
+    "mode": "Reference",
+    "resolution": "720p",
+    "duration": "5s",
+    "aspectRatio": "16:9",
+    "audioEnabled": true,
+    "pickerSupports": "image, video or audio"
+  },
+  "nextGate": "Bind both exactreferences, inspect role names, prompt preservewholebodyacting+identity+allsmokebuffer and supplieddialogueonly. Inspect actualquote/modebeforeoneboundedgeneration.",
+  "generationSubmitted": false,
+  "newCredits": 0,
+  "liveReplacement": false
+}
