@@ -1,0 +1,68 @@
+{
+  "purpose": "Explicit opt-in rehearsal workspace, two real silent films; not a finished library, native puppeteering or approved scary loop",
+  "files": [
+    {
+      "source": "source/wisp-performance-reference/ambient-show/showdesk.html",
+      "destination": "index.html",
+      "sha256": "6808666db26ba728a61e23d5d2cc5580532fbc9263af72b2a3348372250753d4",
+      "bytes": 3046,
+      "publishedSha256": "6808666db26ba728a61e23d5d2cc5580532fbc9263af72b2a3348372250753d4"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/showdesk.css",
+      "destination": "showdesk.css",
+      "sha256": "ce9d0dda6ff02ffeb47454ec96af220ef89f4d6eb6f07c61adb5008407441c20",
+      "bytes": 2957,
+      "publishedSha256": "ce9d0dda6ff02ffeb47454ec96af220ef89f4d6eb6f07c61adb5008407441c20"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/showdesk.mjs",
+      "destination": "showdesk.mjs",
+      "sha256": "67f7190a9df20b4ad1305067a6edfcafea1d02a94692b8914b85641313f481ff",
+      "bytes": 8673,
+      "publishedSha256": "1b9c49de2f7d011951e648dee206e52e31a7506c37e488abe8688c92e124dd1b",
+      "rewrites": [
+        {
+          "from": "../runway-pilots/wisp-film-output.js",
+          "to": "../wisp-film-preview/wisp-film-output.js"
+        },
+        {
+          "from": "../runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4",
+          "to": "./friendly.mp4"
+        },
+        {
+          "from": "../runway-pilots/motion-transfer-study/wisp-scary-motion-transfer-v35.mp4",
+          "to": "./scary.mp4"
+        }
+      ]
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/film-transport.mjs",
+      "destination": "film-transport.mjs",
+      "sha256": "afe502920b1fdcedcf7ee885f20977c057c6d295e1e4494b9cf081cfb5a2b13e",
+      "bytes": 2643,
+      "publishedSha256": "afe502920b1fdcedcf7ee885f20977c057c6d295e1e4494b9cf081cfb5a2b13e"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/cue-director.mjs",
+      "destination": "cue-director.mjs",
+      "sha256": "be0ba34a53d7f9dc200c9e316da1924ecb02aa425a37f5bfe11cbbd3e4bc26c4",
+      "bytes": 2214,
+      "publishedSha256": "be0ba34a53d7f9dc200c9e316da1924ecb02aa425a37f5bfe11cbbd3e4bc26c4"
+    },
+    {
+      "source": "source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4",
+      "destination": "friendly.mp4",
+      "sha256": "52d54d03c0f0406a9724c7c04b9e2fa0557a675486edfaa40fd0ca2e24a682bd",
+      "bytes": 1677281,
+      "publishedSha256": "52d54d03c0f0406a9724c7c04b9e2fa0557a675486edfaa40fd0ca2e24a682bd"
+    },
+    {
+      "source": "source/wisp-performance-reference/runway-pilots/motion-transfer-study/wisp-scary-motion-transfer-v35.mp4",
+      "destination": "scary.mp4",
+      "sha256": "21e8efec67ec7e024fc954cc16af458cad8f8427553a998341ff9d37286ca35a",
+      "bytes": 1738247,
+      "publishedSha256": "21e8efec67ec7e024fc954cc16af458cad8f8427553a998341ff9d37286ca35a"
+    }
+  ]
+}

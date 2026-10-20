@@ -17,6 +17,26 @@ for (const item of preview.files) {
   if (bytes.length !== item.bytes || require('node:crypto').createHash('sha256').update(bytes).digest('hex') !== item.sha256) throw Error('Unreviewed preview asset: '+item.destination);
   fs.writeFileSync(path.join(previewOut, item.destination), bytes);
 }
+// Separate opt-in show desk. Rejected studies and the rest of source/ remain excluded.
+const desk = JSON.parse(fs.readFileSync(path.join(root, 'scripts/public-showdesk.json'), 'utf8'));
+const deskOut = path.join(out, 'assets/wisp-showdesk');
+fs.mkdirSync(deskOut, {recursive:true});
+for (const item of desk.files) {
+  if (!/^source\/wisp-performance-reference\/(ambient-show|runway-pilots)\//.test(item.source) || path.basename(item.destination) !== item.destination) throw Error('Invalid show desk asset path');
+  let bytes = fs.readFileSync(path.join(root, item.source));
+  const hash = b => require('node:crypto').createHash('sha256').update(b).digest('hex');
+  if (bytes.length !== item.bytes || hash(bytes) !== item.sha256) throw Error('Unreviewed show desk asset: '+item.destination);
+  if (item.rewrites) {
+    let source = bytes.toString('utf8');
+    for (const rewrite of item.rewrites) {
+      if (source.split(rewrite.from).length !== 2) throw Error('Ambiguous show desk rewrite');
+      source = source.replace(rewrite.from, rewrite.to);
+    }
+    bytes = Buffer.from(source);
+  }
+  if (hash(bytes) !== item.publishedSha256) throw Error('Show desk publication checksum mismatch');
+  fs.writeFileSync(path.join(deskOut, item.destination), bytes);
+}
 fs.mkdirSync(path.join(out, 'phone_remote'), { recursive: true });
 for (const file of ['index.html', 'phone.js', 'phone.css']) {
   const source = path.join(root, 'phone_remote', file);
