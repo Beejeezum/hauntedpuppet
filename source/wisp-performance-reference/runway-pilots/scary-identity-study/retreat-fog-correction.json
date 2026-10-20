@@ -1,0 +1,38 @@
+{
+  "video": "wisp-scary-retreat-v17.mp4",
+  "videoSha256": "cf0f24c9bd9ff8f1a20ddb992dfbd6a46419180792eec63a428302e3743e27f4",
+  "frame": 60,
+  "seconds": 2.5,
+  "originalFrame": "wisp-scary-retreat-v17-frame60.png",
+  "frameSha256": "6cdcee412cd945361f60e68b7e0555384ecdbee0d15bf0a6b96e2dc73a65776a",
+  "defect": "Lower vapor becomes a smooth translucent ribbon or sheet, contrary to approved fog direction",
+  "editScope": "Lower-body material only; preserve head pose, crest, upper torso, shoulders, elbows, wrists and hands",
+  "status": "Lower vapor material correction reference complete; video remains unedited",
+  "acceptance": [
+    "Connected coherent vapor core",
+    "Irregular soft billowing fog instead of parallel ribbons, fins or smooth curls",
+    "No detached hands or shoulder drift",
+    "Motion identity and every-frame framing still require review after a video edit"
+  ],
+  "correctedReference": "wisp-scary-retreat-fog-reference-v1.png",
+  "correctedSha256": "52b9eb0d87f10d416da6f00a8d80a32e74cf16201f61e272d8d2204b5c162f35",
+  "size": [
+    1670,
+    942
+  ],
+  "rgb8MarginsLTRB": [
+    0.2221556886227545,
+    0.20059880239520958,
+    0.04883227176220807,
+    0.09766454352441614
+  ],
+  "reservePass": false,
+  "visualReview": {
+    "improvement": "Smooth parallel ribbon replaced with connected irregular billowing cloud; back-facing pose and articulated arms retained",
+    "limitations": [
+      "Generated output is a different resolution from the1916x1080film and is not a drop-in frame",
+      "Upper skeletal shoulder/arm anatomy remains an identity concern",
+      "Still image does not establish temporal consistency, whole-film framing or motion acceptance"
+    ]
+  }
+}
