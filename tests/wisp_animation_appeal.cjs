@@ -1,12 +1,11 @@
-const {liveWorkspaceUrl}=require('./live-url.cjs');
 // Optional real-time visual rehearsal; synthetic/offline and never starts voice or microphone.
 const {chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright'),fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 (async()=>{
  const output=process.env.HAUNT_ANIMATION_PROOF||path.resolve('../wisp-night-performance-proof');fs.mkdirSync(output,{recursive:true});
  const browser=await chromium.launch(),context=await browser.newContext({viewport:{width:1280,height:720},recordVideo:{dir:output,size:{width:1280,height:720}}}),page=await context.newPage(),errors=[],voiceRequests=[];
  page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(r.method()==='POST'&&/realtime|conversation|speak|session/.test(r.url()))voiceRequests.push(r.url());});
- await page.route('**/*',route=>route.request().isNavigationRequest()&&new URL(route.request().url()).pathname==='/'?route.fulfill({status:200,contentType:'text/html',body:'<!doctype html><title>Wisp offline animation rehearsal</title><body></body>'}):route.continue());
- await page.goto(liveWorkspaceUrl(process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770'));
+ await page.route('**/*',route=>route.request().isNavigationRequest()&&new URL(route.request().url()).pathname==='/__wisp-animation-rehearsal__'?route.fulfill({status:200,contentType:'text/html',body:'<!doctype html><title>Wisp offline animation rehearsal</title><body></body>'}):route.continue());
+ await page.goto(new URL('/__wisp-animation-rehearsal__',process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770').href);
  const result=await page.evaluate(async()=>{
   const {PaintedWisp}=await import('/assets/painted-wisp.js'),{actionDuration}=await import('/assets/wisp-choreography.js');const w=new PaintedWisp();await w.load();
   document.body.replaceChildren(w.canvas);document.body.style.cssText='margin:0;background:#08091a;overflow:hidden';w.canvas.style.cssText='display:block;width:100vw;height:100vh;object-fit:contain';
