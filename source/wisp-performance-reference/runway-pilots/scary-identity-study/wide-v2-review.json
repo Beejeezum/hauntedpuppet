@@ -45,7 +45,7 @@
     "assetParentId": "70e86666-dadc-49dc-984b-f0bf7d850dee",
     "model": "Kling 2.5 Turbo Pro",
     "seconds": 5,
-    "status": "queued; not reviewed footage",
+    "status": "completed; retained motion study, rejected for production",
     "observedCreditsBefore": 10895,
     "observedCreditsAfter": 10835,
     "observedDebit": 60,
@@ -56,6 +56,21 @@
       "Entire smoke stays within15percent reserve every frame",
       "Connected lower core never accidentally disappears",
       "No camera zoom/pan or cutout shrink substitute"
-    ]
+    ],
+    "video": "wisp-scary-retreat-v17.mp4",
+    "review": "wisp-scary-retreat-v17-review.json",
+    "visualFindings": {
+      "improvements": [
+        "Actual articulated shoulder/elbow/hand changes",
+        "Side and back presentation",
+        "Clear recession to small distant scale"
+      ],
+      "failures": [
+        "RGB8 reserve fails66of121frames; top minimum2.5percent and bottom5percent",
+        "Lower vapor becomes smooth translucent ribbon around1.9\u20133.8seconds",
+        "New solid shoulder/arm anatomy needs identity review",
+        "Not a loop, arrival, morph or speaking performance"
+      ]
+    }
   }
 }

@@ -41,3 +41,7 @@ The spatialPerformance contract records authored approaches, back-facing retreat
 ### Decoded framing review
 
 `python3 scripts/review-wisp-film.py path/to/input.mp4 work/review-name` creates a nine-frame contact sheet and all-frame JSON diagnostics without modifying the film. It requires numpy, OpenCV and Pillow. It checks RGB4/8/16 smoke envelopes against a15percent reserve and records empty frames and visible-region image changes. The script reproduces the v15 RGB8 framing failure on76of121frames. These measurements do not prove anatomy, real depth, seamless motion or physical projection. Review the complete video at speed and distinguish an authored disappearance from accidental core loss.
+
+### Scary retreat v17 — retained motion study
+
+scary-identity-study/wisp-scary-retreat-v17.mp4 demonstrates a generated side/back turn with changing arms/hands and a substantial retreat into depth. It is not loaded by the show player. The raw smoke envelope fails the15percent reserve on66of121frames at RGB8, and the lower vapor turns into a smooth ribbon during the middle of the shot. Wider display fitting can address reserve but cannot repair that material/identity failure. Preserve the motion evidence; do not label it a finished departure, loop, return, morph or live performance. One five-second generation was submitted, with an observed60credit debit; later unrelated account-balance changes are not attributable to this pilot.
