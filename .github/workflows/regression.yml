@@ -139,6 +139,10 @@ jobs:
         run: |
           HAUNT_WORKSPACE_BUILT_ONLY=1 node tests/workspace_entry.cjs
           HAUNT_WORKSPACE_BUILT_ONLY=1 HAUNT_BROWSER=webkit node tests/workspace_entry.cjs
+      - name: Check existing operator login on real local HTTPS
+        run: |
+          node tests/film_operator_access.mjs
+          HAUNT_BROWSER=webkit node tests/film_operator_access.mjs
       - name: Check queue and editorial contracts
         run: |
           node tests/cue_director.cjs
@@ -167,5 +171,6 @@ jobs:
             test-results/film-phone-cloud*
             test-results/stage-geometry*
             test-results/workspace-entry*
+            test-results/film-operator-access*
             work/showdesk-rehearsal-*.png
           if-no-files-found: ignore

@@ -17,7 +17,7 @@ for (const item of preview.files) {
   if (bytes.length !== item.bytes || require('node:crypto').createHash('sha256').update(bytes).digest('hex') !== item.sha256) throw Error('Unreviewed preview asset: '+item.destination);
   fs.writeFileSync(path.join(previewOut, item.destination), bytes);
 }
-// Separate opt-in show desk. Rejected studies and the rest of source/ remain excluded.
+// Explicit show desk allowlist. Rejected studies and the rest of source/ remain excluded.
 const desk = JSON.parse(fs.readFileSync(path.join(root, 'scripts/public-showdesk.json'), 'utf8'));
 const deskOut = path.join(out, 'assets/wisp-showdesk');
 fs.mkdirSync(deskOut, {recursive:true});
