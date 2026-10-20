@@ -190,3 +190,12 @@ Revised bat/smoke task45aa0509-60db-441d-a560-1af292f735ba completed once:121fra
 
 
 Built-in imagegen material edit saved fog-lettering-study/happy-halloween-vapor-v2.png with full prompt vapor-v2-prompt.txt, preserving RGBA and original default output. It still inherited too much solid serif structure/cloud surround and raw framing misses20percent; not approved and not sent to paid video. Do not call this the finished smoke lettering. Next material attempt should change the underlying stroke structure rather than preserving the old type shape; paid retry remains gated on review.
+
+
+## Fresh fog material and Linux mute diagnostic
+
+Fresh built-in imagegen (no old source image) produced happy-halloween-vapor-v3.png, SHA b7a8aab15fc0606a207e39331bd53158b5101c2ad1488ded58a145779fa07725, RGBA1672x941 alpha0..254. Softer variable fog strokes remove the prior sharp serif skeleton; human material review requested, not approved. Raw alpha>4margins left14.41/top21.36/right13.58/bottom16.90percent fail20percent; stage with additional reserve before any motion spend. Full prompt and machine measurements saved. Updated atmosphere scene choreography to require behind-to-front small fast bats and actual advecting smoke, preserving planned/notfinished status. Planner tests pass; synthetic scope only. No additional Runway generation submitted.
+
+PR9 CI39470099298 WebKitjob118791584172 terminal failure at tests/puppeteer_voice.cjs38:30second idle/rest timeout after Mute. Diagnostic state stillphase live,mutedfalse,micEnabledtrue and valid syntheticinput/output. This does not identify whether pointer failed or mute toggled back. Retained completedjob logs work/phone-ci-webkit-39470099298.log. Added bounded test-only pointerdown/up/click target history and immediate post-Mute state to failure diagnostics; no application behavior change or softened assertion. Local pinnedWebKit reproduction session34492 running against read-only8898 source. OtherCIjobs remain live; do not call whole run terminal or restart those blindly. Production remains tested e44697a and does not include PR9.
+
+Local pinnedMacWebKit puppeteer diagnostic test passed all6syntheticAudioWorklet cases on read-only8898, including mute, silence recovery, cleanup and silent projector. Peak syntheticDSP frequencies571.29/275.39Hz. This does not reproduce or fix the Linux click failure. NewCI diagnostics are needed before PR9 can ship.

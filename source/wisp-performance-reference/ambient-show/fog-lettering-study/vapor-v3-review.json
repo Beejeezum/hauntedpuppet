@@ -1,0 +1,27 @@
+{
+  "file": "happy-halloween-vapor-v3.png",
+  "sha256": "b7a8aab15fc0606a207e39331bd53158b5101c2ad1488ded58a145779fa07725",
+  "mode": "RGBA",
+  "size": [
+    1672,
+    941
+  ],
+  "alphaRange": [
+    0,
+    254
+  ],
+  "boundsAlphaAbove4": [
+    241,
+    201,
+    1445,
+    782
+  ],
+  "marginsLTRB": [
+    0.14413875598086123,
+    0.21360255047821466,
+    0.13576555023923445,
+    0.1689691817215728
+  ],
+  "review": "Fresh generation removes sharp serif skeleton and gives variable fog density; still needs human material approval and20percent staged reserve before paid motion. No public promotion.",
+  "approved": false
+}

@@ -69,14 +69,16 @@
         ]
       ],
       "assets": [
-        "existing happy-halloween-fog-v1.png; staged at70percent",
+        "New reviewed vapor-stroke lettering plate; old v1 solid-serif material is superseded, v2 still unapproved",
         "new localized fog formation/dissolve footage",
         "three short nonverbal sound cues"
       ],
       "review": [
         "Exact HAPPY HALLOWEEN spelling throughout readable hold",
         "Fog never clips; no solid ribbon curls",
-        "Words dissolve completely before empty exit"
+        "Words dissolve completely before empty exit",
+        "Letter strokes themselves are porous vapor, not crisp typography surrounded by smoke",
+        "Disappearance visibly advects, stretches and fragments smoke; fading intact text fails"
       ]
     },
     {
@@ -97,17 +99,17 @@
         [
           3.5,
           6,
-          "Readable greeting waits; small distant bat silhouettes approach from within the safe volume"
+          "Readable vapor greeting; tiny slender bats gather BEHIND the smoke, partially occluded"
         ],
         [
           6,
           9.5,
-          "Uneven flock arcs through depth across the letters; articulated wingbeats, near and far sizes; wakes displace only the touched fog"
+          "Small fast bats dart from behind letters TOWARD camera in staggered depth passes; rapid articulated wingbeats and modest size growth; wakes stretch and tear touched strokes into moving vapor"
         ],
         [
           9.5,
           13,
-          "Last bat curves away into darkness; letter fragments thin and disappear"
+          "Approaching bats bank and dissolve within the safe volume before reaching its boundary; remaining strokes advect, roll and disperse into empty space"
         ],
         [
           13,
@@ -133,12 +135,12 @@
         ],
         [
           10,
-          "receding flutter and dissolving shimmer",
+          "quick close wing pass tapering into an airy vapor tail",
           2.5
         ]
       ],
       "assets": [
-        "same designed lettering plate",
+        "Same newly reviewed vapor-stroke lettering plate",
         "new painted bat flock footage with unobtrusive black background or alpha",
         "localized wake/letter-erasure matte",
         "four short nonverbal sound cues"
@@ -147,7 +149,10 @@
         "Bats have changing wing poses and depth, not translated static icons",
         "Letter destruction follows actual bat crossings, not an unrelated global fade",
         "Entire near bat wingspan and fog remain buffered",
-        "No sudden loud scare; readable hold before destruction"
+        "No sudden loud scare; readable hold before destruction",
+        "Bats are small and lean with quick changing wing poses; no fat slow hovering bats",
+        "Behind-to-front occlusion and approach are clearly readable",
+        "Surviving lettering must also breathe and erode as vapor; intact text opacity fade fails"
       ]
     }
   ],
@@ -157,5 +162,5 @@
     "A distant spectral gust wipes the greeting and leaves the stage empty"
   ],
   "assembly": "Use reviewed empty-stage boundaries between these scenes and Wisp arrivals/departures. Never cut a visible spirit directly into lettering. Choose a matching authored bridge only after exact-media review.",
-  "creditPlan": "Reuse the existing designed lettering plate; first produce one short bat/fog motion proof, validate identity, wake synchronization and all-frame reserve before paying for variants or longer masters. Lock picture before generating final sound."
+  "creditPlan": "v38 and revised bat-motion proof were rejected as final material. Review a truly vapor-stroke plate before any further paid animation; no repeated same-reference prompts. One bounded motion proof, all-frame reserve and causal smoke/depth review, then picture lock before new sound."
 }
