@@ -1,6 +1,6 @@
 {
   "taskId": "84153e6b-d7b8-42c4-9ac2-be3125bbab40",
-  "status": "generating; unreviewed; not public",
+  "status": "Reviewed motion candidate; middle-turn material still too solid; not public",
   "model": "kling-o3-pro",
   "duration": 5,
   "resolution": "720p",
@@ -20,5 +20,24 @@
     "All-frame full-effect minimum15percent reserve target20percent",
     "Exact start and end image joins reviewed; no loop or departure inferred"
   ],
-  "scope": "One turn proof using an explicit designed rear endpoint, unlike previous front-only failed departure. No paid retry or public promotion."
+  "scope": "One turn proof using an explicit designed rear endpoint, unlike previous front-only failed departure. No paid retry or public promotion.",
+  "file": "wisp-guided-vapor-turn.mp4",
+  "sha256": "17bfe3f95d8f1123f68fa4908845cf2ce867dba90d69f1d798a9e0e052e058d2",
+  "actual": {
+    "frames": 121,
+    "fps": 24,
+    "size": [
+      1920,
+      1080
+    ],
+    "audio": false
+  },
+  "review": {
+    "bounds": "AllRGB4/8/16frames pass20percent; minimumtop21.48percent",
+    "motion": "Genuine side and rear orientation with proper face occlusion; different arm poses and connected lower core",
+    "material": "Croppedframes54to75 still expose smooth opaque head/neck/shoulders and anatomical arm surface; fails final fog-material standard despite better endpoint",
+    "joins": "Actualscary\u2192turn review242frames, staticjoinIoU.98991/RGBdifference3.468. Humanvelocity/materialreviewpending.",
+    "decision": "Retain motion/reference candidate only; no new-prompt retry or public promotion",
+    "humanApproved": false
+  }
 }

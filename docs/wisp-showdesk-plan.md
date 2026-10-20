@@ -279,3 +279,12 @@ Generalized existing prepare-film-morph-anchors.cjs provenance text/count so a p
 Runwaymetadata-only upload first returnedchatgpt_missing_file_param (noasset); usingdocumentedfileparameter withactualprojectPNG completedoneupload. One5secondguidedturntask84153e6b-d7b8-42c4-9ac2-be3125bbab40 submitted inworkspace1709631,85observedcredits19519→19434. Firstendpointactualscaryv35endstaged, lastendpointnewdesignedrear135degreeguide. This differs materially from priorfront-only faileddepthdeparture; tests correctfaceocclusion andmaterialthroughmiddle. No furtherturnpaidretry unless actualreviewjustifiesdifferentinput. Pendingrender, notfinished/public, loop ordeparture. AllnewfilesexcludeprivateassetURLs.
 
 CI39472111843 exact5000d83 finalregression stillconfirmedrunning; other3SUCCESS. Preserve samehandle andproductione44697a. Localartpreflightfollow-upmustnotcancelitsremainingjob.
+
+
+## Fullregression terminal teardown failure; targeted repair
+
+Exact5000d83 CI39472111843 terminalFAILURE: other3jobsSUCCESS, fullregressionjob118798781975 failed at forget_key.cjs3 after mostlegacytests passed. Completedlogwork/regression-failure-39472111843.log shows route.fetch Storage.getCookies cannotfindcontext duringbrowserclose; an in-flight status fixture was notdrained. Added awaitpage.unrouteAll({behavior:wait}) beforeassertingerrors/closingbrowser. No catch/errorfilter, credentialcleanup assertion removal or applicationkeychange.
+
+Default8770testattempt reportedconnectionrefused; didnotrestart it or access/reload realcredentials. Startedownisolatedserver18998 with explicitnon-secret syntheticproviderplaceholder so startupskipsMacKeychain load. Allprovider/deletionroutes remainmocked. Two consecutive realWebRTC/syntheticaudio forgettests passed with drainedroutes: cleanupbeforedelete, mictracks0,peerclosed, UIforgotten,idle/rest. Shut downonlyown62313fixture after tests. This supports fixtureteardownfix; newLinuxfullCIstillrequired.
+
+Guidedturntask84153e6b completedonce85credits:121frames24fps1920x1080silent, SHA17bfe3f95d8f1123f68fa4908845cf2ce867dba90d69f1d798a9e0e052e058d2. All20reservepass(min21.48top); actualchanging side/rear views and correctfaceocclusion improved. Croppedmiddleframes54to75 stillhaveopaquehead/neck/shoulder/arm surfaces, so NOTfinishedmaterial. Retainmotionreferenceonly; no paidretry. Actual242framescary→turnreview b99025b6cf3e794626f35ef382823c81a25a4af19a5f116e10c325c3ec469d2b, joinIoU.98991/RGBdiff3.468doesnotprovevelocity/materialacceptance. Newsourceassetsremainexcludedfrompubliclibrary.
