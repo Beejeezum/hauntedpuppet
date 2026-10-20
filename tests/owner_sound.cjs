@@ -1,0 +1,16 @@
+// Actual WebAudio scheduling with generated fixture audio; no provider or microphone.
+const fs=require('node:fs'),assert=require('node:assert/strict');
+const {chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
+(async()=>{const browser=await chromium.launch({args:['--mute-audio']});try{
+ const page=await browser.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.setContent('<button id="enable">Enable laptop effects</button>');
+ await page.evaluate(async source=>{const {OwnerSound}=await import(URL.createObjectURL(new Blob([source],{type:'text/javascript'})));window.sound=new OwnerSound();document.getElementById('enable').onclick=()=>sound.enable();},fs.readFileSync('source/wisp-performance-reference/ambient-show/owner-sound.mjs','utf8'));
+ assert.equal((await page.evaluate(()=>sound.inspect())).contextState,'not-created');await page.click('#enable');await page.waitForFunction(()=>sound.inspect().contextState==='running');
+ const result=await page.evaluate(async()=>{
+  // A short valid mono PCM WAV, decoded through the browser rather than a fake context.
+  const samples=4800,bytes=new ArrayBuffer(44+samples*2),view=new DataView(bytes),text=(at,s)=>[...s].forEach((c,i)=>view.setUint8(at+i,c.charCodeAt(0)));text(0,'RIFF');view.setUint32(4,36+samples*2,true);text(8,'WAVE');text(12,'fmt ');view.setUint32(16,16,true);view.setUint16(20,1,true);view.setUint16(22,1,true);view.setUint32(24,48000,true);view.setUint32(28,96000,true);view.setUint16(32,2,true);view.setUint16(34,16,true);text(36,'data');view.setUint32(40,samples*2,true);for(let i=0;i<samples;i++)view.setInt16(44+i*2,Math.sin(i*2*Math.PI*440/48000)*3000,true);
+  await sound.prepare('flutter',bytes);sound.setLevel(0);sound.play('flutter');const future=sound.play('flutter',{delay:5}),futureEnded=new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error('Delayed effect was not stopped promptly')),1000);future.source.addEventListener('ended',()=>{clearTimeout(timer);resolve(true);},{once:true});});const before=sound.inspect().voices;sound.cancel();const cancelled=sound.inspect().voices,stoppedBeforeDue=await futureEnded;
+  let invalid=false,invalidLevel=false;try{sound.play('flutter',{delay:Infinity});}catch{invalid=true;}try{sound.setLevel(1.1);}catch{invalidLevel=true;}
+  const pending=sound.prepare('late',bytes);sound.cancel();const late=await pending;await sound.dispose();let afterDispose=false;try{await sound.enable();}catch{afterDispose=true;}
+  return{before,cancelled,stoppedBeforeDue,invalid,invalidLevel,late,afterDispose,state:sound.inspect()};
+ });assert.equal(result.before,2);assert.equal(result.cancelled,0);assert(result.stoppedBeforeDue);assert(result.invalid);assert(result.invalidLevel);assert.equal(result.late,false);assert(result.afterDispose);assert.equal(result.state.contextState,'not-created');assert.equal(result.state.buffers,0);assert.deepEqual(errors,[]);console.log('PASS real WebAudio effect decode/scheduling, immediate and delayed cancellation, stale decode rejection, level bounds and disposal. Synthetic silent fixture only; not integrated cue or acoustic acceptance.');
+ }finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1;});
