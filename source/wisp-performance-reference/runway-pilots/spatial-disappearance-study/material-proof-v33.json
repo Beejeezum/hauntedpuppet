@@ -1,0 +1,14 @@
+{
+  "status": "Rejected: rear head acquired face-like dark sockets and anatomical webbing",
+  "source": "wisp-rear-fog-material-v32.png",
+  "output": "wisp-rear-head-vapor-v33-rejected.png",
+  "sha256": "c8d909881367aa38fff5e6a16f2e406094ee9a206288ca0e4409dd56730aa497",
+  "method": "One built-in imagegen targeted head-interior reconstruction",
+  "review": [
+    "Reduced uniform head fill, but dark channels form eye/mouth-like sockets on the back.",
+    "Bright branching folds read as a skull/web, violating coherent cute rear identity and no-anatomy constraint.",
+    "Keep v32 as previous partial study. No video generation, live promotion or same-prompt retry."
+  ],
+  "humanApproval": false,
+  "liveReplacement": false
+}
