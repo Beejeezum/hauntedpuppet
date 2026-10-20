@@ -1,0 +1,14 @@
+{
+  "status": "join study, not a finished story or runtime asset",
+  "frames": 181,
+  "fps": 24,
+  "joinAtFrame": 36,
+  "sourcePictures": [
+    "writing-story-staged-v1.mp4",
+    "departure-story-staged-v1.mp4"
+  ],
+  "departureXOffset": "-289px; smoothstep to zero between 0 and 2.4 seconds to retain waving-hand safety clearance",
+  "lettering": "temporary held source plate, to be replaced by corrected native bat footage; no claim of finished fog motion",
+  "sha256": "13c27100f1291d972e9283e71c27acf69b8046df22588e0c203dcbda1f04db32",
+  "releaseApproved": false
+}

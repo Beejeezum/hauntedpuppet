@@ -1,0 +1,96 @@
+{
+  "status": "first-act review only; not a finished story or loop",
+  "releaseApproved": false,
+  "frames": 799,
+  "fps": 24,
+  "durationSeconds": 33.291666666666664,
+  "sourcePictures": [
+    {
+      "file": "story-prefix-picture-v1.mp4",
+      "frames": 364,
+      "sha256": "62e5ecdc5911ffdf716e24fbb50af9f941aa606b853168c3c28b9b5a50e39cd0"
+    },
+    {
+      "file": "scare-apology-picture-review-v1.mp4",
+      "frames": 290,
+      "sha256": "e3adad18585fa88c094906432e527a7598de274b3071f041644f187515e7f520"
+    },
+    {
+      "file": "writing-story-staged-v1.mp4",
+      "frames": 145,
+      "sha256": "fba2c7860657aec1bf6c339996011470e15a1a5149a8f36957761939dc639ba3"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "friendly",
+      "startFrame": 0,
+      "endFrame": 122
+    },
+    {
+      "id": "morph",
+      "startFrame": 122,
+      "endFrame": 243
+    },
+    {
+      "id": "menacing",
+      "startFrame": 243,
+      "endFrame": 364
+    },
+    {
+      "id": "brief-scare",
+      "startFrame": 364,
+      "endFrame": 461
+    },
+    {
+      "id": "apology",
+      "startFrame": 461,
+      "endFrame": 654
+    },
+    {
+      "id": "writing",
+      "startFrame": 654,
+      "endFrame": 799
+    }
+  ],
+  "soundEvents": [
+    {
+      "title": "User-approved scare, recovery and apology mix",
+      "atFrame": 364,
+      "atSeconds": 15.166666666666666,
+      "gain": 1,
+      "samples": 580000
+    },
+    {
+      "title": "Wisp gathers",
+      "atFrame": 2,
+      "atSeconds": 0.08333333333333333,
+      "gain": 0.18,
+      "samples": 119040
+    },
+    {
+      "title": "Pretending to be tough",
+      "atFrame": 122,
+      "atSeconds": 5.083333333333333,
+      "gain": 0.2,
+      "samples": 165334
+    },
+    {
+      "title": "First vapor-writing stroke",
+      "atFrame": 702,
+      "atSeconds": 29.25,
+      "gain": 0.14,
+      "samples": 119040
+    },
+    {
+      "title": "Second vapor-writing stroke",
+      "atFrame": 738,
+      "atSeconds": 30.75,
+      "gain": 0.1,
+      "samples": 119040
+    }
+  ],
+  "samplePeak": 0.16543826460838318,
+  "movieSha256": "194930c65e09806391c63c8f94691bbe717818b7e673016e6aef8913227bdf2f",
+  "scope": "Actual source pictures and sound, all source frames retained; approved core mix at original gain without overlapping new effects. The last shot intentionally awaits its departure/bats continuation; it has no final black boundary and must not be deployed as the full show. Full-context human motion/mix review and physical projection remain unproven."
+}
