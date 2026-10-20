@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 2,
+  "marginOrder": [
+    "left",
+    "top",
+    "right",
+    "bottom"
+  ],
+  "file": "wisp-round-trip-v40.mp4",
+  "sha256": "40f4e00b9b26da6ea69206e2025bba0ae5473c84eabe7669f606a32f97bb68cf",
+  "frameCount": 607,
+  "fps": 24.0,
+  "size": [
+    1280,
+    720
+  ],
+  "reserve": 0.2,
+  "thresholdSummaries": {
+    "4": {
+      "emptyFrames": 0,
+      "reserveFailures": 0,
+      "minimumMarginsLTRB": [
+        0.365625,
+        0.225,
+        0.3515625,
+        0.20277777777777778
+      ]
+    },
+    "8": {
+      "emptyFrames": 0,
+      "reserveFailures": 0,
+      "minimumMarginsLTRB": [
+        0.365625,
+        0.225,
+        0.3515625,
+        0.20555555555555555
+      ]
+    },
+    "16": {
+      "emptyFrames": 0,
+      "reserveFailures": 0,
+      "minimumMarginsLTRB": [
+        0.3671875,
+        0.225,
+        0.35234375,
+        0.20833333333333334
+      ]
+    }
+  },
+  "adjacentVisibleRGBMedian": 4.755388816898661,
+  "endpointVisibleRGBDifference": 2.259304289091523,
+  "scope": "Decoded RGB bounds and thumbnails only. Empty frames are diagnostics: inspect intentional vanishing separately. Does not prove anatomy, velocity continuity, camera lock, depth, voice, human approval or physical projection."
+}

@@ -1,6 +1,6 @@
 {
   "taskId": "cc2480f1-ee1f-4b33-b736-3e87c68d1d3e",
-  "status": "submitted; unreviewed",
+  "status": "completed review candidate; human identity and all-join approval pending",
   "submissionCap": 1,
   "model": "kling-o3-pro",
   "duration": 5,
@@ -10,5 +10,25 @@
   "observedCreditsBefore": 20873,
   "observedCreditsAfter": 20788,
   "observedDebit": 85,
-  "scope": "Authored return counterpart, not reversed footage. Endpoint matching and anatomy/material/motion/buffer need review; forward candidate has not received human approval yet."
+  "scope": "Authored return counterpart, not reversed footage. Endpoint matching and anatomy/material/motion/buffer need review; forward candidate has not received human approval yet.",
+  "file": "wisp-return-film-morph-v40.mp4",
+  "sha256": "d958fc38d9defd583feb871b673c73600f329fec7d26bc93e84b96bee0edb084",
+  "actualOutput": {
+    "size": [
+      1920,
+      1080
+    ],
+    "frames": 121,
+    "fps": 24,
+    "audio": false
+  },
+  "review": {
+    "purpose": "Authored scary-to-friendly return, not a loop or reversed footage; loop endpoint difference is inapplicable",
+    "reserve": "All121rawframes pass20percentRGB4/8/16; full607frame roundtrip passes20percent, min20.28percent",
+    "anatomy": "Sampled core and hands stay attached while face/claws soften; no sampled doubled body. Human normal-speed review pending.",
+    "joins": "Scary-to-returnIoU0.9893/diff3.444; return-to-friendlyIoU0.9908/diff2.616, common85percent stage. No registration/crossfade/reversal/interpolation/retime.",
+    "humanApproval": false,
+    "publicIntegration": false,
+    "physicalProjection": false
+  }
 }

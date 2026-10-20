@@ -115,3 +115,14 @@ First20cycle soak finished all20cute→scary→cute cycles with2owner videos/0ow
 Output now has an explicit stop method that sets stopped, cancels the scheduled frame and clears the canvas. Escape, output pagehide and owner disposal use it. One-cycle navigation reproduction, existing whole-film output test, both built-dist Chromium/WebKit showdesk regressions with a new owner-navigation assertion, and a fresh full20cycle soak all pass. Fresh soak retains a unique work/showdesk-soak-<timestamp>.json plus latest report, including failure state if a later run fails.20cycle pass includes Blackout and owner navigation cleanup; not overnight/physical/human acceptance.
 
 Because6aba99f lacks this verified disposal fix, it must not deploy even if its still-running regression later passes. The next exact-head CI will supersede it for this concrete new defect, not for an observation timeout. Public preview helper checksum is refreshed; source-only review films remain outside the public allowlist.
+
+
+## Return morph v40 and one review link
+
+Return taskcc2480f1-ee1f-4b33-b736-3e87c68d1d3e completed once (85observedcredits). OriginalSHA d958fc38d9defd583feb871b673c73600f329fec7d26bc93e84b96bee0edb084 retained;121frames24fps1920x1080silent. Cropped temporal samples show face/claws softening into cute identity with attached hands/core. All121frames meet20percentRGBreserve.
+
+Assembled real friendly → forwardv39 → scary → returnv40 → fullfriendlyrepeat at fixedcommon85percent stage, preserving all607frames24fps without crossfades, reversal, retiming or interpolation. SHA40f4e00b9b26da6ea69206e2025bba0ae5473c84eabe7669f606a32f97bb68cf. All607frames meet20percent complete-effect reserve, min20.28percent. Returnjoins IoU0.9893/RGBdiff3.444 andIoU0.9908/diff2.616. These are endpoint diagnostics, not human motion acceptance.
+
+Source review page http://127.0.0.1:8898/source/wisp-performance-reference/ambient-show/review.html now presents25.2917sec roundtrip plus5sec bat/SFX proof, both initially paused/muted with explicit controls. Local isolatedChromium test plays both to end,0reported dropped frames, no page errors or390px overflow. User said “yeah that works” after previous preview link; treat as preview/direction acknowledgement, not explicit acceptance of all four new joins or physical projection. No new morph cue/automatic-program/public promotion.
+
+Remote PR8 head765502fd0851450db85001fe23a6bfadfa49db0d includes explicit output disposal and20cycle-tested source helper, plus earlier desktop/mobile fixes. CI39465015030 confirmed pending with no jobs yet; previous39462963561 still had fullregression running. Poll these same handles; do not manually redeploy or repush for waiting alone. Newreturn assets/review-page updates are local follow-ups beyond765502f and should not cancel its run. Production stilldae1261.

@@ -1,5 +1,5 @@
 {
-  "status": "prepared; no generation submitted",
+  "status": "preflight complete; current submission/review state is in pilot.json",
   "scale": 0.85,
   "canvas": [
     1280,
