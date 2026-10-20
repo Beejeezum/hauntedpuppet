@@ -41,5 +41,18 @@
   "submissionCount": 1,
   "lastObservedState": "System Error: Oops, this one's on us. Technical error; inputs did not violate policies.",
   "creditsAfterFailure": 9948,
-  "netObservedCredits": 0
+  "netObservedCredits": 0,
+  "technicalRetry": {
+    "status": "Queued as second output in same session",
+    "reason": "First attempt terminal explicit provider technical error/no policy violation and refund verified; officialstatusRunwayAllSystemsOperational/AppBackendPublicAPIOperational/Oct20noincident, not proof of thirdpartyhealth.",
+    "serviceSource": "https://status.runwayml.com",
+    "settings": "Same Video1/Audio1/Seedance2.0/5s720p16:9/audioon, promptand150quote reverified",
+    "creditsBefore": 9948,
+    "creditsAfter": 9798,
+    "observedDebit": 150,
+    "submissionCount": 1,
+    "maximumFurtherRetries": 0,
+    "browserTabId": "1941618776",
+    "lastObservedState": "SecondoutputInqueue"
+  }
 }
