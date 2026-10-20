@@ -4,7 +4,7 @@ export class WholeFilmPlayer {
  inspect(){return {state:this.state,pending:!!this.pending,epoch:this.epoch,sound:this.sound,active:this.active?.dataset.kind||null,disposed:this.disposed,handoffs:[...this.handoffs]};}
  emit(state){this.state=state;this.onState(this.inspect());}
  configure({speech,idle}){this.sources={speech,idle};this.videos.forEach((v,i)=>{v.preload='auto';v.src=i?idle:speech;v.load();});}
- setSound(enabled){this.sound=!!enabled;if(this.active)this.active.muted=!this.sound||this.state!=='speaking';}
+ setSound(enabled){this.sound=!!enabled;if(this.active)this.active.muted=!this.sound||this.state!=='speaking';this.onState(this.inspect());}
  async switchTo(kind){if(this.disposed)return false;if(!this.sources?.[kind])throw Error('Missing film source');const ticket=++this.epoch;this.pending?.cancel();const next=this.videos.find(v=>v!==this.active)||this.videos[0];next.pause();next.muted=true;next.loop=kind==='idle';next.dataset.kind=kind;if(next.getAttribute('src')!==this.sources[kind]){next.src=this.sources[kind];next.load();}else next.currentTime=0;this.emit(kind==='speech'?'preparing-speech':'preparing-idle');let timer,callback,settled=false,resolveReady,rejectReady;
   const cleanup=()=>{clearTimeout(timer);if(callback!==undefined)next.cancelVideoFrameCallback?.(callback);next.removeEventListener('error',failed);next.removeEventListener('playing',ready);};
   const ready=()=>{if(settled)return;settled=true;cleanup();resolveReady();};

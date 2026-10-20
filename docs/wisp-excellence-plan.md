@@ -270,3 +270,7 @@ The source-only `wisp-whole-film-handoff.html` now switches the whole speaking c
 
 
 Scary material v34 is a partial still-image correction: it keeps the established crest/blue eyes/grin and connected fog body while softening the chest and shoulders. Hard claw tips remain unresolved. RGB4/8/16 smoke clearance passes15% but not the requested20% generation target. It is retained as a candidate, not an approved replacement or evidence that the frozen scary idle is fixed. Review the hands before purchasing another motion pilot.
+
+
+### Optional public whole-film preview preparation
+An opt-in preview is prepared at assets/wisp-film-preview/index.html, outside the main renderer. The build copies exactly five checksummed source files (three playback/output modules and two fictional character films, approximately1.77MB media); it never publishes the source tree. Built-dist browser tests cover greeting-to-idle, explicit owner-only audio enable/mute, late media error recovery, Blackout, silent output, paused-frame watchdog and owner closure. No provider requests/capture occur. This is not yet deployed or accepted as arbitrary live speech, a morph solution or physical projection. The current working main app remains the default.

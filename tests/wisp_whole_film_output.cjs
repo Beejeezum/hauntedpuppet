@@ -2,7 +2,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs');
 const {chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
 (async()=>{const browser=await chromium.launch({args:['--mute-audio']});try{
  const page=await browser.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
- await page.goto((process.env.HAUNT_SOURCE_BASE||'http://127.0.0.1:8896')+'/source/wisp-performance-reference/runway-pilots/wisp-whole-film-handoff.html');
+ await page.goto((process.env.HAUNT_SOURCE_BASE||'http://127.0.0.1:8896')+(process.env.HAUNT_FILM_PAGE||'/source/wisp-performance-reference/runway-pilots/wisp-whole-film-handoff.html'));
  const opened=page.waitForEvent('popup');await page.getByRole('button',{name:'Open silent rehearsal output'}).click();const output=await opened;output.on('pageerror',e=>errors.push(e.message));await output.waitForFunction(()=>window.WispFilmOutput);
  assert.equal(await output.locator('audio,video').count(),0);
  const lit=()=>{const c=document.querySelector('canvas'),d=c.getContext('2d').getImageData(0,0,c.width,c.height).data;return d.some((v,i)=>i%4!==3&&v>32);};

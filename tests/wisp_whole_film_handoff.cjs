@@ -5,11 +5,14 @@ try{const page=await browser.newPage({viewport:{width:1280,height:900}}),errors=
 page.on('pageerror',e=>errors.push(e.message));const base=process.env.HAUNT_SOURCE_BASE||'http://127.0.0.1:8896';
 await page.route('**/*',r=>{if(new URL(r.request().url()).origin===base)return r.continue();outside.push(r.request().url());return r.abort();});
 await page.addInitScript(()=>{window.captureAttempts=0;navigator.mediaDevices.getUserMedia=async()=>{captureAttempts++;throw Error('Unexpected capture');};});
-await page.goto(base+'/source/wisp-performance-reference/runway-pilots/wisp-whole-film-handoff.html');
+await page.goto(base+(process.env.HAUNT_FILM_PAGE||'/source/wisp-performance-reference/runway-pilots/wisp-whole-film-handoff.html'));
 assert.equal(await page.evaluate(()=>WholeFilmReview.inspect().state),'stopped');
 assert.equal(await page.evaluate(()=>[...document.querySelectorAll('video')].every(v=>v.paused&&v.muted)),true);
 await page.click('#greet');await page.waitForFunction(()=>WholeFilmReview.inspect().state==='speaking');
 assert.equal(await page.evaluate(()=>WholeFilmReview.active.muted),true);
+await page.click('#sound');assert.equal(await page.evaluate(()=>WholeFilmReview.active.muted),false);assert.equal(await page.locator('#sound').getAttribute('aria-pressed'),'true');assert.match(await page.locator('#status').textContent(),/enabled/);
+assert.equal(await page.evaluate(()=>[...document.querySelectorAll('video')].filter(v=>!v.muted).length),1);
+await page.click('#sound');assert.equal(await page.evaluate(()=>WholeFilmReview.active.muted),true);
 await page.waitForFunction(()=>WholeFilmReview.inspect().state==='idle',{},{timeout:12000});
 assert.equal(await page.evaluate(()=>WholeFilmReview.active.loop),true);
 assert.equal(await page.evaluate(()=>[...document.querySelectorAll('video')].filter(v=>v.style.opacity==='1').length),1);
