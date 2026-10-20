@@ -1,0 +1,26 @@
+{
+  "file": "side-frame60-vapor-edit-v1.png",
+  "sha256": "210fb9bcc51f0677db03b1c4ee8597b8d20f733c3b77ab35de578d1fd0a6d3ab",
+  "size": [
+    1672,
+    941
+  ],
+  "sourceVideo": "wisp-guided-vapor-turn.mp4",
+  "sourceVideoSha256": "17bfe3f95d8f1123f68fa4908845cf2ce867dba90d69f1d798a9e0e052e058d2",
+  "sourceFrame": 60,
+  "timestampSeconds": 2.5,
+  "method": "Built-in imagegen targeted material edit of actual decoded side frame, no CLI/API fallback",
+  "marginsLTRB_RGB4": [
+    0.41626794258373206,
+    0.22104144527098832,
+    0.38217703349282295,
+    0.22954303931987247
+  ],
+  "maskIoUAfterUniformResize_RGB16": 0.90859700676553,
+  "review": {
+    "positive": "Porous varying fog density replaces uniform white skull/neck/arm surfaces; profile and finger pose broadly retained",
+    "limitations": "Still only; no temporal material/identity or endpoint preservation demonstrated. Exact pose alignment and human material approval required before full video edit.",
+    "humanApproved": false,
+    "videoEditSubmitted": false
+  }
+}
