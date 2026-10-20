@@ -35,6 +35,7 @@
     },
     "publicIntegration": false,
     "humanApproval": false,
-    "nextAction": "No paid turn-away retry from front-only artwork. Create a designed painted rear/three-quarter guide before another motion generation."
+    "nextAction": "No paid turn-away retry from front-only artwork. Create a designed painted rear/three-quarter guide before another motion generation.",
+    "endingFailure": "Threshold-empty20frames are not an exact-black port: last decoded frame maxRGB=2; no trailing exactRGB0frames. Do not count it as verified empty-stage media."
   }
 }
