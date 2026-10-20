@@ -18,12 +18,13 @@ export function mountFilmOutput(stage, inspect) {
   d.addEventListener('fullscreenchange',()=>fullscreen.hidden=!!d.fullscreenElement);
   let frame=0,stopped=false,stale=false,stalls=0,lastDraw=null,lastChange=output.performance.now();const clear=()=>context.clearRect(0,0,canvas.width,canvas.height);
   function paint(){if(stopped)return;let state;try{state=!window.closed&&!disposed&&inspect();}catch{}if(!state||state.disposed){clear();stopped=true;return;}const now=output.performance.now(),draws=state.metrics?.draws;if(draws!==lastDraw){lastDraw=draws;lastChange=now;}const nextStale=Number.isFinite(draws)&&!state.black&&now-lastChange>1200;if(nextStale&&!stale)stalls++;stale=nextStale;if(state.black||stale)clear();else context.drawImage(stage,0,0);frame=output.requestAnimationFrame(paint);}
-  output.addEventListener('keydown',event=>{if(event.key==='Escape'){clear();stopped=true;output.cancelAnimationFrame(frame);}});
-  output.addEventListener('pagehide',()=>{stopped=true;output.cancelAnimationFrame(frame);outputs.delete(output);});
-  output.WispFilmOutput={inspect:()=>({silent:true,stopped,stale,stalls,width:canvas.width,height:canvas.height,owner:!window.closed&&!disposed}),resume:()=>{let state;try{state=inspect();}catch{}if(!state||state.disposed||state.black||state.paused){clear();return false;}stopped=false;stale=false;lastDraw=state.metrics?.draws;lastChange=output.performance.now();output.cancelAnimationFrame(frame);paint();return true;},blackout:clear};
+  const stopOutput=()=>{stopped=true;output.cancelAnimationFrame(frame);clear();};
+  output.addEventListener('keydown',event=>{if(event.key==='Escape')stopOutput();});
+  output.addEventListener('pagehide',()=>{stopOutput();outputs.delete(output);});
+  output.WispFilmOutput={inspect:()=>({silent:true,stopped,stale,stalls,width:canvas.width,height:canvas.height,owner:!window.closed&&!disposed}),resume:()=>{let state;try{state=inspect();}catch{}if(!state||state.disposed||state.black||state.paused){clear();return false;}stopped=false;stale=false;lastDraw=state.metrics?.draws;lastChange=output.performance.now();output.cancelAnimationFrame(frame);paint();return true;},blackout:clear,stop:stopOutput};
   paint();
  };
- function dispose(){disposed=true;button.disabled=true;for(const output of outputs)if(!output.closed)output.WispFilmOutput?.blackout();outputs.clear();window.removeEventListener('pagehide',dispose);}
+ function dispose(){disposed=true;button.disabled=true;for(const output of outputs)if(!output.closed)output.WispFilmOutput?.stop();outputs.clear();window.removeEventListener('pagehide',dispose);}
  window.addEventListener('pagehide',dispose,{once:true});
  return {blackout(){for(const output of outputs)if(!output.closed)output.WispFilmOutput?.blackout();},dispose};
 }
