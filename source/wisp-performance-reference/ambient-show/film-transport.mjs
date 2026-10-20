@@ -9,6 +9,7 @@ export class FilmTransport {
  async prepare(id){const clip=this.clips.find(c=>c.id===id);if(!clip)throw Error('Unknown cue');const video=this.videos.find(v=>v!==this.active);video.pause();video.muted=true;video.loop=!!clip.loop;video.src=clip.src;video.load();await this.frame(video);video.pause();return{id,clip,video,dispose:()=>{if(video!==this.active){video.pause();video.removeAttribute('src');video.load();}}};}
  async activate(prepared,live){const previous=this.active;await this.frame(prepared.video);if(!live())return;this.active=prepared.video;this.active.dataset.cue=prepared.id;this.compositor.reveal();if(previous&&previous!==this.active){previous.pause();previous.removeAttribute('src');previous.load();}}
  fade(target,ms,live){const start=this.compositor.level,at=performance.now();return new Promise(resolve=>{const tick=now=>{if(!live()){resolve();return;}const t=Math.min(1,(now-at)/Math.max(1,ms)),ease=t*t*(3-2*t);this.compositor.setLevel(start+(target-start)*ease);if(t<1)requestAnimationFrame(tick);else resolve();};requestAnimationFrame(tick);});}
+ hold(ms,live){const at=performance.now();return new Promise(resolve=>{const tick=now=>{if(!live()||now-at>=ms)resolve();else requestAnimationFrame(tick);};requestAnimationFrame(tick);});}
  blackout(){this.active=null;this.compositor.setLevel(0);this.compositor.blackout();for(const v of this.videos){v.pause();v.muted=true;}}
  dispose(){this.blackout();this.disposed=true;for(const v of this.videos){v.removeAttribute('src');v.load();}}
 }

@@ -3,7 +3,7 @@ const BLENDS = new Set(['source-over', 'screen', 'lighter', 'multiply']);
 const unit = value => Number.isFinite(value) && value >= 0 && value <= 1;
 export class StageCompositor {
  constructor(canvas, {onLayerError = () => {}} = {}) {
-  this.canvas=canvas;this.ctx=canvas.getContext('2d');this.layers=[];this.black=true;this.level=1;this.onLayerError=onLayerError;this.disposed=false;this.draws=0;
+  this.canvas=canvas;this.ctx=canvas.getContext('2d');this.layers=[];this.black=true;this.suspended=false;this.level=1;this.onLayerError=onLayerError;this.disposed=false;this.draws=0;
  }
  add({id,source,opacity=1,blend='source-over',visible=true,kind='effect'}) {
   if(this.disposed||!id||this.layers.some(l=>l.id===id)||this.layers.length>=12)throw Error('Invalid or duplicate layer');
@@ -19,12 +19,13 @@ export class StageCompositor {
  remove(id){this.layers=this.layers.filter(l=>l.id!==id);}
  setLevel(value){if(!unit(value))throw Error('Invalid stage level');this.level=value;}
  blackout(){this.black=true;this.render();}
+ suspend(value){this.suspended=!!value;}
  reveal(){if(!this.disposed)this.black=false;}
- inspect(){return{black:this.black,level:this.level,draws:this.draws,layers:this.layers.map(({source,...settings})=>({...settings}))};}
+ inspect(){return{black:this.black,suspended:this.suspended,level:this.level,draws:this.draws,layers:this.layers.map(({source,...settings})=>({...settings}))};}
  render(){
   const {ctx,canvas}=this;if(this.disposed)return;
   ctx.save();ctx.globalCompositeOperation='source-over';ctx.globalAlpha=1;ctx.fillStyle='#000';ctx.fillRect(0,0,canvas.width,canvas.height);
-  if(!this.black&&this.level>0)for(const layer of this.layers){
+  if(!this.black&&!this.suspended&&this.level>0)for(const layer of this.layers){
    if(!layer.visible||!layer.opacity)continue;
    const s=typeof layer.source==='function'?layer.source():layer.source;
    if(!s||'readyState'in s&&s.readyState<2||'complete'in s&&!s.complete)continue;

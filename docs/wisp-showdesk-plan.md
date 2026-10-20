@@ -7,7 +7,7 @@ The projector receives a composed stage, not just a video element. Layer stack: 
 
 ## Implemented local rehearsal — not deployed
 - `assets/stage-compositor.js`: ordered canvas layers, independent opacity/visibility/blend controls, contained aspect fitting, latched whole-stage Blackout and disposal. Projector will mirror final canvas; it must never create separate effect/video audio players.
-- `source/wisp-performance-reference/ambient-show/cue-director.mjs`: prepare destination before exit, latest queued request wins, swap only behind a planned blackout, fade entrance, immediate Stop and stale decode rejection. This fade-through-black is an editorial transition, not a shape morph.
+- `source/wisp-performance-reference/ambient-show/cue-director.mjs`: prepare destination before exit, latest queued request wins, swap only behind a planned blackout, minimum500ms planned empty-stage hold, fade entrance, immediate Stop and stale decode rejection. This fade-through-black is an editorial transition, not a shape morph.
 - `showdesk.html` / `showdesk.mjs` / `film-transport.mjs`: actual v28/v35 media playback, large cue buttons, cute/scary/alternate/mostly-scary selections, dwell and fade pacing; local PNG/JPEG/WebP/MP4/WebM layer import, controls and final-canvas projector mirror. All videos muted. Candidate scary footage exits through black before its unapproved loop endpoint; repeated scary entries are a development limitation, not a finished show.
 - Thirty-two production cards now include nonverbal ghost stories, Happy Halloween fog lettering and bats breaking up the letters. They remain planned cards, not finished films.
 - Synthetic director cancellation tests and actual Chromium pixel tests pass. `tests/showdesk_rehearsal.cjs` also passes with actual v28/v35 films, a synthetic local effect mirrored to silent output, Blackout/stale decode, automatic/manual takeover and narrow-screen controls. Desktop screenshot inspected and cue/preview spacing revised. No human seam/native voice/physical projection acceptance implied.
@@ -22,3 +22,12 @@ The projector receives a composed stage, not just a video element. Layer stack: 
 
 ## Important limitation
 Current live site remains dae1261. No new desk, layer UI, films or sound effects from this goal are live yet. The main app cannot be called overhauled from these foundations alone.
+
+
+## Recording and recovery checkpoint
+
+The actual composed canvas was recorded through cute → scary → cute in isolated Chromium. The first recording revealed no reliable empty hold; the director now adds at least500ms black between incompatible films. Fourteen sampled full-resolution canvas reads during v3 empty-stage phases were exactly RGB0. The lossy recording has faint residual pixels in one hold (RGB4/8 export thresholds fail there; RGB16 has both hold spans). Do not silently relax or call the export pixel-perfect. This is a browser recording, not a physical projection or accepted form morph.
+
+Evidence: `work/showdesk-cue-transitions-v3.json`, `work/showdesk-cue-transitions-v3-review.json`; display clip in sibling `outputs/wisp-vision/wisp-showdesk-cue-transitions-v3.mp4`. No new generation credits or soundtrack. Actual browser test now covers true 10-second alternating form dwell, scary pre-end exit without hard-looping, character pause suspending the entire composition (including effect layers), decode recovery, manual takeover and Blackout. A media-ended fallback is prevented from overwriting a transition already underway.
+
+Next: finish the real film library and authored entrances/morphs instead of hiding its incompleteness behind repeated black transitions; add proper SFX and text/bat assets; integrate phone/safety and the separate puppeteering route; then exact release/hosted checks. No new desk is published yet.

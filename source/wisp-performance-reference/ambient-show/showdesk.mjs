@@ -7,15 +7,15 @@ const $=id=>document.getElementById(id),clips=[
  {id:'scary',title:'Menacing Wisp',detail:'Full-body motion study · exits through black',loop:false,src:'../runway-pilots/motion-transfer-study/wisp-scary-motion-transfer-v35.mp4'}
 ];
 const compositor=new StageCompositor($('stage'),{onLayerError:id=>$('status').textContent='Layer unavailable: '+id});
-const transport=new FilmTransport(compositor,clips),overlays=new Map();let disposed=false,raf,mode='manual',formSince=0,lastForm=null,activity=0,lastTime=-1,lastVideo=null;
-const labels={stopped:'Stage black',preparing:'Preparing next cue',exiting:'Planned exit',entering:'Planned entrance',playing:'On stage',unavailable:'Film unavailable · stage black'};
+const transport=new FilmTransport(compositor,clips),overlays=new Map();let disposed=false,raf,mode='manual',formSince=0,lastForm=null,activity=0,lastTime=-1,lastVideo=null,lastFresh=performance.now(),stale=false;
+const labels={stopped:'Stage black',preparing:'Preparing next cue',exiting:'Planned exit','empty-stage':'Empty stage · planned transition',entering:'Planned entrance',playing:'On stage',unavailable:'Film unavailable · stage black'};
 const director=new CueDirector(transport,{fadeMs:900,onState:s=>{
  $('status').textContent=labels[s.phase]+(s.current?' · '+clips.find(c=>c.id===s.current)?.title:'');$('queue').textContent=s.queued?'Queued · '+clips.find(c=>c.id===s.queued)?.title:'No cue queued';
  for(const b of $('cues').querySelectorAll('button'))b.setAttribute('aria-pressed',String(b.dataset.cue===s.current));
  if(s.phase==='playing'&&s.current!==lastForm){lastForm=s.current;formSince=performance.now();}
 }});
 const activate=transport.activate.bind(transport);transport.activate=async(prepared,live)=>{await activate(prepared,live);if(live())for(const {source}of overlays.values())if(source.tagName==='VIDEO')source.play().catch(()=>{});};
-const output=mountFilmOutput($('stage'),()=>({black:compositor.black||!transport.active,paused:transport.active?.paused??true,disposed,metrics:{draws:activity}}));
+const output=mountFilmOutput($('stage'),()=>({black:compositor.black||stale||!transport.active,paused:transport.active?.paused??true,disposed,metrics:{draws:activity}}));
 function refreshLayers(){
  $('layers').replaceChildren();const layers=compositor.inspect().layers;
  layers.forEach((layer,index)=>{
@@ -40,16 +40,18 @@ $('effectFile').onchange=async event=>{
  try{source.src=url;if(isVideo){await transport.frame(source);if(!transport.active)source.pause();}else await source.decode();if(disposed){source.pause?.();source.removeAttribute('src');if(isVideo)source.load();URL.revokeObjectURL(url);return;}overlays.set(id,{url,source,name:file.name,lastTime:-1});compositor.add({id,source,opacity:.4,blend:'screen'});activity++;refreshLayers();}
  catch{source.pause?.();source.removeAttribute('src');URL.revokeObjectURL(url);$('status').textContent='Effect could not load';}
 };
-function stop(){mode='manual';$('mode').value=mode;director.stop();for(const {source}of overlays.values())source.pause?.();output.blackout();lastForm=null;}
-for(const clip of clips){const b=document.createElement('button');b.dataset.cue=clip.id;b.innerHTML='<strong></strong><small></small>';b.querySelector('strong').textContent=clip.title;b.querySelector('small').textContent=clip.detail;b.onclick=()=>{mode='manual';$('mode').value=mode;director.request(clip.id);};$('cues').append(b);}
+function stop(){mode='manual';$('mode').value=mode;timing();director.stop();for(const {source}of overlays.values())source.pause?.();output.blackout();lastForm=null;}
+for(const clip of clips){const b=document.createElement('button');b.dataset.cue=clip.id;b.innerHTML='<strong></strong><small></small>';b.querySelector('strong').textContent=clip.title;b.querySelector('small').textContent=clip.detail;b.onclick=()=>{mode='manual';$('mode').value=mode;timing();director.request(clip.id);};$('cues').append(b);}
 $('start').onclick=()=>{mode=$('mode').value;lastForm=null;formSince=performance.now();director.request(['scary','mostly-scary'].includes(mode)?'scary':'cute');};
-$('dwell').oninput=()=>$('dwellValue').textContent=$('dwell').value+'s';$('pace').onchange=()=>{director.fadeMs=Number($('pace').value);};
+function timing(){const n=Number($('dwell').value),selected=$('mode').value;$('dwellValue').textContent=n+'s';$('programTiming').textContent=selected==='manual'?'Manual cueing · no automatic form changes':selected==='mostly-scary'?`Scary ${n*3}s · cute ${n*.5}s`:selected==='alternate'?`Cute ${n}s · scary ${n}s`:`${selected==='cute'?'Friendly':'Scary'} only · no automatic form changes`;}
+$('dwell').oninput=timing;$('mode').onchange=timing;$('pace').onchange=()=>{director.fadeMs=Number($('pace').value);};
 $('blackout').onclick=stop;document.addEventListener('keydown',e=>{if(e.key==='Escape')stop();});$('puppet').onclick=stop;
 function nextForm(){if(mode==='cute')return'cute';if(mode==='scary')return'scary';return director.current==='cute'?'scary':'cute';}
 function tick(now){
- if(disposed)return;const v=transport.active;if(v&&(v!==lastVideo||v.currentTime!==lastTime)){activity++;lastVideo=v;lastTime=v.currentTime;}
+ if(disposed)return;const v=transport.active;if(v&&(v!==lastVideo||v.currentTime!==lastTime)){activity++;lastVideo=v;lastTime=v.currentTime;lastFresh=now;}
+ stale=!!v&&now-lastFresh>1200;compositor.suspend(stale);
  for(const item of overlays.values())if(item.source.tagName==='VIDEO'&&item.source.currentTime!==item.lastTime){item.lastTime=item.source.currentTime;activity++;}
- if(v&&!v.loop&&v.ended){compositor.blackout();director.request(mode==='manual'?'cute':nextForm());}
+ if(v&&!v.loop&&v.ended&&director.phase==='playing'){compositor.blackout();director.request(mode==='manual'?'cute':nextForm());}
  else if(v&&director.phase==='playing'){
   const seconds=Number($('dwell').value)*(mode==='mostly-scary'?(director.current==='scary'?3:.5):1),due=now-formSince>=seconds*1000;
   const exitDue=!v.loop&&Number.isFinite(v.duration)&&v.currentTime>=v.duration-director.fadeMs/1000-.65;
@@ -59,5 +61,5 @@ function tick(now){
  compositor.render();raf=requestAnimationFrame(tick);
 }
 refreshLayers();tick(performance.now());
-window.WispDesk={inspect:()=>({director:director.inspect(),composition:compositor.inspect(),mode,media:transport.videos.map(v=>({muted:v.muted,paused:v.paused,cue:v.dataset.cue||null})),effects:overlays.size})};
+window.WispDesk={inspect:()=>({director:director.inspect(),composition:compositor.inspect(),mode,media:transport.videos.map(v=>({muted:v.muted,paused:v.paused,cue:v.dataset.cue||null,currentTime:v.currentTime,loop:v.loop})),effects:overlays.size})};
 window.addEventListener('pagehide',()=>{disposed=true;cancelAnimationFrame(raf);director.dispose();for(const id of [...overlays.keys()])release(id);compositor.dispose();output.dispose();},{once:true});
