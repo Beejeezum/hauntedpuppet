@@ -13,7 +13,7 @@ export class CueDirector {
    // A changed destination during exit is decoded behind black, never flashed onscreen.
    while(id!==this.queued&&live()){prepared?.dispose?.();id=this.queued;prepared=await this.transport.prepare(id);}
    if(!live()){prepared?.dispose?.();return;}
-   this.transport.activate(prepared);this.current=id;this.queued=null;this.emit('entering');await this.transport.fade(1,this.fadeMs,live);if(live())this.emit('playing');
+   await this.transport.activate(prepared,live);if(!live()){prepared?.dispose?.();return;}this.current=id;if(this.queued===id)this.queued=null;if(this.queued)continue;this.emit('entering');await this.transport.fade(1,this.fadeMs,live);if(live())this.emit('playing');
   }}catch(error){if(live()){this.stop();this.emit('unavailable');this.lastError=error.message;}}
  }
  stop(){this.epoch++;this.queued=null;this.current=null;this.transport.blackout();this.emit('stopped');}
