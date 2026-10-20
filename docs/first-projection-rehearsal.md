@@ -14,7 +14,7 @@ https://hauntedpuppet.netlify.app/assets/wisp-film-preview/index.html
 4. Back at the laptop, choose **Enable sample voice**, then **Greeting → living idle**. Listen from the guest positions. Check intelligibility, character appeal, the end of the spoken line and the visual return to idle. The output window must remain silent; sound belongs to the laptop/speaker path.
 5. Press **Blackout / stop** on the laptop. The projected character should clear immediately and audio should stop. Restart idle, then try **Escape** in the output window. Keep the stage black until you explicitly restore it from the operator page.
 
-The same-window Escape recovery fix is under review. Until it is published, an escaped output can remain latched black: close that output, reopen it from the laptop and place/fullscreen it again. Do not interpret this known limitation as a projector failure.
+Escape recovery is live: with idle playing on the laptop, choose **Open silent rehearsal output** again to restore the existing output window. If the laptop is paused or in Blackout, reopening must keep the output black. Verify real display placement and fullscreen behavior on your hardware; the hosted browser check establishes window reuse, not physical placement.
 
 ## Report what actually happened
 
