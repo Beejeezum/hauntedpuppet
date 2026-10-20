@@ -1,0 +1,276 @@
+# Haunted Puppet attraction excellence
+
+## Working goal
+
+Build Haunted Puppet into a polished contemporary interactive front-door attraction: a beautiful, fully expressive painted Wisp that feels alive, responds naturally to guests, transforms convincingly between friendly and frightening, and gives an operator effortless control over a reliable projection show.
+
+This is the active tracked goal, explicitly authorized by the user after the bounded quality pass. Desktop controller software, animation authoring tools and graphics packages are in scope when they demonstrate a material improvement. The platform is a means to the experience; the current browser renderer is not a fixed requirement. Preserve working features and approved art while replacements are evaluated independently.
+
+Success requires character, acting, voice, interaction, operator experience, presentation and reliability together. Software checks cannot approve visual quality. The existing candidate has not reached the requested quality bar; an incremental deployment does not complete this goal.
+
+## Whole-character quality correction — October 19
+
+The component turn pilot is not the visual destination. The user rejected its disconnected puppet appearance. Evaluate complete Runway performances as the current body-motion baseline; do not promote independent floating face/hand/fog pieces merely because they respond to controls.
+
+Next production slice: one cohesive friendly listening/speaking performance with stable identity, continuous hand/shoulder/core motion and attached soft fog. Compare the unmodified whole-character footage against any speech implementation at normal speed and guest distance. Reject the speech implementation if face sliding, matte seams, mismatched lighting or weaker acting are visible. A looping clip alone does not satisfy arbitrary responsive performance or the full attraction goal.
+
+Current friendly idle v7 seam diagnostic: encoded 24 fps, 122 frames, end/start visible-region RGB difference 1.477 versus adjacent median 1.816; lower-region occupancy ratio 0.907. Sampled seam drawings retain the connected core. These are candidate-selection evidence only, not anatomy, smoothness, live-speech or physical-projection acceptance. Keep original sources unchanged and experimental overlays off by default.
+
+## Execution and acceptance across the attraction
+
+| Track | Deliverable | Acceptance evidence | Current gap |
+| --- | --- | --- | --- |
+| Character identity | Approved cute/evil hero designs, silhouette, anatomy and complete turnaround | Reference comparison at front, three-quarter, side and rear | Rear shoulder construction and incomplete opposite-side views |
+| Rig and acting | Articulated hands/arms, independently timed face, continuous full-body life, authored anticipation and follow-through | Full-speed and slow-motion 15-second reel plus interrupted performances | Friendly v28 full-body motion and repeat flow are human-endorsed, but remain prepared footage. Interactive speech with that quality is unproven; scary v29 freezes near the end, and the return morph exposes friendly eyes before claws finish changing. |
+| Material and atmosphere | Painted depth, spatial transparency and spirit-origin effects with coherent attachment | Close-up and guest-distance review against black, turning and bending | Rear v32 softens the lower body but retains an opaque head; v33 head reconstruction was rejected for skull-like rear sockets. Source v30 depth motion works but its toy-like material fails. No approved all-angle vapor construction yet. |
+| Voice and persona | Distinctive expressive friendly/scary voices; concise doorstep-aware dialogue | Genuine conversations covering costumes, groups, silence, interruptions and goodbye | No new genuine-provider acceptance in latest pass; compare voices by listening |
+| Guest interaction | Notice, greet, listen, react, recover and return naturally to living idle | Rehearsed guest scenarios and state-transition regression | Technical paths exist; full visitor rehearsal outstanding |
+| Operator experience | Clear laptop performance controls and silent paired phone, immediate Stop/Blackout | Timed operator rehearsal with recoverable mistakes and no guest-facing UI | Short-window saved-library pointer overlap was repaired in PR4; known scary recordings now stop/reject under Welcome or zero ceiling in synthetic browser tests. Timed operator/paired physical-phone rehearsal and legacy untagged audio review remain open. |
+| Projection and sound | Correct placement, mapping, brightness, readable silhouettes, intelligible voices | Actual house/laptop/projector/speaker rehearsal and footage | Physical projection evidence unavailable; browser renders are separate |
+| Reliability | Sustained target cadence, bounded resources, reconnect and failure recovery | Target-hardware measurements, evening-length soak, failure drills | Published release has passing regression evidence; current candidate needs fresh CI, and an evening-length venue soak remains outstanding |
+
+Work in reviewable slices. First repair the character construction and morph defects that remain visible in footage. Pilot alternative tooling with the same Wisp artwork and performance before committing to migration. Then integrate the winning character path, refine live interaction/operator workflow and run end-to-end rehearsals. Do not expand the animation menu before the core performance is convincing.
+
+## Non-negotiable visual acceptance
+
+- **Whole-body life:** head, shoulders, arms, wrists, hands, torso, sides, crest and tail have coherent overlapping motion. The silhouette and volumes change continuously within clear intentional poses; moving the entire image does not satisfy this gate.
+- **Apparitional material:** meaningful spatially varying body transparency, readable face, painterly surface detail and body-attached wisps. Effects must turn and deform with the spirit. No rectangular haze layer or generic image wobble may substitute for body animation.
+- **Dimensional construction:** convincing side/rear views, consistent proportions and texture, correct arm/torso overlap and no visible cutout joins or collapsing joints. The five-view candidate remains incomplete for arbitrary full turns.
+- **Expression and personality:** independent eye/lid/brow/cheek/mouth acting, expressive hands and distinct friendly/scary behavior. Listening, speaking, noticing, playing and departing should read without interface labels.
+- **One continuous transformation:** cute and evil are the same character changing shape. Intermediate eyes, mouth, fingers, skin and silhouette must remain coherent; doubled contours and fading between incompatible drawings fail this gate.
+- **Fluid playback:** target sustained 60 fps on the intended laptop with operator and projector together; report frame intervals and stalls. Quality should hold through interaction, interruptions and idle. A video encoder's requested frame rate is not proof.
+- **Finished audience experience:** strong readability at street/doorway distance, quick voice interaction, a living return to idle after goodbye, expressive operator control and immediate Stop/Blackout. Physical projection and genuine voice tests remain separate acceptance steps.
+
+A release can be a documented incremental improvement while the goal remains unfinished. Do not declare the character production-complete until visual review against approved art, full-speed/slow-motion recordings, live interaction and on-site projection satisfy these gates.
+
+## Acceptance sequence
+
+One repeatable 15-second sequence: notice a guest, greet, listen, speak a short line, wave, turn, transform to evil and recover to friendly. Speech rehearsal is explicitly synthetic unless a genuine provider test is performed.
+
+## Quality gates
+
+- Identity: consistent silhouette, proportions, hand design and facial placement across both forms and turn views.
+- Art: approved paintings remain the standard; no procedural character substitutes. Newly generated drawings require visual review, not just successful file loading.
+- Curvature: inspect strong bends at full projected size; reject angular elbows, collapsing joint volume and abrupt silhouette changes. Require paired playback measurements before increasing mesh density.
+- Articulation: head, torso, tail and hands have distinct timing. Arms must bend coherently; no rigid whole-body rocking as the main performance.
+- Transitions: inspect intermediate frames, not just endpoints. Reject double limbs, detached hands, face sliding, texture smears and sudden silhouette changes. Prefer authored breakdown drawings for incompatible silhouettes.
+- Acting: anticipation, readable holds, arcs and follow-through. Listening looks different from speaking; idle leaves room for intentional stillness.
+- Face: independent eyes, brows and mouth; face disappears correctly on rear views; speech survives gestures.
+- Interaction: interrupt gestures and speech, Stop, farewell-to-idle and friendly audience reset without stale state or jumps.
+- Reliability: Chromium/WebKit, resource cleanup, silent phone/projector, painted fallback, build/import validation. Record evidence and distinguish mocked provider tests from genuine audio and physical projection.
+
+## Work order
+
+1. Capture baseline sequence and identify worst intermediate frames; measure existing transition continuity.
+2. Improve pose registration and articulated secondary motion with deterministic, frame-rate-independent controls. Add focused interruption/deformation checks.
+3. Produce and review the smallest useful set of painted transition assets. Reject inconsistent drawings; never count asset quantity as quality.
+4. Refine sequencing, facial registration and transformation; review full-speed and slowed render recordings.
+5. Run relevant regression tests, deploy validated changes using existing Git workflow and verify hosted assets and runtime.
+
+## Release decision
+
+Keep this a selectable candidate until the visual gates pass. Preserve the previous renderers. If artwork limits prevent a convincing transition, record the exact defect and next required drawing rather than concealing it with glow or claiming completion.
+
+## Evidence and handoff
+
+Store browser render evidence under outputs/wisp-live-rig-proof. Track implementation, test results, rejected approaches and next actions in work/wisp-excellence-status.md. Physical projection footage is unavailable unless the user supplies it.
+
+## Desktop tooling pilot policy
+
+- Blender is an authoring candidate for complete dimensional construction, intentional topology, corrective shapes and painted materials. Grease Pencil armatures can deform drawn strokes, but they do not automatically rig the existing raster paintings or export a finished interactive character. See the [official armature documentation](https://docs.blender.org/manual/en/5.0/grease_pencil/modifiers/deform/armature.html).
+- Inochi Creator was evaluated for author-controlled texture deformation. The official v0.8.6 portable macOS release crashed during startup on this Mac before loading any Wisp project (EXC_BAD_ACCESS in runtime initialization). The test copy was disabled after the user reported repeated dialogs; do not relaunch it. No scene importer or runtime migration was made. The [official Session repository](https://github.com/Inochi2D/inochi-session) also labels its current development branch as not ready for production. This pilot did not pass; the documented workflow alone is not proof of suitability.
+- TouchDesigner is a candidate for projection composition, reactive effects and external show control. It is not a replacement for character art/rigging. Prototype one output/control bridge before introducing it into the show. Its [license rules](https://derivative.ca/UserGuide/Licensing) distinguish personal/noncommercial use from compensated work. No purchase or migration has been made.
+- Retain the existing browser as the control/voice system during pilots. Define a bounded character-state bridge rather than duplicating credentials, microphone ownership or conversation logic in a graphics tool. External output must preserve Stop/Blackout and remain silent unless deliberately assigned laptop audio ownership.
+
+A pilot passes only if it renders the same approved Wisp with visibly better joints/morph/acting, meets measured target cadence with the operator running, supports required controls and has a documented asset/export/license path. A software feature list or demo of a different character does not pass.
+
+## User-supplied technology screening: three-mediapipe-rig
+Reviewed https://github.com/bandinopla/three-mediapipe-rig at3ab212719826cb762d08b27cd987dba41d96701c (package0.1.41). Source/package declareMIT; peers Three^0.183.1, MediaPipe tasks-vision^0.10.32 andfflate^0.8.2. Published0.1.41 was subsequently installed only in thread work/three-mediapipe-pilot with its exact declared peer versions and install scripts disabled. Production package/lock/vendor files are unchanged. Node ESM and Chromium browser import pass; no inference/camera/retargeting acceptance yet.
+
+Relevant: live body/hand/face retargeting, custom bone maps, frame-rate-dependent smoothing; PoseCap records webcam/video body performances asGLB clips. Existing Wisp already uses local worker MediaPipe face tracking, so prioritize additive upper-body/finger channels and reusable captured acting. A complete Three skeleton is required for direct binding; painted Pixi rigs require an explicit Wisp control adapter. Four-digit ghost hands and legless body need intentional mapping, not default humanoid assignment.
+
+Keep capture→normalized performer state→Wisp rig/animation director separate from voice and show transport. Test one recorded upper-body performance first, with neutral calibration, confidence loss→idle, frame-rate stability, Stop/Blackout and disposal, and compare against current face-worker path. Inspect lifecycle/main-thread inference before adoption; raw source creates debug DOM/RAF loops. MeshCap projects captured human face imagery onto canonical topology; that output is not an automatic fit for approved painted Wisp identity. This is a promising motion input/authoring candidate, not an asset-quality or seamless-morph solution. Sources: README.md, POSECAP.md, MESHCAP.md, package.json andsrc/tracking/TrackerManager.ts at the repository above.
+
+### Motion-library import pilot evidence
+The unbundled local Chromium import completed in193ms in one run, loading250localresources/~5.96MB; no external requests, camera/microphone calls or browser exceptions. This is module-load evidence only. Bundle/tree-shake before deployment; avoid importing the full Three Addons graph unbundled. Declared peer versions do not match production Three0.186.1/MediaPipe1.1.1, so do not directly install it into the show.
+
+Actual Wisp GLB has24bones, including UpperArm/Forearm/Hand and four single-joint Digit0–3 bones per hand; the library expects five human fingers with three phalanges. It also expects MediaPipe-named facial targets while Wisp uses names such asJawOpen/Blink_L/BrowUp_L across separate meshes. A semantic adapter must aggregate finger curls and map facial values instead of repeatedly binding several human joints onto one ghost bone. Candidate mapping: human thumb/index/middle→ghost0/1/2; combine ring/pinky deliberately forghost3; ignore legs, retain tail/crest/float as character-authored motion. Must test missing landmarks, calibration, handedness and tracking loss→idle before any live-camera adoption.
+
+## Approved moving reference and vapor correction (2026-10-16)
+
+The user approved the full-body acting quality of the five-second Runway sample at `../wisp-vision/wisp-wave-runway-v1.mp4` as the motion benchmark. It is generated video, not a controllable rig or live-app acceptance. Preserve its dimensional body bends, articulated gestures, facial acting and follow-through while correcting changing fingers and out-of-frame motion.
+
+The user explicitly rejected the persistent curled lower-body tips: they read like fish fins or a decorative solid tail. The lower body must instead disperse into spatially varying translucent FOG/SMOKE: soft expanding volume, shearing wisps and detached dissipating fragments, with no fixed spiral silhouette. Transient turbulent eddies are acceptable; persistent sculpted curls are not. Keep the face and hands readable while the lower torso loses coherent surface into vapor. Review this in motion, including the final settled pose, against black and the intended projection surface.
+
+### Full effect framing gate
+Reserve at least15% of final width/height on EACH edge for the complete visible character AND emitted fog throughout every animation, morph and interruption. A root/mesh box alone does not satisfy this requirement. Include hand extrema, crest vapor and detached dissipating fragments; use a stable shot envelope to avoid per-frame scale pumping. Smoke must fade naturally before reaching the safe boundary. Previously clipped pixels cannot be restored by padding a finished clip.
+
+`source/wisp-performance-reference/check_framing.py` decodes every frame of black-background reference videos and reports15% margins at max-RGB thresholds8/16/32, rejecting isolated fragments smaller than8pixels as codec noise. This detector is evidence about encoded visibility only, not physical projection or smoke that was cut off upstream. Approvedfogv2 fails121/121frames at threshold8: approve its art/motion, reject its framing.
+
+## User rejection: lower-body continuity
+The latest buffered v4 take passes encoded framing but the user explicitly rejected its ending because the lower body disappears. It is NOT an accepted complete animation asset. Soft fog may shed and disperse; the recognizable core lower-body silhouette must persist through ordinary idle, listening and gestures. Only an explicit vanish cue may remove the character. Approvals of v2 softness/acting remain visual direction; do not count a margin pass as anatomy/continuity approval.
+
+## Credit discipline
+Runway remains authorized when useful for targeted motion/asset creation and downstream graphics workflows. Reuse approved outputs and local tests first. Give each paid generation a specific unanswered visual question and stop redundant exploratory reruns. Four initial takes used240existingcredits. No additional Runway generations were made during the local framing integration.
+
+## Evidence-led character path decision
+The user-approved fog material and articulated motion remain the standard; the current native3D sculpt/material does not meet it. The rounded-sculpt and surface-transmission studies were visually rejected, despite technical render success. Do not spend more iterations lowering opacity or adding rim effects to that asset and count them as art progress.
+
+Prioritize a bounded image-driven character pilot against the same requirements: the2-credit prerecorded speech test preserves the approved fog identity after correcting the service's aspect stretch, animates the mouth/face, and retains its lower body in the reviewed ending. All97frames pass the final15%buffer after local whole-shot fitting. This is not live-chat or full-body/voice/morph acceptance. A private realtime character is prepared; its microphone test awaits explicit user permission because the service records calls. Preserve the current voice/controller/projector/fallback paths until a replacement passes actual visual, interruption, cost, latency and integration gates.
+
+The new scary-fog reference is a candidate endpoint, not approved final art. It matches the friendly material direction but needs character/pose registration, lower-body continuity and a controlled cute→evil→cute performance. Runtime shape transformation, native operator reactions, independent face/body control and persistent core anatomy remain mandatory; a pair of attractive videos does not complete those requirements.
+
+
+### Shoulder construction evidence and next constraint
+The local full-turn fog study retains soft material across five source views, but arm/torso joins remain visibly separate. Broadening shoulder alpha and fore/back partition ramps produced only small visual changes and is rejected as the seam solution. Correcting source lighting is necessary; it does not alone constrain geometry.
+
+Live2D Cubism's official Glue documentation describes binding overlapping ArtMesh vertices with per-vertex influence, including torso/shoulder examples: https://docs.live2d.com/en/cubism-editor-manual/glue/ (reviewed2026-10-16). This supports testing a shared shoulder surface constraint rather than relying on transparency alone. It is a technique reference, not evidence that Cubism is installed, integrated or licensed for this project. A native pilot should attach a small root region to the deformed torso, release smoothly into arm skinning, and preserve arm volume and fore/back ordering. Compare front/wave/profile/rear and interrupted motion with identical artwork. Reject if it creates collapsing elbow geometry or a disappearing upper arm. Keep the current runtime untouched until actual render evidence demonstrates a benefit.
+
+
+### Current fog arm geometry gate (2026-10-16)
+Actual runtime mesh audit now detects flipped triangles in sampled painted regions, separate from empty geometry retained for old evil textures. At front,11left-arm triangles with sampled source ink invert; profile14left/8right. Continuous-distance linear binding makes several angles worse; the existing polar experiment leaves counts nearly unchanged. Neither is adopted. Constant-weight ring tests and margin passes are insufficient evidence for spatially varying skinning.
+
+Next deliverable is a mesh authored for the new arm painting, with explicit joint transition zones and corrective elbow/shoulder shapes. Evaluate actual painted triangles, connected shoulder silhouette, digit readability and native wave/turn recordings before integrating more asset views. Source-alpha classification samples seven points per triangle and can miss thin fragments; retain visual review. Do not spend another asset generation or broad formula sweep to avoid this construction step.
+
+
+### Full-character context checkpoint
+The limited source0..45evil turn now runs with native face/arms/body acting. Numerical triangle corrections do not prove a connected shoulder silhouette: actual45review retains a broken near shoulder and pasted mouth. Prioritize an attachment check against actual torso paint/core and face surface projection before generating further turn views. An optional15degree eye-surface normal improves far-eye readability versus35in controlled full-character renders; it is unapproved and notselectedbytheapp. Rear turn art and turned cute/evil form morph remain explicitly unsupported. Full native/browser evidence remains separate from on-site/operator/genuinevoice acceptance.
+
+
+### Startup and preview regression clarification
+Compositor-ready is not character-ready. The app projection test now waits for artwork readiness and first visible paint before performing cues; an explicit held-projector-PNGfixture proves the earlier ready/blank gap. CIWebKituses this controlled startup case without relaxing pixel-margin or visibility assertions. The voice preview sign-out mock now changes the simulated status server to cloud/unauthenticated as well as sending the status event; a server that kept reporting connected local status was an inconsistent sign-out fixture. Localchecks pass; futureCIandgenuineprovider/physical acceptance remain separate.
+
+## Whole-character asset course correction — 2026-10-16
+
+The user rejects the modular native assembly as disconnected and sloppy. Native deformation and recovery tests remain useful engineering evidence, but do not make that assembly the production visual target. Restore the approved whole-character Runway fog performance as the art benchmark.
+
+Latest experiment: `../wisp-vision/wisp-whole-greeting-v6.mp4`, Gen-4.5, five seconds, 60 credits, seed 3337455142. The buffered approved reference was used unchanged. REJECTED: a narrow opaque curled core replaces the full fog body; upward movement clips head smoke; 117/121 decoded frames fail the 15% reserve at RGB8; the final pose/volume differs from the opening. Do not trim away or scale over upstream clipping and call the shot repaired.
+
+### Controlled input next
+
+Evaluate two distinct controls before generating a batch:
+
+1. An image-to-video model with explicit first and final images: use the same complete approved buffered painting at both endpoints. Pilot one simple settled gesture or living idle, then inspect all intervening anatomy and fog. Identical endpoints do not prove a seamless loop or consistent middle frames.
+2. Act-Two with a genuinely useful driving performance and a character IMAGE to enable gesture transfer. Runway documents video character inputs as preserving existing body motion while transferring facial acting; they cannot supply new body gestures. Their recommended waist-up framing conflicts with our whole-body view, so validate this separately before spending on production clips. A rejected generated performance is not a suitable driver. No new webcam/microphone access is authorized by the prior completed microphone test.
+
+Driving-performance brief: one person, static camera, well lit face, hands visible from the first frame, starting pose matching the character. Hold relaxed for one second, shift gaze toward a guest, small torso anticipation, raise one hand and wave once with relaxed elbow/wrist, lower the hand, settle for one second. Five to six seconds, one take, no cuts, no jump or forward approach. Keep timing expressive without excessive movement. A silent clip is sufficient for gesture research; do not upload unrelated private recordings.
+
+### Asset contract before app integration
+
+Each approved clip needs provenance, credit cost, duration/fps, complete decoded framing report, first/last pose comparison, and visible review of face, shoulder continuity, finger identity, lower-core volume, soft fog edges and all intermediate frames. Maintain at least 15% final reserve on every edge. Preserve originals. Record loop seams and interruptions separately; no whole-clip crossfade that creates two ghosts.
+
+Start with one accepted living idle and one accepted greeting, then derive controlled entry/exit transitions. The character must remain one coherent apparition. Do not split it into independently floating image parts to restore arbitrary runtime control. Live speaking, interruptions, cute/evil morphs and side/rear acting remain explicit unsolved integration gates, not capabilities established by a beautiful prerecorded clip.
+
+Source: https://help.runwayml.com/hc/en-us/articles/42311337895827-Performance-Capture-with-Act-Two (reviewed 2026-10-16). Act-Two lists 5 credits/second, 3-second minimum, and gesture transfer only with character images. Confirm the actual UI price before a generation.
+
+## Whole-character temporal joins — October 20
+
+Endpoint matching and motion continuity are separate gates. Original v7–v11 decoded endpoint pairs have silhouette overlap around 0.991–0.993, but that cannot approve the animation between them. Idle v7 visible-region median RGB change falls from 5.132 through its middle to 0.236 over the final twelve steps; return v11 also settles substantially. This is a near-hold diagnostic, not optical-flow or joint-velocity measurement. See source/wisp-performance-reference/runway-pilots/handoff-review-v1.json for source hashes and all six joins.
+
+Review at normal speed across at least three loop boundaries and every clip handoff. Continuous crest, hands, shoulder and core motion must remain believable through each boundary; no visible freeze, sudden change of direction, phase reset or doubling. Compare against original whole-character footage at guest distance. A matching first/last image, low average RGB difference, high silhouette overlap or a 48fps encoding is insufficient. Reject interpolation when hands merge into fog, as the user reported for the local MCI candidate. The dedicated Runway48fps candidate still awaits motion approval.
+
+## Approved motion direction — October20
+
+The user explicitly endorsed the fuller body and hand motion in the right-hand v15 comparison: “Yes—keep that fuller character motion.” Treat its shoulder/torso counterbalance, independently moving elbows/wrists/hands and continued ending motion as the acting direction. Do not solve seams by flattening it back into a nearly still body. This endorses the motion direction, not the raw loop, generated identity drift, smoke buffer or final app integration. The raw clip still fails the loop and clearance gates; keep those rejection notes. The next usable performance must preserve this fuller acting while meeting temporal continuity and framing.
+
+## Dimensional show direction and scary identity
+
+The user endorsed the frightening Wisp direction and requested dynamic performances across the implied projection volume: coming and going, disappearing, tricks and large depth changes. Preserve the same crest, connected core, blue eyes and attached hands across friendly/scary forms. The new scary identity illustration is retained unchanged under source/wisp-performance-reference/runway-pilots/scary-identity-study; it fails the smoke reserve and is not animation-ready.
+
+Prioritize four authored motion proofs before purchasing a large library: a true side/back retreat and return, a complete intentional vapor disappearance/reformation, a playful articulated corkscrew, and a curved distant-to-near approach. Use a fixed camera, black negative space and minimum15percent full-effect reserve. Actual perspective, hand occlusion, anticipation and vapor drag must carry depth; whole-body scale alone is inadequate. Departures may connect through genuinely empty black only after all vapor clears. Every visible loop still needs compatible pose and velocity. The JSON spatialPerformance contract records these requirements; its settings do not themselves create animation.
+
+The source show now optionally reuses two existing Coral recordings, with eight recordings preserved and checksummed for future curation. It is not new voice casting or native conversation. Keep playback operator-only and off by default. Expand the prepared speech library to48slots with preflight capacity rejection before provider work; the show queue limit remains separate.
+
+## Verified incremental release — October20
+
+Commit6678d34 is published through the existing Git/Netlify workflow. Its production code supports48prepared performances, checks capacity before generation, and keeps save-only preparation from creating an AudioContext; optional rig hooks retain default behavior. Both full regression and WebKit passed before promotion. The live build-info commit was verified, followed by fresh isolated hosted prepared-library and projector-ownership checks. Voice/auth responses in the library test were mocked; this does not prove genuine login, microphone conversation, voice quality or on-site projection.
+
+Newer guided-turn films and source-output recovery work remain candidates outside the public build. Background-window experiments did not obtain a hidden operator document even after disabling test-framework focus emulation; treat that coverage as inconclusive. Do not equate a visible-window test or simulated drawing-loop stall with actual background, GPU or physical projector acceptance.
+
+## Native avatar-video research checkpoint
+
+Runway documents a LiveKit plugin that turns an external agent's synthesized speech into avatar video; the agent retains voice and personality control. It needs a Runway API project, LiveKit transport and a server agent. Workers remain billable until shut down, so session caps and cleanup matter. Source: https://docs.dev.runwayml.com/characters/livekit/.
+
+Treat this as a candidate visual provider, not a drop-in replacement for the current browser voice connection. Before adding app dependencies, test at most30seconds with fictional generated speech, no microphone/camera, and a hard shutdown. Inspect full-body identity, mouth readability, body-attached fog, framing, latency, interruption and cleanup. Preserve the working voice/fallback paths. No such API test has run and no new account/key has been created.
+
+Runway's web guidance favors shoulder-up references, so its documented non-human support does not establish whole-body Wisp quality. Source: https://help.runwayml.com/hc/en-us/articles/49557780326163-Runway-Characters. A successful visual comparison must precede any integration decision.
+
+
+### Coordinated return: authored intermediate proof
+The v20 return fails: friendly eyes appear while long claws persist. Preserve the scary design; remove teeth and round hands before widening the eyes. `source/wisp-performance-reference/runway-pilots/identity-morph-study/wisp-return-intermediate-v1.png` is an unchanged generated reference, visually reviewed with a closed toothless smile, rounded fingers and narrowed eyes. Its entire RGB4/8/16 envelope passes the15% reserve. This is a still, not a registered video correction or accepted animation.
+
+`return-timed-pilot.json` records an unexecuted73-frame/24fps pilot: replace anchors0,17,33 and guide72. Official LTX conditioning documents causal replacement indices0 or1+8*k; guide indices use decoded frame positions. References in a hosted UI do not establish timed bindings. The inspected Runway LTX-2.5 Pro UI exposed first/last/reference images and FPS but no explicit intermediate timestamp binding. No new video was submitted.
+
+Primary sources: https://github.com/Lightricks/LTX-2/blob/main/packages/ltx-pipelines/docs/conditioning.md and https://github.com/Lightricks/LTX-2/blob/main/packages/ltx-pipelines/docs/pipelines.md . Local download is deferred: about7.7GiB free disk versus the documented roughly66GiB package, with24GiB memory. Do not download models, remove user files or infer render feasibility from installation support. Next prove access to actual timed conditioning before paying for a return pilot.
+
+
+Human review update: the padded v18 scary turn received “Yes—keep this motion direction.” Preserve its fluid fog, same-being identity and articulated turn as the motion reference. This does not approve its skeletal back details, loop seam, a complete transformation, or on-site projection. The source rehearsal now links directly to the endorsed turn and authored return pose board without loading another media player or changing the show timeline.
+
+
+Source rehearsal now supports explicit timed `absent` steps, with presence reporting, silent cleared output, subsequent scheduled entrance and immediate friendly interruption. Synthetic-clock and isolated muted browser tests cover absence beyond the watchdog interval and cancellation of a later scary entrance. The existing150-second show is unchanged: no hard-cut placeholder is presented as a finished poof or depth departure. Actual authored disappearance/reformation films and full-speed acceptance remain required.
+
+
+Character consistency pass: the local recorded-conversation fallback previously allowed45 words while native streaming targeted3–12. The fallback now shares the doorstep context, short one-idea turns, varied openings, no-camera grounding and brief farewell guidance. Overlong generated text keeps a complete short opening sentence or uses a bounded recovery line instead of truncating mid-thought. Eight mocked Python contract/recovery tests pass; no genuine provider, acoustic casting or latency improvement is claimed. Native streaming instructions and hosted voice remain unchanged. Primary prompting guidance: https://developers.openai.com/api/docs/guides/voice-prompting (context-specific length and variety guidance; this does not guarantee model compliance).
+
+
+Runway Characters offline proof: existing Wisp fog pilot generated a9-word fictional script as a5.811-second139-frame24fps talking film for2observed credits. No microphone/camera/key/dependency access. Whole painted character and changing mouth shapes survive in sampled frames, but body motion is subtle and fog mostly stable. Raw1088x704 framing fails15% reserve; aspect-preserving fitted review copy passes all139frames atRGB4/8/16. AAC packets are unchanged by reframing. Isolated muted browser playback ends with0reported drops. This establishes an offline candidate only: voice/lip-sync listening, streaming latency, interruption, body acting and physical projection are unaccepted. Preserve current native OpenAI connection. Source provenance: source/wisp-performance-reference/runway-pilots/character-speech-study/script-pilot-v1.json.
+
+
+Local connection-state correction: an actual unconfigured laptop startup left native Start enabled despite the Realtime engine already rejecting missing credentials before capture. The desk now starts disabled, reflects realtime/auth readiness, shows a visible connection-needed phase, and updates on status changes. Direct local puppeteering remains key-free. Chromium and WebKit connection-gate tests, seven native failure/cancellation cases, key-dialog mock, health refresh and synthetic microphone cleanup pass. No live OpenAI voice/physical microphone test was possible: the new local service found no saved credential. Do not interpret this UI correction as provider connectivity.
+
+### Act-Two input rejection checkpoint
+A bounded3.75second matched-video trial tested preserving v15 fuller body motion while applying speech from the corrected fictional Characters driver. Full-stage driver failed preflight face detection; one tighter face/upper-body crop passed preview validation, but the single20credit generation then failed face detection. Account balance10140→10120→10140 confirms refund. No usable film or live integration resulted. Do not retry the same pair or infer that a small painted ghost face meets actor-performance detection requirements. Next performance-transfer test needs a separately validated visible-face driver and compatible character framing; retain full projection body and buffer at output. Provenance: source/wisp-performance-reference/runway-pilots/performance-transfer-study/pilot-v1.json.
+
+### Native response timing evidence
+The native engine now exposes `HauntRealtime.inspect().responseTiming`: last, lower median and nearest-rank95th percentile of the latest20 received speech-stop→provider-output-buffer-start intervals. It retains numbers only in memory, without transcripts, recordings, response IDs or network writes. Interruptions/new speech/Stop clear pending observations; duplicate stop/start events cannot shorten or duplicate a sample, and reset-gated events are ignored. This is a protocol responsiveness diagnostic, not speaker-onset, network-only latency, human timing or genuine-provider acceptance. Synthetic clock and engine event tests pass; use genuine voice rehearsal plus audible/visual footage before assessing guest-perceived response delay.
+
+### Friendly living-loop human endorsement
+The user reviewed the three-cycle v28 video and answered **“Flows naturally—keep this direction.”** Preserve its fuller articulated motion and natural repeated flow; do not flatten it to a static image or add rejected interpolation merely to increase the advertised frame rate. This is a bounded approval of the friendly loop motion, not approval of the rejected v29 scary loop, incomplete reverse morph, arbitrary live speech or physical projection. Cinematic24fps source cadence and browser/output presentation cadence are separate measurements.
+
+### Rear material correction rejection
+A single targeted built-in image edit of the rear-v3 painting, with the approved friendly painting as fog-material reference, retained the solid bright shoulder/arm tubes and anatomical back construction. Rejected as an animation reference. The image passes the existing15% RGB4/8/16 reserve but misses its requested20% reserve at the lower edge. Do not pay to animate this unchanged construction or repeat the same conservative edit. The next rear design must demonstrate a visibly different soft shoulder-to-forearm volume and black-through translucent pockets before another motion pilot; texture added over solid anatomy does not meet the material gate. Original paintings and motion remain unchanged.
+
+### Hosted casting consistency
+The existing signed-in production console completed its fixed Marin preview with Wisp volume0, then returned to idle/MIC OFF; original80%volume restored. This is actual hosted preview-path evidence, not microphone conversation, audible casting acceptance or physical projection. The hosted prepared-speech handler previously discarded selected form/mood and used one generic warm direction. The candidate now carries typed audience/form from the desk and builds server-authored friendly/scary/mood directions, preserving the same TTS model, voice, auth and acoustic fallback. Haunting requires explicit Big kids, invalid context fails before paid calls, and Little Ones intensity/mood stay gentle. Browser prompt overrides are not forwarded. Mocked provider-contract and no-capture browser preview tests pass; new acting still needs audible comparison after deployment. OpenAI documents model instruction control over emotional range, intonation and tone: https://developers.openai.com/api/docs/guides/text-to-speech#text-to-speech-models .
+
+### Dimensional departure v30: motion works, material rejected
+One60credit5second take conditioned on the approved friendly loop anchor and an empty black final frame produced an actual side/back turn and curved receding flight. All122decodedframes pass15%RGB4/8/16 reserve; finaltwoframes are empty at those thresholds. Isolated muted playback ends with0reported drops. However, the rear head/core become opaque toy-like shapes and the lower extensions read as ribbon/flipper; reject as show footage, retain only as a motion reference. Do not repeat the same generation prompt.
+
+A materially different next experiment is Edit Studio/Aleph2 video restyling of this retained motion. Official guidance supports a selected-frame image preview with a material/style reference before video generation, optional ranged edits and VFX/restyling. First inspect a corrected side/rear keyframe against approved fog; no paid video edit until that preview actually passes. If worthwhile, use a2second material proof before editing the complete shot, verify motion/face occlusion/buffer preservation, and label any joins unaccepted. Documented rate28credits/second(minimum56), keyframeGPTImage2 listed5credits; these are research rates, not an inspected current UI quote. No edit submitted yet. Primary sources: https://help.runwayml.com/hc/en-us/articles/51683104370451-Creating-with-Edit-Studio and https://help.runwayml.com/hc/en-us/articles/52150503729171-Aleph-2-0-Prompting-Guide .
+
+### Edit Studio keyframe-binding correction
+The5credit still preview completed, but its BEFORE painting was front-facing despite the playback DOM being paused at1.52seconds in a rear/side pose. A playhead seek did not establish the editing-frame binding in this attempt. Do not run Aleph video from that preview or treat it as a failed rear material model. A local50frame/24fps driver now retains v30frames30..79, starting unambiguously with the desired rear/side pose; all50RGB4/8/16reserve checks pass. Confirm the next editor input/comparison actually shows that pose before spending on video. No video edit has been submitted. The original Unlimited session mode was restored after the single5credit image request; Save preference stayed unchecked.
+
+Corrected rear-first preview: a second5credit still in the saved EditStudio session binds the intended side/rear pose. The after image retains orientation/no rear eyes and changes the lower flipper tip into broader soft vapor. Head volume remains fairly opaque; retain as partial material study, not a finished design or authorization to claim video quality. No Aleph video generation submitted. The original is now retained as spatial-disappearance-study/wisp-rear-fog-material-v32.png (SHA256 7eb05a79d5e28ab398f1743433ddc7b8290742cdaf297d5145f080a1d4519047), recovered through the native Assets download without new generation. RGB4/8/16 reserve exceeds20% on all sides (lowest22.15% bottom). This verifies framing, not apparent translucency. A distinct next still changes only the head interior construction into overlapping vapor masses and dark-through channels while preserving the successful connected lower-body material and pose; do not repeat a broad texture-over-solid-body prompt or pay for video before reviewing that construction. Original Unlimited mode restored/save unchecked.
+
+### Prepared-recording audience ownership
+A browser reproduction showed a saved performance explicitly marked haunting starting audio in Little Ones mode. The candidate now rejects known scary recordings before audio initialization, before takeover of current playback, and after asynchronous decode/treatment. Welcome or a zero scare ceiling stops an active scary source. Queue preflight checks both saved and unprepared scary entries before takeover or provider requests; an empty queue does nothing. Saved rows identify scary recordings as Big kids only. This uses explicit form metadata, not audio-content analysis: older untagged recordings still need audition/classification.
+
+A sticky desktop puppet panel also intercepted saved-library pointer actions at1280x720. On short desktop windows it now scrolls naturally; the existing compact monitor retains the preview. Chromium and WebKit cover actual drawer/Play pointer access plus synthetic-recording audio cases, zero capture/paid requests, delayed decode, zero ceiling, friendly recovery and non-disruptive rejection. The existing monitor regression passes, and the native WebRTC browser regression passes with a simulated provider. These checks do not establish physical rehearsal or genuine casting quality.
+
+### Candidate CI observation corrections
+Run39371383774 failed two observation checks: a WebKit frequency analyser retained the previous friendly spectrum through default smoothing, and the scary casting test read state from an inactive painted fallback. Silent local probes reproduced both distinctions without changing production DSP: pitch -8 with smoothed571.289Hz versus unsmoothed275.391Hz, and fully scary blend1 with fallback idle versus shared performance speaking. The fixtures now use unsmoothed frequency measurement and authoritative performance state after a complete morph. Frequency ranges and functional assertions remain intact. Chromium/WebKit direct-voice and Chromium casting suites pass locally; a fresh CI run is still required.
+
+### Speech transfer boundary and next distinct route
+The second Act-Two pilot used an independently generated, human-faced Clara driver and the approved fuller v28 acting in a matched3:4 portrait. Both initial face preflights accepted; the single25credit generation still ended with a face-detection error and was refunded. No usable film resulted. Do not repeat this pair, chase preflight by further enlargement, or infer that the initial detector proves final compatibility. The human driver cost2credits; its default Katie voice is not approved Wisp casting.
+
+A different candidate is native audiovisual generation using the approved whole-body clip as a motion reference and fictional speech audio as a dialogue reference, rather than facial performance transfer. Runway's official Seedance2.0 guide documents image/video/audio inputs, synchronized sound and reference-role prompting. It requires video references at720p or below; input conversion must use a fixed uniform scale/pad, preserving every source frame, and output must retain the complete smoke envelope. Pilot one5second720p shot only after checking actual UI reference binding and quote/mode. No blind retries; reject changed identity, reduced acting, extra dialogue, missing core, frame clipping or visible jumps. This is a possible route for prepared spoken performances, not proof of arbitrary live speech or a seamless rig. Source: https://help.runwayml.com/hc/en-us/articles/50488490233363-Creating-with-Seedance-2-0 . No Seedance request has been submitted at this checkpoint.
+
+### Current decisive experiment and acceptance order
+Preserve the human-endorsed v28 motion as the control. Act-Two failed final detection with two different driver classes despite initial preflight success; do not keep treating cropping as proof of compatibility. The one Seedance native audiovisual benchmark ended in an explicit provider technical error and a verified refund. One capped technical retry is now in progress after checking the official status page; no further same-input retries if it fails. Judge an actual completed output against v28 before choosing integration work. If it retains coherent full-body performance and delivers readable speech, next prove silent playback, response handoff, immediate interruption and return to idle with real source frames. If it changes the character or weakens the acting, reject it and retain the original rather than overlaying disconnected face pieces. This candidate supplies prepared dialogue only; arbitrary live guest speech, scary acting, reverse morph and on-site acceptance remain mandatory separate work.
+
+### Completed audiovisual candidate and live-provider boundary
+The capped Seedance retry completed:121frames at24fps,1280x720, originalSHA9077601aee7624d286e692a7f086f0488f9aec2357fe9609bc7dbd5fda666c0e. Corresponding-frame support and close-up review retain the source body acting with localized mouth changes. This supports further visual review, not phoneme accuracy. The audio RMS timing comparison is weak(.342best correlation), so do not claim that the supplied recording or its timing was preserved. The15.208second speaking-to-idle edit preserves the generated audio packets and needs human flow/listening review. Both remain outside the live renderer.
+
+The earlier Runway web microphone pilot connected17seconds and was stopped within its authorized30second cap; it did not measure conversational turn latency or establish full-body visual quality. That completed approval does not authorize another microphone call. See docs/runway-character-pilot.md. A native audio-to-avatar test still needs a private developer/transport setup and a bounded synthetic-audio session; do not infer that the web subscription, offline film or existing OpenAI browser connection supplies this integration. Keep phone/projector silent and preserve current native voice until the new visual provider proves compatible.
+
+
+### Whole-film runtime handoff proof
+The source-only `wisp-whole-film-handoff.html` now switches the whole speaking candidate to approved v28 motion using two decoded video buffers. It preloads the idle, changes visible ownership only after a decoded frame, and never crossfades two ghosts or adds floating body parts. A fresh muted Chromium run measured a 2ms ended-to-idle switch and sustained the following loop; pending Blackout and rapid latest-command ownership passed with no capture/provider requests. This is prepared speech playback, not arbitrary live speech, human approval of the visual join, a morph fix or physical projection. Production remains unchanged.
+
+
+Scary material v34 is a partial still-image correction: it keeps the established crest/blue eyes/grin and connected fog body while softening the chest and shoulders. Hard claw tips remain unresolved. RGB4/8/16 smoke clearance passes15% but not the requested20% generation target. It is retained as a candidate, not an approved replacement or evidence that the frozen scary idle is fixed. Review the hands before purchasing another motion pilot.
+
+
+### Optional public whole-film preview preparation
+An opt-in preview is prepared at assets/wisp-film-preview/index.html, outside the main renderer. The build copies exactly five checksummed source files (three playback/output modules and two fictional character films, approximately1.77MB media); it never publishes the source tree. Built-dist browser tests cover greeting-to-idle, explicit owner-only audio enable/mute, late media error recovery, Blackout, silent output, paused-frame watchdog and owner closure. No provider requests/capture occur. This is not yet deployed or accepted as arbitrary live speech, a morph solution or physical projection. The current working main app remains the default.
