@@ -150,13 +150,18 @@
     },
     {
       "file": "wisp-whole-film-handoff.html",
-      "bytes": 2771,
-      "sha256": "eb7f2f4026f5e5b0893ae7ec8c218b7eedfc88ea14b2eb203de7577bafad65d8"
+      "bytes": 3004,
+      "sha256": "ca2980da3fcde8a135d783bea09be3badb17fa91b38db81ee6b481134eca26b9"
     },
     {
       "file": "wisp-whole-film-player.js",
       "bytes": 3527,
       "sha256": "d8a554d0d803d3a517443e60adbcfe935fa4105688ba101ed08c9c981f2658c0"
+    },
+    {
+      "file": "wisp-whole-film-output.js",
+      "bytes": 1381,
+      "sha256": "45e688882678b147e030bc956c0052caa624d9145a458116bb4897aff046bcb0"
     }
   ]
 }
