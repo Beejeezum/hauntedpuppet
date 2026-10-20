@@ -9,7 +9,7 @@ const {chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
  const browser=await chromium.launch({args:['--mute-audio']});let timer;try{
   timer=setTimeout(()=>{console.error('Hosted showdesk test exceeded 90 seconds');process.exit(1);},90000);
   const context=await browser.newContext(),page=await context.newPage(),errors=[],providerRequests=[];page.setDefaultTimeout(15000);page.on('pageerror',e=>errors.push(e.message));
-  await context.addInitScript(()=>{window.captureAttempts=0;navigator.mediaDevices.getUserMedia=async()=>{captureAttempts++;throw Error('Unexpected hosted test capture');};});
+  await context.addInitScript(()=>{window.captureAttempts=0;if(navigator.mediaDevices)navigator.mediaDevices.getUserMedia=async()=>{captureAttempts++;throw Error('Unexpected hosted test capture');};});
   await context.route('**/*',route=>{const u=new URL(route.request().url());if(/openai|runway|elevenlabs/.test(u.hostname)||/realtime|performance/.test(u.pathname)){providerRequests.push(u.hostname+u.pathname);return route.abort();}return route.continue();});
   await page.goto(base+'/assets/wisp-showdesk/index.html');await page.waitForFunction(()=>window.WispDesk);await page.locator('#pace').selectOption('500');
   const opened=context.waitForEvent('page');await page.getByRole('button',{name:'Open silent rehearsal output'}).click();const output=await opened;await output.waitForFunction(()=>window.WispFilmOutput);

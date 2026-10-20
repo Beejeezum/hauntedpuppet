@@ -1,0 +1,45 @@
+{
+  "taskId": "45aa0509-60db-441d-a560-1af292f735ba",
+  "status": "reviewed; rejected as finished cue; revision reference only",
+  "submissionCap": 1,
+  "model": "kling-o3-pro",
+  "duration": 5,
+  "requestedResolution": "720p",
+  "audio": false,
+  "observedDebit": 85,
+  "prompt": "Locked camera, pure black projection stage, five-second spectral Halloween vignette. Preserve exact supplied two-line spelling HAPPY HALLOWEEN at opening. The lettering is made entirely of translucent volumetric moonlit smoke, no solid type surface: tiny turbulent tendrils continually detach and curl irregularly from every stroke. 0-1 seconds readable breathing vapor letters. 1-3 seconds a flock of nine SMALL lean agile bats begins BEHIND the words, initially tiny and partially occluded by smoke. They dart THROUGH gaps and letter strokes TOWARD the viewer in staggered fast depth trajectories, visibly growing modestly as they approach; rapid articulated wingbeats, thin pointed wings and slender bodies, not plump cartoon bats. Their wing wakes visibly shear and pull individual smoke strokes forward into stretching turbulent vapor filaments. The text loses its physical shape piece by piece at each crossing. 3-4.5 seconds remaining letter fragments advect, roll, stretch and break into finer wisps that disperse spatially until empty. This is visible evolving smoke disintegration, never an opacity fade of intact lettering or dissolving flat graphic. Bats make quick curved banking passes toward the camera but dissolve into fine smoke BEFORE reaching the projection boundary, never huge closeups. Entire bats, wings, vapor and wakes stay inside central60percent width and height throughout, leaving a generous untouched black safety border. Final half second completely pure black. No background haze, camera movement, music, voice, new text, flat silhouettes, solid ribbon trails or slow hovering. Rich painted cinematic spectral atmosphere with clear occlusion and depth.",
+  "userFeedback": {
+    "priorClip": "v38",
+    "rejected": "Intact letters merely fade; bats too fat and slow.",
+    "required": "Ghostly evolving smoke dispersion; small fast bats emerge from behind smoke and approach camera, physically breaking letters."
+  },
+  "acceptance": [
+    "Readable opening spelling",
+    "Visible advecting smoke breakup, not global opacity fade",
+    "Behind-to-front occlusion and depth",
+    "Small slender bats with fast articulated wingbeats",
+    "All frames minimum15percent reserve, target20percent",
+    "Complete black exit",
+    "Review before replacing current preview"
+  ],
+  "file": "bats-smoke-dispersion-v2.mp4",
+  "sha256": "238614d4daab6db4c559405a25a826fadda417c8c0227da082fc9e3a3f05b638",
+  "actualOutput": {
+    "size": [
+      1920,
+      1080
+    ],
+    "frames": 121,
+    "fps": 24,
+    "audio": false
+  },
+  "review": {
+    "bats": "Smaller slimmer bats visible than v38. Staggered letter crossings present. Toward-camera depth and fast wingbeat quality require closer playback review.",
+    "smoke": "Local regions break away but surviving letters remain overly crisp and solid; fails full vapor-stroke direction.",
+    "bounds": "43frames fail20percent atRGB4; minimum right8.70percent also fails15percent. No promotion.",
+    "nextAction": "Redesign material anchor using built-in imagegen before any further paid video. No blind retry.",
+    "humanApproval": false,
+    "public": false,
+    "exactBlackTailFrames": 0
+  }
+}
