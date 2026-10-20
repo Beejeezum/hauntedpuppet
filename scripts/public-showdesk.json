@@ -4,23 +4,23 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.html",
       "destination": "index.html",
-      "sha256": "6808666db26ba728a61e23d5d2cc5580532fbc9263af72b2a3348372250753d4",
-      "bytes": 3046,
-      "publishedSha256": "6808666db26ba728a61e23d5d2cc5580532fbc9263af72b2a3348372250753d4"
+      "sha256": "e1c4ff70bcd48c0a24326fc0419554b7a0e093f58bfa64ed8536d83240652834",
+      "bytes": 3110,
+      "publishedSha256": "e1c4ff70bcd48c0a24326fc0419554b7a0e093f58bfa64ed8536d83240652834"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.css",
       "destination": "showdesk.css",
-      "sha256": "ce9d0dda6ff02ffeb47454ec96af220ef89f4d6eb6f07c61adb5008407441c20",
-      "bytes": 2957,
-      "publishedSha256": "ce9d0dda6ff02ffeb47454ec96af220ef89f4d6eb6f07c61adb5008407441c20"
+      "sha256": "9d29aa806a85cbb1177b44ba4c55b1477d76afc2f58b6a5e441735a39f2b860f",
+      "bytes": 3209,
+      "publishedSha256": "9d29aa806a85cbb1177b44ba4c55b1477d76afc2f58b6a5e441735a39f2b860f"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.mjs",
       "destination": "showdesk.mjs",
-      "sha256": "67f7190a9df20b4ad1305067a6edfcafea1d02a94692b8914b85641313f481ff",
-      "bytes": 8673,
-      "publishedSha256": "1b9c49de2f7d011951e648dee206e52e31a7506c37e488abe8688c92e124dd1b",
+      "sha256": "d0d10f268a57d241ca7be575f5f83a34083c44bc6353abb0771c43756fffb960",
+      "bytes": 8890,
+      "publishedSha256": "f7ff3d55ef0c04edba979a11683c076c0e77ca68bcedeaff0b1addd522c2d7d2",
       "rewrites": [
         {
           "from": "../runway-pilots/wisp-film-output.js",
@@ -39,9 +39,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/film-transport.mjs",
       "destination": "film-transport.mjs",
-      "sha256": "afe502920b1fdcedcf7ee885f20977c057c6d295e1e4494b9cf081cfb5a2b13e",
-      "bytes": 2643,
-      "publishedSha256": "afe502920b1fdcedcf7ee885f20977c057c6d295e1e4494b9cf081cfb5a2b13e"
+      "sha256": "d9e8f6d970c341a0255614eb07d27309a2a6715b9d9ecd923c28c76dff18a3a8",
+      "bytes": 2785,
+      "publishedSha256": "d9e8f6d970c341a0255614eb07d27309a2a6715b9d9ecd923c28c76dff18a3a8"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/cue-director.mjs",

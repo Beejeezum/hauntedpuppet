@@ -7,7 +7,7 @@ const $=id=>document.getElementById(id),clips=[
  {id:'scary',title:'Menacing Wisp',detail:'Full-body motion study · exits through black',loop:false,src:'../runway-pilots/motion-transfer-study/wisp-scary-motion-transfer-v35.mp4'}
 ];
 const compositor=new StageCompositor($('stage'),{onLayerError:id=>$('status').textContent='Layer unavailable: '+id});
-const transport=new FilmTransport(compositor,clips),overlays=new Map();let disposed=false,raf,mode='manual',formSince=0,lastForm=null,activity=0,lastTime=-1,lastVideo=null,lastFresh=performance.now(),stale=false;
+const transport=new FilmTransport(compositor,clips,{mediaHost:$('mediaSources')}),overlays=new Map();let disposed=false,raf,mode='manual',formSince=0,lastForm=null,activity=0,lastTime=-1,lastVideo=null,lastFresh=performance.now(),stale=false;
 const labels={stopped:'Stage black',preparing:'Preparing next cue',exiting:'Planned exit','empty-stage':'Empty stage · planned transition',entering:'Planned entrance',playing:'On stage',unavailable:'Film unavailable · stage black'};
 const director=new CueDirector(transport,{fadeMs:900,onState:s=>{
  $('status').textContent=labels[s.phase]+(s.current?' · '+clips.find(c=>c.id===s.current)?.title:'');$('queue').textContent=s.queued?'Queued · '+clips.find(c=>c.id===s.queued)?.title:'No cue queued';
@@ -29,16 +29,16 @@ function refreshLayers(){
   row.append(actions);$('layers').append(row);
  });
 }
-function release(id){const item=overlays.get(id);if(!item)return;if(item.source.tagName==='VIDEO'){item.source.pause();item.source.removeAttribute('src');item.source.load();}else item.source.src='';URL.revokeObjectURL(item.url);overlays.delete(id);compositor.remove(id);}
+function release(id){const item=overlays.get(id);if(!item)return;if(item.source.tagName==='VIDEO'){item.source.pause();item.source.removeAttribute('src');item.source.load();item.source.remove();}else item.source.src='';URL.revokeObjectURL(item.url);overlays.delete(id);compositor.remove(id);}
 let nextLayer=0;
 $('addEffect').onclick=()=>$('effectFile').click();
 $('effectFile').onchange=async event=>{
  const file=event.target.files[0];event.target.value='';if(!file)return;
  if(overlays.size>=11){$('status').textContent='Layer limit reached · remove an effect first';return;}
  const isVideo=['video/mp4','video/webm'].includes(file.type),isImage=['image/png','image/jpeg','image/webp'].includes(file.type);if(!isVideo&&!isImage){$('status').textContent='Choose PNG, JPEG, WebP, MP4 or WebM';return;}
- const url=URL.createObjectURL(file),source=document.createElement(isVideo?'video':'img'),id='effect-'+(++nextLayer);if(isVideo){source.muted=true;source.loop=true;source.playsInline=true;}
- try{source.src=url;if(isVideo){await transport.frame(source);if(!transport.active)source.pause();}else await source.decode();if(disposed){source.pause?.();source.removeAttribute('src');if(isVideo)source.load();URL.revokeObjectURL(url);return;}overlays.set(id,{url,source,name:file.name,lastTime:-1});compositor.add({id,source,opacity:.4,blend:'screen'});activity++;refreshLayers();}
- catch{source.pause?.();source.removeAttribute('src');URL.revokeObjectURL(url);$('status').textContent='Effect could not load';}
+ const url=URL.createObjectURL(file),source=document.createElement(isVideo?'video':'img'),id='effect-'+(++nextLayer);if(isVideo){source.muted=true;source.loop=true;source.playsInline=true;source.className='source-preview';source.setAttribute('aria-hidden','true');source.title=file.name;$('mediaSources').append(source);}
+ try{source.src=url;if(isVideo){await transport.frame(source);if(!transport.active)source.pause();}else await source.decode();if(disposed){source.pause?.();source.removeAttribute('src');if(isVideo){source.load();source.remove();}URL.revokeObjectURL(url);return;}overlays.set(id,{url,source,name:file.name,lastTime:-1});compositor.add({id,source,opacity:.4,blend:'screen'});activity++;refreshLayers();}
+ catch{source.pause?.();source.removeAttribute('src');source.remove();URL.revokeObjectURL(url);$('status').textContent='Effect could not load';}
 };
 function stop(){mode='manual';$('mode').value=mode;timing();director.stop();for(const {source}of overlays.values())source.pause?.();output.blackout();lastForm=null;}
 for(const clip of clips){const b=document.createElement('button');b.dataset.cue=clip.id;b.innerHTML='<strong></strong><small></small>';b.querySelector('strong').textContent=clip.title;b.querySelector('small').textContent=clip.detail;b.onclick=()=>{mode='manual';$('mode').value=mode;timing();director.request(clip.id);};$('cues').append(b);}

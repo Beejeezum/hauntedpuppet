@@ -52,3 +52,10 @@ Local built-dist Chromium rehearsal passed with actual films and layers. Existin
 CI39456394216 at4a24d326: showdesk job118744283430 passed Chromium, then failed Linux WebKit waiting for the synthetic blue layer to reach the stage at test line18. The native-avatar-offline job passed; no deployment permitted from this head. Saved completed-job logs in work/showdesk-ci-39456394216.log while other jobs were still running.
 
 Installed official pinned Playwright WebKit26.5 build2336 locally (77.4MB). The exact built-dist rehearsal passed on Mac WebKit. Do not infer Linux success from that pass or loosen the pixel condition without observing its value. The next test revision records visibility, full desk state, exact pixel and actual media timing when the Linux wait fails. This supersedes a known failed check, not a timeout-only restart. Sound-study remains source-only and is excluded by public allowlist.
+
+
+## Detached decoder correction under validation
+
+Diagnostic run39457223883 failed in Linux WebKit with document visibility=`visible`, video readyState4/paused=false/currentTime0, and compositor suspended=true. Thus the black effect pixel was the stall safety gate, not a colour tolerance problem. Both output and owner keep the strict pixel checks.
+
+The correction keeps muted character and imported effect video elements attached to small source-preview tiles in the sticky laptop header. They never appear as media elements in the projector window; it still mirrors only the composed canvas. Removing effects/disposal clears sources and detaches their preview nodes. Apple documents visibility-dependent video behavior at https://developer.apple.com/documentation/webkit/delivering-video-content-for-safari . Local built-dist Chromium and Mac WebKit both pass including a real moving video-effect import, clock progress, removal cleanup, layers, watchdog recovery, cue changes and auto timing. This is a tested local correction, not yet a Linux pass; the new exact CI revision must verify the original failure before release.

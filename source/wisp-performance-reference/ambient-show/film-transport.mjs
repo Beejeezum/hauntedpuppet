@@ -1,6 +1,6 @@
 /** Laptop-only muted media. The compositor is the sole picture sent to output. */
 export class FilmTransport {
- constructor(compositor,clips){this.compositor=compositor;this.clips=clips;this.active=null;this.videos=[document.createElement('video'),document.createElement('video')];this.disposed=false;for(const v of this.videos){v.muted=true;v.playsInline=true;v.preload='auto';}compositor.add({id:'character',source:()=>this.active,kind:'character'});}
+ constructor(compositor,clips,{mediaHost}={}){this.compositor=compositor;this.clips=clips;this.active=null;this.videos=[document.createElement('video'),document.createElement('video')];this.disposed=false;for(const v of this.videos){v.muted=true;v.playsInline=true;v.preload='auto';v.setAttribute('aria-hidden','true');v.className='source-preview';v.title='Muted film preview';mediaHost?.append(v);}compositor.add({id:'character',source:()=>this.active,kind:'character'});}
  async frame(video){
   let callback,timer,playing,failed;
   const ready=new Promise((resolve,reject)=>{const cleanup=()=>{clearTimeout(timer);if(callback!==undefined)video.cancelVideoFrameCallback?.(callback);video.removeEventListener('playing',playing);video.removeEventListener('error',failed);};playing=()=>{cleanup();resolve();};failed=()=>{cleanup();reject(Error('Film unavailable'));};timer=setTimeout(failed,6000);video.addEventListener('error',failed,{once:true});if(video.requestVideoFrameCallback)callback=video.requestVideoFrameCallback(playing);else video.addEventListener('playing',playing,{once:true});});
@@ -11,5 +11,5 @@ export class FilmTransport {
  fade(target,ms,live){const start=this.compositor.level,at=performance.now();return new Promise(resolve=>{const tick=now=>{if(!live()){resolve();return;}const t=Math.min(1,(now-at)/Math.max(1,ms)),ease=t*t*(3-2*t);this.compositor.setLevel(start+(target-start)*ease);if(t<1)requestAnimationFrame(tick);else resolve();};requestAnimationFrame(tick);});}
  hold(ms,live){const at=performance.now();return new Promise(resolve=>{const tick=now=>{if(!live()||now-at>=ms)resolve();else requestAnimationFrame(tick);};requestAnimationFrame(tick);});}
  blackout(){this.active=null;this.compositor.setLevel(0);this.compositor.blackout();for(const v of this.videos){v.pause();v.muted=true;}}
- dispose(){this.blackout();this.disposed=true;for(const v of this.videos){v.removeAttribute('src');v.load();}}
+ dispose(){this.blackout();this.disposed=true;for(const v of this.videos){v.removeAttribute('src');v.load();v.remove();}}
 }
