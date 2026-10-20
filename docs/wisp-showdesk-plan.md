@@ -1,5 +1,11 @@
 # Animation-first Wisp show desk
 
+## Current release checkpoint · 2026-10-20
+
+Production is e44697a27fc2eda96c6445c4a5f7cc4606486bab. The opt-in two-film showdesk is live at https://hauntedpuppet.netlify.app/assets/wisp-showdesk/index.html; root remains the separate live-puppeteering app. PR9 adds paired film controls and laptop-owned local sound effects. Its older b5c5dbf preview passed hosted exact-build/hash, silent-output and sound tests; a later local Mute-button stability fix passed all71 local browser checks but still requires exact-head Linux CI. No additional source study is a finished public cue.
+
+The remaining sections are a chronological development log. Earlier release IDs, process handles, pending jobs and “not deployed” statements describe their checkpoint only; use this summary and the latest durable work log for current status. The full goal remains incomplete: finished asset library, reviewed joins/reels, animation-first main entry and human/physical acceptance still require work.
+
 ## Current goal
 Finalize real painted nonverbal films and overhaul the app into a show-control desk with large labelled cue buttons. Modes: cute, scary, alternating, mostly scary with brief friendly interludes, and manual cueing. Dwell and form-change pacing are operator settings. Live puppeteering, voice and webcam remain a separate workspace with existing working paths preserved. Every cue needs a deliberate transition; never immediately replace a visible unrelated first frame.
 
