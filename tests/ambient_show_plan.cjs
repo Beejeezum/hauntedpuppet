@@ -3,7 +3,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
  const root=path.join(__dirname,'../source/wisp-performance-reference/ambient-show');
  const {planJoin,planShow}=await import(require('node:url').pathToFileURL(path.join(root,'transition-plan.mjs')));
  const catalog=JSON.parse(fs.readFileSync(path.join(root,'catalog.json'),'utf8'));
- assert.equal(catalog.clips.length,30);assert.equal(new Set(catalog.clips.map(c=>c.id)).size,30);
+ assert.equal(catalog.clips.length,32);assert.equal(new Set(catalog.clips.map(c=>c.id)).size,32);
  assert(catalog.clips.every(c=>c.dialogue===false&&c.status==='planned'&&c.media===null));
  assert.throws(()=>planShow(catalog,catalog.shows[0].id),/Unavailable/);
  const film=(id,entry='rest',exit='rest')=>({id,status:'approved',dialogue:false,entryPort:entry,exitPort:exit,media:{file:id+'.mp4',sha256:id.repeat(64).slice(0,64),reviewEvidence:'synthetic test only'}});
@@ -23,5 +23,5 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
  tiny.reviewedJoins.push(join(b,a));assert.equal(planShow(tiny,'loop').transitions.length,2);
  b.manualOnly=true;assert.throws(()=>planShow(tiny,'loop'),/Unavailable/,'Manual scares cannot enter ambient playlist');
  b.manualOnly=false;b.dialogue=true;assert.throws(()=>planJoin(a,b),/Unreviewed/,'Ambient films cannot include speech');
- console.log('PASS: 30 silent planned cards; exact-media join reviews, authored bridges, verified empty-stage boundaries, closing seam, no automatic scare or dialogue. Synthetic planner tests only.');
+ console.log('PASS: 32 silent planned cards; exact-media join reviews, authored bridges, verified empty-stage boundaries, closing seam, no automatic scare or dialogue. Synthetic planner tests only.');
 })().catch(e=>{console.error(e);process.exitCode=1;});

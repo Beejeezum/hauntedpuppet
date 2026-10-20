@@ -2,7 +2,7 @@
 
 Presets are nonverbal little stories: Wisp notices passersby, waves, watches, plays tricks and haunts the space. Character-synchronous sound effects are encouraged. Speaking is a separate live-interaction mode, not canned dialogue embedded in ambient videos. No narration, spoken boo or generated background chatter.
 
-`catalog.json` contains **30 planned production cards**, not finished assets. The first editorial sequence targets 145 seconds before bridges and final trimming. No new Runway generations have been purchased for these cards. The human endorsed the animation direction, not every unmade clip or seam.
+`catalog.json` contains **32 planned production cards**, not finished assets. The first editorial sequence targets 145 seconds before bridges and final trimming. No new Runway generations have been purchased for these cards. The human endorsed the animation direction, not every unmade clip or seam.
 
 ## First four production priorities
 
@@ -24,3 +24,5 @@ Presets are nonverbal little stories: Wisp notices passersby, waves, watches, pl
 `transition-plan.mjs` is an **offline editorial gate**, not a renderer: it refuses missing/unapproved films, dialogue, unreviewed joins, changed hashes, incomplete loop closures and automatic manual-only scares. It can select an explicitly reviewed bridge or verified empty-stage route. Synthetic planner tests do not establish real film quality or live playback.
 
 Run its source-only checks with `node tests/ambient_show_plan.cjs` from the repository root. Integration with native conversation, preloading, interrupts, real sound assets, operator controls and physical projection remains required. Preserve existing working app paths until this pipeline has actual accepted media and transitions.
+
+Additional atmospheric cards: standalone fog lettering and a bat flock dissolving the lettering. These are planned nonverbal films/effect cues, not delivered video assets.

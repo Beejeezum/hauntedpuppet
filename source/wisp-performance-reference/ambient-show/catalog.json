@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "purpose": "Authored ambient show production board; thirty planned assets, not thirty finished animations",
+  "purpose": "Authored ambient show production board; thirty-two planned assets, not finished animations",
   "humanDirection": "Animation direction endorsed; retain fuller whole-body motion and soft painted fog. Presets do not speak. Sound effects are welcome. All joins must be planned.",
   "policy": {
     "speech": "live interaction only; no generated dialogue, spoken boo, lyrics or canned narration in ambient films",
@@ -450,6 +450,34 @@
       "acting": "Intentionally empty black between finished departure and arrival. No stray smoke or orphan eyes.",
       "dialogue": false,
       "audioIntent": "silence; preceding tails end deliberately",
+      "manualOnly": false,
+      "media": null
+    },
+    {
+      "id": "fog-lettering",
+      "title": "A greeting in the mist",
+      "form": "atmosphere",
+      "targetSeconds": 12,
+      "status": "planned",
+      "entryPort": "empty",
+      "exitPort": "empty",
+      "acting": "Empty black gathers into readable designed HAPPY HALLOWEEN fog lettering; letter edges breathe while the center remains legible, then every letter dissolves completely.",
+      "dialogue": false,
+      "audioIntent": "airy letter formation with delicate ghostly shimmer; no voice",
+      "manualOnly": false,
+      "media": null
+    },
+    {
+      "id": "bats-through-letters",
+      "title": "Bats steal Halloween",
+      "form": "atmosphere",
+      "targetSeconds": 14,
+      "status": "planned",
+      "entryPort": "empty",
+      "exitPort": "empty",
+      "acting": "The same designed fog lettering forms; a small flock of bats crosses in perspective, their wakes tear the letters into localized vapor until the stage is empty.",
+      "dialogue": false,
+      "audioIntent": "restrained wing flutters, a wide airy pass and soft dissipating shimmer",
       "manualOnly": false,
       "media": null
     }
