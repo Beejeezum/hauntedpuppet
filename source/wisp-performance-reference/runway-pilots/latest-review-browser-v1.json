@@ -1,0 +1,14 @@
+{
+  "playback": {
+    "ended": true,
+    "muted": true,
+    "duration": 5.811,
+    "dropped": 0
+  },
+  "switchResetsSound": true,
+  "blackoutStopsAndClears": true,
+  "recovery": true,
+  "captureAttempts": 0,
+  "errors": [],
+  "scope": "Muted browser checks, not subjective audio quality or projection"
+}
