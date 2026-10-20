@@ -37,3 +37,7 @@ The user requested around30distinct animations assembled into2–3minute perform
 The optional source dialogue reuses eight fictional generated WAV recordings extracted unchanged from assets/show-performances.json, with per-file hashes and original timing in voice-library/manifest.json. Only welcome and wishes are scheduled in this rehearsal. This is existing Coral casting, not a new spooky voice or native conversation. Mouth estimates remain coarse and unapproved. Disabling dialogue, manual cues, Blackout and disposal stop playback.
 
 The spatialPerformance contract records authored approaches, back-facing retreats, disappearance/reformation and tricks with a 15 percent reserve for the entire smoke envelope. These are production requirements, not completed motion assets. The scary-identity-study preserves the endorsed frightening direction; its raw illustration fails the smoke reserve and must not be promoted directly to animation input.
+
+### Decoded framing review
+
+`python3 scripts/review-wisp-film.py path/to/input.mp4 work/review-name` creates a nine-frame contact sheet and all-frame JSON diagnostics without modifying the film. It requires numpy, OpenCV and Pillow. It checks RGB4/8/16 smoke envelopes against a15percent reserve and records empty frames and visible-region image changes. The script reproduces the v15 RGB8 framing failure on76of121frames. These measurements do not prove anatomy, real depth, seamless motion or physical projection. Review the complete video at speed and distinguish an authored disappearance from accidental core loss.
