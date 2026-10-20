@@ -1,0 +1,35 @@
+{
+  "status": "review only; not approved",
+  "file": "source/wisp-performance-reference/runway-pilots/fog-rear-departure-study/wisp-turn-and-departure-review.mp4",
+  "sha256": "18693fb0a7917a699ee5650c37b09bea3ae442b87873339c23fe5ed1a78ccd19",
+  "fps": 24,
+  "size": [
+    1280,
+    720
+  ],
+  "segments": [
+    {
+      "label": "fog-turn",
+      "source": "source/wisp-performance-reference/runway-pilots/guided-vapor-turn-study/wisp-guided-vapor-turn-fog-edit-v1.mp4",
+      "sha256": "7e3cc60d0b586b5ecb6c04663a0430e6a24142fafa08ab2fa90d133544e557a0",
+      "frames": 121,
+      "scale": 1
+    },
+    {
+      "label": "rear-depth-departure-with-black-hold",
+      "source": "source/wisp-performance-reference/runway-pilots/fog-rear-departure-study/wisp-fog-rear-departure-empty-tail-v1.mp4",
+      "sha256": "f23e03e3b007cc5649d79ff28a73cf8da6b4b8f6d9f7647436bca10a1a71fe74",
+      "frames": 157,
+      "scale": 1
+    }
+  ],
+  "joins": [
+    {
+      "from": "fog-turn",
+      "to": "rear-depth-departure-with-black-hold",
+      "visibleRGBDifference": 4.729678579807617,
+      "silhouetteIoU": 0.9801517165871588
+    }
+  ],
+  "scope": "Original frame order and count; constant whole-frame fit, one export encode. Integer bilinear staging may differ slightly from browser subpixel rasterization. Pixel/silhouette diagnostics do not prove velocity continuity, anatomy, human seam acceptance or physical projection. All joins require normal-speed playback review."
+}

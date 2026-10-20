@@ -52,7 +52,7 @@ while True:
     last = thumb
     previous = thumb
     thumbs.append(thumb)
-    rows.append({'frame': len(rows), 'seconds': len(rows)/fps if fps else None, 'envelopes': envelopes})
+    rows.append({'frame': len(rows), 'seconds': len(rows)/fps if fps else None, 'maximumDecodedRGB': int(light.max()), 'envelopes': envelopes})
 cap.release()
 if not rows:
     parser.error('Input has no decoded frames')
@@ -63,9 +63,17 @@ for threshold in ('4', '8', '16'):
         'reserveFailures': sum(not e['reservePass'] for e in visible),
         'minimumMarginsLTRB': np.min([e['marginsLTRB'] for e in visible], axis=0).tolist() if visible else None}
 mask = (first.max(axis=2) > 16) | (last.max(axis=2) > 16)
-report = {'schemaVersion': 2, 'marginOrder': ['left', 'top', 'right', 'bottom'], 'file': args.input.name, 'sha256': hashlib.sha256(args.input.read_bytes()).hexdigest(),
+empty_tail = {}
+for threshold in (0, 4, 8, 16):
+    count = 0
+    for row in reversed(rows):
+        if row['maximumDecodedRGB'] > threshold:
+            break
+        count += 1
+    empty_tail[str(threshold)] = {'frames': count, 'seconds': count/fps if fps else None}
+report = {'schemaVersion': 3, 'marginOrder': ['left', 'top', 'right', 'bottom'], 'file': args.input.name, 'sha256': hashlib.sha256(args.input.read_bytes()).hexdigest(),
     'frameCount': len(rows), 'fps': fps, 'size': [w, h], 'reserve': args.reserve,
-    'thresholdSummaries': summary, 'adjacentVisibleRGBMedian': float(np.median(differences)) if differences else None,
+    'thresholdSummaries': summary, 'emptyTailByMaximumDecodedRGB': empty_tail, 'adjacentVisibleRGBMedian': float(np.median(differences)) if differences else None,
     'endpointVisibleRGBDifference': float(np.abs(first.astype(float)-last.astype(float))[mask].mean()) if mask.any() else 0.,
     'scope': 'Decoded RGB bounds and thumbnails only. Empty frames are diagnostics: inspect intentional vanishing separately. Does not prove anatomy, velocity continuity, camera lock, depth, voice, human approval or physical projection.',
     'frames': rows}

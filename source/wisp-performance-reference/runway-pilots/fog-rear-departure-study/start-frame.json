@@ -1,0 +1,13 @@
+{
+  "file": "fog-turn-end-frame120.png",
+  "sha256": "4cb9319d4e3786d2fbb1d9aee9022010360ce0d6480f79d1e25c6545eefd273e",
+  "source": "source/wisp-performance-reference/runway-pilots/guided-vapor-turn-study/wisp-guided-vapor-turn-fog-edit-v1.mp4",
+  "sourceSha256": "7e3cc60d0b586b5ecb6c04663a0430e6a24142fafa08ab2fa90d133544e557a0",
+  "frame": 120,
+  "timestampSeconds": 5.0,
+  "size": [
+    1920,
+    1080
+  ],
+  "scope": "Exact decoded final frame; no repaint, crop, restaging or pose registration. Human endorsed source fog direction; new departure and join remain unapproved."
+}
