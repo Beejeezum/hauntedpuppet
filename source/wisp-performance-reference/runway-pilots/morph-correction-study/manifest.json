@@ -1,0 +1,31 @@
+{
+  "purpose": "Authored anatomy correction reference for bounded video editing, not runtime frame replacement.",
+  "approval": "unapproved; no edit job submitted",
+  "files": [
+    {
+      "file": "wisp-return-v16-frame48-original.png",
+      "bytes": 380201,
+      "sha256": "d974730b4012cf034dbe986f29a4ecff25c4a992c011b4ea99e4e77c1418b890"
+    },
+    {
+      "file": "wisp-return-morph-v16-review.json",
+      "bytes": 1711,
+      "sha256": "f7c9eb86b89eb1706a5e5ab295f8a24d3d8560a468869a74c6f4de86e7b9c894"
+    },
+    {
+      "file": "wisp-return-v16-end.png",
+      "bytes": 286011,
+      "sha256": "2af544a100df1229a17b3692884601570803c73f2d2a031ed9105a4606e70dea"
+    },
+    {
+      "file": "wisp-return-corrected-keyframe-v1.json",
+      "bytes": 1443,
+      "sha256": "0b5ceeb17b7aa158b20b3d5c3dfdd8cbf12dc25d031351b709ddf3abe968594c"
+    },
+    {
+      "file": "wisp-return-corrected-keyframe-v1.png",
+      "bytes": 589457,
+      "sha256": "03db15bfd1fd944cce2f5402ccde44c52a9223626fb7c5e997fc877bd3528de2"
+    }
+  ]
+}

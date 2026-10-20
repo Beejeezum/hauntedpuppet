@@ -1,0 +1,31 @@
+{
+  "file": "wisp-return-corrected-keyframe-v1.png",
+  "sha256": "03db15bfd1fd944cce2f5402ccde44c52a9223626fb7c5e997fc877bd3528de2",
+  "size": [
+    1670,
+    942
+  ],
+  "sourceFrame": "wisp-return-v16-frame48-original.png",
+  "identityReference": "wisp-return-v16-end.png",
+  "intent": "Small toothless smile and smaller friendly hands at2seconds; retain existing pose, body and fog.",
+  "visualReview": "Generated keyframe has closed toothless smile, compact rounded hands and broadly matching head/torso pose. Not pixel-identical outside edits; must inspect registration if propagated.",
+  "approval": "unapproved correction keyframe; not animation/live-site replacement",
+  "next": "Pilot ranged video edit only after checking control/cost; inspect entry/exit seams, anatomy at every sampled phase and buffer. No blind full-shot remake.",
+  "editStudioSetup": {
+    "video": "wisp-return-morph-v16.mp4",
+    "keyframeSeconds": 2,
+    "rangeNormalized": [
+      0.2,
+      0.6
+    ],
+    "approxRangeSeconds": [
+      1.0167,
+      3.05
+    ],
+    "customFrame": true,
+    "status": "Preview registered; Generate Video data-soft-disabled=true. Both main and preview actions produced no job or explanation. Do not claim submitted.",
+    "browserHandle": "wispNewIdle",
+    "url": "https://app.runwayml.com/video-tools/teams/beejeezum/ai-tools/generate?mode=edit",
+    "credits": "No new edit job confirmed; no credit charge inferred."
+  }
+}

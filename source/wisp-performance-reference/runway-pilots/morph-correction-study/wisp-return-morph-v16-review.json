@@ -1,0 +1,54 @@
+{
+  "file": "wisp-return-morph-v16.mp4",
+  "sha256": "8674dfe419e1228627770d57c28b0568479e0f0a7e9b1dbd7488ba1fde9a88ea",
+  "frames": 122,
+  "fps": 24.0,
+  "marginsMin": {
+    "8": [
+      0.3569937369519833,
+      0.15833333333333333,
+      0.3434237995824635,
+      0.125
+    ],
+    "16": [
+      0.35803757828810023,
+      0.15925925925925927,
+      0.3444676409185804,
+      0.12592592592592589
+    ],
+    "32": [
+      0.35908141962421714,
+      0.16111111111111112,
+      0.34707724425887265,
+      0.12685185185185188
+    ]
+  },
+  "marginFailures15Percent": {
+    "8": 76,
+    "16": 67,
+    "32": 64
+  },
+  "motionRgb": {
+    "middleMedian": 11.951109378553097,
+    "last12Median": 1.9119861386013954,
+    "last6": [
+      1.798386183218745,
+      1.6578899250319985,
+      1.3733441188494289,
+      1.1290496572363158,
+      0.6322325934060188,
+      2.690220748823166
+    ],
+    "endStartVisibleRgb": 65.26015027322404
+  },
+  "scope": "Decoded pixels only. RGB change is not joint velocity; framing does not approve anatomy, temporal continuity, live responsiveness or physical projection.",
+  "decision": "Rejected as coordinated return replacement; preserve unapproved study only.",
+  "sampledVisualFindings": [
+    "0-.75seconds: threatening eyes and claws remain.",
+    "1.25seconds: eyes become round/friendly and fingers open, but visible fangs persist through sampled2.5seconds.",
+    "1.5-2.5seconds: hands enlarge relative to approved cute endpoint.",
+    "3.5seconds: mouth/head/hands still settling into the final identity.",
+    "Raw15percentfogbufferfails76/122framesRGB8; minimum bottom12.5percent.",
+    "No automatic visual approval from endpoints, frame count or timing metrics."
+  ]
+}
