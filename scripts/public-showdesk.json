@@ -4,9 +4,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.html",
       "destination": "index.html",
-      "sha256": "265edc0ee85ee1120c8ebd949bfa63b865dd750a8542f27703c5f518615c6141",
-      "bytes": 3132,
-      "publishedSha256": "265edc0ee85ee1120c8ebd949bfa63b865dd750a8542f27703c5f518615c6141"
+      "sha256": "b69239254993bdd5af7da9b42997eda2249b0ef4361daf79a2d7a0cda15052f2",
+      "bytes": 3147,
+      "publishedSha256": "b69239254993bdd5af7da9b42997eda2249b0ef4361daf79a2d7a0cda15052f2"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.css",
@@ -18,9 +18,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.mjs",
       "destination": "showdesk.mjs",
-      "sha256": "e03163e9e08efe76679b43c462117994bccd5ed4e7e3a6b3c9bf1fd0b09122ee",
-      "bytes": 10434,
-      "publishedSha256": "cac87369e84f2dc5d2b314e6e3c1dc09e8e23c29455b8a05d7d3b9c13883078c",
+      "sha256": "cf2b589872a6550b50a9339bcc908d181351b9fca6d64cb0d785d646715d83a3",
+      "bytes": 10829,
+      "publishedSha256": "6b50d2be99c50e77a25ce3b225b58866319be6e4e8c11946f32bc2677f0746c5",
       "rewrites": [
         {
           "from": "../runway-pilots/wisp-film-output.js",
@@ -70,6 +70,20 @@
       "bytes": 2624,
       "sha256": "4fe740f7e1835cd0ede48b229cd4c068457f4aebed4b3ebcb473fa1982297e60",
       "publishedSha256": "4fe740f7e1835cd0ede48b229cd4c068457f4aebed4b3ebcb473fa1982297e60"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/owner-sound.mjs",
+      "destination": "owner-sound.mjs",
+      "sha256": "63d38e81c169ef8c8314a032c8e260d38151423f0057fa42ff00ec211f4ccbb8",
+      "bytes": 2946,
+      "publishedSha256": "63d38e81c169ef8c8314a032c8e260d38151423f0057fa42ff00ec211f4ccbb8"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/owner-sound-controls.mjs",
+      "destination": "owner-sound-controls.mjs",
+      "sha256": "e40ca402e47dea560a048865ac069535f990edb19bd86651b7f68a3959622957",
+      "bytes": 3056,
+      "publishedSha256": "e40ca402e47dea560a048865ac069535f990edb19bd86651b7f68a3959622957"
     }
   ]
 }

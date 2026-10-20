@@ -3,6 +3,7 @@ import {CueDirector} from './cue-director.mjs';
 import {FilmTransport} from './film-transport.mjs';
 import {createFilmRemote} from './film-remote.mjs';
 import {mountPhoneControls} from '/assets/phone-bridge.js';
+import {mountOwnerSound} from './owner-sound-controls.mjs';
 import {mountFilmOutput} from '../runway-pilots/wisp-film-output.js';
 const $=id=>document.getElementById(id),clips=[
  {id:'cute',title:'Friendly Wisp',detail:'Fuller living motion · approved direction',loop:true,src:'../runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4'},
@@ -10,8 +11,10 @@ const $=id=>document.getElementById(id),clips=[
 ];
 const compositor=new StageCompositor($('stage'),{onLayerError:id=>$('status').textContent='Layer unavailable: '+id});
 const transport=new FilmTransport(compositor,clips,{mediaHost:$('mediaSources')}),overlays=new Map();let disposed=false,raf,mode='manual',formSince=0,lastForm=null,activity=0,lastTime=-1,lastVideo=null,lastFresh=performance.now(),stale=false;
+let soundControls;
 const labels={stopped:'Stage black',preparing:'Preparing next cue',exiting:'Planned exit','empty-stage':'Empty stage · planned transition',entering:'Planned entrance',playing:'On stage',unavailable:'Film unavailable · stage black'};
 const director=new CueDirector(transport,{fadeMs:900,onState:s=>{
+ if(s.phase!=='playing')soundControls?.cancel();
  $('status').textContent=labels[s.phase]+(s.current?' · '+clips.find(c=>c.id===s.current)?.title:'');$('queue').textContent=s.queued?'Queued · '+clips.find(c=>c.id===s.queued)?.title:'No cue queued';
  for(const b of $('cues').querySelectorAll('button'))b.setAttribute('aria-pressed',String(b.dataset.cue===s.current));
  if(s.phase==='playing'&&s.current!==lastForm){lastForm=s.current;formSince=performance.now();}
@@ -60,7 +63,7 @@ $('blackout').onclick=stop;document.addEventListener('keydown',e=>{if(e.key==='E
 function nextForm(){if(mode==='cute')return'cute';if(mode==='scary')return'scary';return director.current==='cute'?'scary':'cute';}
 function tick(now){
  if(disposed)return;const v=transport.active;if(v&&(v!==lastVideo||v.currentTime!==lastTime)){activity++;lastVideo=v;lastTime=v.currentTime;lastFresh=now;}
- stale=!!v&&now-lastFresh>1200;compositor.suspend(stale);
+ const wasStale=stale;stale=!!v&&now-lastFresh>1200;if(stale&&!wasStale)soundControls?.cancel();compositor.suspend(stale);
  for(const item of overlays.values())if(item.source.tagName==='VIDEO'&&item.source.currentTime!==item.lastTime){item.lastTime=item.source.currentTime;activity++;}
  if(v&&!v.loop&&v.ended&&director.phase==='playing'){compositor.blackout();director.request(mode==='manual'?'cute':nextForm());}
  else if(v&&director.phase==='playing'){
@@ -72,8 +75,9 @@ function tick(now){
  compositor.render();raf=requestAnimationFrame(tick);
 }
 refreshLayers();tick(performance.now());
-const inspectDesk=()=>({director:director.inspect(),composition:compositor.inspect(),mode,media:transport.videos.map(v=>({muted:v.muted,paused:v.paused,cue:v.dataset.cue||null,currentTime:v.currentTime,loop:v.loop})),effects:overlays.size});
+soundControls=mountOwnerSound(document.querySelector('main>aside'),{canPlay:()=>!disposed&&!stale&&!compositor.black&&director.phase==='playing'});
+const inspectDesk=()=>({director:director.inspect(),composition:compositor.inspect(),mode,media:transport.videos.map(v=>({muted:v.muted,paused:v.paused,cue:v.dataset.cue||null,currentTime:v.currentTime,loop:v.loop})),effects:overlays.size,sound:soundControls.inspect()});
 const remote=createFilmRemote({chooseCue,startProgram,stop,inspect:inspectDesk});
 window.WispDesk={inspect:inspectDesk,...remote};
 mountPhoneControls({controller:()=>remote,previewCanvas:()=>$('stage')});
-window.addEventListener('pagehide',()=>{disposed=true;cancelAnimationFrame(raf);director.dispose();for(const id of [...overlays.keys()])release(id);compositor.dispose();output.dispose();},{once:true});
+window.addEventListener('pagehide',()=>{disposed=true;cancelAnimationFrame(raf);director.dispose();soundControls.dispose();for(const id of [...overlays.keys()])release(id);compositor.dispose();output.dispose();},{once:true});

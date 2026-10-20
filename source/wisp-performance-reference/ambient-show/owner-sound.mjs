@@ -13,6 +13,7 @@ export class OwnerSound {
   if(typeof id!=='string'||!id||id.length>64||!(bytes instanceof ArrayBuffer)||bytes.byteLength>20000000)throw Error('Invalid effect audio');
   const epoch=this.epoch,context=this.context,buffer=await context.decodeAudioData(bytes.slice(0));
   if(this.disposed||epoch!==this.epoch||context!==this.context)return false;
+  if(buffer.duration>30||buffer.numberOfChannels>2)throw Error('Use a mono or stereo effect up to 30 seconds');
   this.buffers.set(id,buffer);return true;
  }
  play(id,{delay=0,gain=1}={}){
