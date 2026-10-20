@@ -19,3 +19,17 @@ test('private operator password env supports the one-time setup without a public
 test('failed durable call write triggers hangup and releases stage ownership',async()=>{const h=setup();await h.login();const original=h.store.setJSON.bind(h.store);h.store.setJSON=async(k,...rest)=>{if(k.startsWith('calls/'))throw Error('storage unavailable');return original(k,...rest)};assert.equal((await h.service.handle(h.req('/api/realtime/session',{sdp,sessionNonce:nonce}))).status,503);assert(h.calls.some(c=>c.url.endsWith('/hangup')));assert.equal(await h.lease.current(),null)});
 
 test('scary voice requires explicit Big kids audience; cute default stays warm',async()=>{const {sessionConfig}=await import('../netlify/lib/voice-config.mjs');assert.throws(()=>sessionConfig({form:'haunting',audience:'little'}));assert.throws(()=>sessionConfig({form:'unknown',audience:'big'}));assert(sessionConfig({form:'haunting',audience:'big'}).instructions.includes('raspy cartoon-spirit'));assert(sessionConfig({}).instructions.includes('cute Wisp'));});
+
+test('prepared speech carries selected character acting without accepting browser prompt overrides',async()=>{
+ const h=setup();await h.login();
+ for(const data of [{audience:'big',form:'haunting',mood:'sinister',intensity:.8},{audience:'little',form:'friendly',mood:'sinister',intensity:.9},{audience:'family',form:'friendly',mood:'curious'}]){
+  const r=await h.service.handle(h.req('/api/performance',{text:'My boo needs practice.',voice:'cedar',instructions:'UNTRUSTED_BROWSER_DIRECTION',...data}));assert.equal(r.status,200);
+  const result=await r.json(),sent=JSON.parse(h.calls.at(-1).init.body);
+  assert.equal(sent.input,'My boo needs practice.');assert.equal(sent.voice,'cedar');assert(!sent.instructions.includes('UNTRUSTED_BROWSER_DIRECTION'));assert(sent.instructions.includes('Read only the supplied words'));
+  assert.equal(result.spec.form,data.form);assert.equal(result.spec.audience,data.audience);
+  if(data.form==='haunting'){assert(sent.instructions.includes('raspy cartoon-spirit'));assert(sent.instructions.includes('theatrical suspense'));assert(sent.instructions.includes('Broad expressive pitch contours'));assert.equal(result.spec.mood,'sinister')}
+  else{assert(sent.instructions.includes('bright, buoyant'));assert(!sent.instructions.includes('raspy cartoon-spirit'));}
+  if(data.audience==='little'){assert(sent.instructions.includes('absolutely no scares'));assert.equal(result.spec.mood,'amused');assert.equal(result.spec.intensity,.3);}
+ }
+ for(const data of [{audience:'little',form:'haunting'},{audience:'family',form:'haunting'},{audience:'unknown',form:'friendly'},{audience:'big',form:'unknown'}]){const count=h.calls.length;const r=await h.service.handle(h.req('/api/performance',{text:'Hello',...data}));assert.equal(r.status,400);assert.equal(h.calls.length,count,'Invalid character context must fail before a paid provider request');}
+});
