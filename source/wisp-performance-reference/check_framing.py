@@ -20,12 +20,12 @@ while True:
   bounds=[int(xs.min()),int(ys.min()),int(xs.max()+1),int(ys.max()+1)]
   gaps=[bounds[0]/w,bounds[1]/h,(w-bounds[2])/w,(h-bounds[3])/h]
   levels[str(threshold)]={'bounds':bounds,'margins':dict(zip(['left','top','right','bottom'],gaps)),'insideSafeArea':min(gaps)>=a.margin,'touchesOuterTwoPixels':bounds[0]<2 or bounds[1]<2 or bounds[2]>w-2 or bounds[3]>h-2}
- rows.append({'frame':i,'seconds':i/fps,'levels':levels});i+=1
+ rows.append({'frame':i,'seconds':c.get(cv2.CAP_PROP_POS_MSEC)/1000,'levels':levels});i+=1
 c.release()
 assert rows,'No decoded frames'
 summary={}
 for level in ['8','16','32']:
  valid=[r for r in rows if not r['levels'][level].get('empty')]
  summary[level]={'safeAreaFailures':sum(not r['levels'][level]['insideSafeArea'] for r in valid),'outerEdgeContactFrames':sum(r['levels'][level]['touchesOuterTwoPixels'] for r in valid),'minimumMargins':{side:min(r['levels'][level]['margins'][side] for r in valid) for side in ['left','top','right','bottom']},'worstFrame':min(valid,key=lambda r:min(r['levels'][level]['margins'].values()))['frame']}
-report={'source':str(pathlib.Path(a.video).resolve()),'frameCount':len(rows),'fps':fps,'size':[w,h],'requiredMargin':a.margin,'thresholds':'max RGB 8/16/32 of 255; connected fragments >=8 pixels; black-background reference only','summary':summary,'frames':rows,'scope':'Decoded render bounds only. Cannot recover vapor clipped before encoding or prove physical projection quality.'}
+report={'source':str(pathlib.Path(a.video).resolve()),'frameCount':len(rows),'fps':fps,'fpsScope':'Container nominal rate; use decoded timestamps for variable-frame-rate capture','lastDecodedTimestampSeconds':rows[-1]['seconds'],'size':[w,h],'requiredMargin':a.margin,'thresholds':'max RGB 8/16/32 of 255; connected fragments >=8 pixels; black-background reference only','summary':summary,'frames':rows,'scope':'Decoded render bounds only. Cannot recover vapor clipped before encoding or prove physical projection quality.'}
 pathlib.Path(a.report).write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({k:v for k,v in report.items() if k!='frames'},indent=2))

@@ -8,6 +8,14 @@ This is the active tracked goal, explicitly authorized by the user after the bou
 
 Success requires character, acting, voice, interaction, operator experience, presentation and reliability together. Software checks cannot approve visual quality. The existing candidate has not reached the requested quality bar; an incremental deployment does not complete this goal.
 
+## Whole-character quality correction — October 19
+
+The component turn pilot is not the visual destination. The user rejected its disconnected puppet appearance. Evaluate complete Runway performances as the current body-motion baseline; do not promote independent floating face/hand/fog pieces merely because they respond to controls.
+
+Next production slice: one cohesive friendly listening/speaking performance with stable identity, continuous hand/shoulder/core motion and attached soft fog. Compare the unmodified whole-character footage against any speech implementation at normal speed and guest distance. Reject the speech implementation if face sliding, matte seams, mismatched lighting or weaker acting are visible. A looping clip alone does not satisfy arbitrary responsive performance or the full attraction goal.
+
+Current friendly idle v7 seam diagnostic: encoded 24 fps, 122 frames, end/start visible-region RGB difference 1.477 versus adjacent median 1.816; lower-region occupancy ratio 0.907. Sampled seam drawings retain the connected core. These are candidate-selection evidence only, not anatomy, smoothness, live-speech or physical-projection acceptance. Keep original sources unchanged and experimental overlays off by default.
+
 ## Execution and acceptance across the attraction
 
 | Track | Deliverable | Acceptance evidence | Current gap |
@@ -131,3 +139,26 @@ The limited source0..45evil turn now runs with native face/arms/body acting. Num
 
 ### Startup and preview regression clarification
 Compositor-ready is not character-ready. The app projection test now waits for artwork readiness and first visible paint before performing cues; an explicit held-projector-PNGfixture proves the earlier ready/blank gap. CIWebKituses this controlled startup case without relaxing pixel-margin or visibility assertions. The voice preview sign-out mock now changes the simulated status server to cloud/unauthenticated as well as sending the status event; a server that kept reporting connected local status was an inconsistent sign-out fixture. Localchecks pass; futureCIandgenuineprovider/physical acceptance remain separate.
+
+## Whole-character asset course correction — 2026-10-16
+
+The user rejects the modular native assembly as disconnected and sloppy. Native deformation and recovery tests remain useful engineering evidence, but do not make that assembly the production visual target. Restore the approved whole-character Runway fog performance as the art benchmark.
+
+Latest experiment: `../wisp-vision/wisp-whole-greeting-v6.mp4`, Gen-4.5, five seconds, 60 credits, seed 3337455142. The buffered approved reference was used unchanged. REJECTED: a narrow opaque curled core replaces the full fog body; upward movement clips head smoke; 117/121 decoded frames fail the 15% reserve at RGB8; the final pose/volume differs from the opening. Do not trim away or scale over upstream clipping and call the shot repaired.
+
+### Controlled input next
+
+Evaluate two distinct controls before generating a batch:
+
+1. An image-to-video model with explicit first and final images: use the same complete approved buffered painting at both endpoints. Pilot one simple settled gesture or living idle, then inspect all intervening anatomy and fog. Identical endpoints do not prove a seamless loop or consistent middle frames.
+2. Act-Two with a genuinely useful driving performance and a character IMAGE to enable gesture transfer. Runway documents video character inputs as preserving existing body motion while transferring facial acting; they cannot supply new body gestures. Their recommended waist-up framing conflicts with our whole-body view, so validate this separately before spending on production clips. A rejected generated performance is not a suitable driver. No new webcam/microphone access is authorized by the prior completed microphone test.
+
+Driving-performance brief: one person, static camera, well lit face, hands visible from the first frame, starting pose matching the character. Hold relaxed for one second, shift gaze toward a guest, small torso anticipation, raise one hand and wave once with relaxed elbow/wrist, lower the hand, settle for one second. Five to six seconds, one take, no cuts, no jump or forward approach. Keep timing expressive without excessive movement. A silent clip is sufficient for gesture research; do not upload unrelated private recordings.
+
+### Asset contract before app integration
+
+Each approved clip needs provenance, credit cost, duration/fps, complete decoded framing report, first/last pose comparison, and visible review of face, shoulder continuity, finger identity, lower-core volume, soft fog edges and all intermediate frames. Maintain at least 15% final reserve on every edge. Preserve originals. Record loop seams and interruptions separately; no whole-clip crossfade that creates two ghosts.
+
+Start with one accepted living idle and one accepted greeting, then derive controlled entry/exit transitions. The character must remain one coherent apparition. Do not split it into independently floating image parts to restore arbitrary runtime control. Live speaking, interruptions, cute/evil morphs and side/rear acting remain explicit unsolved integration gates, not capabilities established by a beautiful prerecorded clip.
+
+Source: https://help.runwayml.com/hc/en-us/articles/42311337895827-Performance-Capture-with-Act-Two (reviewed 2026-10-16). Act-Two lists 5 credits/second, 3-second minimum, and gesture transfer only with character images. Confirm the actual UI price before a generation.

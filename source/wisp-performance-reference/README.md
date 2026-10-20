@@ -36,3 +36,17 @@ Actual compositor test:600frames and40pixel-scanned frames perChromium/WebKit pa
 
 ## Persistent-core prompt retry, rejected
 The next five-second Gen4.5take used an explicit persistent-core instruction after the previous prompt was found to request lower-body dissolution. V5 retains a lower core in reviewed ending frames, but elongates the character into a thin shape and grows its framing. Its121decoded frames include116safe-area failures at all three thresholds, with minimum top1.11%/bottom5.28%padding and no outer-two-pixel contacts. It is rejected, not a production asset. This targeted retry cost60credits; further prompt-only retries are not queued. Start/end-frame tooling is being investigated separately, without assuming its intermediate frames will pass.
+
+## Visible-region continuity diagnostic
+
+`check_continuity.py VIDEO --report REPORT.json` measures adjacent-frame and loop-seam RGB differences only within the union of visible character pixels, so black padding cannot conceal a seam. It also records occupancy of a fixed lower region as a diagnostic. Neither metric proves anatomy, perceptual smoothness or a seamless performance; inspect full-speed/slow-motion playback and intermediate frames. Requires OpenCV and NumPy.
+
+## Speech production route evidence (October 19)
+
+Runway primary documentation: [Act-Two](https://help.runwayml.com/hc/en-us/articles/42311337895827-Performance-Capture-with-Act-Two) accepts driving performance plus character image/video. Video input preserves source body/camera/environment motion; gesture transfer is unavailable with video input. Output is 24 fps; documented cost is 5 credits/sec, 3-sec minimum. Longer driving performances can cause shorter character footage to boomerang, which fails our natural fog-flow direction. It is an offline authored performance route, not proof of arbitrary live responsive animation.
+
+[Character Script to Video](https://help.runwayml.com/hc/en-us/articles/51285026291219-Character-Script-to-Video) accepts character image with typed script+voice or uploaded audio. This offers an integrated scripted speech comparison without recording a user. Evaluate one controlled short take only after the current generic speaking pilot is reviewed, with actual in-app price checked before submission. Preserve the same source and framing; no new camera/microphone access is implied. Neither tool alone satisfies the live AI conversation goal.
+
+## Offline cadence comparison
+
+A pinned local FFmpeg7.1 binary from imageio-ffmpeg0.6.0 was used for one v8 greeting48fps interpolation candidate. See [official minterpolate documentation](https://www.ffmpeg.org/ffmpeg-filters.html#minterpolate). Filter: `tpad=stop_mode=clone:stop_duration=0.125,minterpolate=fps=48:mi_mode=mci:mc_mode=aobmc:me_mode=bilat:vsbmc=1`, duration5.083333333sec, libx264 fast CRF17 yuv420p, no audio. Output244frames; original122frames retained unchanged. All244 pass framing; isolated silent Chromium reports243 distinct presentation timestamps,244totalframes/0dropped. Three sampled adjacent-frame triplets show no obvious double face/hands, but full-speed visual preference, remaining fog artifacts and target projector cadence remain unapproved. This is offline whole-character processing, not more responsive live acting or native48fps source animation.
