@@ -552,6 +552,15 @@
       "sha256": "4e2f15c44767e382bbb4091d8e0f5f166676c5c3062693757047474015b1d662",
       "status": "partial-study-only",
       "scope": "One wave-and-dispersal candidate, not two finished clips. Does not fulfil wave rest-to-rest or departing turn-away/depth brief; starting join pending."
+    },
+    {
+      "plannedClipIds": [
+        "friendly-reform"
+      ],
+      "media": "../runway-pilots/friendly-depth-arrival-study/wisp-friendly-depth-arrival-black-lead-v1.mp4",
+      "sha256": "955635d3b7ed8353c0a514fbf4d18c557e02131b6a443866b94a57fdfabb7345",
+      "status": "review-pending",
+      "scope": "Distant glimmer and friendly arrival; editorial black lead has41exact-black frames, all20percent reserve. New motion/anatomy and actual arrival-to-idle join pending human review; not a finished cue."
     }
   ]
 }

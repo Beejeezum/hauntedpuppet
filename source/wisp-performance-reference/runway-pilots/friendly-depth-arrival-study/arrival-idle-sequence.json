@@ -1,0 +1,12 @@
+[
+  {
+    "label": "friendly-depth-arrival-with-black-lead",
+    "source": "source/wisp-performance-reference/runway-pilots/friendly-depth-arrival-study/wisp-friendly-depth-arrival-black-lead-v1.mp4",
+    "scale": 1
+  },
+  {
+    "label": "friendly-idle",
+    "source": "source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4",
+    "scale": 0.85
+  }
+]

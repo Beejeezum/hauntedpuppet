@@ -71,9 +71,17 @@ for threshold in (0, 4, 8, 16):
             break
         count += 1
     empty_tail[str(threshold)] = {'frames': count, 'seconds': count/fps if fps else None}
-report = {'schemaVersion': 3, 'marginOrder': ['left', 'top', 'right', 'bottom'], 'file': args.input.name, 'sha256': hashlib.sha256(args.input.read_bytes()).hexdigest(),
+empty_head = {}
+for threshold in (0, 4, 8, 16):
+    count = 0
+    for row in rows:
+        if row['maximumDecodedRGB'] > threshold:
+            break
+        count += 1
+    empty_head[str(threshold)] = {'frames': count, 'seconds': count/fps if fps else None}
+report = {'schemaVersion': 4, 'marginOrder': ['left', 'top', 'right', 'bottom'], 'file': args.input.name, 'sha256': hashlib.sha256(args.input.read_bytes()).hexdigest(),
     'frameCount': len(rows), 'fps': fps, 'size': [w, h], 'reserve': args.reserve,
-    'thresholdSummaries': summary, 'emptyTailByMaximumDecodedRGB': empty_tail, 'adjacentVisibleRGBMedian': float(np.median(differences)) if differences else None,
+    'thresholdSummaries': summary, 'emptyTailByMaximumDecodedRGB': empty_tail, 'emptyHeadByMaximumDecodedRGB': empty_head, 'adjacentVisibleRGBMedian': float(np.median(differences)) if differences else None,
     'endpointVisibleRGBDifference': float(np.abs(first.astype(float)-last.astype(float))[mask].mean()) if mask.any() else 0.,
     'scope': 'Decoded RGB bounds and thumbnails only. Empty frames are diagnostics: inspect intentional vanishing separately. Does not prove anatomy, velocity continuity, camera lock, depth, voice, human approval or physical projection.',
     'frames': rows}
