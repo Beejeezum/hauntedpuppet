@@ -19,3 +19,11 @@ Local 27-minute soak passed: 81 idle actions, 17 interrupted rehearsal performan
 Mac Keychain add/read/update/delete and retrieval by a fresh process were tested with a temporary isolated credential, which was removed. This verifies persistence behavior without claiming that the actual user key has been entered.
 
 The initial GitHub Actions runs passed. The final hardening pass adds failure paths, reset races, phone cue error feedback and WebKit remote coverage. CI never requires a live provider credential.
+
+## Voice measurement and renderer-state correction
+
+A silent WebKit probe used the same synthetic440Hz source and actual AudioWorklet graph across both readings. After switching to haunting, the pitch parameter was -8 and the audio clock continued running, but an analyser with smoothing0.8 still reported571.289Hz. Reading without smoothing reported275.391Hz. The test analyser now uses smoothing0; the production effect and frequency acceptance ranges are unchanged. This matches the [Web Audio analyser definition](https://www.w3.org/TR/webaudio-1.0/#dom-analysernode-smoothingtimeconstant): zero removes averaging with the previous analysis frame, while the default is0.8.
+
+The fully scary preview also demonstrated why renderer-specific state is insufficient: at blend1 the inactive painted fallback reported idle while the shared performance state reported speaking. The casting regression now waits for the transformation to reach blend>.99 and checks shared performance state. It retains selected-voice/context, Stop, error, cache and zero-capture assertions.
+
+These are corrections to test observation, not new audible casting or physical projection acceptance. Local Chromium and WebKit direct-voice suites and the Chromium casting preview pass; current-head CI must pass independently before release.
