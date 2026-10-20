@@ -49,5 +49,7 @@
     "End pose differs substantially from start; looping as-is would snap.",
     "Lower fog enters required15percentbuffer: minimum12.59percent at RGB8; 76of121frames fail. No edge clipping observed by these bounds.",
     "No interpolation or live-site promotion."
-  ]
+  ],
+  "humanDirectionFeedback": "Yes\u2014keep that fuller character motion",
+  "approvalScope": "Body and hand motion direction endorsed. Loop seam, smoke clearance, identity consistency and final integration remain unapproved."
 }
