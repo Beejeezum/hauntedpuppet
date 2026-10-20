@@ -34,5 +34,19 @@
       "Upper skeletal shoulder/arm anatomy remains an identity concern",
       "Still image does not establish temporal consistency, whole-film framing or motion acceptance"
     ]
+  },
+  "editStudioAttempt": {
+    "status": "Not submitted: both custom-frame video and native frame generation remain soft-disabled",
+    "source": "wisp-scary-retreat-v17.mp4",
+    "selectedTimeSeconds": 2.52,
+    "customFrameAdded": true,
+    "customFrameVideoSoftDisabled": true,
+    "nativePreviewModel": "GPT Image 2",
+    "nativePromptEntered": true,
+    "nativeFrameSoftDisabled": true,
+    "submittedJobs": 0,
+    "observedNewCharge": null,
+    "limits": "No job or debit observed; not proof of account-wide billing state. No control bypass attempted.",
+    "nextRoute": "Author identity-consistent bounded back pose; test a start/end-frame controlled turn in regular video tool instead of repeating Edit Studio actions."
   }
 }
