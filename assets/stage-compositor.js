@@ -1,19 +1,21 @@
 /** The owner draws all visual layers; projector mirrors this canvas, never media/audio. */
 const BLENDS = new Set(['source-over', 'screen', 'lighter', 'multiply']);
 const unit = value => Number.isFinite(value) && value >= 0 && value <= 1;
+const geometry = (scale,x,y) => Number.isFinite(scale) && scale >= .1 && scale <= 2 && Number.isFinite(x) && Math.abs(x) <= 1 && Number.isFinite(y) && Math.abs(y) <= 1;
 export class StageCompositor {
  constructor(canvas, {onLayerError = () => {}} = {}) {
   this.canvas=canvas;this.ctx=canvas.getContext('2d');this.layers=[];this.black=true;this.suspended=false;this.level=1;this.onLayerError=onLayerError;this.disposed=false;this.draws=0;
  }
- add({id,source,opacity=1,blend='source-over',visible=true,kind='effect'}) {
+ add({id,source,opacity=1,blend='source-over',visible=true,kind='effect',scale=1,x=0,y=0}) {
   if(this.disposed||!id||this.layers.some(l=>l.id===id)||this.layers.length>=12)throw Error('Invalid or duplicate layer');
-  if(!unit(opacity)||!BLENDS.has(blend)||!source)throw Error('Invalid layer settings');
-  this.layers.push({id,source,opacity,blend,visible:!!visible,kind});return id;
+  if(!unit(opacity)||!BLENDS.has(blend)||!source||!geometry(scale,x,y))throw Error('Invalid layer settings');
+  this.layers.push({id,source,opacity,blend,visible:!!visible,kind,scale,x,y});return id;
  }
  update(id,patch) {
   const layer=this.layers.find(l=>l.id===id);if(!layer)throw Error('Unknown layer');
   if(patch.opacity!==undefined&&!unit(patch.opacity)||patch.blend!==undefined&&!BLENDS.has(patch.blend))throw Error('Invalid layer settings');
-  for(const key of ['opacity','blend','visible'])if(patch[key]!==undefined)layer[key]=key==='visible'?!!patch[key]:patch[key];
+  if(!geometry(patch.scale===undefined?layer.scale:patch.scale,patch.x===undefined?layer.x:patch.x,patch.y===undefined?layer.y:patch.y))throw Error('Invalid layer placement');
+  for(const key of ['opacity','blend','visible','scale','x','y'])if(patch[key]!==undefined)layer[key]=key==='visible'?!!patch[key]:patch[key];
  }
  move(id,index) {const i=this.layers.findIndex(l=>l.id===id);if(i<0||!Number.isInteger(index)||index<0||index>=this.layers.length)throw Error('Invalid layer order');this.layers.splice(index,0,this.layers.splice(i,1)[0]);}
  remove(id){this.layers=this.layers.filter(l=>l.id!==id);}
@@ -30,9 +32,9 @@ export class StageCompositor {
    const s=typeof layer.source==='function'?layer.source():layer.source;
    if(!s||'readyState'in s&&s.readyState<2||'complete'in s&&!s.complete)continue;
    const w=s.videoWidth||s.naturalWidth||s.width,h=s.videoHeight||s.naturalHeight||s.height;if(!w||!h)continue;
-   const fit=Math.min(canvas.width/w,canvas.height/h);
+   const fit=Math.min(canvas.width/w,canvas.height/h)*layer.scale;
    ctx.save();ctx.globalAlpha=layer.opacity*this.level;ctx.globalCompositeOperation=layer.blend;
-   try{ctx.drawImage(s,(canvas.width-w*fit)/2,(canvas.height-h*fit)/2,w*fit,h*fit);}catch{this.onLayerError(layer.id);}
+   try{ctx.drawImage(s,(canvas.width-w*fit)/2+layer.x*canvas.width,(canvas.height-h*fit)/2+layer.y*canvas.height,w*fit,h*fit);}catch{this.onLayerError(layer.id);}
    finally{ctx.restore();}
   }
   ctx.restore();this.draws++;

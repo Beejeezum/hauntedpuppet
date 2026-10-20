@@ -140,11 +140,12 @@ jobs:
           node tests/cue_director.cjs
           node tests/ambient_show_plan.cjs
           node tests/stage_compositor.cjs
+          node tests/stage_geometry.cjs
       - name: Rehearse actual films and composed output on both browser engines
         run: |
           mkdir -p work
           HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
-          HAUNT_BROWSER=webkit HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
+          DEBUG=pw:browser HAUNT_BROWSER=webkit HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
       - name: Keep show desk evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -152,5 +153,6 @@ jobs:
           name: showdesk-evidence
           path: |
             test-results/showdesk-*.json
+            test-results/stage-geometry*
             work/showdesk-rehearsal-*.png
           if-no-files-found: ignore

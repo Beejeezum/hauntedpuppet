@@ -59,3 +59,14 @@ Installed official pinned Playwright WebKit26.5 build2336 locally (77.4MB). The 
 Diagnostic run39457223883 failed in Linux WebKit with document visibility=`visible`, video readyState4/paused=false/currentTime0, and compositor suspended=true. Thus the black effect pixel was the stall safety gate, not a colour tolerance problem. Both output and owner keep the strict pixel checks.
 
 The correction keeps muted character and imported effect video elements attached to small source-preview tiles in the sticky laptop header. They never appear as media elements in the projector window; it still mirrors only the composed canvas. Removing effects/disposal clears sources and detaches their preview nodes. Apple documents visibility-dependent video behavior at https://developer.apple.com/documentation/webkit/delivering-video-content-for-safari . Local built-dist Chromium and Mac WebKit both pass including a real moving video-effect import, clock progress, removal cleanup, layers, watchdog recovery, cue changes and auto timing. This is a tested local correction, not yet a Linux pass; the new exact CI revision must verify the original failure before release.
+
+
+## Pinned runtime and bounded Linux diagnostics
+
+Job118751575270 for f47ba9d was canceled at its job limit after Chromium passed; Linux WebKit never returned a final result. Its completed logs are saved in work/showdesk-ci-39458417395.log. Do not call attachment a proven Linux fix.
+
+The old local wrapper resolved bundled Playwright1.62.1 while the repository and CI pin1.64.1. That local comparison was insufficient. Installed the repository-pinned official Chrome156/rev1248 and WebKit27.2/rev2370; the new ignored work/pinned-silent-playwright.cjs points to the repo package. Local built-dist Chromium49490 and WebKit50889 pass with that package, but Linux backend behavior remains unverified.
+
+The rehearsal harness now has a150second failure watchdog, bounded2second diagnostic evaluation and5second browser teardown, closes its own fixture HTTP connections, and logs progress checkpoints/browser version. It still fails nonzero on a timeout; no hidden success or weakened media/pixel assertion. This is intended to expose a stuck driver/cleanup path instead of consuming the entire job window.
+
+Layer-placement support (size plus normalized x/y offsets) is added for the typography scene. Existing defaults are unchanged. Actual compositor tests validate placement, reject invalid values atomically, preserve Blackout and show the static fog lettering has at least20% RGB reserve at70% scale. Derived black-stage and staged-lettering frames are retained, original generated PNG unchanged. This does not establish animated clearance, and the typography remains outside the public cue manifest. No new Runway generation was submitted for it.
