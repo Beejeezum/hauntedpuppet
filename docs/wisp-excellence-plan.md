@@ -205,3 +205,6 @@ Primary sources: https://github.com/Lightricks/LTX-2/blob/main/packages/ltx-pipe
 
 
 Human review update: the padded v18 scary turn received “Yes—keep this motion direction.” Preserve its fluid fog, same-being identity and articulated turn as the motion reference. This does not approve its skeletal back details, loop seam, a complete transformation, or on-site projection. The source rehearsal now links directly to the endorsed turn and authored return pose board without loading another media player or changing the show timeline.
+
+
+Source rehearsal now supports explicit timed `absent` steps, with presence reporting, silent cleared output, subsequent scheduled entrance and immediate friendly interruption. Synthetic-clock and isolated muted browser tests cover absence beyond the watchdog interval and cancellation of a later scary entrance. The existing150-second show is unchanged: no hard-cut placeholder is presented as a finished poof or depth departure. Actual authored disappearance/reformation films and full-speed acceptance remain required.
