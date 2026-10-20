@@ -1,0 +1,161 @@
+{
+  "schema": 1,
+  "status": "production choreography; not rendered or approved films",
+  "stage": {
+    "entry": "empty",
+    "exit": "empty",
+    "emptyLeadSeconds": 0.75,
+    "emptyTailSeconds": 1.0,
+    "minimumEffectReserve": 0.15,
+    "targetEffectReserve": 0.2,
+    "camera": "locked; motion occurs inside the projection volume",
+    "background": "black; no rectangular fog overlay"
+  },
+  "sound": {
+    "owner": "laptop",
+    "speech": false,
+    "music": false,
+    "enable": "explicit operator enable and level",
+    "stop": "cancel scheduled sounds and fade active tails; Blackout must not leave a delayed impact",
+    "remoteAudio": false
+  },
+  "scenes": [
+    {
+      "id": "fog-lettering",
+      "title": "A greeting in the mist",
+      "seconds": 12,
+      "beats": [
+        [
+          0,
+          0.75,
+          "Complete empty stage; silence"
+        ],
+        [
+          0.75,
+          3.5,
+          "Local fog knots gather into the designed HAPPY HALLOWEEN lettering, staggered across two lines"
+        ],
+        [
+          3.5,
+          7.5,
+          "Hold readable words; irregular soft edges drift while each letter center remains legible"
+        ],
+        [
+          7.5,
+          11,
+          "A small breeze lifts the lettering into dispersing vapor; no hard alpha pop"
+        ],
+        [
+          11,
+          12,
+          "Complete empty stage; sound finished"
+        ]
+      ],
+      "soundCues": [
+        [
+          0.75,
+          "soft gathering air",
+          2.75
+        ],
+        [
+          3.5,
+          "single delicate glass shimmer",
+          1.5
+        ],
+        [
+          7.5,
+          "receding fog sigh",
+          3.0
+        ]
+      ],
+      "assets": [
+        "existing happy-halloween-fog-v1.png; staged at70percent",
+        "new localized fog formation/dissolve footage",
+        "three short nonverbal sound cues"
+      ],
+      "review": [
+        "Exact HAPPY HALLOWEEN spelling throughout readable hold",
+        "Fog never clips; no solid ribbon curls",
+        "Words dissolve completely before empty exit"
+      ]
+    },
+    {
+      "id": "bats-through-letters",
+      "title": "Bats steal Halloween",
+      "seconds": 14,
+      "beats": [
+        [
+          0,
+          0.75,
+          "Empty stage; silence"
+        ],
+        [
+          0.75,
+          3.5,
+          "Same greeting gathers from fog"
+        ],
+        [
+          3.5,
+          6,
+          "Readable greeting waits; small distant bat silhouettes approach from within the safe volume"
+        ],
+        [
+          6,
+          9.5,
+          "Uneven flock arcs through depth across the letters; articulated wingbeats, near and far sizes; wakes displace only the touched fog"
+        ],
+        [
+          9.5,
+          13,
+          "Last bat curves away into darkness; letter fragments thin and disappear"
+        ],
+        [
+          13,
+          14,
+          "Complete empty stage; all sound tails end"
+        ]
+      ],
+      "soundCues": [
+        [
+          0.75,
+          "gathering fog",
+          2.75
+        ],
+        [
+          5.5,
+          "distant wing flutter approaching",
+          1.5
+        ],
+        [
+          6.5,
+          "layered restrained wingbeats and airy pass",
+          3.5
+        ],
+        [
+          10,
+          "receding flutter and dissolving shimmer",
+          2.5
+        ]
+      ],
+      "assets": [
+        "same designed lettering plate",
+        "new painted bat flock footage with unobtrusive black background or alpha",
+        "localized wake/letter-erasure matte",
+        "four short nonverbal sound cues"
+      ],
+      "review": [
+        "Bats have changing wing poses and depth, not translated static icons",
+        "Letter destruction follows actual bat crossings, not an unrelated global fade",
+        "Entire near bat wingspan and fog remain buffered",
+        "No sudden loud scare; readable hold before destruction"
+      ]
+    }
+  ],
+  "futureVariations": [
+    "A mischievous Wisp peeks through the O after a separately reviewed matching entrance",
+    "The last tiny bat returns, steals one remaining fog stroke, then exits",
+    "A distant spectral gust wipes the greeting and leaves the stage empty"
+  ],
+  "assembly": "Use reviewed empty-stage boundaries between these scenes and Wisp arrivals/departures. Never cut a visible spirit directly into lettering. Choose a matching authored bridge only after exact-media review.",
+  "creditPlan": "Reuse the existing designed lettering plate; first produce one short bat/fog motion proof, validate identity, wake synchronization and all-frame reserve before paying for variants or longer masters. Lock picture before generating final sound."
+}

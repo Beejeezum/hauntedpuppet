@@ -23,6 +23,13 @@ function refreshLayers(){
   const visibility=document.createElement('button');visibility.textContent=layer.visible?'Hide':'Show';visibility.setAttribute('aria-label',(layer.visible?'Hide ':'Show ')+title.textContent);visibility.onclick=()=>{compositor.update(layer.id,{visible:!layer.visible});activity++;refreshLayers();};
   const label=document.createElement('label');label.textContent='Opacity';const range=document.createElement('input');range.type='range';range.min=0;range.max=100;range.value=layer.opacity*100;range.setAttribute('aria-label',title.textContent+' opacity');range.oninput=()=>{compositor.update(layer.id,{opacity:Number(range.value)/100});activity++;};label.append(range);row.append(label);
   const blend=document.createElement('select');blend.setAttribute('aria-label',title.textContent+' blend');for(const [value,name]of [['source-over','Normal'],['screen','Screen · light on black'],['lighter','Add light'],['multiply','Multiply']]){const option=new Option(name,value);option.selected=value===layer.blend;blend.add(option);}blend.onchange=()=>{compositor.update(layer.id,{blend:blend.value});activity++;};row.append(blend);
+  if(layer.id!=='character'){
+   for(const [key,name,min,max,factor]of [['scale','Size',10,150,100],['x','Horizontal',-40,40,100],['y','Vertical',-40,40,100]]){
+    const placement=document.createElement('label'),slider=document.createElement('input'),value=document.createElement('output');placement.textContent=name+' ';slider.type='range';slider.min=min;slider.max=max;slider.step=1;slider.value=Math.round(layer[key]*factor);slider.setAttribute('aria-label',title.textContent+' '+name.toLowerCase());value.textContent=slider.value+'%';
+    slider.oninput=()=>{compositor.update(layer.id,{[key]:Number(slider.value)/factor});value.textContent=slider.value+'%';activity++;};placement.append(value,slider);row.append(placement);
+   }
+   const reset=document.createElement('button');reset.textContent='Center & fit';reset.onclick=()=>{compositor.update(layer.id,{scale:1,x:0,y:0});activity++;refreshLayers();};row.append(reset);
+  }
   const actions=document.createElement('div');actions.className='layer-actions';actions.append(visibility);
   for(const [text,to]of [['Back',index-1],['Front',index+1]]){const b=document.createElement('button');b.textContent=text;b.disabled=to<0||to>=layers.length;b.onclick=()=>{compositor.move(layer.id,to);activity++;refreshLayers();};actions.append(b);}
   if(layer.id!=='character'){const remove=document.createElement('button');remove.textContent='Remove';remove.onclick=()=>{release(layer.id);activity++;refreshLayers();};actions.append(remove);}

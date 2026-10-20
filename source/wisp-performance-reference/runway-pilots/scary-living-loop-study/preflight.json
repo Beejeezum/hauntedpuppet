@@ -1,0 +1,30 @@
+{
+  "source": "source/wisp-performance-reference/runway-pilots/scary-identity-study/wisp-scary-vapor-anchor-v34.png",
+  "sourceSha256": "75f39a292fb856a5021c0f88a3eefe9ca04768201344aa68ad2a71f7ff412f7f",
+  "anchor": "scary-living-anchor-v37.png",
+  "anchorSha256": "040ebfb245321294c55997a52cfa3f149daf2d961d5522c1576622ab9c6d2eeb",
+  "method": "Existing painting rendered at85percent centered fit on1280x720 black stage through StageCompositor; no repaint, pose edit or optical interpolation",
+  "margins": {
+    "4": [
+      0.37421875,
+      0.2263888888888889,
+      0.390625,
+      0.2263888888888889
+    ],
+    "8": [
+      0.37578125,
+      0.2263888888888889,
+      0.39140625,
+      0.22916666666666666
+    ],
+    "16": [
+      0.37734375,
+      0.22777777777777777,
+      0.39296875,
+      0.22916666666666666
+    ]
+  },
+  "status": "prepared; no generation submitted",
+  "hypothesis": "Softer v34 identity plus a closed articulated gesture with a newer consistency-focused model; separate from rejected v29 old art/model and v36 mini return bridge",
+  "submissionCap": 1
+}

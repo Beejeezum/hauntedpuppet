@@ -70,3 +70,12 @@ The old local wrapper resolved bundled Playwright1.62.1 while the repository and
 The rehearsal harness now has a150second failure watchdog, bounded2second diagnostic evaluation and5second browser teardown, closes its own fixture HTTP connections, and logs progress checkpoints/browser version. It still fails nonzero on a timeout; no hidden success or weakened media/pixel assertion. This is intended to expose a stuck driver/cleanup path instead of consuming the entire job window.
 
 Layer-placement support (size plus normalized x/y offsets) is added for the typography scene. Existing defaults are unchanged. Actual compositor tests validate placement, reject invalid values atomically, preserve Blackout and show the static fog lettering has at least20% RGB reserve at70% scale. Derived black-stage and staged-lettering frames are retained, original generated PNG unchanged. This does not establish animated clearance, and the typography remains outside the public cue manifest. No new Runway generation was submitted for it.
+
+
+## Layer placement and atmosphere choreography follow-up
+
+Imported visual layers now expose Size, Horizontal and Vertical sliders plus Center & fit. Character film placement stays fixed to preserve reviewed framing. These controls change the same composed canvas sent to the silent projector. The rehearsal adds actual pixel checks for moved/resized output and restored placement. This follow-up is separate from the already-running9412627 release candidate and is not yet deployed.
+
+The atmosphere-scenes.json production sheet specifies12second fog greeting and14second bat disruption stories, readable text holds, localized wakes, restrained nonverbal sound timings and complete empty-stage exits. It is not rendered footage. Existing typography stays source-only.
+
+One5second scary living-cycle proof is running as Runway task ac2837b7-d535-4844-a908-3eae1ed764e8. It uses softer v34 artwork staged at85percent, identical first/end target and a closed articulated gesture. Observed credit debit85. No automatic retry; all-frame bounds, material, continuing end motion and repeated seam review are required before integration.

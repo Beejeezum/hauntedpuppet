@@ -465,7 +465,8 @@
       "dialogue": false,
       "audioIntent": "airy letter formation with delicate ghostly shimmer; no voice",
       "manualOnly": false,
-      "media": null
+      "media": null,
+      "productionChoreography": "atmosphere-scenes.json#fog-lettering"
     },
     {
       "id": "bats-through-letters",
@@ -479,7 +480,8 @@
       "dialogue": false,
       "audioIntent": "restrained wing flutters, a wide airy pass and soft dissipating shimmer",
       "manualOnly": false,
-      "media": null
+      "media": null,
+      "productionChoreography": "atmosphere-scenes.json#bats-through-letters"
     }
   ],
   "reviewedJoins": [],
