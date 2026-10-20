@@ -1,0 +1,16 @@
+{
+  "taskId": "8d3a9ccc-d8e1-47ba-baa0-3572c91da7ea",
+  "status": "submitted; unreviewed",
+  "submissionCap": 1,
+  "model": "kling-o3-pro",
+  "durationSeconds": 10,
+  "generateAudio": false,
+  "requestedResolution": "720p",
+  "prompt": "A single continuous ten-second cinematic hand-painted ghost departure, locked camera on pure black. Begin as this exact menacing blue-eyed Wisp in the supplied pose, center and scale. During seconds0to3, its eyes glance over one shoulder, head leads a real three-quarter turn, shoulders and elbows follow with weighted soft overlap until we see its BACK. Both attached hands move naturally during the turn. The back is the same softly luminous translucent irregular vapor volume, with no face on the back, no spine, ribs, muscles, hard shell or solid curls. During seconds3to8, with its back toward the camera it travels along a curved path AWAY into real depth, becoming much smaller as its changing side and back silhouettes turn with the travel. It glances back briefly, then continues away; this must not be a rigid front-facing picture merely scaled smaller. Fog wisps originate from the moving core and lag behind its route, dispersing naturally rather than solid ribbon trails. Keep the whole head, two arms and coherent lower core attached and visible until the intentional final disappearance. During seconds8to9 the tiny distant spirit unravels softly into local vapor and fully vanishes; seconds9to10 are completely empty black matching the ending target. No camera motion, screen-wide smoke, new objects, text, sound or speech. Preserve painted ivory-blue fog softness and frightening identity. Every hand, emitted wisp and entire turning silhouette remains within central60percent frame width and height at all times; never clip the image edges. No fish tails, rubber tentacles, skeletal anatomy or smooth solid blue outlines.",
+  "startFrame": "../film-return-handoff-study/scary-end-staged.png",
+  "endFrame": "../../ambient-show/fog-lettering-study/empty-stage-v1.png",
+  "observedCreditsBefore": 20788,
+  "observedCreditsAfter": 20618,
+  "observedDebit": 170,
+  "scope": "Actual-film endpoint turn/back/curved depth departure to empty. Not a finished or approved public cue. Source scary film must use same85percent fit for join review."
+}

@@ -126,3 +126,12 @@ Assembled real friendly → forwardv39 → scary → returnv40 → fullfriendlyr
 Source review page http://127.0.0.1:8898/source/wisp-performance-reference/ambient-show/review.html now presents25.2917sec roundtrip plus5sec bat/SFX proof, both initially paused/muted with explicit controls. Local isolatedChromium test plays both to end,0reported dropped frames, no page errors or390px overflow. User said “yeah that works” after previous preview link; treat as preview/direction acknowledgement, not explicit acceptance of all four new joins or physical projection. No new morph cue/automatic-program/public promotion.
 
 Remote PR8 head765502fd0851450db85001fe23a6bfadfa49db0d includes explicit output disposal and20cycle-tested source helper, plus earlier desktop/mobile fixes. CI39465015030 confirmed pending with no jobs yet; previous39462963561 still had fullregression running. Poll these same handles; do not manually redeploy or repush for waiting alone. Newreturn assets/review-page updates are local follow-ups beyond765502f and should not cancel its run. Production stilldae1261.
+
+
+## Next safe checkpoint
+
+Release head765502fd0851450db85001fe23a6bfadfa49db0d is the only current deploy candidate, CI39465015030. Wait on that exact run; after every job succeeds, merge only that matched head through existing GitCD and verify hosted build/canvas behavior. Local1aa1cd7 and later review studies are not in this release. Do not substitute localHEAD at merge.
+
+Pending paid departure8d3a9ccc-d8e1-47ba-baa0-3572c91da7ea is one10second true turn/back/curved-depth exit from scary actualending to emptyblack. Observed170credits; no batch/retry. Fetch exact existing task, retain original, review every-frame bounds, back material/core/attached hands, actual start join and empty ending before any integration.
+
+The source review page now has complete25second roundtrip plusbat/SFX proof and is locally browser-tested. No additional user feedback is required merely to keep working; existing visual/join/listening questions remain pending, so do not silently mark these assets human-approved. The library, film-desk phone integration and physical acceptance remain incomplete.
