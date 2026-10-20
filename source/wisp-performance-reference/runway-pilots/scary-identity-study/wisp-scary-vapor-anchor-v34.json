@@ -1,0 +1,74 @@
+{
+  "file": "wisp-scary-vapor-anchor-v34.png",
+  "sha256": "75f39a292fb856a5021c0f88a3eefe9ca04768201344aa68ad2a71f7ff412f7f",
+  "bytes": 629974,
+  "size": [
+    1672,
+    941
+  ],
+  "method": "One built-in imagegen edit; original unchanged",
+  "references": [
+    "wisp-scary-wide-v2.png",
+    "../continuous-loop-study/wisp-fuller-loop-anchor-v1.png"
+  ],
+  "intent": "Soften scary shoulders/chest/hands while preserving recognizable frightening identity",
+  "review": [
+    "Crest, blue eyes, grin and connected lower fog core retained.",
+    "Chest/shoulder material softer, less ribbed than rejected v29 midpoint.",
+    "Finger tips remain bright claw-like hard shapes; does not fully solve hand material.",
+    "Still image only; no evidence of continuous motion, loop, morph, side/rear construction or human approval."
+  ],
+  "thresholds": {
+    "4": {
+      "marginOrder": [
+        "left",
+        "top",
+        "right",
+        "bottom"
+      ],
+      "margins": [
+        0.35167464114832536,
+        0.1785334750265675,
+        0.3714114832535885,
+        0.17747077577045697
+      ],
+      "reserve15Pass": true,
+      "reserve20Pass": false
+    },
+    "8": {
+      "marginOrder": [
+        "left",
+        "top",
+        "right",
+        "bottom"
+      ],
+      "margins": [
+        0.35287081339712917,
+        0.1785334750265675,
+        0.3714114832535885,
+        0.18172157279489903
+      ],
+      "reserve15Pass": true,
+      "reserve20Pass": false
+    },
+    "16": {
+      "marginOrder": [
+        "left",
+        "top",
+        "right",
+        "bottom"
+      ],
+      "margins": [
+        0.35526315789473684,
+        0.179596174282678,
+        0.37260765550239233,
+        0.18172157279489903
+      ],
+      "reserve15Pass": true,
+      "reserve20Pass": false
+    }
+  },
+  "humanApproved": false,
+  "liveReplacement": false,
+  "runwayGenerations": 0
+}

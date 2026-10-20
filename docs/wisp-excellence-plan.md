@@ -267,3 +267,6 @@ The earlier Runway web microphone pilot connected17seconds and was stopped withi
 
 ### Whole-film runtime handoff proof
 The source-only `wisp-whole-film-handoff.html` now switches the whole speaking candidate to approved v28 motion using two decoded video buffers. It preloads the idle, changes visible ownership only after a decoded frame, and never crossfades two ghosts or adds floating body parts. A fresh muted Chromium run measured a 2ms ended-to-idle switch and sustained the following loop; pending Blackout and rapid latest-command ownership passed with no capture/provider requests. This is prepared speech playback, not arbitrary live speech, human approval of the visual join, a morph fix or physical projection. Production remains unchanged.
+
+
+Scary material v34 is a partial still-image correction: it keeps the established crest/blue eyes/grin and connected fog body while softening the chest and shoulders. Hard claw tips remain unresolved. RGB4/8/16 smoke clearance passes15% but not the requested20% generation target. It is retained as a candidate, not an approved replacement or evidence that the frozen scary idle is fixed. Review the hands before purchasing another motion pilot.
