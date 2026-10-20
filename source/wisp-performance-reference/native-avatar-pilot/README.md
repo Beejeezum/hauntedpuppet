@@ -29,3 +29,10 @@ Primary references:
 Private configuration names are RUNWAYML_API_SECRET, LIVEKIT_URL, LIVEKIT_API_KEY, LIVEKIT_API_SECRET, WISP_RUNWAY_AVATAR_ID and WISP_PILOT_ROOM_NAME (must start with wisp-pilot-). Values belong only in private server configuration. Use the isolated Python 3.12 environment, not the production app runtime.
 
 Next acceptance: privately establish approved access and verify the actual SDK single-session lifecycle. A real run can incur provider and infrastructure charges even if it fails. Review its full-body motion against approved v28 and record actual startup, cleanup, visual and cost evidence before considering app integration.
+
+
+## Private setup, when projects are ready
+
+The user can run `python3 source/wisp-performance-reference/native-avatar-pilot/private_setup.py` in their own terminal. All five inputs are hidden and saved together in the separate service `com.beejeezum.hauntedpuppet.native-avatar-pilot`, using the existing native Keychain wrapper. This never reads or overwrites the OpenAI entry. No credential file or shell argument is written. The helper does not start a provider session. It requires macOS and can prompt for Keychain access; the agent has not run it or accessed any actual credential.
+
+After private setup, the isolated Python3.12 interpreter can run `pilot.py --run --keychain`. That explicitly loads the separate entry, creates a fresh disposable room name and launches the bounded pilot. Default offline preflight never reads Keychain, and `--keychain` alone is rejected. Alternatively keep using explicit server environment configuration. Never paste values into chat or commit them. Five additional tests use only a fake store and synthetic values; they cover store isolation, fresh room names, invalid/mixed-provider rejection and error redaction. Actual Keychain persistence and provider access remain untested.

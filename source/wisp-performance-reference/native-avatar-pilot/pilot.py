@@ -124,7 +124,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--run', action='store_true', help='Start one supervised private pilot after configuration')
     parser.add_argument('--sdk-child', action='store_true', help=argparse.SUPPRESS)
+    parser.add_argument('--keychain', action='store_true', help='Use the separately saved private pilot configuration; requires --run')
     args = parser.parse_args()
+    if args.keychain and not args.run:
+        parser.error('--keychain requires an explicit --run')
     audio = inspect_driver()
     if args.sdk_child:
         for name in ('WISP_PILOT_CLAIM_FILE', 'WISP_PILOT_DONE_FILE'):
@@ -140,6 +143,9 @@ def main():
                           'inputs': {'microphone': False, 'camera': False, 'text': False},
                           'workerStarted': False, 'sessionCreated': False}))
         return
+    if args.keychain:
+        from private_setup import load_private
+        os.environ.update(load_private())
     missing = [name for name in (*REQUIRED, 'WISP_PILOT_ROOM_NAME') if not os.environ.get(name)]
     if missing:
         parser.error('Private configuration missing: ' + ', '.join(missing))
