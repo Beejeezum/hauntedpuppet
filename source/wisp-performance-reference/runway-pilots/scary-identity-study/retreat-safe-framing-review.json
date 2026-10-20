@@ -50,7 +50,7 @@
   "derivation": {
     "tool": "FFmpeg7.1 libx264",
     "filter": "scale=1340:756:flags=lanczos,pad=1916:1080:288:162:black",
-    "encoding": "-an -c:v libx264 -crf18 -pix_fmt yuv420p",
+    "encoding": "-an -c:v libx264 -crf 18 -pix_fmt yuv420p",
     "changes": "Constant display scale and black padding only; no interpolation, temporal edits or character retouching"
   },
   "limitations": [
