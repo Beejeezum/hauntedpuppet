@@ -1,7 +1,7 @@
 {
-  "status": "Generating34percent; same single job",
+  "status": "Completed candidate; not approved as live idle",
   "anchor": "wisp-fuller-loop-anchor-v1.png",
-  "sha256": "681333d01e4ead7cd3be6845963844d0ad5ecfe80cef23a48c5f19a017ccec81",
+  "sha256": "52d54d03c0f0406a9724c7c04b9e2fa0557a675486edfaa40fd0ca2e24a682bd",
   "source": "wisp-continuous-idle-v15.mp4 frame0",
   "method": "Unmodified decoded painting, stable85percent fit to create fog buffer; no illustration repaint or pose manipulation.",
   "hypothesis": "Identical endpoint references constrain loop pose while authored overlapping arm/core/crest motion continues between anchors; need actual velocity/seam review.",
@@ -35,5 +35,36 @@
     "last12MedianRGBStep": 10.22920860123746,
     "middleMedianRGBStep": 10.916392516736131,
     "scope": "Pixel diagnostics only; retain actual seam footage review."
+  },
+  "file": "wisp-continuous-loop-v28.mp4",
+  "frames": 122,
+  "fps": 24,
+  "decodedReserveFailuresRGB4_8_16": 0,
+  "loopDiagnostics": {
+    "seamToAdjacentRatio": 0.1369937860149462,
+    "last12MedianRGBStep": 3.297361201795053,
+    "middleMedianRGBStep": 9.183999255642048,
+    "endpointStepDifferenceRGB": 4.049432583189075,
+    "scope": "Unmodified letterboxed samples and pixel differences, not optical-flow/joint velocity, automatic loop approval or human smoothness acceptance."
+  },
+  "visualReview": [
+    "Whole connected body retained in9sampledframes with arm/head/core poses and eye/lid changes.",
+    "End pose visually matches opening; ending motion slows, requiring normal-speed loop judgement.",
+    "Candidate is not arbitrary live speech, full turnaround or physical projection acceptance."
+  ],
+  "repeatedReview": {
+    "file": "wisp-continuous-loop-v28-three-cycles.mp4",
+    "cycles": 3,
+    "method": "Stream-copy original video three times; no interpolation, crossfade, reversal, retiming or repair.",
+    "sha256": "e29fbc1cc842f1308e08a0caeab10b2aec1909d334048815f0f4e659d85032b1",
+    "browser": {
+      "ended": true,
+      "muted": true,
+      "reportedDroppedFrames": 0,
+      "durationSeconds": 15.25,
+      "browserFrameCounter": 372,
+      "decodedSourceFramesPerCycle": 122,
+      "scope": "Muted decode/playback only; browser counter is not source frame count or subjective seamlessness."
+    }
   }
 }
