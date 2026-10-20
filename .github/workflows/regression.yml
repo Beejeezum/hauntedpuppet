@@ -1,7 +1,9 @@
 name: Character and controller regressions
 on:
   push:
+    branches: [main]
   pull_request:
+  workflow_dispatch:
 concurrency:
   group: regressions-${{ github.ref }}
   cancel-in-progress: true
