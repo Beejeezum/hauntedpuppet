@@ -21,5 +21,7 @@ export function mountFilmOutput(stage, inspect) {
   output.WispFilmOutput={inspect:()=>({silent:true,stopped,width:canvas.width,height:canvas.height,owner:!window.closed&&!disposed}),blackout:clear};
   paint();
  };
- return {blackout(){for(const output of outputs)if(!output.closed)output.WispFilmOutput?.blackout();},dispose(){disposed=true;button.disabled=true;for(const output of outputs)if(!output.closed)output.WispFilmOutput?.blackout();outputs.clear();}};
+ function dispose(){disposed=true;button.disabled=true;for(const output of outputs)if(!output.closed)output.WispFilmOutput?.blackout();outputs.clear();window.removeEventListener('pagehide',dispose);}
+ window.addEventListener('pagehide',dispose,{once:true});
+ return {blackout(){for(const output of outputs)if(!output.closed)output.WispFilmOutput?.blackout();},dispose};
 }
