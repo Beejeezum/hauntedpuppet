@@ -68,5 +68,13 @@
     "audioHash": "SHA256=424ae76a78a88fb4b28cb63d0d9c846bb4ad06b83c4563f1b96019f487e212e6",
     "all139FramesReservePass": true,
     "limits": "Global proportion correction does not restore animation detail or prove all facial poses correct."
+  },
+  "reproduciblePreparation": {
+    "script": "scripts/prepare-wisp-avatar-review.py",
+    "reproducedSha256": "765cb01ec5a452e5cab32ac4be931751ff8919ff5a46c686cc99b53f594518e0",
+    "matchesExistingReviewExactly": true,
+    "decodedFrames": 139,
+    "reserveFailuresRGB4_8_16": 0,
+    "audioPacketsUnchanged": true
   }
 }
