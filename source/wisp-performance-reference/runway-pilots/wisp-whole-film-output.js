@@ -3,7 +3,7 @@ import {mountFilmOutput} from './wisp-film-output.js';
 export function mountWholeFilmOutput(host, player){
  const canvas=document.createElement('canvas');canvas.width=1280;canvas.height=720;canvas.hidden=true;host.after(canvas);
  const context=canvas.getContext('2d');let disposed=false,frame=0,draws=0,lastVideo=null,lastTime=-1;
- const output=mountFilmOutput(canvas,()=>({black:!player.active,disposed:disposed||player.disposed,metrics:{draws}}));
+ const output=mountFilmOutput(canvas,()=>({black:!player.active,paused:player.active?.paused??true,disposed:disposed||player.disposed,metrics:{draws}}));
  function paint(){if(disposed)return;const video=player.active;if(!video){context.clearRect(0,0,canvas.width,canvas.height);lastVideo=null;lastTime=-1;}
   else if(video.readyState>=2&&(video!==lastVideo||video.currentTime!==lastTime)){
    context.fillStyle='#000';context.fillRect(0,0,canvas.width,canvas.height);
