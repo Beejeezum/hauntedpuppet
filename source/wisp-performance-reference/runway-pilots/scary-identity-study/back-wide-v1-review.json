@@ -43,7 +43,7 @@
   "frontEndpoint": "wisp-scary-wide-v2.png",
   "provenance": "Built-in imagegen guided by corrected v17 back pose and endorsed scary front; original output unchanged",
   "controlledTurnPilot": {
-    "status": "Queued; not reviewed footage",
+    "status": "Completed; motion candidate awaiting human review, not a loop or production replacement",
     "sessionId": "aeb90327-f7a9-4b66-a7a4-dcbb99938278",
     "assetParentId": "a24641da-5ceb-4e7f-9e4f-71e1f85ba5ed",
     "model": "Kling 2.5 Turbo Pro",
@@ -61,6 +61,29 @@
       "Normal-speed review before any source show or production promotion"
     ],
     "observedCreditsAfter": 10739,
-    "observedDebit": 60
+    "observedDebit": 60,
+    "rawFilm": "wisp-scary-guided-turn-v18.mp4",
+    "rawSha256": "310485042f5e00bd1cff9384017d73fadb915569ed54de8e9aee37859951dd26",
+    "safeFramingFilm": "wisp-scary-guided-turn-v18-safe-framing.mp4",
+    "safeSha256": "61aa3a56b325d12a8eb53b3dcf1683bfdc8dda89ad759e83e8ee071c763ffe07",
+    "review": {
+      "decodedFrames": 122,
+      "fps": 24,
+      "rawRGB8ReserveFailures": 65,
+      "safeRGB4_8_16ReserveFailures": 0,
+      "emptyFrames": 0,
+      "visualFindings": [
+        "Side and back presentation with articulated arms/hands",
+        "Connected irregular fog rather than the v17 smooth ribbon",
+        "Ridged skeletal back/shoulders remain an identity concern",
+        "Visible continuity must still be judged at speed by a human"
+      ],
+      "humanFeedback": "Requested; no answer yet"
+    },
+    "derivation": {
+      "filter": "scale=1628:918:flags=lanczos,pad=1916:1080:144:81:black",
+      "encoding": "FFmpeg7.1 libx264 -an -crf 18 -pix_fmt yuv420p",
+      "changes": "Fixed display fitting and black padding only; no interpolation or temporal edits"
+    }
   }
 }
