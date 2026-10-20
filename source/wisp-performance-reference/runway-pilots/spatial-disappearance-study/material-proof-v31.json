@@ -1,0 +1,28 @@
+{
+  "status": "Completed still; invalid rear-keyframe binding, no video edit",
+  "browserTabId": "1941618730",
+  "source": "wisp-friendly-depth-departure-v30.mp4",
+  "sourceSha256": "6195bc967a84b5fdf4dfd86ee522c8e158798f4e1eef2b22196ca684f01c56aa",
+  "selectedVideoTimeSeconds": 1.52,
+  "materialReference": "Existing approved-friendly-fog.png asset, Image1",
+  "model": "GPTImage2 EditStudio still preview",
+  "quotedCredits": 5,
+  "creditsBefore": 9960,
+  "submissionCount": 1,
+  "videoEditSubmitted": false,
+  "hypothesis": "Use the retained dimensional motion and replace opaque surfaces/ribbon wake through a selected still material restyle, rather than regenerate motion.",
+  "humanApproval": false,
+  "liveReplacement": false,
+  "initialInactiveButtonAttempt": "No request/charge; Unlimited mode supported only Upscale and soft-disabled Generate frame",
+  "creditMode": "Original Unlimited restored and verified; save preference was never checked",
+  "sessionId": "a6e534ef-735d-4442-a1c4-3fe9e214baed",
+  "creditsAfter": 9955,
+  "observedDebit": 5,
+  "review": [
+    "Playback DOM at1.52seconds was rear/side, but completed Edit preview BEFORE image was visibly the front-facing opening painting.",
+    "Seeking playback did not establish binding for the still used by Edit Studio. Do not claim a rear material correction or blame the model for a wrong input pose.",
+    "No Generate Video submitted; no second image generation.",
+    "Native edited-image download did not return a verified local path; original comparison blob unsupported. A subsequent image download observation timed out/reset control, not the completed image generation. No download or screenshot restriction workaround attempted."
+  ],
+  "nextInput": "wisp-rear-material-driver-v1.mp4: starts at sourceframe30 to make the desired rear/side frame the actual first frame."
+}

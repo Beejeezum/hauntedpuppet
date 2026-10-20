@@ -1,0 +1,31 @@
+{
+  "status": "Terminal failure: could not detect face in inputs despite accepted initial preflight",
+  "sessionId": "f55de024-4317-4dee-82d9-9a43162057f0",
+  "parentId": "042f37b6-e042-433e-89f9-c14ed6051d99",
+  "outputPosition": "Second result in existing session; first result is historical failed ghost-driver attempt",
+  "driver": "human-faced-driver-v1.mp4",
+  "driverSha256": "d7e3b5ef2888783300ce0b160a91b820fc15e6525109dd46ced2d9202203f089",
+  "character": "wisp-fuller-body-3x4-v2.mp4",
+  "characterSha256": "3aa3f9b9bbd93a0c25b1f473f35f50e29ee54af41aa993d62dc673fd1352288a",
+  "settings": {
+    "expressiveness": 3,
+    "outputRatio": "3:4",
+    "gestureTransfer": false,
+    "motion": "Motion from your character video will be used",
+    "displayDuration": "4.6s"
+  },
+  "preflight": "Both new inputs completed initial Detecting face without new input error; visually verified correct human driver above fullbody Wisp, not prior ghost driver.",
+  "quotedCredits": 25,
+  "creditsBefore": 9948,
+  "creditsAfter": 9923,
+  "observedDebit": 25,
+  "submissionCount": 1,
+  "lastObservedState": "Second output terminal face error,9950 total before driver ->9948 after driver; transfer25 refunded",
+  "acceptance": "Retain original, inspect whole-body motion, face/mouth registration, hands/fog, audio length, crop and all-frame15percent buffer. Neither initial face detection nor completed generation proves quality. No repeated failed-pair retry.",
+  "voiceScope": "Synthetic Katie driver, not approved Wisp casting or genuine guest conversation",
+  "liveReplacement": false,
+  "terminalError": "We couldn't detect a face in your inputs.",
+  "creditsAfterFailure": 9948,
+  "netObservedCredits": 0,
+  "nextAction": "Do not retry this pair or keep enlarging/reuploading the same target to chase preflight. Both synthetic ghost and separate human-faced drivers have failed final detection on this Wisp target. Use a materially different tool path or independently demonstrate compatible Wisp target before another transfer charge."
+}
