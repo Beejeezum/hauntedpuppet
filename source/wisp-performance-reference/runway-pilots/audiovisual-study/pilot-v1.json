@@ -1,5 +1,5 @@
 {
-  "status": "Queued: single5second720p native audiovisual benchmark",
+  "status": "Terminal provider system error; no film produced",
   "video": "wisp-approved-motion-720p-v1.mp4",
   "videoSha256": "e759b4183f3fd4e468af30bf00e399704f162a121d949d15064068198ae4c1ca",
   "motionSource": "../continuous-loop-study/wisp-continuous-loop-v28.mp4",
@@ -23,7 +23,7 @@
     "audioEnabled": true,
     "pickerSupports": "image, video or audio"
   },
-  "nextGate": "Poll same saved session; no duplicate. Retain original and inspect fullbodymotion/identity/speech/fog/core/crop/allframebounds. No rollout or additional variants until result reviewed.",
+  "nextGate": "Do not infer art or model incompatibility from provider technical error. Any further attempt must be separately bounded after checking service/input state; no automatic duplicate or variants.",
   "generationSubmitted": true,
   "newCredits": 150,
   "liveReplacement": false,
@@ -39,5 +39,7 @@
   "creditsAfter": 9798,
   "observedDebit": 150,
   "submissionCount": 1,
-  "lastObservedState": "In queue; will start in a few minutes"
+  "lastObservedState": "System Error: Oops, this one's on us. Technical error; inputs did not violate policies.",
+  "creditsAfterFailure": 9948,
+  "netObservedCredits": 0
 }
