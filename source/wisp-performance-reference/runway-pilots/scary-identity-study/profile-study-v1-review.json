@@ -1,0 +1,49 @@
+{
+  "file": "wisp-scary-profile-study-v1.png",
+  "sha256": "291ae287e9164dfedbc28d6b01b4728d2bd525355bb1ae99c73d8fd2087edfed",
+  "status": "Rejected as strict-profile production reference; retained study only",
+  "references": [
+    "wisp-scary-wide-v2.png",
+    "source/wisp-art-reference/approved-friendly-fog.png"
+  ],
+  "requested": "Strict left profile, rounded coherent vapor arms/core, all effects central60percent each dimension",
+  "observed": [
+    "One blue eye and left-facing head, but torso/hands remain three-quarter; not strict turnaround.",
+    "Connected coherent lower core and useful dimensional fog texture.",
+    "Bright solid upper-arm/forearm tubes remain; material goal unmet.",
+    "Crest and lower smoke reserve do not meet requested20percent; inspect measured15percent gate."
+  ],
+  "bounds": {
+    "4": {
+      "marginsLTRB": [
+        0.3241626794258373,
+        0.3277511961722488,
+        0.1030818278427205,
+        0.13283740701381508
+      ],
+      "reservePass": false
+    },
+    "8": {
+      "marginsLTRB": [
+        0.3253588516746411,
+        0.3277511961722488,
+        0.1030818278427205,
+        0.13283740701381508
+      ],
+      "reservePass": false
+    },
+    "16": {
+      "marginsLTRB": [
+        0.32715311004784686,
+        0.3277511961722488,
+        0.10626992561105207,
+        0.13283740701381508
+      ],
+      "reservePass": false
+    }
+  },
+  "animated": false,
+  "approved": false,
+  "liveReplacement": false,
+  "newRunwayCredits": 0
+}
