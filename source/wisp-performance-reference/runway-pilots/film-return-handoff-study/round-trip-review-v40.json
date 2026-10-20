@@ -1,0 +1,74 @@
+{
+  "status": "review only; not approved",
+  "file": "wisp-round-trip-v40.mp4",
+  "sha256": "40f4e00b9b26da6ea69206e2025bba0ae5473c84eabe7669f606a32f97bb68cf",
+  "fps": 24,
+  "size": [
+    1280,
+    720
+  ],
+  "segments": [
+    {
+      "label": "friendly",
+      "source": "source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4",
+      "sha256": "52d54d03c0f0406a9724c7c04b9e2fa0557a675486edfaa40fd0ca2e24a682bd",
+      "frames": 122,
+      "scale": 0.85
+    },
+    {
+      "label": "morph",
+      "source": "source/wisp-performance-reference/runway-pilots/film-morph-handoff-study/wisp-forward-film-morph-v39.mp4",
+      "sha256": "ca6209524bb5cec338fe71f807700dab4a7925cd75341e351dc8a317a17599f8",
+      "frames": 121,
+      "scale": 1
+    },
+    {
+      "label": "scary",
+      "source": "source/wisp-performance-reference/runway-pilots/motion-transfer-study/wisp-scary-motion-transfer-v35.mp4",
+      "sha256": "21e8efec67ec7e024fc954cc16af458cad8f8427553a998341ff9d37286ca35a",
+      "frames": 121,
+      "scale": 0.85
+    },
+    {
+      "label": "return-morph",
+      "source": "source/wisp-performance-reference/runway-pilots/film-return-handoff-study/wisp-return-film-morph-v40.mp4",
+      "sha256": "d958fc38d9defd583feb871b673c73600f329fec7d26bc93e84b96bee0edb084",
+      "frames": 121,
+      "scale": 1
+    },
+    {
+      "label": "friendly-repeat",
+      "source": "source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4",
+      "sha256": "52d54d03c0f0406a9724c7c04b9e2fa0557a675486edfaa40fd0ca2e24a682bd",
+      "frames": 122,
+      "scale": 0.85
+    }
+  ],
+  "joins": [
+    {
+      "from": "friendly",
+      "to": "morph",
+      "visibleRGBDifference": 3.142433121864717,
+      "silhouetteIoU": 0.9888196637364514
+    },
+    {
+      "from": "morph",
+      "to": "scary",
+      "visibleRGBDifference": 3.9118257707782007,
+      "silhouetteIoU": 0.9773768798812367
+    },
+    {
+      "from": "scary",
+      "to": "return-morph",
+      "visibleRGBDifference": 3.4436798910511413,
+      "silhouetteIoU": 0.9893380640074544
+    },
+    {
+      "from": "return-morph",
+      "to": "friendly-repeat",
+      "visibleRGBDifference": 2.615781501467386,
+      "silhouetteIoU": 0.9907980687304743
+    }
+  ],
+  "scope": "Original frame order and count; constant whole-frame fit, one export encode. Integer bilinear staging may differ slightly from browser subpixel rasterization. Pixel/silhouette diagnostics do not prove velocity continuity, anatomy, human seam acceptance or physical projection. All joins require normal-speed playback review."
+}

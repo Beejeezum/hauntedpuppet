@@ -1,0 +1,37 @@
+{
+  "taskId": "829a3c21-2ad4-432e-b5ef-57837fa3f5b1",
+  "status": "rejected; do not integrate or retry automatically",
+  "submissionCount": 1,
+  "maximumFurtherRetries": 0,
+  "settings": {
+    "model": "seedance-2-mini",
+    "duration": 4,
+    "resolution": "720p",
+    "ratio": "16:9",
+    "generateAudio": false,
+    "promptText": "A single continuous four-second return motion for this exact painted blue-eyed scary ghost. Begin in the provided starting pose and finish at the provided ending pose, while performing a small complete living acting cycle in between: shoulders roll, elbows bend and release, wrists and separate fingers unfurl, the head dips and glances slightly aside, and the connected vapor core counterbalances before settling back into the ending pose. Keep motion fluid and articulated throughout, including the final second; never freeze, hold a still image, reverse the footage, or merely translate a rigid body. Preserve the identical frightening facial ancestry, painted luminous fog material, soft wispy outline, coherent lower core and exact buffered scale and framing. The fog evolves from the body and trails the gesture. Locked camera on completely black background. No zoom, no approach, no separate smoke overlay, no new limbs, text, cuts, voice or sound. This is one full-character motion bridge, not a dissolve between images.",
+    "rationale": "One bounded four-second bridge experiment to close the existing Wisp scary motion into a longer living loop; review both joins and all fog bounds before app integration."
+  },
+  "beforeCredits": 21106,
+  "afterCredits": 21046,
+  "observedDebit": 60,
+  "scope": "Exact decoded Wisp endpoints uploaded; generated full-body bridge is unreviewed. No production integration.",
+  "file": "wisp-scary-return-bridge-v36.mp4",
+  "bytes": 2264607,
+  "sha256": "70d9c9a9a79f4bafddb2fdcd9c5ad9bcf109c53de2ba7ab68f36579bdf2831e8",
+  "verdict": {
+    "material": "Mid-body becomes solid smooth ribbons and fish-like curling lower shapes; loses painted vapor quality.",
+    "framing": "RGB4 reserve91/97 failures; RGB8 34/97; RGB16 31/97. Minimum high-signal bottom margin12.78percent versus required15.",
+    "joinOutOfV35": {
+      "visibleRGBDifference": 3.7965203811791706,
+      "silhouetteIoU": 0.9877052893139552
+    },
+    "joinBackIntoV35": {
+      "visibleRGBDifference": 49.50517673437088,
+      "silhouetteIoU": 0.8038556229666755
+    },
+    "motion": "Sampled hands/elbows articulate and ending moves; this does not compensate for material/endpoint failures.",
+    "humanApproval": false,
+    "liveReplacement": false
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "mode": "built-in imagegen; no CLI/API fallback",
+  "status": "unapproved rear design study; material refinement needed",
+  "file": "wisp-rear-vapor-guide-v1.png",
+  "sha256": "cbe2714ad91b6e42d8dd4fe092ffde0d72f658c7094a741b86da64b22bf348c0",
+  "size": [
+    1672,
+    941
+  ],
+  "alphaMin": 0,
+  "alphaMax": 254,
+  "alphaAbove1MarginsLTRB": [
+    0.3145933014354067,
+    0.06376195536663125,
+    0.3092105263157895,
+    0.06482465462274177
+  ],
+  "rawReserve20Pass": false,
+  "visualReview": "No rear face and attached hands/core, but bright blue fringe and overly crisp vapor volume differ from reference softness. Do not use for paid video generation yet. No human approval or runtime promotion."
+}

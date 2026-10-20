@@ -1,0 +1,15 @@
+{
+  "taskId": "2ce2dbf3-a8d5-4124-87f3-08dcd15f2837",
+  "status": "completed; human listening unreviewed",
+  "durationSeconds": 2.48,
+  "quotedCredits": 3,
+  "submissionCount": 1,
+  "maximumFurtherRetries": 0,
+  "purpose": "Nonverbal soft apparition movement for a planned transition; no soundtrack baked into films",
+  "prompt": "Soft spectral fog gathers, sweeps gently across a small space, then dissolves into a delicate glassy shimmer. Warm airy breath-like wind texture, restrained magical detail, smooth quiet onset and fading tail. No human voice, whispers, words, laughter, music, jump-scare hit, sharp click or thunder. One gentle apparition movement for a friendly Halloween ghost.",
+  "liveIntegration": false,
+  "note": "Separate from active exact-head PR8 release; human listening and timed cue cancellation/owner-only playback remain required.",
+  "file": "wisp-soft-apparition-v1.mp3",
+  "bytes": 40585,
+  "sha256": "12ee31d2a08bb8d581de4bdddd04e037dc2b37d902e1865c35f9d55f7cbe1206"
+}

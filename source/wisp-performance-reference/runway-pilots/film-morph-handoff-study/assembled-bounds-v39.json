@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 2,
+  "marginOrder": [
+    "left",
+    "top",
+    "right",
+    "bottom"
+  ],
+  "file": "wisp-film-morph-handoff-v39.mp4",
+  "sha256": "f5c39c64a0c826d367f2a3ddf2e20f7762dc1fab8e5f7676e743f7fd955507ba",
+  "frameCount": 364,
+  "fps": 24.0,
+  "size": [
+    1280,
+    720
+  ],
+  "reserve": 0.2,
+  "thresholdSummaries": {
+    "4": {
+      "emptyFrames": 0,
+      "reserveFailures": 0,
+      "minimumMarginsLTRB": [
+        0.365625,
+        0.225,
+        0.3515625,
+        0.20277777777777778
+      ]
+    },
+    "8": {
+      "emptyFrames": 0,
+      "reserveFailures": 0,
+      "minimumMarginsLTRB": [
+        0.365625,
+        0.225,
+        0.3515625,
+        0.20555555555555555
+      ]
+    },
+    "16": {
+      "emptyFrames": 0,
+      "reserveFailures": 0,
+      "minimumMarginsLTRB": [
+        0.3671875,
+        0.225,
+        0.35234375,
+        0.20833333333333334
+      ]
+    }
+  },
+  "adjacentVisibleRGBMedian": 6.143379366368806,
+  "endpointVisibleRGBDifference": 78.70138272231384,
+  "scope": "Decoded RGB bounds and thumbnails only. Empty frames are diagnostics: inspect intentional vanishing separately. Does not prove anatomy, velocity continuity, camera lock, depth, voice, human approval or physical projection."
+}

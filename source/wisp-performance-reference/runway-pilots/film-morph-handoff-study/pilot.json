@@ -1,0 +1,35 @@
+{
+  "taskId": "d5629751-d1ab-4b2b-a2a7-b3086dcfe36e",
+  "status": "completed review candidate; human join acceptance pending",
+  "submissionCap": 1,
+  "model": "kling-o3-pro",
+  "duration": 5,
+  "generateAudio": false,
+  "requestedResolution": "720p",
+  "prompt": "One continuous five-second painted ghost transformation, locked camera, pure black stage. Begin as the exact supplied friendly Wisp in the exact initial pose and position. This is the SAME being becoming frightening, not two different ghosts or a dissolve. From the opening moment the shoulders and elbows continue soft living movement; the rounded hands lengthen gradually into the supplied clawed hands, wrists flex, eye sockets deepen while the same blue eyes narrow, the smile opens and develops pointed teeth. The coherent fog torso grows and leans into the supplied menacing final pose, with connected head, two attached arms and connected lower vapor core at every instant. Continuous articulated acting and smoky overlap carry the change in one coordinated phrase, with tiny fog turbulence continuing at the ending. Reach the exact supplied scary ending without a pop, double exposure, black interruption, cut or ghost overlay. Preserve soft luminous ivory-blue painted vapor with irregular translucent edges throughout; no muscular ribs, hard blue outline, solid ribbons, fish curls or rubber tentacles. Fixed framing and same center; all smoke and hands stay within the central60percent width and60percent height. No zoom, extra objects, text, speech, music or sound. This film joins a friendly living film to a scary living film; do not add a separate beginning or ending pose hold.",
+  "observedCreditsBefore": 20958,
+  "observedCreditsAfter": 20873,
+  "observedDebit": 85,
+  "scope": "Forward film-to-film handoff only; exact joins must be reviewed on a common85percent composed stage. Not a claimed seamless morph or reverse-direction asset.",
+  "file": "wisp-forward-film-morph-v39.mp4",
+  "sha256": "ca6209524bb5cec338fe71f807700dab4a7925cd75341e351dc8a317a17599f8",
+  "actualOutput": {
+    "size": [
+      1920,
+      1080
+    ],
+    "frames": 121,
+    "fps": 24,
+    "audio": false
+  },
+  "purpose": "Forward transformation, not a loop; endpoint-to-endpoint loop ratio is inapplicable",
+  "review": {
+    "reserve": "All121rawframes pass20percentRGB4/8/16; assembled364frames also pass20percent, min20.28percent",
+    "anatomy": "Cropped temporal samples show one coherent core; brows, eyes, grin and attached hands reshape together. No sampled double body or hard ribbed back. Full-speed human review pending.",
+    "joins": "Fixed common85percent stage; friendly-to-morphIoU0.9888/RGBdiff3.142; morph-to-scaryIoU0.9774/RGBdiff3.912. No alignment/crossfade/trim/retime. Metrics alone do not approve the joins.",
+    "browser": "Assembled15.1667sec played to end muted in isolatedChromium,364frames,0reported dropped",
+    "publicIntegration": false,
+    "humanApproval": false,
+    "reverseAsset": false
+  }
+}

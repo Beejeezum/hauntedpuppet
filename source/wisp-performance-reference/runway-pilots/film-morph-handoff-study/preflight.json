@@ -1,0 +1,69 @@
+{
+  "status": "preflight complete; current submission and review state are in pilot.json",
+  "scale": 0.85,
+  "canvas": [
+    1280,
+    720
+  ],
+  "method": "Exact decoded film endpoints staged at identical85percent fit; source films must use this same fit in the join review. No pose repaint or registration.",
+  "sources": [
+    {
+      "label": "friendly-end",
+      "source": "source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4",
+      "sourceSha256": "52d54d03c0f0406a9724c7c04b9e2fa0557a675486edfaa40fd0ca2e24a682bd",
+      "frame": 121,
+      "decoded": "friendly-end-decoded.png",
+      "staged": "friendly-end-staged.png",
+      "stagedSha256": "e9463271317633c97ecc75119ffafbb578965716ba8e702082f46ecb84945305",
+      "margins": {
+        "4": [
+          0.41640625,
+          0.2902777777777778,
+          0.42890625,
+          0.2611111111111111
+        ],
+        "8": [
+          0.4171875,
+          0.2916666666666667,
+          0.42890625,
+          0.2625
+        ],
+        "16": [
+          0.41796875,
+          0.2916666666666667,
+          0.4296875,
+          0.2625
+        ]
+      }
+    },
+    {
+      "label": "scary-start",
+      "source": "source/wisp-performance-reference/runway-pilots/motion-transfer-study/wisp-scary-motion-transfer-v35.mp4",
+      "sourceSha256": "21e8efec67ec7e024fc954cc16af458cad8f8427553a998341ff9d37286ca35a",
+      "frame": 0,
+      "decoded": "scary-start-decoded.png",
+      "staged": "scary-start-staged.png",
+      "stagedSha256": "37e7b42d062ad926ba663990c42814c0c6f22cf3d148d792b11a13911ed562d1",
+      "margins": {
+        "4": [
+          0.375,
+          0.22777777777777777,
+          0.39140625,
+          0.22777777777777777
+        ],
+        "8": [
+          0.3765625,
+          0.22777777777777777,
+          0.3921875,
+          0.22916666666666666
+        ],
+        "16": [
+          0.3765625,
+          0.22916666666666666,
+          0.39375,
+          0.23055555555555557
+        ]
+      }
+    }
+  ]
+}

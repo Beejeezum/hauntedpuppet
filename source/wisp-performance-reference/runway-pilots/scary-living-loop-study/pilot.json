@@ -1,0 +1,35 @@
+{
+  "taskId": "ac2837b7-d535-4844-a908-3eae1ed764e8",
+  "status": "rejected as continuous living loop; retain as acting reference only",
+  "model": "kling-o3-pro",
+  "durationSeconds": 5,
+  "resolution": "720p",
+  "generateAudio": false,
+  "prompt": "One continuous five-second hand-painted cinematic ghost performance, locked camera and pure black background. Preserve this exact single blue-eyed wicked Wisp identity, fluffy luminous translucent vapor body and connected lower core. A complete closed acting gesture: shoulders rotate slightly left as one elbow bends and the clawed hand curls inward; the opposite arm counterbalances, fingers unfurl, head and eyes glance toward the viewer; shoulders and both arms flow back to the starting pose while the hovering core follows with soft weighted overlap. Constant small independent full-body motion and turbulent soft fog edges throughout, including the final second. Finish passing through the original pose in living motion, never freeze to make a loop. Keep original scale and center with at least twenty percent black reserve above and below ALL smoke at every instant. No approach toward camera, no camera motion, no new objects, no speech or text. Vapor stays airy and irregular, never solid ribbons, fish curls, ribbed anatomy or rubber tentacles. Keep hands attached and recognizable. Seamless living cycle target: first and last pose match with consistent ongoing motion.",
+  "anchorSha256": "040ebfb245321294c55997a52cfa3f149daf2d961d5522c1576622ab9c6d2eeb",
+  "observedCreditsBefore": 21133,
+  "observedCreditsAfter": 21048,
+  "observedDebit": 85,
+  "submissionCap": 1,
+  "approval": "none; all-frame fog reserve, material, endpoint velocity and repeated playback review required",
+  "file": "wisp-scary-living-loop-v37.mp4",
+  "bytes": 1105063,
+  "sha256": "1863ecc0654a06fac00b8ed489c9f88092b1132513c98cd5d5886b5d0d6c93ca",
+  "actualOutput": {
+    "size": [
+      1920,
+      1080
+    ],
+    "frames": 121,
+    "fps": 24,
+    "audio": false
+  },
+  "verdict": {
+    "framing": "All121frames pass15percent and20percent reserve atRGB4/8/16; tightest22.5percent top",
+    "material": "Soft coherent fog largely retained in sampled frames; arms articulate during central gesture",
+    "loop": "Fails living-cycle requirement: last12pixel-step median0.151 versus middle4.301; visible near-hold at ending. Matching first/end conditioning again produced settling rather than ongoing motion.",
+    "integration": false,
+    "humanApproval": false,
+    "nextMethod": "Do not repeat identical-first/end paid loop prompt. Prefer complete authored nonloop performances with deliberate disappearance and arrival, or motion-guided cycle with a demonstrated moving endpoint."
+  }
+}

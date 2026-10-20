@@ -1,0 +1,22 @@
+{
+  "taskId": "068f06e3-8e94-422a-ac58-e675152e1a2d",
+  "prompt": "Spectral bat wings passing through soft fog: first second a quiet airy glass shimmer, then several small leathery wing flutters sweep past between1and3.5seconds, with a gentle turbulent whoosh as mist breaks apart. Recede into distance and fade fully to silence by4.5seconds. Restrained, playful-spooky, soft rounded transients; no jump-scare hit, voices, words, laughter, melody or music.",
+  "duration": 5,
+  "quotedCredits": 5,
+  "status": "candidate; human listening approval pending",
+  "scope": "Numeric peak/tail review cannot establish absence of voices or speaker sound quality.",
+  "file": "bat-fog-sound-v1.mp3",
+  "sha256": "69dc8cdc59e3438b5a86ed62030d9ef6eb4d39270d853a408e77a1428bdfdb69",
+  "reviewMovie": {
+    "file": "/Users/beeje/Documents/Codex/2026-10-14/help/outputs/wisp-vision/bats-through-letters-v38-sound-review.mp4",
+    "sha256": "31c7209944082d93d5a1f9cb7435ae566212d0cf0616d602008a3d3357dbde37",
+    "gain": 0.6,
+    "fadeInSeconds": 0.05,
+    "fadeOutStartSeconds": 4,
+    "fadeOutSeconds": 0.5,
+    "decodedPeak": 0.2704293131828308,
+    "decodedRMSdBFS": -40.743919372558594,
+    "post4_6SecondsPeak": 0.0,
+    "scope": "Decoded numeric levels only; human listening pending. Review export has audio; projector runtime must continue to mirror silent canvas only."
+  }
+}

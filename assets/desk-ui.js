@@ -1,5 +1,8 @@
 // Arrange the existing controls around the operator's live tasks without replacing them.
 export function arrangeDesk(){
+  const header=document.querySelector('#desk>header');
+  if(header){const measureHeader=()=>document.documentElement.style.setProperty('--desk-header-height',Math.ceil(header.getBoundingClientRect().height)+'px');const observer=new ResizeObserver(measureHeader);observer.observe(header);measureHeader();window.addEventListener('pagehide',()=>observer.disconnect(),{once:true});}
+
   const main=document.querySelector('main.grid'),left=main.querySelector(':scope>section'),right=main.querySelector(':scope>aside');
   const show=document.querySelector('.show-desk'),conversation=document.querySelector('.conversation');
   if(show&&conversation)conversation.after(show);

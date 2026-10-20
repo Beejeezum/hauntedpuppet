@@ -1,0 +1,20 @@
+{
+  "mode": "built-in imagegen; no CLI/API fallback",
+  "status": "unapproved material study; not a production turnaround or video reference yet",
+  "file": "wisp-rear-vapor-guide-v2.png",
+  "sha256": "25277cc9b80fcf853d417925412036ccf2af0bc9517c3c8fee8ee33d2c08219e",
+  "size": [
+    1672,
+    941
+  ],
+  "alphaMin": 0,
+  "alphaMax": 254,
+  "alphaAbove1MarginsLTRB": [
+    0.3116028708133971,
+    0.048884165781083955,
+    0.30741626794258375,
+    0.053134962805526036
+  ],
+  "rawReserve20Pass": false,
+  "visualReview": "Blue saturation reduced versusv1; the outer vapor contour is still too crisp and cloud-lobed, and proportions need comparison to the actual front. Do not spend Runway credits with this guide yet. No human approval or runtime promotion."
+}

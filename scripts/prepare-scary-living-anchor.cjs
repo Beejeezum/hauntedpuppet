@@ -1,0 +1,13 @@
+// Render an existing painting through the real compositor; original pixels remain untouched.
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const {chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
+(async()=>{const browser=await chromium.launch({args:['--mute-audio']});try{
+ const source='source/wisp-performance-reference/runway-pilots/scary-identity-study/wisp-scary-vapor-anchor-v34.png',out='source/wisp-performance-reference/runway-pilots/scary-living-loop-study';
+ const page=await browser.newPage();await page.goto('about:blank');const result=await page.evaluate(async({module,png})=>{
+  const {StageCompositor}=await import('data:text/javascript;base64,'+module),image=new Image();image.src='data:image/png;base64,'+png;await image.decode();const canvas=document.createElement('canvas');canvas.width=1280;canvas.height=720;const stage=new StageCompositor(canvas);stage.add({id:'scary-art',source:image,scale:.85});stage.reveal();stage.render();const pixels=canvas.getContext('2d').getImageData(0,0,1280,720).data,checks={};
+  for(const threshold of [4,8,16]){let x0=1280,y0=720,x1=-1,y1=-1;for(let y=0;y<720;y++)for(let x=0;x<1280;x++){const i=(y*1280+x)*4;if(Math.max(pixels[i],pixels[i+1],pixels[i+2])>threshold){x0=Math.min(x0,x);y0=Math.min(y0,y);x1=Math.max(x1,x);y1=Math.max(y1,y);}}checks[threshold]=[x0/1280,y0/720,(1279-x1)/1280,(719-y1)/720];}
+  return{png:canvas.toDataURL('image/png').split(',')[1],checks};
+ },{module:fs.readFileSync('assets/stage-compositor.js','base64'),png:fs.readFileSync(source,'base64')});
+ for(const margins of Object.values(result.checks))if(Math.min(...margins)<.2)throw Error('Anchor fails20percent complete-effect reserve');
+ const bytes=Buffer.from(result.png,'base64'),file=path.join(out,'scary-living-anchor-v37.png');if(fs.existsSync(file))throw Error('Preserve existing anchor');fs.writeFileSync(file,bytes);fs.writeFileSync(path.join(out,'preflight.json'),JSON.stringify({source,sourceSha256:crypto.createHash('sha256').update(fs.readFileSync(source)).digest('hex'),anchor:path.basename(file),anchorSha256:crypto.createHash('sha256').update(bytes).digest('hex'),method:'Existing painting rendered at85percent centered fit on1280x720 black stage through StageCompositor; no repaint, pose edit or optical interpolation',margins:result.checks,status:'prepared; no generation submitted',hypothesis:'Softer v34 identity plus a closed articulated gesture with a newer consistency-focused model; separate from rejected v29 old art/model and v36 mini return bridge',submissionCap:1},null,2));console.log('Prepared exact-painting staged anchor; RGB4/8/16 reserve20percent passes.');
+ }finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1});

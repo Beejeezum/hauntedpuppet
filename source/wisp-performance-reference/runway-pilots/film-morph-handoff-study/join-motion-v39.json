@@ -1,0 +1,19 @@
+{
+  "joins": [
+    {
+      "firstFrameOfNewSegment": 122,
+      "seconds": 5.083333333333333,
+      "cutRGBStep": 2.6193652253909843,
+      "preceding6StepMedian": 2.747995739439363,
+      "following6StepMedian": 3.124971458533558
+    },
+    {
+      "firstFrameOfNewSegment": 243,
+      "seconds": 10.125,
+      "cutRGBStep": 2.9981100104275287,
+      "preceding6StepMedian": 1.517403628257036,
+      "following6StepMedian": 3.7379828131484816
+    }
+  ],
+  "scope": "Actual assembled sequence pixel-step diagnostics; not optical-flow/joint velocity or human seamlessness approval"
+}

@@ -1,0 +1,27 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+(async()=>{
+ const root=path.join(__dirname,'../source/wisp-performance-reference/ambient-show');
+ const {planJoin,planShow}=await import(require('node:url').pathToFileURL(path.join(root,'transition-plan.mjs')));
+ const catalog=JSON.parse(fs.readFileSync(path.join(root,'catalog.json'),'utf8'));
+ assert.equal(catalog.clips.length,32);assert.equal(new Set(catalog.clips.map(c=>c.id)).size,32);
+ assert(catalog.clips.every(c=>c.dialogue===false&&c.status==='planned'&&c.media===null));
+ assert.throws(()=>planShow(catalog,catalog.shows[0].id),/Unavailable/);
+ const film=(id,entry='rest',exit='rest')=>({id,status:'approved',dialogue:false,entryPort:entry,exitPort:exit,media:{file:id+'.mp4',sha256:id.repeat(64).slice(0,64),reviewEvidence:'synthetic test only'}});
+ const a=film('a'),b=film('b'),c=film('c');
+ const join=(x,y)=>({status:'approved',from:x.id,to:y.id,fromSha256:x.media.sha256,toSha256:y.media.sha256,reviewEvidence:'synthetic join review'});
+ assert.throws(()=>planJoin(a,b),/No reviewed/,'Same port label must not permit an unreviewed cut');
+ assert.equal(planJoin(a,b,{joins:[join(a,b)]}).kind,'reviewed-cut');
+ const changed={...b,media:{...b.media,sha256:'d'.repeat(64)}};
+ assert.throws(()=>planJoin(a,changed,{joins:[join(a,b)]}),/No reviewed/,'Regenerated media must invalidate old join review');
+ assert.equal(planJoin(a,b,{joins:[join(a,c),join(c,b)],bridges:[c]}).bridge,'c');
+ const out=film('a','rest','empty'),inside=film('b','empty','rest');
+ assert.throws(()=>planJoin(out,inside),/No reviewed/);
+ out.media.emptyEndFrames=8;inside.media.emptyStartFrames=8;
+ assert.equal(planJoin(out,inside).kind,'empty-stage');
+ const tiny={clips:[a,b],reviewedJoins:[join(a,b)],shows:[{id:'loop',clipIds:['a','b']}]};
+ assert.throws(()=>planShow(tiny,'loop'),/No reviewed/,'Loop closing boundary is mandatory');
+ tiny.reviewedJoins.push(join(b,a));assert.equal(planShow(tiny,'loop').transitions.length,2);
+ b.manualOnly=true;assert.throws(()=>planShow(tiny,'loop'),/Unavailable/,'Manual scares cannot enter ambient playlist');
+ b.manualOnly=false;b.dialogue=true;assert.throws(()=>planJoin(a,b),/Unreviewed/,'Ambient films cannot include speech');
+ console.log('PASS: 32 silent planned cards; exact-media join reviews, authored bridges, verified empty-stage boundaries, closing seam, no automatic scare or dialogue. Synthetic planner tests only.');
+})().catch(e=>{console.error(e);process.exitCode=1;});

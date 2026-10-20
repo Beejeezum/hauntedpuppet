@@ -1,0 +1,63 @@
+{
+  "file": "happy-halloween-fog-v1.png",
+  "sha256": "0867d00b4e733419015dc1c719154eccdd52a25b3a628c0eedad50466203881a",
+  "size": [
+    1672,
+    940
+  ],
+  "alphaRange": [
+    0,
+    253
+  ],
+  "transparentPixelFraction": 0.5575257049781126,
+  "partialAlphaFraction": 0.4424742950218874,
+  "bounds": {
+    "1": {
+      "marginsLTRB": [
+        0.09748803827751196,
+        0.17127659574468085,
+        0.0867224880382775,
+        0.12340425531914893
+      ],
+      "raw15percentPass": false,
+      "plannedCentered70percentScaleMargins": [
+        0.2182416267942584,
+        0.2698936170212766,
+        0.21070574162679429,
+        0.23638297872340427
+      ]
+    },
+    "4": {
+      "marginsLTRB": [
+        0.09988038277511961,
+        0.17446808510638298,
+        0.08732057416267942,
+        0.13085106382978723
+      ],
+      "raw15percentPass": false,
+      "plannedCentered70percentScaleMargins": [
+        0.21991626794258373,
+        0.2721276595744681,
+        0.2111244019138756,
+        0.24159574468085107
+      ]
+    },
+    "16": {
+      "marginsLTRB": [
+        0.10107655502392345,
+        0.1776595744680851,
+        0.08791866028708134,
+        0.13404255319148936
+      ],
+      "raw15percentPass": false,
+      "plannedCentered70percentScaleMargins": [
+        0.22075358851674642,
+        0.2743617021276596,
+        0.21154306220095695,
+        0.24382978723404258
+      ]
+    }
+  },
+  "textVisualRead": "HAPPY / HALLOWEEN; no extra words observed",
+  "scope": "Built-in imagegen still artwork only; original alpha preserved. Not an animation or accepted final scene. Raw margins may fail; future centered70percent layer placement must be validated including added effects."
+}

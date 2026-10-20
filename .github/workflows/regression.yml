@@ -121,3 +121,38 @@ jobs:
           name: native-avatar-offline-evidence
           path: test-results/native-avatar-*
           if-no-files-found: ignore
+
+  showdesk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps chromium webkit
+      - name: Build explicit public show desk and check privacy
+        run: node tests/public_build.cjs
+      - name: Check queue and editorial contracts
+        run: |
+          node tests/cue_director.cjs
+          node tests/ambient_show_plan.cjs
+          node tests/stage_compositor.cjs
+          node tests/stage_geometry.cjs
+      - name: Rehearse actual films and composed output on both browser engines
+        run: |
+          mkdir -p work
+          HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
+          DEBUG=pw:browser HAUNT_BROWSER=webkit HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
+      - name: Keep show desk evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: showdesk-evidence
+          path: |
+            test-results/showdesk-*.json
+            test-results/stage-geometry*
+            work/showdesk-rehearsal-*.png
+          if-no-files-found: ignore

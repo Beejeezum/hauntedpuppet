@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "scope": "Local source review page; isolated muted Chromium, both videos decode to end, no autoplay. Browser frame counters are not human seam, sound or physical projection acceptance.",
+  "films": [
+    {
+      "file": "/source/wisp-performance-reference/runway-pilots/film-return-handoff-study/wisp-round-trip-v40-review.mp4",
+      "duration": 25.291667,
+      "ended": true,
+      "muted": true,
+      "totalVideoFrames": 607,
+      "droppedVideoFrames": 0
+    },
+    {
+      "file": "/source/wisp-performance-reference/ambient-show/bat-lettering-study/bats-through-letters-v38-sound-review.mp4",
+      "duration": 5.041667,
+      "ended": true,
+      "muted": true,
+      "totalVideoFrames": 125,
+      "droppedVideoFrames": 0
+    }
+  ],
+  "mobileOverflow": false,
+  "errors": []
+}
