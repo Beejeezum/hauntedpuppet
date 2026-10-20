@@ -1,0 +1,20 @@
+{
+  "status":"Generating: single bounded fictional human-faced driver",
+  "sessionId":"dc92f465-afdb-4c6f-bd7b-50ec1a7c434c",
+  "parentId":"7a4aa5d5-d342-44a8-8792-a65d024260fb",
+  "app":"Character Script to Video",
+  "preset":"Clara",
+  "voice":"Katie (preset default; driver only, not Wisp casting approval)",
+  "script":"Oh! Hello there. Happy Halloween! What a wonderful costume.",
+  "quotedCredits":"~2",
+  "creditsBefore":9950,
+  "creditsAfter":9948,
+  "observedDebit":2,
+  "submissionCount":1,
+  "lastObservedState":"0% generating",
+  "purpose":"Separately validate a visibly human-faced synthetic driver instead of repeating the failed ghost-to-ghost pair. This is not a genuine recorded actor or guest interaction.",
+  "nextGate":"Retain original, inspect continuous face visibility and duration; only consider a bounded transfer after new driver input passes preflight with matched3:4 Wisp character. Do not duplicate generation or claim transfer success.",
+  "microphone":false,
+  "camera":false,
+  "liveReplacement":false
+}
