@@ -144,3 +144,10 @@ CI39465015030 is terminal failure, with showdesk/native-avatar-offline success a
 LinuxWebKit prepared_audience.cjs reported a cute-mouths.json access-control pageerror during its intentional seed/reload sequence. Initial core-ready is earlier than optional eye/mouth rig loading. The test now waits for that rig to settle (ready or explicit error) before intentional reload, keeping all pageerror, no-provider/no-capture and audio-safety assertions unchanged. Local pinnedWebKit prepared_audience passes including known scary saved audio rejection, Welcome stop, queued/delayed-decode rejection and friendly recovery. This supports a navigation-race hypothesis; only new LinuxCI can verify the original case. Do not call the prior CI green or deploy it.
 
 One depth-departure task8d3a9ccc-d8e1-47ba-baa0-3572c91da7ea remains RUNNING at latest authoritative poll; preserve same handle, no retry. Source review page has25sec roundtrip and5sec bat/SFX proof; human all-join/listening feedback and physical projection remain unverified.
+
+
+## Depth departure v41 — final material rejected
+
+Task8d3a9ccc-d8e1-47ba-baa0-3572c91da7ea completed once,170observedcredits, originalSHAf846c4482da534689863ae421a6b4c04754d6e2abb3c679368f0577934fcfd90 retained.241frames24fps1920x1080silent. Allframes pass20percentRGBreserve, minimum23.70percent; true side/back turn and receding path are present. Cropped frames40–100 expose smooth cylindrical arms, solid shoulders and a prominent spine-like back ridge. Final character material rejected; retain spatial motion reference only, no public integration/SFX purchase/retry.
+
+Next art dependency is a designed painted rear/three-quarter guide: opaque anatomy is a repeated front-only generation failure across old turns and this softer-front experiment. Do not keep buying the same front-to-back prompt. Current release remainsf7d330b8b61c5bf6464149570ba421c859e7f740 in CI39465845920; allfourjobs were running at lastpoll. Do not repush unrelated source study updates while that run lives.
