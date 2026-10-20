@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 import sys
+import tempfile
 import wave
 
 DRIVER = Path(__file__).with_name('fictional-driver-24k.wav')
@@ -66,17 +67,25 @@ async def bounded_pilot(session, avatar, room, *, agent, options, frames,
 
 class OneShotGate:
     """Reject wrong-room and repeated jobs before constructing any paid avatar."""
-    def __init__(self, room_name):
+    def __init__(self, room_name, claim_file=None):
         if not room_name or not room_name.startswith('wisp-pilot-'):
             raise ValueError('A dedicated wisp-pilot- room is required')
         self.room_name = room_name
         self.claimed = False
+        self.claim_file = claim_file
 
     def claim(self, room_name):
         if room_name != self.room_name:
             raise ValueError('Pilot room does not match')
         if self.claimed:
             raise RuntimeError('This pilot already accepted its single job')
+        if self.claim_file:
+            # Shared across SDK job subprocesses; only one may construct an avatar.
+            try:
+                fd = os.open(self.claim_file, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
+            except FileExistsError:
+                raise RuntimeError('Pilot job already claimed by another process') from None
+            os.close(fd)
         self.claimed = True
 
 
@@ -84,12 +93,13 @@ def create_server():
     from livekit import rtc
     from livekit.agents import Agent, AgentServer, AgentSession, APIConnectOptions, room_io
     from livekit.plugins import runway
-    gate = OneShotGate(os.environ.get('WISP_PILOT_ROOM_NAME'))
+    gate = OneShotGate(os.environ.get('WISP_PILOT_ROOM_NAME'), os.environ.get('WISP_PILOT_CLAIM_FILE'))
     server = AgentServer()
 
     @server.rtc_session(agent_name='wisp-synthetic-visual-pilot')
     async def entrypoint(ctx):
-        gate.claim(ctx.room.name)
+        gate.claim(ctx.job.room.name)
+        await asyncio.wait_for(ctx.connect(), timeout=10)
         inspect_driver()
         session = AgentSession()  # No STT, LLM, TTS or user input is configured.
         avatar = runway.AvatarSession(
@@ -106,21 +116,43 @@ def create_server():
             print(json.dumps({'pilotEvents': events}))
         finally:
             ctx.shutdown(reason='Synthetic pilot finished or failed')
+            Path(os.environ['WISP_PILOT_DONE_FILE']).touch(mode=0o600)
     return server
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--run', action='store_true', help='Reserved: live execution remains disabled until isolated dispatch is verified')
-    args, sdk_args = parser.parse_known_args()
+    parser.add_argument('--run', action='store_true', help='Start one supervised private pilot after configuration')
+    parser.add_argument('--sdk-child', action='store_true', help=argparse.SUPPRESS)
+    args = parser.parse_args()
     audio = inspect_driver()
+    if args.sdk_child:
+        for name in ('WISP_PILOT_CLAIM_FILE', 'WISP_PILOT_DONE_FILE'):
+            if not os.environ.get(name):
+                parser.error('SDK child requires the supervised launcher')
+        from livekit.agents import cli
+        sys.argv = [sys.argv[0], 'connect', '--room', os.environ['WISP_PILOT_ROOM_NAME'], '--log-level', 'error']
+        cli.run_app(create_server())
+        return
     if not args.run:
         print(json.dumps({'mode': 'offline-preflight', 'audio': audio,
                           'providerMaxSeconds': PROVIDER_SECONDS, 'bodyMaxSeconds': BODY_SECONDS,
                           'inputs': {'microphone': False, 'camera': False, 'text': False},
                           'workerStarted': False, 'sessionCreated': False}))
         return
-    parser.error('Live execution is disabled: dedicated-room dispatch and worker termination must be verified first. Offline preflight remains available.')
+    parser.error('Live execution disabled: local process-group termination has an unresolved intermittent permission failure.')
+    missing = [name for name in (*REQUIRED, 'WISP_PILOT_ROOM_NAME') if not os.environ.get(name)]
+    if missing:
+        parser.error('Private configuration missing: ' + ', '.join(missing))
+    OneShotGate(os.environ['WISP_PILOT_ROOM_NAME'])
+    from supervisor import supervise
+    with tempfile.TemporaryDirectory(prefix='wisp-pilot-') as directory:
+        env = dict(os.environ)
+        env['WISP_PILOT_CLAIM_FILE'] = str(Path(directory) / 'claimed')
+        env['WISP_PILOT_DONE_FILE'] = str(Path(directory) / 'done')
+        result = supervise([sys.executable, str(Path(__file__).resolve()), '--sdk-child'],
+                           env=env, done_file=env['WISP_PILOT_DONE_FILE'])
+        print(json.dumps({'localSupervisor': result, 'remoteCancellationVerified': False}))
 
 
 if __name__ == '__main__':

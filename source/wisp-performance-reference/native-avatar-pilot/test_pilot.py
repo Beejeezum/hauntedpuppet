@@ -1,6 +1,8 @@
 """Offline lifecycle checks; no provider imports, network or credentials."""
 import asyncio
 import unittest
+import tempfile
+from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import AsyncMock
 import pilot
@@ -88,6 +90,15 @@ class Dispatch(unittest.TestCase):
         gate.claim('wisp-pilot-offline')
         with self.assertRaises(RuntimeError):
             gate.claim('wisp-pilot-offline')
+
+    def test_shared_claim_rejects_second_independent_gate(self):
+        with tempfile.TemporaryDirectory() as directory:
+            claim = str(Path(directory) / 'claimed')
+            first = pilot.OneShotGate('wisp-pilot-offline', claim)
+            second = pilot.OneShotGate('wisp-pilot-offline', claim)
+            first.claim('wisp-pilot-offline')
+            with self.assertRaises(RuntimeError):
+                second.claim('wisp-pilot-offline')
 
     def test_missing_or_show_room_rejected(self):
         for room in (None, '', 'real-show-room'):
