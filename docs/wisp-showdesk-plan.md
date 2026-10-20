@@ -79,3 +79,12 @@ Imported visual layers now expose Size, Horizontal and Vertical sliders plus Cen
 The atmosphere-scenes.json production sheet specifies12second fog greeting and14second bat disruption stories, readable text holds, localized wakes, restrained nonverbal sound timings and complete empty-stage exits. It is not rendered footage. Existing typography stays source-only.
 
 One5second scary living-cycle proof is running as Runway task ac2837b7-d535-4844-a908-3eae1ed764e8. It uses softer v34 artwork staged at85percent, identical first/end target and a closed articulated gesture. Observed credit debit85. No automatic retry; all-frame bounds, material, continuing end motion and repeated seam review are required before integration.
+
+
+## Wrapped-header regression fixed locally
+
+Run39460647720 completed with three successful jobs (showdesk, existing-console WebKit, native-avatar-offline) and a failed full regression. Actual failure: tests/puppet_monitor.cjs could not click Dance because the wrapped workspace header intercepted pointer events. Saved completed regression logs to work/regression-ci-39460647720.log. The unchanged local test reproduced that same failure.
+
+Desk layout now measures its actual header height with ResizeObserver, disconnecting on pagehide. Root scroll padding and the desktop sticky puppet console use that measurement instead of the stale88pixel assumption. The original test passed after this correction; an additional actual hit-target assertion plus viewport checkpoints also passed at1512x1000,1280x720,390x844 and320x740, including monitor reuse/accessibility/Blackout. No force-click or weakened assertion. New exact-head full CI is still required; failed941 release must not merge.
+
+The effect-placement follow-up also passed real built-dist Chromium156 and WebKit27.2 with resized/moved effect pixels on the silent output. Public build/privacy checks and geometry/typography reserve checks pass locally. V37 remains rejected for continuous-loop near-hold and is excluded from public cue manifest. Bat-lettering proof ccbf9c7f-0108-4d4a-bd56-10882cffb7ed is generating once, observed debit85; no new sound until picture is reviewed.
