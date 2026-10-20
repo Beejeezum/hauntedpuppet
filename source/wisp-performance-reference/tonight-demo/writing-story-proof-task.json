@@ -1,0 +1,20 @@
+{
+  "taskId": "1b5eebd8-897e-449c-a30f-7f981cb2f00e",
+  "status": "SUCCEEDED",
+  "model": "seedance-2",
+  "duration": 6,
+  "resolution": "720p",
+  "nativeAudio": false,
+  "submissionCap": 1,
+  "creditsBefore": 17442,
+  "creditsAfter": 17262,
+  "observedDebit": 180,
+  "startAnchor": "apology-last-decoded.png",
+  "endAnchor": "writing-end-composite-frame.png",
+  "letteringSource": "../ambient-show/fog-lettering-study/happy-halloween-vapor-v5.png",
+  "prompt": "SIX SECOND locked-camera full-body painted ghost performance BETWEEN the exact supplied starting and ending compositions. Preserve the SAME cute Wisp, face, blue eyes, small attached articulated hands, ivory-blue porous soft vapor body and coherent lower core. Pure BLACK featureless projection stage throughout: no floor, horizon, room, wall, lit background, camera movement or zoom.0-1.2seconds Wisp notices the empty space to his right and gracefully glides LEFT into the exact final composition, with a real small torso bank, gaze leading, arms and lower vapor following with weight.1.2-4.6seconds he playfully uses ONE attached fingertip and a flowing connected shoulder/elbow/wrist action to spell a magical greeting in the air to his right. Two quick graceful rows of gesture release THIN ivory-white vapor filaments that progressively form EXACTLY the supplied end-frame words: top line HAPPY, bottom line HALLOWEEN. Use the exact supplied lettering design, placement and spelling; no added letters, subtitles, flat captions, opaque solid font, blue filled cloud blobs or neon borders. The strokes themselves are porous interlacing ghost smoke with visible black gaps; they grow from the hand-led magic and softly billow locally, not a whole intact sign fading on.4.6-6seconds the complete HAPPY HALLOWEEN remains readable and gently alive as smoke; Wisp admires it, glances proudly back at the audience and relaxes BOTH hands to the EXACT supplied final pose and placement. Keep connected fluid full-body acting and soft breathing wisps throughout, no frozen sticker or separate puppet parts. EXACTLY one ghost and two hands throughout, no props or bats. Keep ALL anatomy, letters and emitted smoke within central70percent width AND height, at least15percent pure black clearance on EVERY edge; the provided source compositions will receive a fixed additional projection safety fit. No departure, no disappearance, no text distortion, no dialogue, no audio. End on the exact supplied composed frame with the ghost on the left and the two-line smoke greeting on the right.",
+  "releaseApproved": false,
+  "scope": "One source-only authored two-line magical-writing shot, exact spelling and hand/word causality, eye/hand anatomy, full smoke reserve and endpoint joins require review.",
+  "artifact": "writing-story-proof-v1.mp4",
+  "sha256": "4fded496aaab828901b7b6d6328ead57bcb3a317eac03af2fdf6224e3703cf74"
+}

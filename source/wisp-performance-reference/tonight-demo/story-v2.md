@@ -2,18 +2,18 @@
 
 Story revision requested by the user. Supersedes the 49-second assembly as the narrative target. This is a script and production brief, not a finished film.
 
-Wisp is genuinely sweet and playful. His scary form is the same being showing off, not a separate evil character. One brief serious scare is followed immediately by an embarrassed, cute recovery. Most of the performance remains visual; the two short character lines below are the explicit story-specific exception to the earlier nonverbal ambient brief.
+Wisp is genuinely sweet and playful. His scary form is the same being showing off, not a separate evil character. One brief serious scare is followed immediately by an embarrassed, cute recovery. Most of the performance remains visual; the single user-approved apology below is the explicit story-specific exception to the earlier nonverbal ambient brief.
 
 | Time target | Picture and acting | Voice / sound |
 | --- | --- | --- |
 | 0–7s | Black holds, then a local pocket of mist gathers into cute Wisp at a readable size. He notices the visitors, looks down toward them and gives a shy little wave. | Soft gathering air and a delicate magical shimmer. |
-| 7–16s | Wisp plays: a curious lean, a little orbit with a real bank, a pleased hand flourish. He decides to impress the audience, puffs himself up and tries a menacing pose. | “Watch this. I can be spooky!” Light airy movement accents. |
-| 16–22s | Same silhouette morphs into the scary form. He stalks or prowls for a beat, eyes fixed on the audience; then a short anticipation and one close, powerful scary pose. | Rising spectral breath, then a brief ghostly roar at the single scare apex. No sustained speech or long monster sequence. |
-| 22–29s | Immediately softens: claws relax into hands, eyes round, body loses its threatening tension. He becomes cute again, shoulders drop, embarrassed glance and sheepish smile. | “Oops! Hope I didn’t scare you. I’m just trying to be tough.” A small deflating breath. |
-| 29–41s | Wisp recovers with a playful flourish and writes HAPPY HALLOWEEN in two readable lines of porous fog. His hand leads the writing; he looks between the letters and the audience, proud of himself. | Gentle finger-led magical strokes and restrained chimes, no narration. |
-| 41–49s | A goodbye wave, then an articulated turn and curved flight into depth. He becomes approximately ONE TENTH of his starting linear size, stays recognizable, and vaporizes at an implied surface behind him. He never shrinks to a point. Words and some local mist remain. | Receding air ending in a soft phase-through vapor sound. |
-| 49–57s | Small fast bats emerge from behind the remaining smoke/lettering, fly toward camera through the safe volume and tear the vapor apart along their actual paths. No huge slow floating bats. Their final pass clears the last mist. | Approaching wingbeats, quick close passes, bat calls and a dispersing-air tail. |
-| 57–61s | Complete black and silence, with enough empty source frames and sound-tail clearance for an intentional repeat. | Silence; restart only from the authored empty beginning. |
+| 7–15s | Wisp plays: a curious lean, a little orbit with a real bank, a pleased hand flourish. He decides to impress the audience, puffs himself up and tries a menacing pose. | Light airy movement accents. His boast is visual; no extra dialogue generation. |
+| 15–19s | Same silhouette morphs into the scary form. He stalks or prowls for a beat, eyes fixed on the audience; then a short anticipation and one close, powerful scary pose. | Rising spectral breath, then a brief ghostly roar at the single scare apex. No sustained speech or long monster sequence. |
+| 19–27.1s | Immediately softens: claws relax into hands, eyes round, body loses its threatening tension. He becomes cute again, shoulders drop, embarrassed glance and sheepish smile. | “Oops! Hope I didn’t scare you. I’m just trying to be tough.” A small deflating breath. |
+| 27.1–39.1s | Wisp recovers with a playful flourish and writes HAPPY HALLOWEEN in two readable lines of porous fog. His hand leads the writing; he looks between the letters and the audience, proud of himself. | Gentle finger-led magical strokes and restrained chimes, no narration. |
+| 39.1–47.1s | A goodbye wave, then an articulated turn and curved flight into depth. He becomes approximately ONE TENTH of his starting linear size, stays recognizable, and vaporizes at an implied surface behind him. He never shrinks to a point. Words and some local mist remain. | Receding air ending in a soft phase-through vapor sound. |
+| 47.1–55.1s | Small fast bats emerge from behind the remaining smoke/lettering, fly toward camera through the safe volume and tear the vapor apart along their actual paths. No huge slow floating bats. Their final pass clears the last mist. | Approaching wingbeats, quick close passes, bat calls and a dispersing-air tail. |
+| 55.1–59.1s | Complete black and silence, with enough empty source frames and sound-tail clearance for an intentional repeat. | Silence; restart only from the authored empty beginning. |
 
 ## Transition and projection rules
 
@@ -29,3 +29,11 @@ Wisp is genuinely sweet and playful. His scary form is the same being showing of
 ## Missing production pieces
 
 The current demo is a technical assembly, not this script. Existing morph and wave studies can inform the new beats, but the exact final joins, new dialogue, roar, hand-led fog writing, bounded ten-percent phase departure and bat-dispersion ending are not yet delivered. Prior rear departures are rejected. Prior lettering/bat pictures are not accepted as final material. The new script does not retroactively approve any of them.
+
+## Approved performance and economical edit
+
+The user approved `apology-proof-v1.mp4` for voice and acting. Reuse this original performance rather than regenerating its dialogue. The source contains 193 frames at 24fps, so reserve approximately 8.04 seconds for the unsped apology. The opening boast is now visual, removing the need for another spoken generation. The roar/recovery remains one separate four-second corrected proof anchored to the exact first apology frame; its generated endpoint is a target, not evidence of a seamless join. Review that cut at playback speed before accepting it.
+
+The first six-second roar picture is internally rejected because it clips the head smoke during an excessive lunge. The four-second correction fixes camera/character scale, while the original native roar is retained as an audio candidate. A source mix trims its start by 0.25s and attenuates it by 12dB for review beside the quieter approved apology; these measurements are not human mix acceptance. No new dialogue or roar audio is being regenerated.
+
+The user also approved the staged 12-second scare/recovery/apology sequence and mix direction (`scare-apology-sound-review-v1.mp4`). Preserve this exact section while building the remaining scenes; this approval does not approve the first clipped scare or the unfinished departure, writing and bats.

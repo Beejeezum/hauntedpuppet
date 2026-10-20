@@ -1,0 +1,19 @@
+{
+  "taskId": "75c427fa-783f-46a9-a1c2-dea51b464ee1",
+  "status": "SUCCEEDED",
+  "model": "seedance-2",
+  "duration": 6,
+  "resolution": "720p",
+  "nativeAudio": false,
+  "submissionCap": 1,
+  "creditsBefore": 17622,
+  "creditsAfter": 17442,
+  "observedDebit": 180,
+  "startAnchor": "apology-last-decoded.png",
+  "endAnchor": "authored-empty-first-frame.png",
+  "prompt": "SIX SECOND single continuous full-body departure of this EXACT cute painted fog Wisp, from supplied first frame to supplied empty black final frame. Locked camera, pure BLACK featureless projection void throughout. Absolutely NO floor, horizon, wall, visible object, background haze, scenery, room illumination, camera move or zoom. Preserve this exact adorable face, airy ivory-blue porous fog, blue eyes, two attached articulated arms/hands and coherent tapering vapor core. Keep EVERY hand, head wisp and emitted fog thread inside central60percent width AND height throughout, at least20percent empty black clearance on every edge. Motion must be character acting and real changing orientation in depth, not a flat front-facing sprite sliding or scaling.0-1seconds a small affectionate goodbye wave with wrist and elbow follow-through.1-2seconds his eyes look over one shoulder, shoulders bank, torso rotates through a clear three-quarter profile to show his BACK, arms counterbalance and hang with weight, lower vapor follows a fraction later.2-4seconds the back-facing ghost flies gently along a curved path away from the viewer toward a point just right of center, with a slight bank and roll, convincing perspective and overlapping full-body motion. He becomes approximately ONE TENTH his starting LINEAR HEIGHT, around35-45pixels tall in this720pixel image. IMPORTANT he stops getting smaller at this still-readable little ghost size: NEVER shrink to a tiny dot, pinprick, star or spark.4-5seconds, while staying at that little ghost size and showing his back, he passes through an IMPLIED invisible veil behind him: his complete body softly breaks into a small local pocket of porous mist, head/arms/core phase together, wisps drift locally and disperse. Do not draw the veil or any surface. This is a volumetric vapor phase-out, not shrinking to zero or a sudden cut.5-6seconds the remaining little mist dissipates into COMPLETE BLACK matching supplied final frame; no eyes, speck, orphan tail or particle remains. No jet exhaust, straight glowing streak, comet tail, hard spiral curls, fish tail, detached limbs, chalky solid shell, rectangular full-screen smoke or lingering fog. No speech, audio, subtitles or text. Keep fluid connected hands, head, shoulders and core motion, beautiful contemporary painted animation texture and soft breathing edges.",
+  "releaseApproved": false,
+  "scope": "One source-only six-second articulated turn/depth/ten-percent phase departure proof; framing, anatomy, scale-stop and empty-tail review required.",
+  "artifact": "departure-story-proof-v1.mp4",
+  "sha256": "4c21124984191f6516840e3e3408c55f4ed6e621c1140b747d4bc90de2118f7b"
+}

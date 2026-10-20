@@ -1,0 +1,22 @@
+{
+  "sources": [
+    "roar-recovery-proof-v2.mp4",
+    "apology-proof-v1.mp4"
+  ],
+  "frames": [
+    97,
+    193
+  ],
+  "fps": 24,
+  "duration": 12.083333333333334,
+  "stageScale": 0.85,
+  "blackMatte": "RGB multiplied by smoothstep(12,24,maxRGB); resulting RGB<=3 set to black",
+  "scope": "Fixed whole-frame fit and soft black-level cleanup, no crop, interpolation of time, retiming, pose registration or crossfade. Exact straight cut requires human playback review. Not final story or physical projection acceptance.",
+  "joinAtFrame": 97,
+  "joinAtSeconds": 4.041666666666667,
+  "joinVisibleRGBDifference": 4.664470689054927,
+  "sha256": "e3adad18585fa88c094906432e527a7598de274b3071f041644f187515e7f520",
+  "humanReview": "User approved sequence and mix direction: Yes\u2014keep this sequence and mix direction",
+  "approvalScope": "12-second staged scare/cute recovery/direct cut/apology and mix direction only. Not full story or physical projection acceptance.",
+  "approvedSoundReview": "scare-apology-sound-review-v1.mp4"
+}

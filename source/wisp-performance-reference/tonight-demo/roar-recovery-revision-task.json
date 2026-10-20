@@ -1,0 +1,22 @@
+{
+  "taskId": "9831c7b0-df21-4592-8beb-70ccee15a7ab",
+  "status": "SUCCEEDED",
+  "model": "seedance-2",
+  "duration": 4,
+  "resolution": "720p",
+  "nativeAudio": false,
+  "submissionCap": 1,
+  "creditsBefore": 17742,
+  "creditsAfter": 17622,
+  "observedDebit": 120,
+  "revises": "967764fb-1c33-4566-8105-553e393f3446",
+  "reason": "Actual first proof clips smoke during oversized lunge. This correction forbids scale/depth/camera motion and stages facial/body acting in fixed framing.",
+  "startAnchor": "../runway-pilots/film-return-handoff-study/scary-end-staged.png",
+  "endAnchor": "apology-first-decoded.png",
+  "prompt": "FOUR SECOND full-body medium-long static character acting shot, same EXACT Wisp as the reference images. Animate BETWEEN the supplied scary first image and cute final image. CRITICAL: the ghost's overall position and image scale are LOCKED to the references for the ENTIRE shot. NO approach, NO lunge, NO camera move, NO zoom, NO head enlargement, NO travel in depth. Keep the WHOLE body, both complete hands, topmost smoke and bottommost vapor tip visible in a single composition throughout, entirely inside central60percent width AND height, with20percent EMPTY BLACK clearance on ALL four sides. Pure black void, absolutely no floor, horizon, lights on the background or scenery. Start as the supplied scary ivory-blue painted smoky ghost, same blue eyes and connected core. Timing:0-0.5seconds he gathers tension through a small shoulder lift and finger curl WITHOUT changing size or position.0.5-1.2seconds a single intense frightening open-mouth roar ACTING pose, fixed-size: fierce eyes, articulated jaw, hands curl and spread only inside the existing silhouette envelope. His ENTIRE torso and vapor base remain readable; do not turn the shot into a giant face.1.2-2.3seconds immediate continuous physical transformation into the cute final character, brows lifting, eyes rounding, fangs relaxing away, shoulders and small hands relaxing with connected joint follow-through. ONE connected being, never two crossfaded bodies.2.3-4seconds a sheepish look down then affectionate eye contact, settling into the EXACT provided final pose and placement, ready for the next apology shot. Preserve airy porous soft-edged body-attached mist and full-body overlapping living motion throughout, coherent tapering lower core, no hard curls, fish tail, tubes, detached hands, rigid sticker or explosive smoke. No speech, text, subtitles, music or audio. The frightening beat comes from face, posture and the separately supplied sound, NEVER a size change.",
+  "releaseApproved": false,
+  "artifact": "roar-recovery-proof-v2.mp4",
+  "sha256": "46778929cae8919456ebe172f77685870edaeeab4bb5b8953ac286c2fba0956c",
+  "rawReview": "Full core/body framing maintained, but raw20percentreserve fails and faint generated background noise present. Not promoted raw.",
+  "stagedReview": "Same .85 whole-frame fit and smooth black-level cleanup applied to both shots; actual290frame encoded scare/apology review passes20percentreserve atRGB4/8/16. Exact direct-cut temporal/mix human review pending."
+}

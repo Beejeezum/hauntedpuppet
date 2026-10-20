@@ -1,0 +1,20 @@
+{
+  "scope": "End frame of planned video composition; existing character and alpha lettering placed on the black stage without repainting, no actual animation yet.",
+  "bodyFrame": "apology-last-decoded.png",
+  "bodyOffsetPixels": [
+    -340,
+    0
+  ],
+  "lettering": "../ambient-show/fog-lettering-study/happy-halloween-vapor-v5.png",
+  "letterFullImageSize": [
+    630,
+    355
+  ],
+  "letterImageOrigin": [
+    490,
+    180
+  ],
+  "blend": "screen",
+  "futureStageFit": 0.85,
+  "humanApproval": false
+}

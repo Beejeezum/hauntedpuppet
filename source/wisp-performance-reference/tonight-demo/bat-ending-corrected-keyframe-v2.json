@@ -1,0 +1,40 @@
+{
+  "mode": "Built-in imagegen edit of actualbat-sourceframe120 at5seconds",
+  "source": "bat-ending-source-frame120.png",
+  "status": "human keyframe review pending; full video edit NOTsubmitted",
+  "sha256": "37715d5581578bfd80bfabe797abd916bd62ab01e75818d5edf6db21cff1ce01",
+  "size": [
+    1672,
+    941
+  ],
+  "bounds": {
+    "4": {
+      "bounds": [
+        455,
+        205,
+        1294,
+        663
+      ],
+      "minimumMargin": 0.21785334750265675
+    },
+    "8": {
+      "bounds": [
+        455,
+        207,
+        1294,
+        662
+      ],
+      "minimumMargin": 0.2199787460148778
+    },
+    "16": {
+      "bounds": [
+        455,
+        209,
+        1294,
+        662
+      ],
+      "minimumMargin": 0.22210414452709884
+    }
+  },
+  "scope": "A still is not proof of fullvideo motion, wingclearance or finalclip approval."
+}
