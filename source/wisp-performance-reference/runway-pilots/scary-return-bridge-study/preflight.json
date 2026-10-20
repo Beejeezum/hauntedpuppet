@@ -1,0 +1,18 @@
+{
+  "hypothesis": "A separately authored bridge between distinct v35 endpoint poses, rather than regenerating an identical-first-last full loop. No component interpolation/reversal.",
+  "durationSeconds": 4,
+  "submissionCap": 1,
+  "frames": {
+    "start-from-v35-last": {
+      "sourceFrame": 120,
+      "file": "start-from-v35-last.png",
+      "sha256": "7ee1f5f01a1efbf430068e861fe8ec2d1c06620efb2b953043a95416118f8596"
+    },
+    "end-at-v35-first": {
+      "sourceFrame": 0,
+      "file": "end-at-v35-first.png",
+      "sha256": "3cc910450d44427b470eb0a7c71776531e3e3b4cfc6dbf7a0e206cc88d83439e"
+    }
+  },
+  "status": "prepared; no generation submitted"
+}
