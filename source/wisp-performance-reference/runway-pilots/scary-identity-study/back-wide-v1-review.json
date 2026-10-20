@@ -1,0 +1,64 @@
+{
+  "file": "wisp-scary-back-wide-v1.png",
+  "sha256": "23dc468ff70ed01aa74f2d1a5769c023a9afc4defb8247c0b85fb14f6563f28e",
+  "status": "Back endpoint candidate, not approved motion or final anatomy",
+  "bounds": [
+    {
+      "threshold": 4,
+      "marginsLTRB": [
+        0.27005988023952093,
+        0.2748502994011976,
+        0.21549893842887474,
+        0.18471337579617833
+      ],
+      "passes15percent": true
+    },
+    {
+      "threshold": 8,
+      "marginsLTRB": [
+        0.27065868263473053,
+        0.2748502994011976,
+        0.21656050955414013,
+        0.18577494692144372
+      ],
+      "passes15percent": true
+    },
+    {
+      "threshold": 16,
+      "marginsLTRB": [
+        0.27245508982035926,
+        0.2748502994011976,
+        0.21656050955414013,
+        0.18577494692144372
+      ],
+      "passes15percent": true
+    }
+  ],
+  "visualReview": [
+    "Back-facing crest, attached articulated claw hands and connected granular fog trail",
+    "More vapor mass in arms than v17, but ridged shoulder/back structure remains a review concern",
+    "No smooth tail ribbon visible",
+    "Single frame does not prove the path between front and back or loop continuity"
+  ],
+  "frontEndpoint": "wisp-scary-wide-v2.png",
+  "provenance": "Built-in imagegen guided by corrected v17 back pose and endorsed scary front; original output unchanged",
+  "controlledTurnPilot": {
+    "status": "Queued; not reviewed footage",
+    "sessionId": "aeb90327-f7a9-4b66-a7a4-dcbb99938278",
+    "assetParentId": "a24641da-5ceb-4e7f-9e4f-71e1f85ba5ed",
+    "model": "Kling 2.5 Turbo Pro",
+    "durationSeconds": 5,
+    "startImage": "wisp-scary-wide-v2.png",
+    "endImage": "wisp-scary-back-wide-v1.png",
+    "observedCreditsBefore": 10799,
+    "expectedCost": 60,
+    "purpose": "Controlled front-to-back articulated turn with authored fog endpoints; not a retreat or finished loop",
+    "acceptance": [
+      "Continuous genuine side/back change rather than silhouette crossfade",
+      "Soft connected fog without ribbon/fin material",
+      "Every-frame smoke reserve and core persistence",
+      "No extra limbs or skeletal shoulder drift",
+      "Normal-speed review before any source show or production promotion"
+    ]
+  }
+}
