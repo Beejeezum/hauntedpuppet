@@ -1,0 +1,15 @@
+{
+  "file": "wisp-rear-material-driver-v1.mp4",
+  "sha256": "f42ad0dcd75bdbea6782531950bdef0b0899a5b8f5483b6f635a407f5e02a912",
+  "source": "wisp-friendly-depth-departure-v30.mp4",
+  "sourceFrames": "30..79 inclusive",
+  "frameCount": 50,
+  "fps": 24,
+  "durationSeconds": 2.0833333333333335,
+  "method": "Whole source frames trimmed, original24fps; no interpolation, face insertion, registration or paint retouch. Original retained.",
+  "intent": "Explicit rear/side-first input for next EditStudio material keyframe preview, not a final character clip.",
+  "decodedReserveFailuresRGB4_8_16": 0,
+  "visualReview": "Frame0 and sampled later frames show rear/side with no visible eyes. Existing opaque material and ribbon wake deliberately retained as editing targets.",
+  "generationSubmitted": false,
+  "liveReplacement": false
+}
