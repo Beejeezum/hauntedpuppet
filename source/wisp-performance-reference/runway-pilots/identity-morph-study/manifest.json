@@ -1,0 +1,109 @@
+{
+  "status": "Completed forward morph and assembled review sequence; not production-approved",
+  "startImage": "wisp-friendly-v7-first.png",
+  "startSha256": "2af544a100df1229a17b3692884601570803c73f2d2a031ed9105a4606e70dea",
+  "startProvenance": "Unretouched decoded frame0 of fictional Runway v7 friendly idle; appearance direction from approved-friendly-fog.png",
+  "startSize": [
+    1916,
+    1080
+  ],
+  "startBounds": [
+    {
+      "threshold": 4,
+      "marginsLTRB": [
+        0.38413361169102295,
+        0.39979123173277664,
+        0.20833333333333334,
+        0.16666666666666666
+      ],
+      "reservePass": true
+    },
+    {
+      "threshold": 8,
+      "marginsLTRB": [
+        0.38517745302713985,
+        0.4003131524008351,
+        0.20925925925925926,
+        0.1675925925925926
+      ],
+      "reservePass": true
+    },
+    {
+      "threshold": 16,
+      "marginsLTRB": [
+        0.3862212943632568,
+        0.401356993736952,
+        0.2101851851851852,
+        0.1685185185185185
+      ],
+      "reservePass": true
+    }
+  ],
+  "endImage": "../scary-identity-study/wisp-scary-wide-v2.png",
+  "endSha256": "bc049a22ac9850f4d314555c424cd516beb04712a6cfa0c2440c9429513d5e8b",
+  "identityRules": [
+    "Same crest, blue eyes, connected fog core and attached hands throughout",
+    "Hands, mouth, sockets and torso reshape coherently, no floating parts or silhouette crossfade",
+    "Granular billowing fog throughout, no smooth fins/ribbons/solid curled tail",
+    "Fixed viewpoint and every-frame smoke reserve",
+    "Continue articulated movement at both ends; not a loop or native speech demonstration"
+  ],
+  "runtimeStatus": "Not connected to production renderer, voice, phone or projector",
+  "runwayPilot": {
+    "sessionId": "3795b9c6-17dd-428a-989d-79b516e847df",
+    "assetParentId": "628efd94-b73e-46e6-b264-706f86fcd562",
+    "title": "Friendly to Menacing Ghost",
+    "model": "Kling2.5TurboPro",
+    "seconds": 5,
+    "status": "Completed; motion candidate with known timing/framing defects",
+    "creditsBefore": 10757,
+    "creditsAfter": 10697,
+    "observedDebit": 60,
+    "reviewRequired": [
+      "Coordinated eye/teeth/claw timing without doubled anatomy",
+      "Persistent connected lower fog core and soft vapor material",
+      "Every-frame smoke margins, no clipped head or hands",
+      "Continuous acting at ends and full-speed human review",
+      "No automatic promotion to production or reversal into a claimed natural return"
+    ],
+    "file": "wisp-identity-morph-v19.mp4",
+    "sha256": "597e69b0ecd40233989489150e048ba525880d84161be144abf75b3a4cce0682"
+  },
+  "review": {
+    "rawFrames": 122,
+    "rawFps": 24,
+    "rawRGB8ReserveFailures": 58,
+    "emptyFrames": 0,
+    "morphWindowSeconds": [
+      2.65,
+      3.4
+    ],
+    "observations": [
+      "One connected apparition through the sampled transition; eyes darken, hands lengthen and teeth appear progressively",
+      "Lower body remains fog rather than v17 smooth ribbon",
+      "Ending slows toward a near-hold; last12stepRGBmedian0.606versusmiddle6.294",
+      "Contact-sheet review does not establish full-speed human motion acceptance"
+    ]
+  },
+  "assembledReview": {
+    "file": "wisp-identity-performance-review-v2.mp4",
+    "sha256": "aed1898a46b43f129458070f8391978d3e33d9cc3bdb029888486384905750d9",
+    "frames": 366,
+    "fps": 24,
+    "seconds": 15.25,
+    "inputOrder": [
+      "../wisp-controlled-idle-v7.mp4",
+      "wisp-identity-morph-v19.mp4",
+      "../scary-identity-study/wisp-scary-guided-turn-v18.mp4"
+    ],
+    "constantDisplayFit": 0.85,
+    "allFrameRGB4_8_16ReservePass": true,
+    "editing": "Straight cuts, shared display fit, no interpolation/crossfade/reversal or hold trimming; fixed24fpsexport",
+    "knownFailures": [
+      "Idle and post-morph near-holds remain visible",
+      "Scary back has skeletal anatomy requiring refinement",
+      "Ends back-facing; not a loop",
+      "No voice or interactive integration demonstrated"
+    ]
+  }
+}

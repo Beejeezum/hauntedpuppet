@@ -1,0 +1,23 @@
+{
+  "file": "wisp-turn-vapor-dissolve-v24.mp4",
+  "sha256": "0a7dc46047bc3e25f096587386e192429885338447be25e9ec11ddf4f9614dff",
+  "source": "source/wisp-performance-reference/runway-pilots/scary-identity-study/wisp-scary-guided-turn-v18-safe-framing.mp4",
+  "sourceSha256": "61aa3a56b325d12a8eb53b3dcf1683bfdc8dda89ad759e83e8ee071c763ffe07",
+  "frames": 170,
+  "fps": 24,
+  "dissolveFrames": [
+    97,
+    121
+  ],
+  "emptyHoldFrames": 48,
+  "spatialMethod": "Fixed-camera2.5D compositing: authored side/back video plus perspective scale1/(1+5*ease), curved offset and8degree bank; not a reconstructed3D model.",
+  "method": "Whole painted source film, deterministic multiscale coherent cloud-modulated opacity extinction during final second, then48 authored black frames. No interpolation, part displacement or generated starburst.",
+  "limits": "Compositing study, not native fluid simulation or new hand-drawn animation; does not create an outward poof, new source articulation, reappearance or a seamless loop. Needs normal-speed visual approval.",
+  "review": {
+    "status": "Spatial compositing study awaiting human direction feedback",
+    "reserve": "All170frames pass15percent reserve atRGB4/8/16",
+    "emptyEnding": "48explicit black frames plus extinguished tail frames;50decoded empty atRGB4",
+    "browser": "Isolated muted Chromium ended with0reported dropped frames;175browser totalVideoFrames is not the170-frame file count",
+    "limitations": "Uses genuine painted turn views plus perspective scaling/translation/bank; not new3D geometry, no outward poof or new pose, source back anatomy unchanged. Need subjective spatial quality and physical projection acceptance."
+  }
+}

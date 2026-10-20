@@ -1,0 +1,40 @@
+{
+  "status": "Completed; genuine offline Runway Characters sample, not live app integration",
+  "character": "Wisp \u2014 fog visual pilot",
+  "characterId": "c725f59e-a89e-4425-b526-0963562c93f0",
+  "uiRoute": "https://app.runwayml.com/video-tools/teams/beejeezum/ai-tools/characters/avatars/generate-video",
+  "script": "Oh! Hello, brave doorstep explorer. My boo needs practice!",
+  "inputMode": "Script",
+  "microphone": false,
+  "camera": false,
+  "creditsBefore": 10241,
+  "quotedCredits": 2,
+  "observedDebit": 2,
+  "nextAction": "Review the original generated speaking performance and voice. This offline UI route cannot establish streaming latency, interruptions or SDK integration; do not replace working native voice based on this sample.",
+  "scope": "Offline talking-character visual proof. Not native OpenAI/WebRTC latency, live interruption or integration. No provider key or dependencies added.",
+  "file": "wisp-character-speech-v1.mp4",
+  "sha256": "ed50aad6ecb223b8d5d503ea74631a9412ce40b8c1746ca3046dd40b53c987a7",
+  "creditsAfter": 10239,
+  "durationSeconds": 5.811,
+  "sourceReview": {
+    "frames": 139,
+    "fps": 24,
+    "size": [
+      1088,
+      704
+    ],
+    "rawReserveFailuresRGB4_8_16": 139,
+    "visual": "Whole painted Wisp retained in sampled frames, changing mouth shapes and modest hand/body movement; fog is largely stable. Lip-sync accuracy and voice performance require normal-speed listening review.",
+    "scope": "Contact review and decoded envelope, no subjective audio evaluation or live latency proof"
+  },
+  "safeFraming": {
+    "file": "wisp-character-speech-v1-safe-framing.mp4",
+    "sha256": "3f947568f856ba3627f5b090288230783b70acffb520daef67cdeeccdd1c714c",
+    "filter": "scale=1168:756:flags=lanczos,pad=1916:1080:374:162:black",
+    "frames": 139,
+    "reserveFailuresRGB4_8_16": 0,
+    "audioPacketSha256": "424ae76a78a88fb4b28cb63d0d9c846bb4ad06b83c4563f1b96019f487e212e6",
+    "audioPreserved": "Encoded AAC audio packets copied unchanged and compared with FFmpeg hash muxer",
+    "browser": "Isolated muted Chromium ended,0reported drops;144browsercounter not139sourceframes"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "status": "Completed; rejected as disappearance performance",
+  "sessionId": "75cf7d08-f912-4285-ae19-444c5375607c",
+  "assetParentId": "ec917be8-fa67-4a7c-99c5-2e9429b2d8ef",
+  "model": "Kling2.5TurboPro",
+  "seconds": 5,
+  "startImage": "../scary-identity-study/wisp-scary-wide-v2.png",
+  "startSha256": "bc049a22ac9850f4d314555c424cd516beb04712a6cfa0c2440c9429513d5e8b",
+  "creditsBefore": 10511,
+  "creditsAfter": 10451,
+  "observedDebit": 60,
+  "intent": "New whole-character anticipation, localized fog poof and intentional complete absence; not another failed-return retry",
+  "choreography": {
+    "0\u20131s": "Eyes glance down, shoulders rise, elbows bend, hands draw inward with overlap",
+    "1\u20132s": "Connected body compresses and erupts into localized soft fog puff",
+    "by3s": "Eyes, hands, face and lower core dissolve together",
+    "3.5s\u2013end": "Entirely empty black stage, no reappearance"
+  },
+  "constraints": [
+    "Locked camera on pure black",
+    "Preserve scary Wisp identity",
+    "Every vapor particle stays within central60percent width/height",
+    "No rigid shrinking, skeletal back, solid ribbons, extra limbs or frame-edge exit"
+  ],
+  "reviewRequired": [
+    "Actual articulated anticipation",
+    "Coherent body-wide dissolution, not dropped tail",
+    "Complete empty ending and no residual eyes/hands",
+    "All-frame smoke reserve including expansion",
+    "Normal-speed human review before show promotion"
+  ],
+  "nextAction": "Preserve source; no promotion or same-prompt paid retry. A soft controlled dissolution needs an explicit effect/endpoint strategy before another generation.",
+  "title": "Ghost Wisp Vanishing Act",
+  "file": "wisp-poof-v21.mp4",
+  "sha256": "d0a6fd333813d1394c406261d348bdf0731ff54051438f282e0b1e1b1678e587",
+  "review": {
+    "frames": 121,
+    "fps": 24.0,
+    "RGB8ReserveFailures": 44,
+    "emptyFramesRGB4_8_16": 0,
+    "visualFindings": [
+      "Articulated hands and torso change pose before disappearance",
+      "Still fully visible at3.12seconds, missing requested disappearance deadline",
+      "Bright sharp starburst around3.75seconds replaces intended soft fog poof",
+      "Expanding effect violates mapped reserve; decoded envelope reaches top/bottom edges",
+      "Faint particles remain through final frame; not a sustained empty ending"
+    ],
+    "scope": "All-frame envelope metrics and9-frame visual contact review. No full-speed human approval or physical projection."
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "status": "Completed; improved soft-fog study, not production-approved",
+  "sessionId": "fedc4316-6c84-44fd-9a65-75a931164da3",
+  "assetParentId": "f5b7e49e-a1aa-4073-bfe0-c2966635237b",
+  "model": "Kling2.5TurboPro",
+  "seconds": 5,
+  "startImage": "../scary-identity-study/wisp-scary-wide-v2.png",
+  "endImage": "empty-stage-endpoint-v1.png",
+  "endSha256": "e3460958a22010b9ff5062965cb6086263bb1c55004501d7fa05b97aa1252885",
+  "endProvenance": "Unretouched decoded v24frame169; maxRGB0verified. Technical empty-stage reference, not new artwork.",
+  "creditsBefore": 10301,
+  "expectedDebit": 60,
+  "methodChange": "Explicit uploaded last-frame conditioning to empty stage; v21 had only first-frame guidance. No intermediate-timing control claim.",
+  "prompt": "Locked camera, pure black stage. One continuous painted ghost performance ending in the supplied completely empty black frame. This exact Wisp breathes and curls both hands inward, compressing his entire soft vapor body in anticipation. Then his face, hands and connected lower body all billow into a small soft cloud of fog. That cloud loses light and dissipates completely by3.5seconds; the final1.5seconds stay completely black with no eyes, hands or sparks left. The disappearance is gentle turbulent smoke, never a bright explosion: no flash, starburst, rays, fire, glitter or particles. No shrinking rigid sprite, detached limbs, missing tail before the whole-body dissolve, double face, solid ribbons or hard outlines. Preserve painted identity and natural articulated shoulder/elbow/wrist movement before dissolution. The camera and black background never move. Keep the whole body AND every fog puff within the central60percent of the frame height and width; at least20percent black buffer on every side.",
+  "reviewRequired": [
+    "Soft irregular fog dissolution, not uniform fade or sharp flash",
+    "Connected anatomy before whole-body disappearance",
+    "Actual empty ending",
+    "All-frame full-effect reserve",
+    "No assumed time control from endpoint reference alone"
+  ],
+  "nextAction": "Normal-speed visual review of soft fog and anatomy; no additional blind generation. Not installed as fast friendly override.",
+  "creditsAfter": 10241,
+  "observedDebit": 60,
+  "title": "Wisp Ghost Dissolution Performance",
+  "file": "wisp-poof-v25.mp4",
+  "sha256": "624f4f06d91241ff3bc4e4c58e3998f77a3f1a76cf5da1b652dce6ff6a8e3bfd",
+  "review": {
+    "rawFrames": 122,
+    "fps": 24,
+    "rawRGB4ReserveFailures": 57,
+    "rawRGB8ReserveFailures": 53,
+    "rawRGB4EmptyFrames": 10,
+    "visual": [
+      "No v21-style sharp starburst in9-frame contact review",
+      "Body and hands curl, then billowing cloud envelopes and dims the face",
+      "Still visible after3.5seconds, missing requested empty-stage timing",
+      "Upper arms become more humanoid/solid; identity/anatomy refinement remains",
+      "Pure black ending reached; lowlight remnants linger before it"
+    ],
+    "limits": "Contact/all-frame diagnostic review only; no full-speed human or physical acceptance"
+  },
+  "safeReviewCopy": {
+    "file": "wisp-poof-v25-safe-framing.mp4",
+    "sha256": "55da756d933601721994fc6b79a0f788e9111ed63be90db3b130f87e92daef35",
+    "filter": "scale=1628:918:flags=lanczos,pad=1916:1080:144:81:black,tpad=stop_mode=add:stop=48:color=black",
+    "frames": 170,
+    "fps": 24,
+    "reserveFailuresRGB4_8_16": 0,
+    "extraBlackFrames": 48,
+    "scope": "Fixed85percent display fit and2second authored empty hold. All original122frames retained; does not fix late dissolution or anatomy."
+  }
+}

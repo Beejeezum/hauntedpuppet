@@ -1,0 +1,80 @@
+{
+  "status": "Read-only reference audit; discrepancy unresolved",
+  "characterId": "c725f59e-a89e-4425-b526-0963562c93f0",
+  "observedUI": {
+    "previewNaturalSize": [
+      480,
+      720
+    ],
+    "objectFit": "contain",
+    "optimizationCheckbox": "checked on opening edit dialog; no changes saved",
+    "voice": "Luna"
+  },
+  "referenceSha256": "04516e3600356af76ad168fb80f579786b69db286cbb149693bd94862573bac9",
+  "metrics": [
+    {
+      "label": "Approved painted reference",
+      "size": [
+        1024,
+        1536
+      ],
+      "rgb16Bounds": [
+        99,
+        61,
+        906,
+        1475
+      ],
+      "envelopeWidthHeight": 0.5707213578500707
+    },
+    {
+      "label": "Runway stored preview",
+      "size": [
+        480,
+        720
+      ],
+      "rgb16Bounds": [
+        46,
+        30,
+        425,
+        687
+      ],
+      "envelopeWidthHeight": 0.5768645357686454
+    },
+    {
+      "label": "Speech source frame 0",
+      "size": [
+        1088,
+        704
+      ],
+      "rgb16Bounds": [
+        105,
+        28,
+        963,
+        675
+      ],
+      "envelopeWidthHeight": 1.3261205564142196
+    }
+  ],
+  "limits": [
+    "Envelope ratio includes hands/fog/pose and cannot establish facial deformation by itself.",
+    "Correct portrait source is visible; output has different framing. Provider preprocessing and animation are not isolated.",
+    "Optimization checkbox may be an edit-form default; it does not prove the original job used optimization.",
+    "No new generation, call, camera, microphone or credits."
+  ],
+  "correctedReview": {
+    "file": "wisp-character-speech-v2-proportion-review.mp4",
+    "method": "Restore full source portrait aspect 2:3 using scale504:756, then pad1916:1080 at706:162; explicit diagnostic de-squash, not a new generation or provider fix.",
+    "audioPacketsUnchanged": true,
+    "audioHash": "SHA256=424ae76a78a88fb4b28cb63d0d9c846bb4ad06b83c4563f1b96019f487e212e6",
+    "all139FramesReservePass": true,
+    "limits": "Global proportion correction does not restore animation detail or prove all facial poses correct."
+  },
+  "reproduciblePreparation": {
+    "script": "scripts/prepare-wisp-avatar-review.py",
+    "reproducedSha256": "765cb01ec5a452e5cab32ac4be931751ff8919ff5a46c686cc99b53f594518e0",
+    "matchesExistingReviewExactly": true,
+    "decodedFrames": 139,
+    "reserveFailuresRGB4_8_16": 0,
+    "audioPacketsUnchanged": true
+  }
+}

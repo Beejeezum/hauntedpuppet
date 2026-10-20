@@ -1,0 +1,70 @@
+{
+  "status": "Completed candidate; not approved as live idle",
+  "anchor": "wisp-fuller-loop-anchor-v1.png",
+  "sha256": "52d54d03c0f0406a9724c7c04b9e2fa0557a675486edfaa40fd0ca2e24a682bd",
+  "source": "wisp-continuous-idle-v15.mp4 frame0",
+  "method": "Unmodified decoded painting, stable85percent fit to create fog buffer; no illustration repaint or pose manipulation.",
+  "hypothesis": "Identical endpoint references constrain loop pose while authored overlapping arm/core/crest motion continues between anchors; need actual velocity/seam review.",
+  "failIf": [
+    "Ending freezes or reverses",
+    "Anatomy or identity drifts",
+    "Complete fog reserve under15percent",
+    "Visible jump at three repeated boundaries",
+    "Independent hands or fog detach"
+  ],
+  "plannedDurationSeconds": 5,
+  "creditQuote": "Not yet inspected",
+  "sessionId": "c1401fe7-0b4d-4241-91b1-3478901dc3fe",
+  "parentId": "0cac5b9c-d172-4281-ba14-615d4444de8d",
+  "quotedCredits": 60,
+  "creditsBefore": 10140,
+  "submissionCount": 1,
+  "settings": {
+    "model": "Kling2.5TurboPro",
+    "duration": 5,
+    "aspect": "16:9",
+    "firstAndLast": "Same buffered anchor uploaded into both distinct slots"
+  },
+  "prompt": "One continuous five-second painted ghost idle cycle, locked camera and pure black stage. Same complete friendly Wisp at supplied first AND final pose. Keep the character small in this exact framing; every emitted smoke wisp stays inside the central60percent of frame. The WHOLE connected body is continuously alive: torso bends and gently counterbalances, shoulders roll, both elbows and wrists articulate through soft small greeting arcs, four rounded fingers flex independently, head listens with a curious tilt, eyes glance then blink, crest and lower core billow with overlapping vapor drag. Build a flowing closed motion phrase that arrives naturally at the supplied final pose while the fog is still moving. Keep expressive full-body motion through the last second, not a frozen end hold; no reversal or boomerang. Preserve exact face, blue eyes, painterly ivory translucent volume, connected soft arms, coherent lower core. No fish curls, muscular anatomy, detached hands, camera motion, zoom, hard outlines, stars, text or new objects. Face stays friendly. All smoke must fade before the safe boundary.",
+  "creditsAfter": 10080,
+  "observedDebit": 60,
+  "lastObservedProgressPercent": 80,
+  "baseline": {
+    "file": "wisp-continuous-idle-v15.mp4",
+    "seamToAdjacentRatio": 6.4785084230147305,
+    "last12MedianRGBStep": 10.22920860123746,
+    "middleMedianRGBStep": 10.916392516736131,
+    "scope": "Pixel diagnostics only; retain actual seam footage review."
+  },
+  "file": "wisp-continuous-loop-v28.mp4",
+  "frames": 122,
+  "fps": 24,
+  "decodedReserveFailuresRGB4_8_16": 0,
+  "loopDiagnostics": {
+    "seamToAdjacentRatio": 0.1369937860149462,
+    "last12MedianRGBStep": 3.297361201795053,
+    "middleMedianRGBStep": 9.183999255642048,
+    "endpointStepDifferenceRGB": 4.049432583189075,
+    "scope": "Unmodified letterboxed samples and pixel differences, not optical-flow/joint velocity, automatic loop approval or human smoothness acceptance."
+  },
+  "visualReview": [
+    "Whole connected body retained in9sampledframes with arm/head/core poses and eye/lid changes.",
+    "End pose visually matches opening; ending motion slows, requiring normal-speed loop judgement.",
+    "Candidate is not arbitrary live speech, full turnaround or physical projection acceptance."
+  ],
+  "repeatedReview": {
+    "file": "wisp-continuous-loop-v28-three-cycles.mp4",
+    "cycles": 3,
+    "method": "Stream-copy original video three times; no interpolation, crossfade, reversal, retiming or repair.",
+    "sha256": "e29fbc1cc842f1308e08a0caeab10b2aec1909d334048815f0f4e659d85032b1",
+    "browser": {
+      "ended": true,
+      "muted": true,
+      "reportedDroppedFrames": 0,
+      "durationSeconds": 15.25,
+      "browserFrameCounter": 372,
+      "decodedSourceFramesPerCycle": 122,
+      "scope": "Muted decode/playback only; browser counter is not source frame count or subjective seamlessness."
+    }
+  }
+}

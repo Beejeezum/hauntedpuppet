@@ -1,0 +1,45 @@
+{
+  "status": "Completed; rejected as continuously living scary idle",
+  "sessionId": "a89bc46d-4514-4007-90e3-384e8039d5ea",
+  "parentId": "eb45c45f-2b3d-4797-abee-826e616bf3e5",
+  "settings": {
+    "model": "Kling2.5TurboPro",
+    "seconds": 5,
+    "aspect": "16:9",
+    "firstAndLast": "Identical original wisp-scary-wide-v2.png in both distinct slots"
+  },
+  "anchorSha256": "bc049a22ac9850f4d314555c424cd516beb04712a6cfa0c2440c9429513d5e8b",
+  "creditsBefore": 10080,
+  "quotedCredits": 60,
+  "submissionCount": 1,
+  "hypothesis": "Apply v28 endpoint-conditioned method to established scary identity; maintain articulated menacing gaze, torso counterbalance, shoulders/elbows/wrists/finger curls and continuous attached fog, no rigid sprite drift or end freeze.",
+  "reviewRequired": [
+    "All decoded frame15percent complete-fog reserve",
+    "Scary identity and coherent soft arm/core anatomy",
+    "Full-body and independent facial acting at normal speed",
+    "End motion and three repeated seams",
+    "No accidental core disappearance or fixed fish curls"
+  ],
+  "humanApproved": false,
+  "liveReplacement": false,
+  "creditsAfter": 10020,
+  "observedDebit": 60,
+  "file": "wisp-scary-continuous-loop-v29.mp4",
+  "sha256": "1706a30e9b4b755b7ec0f1db3282430e0d0347bd11616772ba7dc0a722ef68a8",
+  "frames": 122,
+  "fps": 24.0,
+  "decodedReserveFailuresRGB4_8_16": 0,
+  "loopDiagnostics": {
+    "seamToAdjacentRatio": 0.5397047426241716,
+    "last12MedianRGBStep": 0.14056117918664535,
+    "middleMedianRGBStep": 6.38177387718229,
+    "endpointStepDifferenceRGB": 1.4394179057260361,
+    "scope": "Unmodified letterboxed samples and pixel differences, not optical-flow/joint velocity, automatic loop approval or human smoothness acceptance."
+  },
+  "visualReview": [
+    "Midpoint has real arm/core/hand pose changes but develops overly solid sinewy upper body.",
+    "Frames90/105/121 nearly settled into same endpoint, final12 motion0.1406 vs middle6.3818; fails requested continued body life.",
+    "Identical endpoint conditioning improves static seam but does not establish a living loop.",
+    "No live replacement; stop same-prompt retry."
+  ]
+}

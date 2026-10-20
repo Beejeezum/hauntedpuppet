@@ -1,0 +1,27 @@
+{
+  "file": "wisp-fuller-identity-performance-v3.mp4",
+  "sha256": "e2508604503fc6eb7b9123c66cf359363d700ef446577c1e356204ec1e44d21c",
+  "frames": 366,
+  "fps": 24,
+  "durationSeconds": 15.25,
+  "parts": [
+    {
+      "source": "continuous-loop-study/wisp-continuous-loop-v28.mp4",
+      "frames": "0..121"
+    },
+    {
+      "source": "identity-morph-study/wisp-identity-performance-review-v2.mp4",
+      "frames": "122..365 (existing framed morph and scary turn)"
+    }
+  ],
+  "method": "Concatenate whole painted frames; normalize presentation timestamps to24fps. No interpolation, reversing, crossfade or component animation. Originals unchanged.",
+  "decodedReserveFailuresRGB4_8_16": 0,
+  "humanApproval": false,
+  "liveReplacement": false,
+  "limits": [
+    "Forward-only review, not a finished repeatable scene.",
+    "Friendly ending slows; human loop judgement pending.",
+    "Existing forward morph near-hold and scary back/arm anatomy still unresolved.",
+    "No live speech, operator rehearsal or physical projection acceptance."
+  ]
+}

@@ -1,7 +1,9 @@
 name: Character and controller regressions
 on:
   push:
+    branches: [main]
   pull_request:
+  workflow_dispatch:
 concurrency:
   group: regressions-${{ github.ref }}
   cancel-in-progress: true
@@ -55,7 +57,10 @@ jobs:
       - name: Check phone controls in WebKit
         run: PHONE_BROWSER=webkit node tests/phone_browser.cjs
       - name: Check direct voice effects in WebKit
-        run: HAUNT_BROWSER=webkit node tests/puppeteer_voice.cjs
+        run: |
+          HAUNT_BROWSER=webkit node tests/voice_connection_gate.cjs
+          HAUNT_BROWSER=webkit node tests/realtime_response_timing_browser.cjs
+          HAUNT_BROWSER=webkit node tests/puppeteer_voice.cjs
       - name: Check painted eyes and apparitions in WebKit
         run: |
           HAUNT_BROWSER=webkit node tests/painted_speech_pilot.cjs

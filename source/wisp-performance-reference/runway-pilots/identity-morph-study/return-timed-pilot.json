@@ -1,0 +1,91 @@
+{
+  "status": "Authored still only; not animation or approved transition",
+  "file": "wisp-return-intermediate-v1.png",
+  "sha256": "ff82c4ec3594a5212aaed106877b18aadf3b357dd7ec356e36767a60d98c1e43",
+  "size": [
+    1672,
+    941
+  ],
+  "sourceGeneratedFile": "exec-e6a992c8-a267-4c78-b55b-f1f4c856d4fd.png",
+  "review": {
+    "visible": "Closed toothless mouth and rounded fingers; narrowed blue eyes retained; attached vapor core",
+    "limits": "Pose and fog registration differ from source. Not a pixel-aligned video correction. Timing and continuous motion unproven."
+  },
+  "bounds": {
+    "4": {
+      "marginsLTRB": [
+        0.3684210526315789,
+        0.3815789473684211,
+        0.2051009564293305,
+        0.20935175345377258
+      ],
+      "reservePass": true
+    },
+    "8": {
+      "marginsLTRB": [
+        0.3684210526315789,
+        0.3815789473684211,
+        0.2051009564293305,
+        0.20935175345377258
+      ],
+      "reservePass": true
+    },
+    "16": {
+      "marginsLTRB": [
+        0.36901913875598086,
+        0.3815789473684211,
+        0.2051009564293305,
+        0.20935175345377258
+      ],
+      "reservePass": true
+    }
+  },
+  "timedPilot": {
+    "status": "Unexecuted; do not spend on another prompt-only retry",
+    "fps": 24,
+    "numFrames": 73,
+    "size": [
+      1024,
+      576
+    ],
+    "anchors": [
+      {
+        "frame": 0,
+        "type": "replace",
+        "image": "../scary-identity-study/wisp-scary-wide-v2.png"
+      },
+      {
+        "frame": 17,
+        "type": "replace",
+        "image": "wisp-return-intermediate-v1.png"
+      },
+      {
+        "frame": 33,
+        "type": "replace",
+        "image": "wisp-friendly-v7-first.png"
+      },
+      {
+        "frame": 72,
+        "type": "guide",
+        "image": "wisp-friendly-v7-first.png"
+      }
+    ],
+    "limits": "Frame bindings require an actual supported pipeline; references alone do not prove timed control. Image strengths and motion require a rendered pilot."
+  },
+  "technology": {
+    "conditioning": "https://github.com/Lightricks/LTX-2/blob/main/packages/ltx-pipelines/docs/conditioning.md",
+    "pipelines": "https://github.com/Lightricks/LTX-2/blob/main/packages/ltx-pipelines/docs/pipelines.md",
+    "localResources": "Observed 24GiB memory and about7.7GiB free disk; documented model download about66GiB. No install/download performed.",
+    "runwayInspection": "LTX-2.5 Pro UI showed first/last/reference images and FPS; explicit intermediate timestamp binding not observed. No video submitted."
+  },
+  "reviewBoard": {
+    "file": "wisp-return-pose-review-v1.png",
+    "sha256": "29332319cb1b995f5222845d909ff46ae1f9388054314f1b2a65ead9bde9054b",
+    "scope": "Labeled unretouched thumbnail comparisons; no animation, no approval inferred"
+  },
+  "hostedCandidate": {
+    "url": "https://fal.ai/models/fal-ai/ltx-video-v095/multiconditioning/api",
+    "observed": "Older LTX Video0.9.5 exposes images with start_frame_num. This is not the LTX2 pipeline and must not inherit its parameter contract or a quality claim.",
+    "decision": "Not selected without visual quality proof and existing authorized access; no signup, credentials or generation attempted."
+  }
+}

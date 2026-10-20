@@ -1,0 +1,46 @@
+{
+  "status": "Completed; rejected for fast friendly override",
+  "sessionId": "128b4365-88d1-4581-939c-d059060c47bf",
+  "assetParentId": "c00866db-e88b-4ba9-a9a7-560a87a30b4b",
+  "model": "Kling2.5TurboPro",
+  "seconds": 5,
+  "startImage": "../scary-identity-study/wisp-scary-wide-v2.png",
+  "startSha256": "bc049a22ac9850f4d314555c424cd516beb04712a6cfa0c2440c9429513d5e8b",
+  "endImage": "wisp-friendly-v7-first.png",
+  "endSha256": "2af544a100df1229a17b3692884601570803c73f2d2a031ed9105a4606e70dea",
+  "creditsBefore": 10571,
+  "expectedDebit": 60,
+  "intent": "New natural scary-to-friendly performance, not reversed forward footage",
+  "timingTargets": {
+    "fullyFriendlyBySeconds": 1.5,
+    "order": "Sharp teeth and claws disappear before wide sweet eyes; then welcoming wave"
+  },
+  "rejectionCriteria": [
+    "Friendly eyes with lingering fangs or long claws",
+    "A slow frightening hold before softening",
+    "Missing or disconnected lower vapor core",
+    "Flat ribbons, fins, solid tail curls, duplicate limbs/faces",
+    "Clipped smoke or missing full-effect reserve",
+    "Frozen ending or abrupt joins"
+  ],
+  "limits": "No native voice, operator override latency, child interaction or physical projection proven; not installed in live renderer",
+  "creditsAfter": 10511,
+  "observedDebit": 60,
+  "file": "wisp-friendly-return-v20.mp4",
+  "sha256": "0757dc8a0d41a20164aa8ea0cf11c3a76085e88275d01fb2d6c06c5b118afee4",
+  "review": {
+    "frames": 122,
+    "fps": 24,
+    "allFrameRGB4_8_16ReservePass": true,
+    "emptyFrames": 0,
+    "visualFailure": [
+      "Still frightening at1.5seconds instead of fully friendly",
+      "Sweet blue eyes visible around1.75seconds while elongated hands/claws persist through2.5seconds",
+      "Fully rounded friendly presentation occurs around2.75\u20133seconds",
+      "Ending slows toward near-hold; last12RGBmedian0.876versusmiddle5.279"
+    ],
+    "sampling": "Timing contact every0.25seconds through3seconds; source retained for further inspection",
+    "limits": "No full-speed human approval, no child interaction test; framing pass cannot override choreography failure"
+  },
+  "nextStep": "Stop same-prompt paid retries. Demonstrate authored intermediate-pose/timing control before another return generation. Keep existing immediate friendly fallback available."
+}

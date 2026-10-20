@@ -16,8 +16,20 @@ class Conversation(unittest.TestCase):
   output={'output':[{'content':[{'type':'output_text','text':json.dumps({'reply':'Hello friend! '*100,'mood':'sinister','gesture':'spooky'})}]}]}
   with patch.object(c,'request',return_value=output) as req:
    r=c.reply({'text':'Hello!','audience':'little'})
-   self.assertEqual(r['mood'],'amused');self.assertEqual(r['gesture'],'delight');self.assertLessEqual(len(r['reply'].split()),45)
+   self.assertEqual(r['mood'],'amused');self.assertEqual(r['gesture'],'delight');self.assertLessEqual(len(r['reply'].split()),20)
    self.assertFalse(req.call_args.args[1]['store']);self.assertIn('JSON',req.call_args.args[1]['input'][0]['content']);self.assertEqual(req.call_args.args[1]['input'][0]['role'],'developer');self.assertNotIn('tools',req.call_args.args[1])
+ def test_no_mid_sentence_word_chop(self):
+  first='That costume sounds boo-tiful!'
+  self.assertEqual(c.short_reply(first+' Extra ghostly thoughts'*30),first)
+  self.assertEqual(c.short_reply('wandering '*40),'My ghostly thoughts wandered! A tiny boo for you.')
+  self.assertEqual(c.short_reply('Happy haunting!'),'Happy haunting!')
+ def test_doorstep_prompt_contract(self):
+  output={'output':[{'content':[{'type':'output_text','text':json.dumps({'reply':'Happy haunting!','mood':'amused','gesture':'greet'})}]}]}
+  with patch.object(c,'request',return_value=output) as req:
+   self.assertEqual(c.reply({'text':'Bye!','audience':'family'})['reply'],'Happy haunting!')
+   prompt=req.call_args.args[1]['instructions']
+   for phrase in ('front door','3–12 words','At most 20 words','You have no camera','farewell with no follow-up question','Vary openings'):
+    self.assertIn(phrase,prompt)
  def test_recording_validation(self):
   for d in ({'audio':'x'},{'audio':base64.b64encode(b'a'*500).decode(),'mime':'text/plain'}):
    with self.assertRaises(ValueError):c.transcribe(d)

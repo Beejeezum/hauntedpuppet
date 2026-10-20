@@ -1,0 +1,15 @@
+{
+  "state": {
+    "duration": 15.25,
+    "currentTime": 15.25,
+    "muted": true,
+    "ended": true,
+    "quality": {
+      "total": 366,
+      "dropped": 0
+    }
+  },
+  "errors": [],
+  "external": [],
+  "scope": "Isolated muted Chromium file playback of the assembled source review; not interactive app, native speech, subjective motion quality or physical projection."
+}
