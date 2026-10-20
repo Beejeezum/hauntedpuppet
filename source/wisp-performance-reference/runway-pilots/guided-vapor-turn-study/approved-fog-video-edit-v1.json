@@ -1,0 +1,61 @@
+{
+  "taskId": "4e04aaf5-6264-45b0-8907-659ac9a1fab8",
+  "status": "completed-review-pending",
+  "sourceVideo": "wisp-guided-vapor-turn.mp4",
+  "sourceVideoSha256": "17bfe3f95d8f1123f68fa4908845cf2ce867dba90d69f1d798a9e0e052e058d2",
+  "approvedKeyframe": "side-frame60-vapor-edit-v1.png",
+  "approvedKeyframeSha256": "210fb9bcc51f0677db03b1c4ee8597b8d20f733c3b77ab35de578d1fd0a6d3ab",
+  "keyframeTimestampSeconds": 2.5,
+  "durationSeconds": 5.041667,
+  "creditsBefore": 18909,
+  "creditsAfterSubmission": 18769,
+  "observedDebit": 140,
+  "humanApprovalScope": "Porous fog material direction in this still only; full turn and transitions remain unapproved.",
+  "prompt": "Replace the ghost's opaque head, neck, shoulders and arms with porous translucent ivory-blue spectral fog matching the approved keyframe. Preserve the original turn, profile features, hands, proportions, continuous body core, framing, timing and pure black background. Fine turbulent fog throughout the body; no solid mannequin anatomy or hard bright rim.",
+  "releaseApproved": false,
+  "outputFile": "wisp-guided-vapor-turn-fog-edit-v1.mp4",
+  "outputSha256": "7e3cc60d0b586b5ecb6c04663a0430e6a24142fafa08ab2fa90d133544e557a0",
+  "frameCount": 121,
+  "fps": 24.0,
+  "review": {
+    "humanFullFilmApproved": false,
+    "material": "More porous head/torso; forearms and profile still retain solid anatomical surfaces. Not final acceptance.",
+    "bounds": {
+      "4": {
+        "emptyFrames": 0,
+        "reserveFailures": 54,
+        "minimumMarginsLTRB": [
+          0.38229166666666664,
+          0.21574074074074073,
+          0.0,
+          0.0
+        ]
+      },
+      "8": {
+        "emptyFrames": 0,
+        "reserveFailures": 0,
+        "minimumMarginsLTRB": [
+          0.38229166666666664,
+          0.21666666666666667,
+          0.37395833333333334,
+          0.22777777777777777
+        ]
+      },
+      "16": {
+        "emptyFrames": 0,
+        "reserveFailures": 0,
+        "minimumMarginsLTRB": [
+          0.38333333333333336,
+          0.21666666666666667,
+          0.37447916666666664,
+          0.22870370370370371
+        ]
+      }
+    },
+    "outside20PercentMaxDecodedRGB": 5,
+    "outside20PercentPixelsOver4Maximum": 1,
+    "endpointSourceComparison": "fog-edit-v1-source-comparison.json",
+    "endpointPolicy": "Both endpoints changed in RGB and mask. Prior joins cannot be inherited; exact edited-media joins require fresh review.",
+    "releaseApproved": false
+  }
+}

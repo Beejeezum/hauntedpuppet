@@ -4,23 +4,23 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.html",
       "destination": "index.html",
-      "sha256": "e1c4ff70bcd48c0a24326fc0419554b7a0e093f58bfa64ed8536d83240652834",
-      "bytes": 3110,
-      "publishedSha256": "e1c4ff70bcd48c0a24326fc0419554b7a0e093f58bfa64ed8536d83240652834"
+      "sha256": "b69239254993bdd5af7da9b42997eda2249b0ef4361daf79a2d7a0cda15052f2",
+      "bytes": 3147,
+      "publishedSha256": "b69239254993bdd5af7da9b42997eda2249b0ef4361daf79a2d7a0cda15052f2"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.css",
       "destination": "showdesk.css",
-      "sha256": "9d29aa806a85cbb1177b44ba4c55b1477d76afc2f58b6a5e441735a39f2b860f",
-      "bytes": 3209,
-      "publishedSha256": "9d29aa806a85cbb1177b44ba4c55b1477d76afc2f58b6a5e441735a39f2b860f"
+      "sha256": "4c526a4802b23f314b3ba2f11bfb55b899ea1c0b3cfec7c7e5cc1143aabdd6b4",
+      "bytes": 4088,
+      "publishedSha256": "4c526a4802b23f314b3ba2f11bfb55b899ea1c0b3cfec7c7e5cc1143aabdd6b4"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.mjs",
       "destination": "showdesk.mjs",
-      "sha256": "c2078ee62d4ffd9f3d77f5f834808a585521f4c914aaa25ecd5085da1966482d",
-      "bytes": 9823,
-      "publishedSha256": "f2f9b89dcb59069a1fd870f65d1bf18a07b4ea6c28b38ec9c4aedacf19656d55",
+      "sha256": "cf2b589872a6550b50a9339bcc908d181351b9fca6d64cb0d785d646715d83a3",
+      "bytes": 10829,
+      "publishedSha256": "6b50d2be99c50e77a25ce3b225b58866319be6e4e8c11946f32bc2677f0746c5",
       "rewrites": [
         {
           "from": "../runway-pilots/wisp-film-output.js",
@@ -63,6 +63,27 @@
       "sha256": "21e8efec67ec7e024fc954cc16af458cad8f8427553a998341ff9d37286ca35a",
       "bytes": 1738247,
       "publishedSha256": "21e8efec67ec7e024fc954cc16af458cad8f8427553a998341ff9d37286ca35a"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/film-remote.mjs",
+      "destination": "film-remote.mjs",
+      "bytes": 2624,
+      "sha256": "4fe740f7e1835cd0ede48b229cd4c068457f4aebed4b3ebcb473fa1982297e60",
+      "publishedSha256": "4fe740f7e1835cd0ede48b229cd4c068457f4aebed4b3ebcb473fa1982297e60"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/owner-sound.mjs",
+      "destination": "owner-sound.mjs",
+      "sha256": "63d38e81c169ef8c8314a032c8e260d38151423f0057fa42ff00ec211f4ccbb8",
+      "bytes": 2946,
+      "publishedSha256": "63d38e81c169ef8c8314a032c8e260d38151423f0057fa42ff00ec211f4ccbb8"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/owner-sound-controls.mjs",
+      "destination": "owner-sound-controls.mjs",
+      "sha256": "4005469db9e8bf763123a15255e269309a72d807f875e4342471ba1dcac0b3ab",
+      "bytes": 3110,
+      "publishedSha256": "4005469db9e8bf763123a15255e269309a72d807f875e4342471ba1dcac0b3ab"
     }
   ]
 }

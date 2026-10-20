@@ -1,0 +1,35 @@
+{
+  "taskId": "15088de9-4db9-4eb2-b6b1-3617bf6593ed",
+  "status": "reviewed; rejected as finished material; acting reference only",
+  "submissionCap": 1,
+  "model": "kling-o3-pro",
+  "durationSeconds": 10,
+  "generateAudio": false,
+  "requestedResolution": "720p",
+  "prompt": "One continuous ten-second nonverbal painted ghost performance on pure black, locked camera. Begin as the exact supplied blue-eyed menacing Wisp in the exact pose and buffered size. Seconds0to2: eyes notice a visitor off to one side, then the head tilts toward the viewer with a sly wicked grin; the shoulders follow the eye/head action with delayed weight. Seconds2to5: one attached arm reaches a LITTLE toward the viewer, elbow bends and fingers slowly curl in a beckoning gesture while the other arm counterbalances separately. Seconds5to7: Wisp eases back and opens both hands in a quiet menacing invitation, with continuous torso bending and lower-core follow-through. Remain front or shallow three-quarter facing the whole time; do not turn the back. Seconds7to9: the connected body deliberately exhales into softly dispersing irregular mist, including hands, eyes and head, until no character or fog remains. Seconds9to10 are completely empty pure black matching the ending target. Preserve exact painted ivory-blue translucent vapor, same face, head crest, attached hands and coherent lower fog core until the intentional dissolve. Fine turbulent fog edges stay alive throughout, never a frozen body with a smoke overlay. No muscular anatomy, spine/ribs, smooth tubular arms, solid fish curls, rubber tails, hard blue outline or plastic surface. All fingertips, body and emitted mist stay within the central60percent frame width and height; no near-camera lunge, zoom or cropped smoke. No speech, growl, music, audio, text or new objects. This is a quiet spooky ambient acting phrase, not a jump scare or a loop.",
+  "startFrame": "../film-return-handoff-study/scary-end-staged.png",
+  "endFrame": "../../ambient-show/fog-lettering-study/empty-stage-v1.png",
+  "observedCreditsBefore": 20618,
+  "observedCreditsAfter": 20448,
+  "observedDebit": 170,
+  "scope": "Front/shallow-three-quarter ambient menacing phrase; no back turn, loop, speech or jump scare. Exact actual-film start join and complete ending need review before integration.",
+  "file": "wisp-scary-ambient-phrase.mp4",
+  "sha256": "f62c97559a950a560a404fa31d4561f25b94ba2e6819d233e1e202ac2d90b653",
+  "actualOutput": {
+    "size": [
+      1920,
+      1080
+    ],
+    "frames": 241,
+    "fps": 24,
+    "audio": false
+  },
+  "review": {
+    "bounds": "161/241 frames fail target20percent; top minimum10.37percent also fails15percent minimum. No edge clip observed in contact sheet.",
+    "material": "Attached expressive arms and head acting present, but forearms and chest turn opaque/smooth/tubular; does not match approved translucent vapor.",
+    "ending": "Sampled final frame black; full exact-black tail still requires measurement.",
+    "disposition": "No public promotion, no automated retry; retain motion reference only.",
+    "humanApproved": false,
+    "physicalProjection": false
+  }
+}

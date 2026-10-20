@@ -1,0 +1,36 @@
+{
+  "status": "review only; not approved",
+  "file": "source/wisp-performance-reference/runway-pilots/friendly-wave-departure-study/wisp-idle-wave-handoff-review.mp4",
+  "sha256": "4e2f15c44767e382bbb4091d8e0f5f166676c5c3062693757047474015b1d662",
+  "fps": 24,
+  "size": [
+    1280,
+    720
+  ],
+  "segments": [
+    {
+      "label": "friendly-idle",
+      "source": "source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4",
+      "sha256": "52d54d03c0f0406a9724c7c04b9e2fa0557a675486edfaa40fd0ca2e24a682bd",
+      "frames": 122,
+      "scale": 0.85
+    },
+    {
+      "label": "wave-to-empty",
+      "source": "source/wisp-performance-reference/runway-pilots/friendly-wave-departure-study/wisp-friendly-wave-empty-tail-review.mp4",
+      "sha256": "198c1b719c914aa3fe8c1abf256ecd8db247cc332863d1cd2d8bfe513b8c233d",
+      "frames": 133,
+      "scale": 1
+    }
+  ],
+  "joins": [
+    {
+      "from": "friendly-idle",
+      "to": "wave-to-empty",
+      "visibleRGBDifference": 3.456841386763744,
+      "silhouetteIoU": 0.988339353260715
+    }
+  ],
+  "scope": "Original frame order and count; constant whole-frame fit, one export encode. Integer bilinear staging may differ slightly from browser subpixel rasterization. Pixel/silhouette diagnostics do not prove velocity continuity, anatomy, human seam acceptance or physical projection. All joins require normal-speed playback review.",
+  "exactBlackTailFrames": 29
+}

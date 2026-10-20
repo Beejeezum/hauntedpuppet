@@ -1,0 +1,43 @@
+{
+  "taskId": "84153e6b-d7b8-42c4-9ac2-be3125bbab40",
+  "status": "Reviewed motion candidate; middle-turn material still too solid; not public",
+  "model": "kling-o3-pro",
+  "duration": 5,
+  "resolution": "720p",
+  "audio": false,
+  "submissionCap": 1,
+  "observedDebit": 85,
+  "creditsBefore": 19519,
+  "creditsAfter": 19434,
+  "startFrame": "../film-return-handoff-study/scary-end-staged.png",
+  "endFrame": "../rear-vapor-guide-study/stage-v3/rear-v3-staged.png",
+  "endFrameSha256": "966c4ceb86dfe48be6af55c4d1b75873fd5ee2b3ba60b3a29e66abcd770c31a8",
+  "prompt": "A five-second actual FULL-BODY TURN of this exact painted ghost Wisp, from supplied first frame to supplied rear-three-quarter last frame. Pure black stage, locked camera. 0-0.8seconds blue eyes glance toward his next heading and round head begins to lead. 0.8-3.8seconds the same head, shoulders, arms, hands and connected lower vapor body rotate together gradually through a genuine side view into the135degree rear-three-quarter view in the ending reference. Correct occlusion: the eyes and grin disappear around the side of the head, NEVER remain stamped on the back or crossfade through it. Arms bend and counterbalance independently with small elbow/wrist/finger changes; lower vapor core trails the turn with delayed weight. 3.8-5seconds finish the rear pose with gentle continuous breathing and irregular vapor motion, no frozen image. Keep the round head bulb, narrow ghost proportions and small attached hands matching BOTH supplied references. Most crucial: head, upper back, shoulders and arms stay translucent painted turbulent MIST throughout the ENTIRE middle of the turn, with feathered porous irregular evaporating contours. No solid cylindrical arms, muscular shoulders, neck, spine, ribs, plastic torso or human anatomy; no cloud-lobed sticker outline, neon blue border, fish/ribbon tail or flat sprite flip. The endpoint is a different view of the SAME vapor being, not a character replacement, dissolve or anatomical morph. Continuous coherent lower core and both hands remain present. Maintain the supplied centered buffered scale without receding, moving camera or zooming. Entire body and all emitted mist stay within central60percent width and60percent height throughout. No speech, audio, text, props, flashes or extra beings. This shot is one spatial turn, not a loop or disappearance.",
+  "acceptance": [
+    "Actual changing side and rear orientation, correct facial occlusion",
+    "Fine vapor throughout middle-turn shoulders/back/arms; no tubes/spine/toy anatomy",
+    "Independent connected arm/hand motion and coherent core",
+    "All-frame full-effect minimum15percent reserve target20percent",
+    "Exact start and end image joins reviewed; no loop or departure inferred"
+  ],
+  "scope": "One turn proof using an explicit designed rear endpoint, unlike previous front-only failed departure. No paid retry or public promotion.",
+  "file": "wisp-guided-vapor-turn.mp4",
+  "sha256": "17bfe3f95d8f1123f68fa4908845cf2ce867dba90d69f1d798a9e0e052e058d2",
+  "actual": {
+    "frames": 121,
+    "fps": 24,
+    "size": [
+      1920,
+      1080
+    ],
+    "audio": false
+  },
+  "review": {
+    "bounds": "AllRGB4/8/16frames pass20percent; minimumtop21.48percent",
+    "motion": "Genuine side and rear orientation with proper face occlusion; different arm poses and connected lower core",
+    "material": "Croppedframes54to75 still expose smooth opaque head/neck/shoulders and anatomical arm surface; fails final fog-material standard despite better endpoint",
+    "joins": "Actualscary\u2192turn review242frames, staticjoinIoU.98991/RGBdifference3.468. Humanvelocity/materialreviewpending.",
+    "decision": "Retain motion/reference candidate only; no new-prompt retry or public promotion",
+    "humanApproved": false
+  }
+}

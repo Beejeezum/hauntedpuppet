@@ -146,6 +146,13 @@ jobs:
           mkdir -p work
           HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
           DEBUG=pw:browser HAUNT_BROWSER=webkit HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
+      - name: Check cancellable laptop-only effects
+        run: |
+          node tests/owner_sound.cjs
+          HAUNT_BROWSER=webkit HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_sound.cjs
+          HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_sound.cjs
+      - name: Check paired film controls with actual local cloud service
+        run: node tests/film_phone_cloud_browser.mjs
       - name: Keep show desk evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -153,6 +160,7 @@ jobs:
           name: showdesk-evidence
           path: |
             test-results/showdesk-*.json
+            test-results/film-phone-cloud*
             test-results/stage-geometry*
             work/showdesk-rehearsal-*.png
           if-no-files-found: ignore

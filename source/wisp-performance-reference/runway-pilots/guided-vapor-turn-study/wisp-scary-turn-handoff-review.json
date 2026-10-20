@@ -1,0 +1,35 @@
+{
+  "status": "review only; not approved",
+  "file": "source/wisp-performance-reference/runway-pilots/guided-vapor-turn-study/wisp-scary-turn-handoff-review.mp4",
+  "sha256": "b99025b6cf3e794626f35ef382823c81a25a4af19a5f116e10c325c3ec469d2b",
+  "fps": 24,
+  "size": [
+    1280,
+    720
+  ],
+  "segments": [
+    {
+      "label": "scary-performance",
+      "source": "source/wisp-performance-reference/runway-pilots/motion-transfer-study/wisp-scary-motion-transfer-v35.mp4",
+      "sha256": "21e8efec67ec7e024fc954cc16af458cad8f8427553a998341ff9d37286ca35a",
+      "frames": 121,
+      "scale": 0.85
+    },
+    {
+      "label": "guided-turn",
+      "source": "source/wisp-performance-reference/runway-pilots/guided-vapor-turn-study/wisp-guided-vapor-turn.mp4",
+      "sha256": "17bfe3f95d8f1123f68fa4908845cf2ce867dba90d69f1d798a9e0e052e058d2",
+      "frames": 121,
+      "scale": 1
+    }
+  ],
+  "joins": [
+    {
+      "from": "scary-performance",
+      "to": "guided-turn",
+      "visibleRGBDifference": 3.4677416465107944,
+      "silhouetteIoU": 0.989913105795933
+    }
+  ],
+  "scope": "Original frame order and count; constant whole-frame fit, one export encode. Integer bilinear staging may differ slightly from browser subpixel rasterization. Pixel/silhouette diagnostics do not prove velocity continuity, anatomy, human seam acceptance or physical projection. All joins require normal-speed playback review."
+}

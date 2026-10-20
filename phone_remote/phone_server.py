@@ -119,7 +119,8 @@ class Handler(BaseHTTPRequestHandler):
                             if len(raw)>100000 or not raw.startswith(b'\xff\xd8\xff'): raise ValueError('Invalid JPEG preview')
                         if not isinstance(state,dict) or not isinstance(cues,list) or len(cues)>40 or any(not isinstance(c,str) or len(c)>64 for c in cues): raise ValueError('Invalid state')
                         # Only projection state. Never forward credentials, transcripts, or arbitrary server data.
-                        r.state={k:v for k,v in state.items() if k in ('mood','audience','loop','blackout','volume','status','gesture','gaze','form','scaryReady','revealArmed','revealRunning') and isinstance(v,(str,bool,int,float))}
+                        r.state={k:v for k,v in state.items() if k in ('mood','audience','loop','blackout','volume','status','gesture','gaze','form','scaryReady','revealArmed','revealRunning','workspace') and isinstance(v,(str,bool,int,float))}
+                        if r.state.get('workspace') not in ('films','live'): r.state.pop('workspace',None)
                         r.cues=cues; r.preview=preview; r.state_at=r.clock(); r.bridge_at=r.clock()
                         return self.send_json(200,{'ok':True})
                     if path=='/bridge/ack' and post:

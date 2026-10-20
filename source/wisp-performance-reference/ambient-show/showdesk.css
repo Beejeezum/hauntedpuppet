@@ -6,3 +6,6 @@ header{position:sticky;top:0;z-index:2;background:#101214}.stage-panel{align-sel
 .primary{display:grid;gap:24px;align-content:start;min-width:0}aside{grid-row:auto}#stage{height:min(38vh,440px)}@media(max-width:900px){#stage{height:auto}}
 
 #mediaSources{display:flex;flex-wrap:wrap;gap:4px;max-width:208px;flex:0 1 auto}#mediaSources:empty{display:none}.source-preview{width:48px;height:27px;object-fit:contain;background:#000;border:1px solid #354037;border-radius:3px;pointer-events:none}
+
+.phone-controls{padding:18px;border:1px solid var(--line);border-radius:14px;background:#191d1b}.phone-controls summary{cursor:pointer;color:var(--mint)}.phone-controls .row{display:flex;gap:8px;flex-wrap:wrap}.phone-controls .help{color:var(--muted);font-size:13px}.phone-controls a{overflow-wrap:anywhere}
+.sound-controls{padding:18px;border:1px solid var(--line);border-radius:14px;background:#191d1b;min-width:0}.sound-controls summary{cursor:pointer;color:var(--mint);min-height:44px}.sound-controls input[type=file]{max-width:100%;font-size:13px}.sound-controls button{min-height:44px;max-width:100%;overflow-wrap:anywhere}.sound-controls #soundCues>div{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;margin-top:10px}.sound-controls #soundCues>div>button:last-child{font-size:12px;padding:8px}.sound-controls #soundStatus{font-size:13px;color:var(--muted)}

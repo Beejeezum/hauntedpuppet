@@ -1,5 +1,11 @@
 # Animation-first Wisp show desk
 
+## Current release checkpoint · 2026-10-20
+
+Production is e44697a27fc2eda96c6445c4a5f7cc4606486bab. The opt-in two-film showdesk is live at https://hauntedpuppet.netlify.app/assets/wisp-showdesk/index.html; root remains the separate live-puppeteering app. PR9 adds paired film controls and laptop-owned local sound effects. Its older b5c5dbf preview passed hosted exact-build/hash, silent-output and sound tests; a later local Mute-button stability fix passed all71 local browser checks but still requires exact-head Linux CI. No additional source study is a finished public cue.
+
+The remaining sections are a chronological development log. Earlier release IDs, process handles, pending jobs and “not deployed” statements describe their checkpoint only; use this summary and the latest durable work log for current status. The full goal remains incomplete: finished asset library, reviewed joins/reels, animation-first main entry and human/physical acceptance still require work.
+
 ## Current goal
 Finalize real painted nonverbal films and overhaul the app into a show-control desk with large labelled cue buttons. Modes: cute, scary, alternating, mostly scary with brief friendly interludes, and manual cueing. Dwell and form-change pacing are operator settings. Live puppeteering, voice and webcam remain a separate workspace with existing working paths preserved. Every cue needs a deliberate transition; never immediately replace a visible unrelated first frame.
 
@@ -167,3 +173,149 @@ Completed showdesk job118776902132 in CI39465845920 failed terminally at the150s
 Harness now uses10second default action waits, bounded3second pause evaluation, explicit5second gate/black/recovery waits and6second resume promise, with a log after each stage. It exercises five consecutive realpause/resume cycles, keeps exactblue/black assertions and existing2secdiagnostics/5seccleanup. Both pinnedlocal Chromium156 and MacWebKit27.2 passed allfivecycles plus actual programs/layers/Blackout/owner navigation. No owner-focus forcing, error filtering, tolerance increase or application media changes. NextLinuxrun must establish the precise failure or reliable repeated success; do not claim logging fixed media.
 
 The existing-console LinuxWebKit job in39465845920 now passed after the artwork-settling fixture correction, native-avatar-offline passed, fullregression still running atlastpoll. A new exacthead may supersede the known failedshowdesk job with these stronger diagnostics; this is a response to a terminal testfailure, not a wait-only rerun. Production remainsdae1261.
+
+
+## Paired phone film controls and release checkpoint — 2026-10-20
+
+PR8 exact head9b299448d9ca54ac21154b420ec394ed8fdf2fbc passed all four jobs in CI39467044811. Normal Git merge produced e44697a27fc2eda96c6445c4a5f7cc4606486bab; Git CD publication/hosted verification is pending. No manual deploy or production credential changes. LinuxWebKit passed all five bounded recovery cycles; diagnostic instrumentation is not claimed as an application decoder fix.
+
+A separate follow-up connects the existing paired-phone bridge to the film desk with injected controller/preview canvas. Phone film workspace offers two actual film cues, four programs, Welcome, stable Blackout and separate Restore; unsupported live gestures/voice/gaze are hidden and rejected. Existing live workspace keeps its prior controls. Backend forwards only bounded workspace enum plus existing allowlisted state. Phone remains silent, laptop retains capture/audio ownership. Stop defeats pending decode; intentional cancellation does not leave an obsolete laptop error. Cloud preview caption now accurately says every few seconds.
+
+Real local Postgres-compatible pairing/auth service plus actual built owner/phone pages passed isolated Chromium end-to-end: cue/program/Welcome, pending-cue Stop, Blackout/Restore, output black and relit pixels, revoke/disable, no provider/capture requests and no phone/output media. Legacy cloud phone browser test passed separately. Captured actual390px viewport at scroll0; no horizontal overflow. The preview remains large; full-page screenshot after scrolling had misleading sticky placement. No claim of physical-phone or hosted pairing acceptance. Future CI retains film-phone evidence. Added hosted release verification script checks exact Git build and published allowlist hashes before real silent playback and output lifecycle tests.
+
+Asset review remains separate. New scary ambient phrase task15088de9-4db9-4eb2-b6b1-3617bf6593ed completed once; useful attached-arm acting but opaque tubular material and insufficient smoke reserve reject finished use. User rejected v38 Halloween fade/bat pacing. New single five-second pilot45aa0509-60db-441d-a560-1af292f735ba requests actual smoke advection and small fast bats emerging behind letters toward viewer; 85credits observed, no retry, pending inspection. Neither candidate promoted to public film cues.
+
+
+## Hosted release verified; material gate retained
+
+Production now reports mergeSHAe44697a27fc2eda96c6445c4a5f7cc4606486bab built2026-10-20T17:53:33.365Z. Isolated hosted Chromium verified every public showdesk allowlist hash from that exact Git commit, actual cute/scary/cute playback, visible silent output, Stop-to-black, output disposal on owner navigation,390px no horizontal overflow, no microphone/provider requests. Evidence test-results/showdesk-hosted.json. First test attempt failed because its capture trap assumed navigator.mediaDevices existed on about:blank during teardown; guard added, full hosted rerun passed. This is a test-harness repair, not an app audio fix. Native live/voice actual provider and physical projection are not established by it. Public beta has two films and planned black transitions, not a finished32-film library or native anatomical morph.
+
+Phone follow-up PR9 https://github.com/Beejeezum/hauntedpuppet/pull/9 is draft atc3e1c76755c89eade0d3e0beae9ff84012fc8712. ExactCI39470099298 was confirmedrunning; do not cancel/restart merely because it is waiting. Localphone test plus output relight, local cloud contracts,8Python phone tests and publicbuild passed. Production does not yet include this phone follow-up.
+
+Revised bat/smoke task45aa0509-60db-441d-a560-1af292f735ba completed once:121frames24fps1920x1080silent, SHA238614d4daab6db4c559405a25a826fadda417c8c0227da082fc9e3a3f05b638. Smaller bats and local breakup are present in contact review, but surviving lettering remains too solid/crisp;43frames fail20percent reserve, minimumright8.70percent fails15percent too. Not public, no paid retry. Built-in imagegen is making a vapor-stroke source anchor; original text material is the likely constraint, and further video spend waits on useful material reference.
+
+
+Built-in imagegen material edit saved fog-lettering-study/happy-halloween-vapor-v2.png with full prompt vapor-v2-prompt.txt, preserving RGBA and original default output. It still inherited too much solid serif structure/cloud surround and raw framing misses20percent; not approved and not sent to paid video. Do not call this the finished smoke lettering. Next material attempt should change the underlying stroke structure rather than preserving the old type shape; paid retry remains gated on review.
+
+
+## Fresh fog material and Linux mute diagnostic
+
+Fresh built-in imagegen (no old source image) produced happy-halloween-vapor-v3.png, SHA b7a8aab15fc0606a207e39331bd53158b5101c2ad1488ded58a145779fa07725, RGBA1672x941 alpha0..254. Softer variable fog strokes remove the prior sharp serif skeleton; human material review requested, not approved. Raw alpha>4margins left14.41/top21.36/right13.58/bottom16.90percent fail20percent; stage with additional reserve before any motion spend. Full prompt and machine measurements saved. Updated atmosphere scene choreography to require behind-to-front small fast bats and actual advecting smoke, preserving planned/notfinished status. Planner tests pass; synthetic scope only. No additional Runway generation submitted.
+
+PR9 CI39470099298 WebKitjob118791584172 terminal failure at tests/puppeteer_voice.cjs38:30second idle/rest timeout after Mute. Diagnostic state stillphase live,mutedfalse,micEnabledtrue and valid syntheticinput/output. This does not identify whether pointer failed or mute toggled back. Retained completedjob logs work/phone-ci-webkit-39470099298.log. Added bounded test-only pointerdown/up/click target history and immediate post-Mute state to failure diagnostics; no application behavior change or softened assertion. Local pinnedWebKit reproduction session34492 running against read-only8898 source. OtherCIjobs remain live; do not call whole run terminal or restart those blindly. Production remains tested e44697a and does not include PR9.
+
+Local pinnedMacWebKit puppeteer diagnostic test passed all6syntheticAudioWorklet cases on read-only8898, including mute, silence recovery, cleanup and silent projector. Peak syntheticDSP frequencies571.29/275.39Hz. This does not reproduce or fix the Linux click failure. NewCI diagnostics are needed before PR9 can ship.
+
+
+## Owner sound foundation — not yet mounted or published
+
+Added owner-sound.mjs as an isolated laptop-only WebAudio effect bus. Constructor creates no audio context. Explicit enable resumes audio; bounded PCM decode, gain and scheduling; cancellation invalidates pending decode and stops future sources on the audio clock with12msactive-tail ramp; disposal closes context and buffers. No microphone/provider calls. No projector/phone import or public allowlist entry, no cue mapping yet, no generated sound approved by implication. This is a foundation for the requested sound-enabled cue films, not completed runtime integration.
+
+Actual isolated silent Chromium decoded a generated WAV, scheduled immediate and5second-delayed sources, confirmed delayed source ended promptly after cancellation rather than surviving until its scheduled impact, rejected late decode, invalid timing/level, and closed/disallowed reenable after disposal. Synthetic acoustic content and no human listening acceptance. Test tests/owner_sound.cjs. New PR9 diagnostic CI39470663728 confirmedpending at a79854e; earlier39470099298 fullregression stillrunning with knownWebKitfailure. Preserve same handles.
+
+
+## Local sound-effects controls integration — unshipped follow-up
+
+Mounted laptop-only local effects panel in source showdesk: explicit enable, local audio import, level control, six removable manual cues, mono/stereo up to30sec,20MBcompressed ceiling. File picker is disabled during decode so concurrent imports cannot exceed six. Playing requires a visible non-stalled film; starting a replacement cancels the previous effect. Director leaving playing, Stop/Blackout, first stale-frame detection and pagehide cancel audio; pagehide disposes context. No preloaded/provider sound, speech, phone/projector sound bus or automatic cue soundtrack asserted. Public allowlist/hash imports updated locally but not pushed over the active release diagnostic run.
+
+Tests/owner_sound.cjs passed real WebAudio decode/scheduling, delayed-source ended event before its5sec due time, stale-decode rejection, invalid gain/timing and disposal with synthetic silentPCM. Tests/showdesk_sound.cjs passed actual source desk explicit enable/import, no effect on empty stage, manual playback, cue-change cancellation, Blackout and effect removal; owner videos remain muted and no audio elements. No human acoustic or physical-projection approval. CurrentCI39470663728 at a79854e is confirmedrunning allfourjobs; this local sound follow-up is beyond its exacthead and must get its own verified release check later.
+
+
+## Integrated sound isolation and second Linux recovery failure
+
+Local integrated sound test now intercepts AudioContext creation in owner and output contexts. Explicit enabling creates exactly1ownercontext; actual projector popup remains0contexts and0audio/video elements even while a manual sound plays. Self-contained HTTP fixture replaces reliance on8898, and built-dist version passed import/play/removal/cue-change/Blackout. CI showdesk job will run both owner sound and actual desk sound tests on the next follow-up head. No new sounds generated or claimed approved.
+
+Local built-dist Chromium full rehearsal session6506 completedPASS including5stallcycles, modes, layers, narrow screen and owner-navigation cleanup. Remote a79854e CI39470663728 showdeskjob118794209713 terminallyfailed in LinuxWebKit: pause returnedtrue at1.745sec, but5sec later actual character was playing at1.684sec and composition never suspended. It is not a resumed-decode timeout; video did not stay paused. Original test selected first nonpaused object from a history including removed media. Changed fixture to select connected character video by actual director cue, assertitwasplaying, recordcue/connection, and trace JavaScript play calls plus native play/pause/ended events. No production media change, forcefocus, repeatedpause, error filtering or relaxed pixel/time gates. Cannot claim a rootcausefix until Linux evidence. Logs work/showdesk-failure-39470663728.log.
+
+Local pinnedMacWebKit built-dist diagnostic session33464 passed all5pause/recovery gates and Blackout/late-decode, remainingmode/mobile/cleanup pending atlastpoll. Same remoteCI stillhasWebKit andfullregression running; retain it for mute-event diagnosis, no wait-only restart. Current local follow-up changes are unpushed beyond31792ed. Production remains e44697a.
+
+
+## Sound panel visual pass and retained CI wait
+
+Inspected actual open390x844sound panel screenshot test-results/showdesk-sound-mobile.png. Styled as a matching collapsed card, full-width level/file controls, labelled play/remove rows,44pxminimum touch targets and filename wrapping. Actual local browser test passes no horizontaloverflow and Stop staysvisible. Enable button now clearly readsLaptop effects enabled after activation. Effects remain laptop-only/manual, with no approved automatic film soundtrack claim. Public hashes refreshed; follow-up remainslocal/unshipped.
+
+ExactCI39470663728 WebKitjob118794209562 now authoritatively completed Check direct voice effects success, including previously failing syntheticmutecase. It is still in painted eyes/apparitions step. This single pass does not establish why priorc3mute failed. ShowdeskLinuxjob alreadyfailed and logs/targetedmedia diagnostics are retained. Preserve currentlivejobs untilterminal, then ship a newcandidate only after fullchecks; no live site changes.
+
+
+## Stall sound test and one real acting render
+
+Built-dist sound tests now run both actualChromium andMacWebKit, each using its own isolated HTTPfixture. Both passed: enable/import, no sound on empty stage, manual effect with exactly1ownerAudioContext/0outputcontexts/0outputmedia, pause the actualcharacter, awaitcompositionstale, confirm effect cancelled, resume picture then play anew, cue-changecancel,Blackout,removal,narrow-screen overflow. This is synthetic audio in muted/zero-level browser tests, not human acoustic acceptance. CI step extended to both engines in unpushed follow-up.
+
+One capped5second friendly notice/wave/physicalfogdeparture task23fee543-3808-4437-9260-86bb0ee06fd5 submitted in correctworkspace1709631,85observedcredits. Exact existinguploaded v28-derivedfriendlystart plus existingblackend, no reupload or batch. No new smoke-lettering motion while humanmaterial feedback pending. Review actual fullframe bounds, attachedhand/material, realdispersal, exactblacktail andstartjoin before any library promotion; no paidretry. Task pending, poll samehandle after suitableinterval. CI39470663728 remainslive forremainingWebKit/legacyregressions with knownterminalshowdeskfailure.
+
+
+## Friendly wave/departure proof completed
+
+Task23fee543-3808-4437-9260-86bb0ee06fd5 completed once85credits. OriginalSHA572e2a9a4a0bdf6db164a7c29e6f923f510de8534d5c5e3596111cf221c6db29,121frames24fps1920x1080silent; all20percentreserveRGB4/8/16pass, minimum24.81percentbottom. Detailcontacts show attachedwave, headtilt/blink, independentarm/head response and intentional vapor breakup near3.5sec. Human motion/material approval remains pending. Firstframe versus supplied v28-derivedstagedPNG IoU.99075/visibleRGBdiff2.488; static registration does not prove idle-to-wave velocity or visiblejoin acceptance.
+
+OriginalendsmaxRGB1,0exactblacktailframes: do NOT claim originalpassedemptygate. Editorialreview appends12black-sourceframes (0.5sec), retains original121actingframes/order, H264reencode, no crop/interpolation/reversal/actingretime. Encoded first3appendedframesretainnearblacknoise; final9framesexactRGB0, meeting8frameemptyboundarycriterion. ReviewSHA198c1b719c914aa3fe8c1abf256ecd8db247cc332863d1cd2d8bfe513b8c233d,133frames, all20reservepass. Not publiccue, noautopromotion/retry.
+
+Source review.html adds this5.5secperformance first; existing25secroundtrip remains, oldbatpictureexplicitlysuperseded/rejected and retainedonlyasSFXreference. Previoustwo-filmbrowsercheckcompletedPASS, but newthree-filmversion has a separate livecheck pending (nexttoolsessionhandle). Do notmislabeloldreportasnew3videoevidence. CInewhead5000d837999226e15fdb218fbfd3c9103186c96a run39472111843 is confirmedrunning; nativeofflinepassed, other3running. Prior39470663728 cancelled/superseded because of terminalshowdeskfailureplusnewvalidatedsoundfeature; its completedWebKitpasslogs retained. Productionremains e44697a.
+
+Newthree-filmreview browser session31039 completedPASS: wave133frames,roundtrip607frames,bats125reportedframes,0reporteddrops each, allendedmuted/noautoplay, noerrors or390pxoverflow. Evidence work/film-review-page.json. This validatesbrowserdecode only, nothumanjoin/material/physicalapproval.
+
+
+## Actual idle-to-wave join review and Linux integrated pass
+
+Added reusable review-film-sequence.py using existing sequence assembly method: exact original24fps clips/order/count, fixed whole-frame fit, no crop/registration/interpolation/crossfade/hold trimming. Manifest stages122v28idleframes at85percent plus133wave/emptyreviewframes at100percent in common1280x720;255frames10.625sec. ReviewSHA4e2f15c44767e382bbb4091d8e0f5f166676c5c3062693757047474015b1d662. Actual ending-to-opening join IoU.98834/visibleRGBdifference3.457, notvelocity/humanproof. Allframes20reservepass, min23.33percent; exactblacktail verified>=8frames afterfinalencode.
+
+Reviewpage now puts fullidle→wave→emptysequence first so the5.1seccut can be watched atnormal speed. Browsercheckpassed255frames0reporteddrops, plusroundtrip607andoldbatSFX125, allendedmuted/noautoplay, noerrors/390pxoverflow. Existingoldbatpictureclearlysuperseded. Newwaveandjoinstillnotpublic/approved. Reusingoldspatialstudieswaschecked: v30toy-materialrejected, v25armsstillhumanoid, v26is2.5Dcompositearrivalnotnewart; nofinishedfilmcountinflation.
+
+Exact5000d83 CI39472111843 showdeskjob118798782036 completedSUCCESS. Completedlogwork/showdesk-pass-39472111843.log confirmsbothChromium/LinuxWebKit5recoverycycles, fullfilmrehearsals, bothintegratedsoundtests, ownerWebAudiofixture and actuallocalcloudfilmphonepairing/Stop/Restore. NativeofflinealsoSUCCESS. BroaderWebKitandregressionstillrunning. No appdecoderfixclaimfromfixtureselection; priorLinux failuretargeting remains diagnostic. Productione44697a unchanged untilallchecks on5000d83 pass. Sourcejoinfollow-upkeptlocalbeyondremotehead.
+
+
+## Integrated20cycle silent playback soak
+
+Existing scripts/soak-showdesk.cjs run session35125 completed20/20actualcute→scary→cutecycles (60cue transitions) on current source runtime. Eachcycle retained2ownervideos,0owneraudioelements,0outputmedia; effectcount0, videosmuted. FinalBlackoutoutputpixels andownernavigation stopped/blanked output passed, no pageerrors. Heap samples are observations, not leakproof; this run neverenabledSFX and doesnotbyitself count AudioContexts. Earlier dedicatedrealWebAudio/output tests prove those separately. Evidence test-results/showdesk-soak-progress.json and unique work/showdesk-soak-*.json. No additionalcredits orproductionchanges.
+
+Exact5000d83 CI39472111843 nowhasWebKit,showdesk,native-avatar-offline SUCCESS. Onlyregressionjob118798781975 remainsauthoritativelylive inRun npm test (started18:09:34UTC); at18:16UTC it hadnotreached25minutejoblimit. Do not restart/cancel for waiting. Allcurrentrequiredchecks stillnotcomplete, productione44697a remains. Localheadde228cc containsunpublishedsource-reviewfollow-ups beyond5000d83; no newruntimecandidate push.
+
+
+## Rear three-quarter material guide v3
+
+One built-inimagegen edit from scaryfrontv34 produced rear135degree guidewisp-rear-three-quarter-v3.png, SHA939f164c809d4ac4de6f72251d50d067d1d6e845d455790e8a3bf07932fae19d. RGB1672x941 onblack (nottransparent), originaldefaultimagepreserved, fullprompt-v3.txt saved. Viewshowsroundheadbulbundercrest, nofacevisiblethroughback, asymmetricforeshortenedattachedarms andfinevaporinstead ofv2'slumpyoutline. Clawtipsremainbright/hard; singleviewdoesnotprovevideo/turn/identityconsistency. No publicpromotionornewRunwayturnspend.
+
+RawRGB4marginsleft37.02/top16.90/right36.18/bottom18.17percentpass15butfail20target. Requireadditionalfixedwhole-frame staging beforeusingasendpoint, notanothermaterialgenerationjustforframing. This is acandidateguide, notfinishedturnaroundoranimation. Fullgoalstillrequiresrealbacks/swoops/depthacting andactualseamreview. Currentexact5000d83 CI39472111843 finalregression remainsauthoritativelyrunning; other3passed. Productione44697a unchanged.
+
+
+## Guided rear turn preflight and capped test
+
+Generalized existing prepare-film-morph-anchors.cjs provenance text/count so a painted-reference is explicitly distinguished from decoded actualfilmframes. Stagedv3rear through actualStageCompositor at85percent1280x720, allRGB4/8/16margins>=21.81percent. StagedSHA966c4ceb86dfe48be6af55c4d1b75873fd5ee2b3ba60b3a29e66abcd770c31a8; no repaint/crop/pose registration. OriginalRGBart preserved.
+
+Runwaymetadata-only upload first returnedchatgpt_missing_file_param (noasset); usingdocumentedfileparameter withactualprojectPNG completedoneupload. One5secondguidedturntask84153e6b-d7b8-42c4-9ac2-be3125bbab40 submitted inworkspace1709631,85observedcredits19519→19434. Firstendpointactualscaryv35endstaged, lastendpointnewdesignedrear135degreeguide. This differs materially from priorfront-only faileddepthdeparture; tests correctfaceocclusion andmaterialthroughmiddle. No furtherturnpaidretry unless actualreviewjustifiesdifferentinput. Pendingrender, notfinished/public, loop ordeparture. AllnewfilesexcludeprivateassetURLs.
+
+CI39472111843 exact5000d83 finalregression stillconfirmedrunning; other3SUCCESS. Preserve samehandle andproductione44697a. Localartpreflightfollow-upmustnotcancelitsremainingjob.
+
+
+## Fullregression terminal teardown failure; targeted repair
+
+Exact5000d83 CI39472111843 terminalFAILURE: other3jobsSUCCESS, fullregressionjob118798781975 failed at forget_key.cjs3 after mostlegacytests passed. Completedlogwork/regression-failure-39472111843.log shows route.fetch Storage.getCookies cannotfindcontext duringbrowserclose; an in-flight status fixture was notdrained. Added awaitpage.unrouteAll({behavior:wait}) beforeassertingerrors/closingbrowser. No catch/errorfilter, credentialcleanup assertion removal or applicationkeychange.
+
+Default8770testattempt reportedconnectionrefused; didnotrestart it or access/reload realcredentials. Startedownisolatedserver18998 with explicitnon-secret syntheticproviderplaceholder so startupskipsMacKeychain load. Allprovider/deletionroutes remainmocked. Two consecutive realWebRTC/syntheticaudio forgettests passed with drainedroutes: cleanupbeforedelete, mictracks0,peerclosed, UIforgotten,idle/rest. Shut downonlyown62313fixture after tests. This supports fixtureteardownfix; newLinuxfullCIstillrequired.
+
+Guidedturntask84153e6b completedonce85credits:121frames24fps1920x1080silent, SHA17bfe3f95d8f1123f68fa4908845cf2ce867dba90d69f1d798a9e0e052e058d2. All20reservepass(min21.48top); actualchanging side/rear views and correctfaceocclusion improved. Croppedmiddleframes54to75 stillhaveopaquehead/neck/shoulder/arm surfaces, so NOTfinishedmaterial. Retainmotionreferenceonly; no paidretry. Actual242framescary→turnreview b99025b6cf3e794626f35ef382823c81a25a4af19a5f116e10c325c3ec469d2b, joinIoU.98991/RGBdiff3.468doesnotprovevelocity/materialacceptance. Newsourceassetsremainexcludedfrompubliclibrary.
+
+
+## Hosted preview exact-build sound proof; side-material still checkpoint
+
+Extended test-hosted-showdesk.cjs with optionalNetlify-previewbase, exactGit/hashgate, actualexplicitSFXenable/localWAVdecode, 1ownerAudioContext/0outputcontexts andBlackoutvoicecancel. Reportseparatespreviewfromproduction. Testedrealhttps://deploy-preview-9--hauntedpuppet.netlify.app exactb5c5dbf6530f926c99de61017c73fb2721cbb9a3 built18:27:59.533UTC; all10publicallowlisthashes match. Actualcute/scary/cute, silentoutput, soundenable/import/manualplay, Blackout, ownernavigationdispose, mobileoverflow andnocapture/providerrequests PASS. Evidence test-results/showdesk-hosted-preview.json. Audiofixturezero-level; nothumanacoustic orphysicalphone/projectionacceptance. Doesnotclaimhostedphoneauthpairing. Productione44697a unchanged.
+
+Extractedactualguidedturnframe60 at2.5sec, thenonebuilt-inimagegen materialedit (notnewRunwaymotion). side-frame60-vapor-edit-v1.png SHA210fb9bcc51f0677db03b1c4ee8597b8d20f733c3b77ab35de578d1fd0a6d3ab, RGB1672x941, allrawRGB4margins>=22.10percent. Variableporousfogreplacesopaqueskull/neck/armfill; profilesocket/fingersposebroadlyretained. MaskIoU.9086afteruniformresizingisnotexactregistration ortemporalproof. Fullpromptandoriginaldecodedframepreserved. Humanmaterialquestionpending; nofull-videoeditsubmittedorapprovalinferred. Ifusingavideoeditlater, preserveactualtimestamp2.5andreviewallframes/endpointsagain. NoadditionalRunwaycredits.
+
+CI39474937902 exactb5c5dbf isconfirmedlive allfourjobs. Prior39472111843wasactualterminalkey-testteardownfailure; p.unrouteAll(wait)targetedfixpassedtwolocalruns. Keepcurrenthandle, do notpushunrelatedstill/testfollowupsforwaitingalone.
+
+
+## Actual steady-state Mute control mutation fix
+
+CompletedLinuxWebKitjob118808340278 inCI39474937902 failed again inpuppeteer_voice.cjs. Retainedlogwork/webkit-failure-39474937902.log shows pointerdown/up BOTHtargetpuppetMute, but NOclickevent; immediatepostclickstate stilllive/mutedfalse/micenabledtrue. SteadyupdatePuppeteerUI rewrotebuttontext andaria-pressedevery50ms. NewstrictMutationObservertest reproduced6unchanged-controlmutations in180ms onoldcode, failingbeforetheclick (Chrome).
+
+Productionfix assets/show-controls.js nowsetsMute disabled/text/ariaonlywhenvaluesactuallychange, preservingthebutton'scontentsbetweenpointerpress/release. No forcedclick, syntheticdispatch, retries, errorfilter or gateweakening. BothpinnedChromeandMacWebKit full6-caseAudioWorkletpuppeteer tests PASS with0steadyMute mutations andactualpointer mute/unmute, silence/recovery, formpresets, outputsilence, cleanup/errorcases. Publicbuildprivacy/importcheckPASS. This provesunnecessaryDOMmutationremoved and localbehavior; causalLinuxclickresolution stillrequiresfreshCI.
+
+Newfixisunpushedbeyondcurrentb5c5dbf. CI39474937902alreadyhasterminalWebKitfailure, showdesk/nativeSUCCESS, fullregressionstilllive. Retainthatremainingjobfornewforget_keydrainverificationbefore superseding ifpossible. Hostedpreviewevidenceatb5doesNOTincludeMuteproductionfix. Productione44697a unchanged. NoactiveRunwayjobs; sideframeporousfoghumanfeedbackpendingbeforefullvideoedit.
+
+
+## Human-approved fog material, bounded full-video proof
+
+The user explicitly approved the corrected side-frame material: “Yes—use this fog material.” This approves porous fog appearance, not the whole turn, its temporal consistency or any joins. One full-video material edit is submitted as task 4e04aaf5-6264-45b0-8907-659ac9a1fab8, using the actual guided turn and approved frame60 at2.5seconds. Observed balance18909→18769:140credits. Preserve original motion, proportions, hands, continuous core, timing, framing and black background. No batch or repeat generation.
+
+Before promotion, retain and hash the completed original, review normal-speed motion and middle-frame materials, measure every frame at RGB4/8/16 against the20percent target reserve, and compare both endpoints with the original. Changed endpoints require new exact-media transition review. Human still approval does not establish film or transition acceptance. Public two-film beta remains unchanged.

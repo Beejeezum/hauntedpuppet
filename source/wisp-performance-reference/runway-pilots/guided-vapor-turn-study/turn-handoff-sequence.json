@@ -1,0 +1,12 @@
+[
+  {
+    "label": "scary-performance",
+    "source": "source/wisp-performance-reference/runway-pilots/motion-transfer-study/wisp-scary-motion-transfer-v35.mp4",
+    "scale": 0.85
+  },
+  {
+    "label": "guided-turn",
+    "source": "source/wisp-performance-reference/runway-pilots/guided-vapor-turn-study/wisp-guided-vapor-turn.mp4",
+    "scale": 1
+  }
+]
