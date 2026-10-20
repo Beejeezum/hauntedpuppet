@@ -21,6 +21,10 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
  const tiny={clips:[a,b],reviewedJoins:[join(a,b)],shows:[{id:'loop',clipIds:['a','b']}]};
  assert.throws(()=>planShow(tiny,'loop'),/No reviewed/,'Loop closing boundary is mandatory');
  tiny.reviewedJoins.push(join(b,a));assert.equal(planShow(tiny,'loop').transitions.length,2);
+ c.form='transition';c.manualOnly=true;
+ const bridged={clips:[a,b,c],reviewedJoins:[join(a,c),join(c,b),join(b,a)],shows:[{id:'loop',clipIds:['a','b']}]};
+ assert.throws(()=>planShow(bridged,'loop'),/No reviewed/,'A manual-only scare must not enter an automatic show as a hidden bridge');
+ c.manualOnly=false;assert.equal(planShow(bridged,'loop').transitions[0].bridge,'c');
  b.manualOnly=true;assert.throws(()=>planShow(tiny,'loop'),/Unavailable/,'Manual scares cannot enter ambient playlist');
  b.manualOnly=false;b.dialogue=true;assert.throws(()=>planJoin(a,b),/Unreviewed/,'Ambient films cannot include speech');
  console.log('PASS: 32 silent planned cards; exact-media join reviews, authored bridges, verified empty-stage boundaries, closing seam, no automatic scare or dialogue. Synthetic planner tests only.');

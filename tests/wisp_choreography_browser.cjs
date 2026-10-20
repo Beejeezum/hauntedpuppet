@@ -1,8 +1,8 @@
 const {chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright'),assert=require('node:assert/strict'),fs=require('node:fs');
 (async()=>{
  const browser=await chromium.launch(),page=await browser.newPage({viewport:{width:1280,height:800}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
- await page.route('**/*',route=>route.request().isNavigationRequest()&&new URL(route.request().url()).pathname==='/'?route.fulfill({status:200,contentType:'text/html',body:'<!doctype html><title>Wisp offline animation rehearsal</title><body></body>'}):route.continue());
- await page.goto(process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770');
+ await page.route('**/*',route=>route.request().isNavigationRequest()&&new URL(route.request().url()).pathname==='/__wisp-animation-rehearsal__'?route.fulfill({status:200,contentType:'text/html',body:'<!doctype html><title>Wisp offline animation rehearsal</title><body></body>'}):route.continue());
+ await page.goto(new URL('/__wisp-animation-rehearsal__',process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770').href);
  const result=await page.evaluate(async()=>{
   const {PaintedWisp,WISP_MOUTHS,WISP_EXPRESSIONS}=await import('/assets/painted-wisp.js'),{WISP_CHOREOGRAPHY_ACTIONS}=await import('/assets/wisp-choreography.js');
   const w=new PaintedWisp();await w.load();const p={dt:1/60,state:'idle',visible:1,density:1,motion:{float:100,gesture:100},acting:{},gaze:'audience',blink:0};let frames=0,minX=Infinity,maxX=0,minY=Infinity,maxY=0,poses={};

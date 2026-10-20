@@ -1,0 +1,61 @@
+{
+  "status": "review only; not approved",
+  "file": "source/wisp-performance-reference/runway-pilots/friendly-depth-arrival-study/wisp-scary-exit-friendly-arrival-review.mp4",
+  "sha256": "6282d8ce657d503ff33f64676fd32120ad2a148414950636ab2cfe1e82cb7340",
+  "fps": 24,
+  "size": [
+    1280,
+    720
+  ],
+  "segments": [
+    {
+      "label": "endorsed-fog-turn",
+      "source": "source/wisp-performance-reference/runway-pilots/guided-vapor-turn-study/wisp-guided-vapor-turn-fog-edit-v1.mp4",
+      "sha256": "7e3cc60d0b586b5ecb6c04663a0430e6a24142fafa08ab2fa90d133544e557a0",
+      "frames": 121,
+      "scale": 1
+    },
+    {
+      "label": "rear-departure-and-black-hold",
+      "source": "source/wisp-performance-reference/runway-pilots/fog-rear-departure-study/wisp-fog-rear-departure-empty-tail-v1.mp4",
+      "sha256": "f23e03e3b007cc5649d79ff28a73cf8da6b4b8f6d9f7647436bca10a1a71fe74",
+      "frames": 157,
+      "scale": 1
+    },
+    {
+      "label": "empty-stage-and-friendly-arrival",
+      "source": "source/wisp-performance-reference/runway-pilots/friendly-depth-arrival-study/wisp-friendly-depth-arrival-black-lead-v1.mp4",
+      "sha256": "955635d3b7ed8353c0a514fbf4d18c557e02131b6a443866b94a57fdfabb7345",
+      "frames": 133,
+      "scale": 1
+    },
+    {
+      "label": "friendly-living-idle",
+      "source": "source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4",
+      "sha256": "52d54d03c0f0406a9724c7c04b9e2fa0557a675486edfaa40fd0ca2e24a682bd",
+      "frames": 122,
+      "scale": 0.85
+    }
+  ],
+  "joins": [
+    {
+      "from": "endorsed-fog-turn",
+      "to": "rear-departure-and-black-hold",
+      "visibleRGBDifference": 4.729678579807617,
+      "silhouetteIoU": 0.9801517165871588
+    },
+    {
+      "from": "rear-departure-and-black-hold",
+      "to": "empty-stage-and-friendly-arrival",
+      "visibleRGBDifference": 0,
+      "silhouetteIoU": 1
+    },
+    {
+      "from": "empty-stage-and-friendly-arrival",
+      "to": "friendly-living-idle",
+      "visibleRGBDifference": 8.080693858949527,
+      "silhouetteIoU": 0.963256237894497
+    }
+  ],
+  "scope": "Original frame order and count; constant whole-frame fit, one export encode. Integer bilinear staging may differ slightly from browser subpixel rasterization. Pixel/silhouette diagnostics do not prove velocity continuity, anatomy, human seam acceptance or physical projection. All joins require normal-speed playback review."
+}

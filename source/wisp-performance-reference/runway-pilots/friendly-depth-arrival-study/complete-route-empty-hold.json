@@ -1,0 +1,13 @@
+{
+  "file": "wisp-scary-exit-friendly-arrival-review.mp4",
+  "sha256": "6282d8ce657d503ff33f64676fd32120ad2a148414950636ab2cfe1e82cb7340",
+  "exactBlackRuns": [
+    {
+      "startFrame": 213,
+      "endFrameExclusive": 319,
+      "frames": 106,
+      "seconds": 4.416666666666667
+    }
+  ],
+  "scope": "Every decoded pixel RGB0 for these source-review frames, not physical projector black level."
+}

@@ -1,3 +1,4 @@
+const {liveWorkspaceUrl}=require('./live-url.cjs');
 const{chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
 const assert=require('node:assert/strict'),fs=require('node:fs');
 (async()=>{
@@ -5,7 +6,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs');
  const browser=await chromium.launch({args:['--mute-audio']}),context=await browser.newContext(),page=await context.newPage(),errors=[];
  page.on('pageerror',e=>errors.push(e.message));
  try{
-  await page.goto(base+'/assets/wisp-performance-studio.html');await page.waitForFunction(()=>window.WispPerformanceStudio?.inspect().frames>3);
+  await page.goto(liveWorkspaceUrl(base+'/assets/wisp-performance-studio.html'));await page.waitForFunction(()=>window.WispPerformanceStudio?.inspect().frames>3);
   await page.evaluate(()=>{const r=WispPerformanceStudio.rig;window.soakReference={root:r.root,face:r.faceTexture,meshes:[...r.meshes],front:r.frontRig,body:r.frontRig?.body,bodyGeometry:r.frontRig?.body.geometry,times:[],last:performance.now()};function tick(t){soakReference.times.push(t-soakReference.last);soakReference.last=t;requestAnimationFrame(tick);}requestAnimationFrame(tick);WispPerformanceStudio.play();window.soakTimer=setInterval(()=>WispPerformanceStudio.play(),15000);});
   const start=await page.evaluate(()=>WispPerformanceStudio.inspect().frames),wallStart=Date.now();
   for(let elapsed=0;elapsed<seconds;elapsed+=10){await page.waitForTimeout(Math.min(10,seconds-elapsed)*1000);const state=await page.evaluate(()=>WispPerformanceStudio.inspect());assert(state.ready&&state.bounds.inside);assert.equal(state.bones,12);assert.equal(state.meshes,20);assert.deepEqual(errors,[]);}

@@ -135,6 +135,14 @@ jobs:
       - run: npx playwright install --with-deps chromium webkit
       - name: Build explicit public show desk and check privacy
         run: node tests/public_build.cjs
+      - name: Check animation-first entry and separate live workspace
+        run: |
+          HAUNT_WORKSPACE_BUILT_ONLY=1 node tests/workspace_entry.cjs
+          HAUNT_WORKSPACE_BUILT_ONLY=1 HAUNT_BROWSER=webkit node tests/workspace_entry.cjs
+      - name: Check existing operator login on real local HTTPS
+        run: |
+          node tests/film_operator_access.mjs
+          HAUNT_BROWSER=webkit node tests/film_operator_access.mjs
       - name: Check queue and editorial contracts
         run: |
           node tests/cue_director.cjs
@@ -153,6 +161,12 @@ jobs:
           HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_sound.cjs
       - name: Check paired film controls with actual local cloud service
         run: node tests/film_phone_cloud_browser.mjs
+      - name: Rehearse tonight story and newest painted face study
+        run: |
+          HAUNT_TONIGHT_ROOT=dist node tests/tonight_demo.cjs
+          HAUNT_TONIGHT_ROOT=dist node tests/tonight_puppet.cjs
+          HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/tonight_demo.cjs
+          HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/tonight_puppet.cjs
       - name: Keep show desk evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -162,5 +176,8 @@ jobs:
             test-results/showdesk-*.json
             test-results/film-phone-cloud*
             test-results/stage-geometry*
+            test-results/workspace-entry*
+            test-results/film-operator-access*
+            test-results/tonight-*.json
             work/showdesk-rehearsal-*.png
           if-no-files-found: ignore

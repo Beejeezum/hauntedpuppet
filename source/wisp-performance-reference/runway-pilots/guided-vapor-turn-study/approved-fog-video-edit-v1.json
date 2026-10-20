@@ -56,6 +56,9 @@
     "outside20PercentPixelsOver4Maximum": 1,
     "endpointSourceComparison": "fog-edit-v1-source-comparison.json",
     "endpointPolicy": "Both endpoints changed in RGB and mask. Prior joins cannot be inherited; exact edited-media joins require fresh review.",
-    "releaseApproved": false
+    "releaseApproved": false,
+    "humanDirectionApproved": true,
+    "humanDirectionQuote": "Better\u2014keep this direction",
+    "approvalScope": "Full-turn fog material/motion direction endorsed; not finished anatomy, loop, endpoint joins or physical projection acceptance."
   }
 }

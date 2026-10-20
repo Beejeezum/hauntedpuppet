@@ -1,10 +1,11 @@
+const {liveWorkspaceUrl}=require('./live-url.cjs');
 const{chromium,webkit}=require(process.env.HAUNT_PLAYWRIGHT||'playwright'),assert=require('node:assert/strict'),fs=require('node:fs');
 (async()=>{
  const browser=await(process.env.HAUNT_BROWSER==='webkit'?webkit:chromium).launch({args:process.env.HAUNT_BROWSER==='webkit'?[]:['--mute-audio']}),page=await browser.newPage(),errors=[];
  page.on('pageerror',e=>errors.push(e.message));
  try{
   await page.route('**/living-skin-test',r=>r.fulfill({contentType:'text/html',body:'<body style="margin:0;background:black">'}));
-  await page.goto((process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770')+'/living-skin-test');
+  await page.goto(liveWorkspaceUrl((process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770')+'/living-skin-test'));
   const report=await page.evaluate(async()=>{
    const{WispPerformanceRuntime}=await import('/assets/wisp-performance-runtime.js');const r=await new WispPerformanceRuntime().load();if(!r.frontRig?.ready)throw Error(r.frontError);document.body.append(r.canvas);
    r.render({clock:0,freeze:true,state:'idle'},0);const rig=r.frontRig,uv=rig.body.geometry.getBuffer('aSpiritUV').data,bodyUniforms=rig.bodyViews.shader.resources.spiritUniforms.uniforms;

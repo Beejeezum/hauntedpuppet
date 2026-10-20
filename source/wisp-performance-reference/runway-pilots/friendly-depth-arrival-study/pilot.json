@@ -1,0 +1,72 @@
+{
+  "taskId": "369e14bf-6880-4096-a486-08db7854e085",
+  "status": "completed-source-review-pending",
+  "model": "kling-o3-pro",
+  "duration": 5,
+  "resolution": "720p",
+  "audio": false,
+  "submissionCap": 1,
+  "creditsBefore": 18999,
+  "creditsAfter": 18914,
+  "observedDebit": 85,
+  "startFrame": "previously uploaded exact black anchor",
+  "endFrame": "../film-return-handoff-study/friendly-start-staged.png",
+  "endFrameSource": "v28 frame0 fitted at85percent on1280x720 black stage",
+  "prompt": "A five-second NONVERBAL spatial arrival of the exact friendly painted ghost in the supplied final image, on a completely pure black stage with a locked camera. Begin with at least half a second of completely empty black. Around0.6seconds a tiny distant blue-ivory vapor glimmer appears near the center, visibly far away. The same small friendly Wisp emerges as porous fog with a rounded head crest, tiny attached hands and coherent lower vapor core. He floats toward the viewer along a gentle shallow curved path rather than a straight zoom: head notices first, torso banks slightly, arms balance independently, lower fog follows with delayed weight. Across2-4seconds he grows naturally into the exact supplied final size and three-quarter heading, with soft turbulent fog edges and changing internal translucency; absolutely no solid skin, rubber limbs, hard outlines, fish curls or detached puppet pieces. A small welcoming hand opening then settles into the supplied final relaxed pose. At4-5seconds keep gentle continuous living motion while landing on the exact supplied final frame; do not freeze or bounce away from it. All head smoke, hands, lower core and emitted mist stay inside central60percent width and60percent height at all times, at least20percent black safety buffer on all edges. No camera move, foreground overshoot, screen-filling poof, extra characters, text, props, mouth talking, speech, music or sound. Same beautiful painted soft-fog friendly being, not a new design. The ghost must fully exist by the end and never accidentally lose its lower body.",
+  "acceptance": [
+    "Initial exact-black frame sequence verified, not assumed",
+    "Actual depth arrival and connected articulated body with soft fog",
+    "20percent all-frame complete-effect reserve target,15percent minimum",
+    "Arrival ending to existing85percent staged friendly idle beginning reviewed at normal speed",
+    "No dialogue or sound; no endpoint freeze or accidental disappearing core"
+  ],
+  "releaseApproved": false,
+  "file": "wisp-friendly-depth-arrival-v1.mp4",
+  "sha256": "78fe64901e3548cfb07e5bd828c7fa513cef3205b14f00ccecea7f01bbea5104",
+  "actual": {
+    "frames": 121,
+    "fps": 24,
+    "size": [
+      1920,
+      1080
+    ],
+    "exactBlackHeadFrames": 3,
+    "nearBlackHeadFramesMax4": 29
+  },
+  "review": {
+    "bounds": "AllRGB4/8/16frames20percentreservepass,min26.30percentbottom.",
+    "motion": "Samples show distant glimmer growing into an attached friendly body, subtle banking and independent hand posture; full human motion acceptance pending.",
+    "limitation": "Depth/motion proof, not yet final character/anatomy approval or reviewed idle join.",
+    "humanApproved": false
+  },
+  "editorial": {
+    "file": "wisp-friendly-depth-arrival-black-lead-v1.mp4",
+    "sha256": "955635d3b7ed8353c0a514fbf4d18c557e02131b6a443866b94a57fdfabb7345",
+    "blackSourceFramesPrepended": 12,
+    "sourceFramesRetained": 121,
+    "method": "Prepend12black sourceframes, preserve all original actingframes/order, oneH264encode; no retime/reverse/interpolation. Reencoding also changes near-black source pixels.",
+    "verifiedExactBlackHeadFrames": 41
+  },
+  "idleJoinReview": {
+    "file": "wisp-arrival-idle-handoff-review.mp4",
+    "sha256": "0135975838c10380c0aea05cfaab2cfb54b666d501487b46ca90da2ed5975a8a",
+    "frames": 255,
+    "fps": 24,
+    "idleStageScale": 0.85,
+    "joinSilhouetteIoU": 0.963256237894497,
+    "joinVisibleRGBDifference": 8.080693858949527,
+    "humanJoinApproved": false
+  },
+  "completeRouteReview": {
+    "file": "wisp-scary-exit-friendly-arrival-review.mp4",
+    "sha256": "6282d8ce657d503ff33f64676fd32120ad2a148414950636ab2cfe1e82cb7340",
+    "frames": 533,
+    "fps": 24,
+    "joinTimesSeconds": [
+      5.041666666666667,
+      11.583333333333334,
+      17.125
+    ],
+    "humanJoinApproved": false
+  }
+}

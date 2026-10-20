@@ -1,9 +1,10 @@
+const {liveWorkspaceUrl}=require('./live-url.cjs');
 const{chromium,webkit}=require(process.env.HAUNT_PLAYWRIGHT||'playwright'),assert=require('node:assert/strict'),fs=require('node:fs');
 (async()=>{
  const browser=await(process.env.HAUNT_BROWSER==='webkit'?webkit:chromium).launch({args:process.env.HAUNT_BROWSER==='webkit'?[]:['--mute-audio']}),page=await browser.newPage(),errors=[];
  page.on('pageerror',e=>errors.push(e.message));
  try{
-  const base=process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770';await page.goto(base+'/assets/wisp-performance-studio.html');await page.waitForFunction(()=>window.WispPerformanceStudio?.inspect().frontRig?.ready);
+  const base=process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770';await page.goto(liveWorkspaceUrl(base+'/assets/wisp-performance-studio.html'));await page.waitForFunction(()=>window.WispPerformanceStudio?.inspect().frontRig?.ready);
   const report=await page.evaluate(()=>{
    const r=WispPerformanceStudio.rig,events=[{time:0,kind:''},{time:.8,kind:'wave'},{time:1.5,kind:'swoop'},{time:2.2,kind:'twirl'},{time:3,kind:'laugh'},{time:3.4,kind:'exit'},{time:4.4,kind:'surprise'},{time:5.3,kind:'wave'},{time:6.1,kind:''},{time:7,kind:'twirl'},{time:8.4,kind:''}],meshes=[r.frontRig.body,...r.frontRig.arms.map(a=>a.mesh)];
    let event=0,blend=0,previous=null,previousVelocity=null,maxStep=0,maxVelocityChange=0,peakEvent=null,peakChange=null,frames=0;const series=[];

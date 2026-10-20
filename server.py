@@ -4,7 +4,7 @@ from http.server import ThreadingHTTPServer,SimpleHTTPRequestHandler
 from pathlib import Path
 from urllib.parse import urlsplit,unquote
 import json,secrets,urllib.request,urllib.error,os,sys,subprocess,threading
-import performance,conversation,realtime_voice,phone_bridge,credential_store
+import performance,conversation,realtime_voice,phone_bridge,credential_store,public_workspace
 CONNECT_LOCK=threading.Lock()
 SAVED_CREDENTIAL=False
 CREDENTIAL_WARNING=''
@@ -30,6 +30,29 @@ class Handler(SimpleHTTPRequestHandler):
  def end_headers(self):self.send_header('Cache-Control','no-store');self.send_header('X-Content-Type-Options','nosniff');super().end_headers()
  def reply(self,code,data):
   b=json.dumps(data).encode();self.send_response(code);self.send_header('Content-Type','application/json');self.send_header('Content-Length',str(len(b)));self.end_headers();self.wfile.write(b)
+ def serve_workspace(self,path,head=False):
+  try:workspace=public_workspace.asset(path)
+  except (FileNotFoundError,ValueError):self.send_error(404,'Workspace asset unavailable');return True
+  if workspace is None:return False
+  data,mime=workspace;size=len(data)
+  try:requested=public_workspace.byte_range(self.headers.get('Range'),size)
+  except ValueError:
+   self.send_response(416);self.send_header('Content-Range',f'bytes */{size}');self.send_header('Content-Length','0');self.end_headers();return True
+  self.send_response(206 if requested else 200);self.send_header('Content-Type',mime);self.send_header('Accept-Ranges','bytes')
+  if requested:
+   start,end=requested;self.send_header('Content-Range',f'bytes {start}-{end}/{size}');data=data[start:end+1]
+  self.send_header('Content-Length',str(len(data)));self.end_headers()
+  if not head:self.wfile.write(data)
+  return True
+ def do_HEAD(self):
+  if not self.allowed():return self.send_error(403)
+  path=unquote(urlsplit(self.path).path)
+  if self.serve_workspace(path,head=True):return
+  if path=='/':self.path='/index.html';path='/index.html'
+  target=(ROOT/path.lstrip('/')).resolve()
+  if path.startswith('/assets/') and (ROOT/'assets').resolve() not in target.parents:return self.send_error(403)
+  if ROOT not in target.parents or not (path in ('/index.html','/live.html','/app.js') or path.startswith('/assets/')):return self.send_error(404)
+  return super().do_HEAD()
  def do_GET(self):
   if not self.allowed():return self.reply(403,{'error':'Invalid host'})
   path=unquote(urlsplit(self.path).path)
@@ -39,10 +62,11 @@ class Handler(SimpleHTTPRequestHandler):
     with urllib.request.urlopen('http://127.0.0.1:8766/api/status',timeout=3) as r:d=json.load(r)
     return self.reply(200,{'version':'0.11.0','token':TOKEN,**credential_status(),'configured':bool(d.get('configured')),'aligner':bool(d.get('aligner')),'conversation':False,'realtime':realtime_voice.inspect()})
    except Exception:return self.reply(200,{'version':'0.11.0','token':TOKEN,**credential_status(),'configured':False,'conversation':False,'realtime':realtime_voice.inspect(),'error':'Start the existing speech/alignment service on 8766. Offline rehearsal is available.'})
+  if self.serve_workspace(path):return
   if path=='/':self.path='/index.html';path='/index.html'
   target=(ROOT/path.lstrip('/')).resolve()
   if path.startswith('/assets/') and (ROOT/'assets').resolve() not in target.parents:return self.reply(403,{'error':'Invalid asset path'})
-  if ROOT not in target.parents or not (path in ('/index.html','/app.js') or path.startswith('/assets/')):return self.reply(404,{'error':'Not found'})
+  if ROOT not in target.parents or not (path in ('/index.html','/live.html','/app.js') or path.startswith('/assets/')):return self.reply(404,{'error':'Not found'})
   return super().do_GET()
  def do_POST(self):
   if not self.allowed() or self.headers.get('Origin') not in (f'http://127.0.0.1:{PORT}',f'http://localhost:{PORT}') or self.headers.get('X-Haunt-Token')!=TOKEN:return self.reply(403,{'error':'Invalid local request'})

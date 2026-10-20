@@ -1,0 +1,28 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),http=require('node:http'),path=require('node:path');
+const {chromium,webkit}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
+(async()=>{
+ const root=path.resolve(__dirname,'../dist');
+ const server=http.createServer((req,res)=>{
+  const name=new URL(req.url,'http://fixture').pathname;
+  if(name==='/api/status'){res.setHeader('Content-Type','application/json');return res.end(JSON.stringify({version:'0.11.0',configured:false,conversation:false,realtime:{configured:false}}));}
+  const file=path.resolve(root,'.'+(name==='/'?'/index.html':name));
+  if(!file.startsWith(root+path.sep)||!fs.existsSync(file)||!fs.statSync(file).isFile()){res.statusCode=404;return res.end();}
+  res.setHeader('Content-Type',file.endsWith('.html')?'text/html':/\.m?js$/.test(file)?'text/javascript':file.endsWith('.css')?'text/css':file.endsWith('.mp4')?'video/mp4':'application/octet-stream');const size=fs.statSync(file).size,range=req.headers.range?.match(/^bytes=(\d+)-(\d*)$/);if(range){const start=Number(range[1]),end=range[2]?Math.min(Number(range[2]),size-1):size-1;if(start>end||start>=size){res.writeHead(416,{'Content-Range':'bytes */'+size});return res.end();}res.writeHead(206,{'Content-Range':`bytes ${start}-${end}/${size}`,'Content-Length':end-start+1,'Accept-Ranges':'bytes'});fs.createReadStream(file,{start,end}).pipe(res);}else{res.setHeader('Content-Length',size);fs.createReadStream(file).pipe(res);}
+ });
+ await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));const browser=await (process.env.HAUNT_BROWSER==='webkit'?webkit:chromium).launch(),results=[];
+ try{
+  for(const [surface,base]of [...(process.env.HAUNT_WORKSPACE_BUILT_ONLY?[]:[['local',process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770']]),['built-public','http://127.0.0.1:'+server.address().port]]){
+   const context=await browser.newContext(),page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
+   await context.addInitScript(()=>{window.captureAttempts=0;window.audioContextCreations=0;const Native=window.AudioContext;if(Native)window.AudioContext=class extends Native{constructor(...args){super(...args);audioContextCreations++;}};if(navigator.mediaDevices)navigator.mediaDevices.getUserMedia=async()=>{captureAttempts++;throw Error('Unexpected workspace capture');};});
+   await page.goto(base+'/');await page.waitForFunction(()=>window.WispDesk);assert.equal(new URL(page.url()).pathname,'/assets/wisp-showdesk/index.html');assert.equal(await page.locator('#cues button').count(),2);assert.equal(await page.evaluate(()=>captureAttempts+audioContextCreations),0);
+   const opening=context.waitForEvent('page');await page.getByRole('button',{name:'Open silent rehearsal output'}).click();const output=await opening;await output.waitForFunction(()=>window.WispFilmOutput);
+   await page.getByRole('button',{name:/Friendly Wisp/}).click();await page.waitForFunction(()=>WispDesk.inspect().director.phase==='playing');
+   await page.locator('#puppet').click();await page.waitForFunction(()=>window.HauntWisp?.inspect().ready);assert.equal(new URL(page.url()).pathname,'/live.html');await output.waitForFunction(()=>WispFilmOutput.inspect().stopped);assert.equal(await output.locator('audio,video').count(),0);assert.equal(await page.evaluate(()=>captureAttempts),0);
+   await page.getByRole('link',{name:'Animation show desk',exact:true}).click();await page.waitForFunction(()=>window.WispDesk);
+   const legacy=await context.newPage();legacy.on('pageerror',e=>errors.push(e.message));for(const query of ['?projector=1&controller=legacy-test','?character=3d','?workspace=live']){await legacy.goto(base+'/'+query);await legacy.waitForFunction(()=>window.HauntWisp?.inspect().ready);await legacy.waitForFunction(()=>!['wisp-3d','wisp-performance'].includes(document.getElementById('lookStyle').value)||window.HauntStage3D?.inspect().frames>2);const url=new URL(legacy.url());assert.equal(url.pathname,'/live.html');assert.equal(url.search,query);assert.equal(await legacy.evaluate(()=>captureAttempts),0);}
+   await page.setViewportSize({width:390,height:844});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+   assert.deepEqual(errors,[]);results.push({surface,root:'animation showdesk',live:'/live.html',legacyQueries:true,silentOutputDisposed:true,mobileOverflow:false,captureAttempts:0});await context.close();
+  }
+  fs.mkdirSync('test-results',{recursive:true});const report={passed:true,engine:process.env.HAUNT_BROWSER||'chromium',browserVersion:browser.version(),results,scope:'Real local routes and built static assets; no microphone/provider calls. Built status is an explicit unconfigured fixture. Selected legacy 3D renderer reaches frames before leaving; rapid navigation while loading is not covered. Physical projection acceptance remains separate.'};fs.writeFileSync('test-results/workspace-entry.json',JSON.stringify(report,null,2));fs.writeFileSync('test-results/workspace-entry-'+report.engine+'.json',JSON.stringify(report,null,2));console.log('PASS animation-first entry, separate live route, legacy character/projector links, return navigation and silent-output cleanup on local and built surfaces.');
+ }finally{await browser.close();await new Promise(resolve=>server.close(resolve));}
+})().catch(error=>{console.error(error);process.exitCode=1;});

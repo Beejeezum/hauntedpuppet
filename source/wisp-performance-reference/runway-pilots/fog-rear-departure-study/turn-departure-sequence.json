@@ -1,0 +1,12 @@
+[
+  {
+    "label": "fog-turn",
+    "source": "source/wisp-performance-reference/runway-pilots/guided-vapor-turn-study/wisp-guided-vapor-turn-fog-edit-v1.mp4",
+    "scale": 1
+  },
+  {
+    "label": "rear-depth-departure-with-black-hold",
+    "source": "source/wisp-performance-reference/runway-pilots/fog-rear-departure-study/wisp-fog-rear-departure-empty-tail-v1.mp4",
+    "scale": 1
+  }
+]

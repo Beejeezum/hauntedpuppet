@@ -1,0 +1,35 @@
+{
+  "status": "review only; not approved",
+  "file": "source/wisp-performance-reference/runway-pilots/guided-vapor-turn-study/wisp-scary-fog-turn-handoff-review.mp4",
+  "sha256": "050e7f85e6fc55ab148ab42d207143711d8478ab78fec4776e5d329510e212f2",
+  "fps": 24,
+  "size": [
+    1280,
+    720
+  ],
+  "segments": [
+    {
+      "label": "scary-performance",
+      "source": "source/wisp-performance-reference/runway-pilots/motion-transfer-study/wisp-scary-motion-transfer-v35.mp4",
+      "sha256": "21e8efec67ec7e024fc954cc16af458cad8f8427553a998341ff9d37286ca35a",
+      "frames": 121,
+      "scale": 0.85
+    },
+    {
+      "label": "fog-edited-turn",
+      "source": "source/wisp-performance-reference/runway-pilots/guided-vapor-turn-study/wisp-guided-vapor-turn-fog-edit-v1.mp4",
+      "sha256": "7e3cc60d0b586b5ecb6c04663a0430e6a24142fafa08ab2fa90d133544e557a0",
+      "frames": 121,
+      "scale": 1
+    }
+  ],
+  "joins": [
+    {
+      "from": "scary-performance",
+      "to": "fog-edited-turn",
+      "visibleRGBDifference": 15.11746579198445,
+      "silhouetteIoU": 0.9847286173976426
+    }
+  ],
+  "scope": "Original frame order and count; constant whole-frame fit, one export encode. Integer bilinear staging may differ slightly from browser subpixel rasterization. Pixel/silhouette diagnostics do not prove velocity continuity, anatomy, human seam acceptance or physical projection. All joins require normal-speed playback review."
+}

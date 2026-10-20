@@ -1,0 +1,66 @@
+{
+  "taskId": "8cb7612e-c451-4a48-bd45-6aca15f332d1",
+  "status": "revision-required",
+  "model": "kling-o3-pro",
+  "duration": 5,
+  "resolution": "720p",
+  "audio": false,
+  "submissionCap": 1,
+  "creditsBefore": 19084,
+  "creditsAfter": 18999,
+  "observedDebit": 85,
+  "startFrame": "fog-turn-end-frame120.png",
+  "sourceVideoSha256": "7e3cc60d0b586b5ecb6c04663a0430e6a24142fafa08ab2fa90d133544e557a0",
+  "sourceFrame": 120,
+  "endFrame": "previously uploaded exact black frame",
+  "prompt": "Continue this EXACT painted spectral Wisp from the supplied rear-three-quarter starting frame into a five-second spatial departure, ending on the supplied empty black frame. Locked camera on a pure black projection stage. In the first half-second keep the existing rear heading and pose alive with small connected hand, shoulder and body counter-motion. Then Wisp leans into a curved flight path away from the viewer, arcing slightly upward and to the right within the central stage. His near shoulder and one hand counterbank, his far side correctly occludes, and the lower vapor core trails with delayed weight. Travel into genuine depth while keeping the back turned; do not merely shrink a frozen cutout or turn his face back toward camera. Become progressively tiny, then disperse into a small soft vapor poof by 3.8 seconds. The final full second is completely black with no eyes, sparks, fog or body remaining. Preserve the source's porous translucent ivory-blue fog throughout head, torso and attached arms; fine turbulent smoky edges, no solid neck/spine/tubular limbs, ribbons or fish curls. The connected core and both hands persist until the intentional final poof. No camera movement, foreground flyout, text, props, extra beings, speech or sound. All body and emitted mist remain within central60percent width and60percent height at every instant, leaving at least20percent empty buffer on every edge.",
+  "acceptance": [
+    "Actual back-facing curved flight into depth, not frozen scale animation",
+    "Porous fog material, connected articulated hands and core until intentional poof",
+    "All-frame 15percent minimum,20percent target complete-effect reserve",
+    "Exact edited-turn end to departure first-frame join reviewed",
+    "Full final-second black request verified from decoded output, not assumed"
+  ],
+  "humanDirection": "User endorsed source full fog turn: Better\u2014keep this direction. New film and join not yet approved.",
+  "releaseApproved": false,
+  "file": "wisp-fog-rear-departure-v1.mp4",
+  "sha256": "241494a0a0e3d3e7637cb6cad7283f6674fc651c60ca758821e8542f71107236",
+  "actual": {
+    "frames": 121,
+    "fps": 24,
+    "size": [
+      1920,
+      1080
+    ],
+    "rawExactBlackTailFrames": 0,
+    "rawNearBlackTailFramesMax4": 27
+  },
+  "review": {
+    "motion": "Human review failed departure/body motion. Contact sheet suggests abrupt extension into a narrow flight silhouette and rapid loss of readable acting; this diagnosis is provisional, not a quoted user explanation.",
+    "bounds": "All raw RGB4/8/16 frames pass20percent; minimumtop21.85percent.",
+    "material": "Approved source fog retained in broad motion; small distant anatomy still requires human review.",
+    "publicApproved": false
+  },
+  "editorial": {
+    "file": "wisp-fog-rear-departure-empty-tail-v1.mp4",
+    "sha256": "f23e03e3b007cc5649d79ff28a73cf8da6b4b8f6d9f7647436bca10a1a71fe74",
+    "sourceFramesRetained": 121,
+    "blackSourceFramesAppended": 36,
+    "method": "Keep original frame order/count, append36black frames, oneH264reencode; no crop/interpolation/reversal/acting retime. Reencoding also changes decoded near-black pixels.",
+    "verifiedExactBlackTailFrames": 64
+  },
+  "joinedReview": {
+    "file": "wisp-turn-and-departure-review.mp4",
+    "sha256": "18693fb0a7917a699ee5650c37b09bea3ae442b87873339c23fe5ed1a78ccd19",
+    "frames": 278,
+    "fps": 24,
+    "joinSilhouetteIoU": 0.9801517165871588,
+    "joinVisibleRGBDifference": 4.729678579807617,
+    "humanJoinApproved": false
+  },
+  "humanFeedback": {
+    "verbatim": "The departure or body motion needs work",
+    "scope": "22-second scary-exit/friendly-arrival review; departure/body motion failed. Arrival and joins are not separately approved.",
+    "releaseApproved": false
+  }
+}

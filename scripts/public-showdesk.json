@@ -1,26 +1,26 @@
 {
-  "purpose": "Explicit opt-in rehearsal workspace, two real silent films; not a finished library, native puppeteering or approved scary loop",
+  "purpose": "Animation-first showdesk entry with two real silent films and existing operator access; scary remains a non-looping study, source candidates are not finished library entries",
   "files": [
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.html",
       "destination": "index.html",
-      "sha256": "b69239254993bdd5af7da9b42997eda2249b0ef4361daf79a2d7a0cda15052f2",
-      "bytes": 3147,
-      "publishedSha256": "b69239254993bdd5af7da9b42997eda2249b0ef4361daf79a2d7a0cda15052f2"
+      "sha256": "1faec22e3b9265edf1e9b8ea9222468bb223dd228b8ed43537aea7ab281009ec",
+      "bytes": 3250,
+      "publishedSha256": "1faec22e3b9265edf1e9b8ea9222468bb223dd228b8ed43537aea7ab281009ec"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.css",
       "destination": "showdesk.css",
-      "sha256": "4c526a4802b23f314b3ba2f11bfb55b899ea1c0b3cfec7c7e5cc1143aabdd6b4",
-      "bytes": 4088,
-      "publishedSha256": "4c526a4802b23f314b3ba2f11bfb55b899ea1c0b3cfec7c7e5cc1143aabdd6b4"
+      "sha256": "60264afb62128679ea928d356cdbe405882a97b5225e676347f7e0aa987e9f89",
+      "bytes": 4593,
+      "publishedSha256": "60264afb62128679ea928d356cdbe405882a97b5225e676347f7e0aa987e9f89"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.mjs",
       "destination": "showdesk.mjs",
-      "sha256": "cf2b589872a6550b50a9339bcc908d181351b9fca6d64cb0d785d646715d83a3",
-      "bytes": 10829,
-      "publishedSha256": "6b50d2be99c50e77a25ce3b225b58866319be6e4e8c11946f32bc2677f0746c5",
+      "sha256": "9de6d987e11654dd80f49ad1c846562769adbd2ea61aa85723813ae0895904f6",
+      "bytes": 11629,
+      "publishedSha256": "fd9117cd910637daa94154b99fc1e4bae313fad92d97f4308ab07db9f325a440",
       "rewrites": [
         {
           "from": "../runway-pilots/wisp-film-output.js",
@@ -84,6 +84,13 @@
       "sha256": "4005469db9e8bf763123a15255e269309a72d807f875e4342471ba1dcac0b3ab",
       "bytes": 3110,
       "publishedSha256": "4005469db9e8bf763123a15255e269309a72d807f875e4342471ba1dcac0b3ab"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/operator-access.mjs",
+      "destination": "operator-access.mjs",
+      "sha256": "b20ed362ef93ce4cb2be538883b05ff0bfc32c883357d1060dfc8dd0a742e067",
+      "bytes": 5839,
+      "publishedSha256": "b20ed362ef93ce4cb2be538883b05ff0bfc32c883357d1060dfc8dd0a742e067"
     }
   ]
 }

@@ -5,7 +5,7 @@ const root = path.resolve(__dirname, '..');
 const out = path.join(root, 'dist');
 fs.rmSync(out, { recursive: true, force: true });
 fs.mkdirSync(out, { recursive: true });
-for (const file of ['index.html', 'app.js']) fs.copyFileSync(path.join(root, file), path.join(out, file));
+for (const file of ['index.html', 'live.html', 'app.js']) fs.copyFileSync(path.join(root, file), path.join(out, file));
 for (const dir of ['assets', 'vendor']) fs.cpSync(path.join(root, dir), path.join(out, dir), { recursive: true, filter: file => !/\.(py|key|pem|log)$|\/\.env/.test(file) });
 // Explicitly approved opt-in preview only; never publish the entire source tree.
 const preview = JSON.parse(fs.readFileSync(path.join(root, 'scripts/public-film-preview.json'), 'utf8'));
@@ -17,7 +17,7 @@ for (const item of preview.files) {
   if (bytes.length !== item.bytes || require('node:crypto').createHash('sha256').update(bytes).digest('hex') !== item.sha256) throw Error('Unreviewed preview asset: '+item.destination);
   fs.writeFileSync(path.join(previewOut, item.destination), bytes);
 }
-// Separate opt-in show desk. Rejected studies and the rest of source/ remain excluded.
+// Explicit show desk allowlist. Rejected studies and the rest of source/ remain excluded.
 const desk = JSON.parse(fs.readFileSync(path.join(root, 'scripts/public-showdesk.json'), 'utf8'));
 const deskOut = path.join(out, 'assets/wisp-showdesk');
 fs.mkdirSync(deskOut, {recursive:true});
@@ -36,6 +36,23 @@ for (const item of desk.files) {
   }
   if (hash(bytes) !== item.publishedSha256) throw Error('Show desk publication checksum mismatch');
   fs.writeFileSync(path.join(deskOut, item.destination), bytes);
+}
+// Tonight's opt-in review is an exact file list, not general source publication.
+const tonight = JSON.parse(fs.readFileSync(path.join(root, 'scripts/public-tonight-demo.json'), 'utf8'));
+const tonightOut = path.join(out, 'assets/wisp-tonight');
+fs.mkdirSync(tonightOut, {recursive:true});
+for (const item of tonight.files) {
+  if (!item.source.startsWith('source/wisp-performance-reference/tonight-demo/') || path.basename(item.destination) !== item.destination) throw Error('Invalid tonight asset path');
+  let bytes = fs.readFileSync(path.join(root,item.source));
+  const hash = b => require('node:crypto').createHash('sha256').update(b).digest('hex');
+  if (bytes.length !== item.bytes || hash(bytes) !== item.sha256) throw Error('Unreviewed tonight asset: '+item.destination);
+  if (item.rewrites) {
+    let text=bytes.toString('utf8');
+    for(const rewrite of item.rewrites){if(text.split(rewrite.from).length!==2)throw Error('Ambiguous tonight rewrite');text=text.replace(rewrite.from,rewrite.to);}
+    bytes=Buffer.from(text);
+  }
+  if(hash(bytes)!==item.publishedSha256)throw Error('Tonight publication checksum mismatch');
+  fs.writeFileSync(path.join(tonightOut,item.destination),bytes);
 }
 fs.mkdirSync(path.join(out, 'phone_remote'), { recursive: true });
 for (const file of ['index.html', 'phone.js', 'phone.css']) {

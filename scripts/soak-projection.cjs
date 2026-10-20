@@ -1,12 +1,13 @@
+const {liveWorkspaceUrl}=require('../tests/live-url.cjs');
 const {chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright'),fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const base=process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8780',duration=Number(process.env.HAUNT_SOAK_SECONDS||2100)*1000;
 (async()=>{
  const browser=await chromium.launch(),context=await browser.newContext({viewport:{width:1440,height:1000}}),page=await context.newPage(),errors=[],providerRequests=[];
  context.on('page',p=>p.on('pageerror',e=>errors.push(e.message)));page.on('pageerror',e=>errors.push(e.message));
  context.on('request',r=>{if(/\/api\/(performance|realtime\/session|reply|transcribe)/.test(r.url()))providerRequests.push(r.url().replace(/\?.*/,''));});
- await page.goto(base);await page.waitForFunction(()=>HauntWisp?.inspect().ready&&HauntProjection&&HauntRoutines);
+ await page.goto(liveWorkspaceUrl(base));await page.waitForFunction(()=>HauntWisp?.inspect().ready&&HauntProjection&&HauntRoutines);
  await page.click('.desk-shortcuts a[href="#projectionSetup"]');await page.click('[data-surface="window"]');
- const output=await context.newPage();await output.goto(base+'/?projector=1');await output.waitForFunction(()=>HauntWisp?.inspect().ready&&HauntProjection.inspect().settings.scene==='window');
+ const output=await context.newPage();await output.goto(liveWorkspaceUrl(base+'/?projector=1'));await output.waitForFunction(()=>HauntWisp?.inspect().ready&&HauntProjection.inspect().settings.scene==='window');
  const report={startedAt:new Date().toISOString(),durationTargetSeconds:duration/1000,scope:'Headless browser with local recorded cue audio; no genuine provider/physical venue claims',samples:[],errors,providerRequests,actions:0,blackouts:0,interruptions:0};
  const out=path.resolve(__dirname,'../../wisp-upgrade-proof');fs.mkdirSync(out,{recursive:true});
  const save=()=>fs.writeFileSync(path.join(out,'projection-soak-progress.json'),JSON.stringify(report,null,2));

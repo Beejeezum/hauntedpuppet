@@ -4,6 +4,7 @@ import {FilmTransport} from './film-transport.mjs';
 import {createFilmRemote} from './film-remote.mjs';
 import {mountPhoneControls} from '/assets/phone-bridge.js';
 import {mountOwnerSound} from './owner-sound-controls.mjs';
+import {mountOperatorAccess} from './operator-access.mjs';
 import {mountFilmOutput} from '../runway-pilots/wisp-film-output.js';
 const $=id=>document.getElementById(id),clips=[
  {id:'cute',title:'Friendly Wisp',detail:'Fuller living motion · approved direction',loop:true,src:'../runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4'},
@@ -11,7 +12,7 @@ const $=id=>document.getElementById(id),clips=[
 ];
 const compositor=new StageCompositor($('stage'),{onLayerError:id=>$('status').textContent='Layer unavailable: '+id});
 const transport=new FilmTransport(compositor,clips,{mediaHost:$('mediaSources')}),overlays=new Map();let disposed=false,raf,mode='manual',formSince=0,lastForm=null,activity=0,lastTime=-1,lastVideo=null,lastFresh=performance.now(),stale=false;
-let soundControls;
+let soundControls,operatorControls;
 const labels={stopped:'Stage black',preparing:'Preparing next cue',exiting:'Planned exit','empty-stage':'Empty stage · planned transition',entering:'Planned entrance',playing:'On stage',unavailable:'Film unavailable · stage black'};
 const director=new CueDirector(transport,{fadeMs:900,onState:s=>{
  if(s.phase!=='playing')soundControls?.cancel();
@@ -76,8 +77,10 @@ function tick(now){
 }
 refreshLayers();tick(performance.now());
 soundControls=mountOwnerSound(document.querySelector('main>aside'),{canPlay:()=>!disposed&&!stale&&!compositor.black&&director.phase==='playing'});
-const inspectDesk=()=>({director:director.inspect(),composition:compositor.inspect(),mode,media:transport.videos.map(v=>({muted:v.muted,paused:v.paused,cue:v.dataset.cue||null,currentTime:v.currentTime,loop:v.loop})),effects:overlays.size,sound:soundControls.inspect()});
+const inspectDesk=()=>({director:director.inspect(),composition:compositor.inspect(),mode,media:transport.videos.map(v=>({muted:v.muted,paused:v.paused,cue:v.dataset.cue||null,currentTime:v.currentTime,loop:v.loop})),effects:overlays.size,sound:soundControls.inspect(),operator:operatorControls?.inspect()||null});
 const remote=createFilmRemote({chooseCue,startProgram,stop,inspect:inspectDesk});
 window.WispDesk={inspect:inspectDesk,...remote};
-mountPhoneControls({controller:()=>remote,previewCanvas:()=>$('stage')});
-window.addEventListener('pagehide',()=>{disposed=true;cancelAnimationFrame(raf);director.dispose();soundControls.dispose();for(const id of [...overlays.keys()])release(id);compositor.dispose();output.dispose();},{once:true});
+const phoneRemote={remoteState:remote.remoteState,remoteCommand:(...args)=>{const access=operatorControls?.inspect();if(access?.cloud&&(!access.authenticated||access.busy||access.disposed))return Promise.reject(Object.assign(Error('Operator sign-in required'),{cancelled:true}));return remote.remoteCommand(...args);}};
+mountPhoneControls({controller:()=>phoneRemote,previewCanvas:()=>$('stage')});
+operatorControls=mountOperatorAccess(document.querySelector('main>aside'),{onSignedOut:stop,beforeSignOut:async()=>{if(window.HauntPhone?.inspect().enabled)await window.HauntPhone.disable();},onSignedIn:async()=>{try{await window.HauntPhone?.refresh();}catch(error){$('phoneStatus').textContent='Signed in. '+error.message;}}});
+window.addEventListener('pagehide',()=>{disposed=true;cancelAnimationFrame(raf);director.dispose();operatorControls.dispose();soundControls.dispose();for(const id of [...overlays.keys()])release(id);compositor.dispose();output.dispose();},{once:true});

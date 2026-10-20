@@ -1,0 +1,22 @@
+[
+  {
+    "label": "endorsed-fog-turn",
+    "source": "source/wisp-performance-reference/runway-pilots/guided-vapor-turn-study/wisp-guided-vapor-turn-fog-edit-v1.mp4",
+    "scale": 1
+  },
+  {
+    "label": "rear-departure-and-black-hold",
+    "source": "source/wisp-performance-reference/runway-pilots/fog-rear-departure-study/wisp-fog-rear-departure-empty-tail-v1.mp4",
+    "scale": 1
+  },
+  {
+    "label": "empty-stage-and-friendly-arrival",
+    "source": "source/wisp-performance-reference/runway-pilots/friendly-depth-arrival-study/wisp-friendly-depth-arrival-black-lead-v1.mp4",
+    "scale": 1
+  },
+  {
+    "label": "friendly-living-idle",
+    "source": "source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4",
+    "scale": 0.85
+  }
+]

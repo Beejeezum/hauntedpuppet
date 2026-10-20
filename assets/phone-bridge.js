@@ -38,5 +38,6 @@ export function mountPhoneControls({controller=()=>window.HauntShow,previewCanva
  const timer=setInterval(()=>{if(enabled&&lastSeen&&performance.now()-lastSeen>4500)notice('Phone bridge paused. Keep this desk open and check the local server.');if(performance.now()-lastTick>=(cloud?750:200)){lastTick=performance.now();tick();}},200),expiryTimer=setInterval(()=>{if(expires){const seconds=Math.max(0,Math.ceil((expires-Date.now())/1000));$('phoneExpiry').textContent=seconds?`expires in ${seconds}s`:'expired · create a new code';}},1000);
  post('status').then(st=>{applyStatus(st);if(enabled)notice('Phone service enabled. Create a pairing code.');}).catch(e=>notice(e.message));
  window.addEventListener('pagehide',()=>{closed=true;clearInterval(timer);clearInterval(expiryTimer);},{once:true});
- window.HauntPhone={inspect:()=>({enabled,bridgeFresh:performance.now()-lastSeen<4000,failures}),pair,disable:async()=>{applyStatus(await post('disable'));}};
+ async function refresh(){token='';tokenAt=0;const status=await post('status');if(closed)return status;applyStatus(status);if(!status.enabled||status.owner)notice(enabled?'Phone service enabled. Create a pairing code.':'Phone remote is off. Enable it to pair a phone.');return status;}
+ window.HauntPhone={refresh,inspect:()=>({enabled,bridgeFresh:performance.now()-lastSeen<4000,failures}),pair,disable:async()=>{applyStatus(await post('disable'));}};
 }
