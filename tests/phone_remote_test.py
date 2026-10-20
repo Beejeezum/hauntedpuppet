@@ -66,6 +66,13 @@ class ServerTest(unittest.TestCase):
         now=self.r.clock()
         self.r.sessions={f'old{i}':{'created':now-28801} for i in range(8)}
         token=self.pair();self.assertEqual(len(self.r.sessions),1);self.assertIn(token,self.r.sessions)
+    def test_film_workspace_is_bounded(self):
+        token=self.pair()
+        self.req('/bridge/state',{'state':{'workspace':'films','status':'Film ready','apiKey':'must-not-forward'},'cues':['Friendly-Wisp']},bridge=True)
+        state=self.req('/api/state',token=token)[1]['state']
+        self.assertEqual(state['workspace'],'films'); self.assertNotIn('apiKey',state)
+        self.req('/bridge/state',{'state':{'workspace':'arbitrary-workspace'},'cues':[]},bridge=True)
+        self.assertNotIn('workspace',self.req('/api/state',token=token)[1]['state'])
     def test_preview_restriction(self):
         self.assertEqual(self.req('/bridge/state',{'preview':'data:image/svg+xml;base64,abc'},bridge=True)[0],400)
         self.assertEqual(self.req('/bridge/state',{'preview':'data:image/jpeg;base64,/9j/','state':{}},bridge=True)[0],200)

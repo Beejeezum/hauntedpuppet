@@ -1,8 +1,8 @@
 /** Laptop-only paired phone bridge. This module is never mounted in projector mode. */
-export function mountPhoneControls(){
+export function mountPhoneControls({controller=()=>window.HauntShow,previewCanvas=()=>document.getElementById('preview'),host=document.querySelector('main>aside')}={}){
  const $=id=>document.getElementById(id),card=document.createElement('details');card.className='panel phone-controls';
  card.innerHTML=`<summary>Phone remote · direct Wisp from the room</summary><p class="help">Enable on trusted Wi-Fi, then scan the address and enter the pairing code on your phone. The laptop keeps the microphone and sound.</p><div class="row"><button id="phoneEnable" class="primary">Enable phone remote</button><button id="phoneDisable" disabled>Disable remote</button></div><p id="phoneStatus" role="status" aria-live="polite">Phone remote is off.</p><div id="phonePair" hidden><div id="phoneQr" style="width:176px;background:white;border-radius:8px;padding:8px"></div><p><a id="phoneUrl" target="_blank" rel="noopener"></a></p><p>Pairing code: <strong id="phoneCode" style="font:700 28px monospace;letter-spacing:.12em"></strong> <span id="phoneExpiry" class="help"></span></p><div class="row"><button id="phoneNewCode">New pairing code</button><button id="phoneRevoke">Revoke all phones</button></div><p id="phoneNetworkHelp" class="help">Same Wi-Fi required. This HTTP remote is for a trusted local network; do not expose it through your router.</p></div>`;
- document.querySelector('main>aside').append(card);
+ host.append(card);
  let enabled=false,polling=false,lastState=0,closed=false,token='',tokenAt=0,expires=0,statusAt=0,lastSeen=0,failures=0,pairing=false,cloud=false,lastTick=0;
  const clientId=crypto.randomUUID(); // A duplicated tab must not inherit command ownership.
  const preview=document.createElement('canvas');preview.width=384;preview.height=216;const ctx=preview.getContext('2d');
@@ -24,14 +24,14 @@ export function mountPhoneControls(){
  $('phoneDisable').onclick=async()=>{try{applyStatus(await post('disable'));notice('Remote disabled. All phone permissions revoked.')}catch(e){notice(e.message)}};
  $('phoneNewCode').onclick=()=>pair().catch(e=>notice(e.message));
  $('phoneRevoke').onclick=async()=>{try{await post('revoke');notice('All phones revoked. Create a new code to pair again.');$('phoneCode').textContent='—';expires=0}catch(e){notice(e.message)}};
- async function execute(c){try{if(!window.HauntShow?.remoteCommand)throw Error('Phone show controls are not ready.');await window.HauntShow.remoteCommand(c.command,c.value);await post('ack',{seq:c.seq,status:'applied'});}catch(e){try{await post('ack',{seq:c.seq,status:'failed'})}catch{}notice('A phone command could not be applied: '+e.message)}}
+ async function execute(c){try{if(!controller()?.remoteCommand)throw Error('Phone show controls are not ready.');await controller().remoteCommand(c.command,c.value);if(closed)return;await post('ack',{seq:c.seq,status:'applied'});}catch(e){if(closed)return;try{await post('ack',{seq:c.seq,status:'failed'})}catch{}if(e.cancelled)return;notice('A phone command could not be applied: '+e.message)}}
  async function tick(){
   if(closed||polling||!enabled)return;polling=true;
   try{
    const d=await post('poll');lastSeen=performance.now();failures=0;
    // Dispatch without blocking the next poll on a spoken performance; panic can always arrive.
    for(const c of d.commands||[])execute(c);
-   const now=performance.now();if(now-lastState>(cloud?2500:1000)){lastState=now;const supplied=window.HauntShow?.remoteState?.()||{state:{status:'idle'},cues:[]};const canvas=$('preview');let image=null;if(canvas){ctx.fillStyle='#000';ctx.fillRect(0,0,384,216);ctx.drawImage(canvas,0,0,384,216);image=preview.toDataURL('image/jpeg',.55);}await post('state',{...supplied,preview:image});}
+   const now=performance.now();if(now-lastState>(cloud?2500:1000)){lastState=now;const supplied=controller()?.remoteState?.()||{state:{status:'idle'},cues:[]};const canvas=previewCanvas();let image=null;if(canvas){ctx.fillStyle='#000';ctx.fillRect(0,0,384,216);ctx.drawImage(canvas,0,0,384,216);image=preview.toDataURL('image/jpeg',.55);}await post('state',{...supplied,preview:image});}
    if(now-statusAt>(cloud?6000:4000)){statusAt=now;const st=await post('status');applyStatus(st);if(st.pairedPhones>0)notice(`${st.pairedPhones} phone${st.pairedPhones===1?'':'s'} paired · remote ready.`);}
   }catch(e){failures++;if(failures>=3)notice('Phone bridge disconnected. '+e.message);}finally{polling=false;}
  }

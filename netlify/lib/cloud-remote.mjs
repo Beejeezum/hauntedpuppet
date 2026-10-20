@@ -73,7 +73,7 @@ export function cloudRemote({database,env=runtimeEnv,now=()=>Date.now()}={}){
     rows.sort((a,b)=>BigInt(a.seq)<BigInt(b.seq)?-1:1);return {commands:rows.map(row=>({seq:safeSeq(row.seq),id:row.command_id,command:row.command,value:row.value}))};
    }
    if(action==='state'){
-    const state={};for(const k of ['mood','audience','loop','blackout','volume','status','gesture','gaze','form','scaryReady','revealArmed','revealRunning']){const v=data.state?.[k];if(typeof v==='boolean'||typeof v==='number'&&Number.isFinite(v)||typeof v==='string'&&v.length<=120)state[k]=v;}
+    const state={};for(const k of ['mood','audience','loop','blackout','volume','status','gesture','gaze','form','scaryReady','revealArmed','revealRunning','workspace']){const v=data.state?.[k];if(k==='workspace'&&!['films','live'].includes(v))continue;if(typeof v==='boolean'||typeof v==='number'&&Number.isFinite(v)||typeof v==='string'&&v.length<=120)state[k]=v;}
     const cues=data.cues||[];if(!Array.isArray(cues)||cues.length>40||cues.some(x=>typeof x!=='string'||x.length>64))throw new ApiError(400,'Invalid prepared cues.');
     const preview=data.preview??null;
     if(preview!==null){if(typeof preview!=='string'||!/^data:image\/jpeg;base64,[A-Za-z0-9+/]*={0,2}$/.test(preview))throw new ApiError(400,'Invalid preview.');const raw=Buffer.from(preview.split(',')[1],'base64');if(raw.length>100000||raw.length<3||raw[0]!==255||raw[1]!==216||raw[2]!==255)throw new ApiError(400,'Invalid JPEG preview.');}

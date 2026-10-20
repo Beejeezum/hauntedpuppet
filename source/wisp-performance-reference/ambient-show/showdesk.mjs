@@ -1,6 +1,8 @@
 import {StageCompositor} from '/assets/stage-compositor.js';
 import {CueDirector} from './cue-director.mjs';
 import {FilmTransport} from './film-transport.mjs';
+import {createFilmRemote} from './film-remote.mjs';
+import {mountPhoneControls} from '/assets/phone-bridge.js';
 import {mountFilmOutput} from '../runway-pilots/wisp-film-output.js';
 const $=id=>document.getElementById(id),clips=[
  {id:'cute',title:'Friendly Wisp',detail:'Fuller living motion · approved direction',loop:true,src:'../runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4'},
@@ -48,8 +50,10 @@ $('effectFile').onchange=async event=>{
  catch{source.pause?.();source.removeAttribute('src');source.remove();URL.revokeObjectURL(url);$('status').textContent='Effect could not load';}
 };
 function stop(){mode='manual';$('mode').value=mode;timing();director.stop();for(const {source}of overlays.values())source.pause?.();output.blackout();lastForm=null;}
-for(const clip of clips){const b=document.createElement('button');b.dataset.cue=clip.id;b.innerHTML='<strong></strong><small></small>';b.querySelector('strong').textContent=clip.title;b.querySelector('small').textContent=clip.detail;b.onclick=()=>{mode='manual';$('mode').value=mode;timing();director.request(clip.id);};$('cues').append(b);}
-$('start').onclick=()=>{mode=$('mode').value;lastForm=null;formSince=performance.now();director.request(['scary','mostly-scary'].includes(mode)?'scary':'cute');};
+for(const clip of clips){const b=document.createElement('button');b.dataset.cue=clip.id;b.innerHTML='<strong></strong><small></small>';b.querySelector('strong').textContent=clip.title;b.querySelector('small').textContent=clip.detail;b.onclick=()=>chooseCue(clip.id);$('cues').append(b);}
+function chooseCue(id){mode='manual';$('mode').value=mode;timing();if(director.current===id&&director.phase==='playing')return Promise.resolve();return director.request(id);}
+function startProgram(selected){mode=selected;$('mode').value=mode;timing();lastForm=null;formSince=performance.now();const id=['scary','mostly-scary'].includes(mode)?'scary':'cute';if(director.current===id&&director.phase==='playing')return Promise.resolve();return director.request(id);}
+$('start').onclick=()=>startProgram($('mode').value);
 function timing(){const n=Number($('dwell').value),selected=$('mode').value;$('dwellValue').textContent=n+'s';$('programTiming').textContent=selected==='manual'?'Manual cueing · no automatic form changes':selected==='mostly-scary'?`Scary ${n*3}s · cute ${n*.5}s`:selected==='alternate'?`Cute ${n}s · scary ${n}s`:`${selected==='cute'?'Friendly':'Scary'} only · no automatic form changes`;}
 $('dwell').oninput=timing;$('mode').onchange=timing;$('pace').onchange=()=>{director.fadeMs=Number($('pace').value);};
 $('blackout').onclick=stop;document.addEventListener('keydown',e=>{if(e.key==='Escape')stop();});$('puppet').onclick=stop;
@@ -68,5 +72,8 @@ function tick(now){
  compositor.render();raf=requestAnimationFrame(tick);
 }
 refreshLayers();tick(performance.now());
-window.WispDesk={inspect:()=>({director:director.inspect(),composition:compositor.inspect(),mode,media:transport.videos.map(v=>({muted:v.muted,paused:v.paused,cue:v.dataset.cue||null,currentTime:v.currentTime,loop:v.loop})),effects:overlays.size})};
+const inspectDesk=()=>({director:director.inspect(),composition:compositor.inspect(),mode,media:transport.videos.map(v=>({muted:v.muted,paused:v.paused,cue:v.dataset.cue||null,currentTime:v.currentTime,loop:v.loop})),effects:overlays.size});
+const remote=createFilmRemote({chooseCue,startProgram,stop,inspect:inspectDesk});
+window.WispDesk={inspect:inspectDesk,...remote};
+mountPhoneControls({controller:()=>remote,previewCanvas:()=>$('stage')});
 window.addEventListener('pagehide',()=>{disposed=true;cancelAnimationFrame(raf);director.dispose();for(const id of [...overlays.keys()])release(id);compositor.dispose();output.dispose();},{once:true});
