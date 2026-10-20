@@ -24,13 +24,17 @@
     {
       "source": "source/wisp-performance-reference/tonight-demo/tonight.mjs",
       "destination": "tonight.mjs",
-      "bytes": 5063,
-      "sha256": "a9c50c779c61a9e1067d6503f5cbd15fb4853d37a29aa732c6f6042a4c880dac",
-      "publishedSha256": "28b82491bde59d1aa2a88867ce0273df97696476787bac82e9efe035fad29465",
+      "bytes": 5855,
+      "sha256": "81b78a4ff2f4f99af30201f30eb9e9ab5e065b18d222c667c9dfb91090ce8c6d",
+      "publishedSha256": "c14e2ec70d6ee7aa95daf1296ec62da0a3e73e8f8f4347dc6ac34a3647e9cf3f",
       "rewrites": [
         {
           "from": "../runway-pilots/wisp-film-output.js",
           "to": "../wisp-film-preview/wisp-film-output.js"
+        },
+        {
+          "from": "../ambient-show/film-transport.mjs",
+          "to": "../wisp-showdesk/film-transport.mjs"
         }
       ]
     },
