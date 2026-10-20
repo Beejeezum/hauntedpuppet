@@ -25,8 +25,13 @@ assert.equal(await page.evaluate(()=>WholeFilmReview.inspect().state),'stopped')
 await page.evaluate(()=>{WholeFilmReview.playSpeech();WholeFilmReview.playIdle();});
 await page.waitForFunction(()=>WholeFilmReview.inspect().state==='idle');
 assert.equal(await page.evaluate(()=>WholeFilmReview.active.paused),false);
+// Synthetic media-error event after decoding must not leave a frozen apparition.
+await page.evaluate(()=>WholeFilmReview.active.dispatchEvent(new Event('error')));
+assert.equal(await page.evaluate(()=>WholeFilmReview.inspect().state),'unavailable');
+assert.equal(await page.locator('video[src]').count(),0);
+await page.click('#idle');await page.waitForFunction(()=>WholeFilmReview.inspect().state==='idle');
 await page.keyboard.press('Escape');assert.equal(await page.evaluate(()=>WholeFilmReview.inspect().state),'stopped');
 assert.equal(await page.evaluate(()=>captureAttempts),0);assert.deepEqual(errors,[]);assert.deepEqual(outside,[]);
-const evidence={result:'PASS',scope:'isolated muted browser; prepared films only',speechToLivingIdle:true,handoffMilliseconds:handoffs,idleContinuesBeyondCycle:true,blackoutCancelsPending:true,rapidRequestLatestWins:true,captureAttempts:0,externalRequests:0,errors};
+const evidence={result:'PASS',scope:'isolated muted browser; prepared films only',speechToLivingIdle:true,handoffMilliseconds:handoffs,idleContinuesBeyondCycle:true,blackoutCancelsPending:true,rapidRequestLatestWins:true,syntheticActiveMediaFailureClearsAndRecovers:true,captureAttempts:0,externalRequests:0,errors};
 fs.writeFileSync('work/whole-film-handoff-browser.json',JSON.stringify(evidence,null,2));console.log(evidence);
 }finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1;});
