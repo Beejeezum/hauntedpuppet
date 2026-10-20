@@ -10,7 +10,7 @@
   "quotedCredits": 5,
   "creditsBefore": 9955,
   "submissionCount": 1,
-  "lastObservedState": "Promptversionsloadinganimation",
+  "lastObservedState": "Completed; original locally retained",
   "videoEditSubmitted": false,
   "humanApproval": false,
   "liveReplacement": false,
@@ -27,5 +27,52 @@
     "Head remains fairly opaque and rounded; this is partial material evidence, not an accepted finished design.",
     "No GenerateVideo submitted; do not turn partial material success into full motion/identity acceptance."
   ],
-  "exportStatus": "Native artwork download timed out after8seconds; no verified local image path. PageAssets inventory did not identify exact displayed output; no random asset export or screenshot workaround. Saved Runway session retains the completed preview."
+  "exportStatus": "Verified original asset downloaded using Runway Assets native Download asset control, visually matched rear/side output. No new generation or credits.",
+  "localAsset": "wisp-rear-fog-material-v32.png",
+  "assetSha256": "7eb05a79d5e28ab398f1743433ddc7b8290742cdaf297d5145f080a1d4519047",
+  "assetId": "ce427b83-be03-4a6d-a3d6-5d1a9560c3f9",
+  "bounds": {
+    "4": {
+      "bbox": [
+        740,
+        279,
+        1085,
+        847
+      ],
+      "reserveFraction": [
+        0.3854166666666667,
+        0.25643382352941174,
+        0.4348958333333333,
+        0.22150735294117646
+      ]
+    },
+    "8": {
+      "bbox": [
+        740,
+        280,
+        1082,
+        845
+      ],
+      "reserveFraction": [
+        0.3854166666666667,
+        0.25735294117647056,
+        0.43645833333333334,
+        0.22334558823529413
+      ]
+    },
+    "16": {
+      "bbox": [
+        741,
+        281,
+        1081,
+        841
+      ],
+      "reserveFraction": [
+        0.3859375,
+        0.25827205882352944,
+        0.43697916666666664,
+        0.2270220588235294
+      ]
+    }
+  }
 }
