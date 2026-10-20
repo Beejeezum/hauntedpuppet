@@ -1,0 +1,10 @@
+const audio=document.querySelector('#timedAudio'),button=document.querySelector('#playAligned');
+let timings=[],ready=false,epoch=0,disposed=false,phase='idle';audio.muted=true;
+fetch('wisp-scripted-v13-alignment.json').then(r=>{if(!r.ok)throw Error('timing unavailable');return r.json()}).then(d=>{timings=d.visemes;ready=true}).catch(()=>{button.disabled=true;button.textContent='Timing unavailable';phase='failed';});
+function stop(){if(disposed)return;epoch++;audio.pause();audio.currentTime=0;phase='stopped';}
+function currentPhase(){if(phase==='settling'&&window.ClipReview?.inspect().mode==='idle')return 'idle';if(phase==='speaking'&&audio.paused&&!audio.ended)return 'paused';return phase;}
+window.WispSpeechFixture={stop,sample(){const at=audio.currentTime,cue=!audio.paused&&!audio.ended?timings.find(c=>at>=c.start&&at<c.end):null;return {weights:{[cue?.shape||'rest']:1},at,source:'automatic-alignment',epoch};},inspect(){return {ready,paused:audio.paused,muted:audio.muted,at:audio.currentTime,epoch,disposed,phase:currentPhase()};},dispose(){if(disposed)return;stop();disposed=true;audio.removeAttribute('src');audio.load();}};
+audio.addEventListener('ended',()=>{if(!disposed)phase='settling';});
+button.onclick=async()=>{if(!ready||disposed)return;stop();const ticket=epoch;phase='preparing';const toggle=document.querySelector('#speechStudy');toggle.checked=true;toggle.dispatchEvent(new Event('change'));try{const prepared=await window.ClipReview.prepareSpeech();if(ticket!==epoch||disposed)return;if(!prepared)throw Error('Mouth unavailable');const started=await window.ClipReview.playGreeting();if(ticket!==epoch||disposed)return;if(!started)throw Error('Body unavailable');await audio.play();if(ticket!==epoch||disposed)return;phase='speaking';}catch{if(ticket===epoch&&!disposed){stop();phase='failed';}}};
+for(const id of ['blackout','pause','greet','morph','return','scary','rehearse','repeat'])document.querySelector('#'+id).addEventListener('click',stop,true);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')stop();});window.addEventListener('pagehide',()=>window.WispSpeechFixture.dispose());

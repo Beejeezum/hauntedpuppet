@@ -53,8 +53,8 @@
       "role": "greeting-interpolation-candidate",
       "bytes": 588252,
       "sha256": "52e11d56a2740f1d1393d054a1883ec3cd8feaa0acce2e55236ae26b8c795548",
-      "approval": "unapproved candidate",
-      "limitations": "Offline FFmpeg interpolation;244frames; visual preference and target hardware unapproved."
+      "approval": "rejected: hand/fog overlap choppiness",
+      "limitations": "Offline FFmpeg interpolation;244frames; visual preference and target hardware unapproved. User reports choppiness at hand/fog overlap; fails visual acceptance."
     },
     {
       "file": "wisp-cadence-comparison-v1.mp4",
@@ -63,6 +63,57 @@
       "sha256": "6370b3ea7669d7137ef6cab081e7904946a18659f8be42ae3ba397d0644b360d",
       "approval": "unapproved candidate",
       "limitations": "Left original24fps repeated into48fps container, right interpolated48fps. Silent synchronized5.083sec comparison."
+    }
+  ],
+  "speechRehearsal": {
+    "page": "wisp-timed-speech-review.html",
+    "audio": "generated-greeting.wav",
+    "audioProvenance": "Generated Runway Pip performance of the fictional line Boo! Hello! Brilliant costume!; extracted unchanged as mono16kPCM for local alignment. Not a person/microphone/guest recording.",
+    "alignment": "wisp-scripted-v13-alignment.json",
+    "timingProvenance": "PocketSphinx5.1.1 automatic English forced alignment through existing performance.align_audio; not manually verified",
+    "capabilities": "Coarse AH/OO/EE painted shapes on registered friendly idle/greeting only. Unsupported scary/morph/rear speech remains unavailable.",
+    "default": "Muted, no network provider or microphone; user must explicitly play. Experimental, not production lip sync."
+  },
+  "rehearsalFiles": [
+    {
+      "file": "wisp-clip-player.js",
+      "bytes": 9177,
+      "sha256": "760eb340e5f757fbaa04283dc222f81897c0095bf1c14bbdb4bded4e620c757d"
+    },
+    {
+      "file": "wisp-motion-review.html",
+      "bytes": 3051,
+      "sha256": "87931c222f3d9eebb2634bddcf847e4a2eee1fe771d9c1c4b654e076d5fbc58c"
+    },
+    {
+      "file": "wisp-timed-speech-review.html",
+      "bytes": 3452,
+      "sha256": "eb0b4235d762e26afbe9676a203be14d9a4c433d9c1a94ff80c172ecb6400ed0"
+    },
+    {
+      "file": "wisp-timed-speech-driver.js",
+      "bytes": 2135,
+      "sha256": "0bab282d5ecab500ff3bf7344d941f9ef3db542bdc903d0d76ebe550a56d1bde"
+    },
+    {
+      "file": "wisp-mouth-anchor-study.json",
+      "bytes": 187136,
+      "sha256": "fe3724947b4e088ebb3f9219ddd28e7697f21b6d568c1a490d8a78446f95ee9c"
+    },
+    {
+      "file": "wisp-iris-tracking-study.json",
+      "bytes": 426120,
+      "sha256": "9114a08eaf9a46175da87aa9b5441a607ad8d3408f144b78268a4fb3438c1413"
+    },
+    {
+      "file": "wisp-scripted-v13-alignment.json",
+      "bytes": 2102,
+      "sha256": "b2d8c2cd27727c5aa741dab83d89e79f6a06161bdab9051837cd09a630fc90b2"
+    },
+    {
+      "file": "generated-greeting.wav",
+      "bytes": 112718,
+      "sha256": "bb3bf02126328e4924724ea339b2ea010a605e1ad067f151b6b4947e701fcdd1"
     }
   ]
 }

@@ -1,0 +1,127 @@
+{
+  "duration": 3.52,
+  "visemes": [
+    {
+      "start": 0,
+      "end": 0.08,
+      "shape": "rest",
+      "phoneme": "B"
+    },
+    {
+      "start": 0.08,
+      "end": 0.38,
+      "shape": "U",
+      "phoneme": "UW"
+    },
+    {
+      "start": 0.38,
+      "end": 0.88,
+      "shape": "rest",
+      "phoneme": "SIL"
+    },
+    {
+      "start": 0.88,
+      "end": 0.93,
+      "shape": "A",
+      "phoneme": "HH"
+    },
+    {
+      "start": 0.93,
+      "end": 0.99,
+      "shape": "E",
+      "phoneme": "EH"
+    },
+    {
+      "start": 0.99,
+      "end": 1.09,
+      "shape": "L",
+      "phoneme": "L"
+    },
+    {
+      "start": 1.09,
+      "end": 1.46,
+      "shape": "O",
+      "phoneme": "OW"
+    },
+    {
+      "start": 1.46,
+      "end": 1.93,
+      "shape": "rest",
+      "phoneme": "SIL"
+    },
+    {
+      "start": 1.93,
+      "end": 2.04,
+      "shape": "U",
+      "phoneme": "R"
+    },
+    {
+      "start": 2.04,
+      "end": 2.23,
+      "shape": "E",
+      "phoneme": "IH"
+    },
+    {
+      "start": 2.23,
+      "end": 2.26,
+      "shape": "L",
+      "phoneme": "L"
+    },
+    {
+      "start": 2.26,
+      "end": 2.33,
+      "shape": "E",
+      "phoneme": "Y"
+    },
+    {
+      "start": 2.33,
+      "end": 2.36,
+      "shape": "A",
+      "phoneme": "AH"
+    },
+    {
+      "start": 2.36,
+      "end": 2.49,
+      "shape": "S",
+      "phoneme": "N"
+    },
+    {
+      "start": 2.49,
+      "end": 2.53,
+      "shape": "rest",
+      "phoneme": "T"
+    },
+    {
+      "start": 2.53,
+      "end": 2.77,
+      "shape": "A",
+      "phoneme": "K"
+    },
+    {
+      "start": 2.77,
+      "end": 2.79,
+      "shape": "S",
+      "phoneme": "S"
+    },
+    {
+      "start": 2.79,
+      "end": 2.92,
+      "shape": "rest",
+      "phoneme": "S"
+    },
+    {
+      "start": 2.92,
+      "end": 3.34,
+      "shape": "U",
+      "phoneme": "UW"
+    },
+    {
+      "start": 3.34,
+      "end": 3.51,
+      "shape": "rest",
+      "phoneme": "M"
+    }
+  ],
+  "syncMode": "forced-phoneme-alignment",
+  "alignmentWarning": "Automatic English alignment. Review names, whispers and unusually theatrical delivery."
+}

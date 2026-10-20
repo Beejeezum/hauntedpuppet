@@ -1,0 +1,22 @@
+const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),assert=require('node:assert/strict'),crypto=require('node:crypto');
+const {chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
+(async()=>{
+ const root=path.resolve(__dirname,'..'),folder=path.join(root,'source/wisp-performance-reference/runway-pilots'),manifest=JSON.parse(fs.readFileSync(path.join(folder,'manifest.json')));
+ for(const asset of [...manifest.assets,...manifest.rehearsalFiles])assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(folder,asset.file))).digest('hex'),asset.sha256,'Source checksum: '+asset.file);
+ const allowed=[folder,path.join(root,'source/wisp-art-reference/painted-speech-study')],types={'.html':'text/html','.js':'text/javascript','.json':'application/json','.png':'image/png','.mp4':'video/mp4','.wav':'audio/wav'};
+ const server=http.createServer((req,res)=>{let file;try{file=path.resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));}catch{res.writeHead(400);return res.end();}if(!allowed.some(dir=>file.startsWith(dir+path.sep))||!types[path.extname(file)]||!fs.existsSync(file)){res.writeHead(404);return res.end();}res.setHeader('Content-Type',types[path.extname(file)]);fs.createReadStream(file).pipe(res);});
+ await new Promise(r=>server.listen(0,'127.0.0.1',r));let browser;
+ try{
+  browser=await chromium.launch({args:['--mute-audio']});const page=await browser.newPage(),errors=[],external=[];page.on('pageerror',e=>errors.push(e.message));const base=`http://127.0.0.1:${server.address().port}`;
+  await page.route('**/*',route=>{if(new URL(route.request().url()).origin===base)return route.continue();external.push(route.request().url());return route.abort();});
+  await page.goto(base+'/source/wisp-performance-reference/runway-pilots/wisp-timed-speech-review.html');await page.waitForFunction(()=>window.WispSpeechFixture?.inspect().ready);
+  assert.deepEqual(await page.evaluate(()=>({muted:WispSpeechFixture.inspect().muted,paused:WispSpeechFixture.inspect().paused})),{muted:true,paused:true});
+  await page.click('#playAligned');await page.waitForFunction(()=>WispSpeechFixture.inspect().phase==='speaking'&&ClipReview.inspect().metrics.mouthFrames>0);
+  const speaking=await page.evaluate(()=>({mode:ClipReview.inspect().mode,mouth:ClipReview.inspect().mouthCue.source}));assert.equal(speaking.mode,'greeting');assert.equal(speaking.mouth,'automatic-alignment');
+  await page.waitForFunction(()=>WispSpeechFixture.inspect().phase==='idle',null,{timeout:8000});assert.equal(await page.evaluate(()=>ClipReview.inspect().mouthCue.opening),0);
+  for(let n=0;n<4;n++)await page.click('#playAligned');await page.waitForFunction(()=>WispSpeechFixture.inspect().phase==='speaking');await page.evaluate(()=>ClipReview.blackout());assert(await page.evaluate(()=>WispSpeechFixture.inspect().paused&&ClipReview.inspect().black));
+  await page.click('#playAligned');await page.waitForFunction(()=>WispSpeechFixture.inspect().phase==='speaking');await page.click('#morph');assert(await page.evaluate(()=>WispSpeechFixture.inspect().paused));
+  await page.evaluate(()=>ClipReview.dispose());assert(await page.evaluate(()=>WispSpeechFixture.inspect().disposed&&ClipReview.inspect().mouthSurface.disposed));assert.equal(errors.length,0);assert.equal(external.length,0);
+  const report={speaking,errors,external,scope:'Local packaged Runway footage and generated audio, muted. Automatic three-shape timing, not genuine live-provider/phoneme accuracy/physical projection.'};const evidence=path.join(root,'test-results');fs.mkdirSync(evidence,{recursive:true});fs.writeFileSync(path.join(evidence,'film-speech.json'),JSON.stringify(report,null,2));console.log('PASS packaged whole-character timed greeting: source hashes, muted/no autoplay or external requests, prepared start, idle recovery, rapid restart, Blackout/form interruption and disposal.');
+ }finally{await browser?.close();await new Promise(r=>server.close(r));}
+})().catch(e=>{console.error(e);process.exitCode=1;});
