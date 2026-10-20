@@ -1,0 +1,28 @@
+{
+  "status": "Offline input-framing candidate; not provider face-detection validated",
+  "source": "../continuous-loop-study/wisp-continuous-loop-v28.mp4",
+  "sourceSha256": "52d54d03c0f0406a9724c7c04b9e2fa0557a675486edfaa40fd0ca2e24a682bd",
+  "output": "wisp-fuller-body-portrait-v1.mp4",
+  "sha256": "131e8f38547853bae5fc69135e43769355be0c53281708de5af6154b00efd4fb",
+  "transform": {
+    "fixedCropXYWH": [
+      598,
+      0,
+      720,
+      1080
+    ],
+    "uniformScale": 2,
+    "outputSize": [
+      1440,
+      2160
+    ],
+    "frames": 122,
+    "fps": 24
+  },
+  "scope": "Whole original frames retained in time. Fixed spatial crop removes empty widescreen sides; uniform upscale creates no new detail. No face overlay, interpolation, reverse, synthesized motion or temporal retiming.",
+  "validation": "All122 frames pass15percent reserve at RGB4/8/16; lowest18.796percent bottom. Contact sheet inspected for complete core, hands and fog.",
+  "nextGate": "Provider face validation with independently compatible actor driver before any charged performance transfer. Do not repeat failed synthetic input pair.",
+  "paidGenerationSubmitted": false,
+  "newCredits": 0,
+  "liveReplacement": false
+}
