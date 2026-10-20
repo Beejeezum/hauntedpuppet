@@ -1,5 +1,5 @@
 {
-  "status": "Single scary counterpart queued; no completed asset",
+  "status": "Generating41percent; same single job",
   "sessionId": "a89bc46d-4514-4007-90e3-384e8039d5ea",
   "parentId": "eb45c45f-2b3d-4797-abee-826e616bf3e5",
   "settings": {
@@ -21,5 +21,7 @@
     "No accidental core disappearance or fixed fish curls"
   ],
   "humanApproved": false,
-  "liveReplacement": false
+  "liveReplacement": false,
+  "creditsAfter": 10020,
+  "observedDebit": 60
 }
