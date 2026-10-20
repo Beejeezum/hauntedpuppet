@@ -194,3 +194,11 @@ Runway documents a LiveKit plugin that turns an external agent's synthesized spe
 Treat this as a candidate visual provider, not a drop-in replacement for the current browser voice connection. Before adding app dependencies, test at most30seconds with fictional generated speech, no microphone/camera, and a hard shutdown. Inspect full-body identity, mouth readability, body-attached fog, framing, latency, interruption and cleanup. Preserve the working voice/fallback paths. No such API test has run and no new account/key has been created.
 
 Runway's web guidance favors shoulder-up references, so its documented non-human support does not establish whole-body Wisp quality. Source: https://help.runwayml.com/hc/en-us/articles/49557780326163-Runway-Characters. A successful visual comparison must precede any integration decision.
+
+
+### Coordinated return: authored intermediate proof
+The v20 return fails: friendly eyes appear while long claws persist. Preserve the scary design; remove teeth and round hands before widening the eyes. `source/wisp-performance-reference/runway-pilots/identity-morph-study/wisp-return-intermediate-v1.png` is an unchanged generated reference, visually reviewed with a closed toothless smile, rounded fingers and narrowed eyes. Its entire RGB4/8/16 envelope passes the15% reserve. This is a still, not a registered video correction or accepted animation.
+
+`return-timed-pilot.json` records an unexecuted73-frame/24fps pilot: replace anchors0,17,33 and guide72. Official LTX conditioning documents causal replacement indices0 or1+8*k; guide indices use decoded frame positions. References in a hosted UI do not establish timed bindings. The inspected Runway LTX-2.5 Pro UI exposed first/last/reference images and FPS but no explicit intermediate timestamp binding. No new video was submitted.
+
+Primary sources: https://github.com/Lightricks/LTX-2/blob/main/packages/ltx-pipelines/docs/conditioning.md and https://github.com/Lightricks/LTX-2/blob/main/packages/ltx-pipelines/docs/pipelines.md . Local download is deferred: about7.7GiB free disk versus the documented roughly66GiB package, with24GiB memory. Do not download models, remove user files or infer render feasibility from installation support. Next prove access to actual timed conditioning before paying for a return pilot.
