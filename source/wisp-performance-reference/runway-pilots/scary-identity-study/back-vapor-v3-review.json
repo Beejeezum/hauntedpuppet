@@ -1,0 +1,44 @@
+{
+  "file": "wisp-scary-back-vapor-v3.png",
+  "sha256": "51c2fd7ac21888af2e37dcbd7e0c0872d15618c8493fdad3c100687ab9b71c4f",
+  "tool": "Built-in imagegen",
+  "editTarget": "wisp-scary-back-vapor-v2.png",
+  "materialReference": "source/wisp-art-reference/approved-friendly-fog.png",
+  "promptIntent": "Replace solid skeletal upper-body and arm structures with coherent rounded translucent vapor, preserving rear-facing pose, hooked hands, crest, lower fog, black stage and buffer.",
+  "status": "Reference study only; not approved or animated",
+  "visualReview": [
+    "Softer coherent fog fills the central back; rib-like back ridges reduced.",
+    "Bright continuous shoulder and upper-arm tubes remain too solid; claws remain hard-edged.",
+    "Fine smoke detail alone does not establish continuous articulated animation or same-character identity.",
+    "No live replacement or new Runway job."
+  ],
+  "bounds": {
+    "4": {
+      "marginsLTRB": [
+        0.2688622754491018,
+        0.27365269461077846,
+        0.21443736730360935,
+        0.18365180467091294
+      ],
+      "reservePass": true
+    },
+    "8": {
+      "marginsLTRB": [
+        0.27005988023952093,
+        0.2748502994011976,
+        0.21443736730360935,
+        0.18365180467091294
+      ],
+      "reservePass": true
+    },
+    "16": {
+      "marginsLTRB": [
+        0.27005988023952093,
+        0.2754491017964072,
+        0.21443736730360935,
+        0.18365180467091294
+      ],
+      "reservePass": true
+    }
+  }
+}
