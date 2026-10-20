@@ -15,7 +15,7 @@ The supplied 4.651-second driver is fictional generated character speech, mono P
 
 The draft lifecycle caps provider duration at 30 seconds, local performance at 20 seconds, disables automatic creation retries, and attempts avatar cancellation, agent closure and room disconnection independently. Microphone, camera and room text input are disabled; no STT, LLM or TTS is configured. SDK recording/session hosting is disabled. Provider-side retention is not established by these settings.
 
-Five mocked tests cover normal completion, startup failure, timeout, cleanup failure and PCM frame construction. They prove local control flow only. They do not prove remote cancellation, paid-session duration, native conversation, visual fidelity, voice quality or physical projection.
+Eight mocked tests cover normal completion, startup failure, timeout, failed/stalled cleanup, PCM frame construction and room/job admission. The draft rejects non-pilot rooms and repeated jobs within the same process. This process-local gate does not prove single-job behavior across SDK job subprocesses; CLI dispatch remains disabled. Entrypoint shutdown is requested on performance success or failure. They prove local control flow only. They do not prove remote cancellation, paid-session duration, native conversation, visual fidelity, voice quality or physical projection.
 
 The pinned dependencies were installed into an ignored isolated Python 3.12 environment for import/signature inspection (approximately 281MB). Production dependencies remain unchanged. Requirements are for a laptop experiment, not Netlify Functions. No runtime or artist-quality approval is implied.
 

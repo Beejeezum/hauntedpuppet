@@ -59,6 +59,41 @@ class Lifecycle(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(all(len(data) == 960 for data, kw in frames))
         self.assertTrue(all(kw['sample_rate'] == 24000 for data, kw in frames))
 
+    async def test_stalled_cleanup_does_not_skip_remaining(self):
+        calls = []
+        async def stuck():
+            calls.append('avatar')
+            await asyncio.sleep(10)
+        async def session_close():
+            calls.append('session')
+        async def room_close():
+            calls.append('room')
+        speech = SimpleNamespace(wait_for_playout=AsyncMock())
+        session = SimpleNamespace(start=AsyncMock(), say=lambda *a, **k: speech,
+                                  aclose=session_close)
+        avatar = SimpleNamespace(start=AsyncMock(), aclose=stuck)
+        room = SimpleNamespace(disconnect=room_close)
+        events = await pilot.bounded_pilot(session, avatar, room, agent=None,
+            options=None, frames=None, body_seconds=.1, settle_seconds=0,
+            cleanup_seconds=.01)
+        self.assertEqual(calls, ['avatar', 'session', 'room'])
+        self.assertEqual(events[-3:], ['avatar-cleanup-failed', 'session-closed', 'room-closed'])
+
+
+class Dispatch(unittest.TestCase):
+    def test_wrong_room_does_not_consume_single_job(self):
+        gate = pilot.OneShotGate('wisp-pilot-offline')
+        with self.assertRaises(ValueError):
+            gate.claim('real-show-room')
+        gate.claim('wisp-pilot-offline')
+        with self.assertRaises(RuntimeError):
+            gate.claim('wisp-pilot-offline')
+
+    def test_missing_or_show_room_rejected(self):
+        for room in (None, '', 'real-show-room'):
+            with self.assertRaises(ValueError):
+                pilot.OneShotGate(room)
+
 
 if __name__ == '__main__':
     unittest.main()

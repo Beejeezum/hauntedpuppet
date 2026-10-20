@@ -64,14 +64,32 @@ async def bounded_pilot(session, avatar, room, *, agent, options, frames,
                 events.append(name + '-cleanup-failed')
 
 
+class OneShotGate:
+    """Reject wrong-room and repeated jobs before constructing any paid avatar."""
+    def __init__(self, room_name):
+        if not room_name or not room_name.startswith('wisp-pilot-'):
+            raise ValueError('A dedicated wisp-pilot- room is required')
+        self.room_name = room_name
+        self.claimed = False
+
+    def claim(self, room_name):
+        if room_name != self.room_name:
+            raise ValueError('Pilot room does not match')
+        if self.claimed:
+            raise RuntimeError('This pilot already accepted its single job')
+        self.claimed = True
+
+
 def create_server():
     from livekit import rtc
     from livekit.agents import Agent, AgentServer, AgentSession, APIConnectOptions, room_io
     from livekit.plugins import runway
+    gate = OneShotGate(os.environ.get('WISP_PILOT_ROOM_NAME'))
     server = AgentServer()
 
     @server.rtc_session(agent_name='wisp-synthetic-visual-pilot')
     async def entrypoint(ctx):
+        gate.claim(ctx.room.name)
         inspect_driver()
         session = AgentSession()  # No STT, LLM, TTS or user input is configured.
         avatar = runway.AvatarSession(
@@ -80,12 +98,14 @@ def create_server():
         )
         options = room_io.RoomOptions(audio_input=False, video_input=False, text_input=False,
                                       text_output=False, close_on_disconnect=True)
-        events = await bounded_pilot(session, avatar, ctx.room,
-            agent=Agent(instructions='Synthetic audio visual compatibility pilot only.'),
-            options=options, frames=audio_frames(rtc.AudioFrame))
-        # Only bounded lifecycle labels; never tokens, request bodies or visitor data.
-        print(json.dumps({'pilotEvents': events}))
-        ctx.shutdown(reason='Synthetic pilot complete')
+        try:
+            events = await bounded_pilot(session, avatar, ctx.room,
+                agent=Agent(instructions='Synthetic audio visual compatibility pilot only.'),
+                options=options, frames=audio_frames(rtc.AudioFrame))
+            # Only lifecycle labels; never tokens, request bodies or visitor data.
+            print(json.dumps({'pilotEvents': events}))
+        finally:
+            ctx.shutdown(reason='Synthetic pilot finished or failed')
     return server
 
 
