@@ -1,0 +1,15 @@
+{
+  "status": "Generating; not completed or integrated",
+  "character": "Wisp \u2014 fog visual pilot",
+  "characterId": "c725f59e-a89e-4425-b526-0963562c93f0",
+  "uiRoute": "https://app.runwayml.com/video-tools/teams/beejeezum/ai-tools/characters/avatars/generate-video",
+  "script": "Oh! Hello, brave doorstep explorer. My boo needs practice!",
+  "inputMode": "Script",
+  "microphone": false,
+  "camera": false,
+  "creditsBefore": 10241,
+  "quotedCredits": 2,
+  "observedDebit": null,
+  "nextAction": "Poll same characterPreviewTab; UI showed Generating and disabled inputs. No taskId was exposed. Do not reload or repeat submission.",
+  "scope": "Offline talking-character visual proof. Not native OpenAI/WebRTC latency, live interruption or integration. No provider key or dependencies added."
+}
