@@ -1,0 +1,25 @@
+{
+  "status": "Single scary counterpart queued; no completed asset",
+  "sessionId": "a89bc46d-4514-4007-90e3-384e8039d5ea",
+  "parentId": "eb45c45f-2b3d-4797-abee-826e616bf3e5",
+  "settings": {
+    "model": "Kling2.5TurboPro",
+    "seconds": 5,
+    "aspect": "16:9",
+    "firstAndLast": "Identical original wisp-scary-wide-v2.png in both distinct slots"
+  },
+  "anchorSha256": "bc049a22ac9850f4d314555c424cd516beb04712a6cfa0c2440c9429513d5e8b",
+  "creditsBefore": 10080,
+  "quotedCredits": 60,
+  "submissionCount": 1,
+  "hypothesis": "Apply v28 endpoint-conditioned method to established scary identity; maintain articulated menacing gaze, torso counterbalance, shoulders/elbows/wrists/finger curls and continuous attached fog, no rigid sprite drift or end freeze.",
+  "reviewRequired": [
+    "All decoded frame15percent complete-fog reserve",
+    "Scary identity and coherent soft arm/core anatomy",
+    "Full-body and independent facial acting at normal speed",
+    "End motion and three repeated seams",
+    "No accidental core disappearance or fixed fish curls"
+  ],
+  "humanApproved": false,
+  "liveReplacement": false
+}
