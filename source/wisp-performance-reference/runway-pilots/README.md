@@ -17,3 +17,5 @@ The mouth is still an experimental tracked patch with three coarse shapes, not a
 ## Human motion feedback
 
 The user reports choppiness in the interpolated right-hand comparison when the hand overlaps fog. Treat that interpolation candidate as rejected for current use, regardless of its frame count or zero-drop decode test. The timed greeting source demo uses the original v8 footage; it does not load the interpolated candidate. Future interpolation tests must specifically review hand/fog occlusion before promotion.
+
+The source rehearsal includes **Open silent rehearsal output**. This separate same-origin window mirrors the already composited canvas, including experimental mouth timing, without a second video/audio player. Blackout clears it immediately; Escape stops that output; owner disposal clears and retires it. This is a local rehearsal path, not integration with the production phone/projector protocol, not measured end-to-end display latency, and not physical projection acceptance.

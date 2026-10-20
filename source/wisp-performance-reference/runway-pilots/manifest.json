@@ -77,8 +77,8 @@
   "rehearsalFiles": [
     {
       "file": "wisp-clip-player.js",
-      "bytes": 9177,
-      "sha256": "760eb340e5f757fbaa04283dc222f81897c0095bf1c14bbdb4bded4e620c757d"
+      "bytes": 9349,
+      "sha256": "de6820d5d08f8e5ff63c7ea36574cdcb6b849e35ea61c592a7f84460c71832da"
     },
     {
       "file": "wisp-motion-review.html",
@@ -114,6 +114,11 @@
       "file": "generated-greeting.wav",
       "bytes": 112718,
       "sha256": "bb3bf02126328e4924724ea339b2ea010a605e1ad067f151b6b4947e701fcdd1"
+    },
+    {
+      "file": "wisp-film-output.js",
+      "bytes": 2362,
+      "sha256": "e140e5717fceb3c0d384eea053b14babfc39df082b21279fe19df6401140c00b"
     }
   ]
 }
