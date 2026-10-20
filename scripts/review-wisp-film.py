@@ -33,7 +33,7 @@ while True:
         if not len(x):
             envelopes[str(threshold)] = {'empty': True}
             continue
-        margins = [float(x.min()/w), float((w-1-x.max())/w), float(y.min()/h), float((h-1-y.max())/h)]
+        margins = [float(x.min()/w), float(y.min()/h), float((w-1-x.max())/w), float((h-1-y.max())/h)]
         envelopes[str(threshold)] = {'empty': False, 'marginsLTRB': margins,
             'reservePass': min(margins) >= args.reserve,
             'boundsXYXY': [int(x.min()), int(y.min()), int(x.max()+1), int(y.max()+1)],
@@ -63,7 +63,7 @@ for threshold in ('4', '8', '16'):
         'reserveFailures': sum(not e['reservePass'] for e in visible),
         'minimumMarginsLTRB': np.min([e['marginsLTRB'] for e in visible], axis=0).tolist() if visible else None}
 mask = (first.max(axis=2) > 16) | (last.max(axis=2) > 16)
-report = {'file': args.input.name, 'sha256': hashlib.sha256(args.input.read_bytes()).hexdigest(),
+report = {'schemaVersion': 2, 'marginOrder': ['left', 'top', 'right', 'bottom'], 'file': args.input.name, 'sha256': hashlib.sha256(args.input.read_bytes()).hexdigest(),
     'frameCount': len(rows), 'fps': fps, 'size': [w, h], 'reserve': args.reserve,
     'thresholdSummaries': summary, 'adjacentVisibleRGBMedian': float(np.median(differences)) if differences else None,
     'endpointVisibleRGBDifference': float(np.abs(first.astype(float)-last.astype(float))[mask].mean()) if mask.any() else 0.,
