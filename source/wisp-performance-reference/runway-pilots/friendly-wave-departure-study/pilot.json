@@ -1,0 +1,23 @@
+{
+  "taskId": "23fee543-3808-4437-9260-86bb0ee06fd5",
+  "status": "generating; unreviewed; not public",
+  "model": "kling-o3-pro",
+  "duration": 5,
+  "resolution": "720p",
+  "audio": false,
+  "submissionCap": 1,
+  "observedDebit": 85,
+  "creditsAfter": 19524,
+  "startFrame": "../film-return-handoff-study/friendly-start-staged.png",
+  "endFrame": "../../ambient-show/fog-lettering-study/empty-stage-v1.png",
+  "prompt": "One five-second NONVERBAL painted ghost performance on perfectly pure black, fixed camera. Use the supplied cute Wisp exactly: same huge blue eyes, warm ivory-blue translucent fog body, rounded head crest, tiny attached hands and soft coherent lower vapor core. 0-0.7seconds eyes notice a visitor slightly off-center, then head tilts toward them. 0.7-2.5seconds ONE attached arm bends at elbow and makes a small clearly articulated friendly wave, changing wrist and fingers, while opposite arm counterbalances and torso leans with delayed lower-body follow-through. Both arms remain attached, fog boundaries continually evolve; no rigid sticker hovering. 2.5-4seconds Wisp gathers inward very slightly then playfully PUFFS apart into fine expanding irregular ghost mist: visible torso, head and hand shapes physically roll, stretch and fragment into local wisps until completely gone. Actual turbulent spatial dispersal, not fading an intact body or making the lower body accidentally disappear before the intentional exit. 4-5seconds absolutely empty pure black with zero residue matching the final frame. Keep the exact supplied small centered scale: ALL body, fingertips and ALL puff fog must stay inside central60percent width and60percent height at every frame. No approach toward camera, zoom, edge crossing, hard outline, solid tubes, rubber anatomy, fish tails or ribbon curls. Keep face closed-smile except natural silent expression, no lip talking, dialogue, growl, music, text, props or audio. Painted cinematic apparition, expressive eye-led acting and fluid full-body response.",
+  "acceptance": [
+    "Same approved cute identity and soft vapor material",
+    "Articulated attached hand wave and eye-led full-body response",
+    "Actual spatial smoke dispersion rather than intact-body fade",
+    "Full frame minimum15percent reserve target20percent",
+    "Verified complete black exit",
+    "Exact-media start join review before integration"
+  ],
+  "scope": "One short new acting/departure proof, not a finished loop or approved public cue; no paid retry."
+}
