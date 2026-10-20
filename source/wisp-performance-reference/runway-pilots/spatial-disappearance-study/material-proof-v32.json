@@ -1,0 +1,31 @@
+{
+  "status": "Completed, correctly bound rear still; partial material improvement, not approved for video",
+  "sessionId": "a6e534ef-735d-4442-a1c4-3fe9e214baed",
+  "browserTabId": "1941618730",
+  "source": "wisp-rear-material-driver-v1.mp4",
+  "sourceSha256": "f42ad0dcd75bdbea6782531950bdef0b0899a5b8f5483b6f635a407f5e02a912",
+  "inputBinding": "Both default editing thumbnail and paused frame visually verified rear/side at inputtime0 before submission",
+  "materialReference": "Existing approved-friendly-fog.png asset boundImage1",
+  "model": "GPTImage2,1K",
+  "quotedCredits": 5,
+  "creditsBefore": 9955,
+  "submissionCount": 1,
+  "lastObservedState": "Promptversionsloadinganimation",
+  "videoEditSubmitted": false,
+  "humanApproval": false,
+  "liveReplacement": false,
+  "restoreMode": "OriginalUnlimited restored andverified; preference saveunchecked",
+  "creditsAfter": 9950,
+  "observedDebit": 5,
+  "imageDimensions": [
+    1920,
+    1088
+  ],
+  "review": [
+    "Before image now visibly matches rear/side sourceframe0.",
+    "After image preserves rear orientation with no back-facing eyes; softened body and broader vapor tail replace the foot/flipper tip.",
+    "Head remains fairly opaque and rounded; this is partial material evidence, not an accepted finished design.",
+    "No GenerateVideo submitted; do not turn partial material success into full motion/identity acceptance."
+  ],
+  "exportStatus": "Native artwork download timed out after8seconds; no verified local image path. PageAssets inventory did not identify exact displayed output; no random asset export or screenshot workaround. Saved Runway session retains the completed preview."
+}
