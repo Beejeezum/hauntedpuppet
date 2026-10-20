@@ -1,6 +1,6 @@
 {
   "taskId": "23fee543-3808-4437-9260-86bb0ee06fd5",
-  "status": "generating; unreviewed; not public",
+  "status": "review candidate; not approved or public",
   "model": "kling-o3-pro",
   "duration": 5,
   "resolution": "720p",
@@ -19,5 +19,40 @@
     "Verified complete black exit",
     "Exact-media start join review before integration"
   ],
-  "scope": "One short new acting/departure proof, not a finished loop or approved public cue; no paid retry."
+  "scope": "One short new acting/departure proof, not a finished loop or approved public cue; no paid retry.",
+  "file": "wisp-friendly-wave-departure.mp4",
+  "sha256": "572e2a9a4a0bdf6db164a7c29e6f923f510de8534d5c5e3596111cf221c6db29",
+  "actual": {
+    "size": [
+      1920,
+      1080
+    ],
+    "frames": 121,
+    "fps": 24,
+    "audio": false
+  },
+  "review": {
+    "bounds": "All frames pass20percent RGB4/8/16; minbottom24.81percent",
+    "acting": "Sampled frames show head tilt, raised attached hand and changing wave pose; human playback review pending",
+    "material": "Same blue-eyed ivory/vapor identity at sampled frames; inspect detail and actual motion before approval",
+    "exit": {
+      "startAnchorMaskIoU": 0.9907517672992626,
+      "startVisibleRGBDifference": 2.487951959865204,
+      "exactBlackTailFrames": 0,
+      "finalMaxRGB": 1,
+      "scope": "Exact first generated frame versus supplied staged PNG resized uniformly to output; pixel registration only, not idle-to-wave velocity or human join approval.",
+      "originalExactBlackTailFrames": 0,
+      "originalFinalMaxRGB": 1
+    },
+    "humanApproved": false,
+    "public": false
+  },
+  "editorialReview": {
+    "file": "wisp-friendly-wave-empty-tail-review.mp4",
+    "sha256": "198c1b719c914aa3fe8c1abf256ecd8db247cc332863d1cd2d8bfe513b8c233d",
+    "frames": 133,
+    "exactBlackTailFrames": 9,
+    "method": "Original121actingframes kept in order; append12black-sourceframes (0.5sec). H264 reencode leaves first3tailframes near-black; final9frames decode exactlyRGB0. No crop, interpolation, reversal or acting retime.",
+    "humanApproved": false
+  }
 }

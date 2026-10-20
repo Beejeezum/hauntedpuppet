@@ -1,0 +1,7 @@
+{
+  "startAnchorMaskIoU": 0.9907517672992626,
+  "startVisibleRGBDifference": 2.487951959865204,
+  "exactBlackTailFrames": 0,
+  "finalMaxRGB": 1,
+  "scope": "Exact first generated frame versus supplied staged PNG resized uniformly to output; pixel registration only, not idle-to-wave velocity or human join approval."
+}
