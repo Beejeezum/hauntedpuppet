@@ -145,8 +145,18 @@
     },
     {
       "file": "wisp-latest-review.html",
-      "bytes": 5102,
-      "sha256": "05f36718fa4923f12fd75448ddc75eeac4a664698c02b0df339fc787238f5b60"
+      "bytes": 5188,
+      "sha256": "72b64163ea5d5fa316d2cf6fca81e9ab12cedcd1234b8801896dc3f3c4bfee02"
+    },
+    {
+      "file": "wisp-whole-film-handoff.html",
+      "bytes": 2771,
+      "sha256": "eb7f2f4026f5e5b0893ae7ec8c218b7eedfc88ea14b2eb203de7577bafad65d8"
+    },
+    {
+      "file": "wisp-whole-film-player.js",
+      "bytes": 3527,
+      "sha256": "d8a554d0d803d3a517443e60adbcfe935fa4105688ba101ed08c9c981f2658c0"
     }
   ]
 }
