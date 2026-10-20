@@ -1,3 +1,4 @@
+const {liveWorkspaceUrl}=require('./live-url.cjs');
 const {chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
 const assert=require('node:assert/strict');
 (async()=>{
@@ -6,7 +7,7 @@ const assert=require('node:assert/strict');
     const page=await browser.newPage(),errors=[];
     page.on('pageerror',error=>errors.push(error.message));
     await page.route('**/wisp-resource-soak',route=>route.fulfill({contentType:'text/html',body:'<!doctype html><title>Silent Wisp resource test</title>'}));
-    await page.goto((process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770')+'/wisp-resource-soak');
+    await page.goto(liveWorkspaceUrl((process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770')+'/wisp-resource-soak'));
     const result=await page.evaluate(async()=>{
       const {Wisp3DRuntime}=await import('/assets/wisp-3d-runtime.js');
       const cycles=[];let activeContexts=0,maxActiveContexts=0;

@@ -1,8 +1,9 @@
+const {liveWorkspaceUrl}=require('./live-url.cjs');
 const {chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const base=process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770';
 (async()=>{
  const browser=await chromium.launch(),context=await browser.newContext({viewport:{width:1600,height:1050}}),page=await context.newPage(),errors=[];
- page.on('pageerror',e=>errors.push(e.message));await page.goto(base);await page.waitForFunction(()=>HauntWisp?.inspect().ready&&HauntProjection&&HauntDesk);
+ page.on('pageerror',e=>errors.push(e.message));await page.goto(liveWorkspaceUrl(base));await page.waitForFunction(()=>HauntWisp?.inspect().ready&&HauntProjection&&HauntDesk);
  assert((await page.evaluate(()=>HauntDesk.inspect())).sections.every(x=>x.present));
  await page.click('.desk-shortcuts a[href="#projectionSetup"]');await page.click('[data-surface="window"]');
  await page.waitForFunction(()=>HauntProjection.inspect().frames>2);
@@ -11,7 +12,7 @@ const base=process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770';
  assert.equal((await page.evaluate(()=>HauntProjection.inspect())).corners[0][0],17.2);
  const before=await page.evaluate(()=>HauntProjection.inspect().corners);await page.getByText('Stage calibration',{exact:true}).click();await page.fill('input[aria-label="Top left X"]','90');await page.locator('input[aria-label="Top left X"]').dispatchEvent('change');
  assert.deepEqual((await page.evaluate(()=>HauntProjection.inspect())).corners,before,'Crossed corners must be rejected');
- await page.check('#mappingTest');const output=await context.newPage();await output.goto(base+'/?projector=1');await output.waitForFunction(()=>HauntProjection?.inspect().settings.testPattern);
+ await page.check('#mappingTest');const output=await context.newPage();await output.goto(liveWorkspaceUrl(base+'/?projector=1'));await output.waitForFunction(()=>HauntProjection?.inspect().settings.testPattern);
  assert.equal((await output.evaluate(()=>HauntWisp.inspect())).audioState,'not-created');
  await page.click('#blackout');await page.waitForTimeout(100);
  for(const p of [page,output]){const sum=await p.locator(p===page?'#preview':'#projection').evaluate(c=>{const pixels=c.getContext('2d').getImageData(0,0,c.width,c.height).data;let sum=0;for(let i=0;i<pixels.length;i+=4)sum+=pixels[i]+pixels[i+1]+pixels[i+2];return sum});assert.equal(sum,0,'Blackout must also suppress calibration');}

@@ -135,6 +135,10 @@ jobs:
       - run: npx playwright install --with-deps chromium webkit
       - name: Build explicit public show desk and check privacy
         run: node tests/public_build.cjs
+      - name: Check animation-first entry and separate live workspace
+        run: |
+          HAUNT_WORKSPACE_BUILT_ONLY=1 node tests/workspace_entry.cjs
+          HAUNT_WORKSPACE_BUILT_ONLY=1 HAUNT_BROWSER=webkit node tests/workspace_entry.cjs
       - name: Check queue and editorial contracts
         run: |
           node tests/cue_director.cjs

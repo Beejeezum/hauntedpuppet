@@ -1,8 +1,9 @@
+const {liveWorkspaceUrl}=require('./live-url.cjs');
 const {chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright'),assert=require('node:assert/strict');
 (async()=>{
  const browser=await chromium.launch(),context=await browser.newContext(),desk=await context.newPage(),projector=await context.newPage(),errors=[],providerRequests=[],base=process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770';
  for(const page of [desk,projector]){page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(r.method()==='POST'&&/realtime|performance|conversation|session/.test(new URL(r.url()).pathname))providerRequests.push(new URL(r.url()).pathname);});}
- await desk.goto(base);await desk.waitForFunction(()=>window.HauntWisp?.inspect().ready&&window.HauntForms);await projector.goto(base+'/?projector=1');await projector.waitForFunction(()=>window.HauntWisp?.inspect().ready);
+ await desk.goto(liveWorkspaceUrl(base));await desk.waitForFunction(()=>window.HauntWisp?.inspect().ready&&window.HauntForms);await projector.goto(liveWorkspaceUrl(base+'/?projector=1'));await projector.waitForFunction(()=>window.HauntWisp?.inspect().ready);
  const kinds=['wave','shy','laugh','surprise','dance','twirl','bounce','peekaboo','celebrate','orbit','enter','exit'];
  for(const kind of kinds){
   await desk.evaluate(k=>HauntForms.perform(k),kind);await desk.waitForFunction(k=>HauntWisp.inspect().choreography.kind===k,kind);await projector.waitForFunction(k=>HauntWisp.inspect().choreography.kind===k,kind);

@@ -1,3 +1,4 @@
+const {liveWorkspaceUrl}=require('./live-url.cjs');
 const pw=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 (async()=>{
@@ -13,7 +14,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
   const fixture=JSON.parse(fs.readFileSync(path.join(__dirname,'../assets/test-performance.json')));fixture.audio=fs.readFileSync(path.join(__dirname,'../assets/test-performance.wav')).toString('base64');
   const scary={...fixture,key:'synthetic-scary-recording',spec:{text:'Synthetic scary recording',form:'haunting',audience:'big',voice:'cedar',mood:'sinister',intensity:.7}};
   const friendly={...fixture,key:'synthetic-friendly-recording',spec:{...scary.spec,text:'Synthetic friendly recording',form:'friendly',audience:'little',mood:'amused',intensity:.2}};
-  await page.goto(process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770/');await page.waitForFunction(()=>window.HauntShow&&HauntWisp.inspect().ready);
+  await page.goto(liveWorkspaceUrl(process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770/'));await page.waitForFunction(()=>window.HauntShow&&HauntWisp.inspect().ready);
   // This test intentionally reloads after seeding IndexedDB. Let optional
   // artwork loading settle first so WebKit does not report a navigation-cancelled
   // fetch from the old document as an audio safety failure. Errors stay asserted.

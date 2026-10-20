@@ -1,3 +1,4 @@
+const {liveWorkspaceUrl}=require('./live-url.cjs');
 // Real skinned/morphed geometry rays: a blink must hide pupil AND catchlights.
 const {chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
 const assert=require('node:assert/strict');
@@ -6,7 +7,7 @@ const assert=require('node:assert/strict');
  try {
   const page=await browser.newPage();
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
-  await page.goto((process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770')+'/assets/wisp-3d-studio.html');
+  await page.goto(liveWorkspaceUrl((process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770')+'/assets/wisp-3d-studio.html'));
   await page.waitForFunction(()=>window.Wisp3DStudio?.inspect().frames>2);
   const samples=await page.evaluate(async()=>{
    const {Vector3,Raycaster,Box3}=await import('/assets/vendor/three/three.module.js');

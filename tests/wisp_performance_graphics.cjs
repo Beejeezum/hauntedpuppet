@@ -1,8 +1,9 @@
+const {liveWorkspaceUrl}=require('./live-url.cjs');
 const{chromium,webkit}=require(process.env.HAUNT_PLAYWRIGHT||'playwright'),assert=require('node:assert/strict');
 (async()=>{
  const browser=await(process.env.HAUNT_BROWSER==='webkit'?webkit:chromium).launch({args:process.env.HAUNT_BROWSER==='webkit'?[]:['--mute-audio']}),page=await browser.newPage(),errors=[],base=process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770';page.on('pageerror',e=>errors.push(e.message));
  try{
-  await page.route('**/graphics-recovery-test',route=>route.fulfill({contentType:'text/html',body:'<body style="margin:0;background:black">'}));await page.goto(base+'/graphics-recovery-test');
+  await page.route('**/graphics-recovery-test',route=>route.fulfill({contentType:'text/html',body:'<body style="margin:0;background:black">'}));await page.goto(liveWorkspaceUrl(base+'/graphics-recovery-test'));
   await page.evaluate(async()=>{const{WispPerformanceRuntime}=await import('/assets/wisp-performance-runtime.js');window.r=await new WispPerformanceRuntime().load();if(!r.frontRig?.ready)throw Error(r.frontError);document.body.append(r.canvas);r.render({clock:1,freeze:true,state:'speaking',weights:{A:1},action:{kind:'wave',at:1}},.5);window.lose=r.app.renderer.gl.getExtension('WEBGL_lose_context');if(!lose)throw Error('Required graphics-loss simulation unavailable');r.canvas.addEventListener('webglcontextrestored',()=>window.graphicsRestored=true);});
   for(let cycle=0;cycle<3;cycle++){
    await page.evaluate(()=>{window.graphicsRestored=false;window.lose=r.app.renderer.gl.getExtension('WEBGL_lose_context');lose.loseContext();});await page.waitForFunction(()=>!r.ready);await page.waitForTimeout(100);await page.evaluate(()=>lose.restoreContext());await page.waitForFunction(()=>window.graphicsRestored,{},{timeout:10000});

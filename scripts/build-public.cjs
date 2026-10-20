@@ -5,7 +5,7 @@ const root = path.resolve(__dirname, '..');
 const out = path.join(root, 'dist');
 fs.rmSync(out, { recursive: true, force: true });
 fs.mkdirSync(out, { recursive: true });
-for (const file of ['index.html', 'app.js']) fs.copyFileSync(path.join(root, file), path.join(out, file));
+for (const file of ['index.html', 'live.html', 'app.js']) fs.copyFileSync(path.join(root, file), path.join(out, file));
 for (const dir of ['assets', 'vendor']) fs.cpSync(path.join(root, dir), path.join(out, dir), { recursive: true, filter: file => !/\.(py|key|pem|log)$|\/\.env/.test(file) });
 // Explicitly approved opt-in preview only; never publish the entire source tree.
 const preview = JSON.parse(fs.readFileSync(path.join(root, 'scripts/public-film-preview.json'), 'utf8'));

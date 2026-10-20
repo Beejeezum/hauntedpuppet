@@ -1,9 +1,10 @@
+const {liveWorkspaceUrl}=require('./live-url.cjs');
 const{chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright'),assert=require('node:assert/strict'),fs=require('node:fs');
 (async()=>{
  const browser=await chromium.launch({args:['--mute-audio']}),context=await browser.newContext(),page=await context.newPage(),projector=await context.newPage(),errors=[],base=process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770';
  for(const p of [page,projector])p.on('pageerror',e=>errors.push(e.message));
  try{
-  await page.goto(base+'/?character=performance');await page.waitForFunction(()=>window.HauntStage3D?.inspect().frontRig?.contourTurn);await projector.goto(base+'/?projector=1');await projector.waitForFunction(()=>window.HauntStage3D?.inspect().frontRig?.contourTurn);await page.bringToFront();await page.click('[data-audience="big"]');
+  await page.goto(liveWorkspaceUrl(base+'/?character=performance'));await page.waitForFunction(()=>window.HauntStage3D?.inspect().frontRig?.contourTurn);await projector.goto(liveWorkspaceUrl(base+'/?projector=1'));await projector.waitForFunction(()=>window.HauntStage3D?.inspect().frontRig?.contourTurn);await page.bringToFront();await page.click('[data-audience="big"]');
   const starts=await Promise.all([page,projector].map(p=>p.evaluate(()=>{window.cadence={times:[],last:performance.now(),active:true};function tick(t){if(!cadence.active)return;cadence.times.push(t-cadence.last);cadence.last=t;requestAnimationFrame(tick);}requestAnimationFrame(tick);return HauntStage3D.inspect().frames;})));
   const wallStart=Date.now();
   const actions=['wave','twirl','orbit','exit','surprise','phantom','dance','shy','celebrate','bounce','peekaboo','laugh'],seconds=Math.max(14,Number(process.env.HAUNT_SOAK_SECONDS)||84);let elapsed=0,n=0;

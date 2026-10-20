@@ -1,3 +1,4 @@
+const {liveWorkspaceUrl}=require('./live-url.cjs');
 /** Deterministic real-rig temporal regression. No microphone, provider, or physical projector. */
 const {chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
 const assert=require('node:assert/strict');
@@ -6,7 +7,7 @@ const assert=require('node:assert/strict');
  try{
   const page=await browser.newPage(),errors=[];
   page.on('pageerror',e=>errors.push(e.message));
-  await page.goto((process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770')+'/assets/wisp-3d-studio.html');
+  await page.goto(liveWorkspaceUrl((process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770')+'/assets/wisp-3d-studio.html'));
   await page.waitForFunction(()=>window.Wisp3DStudio?.inspect().frames>2);
   const result=await page.evaluate(async()=>{
    const {Wisp3DRuntime}=await import('/assets/wisp-3d-runtime.js');

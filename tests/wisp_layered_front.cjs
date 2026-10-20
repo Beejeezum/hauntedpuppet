@@ -1,9 +1,10 @@
+const {liveWorkspaceUrl}=require('./live-url.cjs');
 const{chromium,webkit}=require(process.env.HAUNT_PLAYWRIGHT||'playwright'),assert=require('node:assert/strict'),fs=require('node:fs');
 (async()=>{
  const browser=await(process.env.HAUNT_BROWSER==='webkit'?webkit:chromium).launch({args:process.env.HAUNT_BROWSER==='webkit'?[]:['--mute-audio']}),page=await browser.newPage(),errors=[];
  page.on('pageerror',e=>errors.push(e.message));
  try{
-  const base=process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770';await page.route('**/painted-front-test',r=>r.fulfill({contentType:'text/html',body:'<!doctype html><body style="margin:0;background:black"></body>'}));await page.goto(base+'/painted-front-test');
+  const base=process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770';await page.route('**/painted-front-test',r=>r.fulfill({contentType:'text/html',body:'<!doctype html><body style="margin:0;background:black"></body>'}));await page.goto(liveWorkspaceUrl(base+'/painted-front-test'));
   const report=await page.evaluate(async()=>{
    const{WispPerformanceRuntime}=await import('/assets/wisp-performance-runtime.js'),{WISP_CHOREOGRAPHY_ACTIONS}=await import('/assets/wisp-choreography.js');
    const r=await new WispPerformanceRuntime({layered:true}).load();if(!r.ready||!r.frontRig?.ready||!r.morphFace?.parts?.ready)throw Error(r.frontError||r.error||'Layered rig unavailable');
@@ -69,7 +70,7 @@ const{chromium,webkit}=require(process.env.HAUNT_PLAYWRIGHT||'playwright'),asser
    return{frames,tailCoreMinimum,independentViewAngle:independentTurn.frontRig.viewAngle,browEndpointContinuityMAE,browCacheBoundaryMAE,browPreparationMs:ownedBrow.preparationMs,digitTravel,unboundDigitTravel,maxReachError,maxStretch,hands:[...hands],maxBlendError,blendSamples,sharedBody:true,bodyVertexCount,faceUploadPixels,attentionLead:true,browEndpointMAE,sharedBrowMorph:true,formTravel,contourTurn:true,nativePhantomEyes:true,profileEyes:profile.eyeVisibility,independentPerformer:true,disposed:true};
   });
   await page.route('**/front-kit/body-90.png',route=>route.abort());
-  await page.goto(base+'/painted-front-test');
+  await page.goto(liveWorkspaceUrl(base+'/painted-front-test'));
   const fallback=await page.evaluate(async()=>{const{WispPerformanceRuntime}=await import('/assets/wisp-performance-runtime.js');const r=await new WispPerformanceRuntime().load();r.render({clock:1,freeze:true,state:'idle'},.5);const s=r.inspect();if(!s.ready||r.frontRig||!s.frontRig.error||r.root.children.length!==21||!s.bounds.inside)throw Error('Layered asset failure did not preserve legacy paintings '+JSON.stringify(s.frontRig));const result={ready:s.ready,paintedFallback:true,children:r.root.children.length};r.dispose();return result;});
   report.assetFailureFallback=fallback;
   assert.equal(report.hands.length,2);assert(report.maxStretch<=1.75);assert(report.maxReachError<1e-5);assert.deepEqual(errors,[]);fs.mkdirSync('test-results',{recursive:true});fs.writeFileSync('test-results/wisp-layered-front.json',JSON.stringify(report,null,2));console.log('PASS real layered skin, shared morph, registered face, independent performer, GPU midpoint brightness and disposal',report);

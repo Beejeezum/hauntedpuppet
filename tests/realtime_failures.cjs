@@ -1,3 +1,4 @@
+const {liveWorkspaceUrl}=require('./live-url.cjs');
 const {chromium}=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 (async()=>{
@@ -10,7 +11,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
   if(scenario==='permission-denied')await page.addInitScript(()=>navigator.mediaDevices.getUserMedia=async()=>{throw new DOMException('Permission denied','NotAllowedError')});
   if(scenario==='late-microphone-permission')await page.addInitScript(()=>navigator.mediaDevices.getUserMedia=()=>new Promise(resolve=>{window.resolveMic=()=>{const ctx=new AudioContext(),dest=ctx.createMediaStreamDestination();window.lateMicContext=ctx;window.lateMicStream=dest.stream;resolve(dest.stream);}}));
   if(scenario==='missing-key')await page.addInitScript(()=>{window.missingKeyCapture=0;navigator.mediaDevices.getUserMedia=async()=>{window.missingKeyCapture++;throw Error('Unconfigured voice must not capture');};});
-  await page.goto((process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770')+'');await page.waitForFunction(()=>window.HauntRealtime&&HauntWisp.inspect().ready);
+  await page.goto(liveWorkspaceUrl((process.env.HAUNT_TEST_BASE||'http://127.0.0.1:8770')+''));await page.waitForFunction(()=>window.HauntRealtime&&HauntWisp.inspect().ready);
   if(scenario==='missing-key'){assert(await page.locator('#startMic').isDisabled());await page.evaluate(()=>HauntRealtime.start());assert.equal(await page.evaluate(()=>window.missingKeyCapture),0);}else await page.click('#startMic');
   if(scenario==='stop-during-negotiation'){await page.waitForFunction(()=>HauntRealtime.inspect().peer!=='closed');await page.click('#stop');await page.waitForTimeout(1800);}
   else if(scenario==='late-microphone-permission'){await page.waitForFunction(()=>typeof window.resolveMic==='function');await page.click('#stop');await page.evaluate(()=>resolveMic());await page.waitForTimeout(100);assert(await page.evaluate(()=>lateMicStream.getTracks().every(t=>t.readyState==='ended')));await page.evaluate(()=>lateMicContext.close());}
