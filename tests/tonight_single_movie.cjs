@@ -1,7 +1,7 @@
 // Exercise the actual movie for a full uninterrupted play, not just chapter seeks.
 const assert=require('node:assert/strict'),fs=require('node:fs');
 const pw=require(process.env.HAUNT_PLAYWRIGHT||'playwright'),name=process.env.HAUNT_BROWSER||'chromium';
-(async()=>{const fixture=await require('./tonight_fixture.cjs').start(),b=await pw[name].launch(name==='webkit'?{}:{args:['--mute-audio']});try{
+(async()=>{fs.mkdirSync('test-results',{recursive:true});const fixture=await require('./tonight_fixture.cjs').start(),b=await pw[name].launch(name==='webkit'?{}:{args:['--mute-audio']});try{
  const page=await b.newPage(),errors=[],requests=[];page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(/\.(mp4|m4a)(?:\?|$)/.test(r.url()))requests.push({url:r.url(),resource:r.resourceType(),mainFrame:r.frame()===page.mainFrame()})});
  await page.goto(fixture.base+fixture.prefix+'index.html');await page.waitForFunction(()=>window.TonightDemo);
  assert.equal(await page.locator('video').count(),1);assert.equal(await page.locator('audio').count(),0);
