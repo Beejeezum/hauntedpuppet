@@ -1,0 +1,11 @@
+{
+  "source": "writing-story-proof-v1.mp4",
+  "sourceSHA256": "4fded496aaab828901b7b6d6328ead57bcb3a317eac03af2fdf6224e3703cf74",
+  "output": "writing-story-staged-v1.mp4",
+  "sha256": "fba2c7860657aec1bf6c339996011470e15a1a5149a8f36957761939dc639ba3",
+  "frames": 145,
+  "fps": 24,
+  "fit": "Entry.85; smoothstep to.72 during.75..2seconds; hold.72 until5.25; smoothstepreturn.85 by6seconds",
+  "blackMatte": "same smoothstep12..24 maxRGB as approved scare/apology",
+  "scope": "Authored whole-frame safety envelope, no art crop or time interpolation/retiming; entry/exit keep.85 authored pose scale. Rawsource15percentreserve fails; stagedpicture requires its own allframe checks and human review."
+}

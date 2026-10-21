@@ -1,0 +1,25 @@
+{
+  "frames": 133,
+  "fps": 24,
+  "sources": [
+    {
+      "file": "departure-story-revised-v2.mp4",
+      "frames": 36,
+      "sha256": "ba0e29938e5e0a5c575a68f3e45c6685f550456a227f38bd2e4e25239603ad88"
+    },
+    {
+      "file": "departure-flight-revised-v3.mp4",
+      "frames": 97,
+      "sha256": "72ce0823def81ac3b956eb8a933c613ddae3857a4290e739b8c1acc16edb5023"
+    }
+  ],
+  "stageFit": 0.85,
+  "depth": "whole native ghost layer1\u2192.15 over first2.6seconds of flight, stops shrinking before native puff",
+  "path": "wave/backturn lead120px smoothly over36frames, then curved upward/right from source(390,340) to(690,260), behind native translucent letters",
+  "blackGapLayerSplitX": 470,
+  "releaseApproved": false,
+  "scope": "Authored2.5D depth staging of real full-body video; no separate body-part puppeting or retiming. Must inspect anatomy/layer separation, actual joins, scale and vapor motion, bounds and human direction before final acceptance.",
+  "sha256": "0a2b7a20d1c65c9329cfa40dfc7e63a723ab1301ca8aaaac878ab9217b343f28",
+  "humanReview": "Departure still needs work",
+  "reviewScope": "Complete47.375sec story candidate viewed; departure explicitly rejected. No new approval of final motion or bat mix inferred."
+}

@@ -1,0 +1,20 @@
+{
+  "taskId": "49a69412-d8e0-4904-a8f7-bbb69db64101",
+  "status": "SUCCEEDED",
+  "model": "seedance-2",
+  "duration": 8,
+  "resolution": "720p",
+  "nativeAudio": true,
+  "submissionCap": 1,
+  "creditsBefore": 17262,
+  "creditsAfter": 17022,
+  "observedDebit": 240,
+  "startAnchor": "writing-final-letter-layer-frame.png",
+  "endAnchor": "authored-empty-first-frame.png",
+  "prompt": "EIGHT SECOND locked-camera projection VFX shot, from the EXACT supplied two-line smoke greeting to supplied COMPLETE BLACK final frame. Pure black featureless void, no ground, horizon, room, rectangular fog layer, camera move or zoom. Preserve exact phrase HAPPY on first line and HALLOWEEN on second, exact placement, spacing and delicate ivory-white thin porous vapor lettering. IMPORTANT timeline:0-5.2seconds NO BATS, NO OTHER CHARACTERS, just this readable greeting gently breathing with tiny local smoky filaments, holding its exact spelling and location while the density subtly curls inside the strokes. Leave the black area to the LEFT of the words EMPTY; a separate ghost layer will be composited there.5.2-7seconds ONE quick scary burst of FIVE SMALL FAST realistic stylized bats emerges from BEHIND the actual letter smoke and flies TOWARD the viewer through it, at different depths, with narrow agile bodies and rapid articulated leathery wingbeats, not fat cartoon blobs or slow gliding birds. Their wings and wakes physically TEAR, FRAGMENT and CARRY APART the fog letter strokes along their intersecting paths; the words break into turbulent little vapor fragments, not a whole intact caption fading uniformly. Sell depth with foreshortening and perspective growth from about20pixels to at most150pixels wingtip-to-wingtip per bat in this1280wide image. CRITICAL: NO giant close-up bat, NO flying offscreen or past the frame, NO clipped wingtip. Every COMPLETE bat and every fog fragment stays inside central70percent width AND height with at least15percent black clearance on ALL four sides. Each small bat banks and vaporizes locally within that safe volume before reaching its boundary, never touches the edges.7-8seconds the last fragments and bats disperse into entirely EMPTY BLACK matching final frame, no lettering, eye, wing, sparkle or haze left. No ghost character. Sound synchronized to action: near silence and very soft airy smoke at first; ONLY at the final burst quick approaching leathery wing flutters, a few short spooky bat chirps, close stereo flyby air and smoke dispersal, decaying to SILENCE before the end. No speech, NO reading the greeting aloud, no words, voices, laughter, melody, music, bass hit or long loud roar. The bat rush is brief, agile and startling, with beautiful soft smoke advection and a clean empty ending.",
+  "releaseApproved": false,
+  "scope": "One source-only layered living-lettering and fast bat-dispersion ending. Actual onset, bat anatomy/scale/flight direction, smoke causality, framing, sound and empty boundaries require review.",
+  "artifact": "bat-ending-story-proof-v1.mp4",
+  "sha256": "2dae7c1ecdbdf1b31bd33999770d94612c4e8b31a7bce71898bc1bb0f61f25fd",
+  "internalReview": "REJECTED raw picture: real wings clip startingframe108/4.5seconds; laterfog also leaves frame. Actualwing-causedletterdispersion promising, requires targeted reframing/size edit, not padding to conceal lost wings."
+}

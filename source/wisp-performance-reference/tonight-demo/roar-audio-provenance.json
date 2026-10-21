@@ -1,0 +1,11 @@
+{
+  "sourceTaskId": "967764fb-1c33-4566-8105-553e393f3446",
+  "sourceVideo": "roar-recovery-proof-v1.mp4",
+  "sourceVideoSHA256": "a02f1a48b44a182b5addb8210fe2db5bc99ee242671355d17fd4ee9374c00c57",
+  "pictureStatus": "rejected for clipping; audio candidate only",
+  "extract": "mono PCM16 24000Hz",
+  "mixCandidate": "roar-audio-mix-candidate-v1.wav",
+  "filter": "atrim=start=0.25:end=4.25,asetpts=PTS-STARTPTS,volume=-12dB,afade=t=in:st=0:d=0.025,afade=t=out:st=3.8:d=0.2",
+  "humanReview": "pending",
+  "scope": "Source audio experiment; not public, final mix or acoustic acceptance."
+}

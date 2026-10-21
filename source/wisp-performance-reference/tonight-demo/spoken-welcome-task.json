@@ -1,0 +1,19 @@
+{
+  "taskId": "59c49311-fb47-4d0b-9b22-854b4191dbd6",
+  "status": "SUCCEEDED",
+  "model": "seedance-2",
+  "duration": 6,
+  "resolution": "720p",
+  "nativeAudio": true,
+  "startAnchor": "welcome-start-native.png",
+  "endAnchor": "welcome-end-native.png",
+  "dialogue": "Oh! Visitors! Welcome to my haunt!",
+  "creditsBefore": 16298,
+  "creditsAfter": 16118,
+  "observedDebit": 180,
+  "releaseApproved": false,
+  "scope": "User requested missing spoken beats; native mouth/voice, framing/scale stability, identity and exact joins require actual-film review. New voice matching to the approved apology is not guaranteed by prompt.",
+  "source": "spoken-welcome-native-v1.mp4",
+  "sha256": "1c51da06e131341923ca38f0c95732fe5b7e4752377e70f8a0b480ce75c9ea33",
+  "review": "Native video/audio candidate; human voice and acting acceptance pending"
+}

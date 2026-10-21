@@ -4,9 +4,9 @@
     {
       "source": "source/wisp-performance-reference/tonight-demo/index.html",
       "destination": "index.html",
-      "bytes": 2260,
-      "sha256": "1b26a47978044b70407a23372b7a56f17d45e5c37cb62cda83a5551bd0fbcc46",
-      "publishedSha256": "59f65bff4f9770dc4991ac2ae7e493aa39fae9deb6e9c27cc68a2a14bc965f07",
+      "bytes": 1932,
+      "sha256": "0ca0924f977483e7b7209ce41eb93b66ccfafa6af9c79c1c65cb6a5738d792e9",
+      "publishedSha256": "67752847ef1cc8d11ce380099993da76efa272435d2c4cb59c31cc7d648ab3aa",
       "rewrites": [
         {
           "from": "../ambient-show/showdesk.html",
@@ -17,20 +17,24 @@
     {
       "source": "source/wisp-performance-reference/tonight-demo/tonight.css",
       "destination": "tonight.css",
-      "bytes": 2052,
-      "sha256": "92345b8b3463ee922bf8be3375dae71130d59e508a15c13551158be37f514ea4",
-      "publishedSha256": "92345b8b3463ee922bf8be3375dae71130d59e508a15c13551158be37f514ea4"
+      "bytes": 2284,
+      "sha256": "2219f4535620783d24a1e459793db5bcfe35b38ba7801e25913b4f6fc285c936",
+      "publishedSha256": "2219f4535620783d24a1e459793db5bcfe35b38ba7801e25913b4f6fc285c936"
     },
     {
       "source": "source/wisp-performance-reference/tonight-demo/tonight.mjs",
       "destination": "tonight.mjs",
-      "bytes": 5063,
-      "sha256": "a9c50c779c61a9e1067d6503f5cbd15fb4853d37a29aa732c6f6042a4c880dac",
-      "publishedSha256": "28b82491bde59d1aa2a88867ce0273df97696476787bac82e9efe035fad29465",
+      "bytes": 5651,
+      "sha256": "28da8449c7fdc4c5356b1ce329a95e18fbb1cf5e9c33080443b602728e2668ce",
+      "publishedSha256": "240817fd3a8c5809005eb74ab000ffa4ea5c914c9bc54a9d259054a9a9fb762c",
       "rewrites": [
         {
           "from": "../runway-pilots/wisp-film-output.js",
           "to": "../wisp-film-preview/wisp-film-output.js"
+        },
+        {
+          "from": "../ambient-show/film-transport.mjs",
+          "to": "../wisp-showdesk/film-transport.mjs"
         }
       ]
     },
@@ -104,9 +108,9 @@
     {
       "source": "source/wisp-performance-reference/tonight-demo/show.json",
       "destination": "show.json",
-      "bytes": 1691,
-      "sha256": "06f1e86733a761a5019fbc1bda16de7632eed9a907d49a0f7acc8f763001e076",
-      "publishedSha256": "06f1e86733a761a5019fbc1bda16de7632eed9a907d49a0f7acc8f763001e076"
+      "bytes": 2026,
+      "sha256": "eab71c820dd191d4df8966e3f496d0d9f48a1311b4de15cc45b41bea6723ee4b",
+      "publishedSha256": "eab71c820dd191d4df8966e3f496d0d9f48a1311b4de15cc45b41bea6723ee4b"
     },
     {
       "source": "source/wisp-performance-reference/tonight-demo/paired-controls.mjs",
@@ -120,6 +124,34 @@
       "bytes": 2180,
       "sha256": "e94abaebc1fcfe8077ee13065d5427e0a2827dc95613933bbf35c400fb40bf66",
       "publishedSha256": "7d4f1752cac0ede078dcb38e6444d585ea4a5f11572ba689fa6bf34a7eb85540"
+    },
+    {
+      "source": "source/wisp-performance-reference/tonight-demo/tonight-story-v5-picture.mp4",
+      "destination": "tonight-story-v5-picture.mp4",
+      "bytes": 1799651,
+      "sha256": "678f1add05e406f1c5eed1a8c3dfe99c8df29ef49f84ef8135666a3b8f4dc6ef",
+      "publishedSha256": "678f1add05e406f1c5eed1a8c3dfe99c8df29ef49f84ef8135666a3b8f4dc6ef"
+    },
+    {
+      "source": "source/wisp-performance-reference/tonight-demo/tonight-story-v5-sound.m4a",
+      "destination": "tonight-story-v5-sound.m4a",
+      "bytes": 1229530,
+      "sha256": "be2ead50035b9be34bcb9cdbc57afdedf3c91549964d45fc125af09aec3917db",
+      "publishedSha256": "be2ead50035b9be34bcb9cdbc57afdedf3c91549964d45fc125af09aec3917db"
+    },
+    {
+      "source": "source/wisp-performance-reference/tonight-demo/wisp-tonight-complete-v6.mp4",
+      "destination": "wisp-tonight-complete-v6.mp4",
+      "bytes": 3040380,
+      "sha256": "15406f8859a8941f48669e7752707a25b41b4d166933b88523b2a6f410f6917c",
+      "publishedSha256": "15406f8859a8941f48669e7752707a25b41b4d166933b88523b2a6f410f6917c"
+    },
+    {
+      "source": "source/wisp-performance-reference/tonight-demo/wisp-new-one-take-v2.mp4",
+      "destination": "wisp-new-one-take-v2.mp4",
+      "bytes": 2480139,
+      "sha256": "ff3673f8a0742e3aceba8b73cee9f8c2b4ae074ccbaac987262e711705e22ddd",
+      "publishedSha256": "ff3673f8a0742e3aceba8b73cee9f8c2b4ae074ccbaac987262e711705e22ddd"
     }
   ]
 }

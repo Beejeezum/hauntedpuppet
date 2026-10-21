@@ -1,0 +1,18 @@
+{
+  "taskId": "9d9d1ee3-550e-4360-af17-54a920635ac9",
+  "status": "SUCCEEDED",
+  "model": "seedance-2",
+  "duration": 4,
+  "resolution": "720p",
+  "nativeAudio": false,
+  "creditsBefore": 16418,
+  "creditsAfter": 16298,
+  "observedDebit": 120,
+  "startAnchor": "departure-backturn-anchor-v2-frame36.png",
+  "endAnchor": "writing-final-letter-layer-frame.png",
+  "releaseApproved": false,
+  "assemblyPlan": "Keep frames0..35 of departure-story-revised-v2, then native4sflight from exactframe36. Review this real join, depth/vapor/margins before selecting.",
+  "artifact": "departure-flight-revised-v3.mp4",
+  "sha256": "72ce0823def81ac3b956eb8a933c613ddae3857a4290e739b8c1acc16edb5023",
+  "review": "Native full-body acting and puff usable for authored-depth study; raw trajectory lacks sufficient depth. Not approved as-is."
+}

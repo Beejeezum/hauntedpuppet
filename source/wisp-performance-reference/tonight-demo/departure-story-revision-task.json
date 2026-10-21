@@ -1,0 +1,19 @@
+{
+  "taskId": "6cfda76a-1b11-4ac7-a1c1-9d27c8795c81",
+  "status": "SUCCEEDED",
+  "creditsBefore": 16778,
+  "creditsAfter": 16598,
+  "observedDebit": 180,
+  "model": "seedance-2",
+  "duration": 6,
+  "resolution": "720p",
+  "nativeAudio": false,
+  "startAnchor": "writing-last-decoded.png",
+  "endAnchor": "writing-final-letter-layer-frame.png",
+  "releaseApproved": false,
+  "humanFeedbackOnPrior": "The flight or vaporizing needs work",
+  "hypothesis": "A newly authored native flight directly inside the writing composition avoids the separate-character-layer path correction. Full torso bank/backturn and curved depth flight, fixed small size during volumetric phase-out.",
+  "artifact": "departure-story-revised-v2.mp4",
+  "sha256": "ba0e29938e5e0a5c575a68f3e45c6685f550456a227f38bd2e4e25239603ad88",
+  "review": "Full shot REJECTED: long trailing streak, insufficient depth recession and hard patterned surface during dissolve. Initial wave/backturn may supply an exact short native bridge anchor; no full-shot promotion."
+}

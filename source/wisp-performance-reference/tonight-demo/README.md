@@ -2,7 +2,7 @@
 
 Goal: a playable app demo with real runtime picture/audio files and separate newest-art Puppet mode. No prerecorded character speech. Arms/fingers are stretch goals.
 
-The paragraph above describes the first technical assembly. The user's newer [story-v2.md](story-v2.md) supersedes its narrative and permits two short character lines for that story. The currently published 49-second film remains the earlier nonverbal review, not the new story.
+The paragraph above describes the first technical assembly. The user's newer [story-v2.md](story-v2.md) supersedes its narrative and permits the short user-approved apology for that story. The currently published 49-second film remains the earlier nonverbal review, not the new story.
 
 The source-only `apology-proof-v1.mp4` has user approval for its voice and acting. All 193 frames retain 20% clearance at RGB thresholds 4, 8 and 16. Its exact joins and final mixed-story context are still pending; it is not automatically included in the public runtime manifest. This approval does not approve the unfinished departure, lettering or bats.
 

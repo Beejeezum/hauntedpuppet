@@ -3,3 +3,5 @@
 select{font:inherit;color:inherit;background:#142532;border:1px solid #49728b;padding:10px;border-radius:8px}.phone-controls,.operator-access{margin-top:24px;padding:18px;border:1px solid #293448;border-radius:12px}.phone-controls .row,.operator-access .row{display:flex;flex-wrap:wrap;gap:10px}.phone-controls img,.phone-controls svg{max-width:100%}.film-operator-dialog{color:#edf4ff;background:#101c29;border:1px solid #49728b;border-radius:14px;max-width:calc(100vw - 56px)}.film-operator-dialog::backdrop{background:#000b}.film-operator-dialog label{display:block}.film-operator-dialog input{box-sizing:border-box;max-width:100%;font:inherit;padding:12px}.film-operator-dialog [role=alert]{color:#ffc4c4}[hidden]{display:none!important}
 
 #phoneUrl{overflow-wrap:anywhere;word-break:break-word}.phone-controls input,.film-operator-dialog input{max-width:100%}
+
+#theater{background:#000;border:1px solid #263445;border-radius:16px;overflow:hidden;margin:24px 0;aspect-ratio:16/9}#picture{display:block;width:100%;height:100%;object-fit:contain;background:black}#picture.stage-black{opacity:0}

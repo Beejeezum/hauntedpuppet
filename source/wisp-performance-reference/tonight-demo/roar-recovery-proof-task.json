@@ -1,0 +1,20 @@
+{
+  "taskId": "967764fb-1c33-4566-8105-553e393f3446",
+  "status": "SUCCEEDED",
+  "model": "seedance-2",
+  "duration": 6,
+  "resolution": "720p",
+  "nativeAudio": true,
+  "submissionCap": 1,
+  "creditsBefore": 17922,
+  "creditsAfter": 17742,
+  "observedDebit": 180,
+  "startAnchor": "../runway-pilots/film-return-handoff-study/scary-end-staged.png",
+  "endAnchor": "apology-first-decoded.png",
+  "prompt": "One continuous SIX-SECOND locked-camera performance of the SAME painted fog Wisp, matching the supplied scary first frame and cute final frame. Pure black empty projection stage, no floor, horizon, scenery, lighting on background or camera movement. Preserve the exact framing, luminous ivory-blue porous smoke material, blue eyes, head proportions, coherent tapered vapor core and two attached articulated hands. The cute and scary forms are ONE being, with one body that changes continuously, never a dissolve between two overlapping ghosts. ALL anatomy and emitted smoke remain within the central 60 percent of width AND height throughout; 20 percent pure black clearance on EVERY edge. Timing: 0-0.7s a menacing little crouch and inhale, shoulders and fingers gather with intent, eyes focus on the visitors; 0.7-1.5s ONE sharp genuinely frightening spectral ROAR with mouth fully articulated, a brief forward body thrust no more than 10 percent larger, hands spread into claws with connected shoulder/elbow follow-through, no flash or camera zoom; 1.5-3.2s the ghost immediately realizes he overdid it, recoils sheepishly and morphs continuously back to the cute supplied final character: brows lift, eyes round, fangs soften away, claws relax into small hands, shoulders drop, while core and mist maintain identity and volume; 3.2-6s a tender embarrassed downward glance, a tiny reassuring open-hand gesture, then gently settle into the EXACT supplied final pose and placement with living wisps and small connected body motion. His weight, arms, fingers, lower vapor and edges keep fluid overlapping follow-through, not a stiff sticker or separate floating parts. Sound: only one brief, rich, low ghostly creature roar at the scare apex with airy spectral texture and natural decay, then a soft embarrassed breath. No spoken words, laughs, music, other voices, metallic robot effect or long loud sustained roar. No subtitles or text, no detached hands, tubular curls, fish tail, jets or smoke clipping. End cute, reassuring and intact, ready for the separate approved apology line.",
+  "releaseApproved": false,
+  "scope": "Single source-only short scare and immediate cute recovery proof. Actual identity, roar, morph, bounds and exact endpoint join require review.",
+  "artifact": "roar-recovery-proof-v1.mp4",
+  "internalPictureReview": "REJECTED: oversized forward lunge clips head smoke, violates20percentframe reserve, and loses full-body framing at scare apex. Do not promote by padding/cropping; missing pixels cannot be restored.",
+  "audio": "Native roar retained as separate candidate only; human listening/mix approval pending."
+}

@@ -1,0 +1,26 @@
+{
+  "status": "editorial study, actual motion/mix review pending",
+  "releaseApproved": false,
+  "source": "bat-ending-story-proof-v1.mp4",
+  "sourceSha256": "2dae7c1ecdbdf1b31bd33999770d94612c4e8b31a7bce71898bc1bb0f61f25fd",
+  "frames": 157,
+  "fps": 24,
+  "keptSourceSpans": [
+    [
+      0,
+      107
+    ],
+    [
+      160,
+      192
+    ]
+  ],
+  "omittedSourceSpan": [
+    108,
+    159
+  ],
+  "transition": "frames92..107 advected dissolution into native fog-only160..192 at half-speed,3x post-matte fog brightness; adjacent fog-only frames blended, no character interpolation;16-frame audio crossfade",
+  "stage": "whole-frame .85 to .52 smoothstep80..100 around original letter centre; no crop",
+  "scope": "All clipped native bat frames excluded. Planned editorial vapor transition, not a repaired full native generation; visual acceptance and all-frame bounds still required.",
+  "sha256": "caa91db836626d17632419a38f80f90a71eb95324efd14c4071f3e5c24dcad09"
+}
