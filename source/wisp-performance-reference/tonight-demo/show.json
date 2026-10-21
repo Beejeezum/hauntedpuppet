@@ -2,7 +2,7 @@
   "schema": 1,
   "id": "ghost-at-the-door",
   "title": "The Ghost at the Door",
-  "status": "spoken-fixed-framing-review-pending",
+  "status": "single-movie-runtime-review-pending",
   "releaseApproved": false,
   "fps": 24,
   "frames": 1257,
@@ -107,5 +107,11 @@
       "samples": 314000
     }
   ],
-  "review": "Approved scare/apology retained. New native lip-synced welcome and goodbye, fixed whole-film framing, smoke drift and contained editorial bat transition await human full-context review. No animated safety zoom. Physical projection and loudspeaker rehearsal unavailable."
+  "review": "Approved scare/apology retained. New native lip-synced welcome and goodbye, fixed whole-film framing, smoke drift and contained editorial bat transition await human full-context review. No animated safety zoom. Physical projection and loudspeaker rehearsal unavailable. Runtime revised to one native visible video containing embedded AAC audio, without a separate audio element, re-seeking audio or a canvas-only operator preview.",
+  "movie": {
+    "file": "wisp-tonight-complete-v6.mp4",
+    "sha256": "15406f8859a8941f48669e7752707a25b41b4d166933b88523b2a6f410f6917c",
+    "embeddedAudio": true,
+    "singleClock": true
+  }
 }

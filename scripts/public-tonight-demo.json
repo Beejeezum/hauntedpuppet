@@ -4,9 +4,9 @@
     {
       "source": "source/wisp-performance-reference/tonight-demo/index.html",
       "destination": "index.html",
-      "bytes": 2195,
-      "sha256": "998ed7163fa17cd7516f2ce5c00a6ff9679632728cac1efc416211c20ce37645",
-      "publishedSha256": "06e8b9886144404579100eb200f90d57866f2da22eddcec447b214ccb5767597",
+      "bytes": 2193,
+      "sha256": "cab981ac3b18defbb7fe6a745a7cd20038fc3d41243f62bd31679c8412c68898",
+      "publishedSha256": "a5c713d310a1361d612ac4b0786041925e4515b04956abb0b8f8d4c5eb3d4cde",
       "rewrites": [
         {
           "from": "../ambient-show/showdesk.html",
@@ -17,16 +17,16 @@
     {
       "source": "source/wisp-performance-reference/tonight-demo/tonight.css",
       "destination": "tonight.css",
-      "bytes": 2052,
-      "sha256": "92345b8b3463ee922bf8be3375dae71130d59e508a15c13551158be37f514ea4",
-      "publishedSha256": "92345b8b3463ee922bf8be3375dae71130d59e508a15c13551158be37f514ea4"
+      "bytes": 2284,
+      "sha256": "2219f4535620783d24a1e459793db5bcfe35b38ba7801e25913b4f6fc285c936",
+      "publishedSha256": "2219f4535620783d24a1e459793db5bcfe35b38ba7801e25913b4f6fc285c936"
     },
     {
       "source": "source/wisp-performance-reference/tonight-demo/tonight.mjs",
       "destination": "tonight.mjs",
-      "bytes": 5855,
-      "sha256": "81b78a4ff2f4f99af30201f30eb9e9ab5e065b18d222c667c9dfb91090ce8c6d",
-      "publishedSha256": "c14e2ec70d6ee7aa95daf1296ec62da0a3e73e8f8f4347dc6ac34a3647e9cf3f",
+      "bytes": 5651,
+      "sha256": "28da8449c7fdc4c5356b1ce329a95e18fbb1cf5e9c33080443b602728e2668ce",
+      "publishedSha256": "240817fd3a8c5809005eb74ab000ffa4ea5c914c9bc54a9d259054a9a9fb762c",
       "rewrites": [
         {
           "from": "../runway-pilots/wisp-film-output.js",
@@ -108,9 +108,9 @@
     {
       "source": "source/wisp-performance-reference/tonight-demo/show.json",
       "destination": "show.json",
-      "bytes": 2875,
-      "sha256": "82488b564fa922fde30b6183c324dd29c082bea4c80aa47f1a7af54475536526",
-      "publishedSha256": "82488b564fa922fde30b6183c324dd29c082bea4c80aa47f1a7af54475536526"
+      "bytes": 3231,
+      "sha256": "00ab7e08450f5025a26b1272a193c053ba446099e6665e72c9b528120085d4d9",
+      "publishedSha256": "00ab7e08450f5025a26b1272a193c053ba446099e6665e72c9b528120085d4d9"
     },
     {
       "source": "source/wisp-performance-reference/tonight-demo/paired-controls.mjs",
@@ -138,6 +138,13 @@
       "bytes": 1229530,
       "sha256": "be2ead50035b9be34bcb9cdbc57afdedf3c91549964d45fc125af09aec3917db",
       "publishedSha256": "be2ead50035b9be34bcb9cdbc57afdedf3c91549964d45fc125af09aec3917db"
+    },
+    {
+      "source": "source/wisp-performance-reference/tonight-demo/wisp-tonight-complete-v6.mp4",
+      "destination": "wisp-tonight-complete-v6.mp4",
+      "bytes": 3040380,
+      "sha256": "15406f8859a8941f48669e7752707a25b41b4d166933b88523b2a6f410f6917c",
+      "publishedSha256": "15406f8859a8941f48669e7752707a25b41b4d166933b88523b2a6f410f6917c"
     }
   ]
 }

@@ -168,6 +168,7 @@ jobs:
           HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/film_output_handoff.cjs
           HAUNT_TONIGHT_ROOT=dist node tests/tonight_readiness.cjs
           HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/tonight_readiness.cjs
+          HAUNT_TONIGHT_ROOT=dist node tests/tonight_single_movie.cjs
           HAUNT_TONIGHT_ROOT=dist node tests/tonight_demo.cjs
           HAUNT_TONIGHT_ROOT=dist node tests/tonight_puppet.cjs
           HAUNT_TONIGHT_ROOT=dist node tests/tonight_puppet_capture.cjs
