@@ -1,117 +1,75 @@
 {
-  "schema": 1,
+  "schema": 2,
   "id": "ghost-at-the-door",
   "title": "The Ghost at the Door",
-  "status": "single-movie-runtime-review-pending",
+  "status": "new-continuous-take-review",
   "releaseApproved": false,
   "fps": 24,
-  "frames": 1257,
-  "durationSeconds": 52.375,
-  "picture": {
-    "file": "tonight-story-v5-picture.mp4",
-    "sha256": "678f1add05e406f1c5eed1a8c3dfe99c8df29ef49f84ef8135666a3b8f4dc6ef",
-    "silent": true
+  "frames": 721,
+  "durationSeconds": 30.08,
+  "movie": {
+    "file": "wisp-new-one-take-v2.mp4",
+    "sha256": "ff3673f8a0742e3aceba8b73cee9f8c2b4ae074ccbaac987262e711705e22ddd",
+    "embeddedAudio": true,
+    "singleClock": true,
+    "sourceKind": "one newly generated continuous performance"
   },
-  "sound": {
-    "file": "tonight-story-v5-sound.m4a",
-    "sha256": "be2ead50035b9be34bcb9cdbc57afdedf3c91549964d45fc125af09aec3917db",
-    "owner": "laptop",
-    "speech": true,
-    "dialogue": "Oh! Visitors! Welcome to my haunt! / Oops! Hope I didn\u2019t scare you. I\u2019m just trying to be tough. / Happy Halloween! Boo-bye!",
-    "enable": "explicit operator action",
-    "stop": "cancel on pause, Blackout, exit or puppet takeover"
-  },
+  "audioOwner": "laptop",
+  "speech": true,
+  "authoredDialogue": [
+    "Oh! Visitors! Welcome to my haunt!",
+    "Oops! Just trying to be tough.",
+    "Happy Halloween! Boo-bye!"
+  ],
   "chapters": [
     {
       "title": "Welcome",
-      "startSeconds": 0.0,
-      "endSeconds": 6.041666666666667
+      "startSeconds": 0,
+      "endSeconds": 4
     },
     {
-      "title": "Showing off",
-      "startSeconds": 6.041666666666667,
-      "endSeconds": 16.125
+      "title": "A little showing off",
+      "startSeconds": 4,
+      "endSeconds": 7
     },
     {
       "title": "Scare and apology",
-      "startSeconds": 16.125,
-      "endSeconds": 28.208333333333332
+      "startSeconds": 7,
+      "endSeconds": 15
     },
     {
       "title": "Smoke greeting",
-      "startSeconds": 28.208333333333332,
-      "endSeconds": 34.25
+      "startSeconds": 15,
+      "endSeconds": 20
     },
     {
       "title": "Boo-bye",
-      "startSeconds": 34.25,
-      "endSeconds": 38.291666666666664
+      "startSeconds": 20,
+      "endSeconds": 23
     },
     {
       "title": "Drift into mist",
-      "startSeconds": 38.291666666666664,
-      "endSeconds": 43.833333333333336
+      "startSeconds": 23,
+      "endSeconds": 27
     },
     {
       "title": "Bats in the fog",
-      "startSeconds": 43.833333333333336,
-      "endSeconds": 50.375
+      "startSeconds": 27,
+      "endSeconds": 29.291666666666668
     },
     {
       "title": "Empty stage",
-      "startSeconds": 50.375,
-      "endSeconds": 52.375
+      "startSeconds": 29.291666666666668,
+      "endSeconds": 30.08
     }
   ],
-  "soundEvents": [
-    {
-      "label": "spoken-welcome-native-v1.mp4",
-      "atFrame": 0,
-      "gain": 0.7036535116824271,
-      "samples": 290000
-    },
-    {
-      "label": "spoken-goodbye-native-v1.mp4",
-      "atFrame": 822,
-      "gain": 0.5,
-      "samples": 194000
-    },
-    {
-      "label": "Morph and menace",
-      "atFrame": 145,
-      "gain": 1,
-      "samples": 484000
-    },
-    {
-      "label": "Approved scare and apology",
-      "atFrame": 387,
-      "gain": 1,
-      "samples": 580000
-    },
-    {
-      "label": "Smoke writing",
-      "atFrame": 677,
-      "gain": 1,
-      "samples": 290000
-    },
-    {
-      "label": "Drift air",
-      "atFrame": 919,
-      "gain": 0.12,
-      "samples": 119040
-    },
-    {
-      "label": "Bat rush",
-      "atFrame": 1052,
-      "gain": 0.6,
-      "samples": 314000
-    }
-  ],
-  "review": "Approved scare/apology retained. New native lip-synced welcome and goodbye, fixed whole-film framing, smoke drift and contained editorial bat transition await human full-context review. No animated safety zoom. Physical projection and loudspeaker rehearsal unavailable. Runtime revised to one native visible video containing embedded AAC audio, without a separate audio element, re-seeking audio or a canvas-only operator preview.",
-  "movie": {
-    "file": "wisp-tonight-complete-v6.mp4",
-    "sha256": "15406f8859a8941f48669e7752707a25b41b4d166933b88523b2a6f410f6917c",
-    "embeddedAudio": true,
-    "singleClock": true
-  }
+  "provenance": {
+    "taskId": "32d109b5-c62a-4e10-bb03-0c158ff891ef",
+    "oldFootageOrAudioUsed": false,
+    "sourceFrames": 721,
+    "nativeAudioUnchanged": true,
+    "animatedWholeFilmFraming": false,
+    "finishing": "One fixed projection fit and a soft late bat-edge vapor phase; no source anatomy restoration, shots, cuts or audio replacement."
+  },
+  "review": "New full-length continuous take replaces the old multi-source film. Actual source framing and full finished-frame buffer audited; human voice/performance and physical projection review remain open."
 }

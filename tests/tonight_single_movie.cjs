@@ -12,9 +12,10 @@ const pw=require(process.env.HAUNT_PLAYWRIGHT||'playwright'),name=process.env.HA
  assert(await page.locator('#picture').isVisible());assert.equal(await page.locator('#picture').evaluate(v=>getComputedStyle(v).opacity),'1');
  await page.waitForFunction(()=>document.querySelector('#status').textContent.includes('Story complete'),null,{timeout:75000});
  const data=await page.evaluate(()=>{clearInterval(movieTimer);return{samples:movieSamples,trace:movieTrace,quality:document.querySelector('#picture').getVideoPlaybackQuality?.()}});
- const interior=data.samples.filter(s=>s.time>1&&s.time<50.3);assert(interior.length>400,'Sample full native playback');
+ const performanceEnd=cue.chapters.find(ch=>ch.title==='Empty stage')?.startSeconds??cue.durationSeconds-.1;
+ const interior=data.samples.filter(s=>s.time>1&&s.time<performanceEnd-.1);assert(interior.length>(performanceEnd-1)*6,'Sample full native playback');
  assert(interior.every(s=>!s.paused&&!s.muted),'Movie must not mute or pause mid-performance');
- assert(!data.trace.some(e=>e.time>1&&e.time<50.3&&['seeking','pause','emptied','error'].includes(e.type)),'No resync seeks, decoder swaps or pauses inside movie');
+ assert(!data.trace.some(e=>e.time>1&&e.time<performanceEnd-.1&&['seeking','pause','emptied','error'].includes(e.type)),'No resync seeks, decoder swaps or pauses inside movie');
  for(const title of ['Welcome','Scare and apology','Boo-bye']){const ch=cue.chapters.find(c=>c.title===title);assert(data.samples.some(s=>s.time>ch.startSeconds&&s.time<ch.endSeconds&&s.rms>.002),title+' decoded audio');}
  fs.writeFileSync('test-results/tonight-movie-requests-'+name+'.json',JSON.stringify(requests,null,2));const media=requests.filter(r=>r.mainFrame).map(r=>r.url);assert(!media.some(url=>url.includes('.m4a')),'No separate soundtrack request');assert.equal(new Set(media).size,1,'One movie source for entire show');
  assert.deepEqual(errors,[]);await page.evaluate(()=>{movieProbe.source.disconnect();movieProbe.analyser.disconnect();return movieProbe.context.close()});

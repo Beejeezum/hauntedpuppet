@@ -1,0 +1,34 @@
+{
+  "status": "technical finish passed; human performance and physical projection review pending",
+  "releaseApproved": false,
+  "source": "wisp-one-take-v2-native.mp4",
+  "sourceSha256": "da50048f653ed17b72cc3f01b80aedb7f21497aa548a6e823b6ece06a165c96d",
+  "movie": "wisp-one-take-v2-projection-loop.mp4",
+  "sha256": "ff3673f8a0742e3aceba8b73cee9f8c2b4ae074ccbaac987262e711705e22ddd",
+  "frames": 721,
+  "fps": 24.0,
+  "durationSeconds": 30.041666666666668,
+  "size": [
+    1920,
+    1080
+  ],
+  "nativeAudioUnchanged": true,
+  "decodedPCMIdentical": true,
+  "oldFootageOrAudioUsed": false,
+  "constantWholeFilmFit": 0.6,
+  "animatedFraming": false,
+  "entryFadeFrames": 9,
+  "batEdgePhaseSeconds": [
+    27,
+    30.0417
+  ],
+  "sourceCropDisclosure": "Native bats cross source edges at frames673..698. Authored soft edge vapor phase begins BEFORE that span; no cropped bat anatomy is claimed restored.",
+  "boundsFailureFrames": {
+    "4": [],
+    "8": [],
+    "16": []
+  },
+  "blackTailFrames": 18,
+  "audioPeak": 0.7282207608222961,
+  "scope": "ONE generated performance, one uniform stage transform, late bat-edge vapor phase only, complete original native audio. No clip assembly, shot replacement, temporal interpolation, source repair or physical projection claim."
+}

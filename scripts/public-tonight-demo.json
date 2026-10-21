@@ -4,9 +4,9 @@
     {
       "source": "source/wisp-performance-reference/tonight-demo/index.html",
       "destination": "index.html",
-      "bytes": 2193,
-      "sha256": "cab981ac3b18defbb7fe6a745a7cd20038fc3d41243f62bd31679c8412c68898",
-      "publishedSha256": "a5c713d310a1361d612ac4b0786041925e4515b04956abb0b8f8d4c5eb3d4cde",
+      "bytes": 1932,
+      "sha256": "0ca0924f977483e7b7209ce41eb93b66ccfafa6af9c79c1c65cb6a5738d792e9",
+      "publishedSha256": "67752847ef1cc8d11ce380099993da76efa272435d2c4cb59c31cc7d648ab3aa",
       "rewrites": [
         {
           "from": "../ambient-show/showdesk.html",
@@ -108,9 +108,9 @@
     {
       "source": "source/wisp-performance-reference/tonight-demo/show.json",
       "destination": "show.json",
-      "bytes": 3231,
-      "sha256": "00ab7e08450f5025a26b1272a193c053ba446099e6665e72c9b528120085d4d9",
-      "publishedSha256": "00ab7e08450f5025a26b1272a193c053ba446099e6665e72c9b528120085d4d9"
+      "bytes": 2026,
+      "sha256": "eab71c820dd191d4df8966e3f496d0d9f48a1311b4de15cc45b41bea6723ee4b",
+      "publishedSha256": "eab71c820dd191d4df8966e3f496d0d9f48a1311b4de15cc45b41bea6723ee4b"
     },
     {
       "source": "source/wisp-performance-reference/tonight-demo/paired-controls.mjs",
@@ -145,6 +145,13 @@
       "bytes": 3040380,
       "sha256": "15406f8859a8941f48669e7752707a25b41b4d166933b88523b2a6f410f6917c",
       "publishedSha256": "15406f8859a8941f48669e7752707a25b41b4d166933b88523b2a6f410f6917c"
+    },
+    {
+      "source": "source/wisp-performance-reference/tonight-demo/wisp-new-one-take-v2.mp4",
+      "destination": "wisp-new-one-take-v2.mp4",
+      "bytes": 2480139,
+      "sha256": "ff3673f8a0742e3aceba8b73cee9f8c2b4ae074ccbaac987262e711705e22ddd",
+      "publishedSha256": "ff3673f8a0742e3aceba8b73cee9f8c2b4ae074ccbaac987262e711705e22ddd"
     }
   ]
 }
