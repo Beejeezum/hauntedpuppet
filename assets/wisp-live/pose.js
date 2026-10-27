@@ -16,7 +16,7 @@ export class LivePose {
   const auto={...NEUTRAL,gazeX:look[0]+.012*Math.sin(time*7.1),gazeY:look[1]+.009*Math.sin(time*5.4),blinkL:blink,blinkR:blink};const target=p||auto;if(!p)target.jaw=clamp(mouthOverride);
   const g=this.gesture,age=g?time-g.at:99,fade=g&&age<3.5?smooth(Math.min(age/.3,(3.5-age)/.7)):0;
   if(g&&age>=3.5)this.gesture=null;
-  if(!p&&g?.kind==='curious'){target.roll=.45*fade;target.browL=.55*fade;target.gazeY=.3*fade;}
+  if(g?.kind==='curious'){target.roll=clamp(target.roll+.45*fade,-1,1);target.browL=Math.max(target.browL,.55*fade);if(!p)target.gazeY=.3*fade;}
   if(g?.kind==='delight'){target.smile=Math.max(target.smile,.7*fade);target.browL=Math.max(target.browL,.3*fade);target.browR=Math.max(target.browR,.4*fade);}
   for(const k of Object.keys(NEUTRAL)){const speed=k.startsWith('blink')?40:k==='jaw'||k==='round'||k.startsWith('gaze')?32:k==='smile'?18:12;this.face[k]+=(target[k]-this.face[k])*(1-Math.exp(-dt*speed));}
   const spring=(b,tx,ty,stiffness,damping)=>{b.vx+=(tx-b.x)*stiffness*dt;b.vy+=(ty-b.y)*stiffness*dt;b.vx*=Math.exp(-damping*dt);b.vy*=Math.exp(-damping*dt);b.x+=b.vx*dt;b.y+=b.vy*dt;};
