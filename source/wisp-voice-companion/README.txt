@@ -16,3 +16,7 @@ https://github.com/Plachtaa/seed-vc
 The Python companion adapter is GPL-3.0-only; upstream license is included as LICENSE-Seed-VC. The independent browser transport communicates with it locally. Requirements are pinned for reproducibility. Alternatives researched: w-okada/voice-changer and tizee/rvc-mlx-realtime. Neither was assumed faster or higher quality without a measured comparison. The latter also needs suitable trained RVC voice models.
 
 Optional voice references: In Neural mode, select a short PCM16 WAV for the selected cute/dark slot. The companion validates duration/size and prepares it locally in memory with the microphone stopped. It is not uploaded to a cloud service or saved in the show library. Restarting the companion restores bundled defaults.
+
+The package also includes the painted Voice Studio frontend and pinned browser dependencies. Open http://127.0.0.1:8899/assets/wisp-tonight/live-puppet.html once ready to avoid hosted-page loopback permission restrictions. The local studio owns its own silent projector output; phone pairing stays on the hosted desk, where the browser must allow the local connection for neural voice. Video/study navigation returns to the hosted app.
+
+The launcher remembers only the installed runtime folder in ~/Library/Application Support/HauntedPuppet/voice-runtime.json so a downloaded launcher can reuse it after restart. This file contains no credentials or recordings. No login item or background auto-start is installed.

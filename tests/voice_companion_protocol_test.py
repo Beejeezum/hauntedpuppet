@@ -1,4 +1,4 @@
-import asyncio,importlib.util,pathlib,struct,unittest
+import asyncio,importlib.util,pathlib,struct,unittest,zipfile,tempfile
 try:
  from aiohttp.test_utils import TestClient,TestServer
 except ImportError:raise unittest.SkipTest('Install pinned aiohttp for the explicit companion protocol test step')
@@ -29,6 +29,18 @@ class Tests(unittest.IsolatedAsyncioTestCase):
   with self.assertRaises(WSServerHandshakeError):await self.client.ws_connect('/voice/stream',headers=ORIGIN)
   await ws.send_bytes(struct.pack('<3200f',*([.02]*3200)));metrics=await ws.receive_json();self.assertEqual(metrics['processingMs'],2.0);audio=await ws.receive();self.assertEqual(audio.type,WSMsgType.BINARY);self.assertEqual(len(audio.data),17640)
   await ws.send_json({'type':'voice','voice':'demon'});self.assertEqual((await ws.receive_json())['type'],'ready');self.assertEqual(self.bridge.engine.voice,'demon');await ws.close();await asyncio.sleep(.03);self.assertIsNone(self.bridge.owner)
+ async def test_packaged_frontend_has_public_assets(self):
+  with tempfile.TemporaryDirectory()as folder:
+   with zipfile.ZipFile(ROOT/'assets/wisp-voice-companion.zip')as archive:
+    self.assertTrue(all(name.startswith('Wisp Voice Toolkit/')and '..'not in pathlib.PurePosixPath(name).parts for name in archive.namelist()));archive.extractall(folder)
+   package=pathlib.Path(folder)/'Wisp Voice Toolkit';spec=importlib.util.spec_from_file_location('packaged_companion',package/'server.py');packaged=importlib.util.module_from_spec(spec);spec.loader.exec_module(packaged);client=TestClient(TestServer(packaged.Bridge(FakeEngine()).app()));await client.start_server()
+   try:
+    for name in ['live-puppet.html','live-puppet.mjs','friendly-fog-reference.png']:
+     response=await client.get('/assets/wisp-tonight/'+name);self.assertEqual(response.status,200)
+    for name in ['assets/wisp-live/neural-worklet.js','assets/vendor/mediapipe/face_landmarker.task','assets/puppeteer-pitch-worklet.js']:
+     response=await client.get('/'+name);self.assertEqual(response.status,200)
+    response=await client.get('/api/status');self.assertEqual(response.status,404)
+   finally:await client.close()
  async def test_private_reference_upload(self):
   response=await self.client.post('/voice/reference/cute',headers=ORIGIN,data=b'RIFFtest');self.assertEqual(response.status,401)
   headers={**ORIGIN,'Authorization':'Bearer '+self.bridge.token}

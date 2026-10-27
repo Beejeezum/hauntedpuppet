@@ -2,7 +2,7 @@
 """Loopback-only single-operator PCM bridge; no microphone/provider credentials."""
 import asyncio,concurrent.futures,hmac,json,pathlib,secrets,time,os,sys
 from aiohttp import web,WSMsgType
-ROOT=pathlib.Path(__file__).resolve().parents[2];PUBLIC=ROOT/'dist' if (ROOT/'scripts/public-tonight-demo.json').is_file()else None;HERE=pathlib.Path(__file__).resolve().parent
+ROOT=pathlib.Path(__file__).resolve().parents[2];PUBLIC=ROOT/'dist' if (ROOT/'scripts/public-tonight-demo.json').is_file()else pathlib.Path(__file__).resolve().parent/'studio';HERE=pathlib.Path(__file__).resolve().parent
 ALLOWED={'http://127.0.0.1:8899','http://localhost:8899','https://hauntedpuppet.netlify.app','https://deploy-preview-12--hauntedpuppet.netlify.app'}
 class Bridge:
  def __init__(self,engine):self.engine=engine;self.token=secrets.token_urlsafe(32);self.owner=None;self.pool=concurrent.futures.ThreadPoolExecutor(max_workers=1)

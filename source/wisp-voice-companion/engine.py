@@ -3,7 +3,7 @@
 import os,sys,ast,pathlib,types,contextlib,time
 class SeedEngine:
  def __init__(self,checkout,references):
-  os.environ['PYTORCH_ENABLE_MPS_FALLBACK']='1';self.checkout=pathlib.Path(checkout).resolve();os.chdir(self.checkout);sys.path.insert(0,str(self.checkout))
+  os.environ['PYTORCH_ENABLE_MPS_FALLBACK']='1';os.environ['TQDM_DISABLE']='1';self.checkout=pathlib.Path(checkout).resolve();os.chdir(self.checkout);sys.path.insert(0,str(self.checkout))
   import torch,torchaudio,librosa,numpy as np,inference
   from huggingface_hub import hf_hub_download
   self.torch,self.np,self.librosa=torch,np,librosa
