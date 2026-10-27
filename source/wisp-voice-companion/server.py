@@ -60,6 +60,7 @@ class Bridge:
   async def static(r):
    if PUBLIC is None:raise web.HTTPNotFound()
    name=r.match_info['path']or'assets/wisp-tonight/live-puppet.html';p=(PUBLIC/name).resolve();base=PUBLIC.resolve()
+   if not p.suffix and p.with_suffix('.html').is_file():p=p.with_suffix('.html')
    if not p.is_relative_to(base)or not p.is_file():raise web.HTTPNotFound()
    return web.FileResponse(p,headers={'Cache-Control':'no-store'})
   app.router.add_get('/{path:.*}',static);app.on_shutdown.append(self.shutdown);app.on_cleanup.append(self.close);return app

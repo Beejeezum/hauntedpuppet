@@ -35,7 +35,7 @@ class Tests(unittest.IsolatedAsyncioTestCase):
     self.assertTrue(all(name.startswith('Wisp Voice Toolkit/')and '..'not in pathlib.PurePosixPath(name).parts for name in archive.namelist()));archive.extractall(folder)
    package=pathlib.Path(folder)/'Wisp Voice Toolkit';spec=importlib.util.spec_from_file_location('packaged_companion',package/'server.py');packaged=importlib.util.module_from_spec(spec);spec.loader.exec_module(packaged);client=TestClient(TestServer(packaged.Bridge(FakeEngine()).app()));await client.start_server()
    try:
-    for name in ['live-puppet.html','live-puppet.mjs','friendly-fog-reference.png']:
+    for name in ['live-puppet.html','live-puppet','live-puppet.mjs','friendly-fog-reference.png']:
      response=await client.get('/assets/wisp-tonight/'+name);self.assertEqual(response.status,200)
     for name in ['assets/wisp-live/neural-worklet.js','assets/vendor/mediapipe/face_landmarker.task','assets/puppeteer-pitch-worklet.js']:
      response=await client.get('/'+name);self.assertEqual(response.status,200)
