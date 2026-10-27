@@ -1,9 +1,15 @@
 # SPDX-License-Identifier: GPL-3.0-only
 """One-time isolated toolkit setup; never opens capture or accesses credentials."""
-import pathlib,os,sys,shutil,subprocess,urllib.request,tarfile,time
+import pathlib,os,sys,shutil,subprocess,urllib.request,tarfile,time,json
 HERE=pathlib.Path(__file__).resolve().parent;PIN='51383efd921027683c89e5348211d93ff12ac2a8'
-WORK=pathlib.Path(os.environ.get('WISP_VOICE_WORK_DIR',pathlib.Path.home()/'Library/Caches/HauntedPuppet/voice-runtime')).expanduser().resolve()
+LOCAL=HERE.parents[1]/'work/wisp-voice-runtime';DEFAULT=LOCAL if (LOCAL/'installed-v1').is_file()and (HERE.parents[1]/'scripts/public-tonight-demo.json').is_file()else pathlib.Path.home()/'Library/Caches/HauntedPuppet/voice-runtime'
+WORK=pathlib.Path(os.environ.get('WISP_VOICE_WORK_DIR',DEFAULT)).expanduser().resolve()
 def main():
+ try:
+  with urllib.request.urlopen('http://127.0.0.1:8899/voice/status',timeout=1)as response:status=json.load(response)
+  if status.get('ready')and status.get('inputRate')==16000 and status.get('outputRate')==22050:
+   print('Wisp voice toolkit is already running. Return to the app and choose Check toolkit connection.');return
+ except Exception:pass
  if sys.version_info<(3,12):raise SystemExit('Run this toolkit with Python3.12 or newer. Install Python from python.org if needed.')
  WORK.mkdir(parents=True,exist_ok=True);python=WORK/'venv/bin/python'
  if not python.exists():

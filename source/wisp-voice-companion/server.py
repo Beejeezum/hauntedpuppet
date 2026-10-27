@@ -42,7 +42,9 @@ class Bridge:
      await ws.send_json(dict(type='metrics',processingMs=ms,sequence=sequence));await ws.send_bytes(output);sequence+=1
     elif message.type in (WSMsgType.ERROR,WSMsgType.CLOSE):break
   except Exception as e:
-   if not ws.closed:await ws.send_json(dict(type='error',error='Voice conversion interrupted: '+type(e).__name__))
+   if not ws.closed:
+    try:await ws.send_json(dict(type='error',error='Voice conversion interrupted: '+type(e).__name__))
+    except (ConnectionError,RuntimeError):pass
   finally:
    self.owner=None
    cleared=asyncio.get_running_loop().run_in_executor(self.pool,self.engine.reset,'cute')
