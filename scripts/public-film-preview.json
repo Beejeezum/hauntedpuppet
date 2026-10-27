@@ -16,8 +16,8 @@
     {
       "source": "source/wisp-performance-reference/runway-pilots/wisp-film-output.js",
       "destination": "wisp-film-output.js",
-      "sha256": "8a18cb1108339b07d789790b5cc69beebac00a33c96b53aef3bd4a485465d939",
-      "bytes": 3995
+      "sha256": "617a94cddd9ba3e443913e0c6275542cd6e258046ee3c56da1c66197e92801fc",
+      "bytes": 4313
     },
     {
       "source": "source/wisp-performance-reference/runway-pilots/audiovisual-study/wisp-audiovisual-v1.mp4",

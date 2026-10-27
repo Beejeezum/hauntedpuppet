@@ -1,0 +1,26 @@
+Friendly painted Wisp live proof
+
+Entry: /assets/wisp-tonight/live-puppet.html (published), or source/wisp-performance-reference/tonight-demo/live-puppet.html (source fixture).
+
+This proof is separate from finished-film playback and the earlier microphone mouth study. It uses the approved painting as its body, iris and eyebrow texture. A built-in ImageGen skin plate is used only in the small facial regions behind the features. The generated body/exterior is ignored. Its exact prompt and asset hashes are in assets/wisp-live/.
+
+Runtime: existing pinned MediaPipe 1.1.1 in a local Worker; existing pinned PixiJS 8.22.0; one connected painted surface with 6,305 vertices. Continuous mouth opening/rounding, eyelid aperture/independent winks, bounded iris gaze, asymmetric brows, small head lean/roll, jaw/cheek response, shoulder/elbow/wrist deformation, trailing core and crest, and object-space fog advection. Joint motion is integrated in small steps to avoid folded cells at gesture extremes. This is a custom front-view GPU proof, not a Cubism/VTube Studio model or complete all-angle/finger rig.
+
+Operator check:
+1. Open in a current Chrome or Safari browser and choose Start webcam puppet.
+2. Allow the browser camera request, face it in reasonable light and choose Calibrate relaxed face.
+3. Test a closed mouth, ah, oo, smile, separate winks, down/side gaze and one raised brow. Body and mist should keep moving while you talk or pause.
+4. Start microphone separately if desired. Speaker output stays off until Hear my voice is selected. Use headphones during calibration. Mic-only mouth movement is an amplitude fallback, not phoneme inference.
+5. Try Wave/Curious/Delighted, open silent rehearsal output, and test camera Stop and Blackout. Phone controls cannot start camera or microphone.
+
+No camera/microphone input is recorded or uploaded. The camera preview stays private on the operator page. Output and paired previews use only the rendered Wisp. Blackout/pagehide stop inputs, pending grants are cancelled, and late-granted tracks are stopped. Face loss returns to a living idle. Graphics loss stops capture and blacks output; reload the proof to recover. Existing key-owning servers are not restarted.
+
+Automated evidence:
+- tests/friendly_live_pose.cjs: channel mapping, asymmetric brows/winks, stale-face idle and noninverted cells across extreme poses/body-energy settings.
+- tests/friendly_live_voice.cjs: silent default, explicit output, denial/resume failure, pending Stop and repeated audio-context/track cleanup.
+- tests/friendly_live_browser.cjs: actual GPU with synthetic worker/canvas camera and oscillator mic; permissions, no-face fallback, output pixels keep changing with operator RAF deliberately paused, Blackout and pagehide.
+- Existing film/output/Puppet capture tests protect earlier modes.
+- Actual local MediaPipe WASM inference was separately exercised with Google's public portrait fixture in work/test-friendly-real-model.cjs. This does not establish actual private webcam performance.
+- work/soak-friendly-proof.cjs exercises one minute of synthetic facial/body acting and projection foreground changes. This is not an evening soak or physical-projector test.
+
+Remaining acceptance: the operator's actual camera/microphone, mouth/eye likeness and timing, perceptual fluidity, real speaker monitoring and physical projector. No new Runway videos were generated for this proof.

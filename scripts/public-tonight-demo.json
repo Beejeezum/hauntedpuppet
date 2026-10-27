@@ -4,9 +4,9 @@
     {
       "source": "source/wisp-performance-reference/tonight-demo/index.html",
       "destination": "index.html",
-      "bytes": 1932,
-      "sha256": "0ca0924f977483e7b7209ce41eb93b66ccfafa6af9c79c1c65cb6a5738d792e9",
-      "publishedSha256": "67752847ef1cc8d11ce380099993da76efa272435d2c4cb59c31cc7d648ab3aa",
+      "bytes": 1933,
+      "sha256": "3c1c0ade8b48c57c473a2435e1c0a9d73308067dc9edd62760afd466322acf9b",
+      "publishedSha256": "b384511d64f36f309fe794b53a2b0d81784c3170a9eed9bb9687ecbc65309f04",
       "rewrites": [
         {
           "from": "../ambient-show/showdesk.html",
@@ -41,9 +41,9 @@
     {
       "source": "source/wisp-performance-reference/tonight-demo/puppet.html",
       "destination": "puppet.html",
-      "bytes": 2390,
-      "sha256": "21db1e60d51331bc5cda7cc2e468573dbe8a5c4750972aed836af48663de543c",
-      "publishedSha256": "21db1e60d51331bc5cda7cc2e468573dbe8a5c4750972aed836af48663de543c"
+      "bytes": 2479,
+      "sha256": "402de0b02b16b3294155c29efbb2ba1dac156ee688318482e1adffc318a76e2c",
+      "publishedSha256": "402de0b02b16b3294155c29efbb2ba1dac156ee688318482e1adffc318a76e2c"
     },
     {
       "source": "source/wisp-performance-reference/tonight-demo/puppet.mjs",
@@ -152,6 +152,38 @@
       "bytes": 2480139,
       "sha256": "ff3673f8a0742e3aceba8b73cee9f8c2b4ae074ccbaac987262e711705e22ddd",
       "publishedSha256": "ff3673f8a0742e3aceba8b73cee9f8c2b4ae074ccbaac987262e711705e22ddd"
+    },
+    {
+      "source": "source/wisp-performance-reference/tonight-demo/live-puppet.html",
+      "destination": "live-puppet.html",
+      "bytes": 3550,
+      "sha256": "ce34806ee6cb66f6cf416c07557e196fca076a9724d0cdb857f888f6b56b712b",
+      "publishedSha256": "ce34806ee6cb66f6cf416c07557e196fca076a9724d0cdb857f888f6b56b712b"
+    },
+    {
+      "source": "source/wisp-performance-reference/tonight-demo/live-puppet.mjs",
+      "destination": "live-puppet.mjs",
+      "rewrites": [
+        {
+          "from": "../runway-pilots/wisp-film-output.js",
+          "to": "../wisp-film-preview/wisp-film-output.js"
+        },
+        {
+          "from": "puppet-kit/friendly-fog-reference.png",
+          "to": "friendly-fog-reference.png"
+        },
+        {
+          "from": "puppet-kit/friendly-fog-neutral-v1.png",
+          "to": "friendly-fog-neutral-v1.png"
+        },
+        {
+          "from": "puppet-kit/friendly-mouths-v1.png",
+          "to": "friendly-mouths-v1.png"
+        }
+      ],
+      "bytes": 6762,
+      "sha256": "38afa7014100fe87538af337c49ec47d22ace2ce041163d9bfbe6197646d5ac9",
+      "publishedSha256": "52d7b923a67c608f3e917c3af5e876af4416db04115fdf04de7baace83c56c39"
     }
   ]
 }

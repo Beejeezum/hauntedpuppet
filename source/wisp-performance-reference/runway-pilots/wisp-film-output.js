@@ -1,5 +1,5 @@
 /** Mirror one composed picture. No second decoder, audio context or microphone. */
-export function mountFilmOutput(stage, inspect) {
+export function mountFilmOutput(stage, inspect, {beforePaint}={}) {
  const button=document.createElement('button');button.textContent='Open silent rehearsal output';button.type='button';
  stage.after(button);const outputs=new Map();let disposed=false;
  button.onclick=()=>{
@@ -22,6 +22,10 @@ export function mountFilmOutput(stage, inspect) {
   const clear=()=>context.clearRect(0,0,canvas.width,canvas.height);
   function paint(){
    if(stopped||detached)return;let state;try{state=!window.closed&&!disposed&&inspect();}catch{}
+   if(!state||state.disposed){clear();stopped=true;return;}
+   // A live renderer can refresh its owner canvas while this output window is
+   // foreground and the operator's requestAnimationFrame is throttled.
+   if(beforePaint)try{beforePaint();state=inspect();}catch{clear();stopped=true;return;}
    if(!state||state.disposed){clear();stopped=true;return;}
    const now=output.performance.now(),draws=state.metrics?.draws;if(draws!==lastDraw){lastDraw=draws;lastChange=now;}
    const nextStale=Number.isFinite(draws)&&!state.black&&now-lastChange>1200;if(nextStale&&!stale)stalls++;stale=nextStale;
