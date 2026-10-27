@@ -166,6 +166,12 @@ jobs:
         run: |
           HAUNT_TONIGHT_ROOT=dist node tests/film_output_handoff.cjs
           HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/film_output_handoff.cjs
+          python -m pip install --disable-pip-version-check aiohttp==3.11.18
+          python tests/voice_companion_protocol_test.py
+          node tests/neural_voice_client.cjs
+          node tests/neural_worklet.cjs
+          node tests/neural_voice_browser.cjs
+          HAUNT_BROWSER=webkit node tests/neural_voice_browser.cjs
           node tests/friendly_live_pose.cjs
           node tests/friendly_live_hands.cjs
           node tests/friendly_live_voice.cjs
