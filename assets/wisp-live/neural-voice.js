@@ -17,7 +17,7 @@ export class NeuralPuppetVoice{
   }catch(e){stream?.getTracks().forEach(t=>t.stop());if(epoch===this.epoch)this.fail(e.name==='NotAllowedError'?'Microphone permission declined':e.message||'Local voice could not start');}
  }
  fail(message){this.stop();this.error=message;this.phase='error';this.emit();}
- setPreset(name){if(!['cute','demon'].includes(name))name='cute';this.preset=name;if(this.socket?.readyState===1&&this.phase==='live'){this.switching=true;this.gain.gain.setTargetAtTime(0,this.context.currentTime,.015);clearTimeout(this.switchTimer);const epoch=this.epoch;this.switchTimer=setTimeout(()=>{if(epoch!==this.epoch||this.phase!=='live')return;this.node.port.postMessage({type:'flush'});this.socket.send(JSON.stringify({type:'voice',voice:this.preset}));},60);}this.emit();}
+ setPreset(name){if(!['cute','demon'].includes(name))name='cute';this.preset=name;if(this.socket?.readyState===1&&this.phase==='live'){this.switching=true;this.gain.gain.setTargetAtTime(0,this.context.currentTime,.015);clearTimeout(this.switchTimer);const epoch=this.epoch;this.switchTimer=setTimeout(()=>{if(epoch!==this.epoch||this.phase!=='live'||this.socket?.readyState!==1)return;this.node.port.postMessage({type:'flush'});this.socket.send(JSON.stringify({type:'voice',voice:this.preset}));},60);}this.emit();}
  configure({level}={}){if(Number.isFinite(level)){this.level=Math.max(0,Math.min(1,level));this.setOutput(this.output);}}
  setOutput(enabled){this.output=!!enabled;this.gain?.gain.setTargetAtTime(this.output&&!this.switching?this.level:0,this.context.currentTime,.025);this.emit();}
  sample(){return this.rms;}
