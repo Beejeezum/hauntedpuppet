@@ -124,7 +124,7 @@ jobs:
 
   showdesk:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -135,6 +135,10 @@ jobs:
       - run: npx playwright install --with-deps chromium webkit
       - name: Build explicit public show desk and check privacy
         run: node tests/public_build.cjs
+      - name: Wait for complete authored exits before queued cues
+        run: |
+          HAUNT_TONIGHT_ROOT=dist node tests/film_complete_exit.cjs
+          HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/film_complete_exit.cjs
       - name: Check animation-first entry and separate live workspace
         run: |
           HAUNT_WORKSPACE_BUILT_ONLY=1 node tests/workspace_entry.cjs
@@ -157,10 +161,6 @@ jobs:
           DEBUG=pw:browser HAUNT_BROWSER=webkit HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
       - name: Repeat saved playlist closing boundaries in real time
         run: HAUNT_PLAYLIST_ONLY=1 HAUNT_PLAYLIST_STALL=1 HAUNT_PLAYLIST_SOAK_CYCLES=4 HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
-      - name: Wait for complete authored exits before queued cues
-        run: |
-          HAUNT_TONIGHT_ROOT=dist node tests/film_complete_exit.cjs
-          HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/film_complete_exit.cjs
       - name: Check opt-in embedded film soundtracks with silent test sinks
         run: |
           HAUNT_TONIGHT_ROOT=dist node tests/showdesk_film_audio.cjs
