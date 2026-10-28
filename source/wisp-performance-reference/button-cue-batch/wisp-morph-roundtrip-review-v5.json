@@ -1,0 +1,115 @@
+{
+  "file": "wisp-morph-roundtrip-review-v5.mp4",
+  "sha256": "e881c1929cf0d56538a6e98330b761dcaa3b15dbfd1f105a80a0ca3a876aebfa",
+  "status": "human review only; not approved show",
+  "frameCount": 607,
+  "fps": 24,
+  "seconds": 25.291666666666668,
+  "joinsSeconds": [
+    5.083333333333333,
+    10.125,
+    15.166666666666666,
+    20.208333333333332
+  ],
+  "reserve": 0.15,
+  "reserveFailuresRGB4": 0,
+  "minimumMarginsLTRB": [
+    0.3421875,
+    0.1763888888888889,
+    0.325,
+    0.15555555555555556
+  ],
+  "audioSampleRate": 48000,
+  "audioSamples": 1214000,
+  "audioPeak": 0.3699266314506531,
+  "inputs": [
+    {
+      "file": "source/wisp-performance-reference/button-cue-batch/friendly-drift-candidate-v1.mp4",
+      "sha256": "a2a183ad8f433e74dc14328dd8019beedeb8e04f4519bad4d312a3a5a554a064",
+      "frames": 122
+    },
+    {
+      "file": "source/wisp-performance-reference/button-cue-batch/cute-to-evil-runtime-candidate-v2.mp4",
+      "sha256": "33eb4ca1b2b11bd94b2e480e9f015fe87361039babc3d4a511d96ba2818aa931",
+      "frames": 121
+    },
+    {
+      "file": "source/wisp-performance-reference/runway-pilots/motion-transfer-study/wisp-scary-motion-transfer-v35.mp4",
+      "sha256": "21e8efec67ec7e024fc954cc16af458cad8f8427553a998341ff9d37286ca35a",
+      "frames": 121
+    },
+    {
+      "file": "source/wisp-performance-reference/button-cue-batch/evil-to-cute-runtime-candidate-v2.mp4",
+      "sha256": "1a769bddfb65ed21cbc236a0b58f6d9191eeabb0ad4e1606785007029ebcd649",
+      "frames": 121
+    },
+    {
+      "file": "source/wisp-performance-reference/button-cue-batch/friendly-drift-candidate-v1.mp4",
+      "sha256": "a2a183ad8f433e74dc14328dd8019beedeb8e04f4519bad4d312a3a5a554a064",
+      "frames": 122
+    }
+  ],
+  "processing": "Sequential decode of every original frame, fixed whole-frame letterbox fit and one24fps encode; contiguous48kHz sample soundtrack. No dropped/inserted/interpolated/reversed frames, animated resize or body crossfade. Four visible authored cuts. Original candidate SFX retained, deterministic nonmusical brown-air seed68178 for scary idle. One audiovisual movie; loop and four artistic joins unapproved.",
+  "generationCreditsSpent": 0,
+  "humanMotionSoundJoinReview": "pending",
+  "physicalProjection": "unavailable",
+  "fourJoinPixelDiagnostics": [
+    {
+      "frames": [
+        121,
+        122
+      ],
+      "seconds": 5.083333333333333,
+      "silhouetteIoU": 0.9842243827608367,
+      "meanAbsoluteForegroundDifference": 5.112737273437122
+    },
+    {
+      "frames": [
+        242,
+        243
+      ],
+      "seconds": 10.125,
+      "silhouetteIoU": 0.9727500769103343,
+      "meanAbsoluteForegroundDifference": 5.224014167278005
+    },
+    {
+      "frames": [
+        363,
+        364
+      ],
+      "seconds": 15.166666666666666,
+      "silhouetteIoU": 0.9856842160310633,
+      "meanAbsoluteForegroundDifference": 4.571650825608911
+    },
+    {
+      "frames": [
+        484,
+        485
+      ],
+      "seconds": 20.208333333333332,
+      "silhouetteIoU": 0.9877135647209697,
+      "meanAbsoluteForegroundDifference": 4.715757249824184
+    }
+  ],
+  "pixelDiagnosticsScope": "Static alignment only; not proof of velocity continuity, human visual/audio or physical projection acceptance.",
+  "videoClockValidation": {
+    "decodedFrames": 607,
+    "lastPTS": 25.25,
+    "expectedFrameInterval": 0.041666666666666664,
+    "maximumTimestampErrorSeconds": 3.333333342681044e-07,
+    "method": "FFmpeg decoded showinfo; all607frame presentation timestamps compared with frameIndex/24."
+  },
+  "humanVisualReview": {
+    "status": "approved",
+    "userResponse": "Yes\u2014identity, motion and joins work",
+    "questionItem": "call_c3a0f7756c53486a9eb3b9fdfc2dac49:0",
+    "scope": "Same identity, full motion and four visible joins in the25second V5 review. No closing-loop, arbitrary new cue or physical-projection approval.",
+    "movie": "wisp-morph-roundtrip-review-v5.mp4",
+    "sha256": "e881c1929cf0d56538a6e98330b761dcaa3b15dbfd1f105a80a0ca3a876aebfa"
+  },
+  "humanAudioReview": {
+    "status": "rejected",
+    "userResponse": "Too musical or distracting",
+    "questionItem": "call_c3a0f7756c53486a9eb3b9fdfc2dac49:1"
+  }
+}

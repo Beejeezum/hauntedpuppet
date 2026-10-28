@@ -4,14 +4,14 @@
     {
       "source": "source/wisp-performance-reference/button-cue-batch/review.html",
       "destination": "index.html",
-      "bytes": 3346,
-      "sha256": "b7821224470cfeffd1c7d7a1c415fb75997f2b1004a834ed271e8b77146dbbf5"
+      "bytes": 3439,
+      "sha256": "8922a3907826d85b4f8339ec9c4ace50b969341441a124f5a31376345eec1b34"
     },
     {
       "source": "source/wisp-performance-reference/button-cue-batch/review.mjs",
       "destination": "review.mjs",
-      "bytes": 3955,
-      "sha256": "f839d9893f6153c516f1946524d7d988b2d0e045a572da5e8f31ba8d9118033d"
+      "bytes": 4920,
+      "sha256": "834032df606bcc337f4a6b52a434899094c8dd75c68ee94921df12aba22e9887"
     },
     {
       "source": "source/wisp-performance-reference/button-cue-batch/first-batch-rehearsal-v2.mp4",
@@ -30,6 +30,12 @@
       "destination": "friendly-idle-departure-review-v1.mp4",
       "bytes": 905533,
       "sha256": "8403320f59974e9e04a584e44209737d03f3712cdfe01d52d5eb9f2f3eb21c10"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/wisp-morph-roundtrip-review-v6.mp4",
+      "destination": "wisp-morph-roundtrip-review-v6.mp4",
+      "bytes": 1483555,
+      "sha256": "ff3e9f419730a241b11f903cd902589d930ef43e20f92ae9e36421790448d515"
     }
   ]
 }

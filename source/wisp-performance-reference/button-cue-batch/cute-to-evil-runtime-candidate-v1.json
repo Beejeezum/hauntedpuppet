@@ -1,0 +1,76 @@
+{
+  "file": "cute-to-evil-runtime-candidate-v1.mp4",
+  "cueId": "cute-to-evil",
+  "sha256": "7880bf92c6347b32ef01991cc3da3e7cefb901f8f8f8532bddad733d369d1a3a",
+  "status": "review candidate; not approved runtime library",
+  "humanReview": "pending",
+  "physicalProjection": "not tested",
+  "sourceVideo": "source/wisp-performance-reference/runway-pilots/film-morph-handoff-study/wisp-forward-film-morph-v39.mp4",
+  "sourceSha256": "ca6209524bb5cec338fe71f807700dab4a7925cd75341e351dc8a317a17599f8",
+  "videoEssenceIdentical": true,
+  "compressedVideoEssence": "SHA256=49642e07026921199462a080b75852c1a43d336c39dc3be24e4300afb23999f8",
+  "fps": 24,
+  "frameCount": 121,
+  "entryPort": "friendly-rest",
+  "exitPort": "scary-rest",
+  "entryReview": "pending",
+  "exitReview": "pending",
+  "emptyStartFrames": 0,
+  "emptyEndFrames": 0,
+  "audioTailSilenceSeconds": 0.5,
+  "framing": {
+    "reserve": 0.15,
+    "reserveFailures": {
+      "4": 0,
+      "8": 0,
+      "16": 0
+    },
+    "minimumMarginsLTRB": {
+      "4": [
+        0.3765625,
+        0.22777777777777777,
+        0.3927083333333333,
+        0.23055555555555557
+      ],
+      "8": [
+        0.3770833333333333,
+        0.22870370370370371,
+        0.39375,
+        0.23148148148148148
+      ],
+      "16": [
+        0.378125,
+        0.22962962962962963,
+        0.3953125,
+        0.23148148148148148
+      ]
+    }
+  },
+  "audio": {
+    "sampleRate": 48000,
+    "peak": 0.09073107689619064,
+    "rmsDbFS": -37.29718780517578,
+    "lastHalfSecondPeak": 0.0,
+    "scope": "Decoded levels and sound timing only; human listening/no-speech/character acting approval not inferred.",
+    "channels": 2
+  },
+  "audioSources": [
+    {
+      "file": "source/wisp-performance-reference/ambient-show/sound-study/wisp-soft-apparition-v1.mp3",
+      "sha256": "12ee31d2a08bb8d581de4bdddd04e037dc2b37d902e1865c35f9d55f7cbe1206"
+    },
+    {
+      "file": "source/wisp-performance-reference/button-cue-batch/scary-reach-runtime-candidate-v1.mp4",
+      "sha256": "2a003d4f575262ba20651eebf24d6e9d56c32a936533541c3e081453d4e48ecf"
+    }
+  ],
+  "filter": "[1:a]aresample=48000,volume=0.2,afade=t=in:st=0:d=0.15,afade=t=out:st=1.98:d=0.5,adelay=0:all=1[a];[2:a]atrim=start=2:end=5.3,asetpts=PTS-STARTPTS,aresample=48000,volume=0.5,afade=t=in:st=0:d=0.25,afade=t=out:st=2.6:d=0.7,adelay=1000:all=1[b];[a][b]amix=inputs=2:normalize=0,apad,atrim=end_sample=242000,afade=t=out:st=4:d=0.5[mix]",
+  "generationCreditsSpent": 0,
+  "processing": "Original compressed painted video copied unchanged; existing nonverbal sound assets mixed and timed. No video crop, resize, retiming, crossfade, reversal or frame insertion. Rest-pose entry and exit require exact reviewed joins.",
+  "remainingGates": [
+    "human full-motion and sound review",
+    "exact rest-pose join review",
+    "native browser full-play and cancellation",
+    "physical projection unavailable"
+  ]
+}

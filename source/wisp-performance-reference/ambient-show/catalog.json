@@ -377,10 +377,11 @@
       "plannedClipIds": [
         "friendly-wave"
       ],
-      "media": "../button-cue-batch/friendly-wave-runtime-candidate-v2.mp4",
-      "sha256": "6ce40f478e0aec3570266dcef7cfd6dae071f8476914fd583de402babeab7b55",
+      "media": "../button-cue-batch/friendly-wave-runtime-candidate-v3.mp4",
+      "sha256": "32177fb6e3f49de6e8f4bf761575fa1709358ac56ee4c3464f029ffbb9a6300a",
       "status": "human-review-pending",
-      "scope": "New continuous wave/formation/dispersal candidate. All decoded framing thresholds pass;20exact-black startframes/44endframes. Native SFX mastered; no human sound/motion approval. Actual EOS-before-next and immediateBlackout browser tests pass. Not a ready library cue."
+      "scope": "Human endorsed painted motion direction but rejected choir/music in the first wave. v3 retains identical compressed video and adds dry nonmusical fog/hand effects. New sound and exact file approval pending; not a ready cue.",
+      "evidence": "../button-cue-batch/friendly-wave-runtime-candidate-v3.json"
     },
     {
       "plannedClipIds": [
@@ -420,6 +421,28 @@
       "status": "human-review-pending",
       "evidence": "../button-cue-batch/friendly-depart-runtime-candidate-v1.json",
       "scope": "Single targeted240credit departure draft. No animated resize/crop; complete side/back turn and native fog vapor ending, all-frame15percent reserve. Rest-pose entry needs a reviewed incoming join; no claim of arbitrary seamless start. Actual motion/sound review remains pending."
+    },
+    {
+      "plannedClipIds": [
+        "cute-to-evil"
+      ],
+      "media": "../button-cue-batch/cute-to-evil-runtime-candidate-v2.mp4",
+      "sha256": "33eb4ca1b2b11bd94b2e480e9f015fe87361039babc3d4a511d96ba2818aa931",
+      "status": "human-review-pending",
+      "evidence": "../button-cue-batch/cute-to-evil-runtime-candidate-v2.json",
+      "scope": "Original authored transformation with fixed canonical framing calibration. Cropped matte peakRGB1 only; all121frames retain15percent reserve. No animated resize, body crossfade, reversal or retiming. OriginalAAC packets copied unchanged. Full motion/sound and four exact incoming/outgoing joins need human review; see wisp-morph-roundtrip-review-v6.mp4. Not an approved cue. Human approved identity, motion and four joins in the contextualV5reel, but rejected its soundtrack. V6preserves exact compressed picture and replaces all sound with sparse dry swishes. Revised mix, individual cue acceptance and closing loop still pending.",
+      "humanDirectionEvidence": "../button-cue-batch/human-morph-review-2026-10-28.json"
+    },
+    {
+      "plannedClipIds": [
+        "evil-to-cute"
+      ],
+      "media": "../button-cue-batch/evil-to-cute-runtime-candidate-v2.mp4",
+      "sha256": "1a769bddfb65ed21cbc236a0b58f6d9191eeabb0ad4e1606785007029ebcd649",
+      "status": "human-review-pending",
+      "evidence": "../button-cue-batch/evil-to-cute-runtime-candidate-v2.json",
+      "scope": "Original authored transformation with fixed canonical framing calibration. Cropped matte peakRGB1 only; all121frames retain15percent reserve. No animated resize, body crossfade, reversal or retiming. OriginalAAC packets copied unchanged. Full motion/sound and four exact incoming/outgoing joins need human review; see wisp-morph-roundtrip-review-v6.mp4. Not an approved cue. Human approved identity, motion and four joins in the contextualV5reel, but rejected its soundtrack. V6preserves exact compressed picture and replaces all sound with sparse dry swishes. Revised mix, individual cue acceptance and closing loop still pending.",
+      "humanDirectionEvidence": "../button-cue-batch/human-morph-review-2026-10-28.json"
     }
   ],
   "deferredClips": [
@@ -653,6 +676,6 @@
     "userText": "maybe lets reduce to 16 cues and try to limit credits a bit",
     "activeCueCount": 16,
     "deferredCueCount": 16,
-    "unchanged": "Both puppet players, seamless transitions, playlists/autoplay, voice conversion, output isolation and acceptance requirements remain in scope."
+    "unchanged": "Video cue library, seamless transitions, playlists/autoplay, silent phone/projector and acceptance requirements remain in scope. The human later replaced primary webcam/voice-conversion delivery with phone-directed text/prompt performances; see docs/wisp-phone-director-amendment.txt. Legacy webcam paths remain preserved."
   }
 }
