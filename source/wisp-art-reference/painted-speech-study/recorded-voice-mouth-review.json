@@ -1,0 +1,24 @@
+{
+  "scope": "Actual prerecorded user-approved apology audio decoded through WebAudio, original native film and painted mouth. Hardware muted. Not a new provider request or human synchronization/voice approval.",
+  "duration": 8.064,
+  "counts": {
+    "rest": 279,
+    "AH": 5,
+    "OO": 61,
+    "EE": 3
+  },
+  "rested": true,
+  "estimatedOnsetLagMs": 0,
+  "samples": 348,
+  "source": "source/wisp-performance-reference/tonight-demo/apology-proof-v1.mp4",
+  "sourceSha256": "d4dfefcfb62bbff4f32ba7b047a28a4bda5ab7b4def711c368f08d23213e819d",
+  "humanApproval": false,
+  "runtimeIntegration": false,
+  "observations": [
+    "Mouth returns to rest at source completion; original body film continues independently.",
+    "Dominant active shape counts favor OO (61 samples), AH5 and EE3; this acoustic mapping is not approved speech acting.",
+    "Onset difference is coarse sampled analyser-to-mouth response only, at roughly20ms sampling plus browser scheduling; 0 does not mean zero acoustic or end-to-end latency.",
+    "Source voice/acting previously approved, but this new visual synchronization has not been human reviewed."
+  ],
+  "nextGate": "Improve or replace shape selection and review real speech visually before integrating phone director."
+}
