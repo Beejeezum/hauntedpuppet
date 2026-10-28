@@ -1,0 +1,3551 @@
+{
+  "source": "source/wisp-performance-reference/runway-pilots/motion-transfer-study/wisp-scary-motion-transfer-v35.mp4",
+  "sourceSha256": "21e8efec67ec7e024fc954cc16af458cad8f8427553a998341ff9d37286ca35a",
+  "dimensions": [
+    1280,
+    720
+  ],
+  "fps": 24.0,
+  "frames": [
+    {
+      "frame": 0,
+      "seconds": 0.0,
+      "eyes": [
+        [
+          613.544,
+          315.074
+        ],
+        [
+          659.868,
+          331.604
+        ]
+      ],
+      "observedEyes": [
+        [
+          613.544,
+          315.074
+        ],
+        [
+          659.868,
+          331.604
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 2.856121403969164,
+      "candidateCount": 4,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 1,
+      "seconds": 0.041666666666666664,
+      "eyes": [
+        [
+          613.623,
+          315.13
+        ],
+        [
+          659.868,
+          331.604
+        ]
+      ],
+      "observedEyes": [
+        [
+          613.623,
+          315.13
+        ],
+        [
+          659.868,
+          331.604
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.09741871544189538,
+      "candidateCount": 3,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 2,
+      "seconds": 0.08333333333333333,
+      "eyes": [
+        [
+          613.328,
+          315.953
+        ],
+        [
+          659.771,
+          332.708
+        ]
+      ],
+      "observedEyes": [
+        [
+          613.328,
+          315.953
+        ],
+        [
+          659.771,
+          332.708
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.9828219206520454,
+      "candidateCount": 3,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 3,
+      "seconds": 0.125,
+      "eyes": [
+        [
+          613.079,
+          316.46
+        ],
+        [
+          659.635,
+          333.231
+        ]
+      ],
+      "observedEyes": [
+        [
+          613.079,
+          316.46
+        ],
+        [
+          659.635,
+          333.231
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.1048145034642705,
+      "candidateCount": 3,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 4,
+      "seconds": 0.16666666666666666,
+      "eyes": [
+        [
+          613.066,
+          316.689
+        ],
+        [
+          659.453,
+          333.321
+        ]
+      ],
+      "observedEyes": [
+        [
+          613.066,
+          316.689
+        ],
+        [
+          659.453,
+          333.321
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.43146145485221843,
+      "candidateCount": 5,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 5,
+      "seconds": 0.20833333333333334,
+      "eyes": [
+        [
+          612.625,
+          317.156
+        ],
+        [
+          659.68,
+          333.68
+        ]
+      ],
+      "observedEyes": [
+        [
+          612.625,
+          317.156
+        ],
+        [
+          659.68,
+          333.68
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.0675964559600832,
+      "candidateCount": 3,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 6,
+      "seconds": 0.25,
+      "eyes": [
+        [
+          612.381,
+          317.571
+        ],
+        [
+          659.429,
+          333.898
+        ]
+      ],
+      "observedEyes": [
+        [
+          612.381,
+          317.571
+        ],
+        [
+          659.429,
+          333.898
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.8143436490401531,
+      "candidateCount": 5,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 7,
+      "seconds": 0.2916666666666667,
+      "eyes": [
+        [
+          612.177,
+          318.29
+        ],
+        [
+          658.982,
+          334.236
+        ]
+      ],
+      "observedEyes": [
+        [
+          612.177,
+          318.29
+        ],
+        [
+          658.982,
+          334.236
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.3076024174757075,
+      "candidateCount": 3,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 8,
+      "seconds": 0.3333333333333333,
+      "eyes": [
+        [
+          612.061,
+          318.318
+        ],
+        [
+          659.34,
+          334.6
+        ]
+      ],
+      "observedEyes": [
+        [
+          612.061,
+          318.318
+        ],
+        [
+          659.34,
+          334.6
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.6305065821969147,
+      "candidateCount": 3,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 9,
+      "seconds": 0.375,
+      "eyes": [
+        [
+          611.623,
+          318.738
+        ],
+        [
+          659.224,
+          334.98
+        ]
+      ],
+      "observedEyes": [
+        [
+          611.623,
+          318.738
+        ],
+        [
+          659.224,
+          334.98
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.0030299427051645,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 10,
+      "seconds": 0.4166666666666667,
+      "eyes": [
+        [
+          611.238,
+          319.286
+        ],
+        [
+          658.8,
+          335.0
+        ]
+      ],
+      "observedEyes": [
+        [
+          611.238,
+          319.286
+        ],
+        [
+          658.8,
+          335.0
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.0946278261833697,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 11,
+      "seconds": 0.4583333333333333,
+      "eyes": [
+        [
+          611.161,
+          320.081
+        ],
+        [
+          658.614,
+          335.158
+        ]
+      ],
+      "observedEyes": [
+        [
+          611.161,
+          320.081
+        ],
+        [
+          658.614,
+          335.158
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.0425869308172415,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 12,
+      "seconds": 0.5,
+      "eyes": [
+        [
+          610.333,
+          320.783
+        ],
+        [
+          658.0,
+          335.5
+        ]
+      ],
+      "observedEyes": [
+        [
+          610.333,
+          320.783
+        ],
+        [
+          658.0,
+          335.5
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.7888529358817746,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 13,
+      "seconds": 0.5416666666666666,
+      "eyes": [
+        [
+          609.905,
+          321.397
+        ],
+        [
+          657.82,
+          335.84
+        ]
+      ],
+      "observedEyes": [
+        [
+          609.905,
+          321.397
+        ],
+        [
+          657.82,
+          335.84
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.1330698805429906,
+      "candidateCount": 3,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 14,
+      "seconds": 0.5833333333333334,
+      "eyes": [
+        [
+          609.387,
+          322.339
+        ],
+        [
+          657.156,
+          336.444
+        ]
+      ],
+      "observedEyes": [
+        [
+          609.387,
+          322.339
+        ],
+        [
+          657.156,
+          336.444
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.9730090265366944,
+      "candidateCount": 3,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 15,
+      "seconds": 0.625,
+      "eyes": [
+        [
+          608.907,
+          322.981
+        ],
+        [
+          657.264,
+          336.17
+        ]
+      ],
+      "observedEyes": [
+        [
+          608.907,
+          322.981
+        ],
+        [
+          657.264,
+          336.17
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.0973574191236541,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 16,
+      "seconds": 0.6666666666666666,
+      "eyes": [
+        [
+          608.371,
+          323.645
+        ],
+        [
+          656.804,
+          336.482
+        ]
+      ],
+      "observedEyes": [
+        [
+          608.371,
+          323.645
+        ],
+        [
+          656.804,
+          336.482
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.409861872509029,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 17,
+      "seconds": 0.7083333333333334,
+      "eyes": [
+        [
+          607.897,
+          324.931
+        ],
+        [
+          656.778,
+          336.722
+        ]
+      ],
+      "observedEyes": [
+        [
+          607.897,
+          324.931
+        ],
+        [
+          656.778,
+          336.722
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.6120595633196555,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 18,
+      "seconds": 0.75,
+      "eyes": [
+        [
+          607.367,
+          325.717
+        ],
+        [
+          656.385,
+          337.769
+        ]
+      ],
+      "observedEyes": [
+        [
+          607.367,
+          325.717
+        ],
+        [
+          656.385,
+          337.769
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 2.066019858964328,
+      "candidateCount": 4,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 19,
+      "seconds": 0.7916666666666666,
+      "eyes": [
+        [
+          607.036,
+          326.946
+        ],
+        [
+          656.0,
+          337.667
+        ]
+      ],
+      "observedEyes": [
+        [
+          607.036,
+          326.946
+        ],
+        [
+          656.0,
+          337.667
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.6715720828384084,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 20,
+      "seconds": 0.8333333333333334,
+      "eyes": [
+        [
+          606.786,
+          328.036
+        ],
+        [
+          655.857,
+          338.339
+        ]
+      ],
+      "observedEyes": [
+        [
+          606.786,
+          328.036
+        ],
+        [
+          655.857,
+          338.339
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.8052284742874463,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 21,
+      "seconds": 0.875,
+      "eyes": [
+        [
+          606.315,
+          329.574
+        ],
+        [
+          655.961,
+          339.49
+        ]
+      ],
+      "observedEyes": [
+        [
+          606.315,
+          329.574
+        ],
+        [
+          655.961,
+          339.49
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 2.764386044595031,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 22,
+      "seconds": 0.9166666666666666,
+      "eyes": [
+        [
+          605.158,
+          332.026
+        ],
+        [
+          655.972,
+          341.444
+        ]
+      ],
+      "observedEyes": [
+        [
+          605.158,
+          332.026
+        ],
+        [
+          655.972,
+          341.444
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 4.665730435491652,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 23,
+      "seconds": 0.9583333333333334,
+      "eyes": [
+        [
+          604.81,
+          333.647
+        ],
+        [
+          655.501,
+          342.821
+        ]
+      ],
+      "observedEyes": null,
+      "poseSource": "short-gap-lower-face-flow-estimate",
+      "flowMedianResidualPixels": 0.07338189333677292,
+      "gapFrames": 1,
+      "selectionDisplacementPixels": 0.21629709005355835,
+      "candidateCount": 0,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 24,
+      "seconds": 1.0,
+      "eyes": [
+        [
+          604.914,
+          334.955
+        ],
+        [
+          655.267,
+          344.411
+        ]
+      ],
+      "observedEyes": null,
+      "poseSource": "short-gap-lower-face-flow-estimate",
+      "flowMedianResidualPixels": 0.1556839942932129,
+      "gapFrames": 2,
+      "selectionDisplacementPixels": 0.047291021794080734,
+      "candidateCount": 0,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 25,
+      "seconds": 1.0416666666666667,
+      "eyes": [
+        [
+          604.887,
+          336.44
+        ],
+        [
+          654.848,
+          346.562
+        ]
+      ],
+      "observedEyes": null,
+      "poseSource": "short-gap-lower-face-flow-estimate",
+      "flowMedianResidualPixels": 0.12067157030105591,
+      "gapFrames": 3,
+      "selectionDisplacementPixels": 0.03473849594593048,
+      "candidateCount": 0,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 26,
+      "seconds": 1.0833333333333333,
+      "eyes": [
+        [
+          605.08,
+          337.086
+        ],
+        [
+          654.466,
+          348.44
+        ]
+      ],
+      "observedEyes": null,
+      "poseSource": "short-gap-lower-face-flow-estimate",
+      "flowMedianResidualPixels": 0.1057925745844841,
+      "gapFrames": 4,
+      "selectionDisplacementPixels": 0.046438489109277725,
+      "candidateCount": 0,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 27,
+      "seconds": 1.125,
+      "eyes": [
+        [
+          605.516,
+          336.617
+        ],
+        [
+          654.473,
+          349.323
+        ]
+      ],
+      "observedEyes": null,
+      "poseSource": "short-gap-lower-face-flow-estimate",
+      "flowMedianResidualPixels": 0.08540163189172745,
+      "gapFrames": 5,
+      "selectionDisplacementPixels": 0.030002737417817116,
+      "candidateCount": 0,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 28,
+      "seconds": 1.1666666666666667,
+      "eyes": [
+        [
+          605.5,
+          335.9
+        ],
+        [
+          655.588,
+          350.412
+        ]
+      ],
+      "observedEyes": [
+        [
+          605.5,
+          335.9
+        ],
+        [
+          655.588,
+          350.412
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 2.27589758273369,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 29,
+      "seconds": 1.2083333333333333,
+      "eyes": [
+        [
+          607.206,
+          332.353
+        ],
+        [
+          657.186,
+          348.488
+        ]
+      ],
+      "observedEyes": [
+        [
+          607.206,
+          332.353
+        ],
+        [
+          657.186,
+          348.488
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 6.436432646105951,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 30,
+      "seconds": 1.25,
+      "eyes": [
+        [
+          609.224,
+          328.082
+        ],
+        [
+          658.14,
+          346.96
+        ]
+      ],
+      "observedEyes": [
+        [
+          609.224,
+          328.082
+        ],
+        [
+          658.14,
+          346.96
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 6.525934887055952,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 31,
+      "seconds": 1.2916666666666667,
+      "eyes": [
+        [
+          611.614,
+          324.789
+        ],
+        [
+          659.368,
+          345.158
+        ]
+      ],
+      "observedEyes": [
+        [
+          611.614,
+          324.789
+        ],
+        [
+          659.368,
+          345.158
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 6.248915950829463,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 32,
+      "seconds": 1.3333333333333333,
+      "eyes": [
+        [
+          614.0,
+          321.741
+        ],
+        [
+          660.719,
+          343.386
+        ]
+      ],
+      "observedEyes": [
+        [
+          614.0,
+          321.741
+        ],
+        [
+          660.719,
+          343.386
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 6.099018715115432,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 33,
+      "seconds": 1.375,
+      "eyes": [
+        [
+          616.677,
+          317.597
+        ],
+        [
+          662.948,
+          341.241
+        ]
+      ],
+      "observedEyes": [
+        [
+          616.677,
+          317.597
+        ],
+        [
+          662.948,
+          341.241
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 8.027351519356689,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 34,
+      "seconds": 1.4166666666666667,
+      "eyes": [
+        [
+          619.323,
+          314.5
+        ],
+        [
+          665.131,
+          338.525
+        ]
+      ],
+      "observedEyes": [
+        [
+          619.323,
+          314.5
+        ],
+        [
+          665.131,
+          338.525
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 7.557793243290266,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 35,
+      "seconds": 1.4583333333333333,
+      "eyes": [
+        [
+          622.0,
+          312.386
+        ],
+        [
+          667.333,
+          336.921
+        ]
+      ],
+      "observedEyes": [
+        [
+          622.0,
+          312.386
+        ],
+        [
+          667.333,
+          336.921
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 6.1357989476885315,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 36,
+      "seconds": 1.5,
+      "eyes": [
+        [
+          624.183,
+          310.267
+        ],
+        [
+          669.404,
+          335.509
+        ]
+      ],
+      "observedEyes": [
+        [
+          624.183,
+          310.267
+        ],
+        [
+          669.404,
+          335.509
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 5.548546876586406,
+      "candidateCount": 3,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 37,
+      "seconds": 1.5416666666666667,
+      "eyes": [
+        [
+          626.652,
+          308.03
+        ],
+        [
+          671.766,
+          333.375
+        ]
+      ],
+      "observedEyes": [
+        [
+          626.652,
+          308.03
+        ],
+        [
+          671.766,
+          333.375
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 6.513822861450033,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 38,
+      "seconds": 1.5833333333333333,
+      "eyes": [
+        [
+          628.797,
+          306.203
+        ],
+        [
+          673.767,
+          331.417
+        ]
+      ],
+      "observedEyes": [
+        [
+          628.797,
+          306.203
+        ],
+        [
+          673.767,
+          331.417
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 5.6178681170441935,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 39,
+      "seconds": 1.625,
+      "eyes": [
+        [
+          630.492,
+          305.063
+        ],
+        [
+          675.429,
+          330.317
+        ]
+      ],
+      "observedEyes": [
+        [
+          630.492,
+          305.063
+        ],
+        [
+          675.429,
+          330.317
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 4.035183579370161,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 40,
+      "seconds": 1.6666666666666667,
+      "eyes": [
+        [
+          631.879,
+          303.909
+        ],
+        [
+          677.016,
+          329.065
+        ]
+      ],
+      "observedEyes": [
+        [
+          631.879,
+          303.909
+        ],
+        [
+          677.016,
+          329.065
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 3.826767365249601,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 41,
+      "seconds": 1.7083333333333333,
+      "eyes": [
+        [
+          633.18,
+          303.082
+        ],
+        [
+          678.762,
+          327.54
+        ]
+      ],
+      "observedEyes": [
+        [
+          633.18,
+          303.082
+        ],
+        [
+          678.762,
+          327.54
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 3.8600628770347116,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 42,
+      "seconds": 1.75,
+      "eyes": [
+        [
+          634.175,
+          302.571
+        ],
+        [
+          680.048,
+          326.111
+        ]
+      ],
+      "observedEyes": [
+        [
+          634.175,
+          302.571
+        ],
+        [
+          680.048,
+          326.111
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 3.039637255219181,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 43,
+      "seconds": 1.7916666666666667,
+      "eyes": [
+        [
+          634.361,
+          302.459
+        ],
+        [
+          681.015,
+          324.821
+        ]
+      ],
+      "observedEyes": [
+        [
+          634.361,
+          302.459
+        ],
+        [
+          681.015,
+          324.821
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.8299316671298174,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 44,
+      "seconds": 1.8333333333333333,
+      "eyes": [
+        [
+          634.55,
+          302.5
+        ],
+        [
+          681.565,
+          323.548
+        ]
+      ],
+      "observedEyes": [
+        [
+          634.55,
+          302.5
+        ],
+        [
+          681.565,
+          323.548
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.5798486018994347,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 45,
+      "seconds": 1.875,
+      "eyes": [
+        [
+          634.407,
+          302.831
+        ],
+        [
+          682.319,
+          321.208
+        ]
+      ],
+      "observedEyes": [
+        [
+          634.407,
+          302.831
+        ],
+        [
+          682.319,
+          321.208
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 2.8190198071856587,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 46,
+      "seconds": 1.9166666666666667,
+      "eyes": [
+        [
+          634.049,
+          303.541
+        ],
+        [
+          682.887,
+          319.085
+        ]
+      ],
+      "observedEyes": [
+        [
+          634.049,
+          303.541
+        ],
+        [
+          682.887,
+          319.085
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 2.993831364620925,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 47,
+      "seconds": 1.9583333333333333,
+      "eyes": [
+        [
+          633.295,
+          304.262
+        ],
+        [
+          683.029,
+          317.912
+        ]
+      ],
+      "observedEyes": [
+        [
+          633.295,
+          304.262
+        ],
+        [
+          683.029,
+          317.912
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 2.224848424809731,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 48,
+      "seconds": 2.0,
+      "eyes": [
+        [
+          633.136,
+          305.085
+        ],
+        [
+          682.903,
+          317.016
+        ]
+      ],
+      "observedEyes": [
+        [
+          633.136,
+          305.085
+        ],
+        [
+          682.903,
+          317.016
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.7422530685286992,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 49,
+      "seconds": 2.0416666666666665,
+      "eyes": [
+        [
+          632.679,
+          306.429
+        ],
+        [
+          683.333,
+          315.444
+        ]
+      ],
+      "observedEyes": [
+        [
+          632.679,
+          306.429
+        ],
+        [
+          683.333,
+          315.444
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 3.0488879022159514,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 50,
+      "seconds": 2.0833333333333335,
+      "eyes": [
+        [
+          632.414,
+          307.966
+        ],
+        [
+          683.379,
+          314.242
+        ]
+      ],
+      "observedEyes": [
+        [
+          632.414,
+          307.966
+        ],
+        [
+          683.379,
+          314.242
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 2.762465811077285,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 51,
+      "seconds": 2.125,
+      "eyes": [
+        [
+          631.951,
+          309.164
+        ],
+        [
+          683.25,
+          313.7
+        ]
+      ],
+      "observedEyes": [
+        [
+          631.951,
+          309.164
+        ],
+        [
+          683.25,
+          313.7
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.8422403069762152,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 52,
+      "seconds": 2.1666666666666665,
+      "eyes": [
+        [
+          631.929,
+          310.5
+        ],
+        [
+          683.35,
+          313.383
+        ]
+      ],
+      "observedEyes": [
+        [
+          631.929,
+          310.5
+        ],
+        [
+          683.35,
+          313.383
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.6683317812226577,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 53,
+      "seconds": 2.2083333333333335,
+      "eyes": [
+        [
+          632.322,
+          311.881
+        ],
+        [
+          683.6,
+          312.923
+        ]
+      ],
+      "observedEyes": [
+        [
+          632.322,
+          311.881
+        ],
+        [
+          683.6,
+          312.923
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.960070641375847,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 54,
+      "seconds": 2.25,
+      "eyes": [
+        [
+          632.322,
+          313.356
+        ],
+        [
+          683.683,
+          312.825
+        ]
+      ],
+      "observedEyes": [
+        [
+          632.322,
+          313.356
+        ],
+        [
+          683.683,
+          312.825
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.6024598146020541,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 55,
+      "seconds": 2.2916666666666665,
+      "eyes": [
+        [
+          632.582,
+          314.673
+        ],
+        [
+          684.0,
+          312.908
+        ]
+      ],
+      "observedEyes": [
+        [
+          632.582,
+          314.673
+        ],
+        [
+          684.0,
+          312.908
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.6701299204470799,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 56,
+      "seconds": 2.3333333333333335,
+      "eyes": [
+        [
+          632.655,
+          315.362
+        ],
+        [
+          683.911,
+          313.018
+        ]
+      ],
+      "observedEyes": [
+        [
+          632.655,
+          315.362
+        ],
+        [
+          683.911,
+          313.018
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.8350370814457387,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 57,
+      "seconds": 2.375,
+      "eyes": [
+        [
+          633.0,
+          316.754
+        ],
+        [
+          684.667,
+          312.75
+        ]
+      ],
+      "observedEyes": [
+        [
+          633.0,
+          316.754
+        ],
+        [
+          684.667,
+          312.75
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 2.236386983209722,
+      "candidateCount": 3,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 58,
+      "seconds": 2.4166666666666665,
+      "eyes": [
+        [
+          633.476,
+          317.286
+        ],
+        [
+          685.098,
+          312.787
+        ]
+      ],
+      "observedEyes": [
+        [
+          633.476,
+          317.286
+        ],
+        [
+          685.098,
+          312.787
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.1467563383846973,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 59,
+      "seconds": 2.4583333333333335,
+      "eyes": [
+        [
+          633.774,
+          317.855
+        ],
+        [
+          685.035,
+          312.895
+        ]
+      ],
+      "observedEyes": [
+        [
+          633.774,
+          317.855
+        ],
+        [
+          685.035,
+          312.895
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.7674655977254431,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 60,
+      "seconds": 2.5,
+      "eyes": [
+        [
+          633.667,
+          318.083
+        ],
+        [
+          685.351,
+          313.193
+        ]
+      ],
+      "observedEyes": [
+        [
+          633.667,
+          318.083
+        ],
+        [
+          685.351,
+          313.193
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.6868963944035189,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 61,
+      "seconds": 2.5416666666666665,
+      "eyes": [
+        [
+          634.209,
+          318.881
+        ],
+        [
+          685.852,
+          313.333
+        ]
+      ],
+      "observedEyes": [
+        [
+          634.209,
+          318.881
+        ],
+        [
+          685.852,
+          313.333
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.484476138823264,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 62,
+      "seconds": 2.5833333333333335,
+      "eyes": [
+        [
+          634.294,
+          319.118
+        ],
+        [
+          686.019,
+          313.537
+        ]
+      ],
+      "observedEyes": [
+        [
+          634.294,
+          319.118
+        ],
+        [
+          686.019,
+          313.537
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.5150812272305327,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 63,
+      "seconds": 2.625,
+      "eyes": [
+        [
+          634.453,
+          319.328
+        ],
+        [
+          686.654,
+          313.712
+        ]
+      ],
+      "observedEyes": [
+        [
+          634.453,
+          319.328
+        ],
+        [
+          686.654,
+          313.712
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.9226449143471798,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 64,
+      "seconds": 2.6666666666666665,
+      "eyes": [
+        [
+          634.754,
+          319.574
+        ],
+        [
+          686.407,
+          313.407
+        ]
+      ],
+      "observedEyes": [
+        [
+          634.754,
+          319.574
+        ],
+        [
+          686.407,
+          313.407
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.7799359884311101,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 65,
+      "seconds": 2.7083333333333335,
+      "eyes": [
+        [
+          634.689,
+          319.672
+        ],
+        [
+          686.755,
+          313.66
+        ]
+      ],
+      "observedEyes": [
+        [
+          634.689,
+          319.672
+        ],
+        [
+          686.755,
+          313.66
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.5478864567834304,
+      "candidateCount": 3,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 66,
+      "seconds": 2.75,
+      "eyes": [
+        [
+          634.885,
+          319.836
+        ],
+        [
+          686.723,
+          314.447
+        ]
+      ],
+      "observedEyes": [
+        [
+          634.885,
+          319.836
+        ],
+        [
+          686.723,
+          314.447
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.0431280425338625,
+      "candidateCount": 4,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 67,
+      "seconds": 2.7916666666666665,
+      "eyes": [
+        [
+          635.049,
+          320.033
+        ],
+        [
+          686.833,
+          314.352
+        ]
+      ],
+      "observedEyes": [
+        [
+          635.049,
+          320.033
+        ],
+        [
+          686.833,
+          314.352
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.40133617496669793,
+      "candidateCount": 3,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 68,
+      "seconds": 2.8333333333333335,
+      "eyes": [
+        [
+          634.965,
+          320.193
+        ],
+        [
+          686.887,
+          314.396
+        ]
+      ],
+      "observedEyes": [
+        [
+          634.965,
+          320.193
+        ],
+        [
+          686.887,
+          314.396
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.25048399260581566,
+      "candidateCount": 3,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 69,
+      "seconds": 2.875,
+      "eyes": [
+        [
+          635.105,
+          320.544
+        ],
+        [
+          687.058,
+          314.712
+        ]
+      ],
+      "observedEyes": [
+        [
+          635.105,
+          320.544
+        ],
+        [
+          687.058,
+          314.712
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.7365543846765683,
+      "candidateCount": 3,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 70,
+      "seconds": 2.9166666666666665,
+      "eyes": [
+        [
+          635.233,
+          320.8
+        ],
+        [
+          687.054,
+          314.571
+        ]
+      ],
+      "observedEyes": [
+        [
+          635.233,
+          320.8
+        ],
+        [
+          687.054,
+          314.571
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.42654409634439405,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 71,
+      "seconds": 2.9583333333333335,
+      "eyes": [
+        [
+          635.5,
+          321.3
+        ],
+        [
+          687.093,
+          315.296
+        ]
+      ],
+      "observedEyes": [
+        [
+          635.5,
+          321.3
+        ],
+        [
+          687.093,
+          315.296
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.292583927652038,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 72,
+      "seconds": 3.0,
+      "eyes": [
+        [
+          635.364,
+          321.655
+        ],
+        [
+          687.218,
+          315.309
+        ]
+      ],
+      "observedEyes": [
+        [
+          635.364,
+          321.655
+        ],
+        [
+          687.218,
+          315.309
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.5061044143797411,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 73,
+      "seconds": 3.0416666666666665,
+      "eyes": [
+        [
+          635.286,
+          323.306
+        ],
+        [
+          686.902,
+          317.317
+        ]
+      ],
+      "observedEyes": [
+        [
+          635.286,
+          323.306
+        ],
+        [
+          686.902,
+          317.317
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 3.6860691521327635,
+      "candidateCount": 3,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 74,
+      "seconds": 3.0833333333333335,
+      "eyes": [
+        [
+          635.056,
+          325.194
+        ],
+        [
+          688.0,
+          318.2
+        ]
+      ],
+      "observedEyes": [
+        [
+          635.056,
+          325.194
+        ],
+        [
+          688.0,
+          318.2
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 3.3109130697395823,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 75,
+      "seconds": 3.125,
+      "eyes": [
+        [
+          635.42,
+          326.754
+        ],
+        [
+          688.031,
+          319.923
+        ]
+      ],
+      "observedEyes": null,
+      "poseSource": "short-gap-lower-face-flow-estimate",
+      "flowMedianResidualPixels": 0.07693207263946533,
+      "gapFrames": 1,
+      "selectionDisplacementPixels": 0.037496306002140045,
+      "candidateCount": 0,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 76,
+      "seconds": 3.1666666666666665,
+      "eyes": [
+        [
+          635.88,
+          328.32
+        ],
+        [
+          688.229,
+          321.66
+        ]
+      ],
+      "observedEyes": null,
+      "poseSource": "short-gap-lower-face-flow-estimate",
+      "flowMedianResidualPixels": 0.0787087231874466,
+      "gapFrames": 2,
+      "selectionDisplacementPixels": 0.023045197129249573,
+      "candidateCount": 0,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 77,
+      "seconds": 3.2083333333333335,
+      "eyes": [
+        [
+          636.817,
+          331.317
+        ],
+        [
+          688.905,
+          325.531
+        ]
+      ],
+      "observedEyes": null,
+      "poseSource": "short-gap-lower-face-flow-estimate",
+      "flowMedianResidualPixels": 0.09646986424922943,
+      "gapFrames": 3,
+      "selectionDisplacementPixels": 0.0437992624938488,
+      "candidateCount": 0,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 78,
+      "seconds": 3.25,
+      "eyes": [
+        [
+          637.778,
+          333.676
+        ],
+        [
+          689.724,
+          329.291
+        ]
+      ],
+      "observedEyes": null,
+      "poseSource": "short-gap-lower-face-flow-estimate",
+      "flowMedianResidualPixels": 0.10492256283760071,
+      "gapFrames": 4,
+      "selectionDisplacementPixels": 0.02221755124628544,
+      "candidateCount": 0,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 79,
+      "seconds": 3.2916666666666665,
+      "eyes": [
+        [
+          638.441,
+          335.619
+        ],
+        [
+          690.345,
+          332.494
+        ]
+      ],
+      "observedEyes": null,
+      "poseSource": "short-gap-lower-face-flow-estimate",
+      "flowMedianResidualPixels": 0.10167834907770157,
+      "gapFrames": 5,
+      "selectionDisplacementPixels": 0.028820374980568886,
+      "candidateCount": 0,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 80,
+      "seconds": 3.3333333333333335,
+      "eyes": [
+        [
+          639.158,
+          337.158
+        ],
+        [
+          690.983,
+          335.282
+        ]
+      ],
+      "observedEyes": null,
+      "poseSource": "short-gap-lower-face-flow-estimate",
+      "flowMedianResidualPixels": 0.08775506168603897,
+      "gapFrames": 6,
+      "selectionDisplacementPixels": 0.02030758559703827,
+      "candidateCount": 0,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 81,
+      "seconds": 3.375,
+      "eyes": [
+        [
+          639.83,
+          338.953
+        ],
+        [
+          691.592,
+          339.23
+        ]
+      ],
+      "observedEyes": null,
+      "poseSource": "short-gap-lower-face-flow-estimate",
+      "flowMedianResidualPixels": 0.1854093223810196,
+      "gapFrames": 7,
+      "selectionDisplacementPixels": 0.06907480955123901,
+      "candidateCount": 0,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 82,
+      "seconds": 3.4166666666666665,
+      "eyes": [
+        [
+          640.364,
+          340.273
+        ],
+        [
+          691.542,
+          341.208
+        ]
+      ],
+      "observedEyes": [
+        [
+          640.364,
+          340.273
+        ],
+        [
+          691.542,
+          341.208
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 3.402807974523566,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 83,
+      "seconds": 3.4583333333333335,
+      "eyes": [
+        [
+          640.535,
+          339.953
+        ],
+        [
+          691.871,
+          343.323
+        ]
+      ],
+      "observedEyes": [
+        [
+          640.535,
+          339.953
+        ],
+        [
+          691.871,
+          343.323
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 2.5020079311399117,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 84,
+      "seconds": 3.5,
+      "eyes": [
+        [
+          640.979,
+          339.723
+        ],
+        [
+          692.029,
+          344.794
+        ]
+      ],
+      "observedEyes": [
+        [
+          640.979,
+          339.723
+        ],
+        [
+          692.029,
+          344.794
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.979974811556359,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 85,
+      "seconds": 3.5416666666666665,
+      "eyes": [
+        [
+          640.667,
+          338.451
+        ],
+        [
+          690.351,
+          347.649
+        ]
+      ],
+      "observedEyes": [
+        [
+          640.667,
+          338.451
+        ],
+        [
+          690.351,
+          347.649
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 4.621358959197657,
+      "candidateCount": 3,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 86,
+      "seconds": 3.5833333333333335,
+      "eyes": [
+        [
+          640.482,
+          336.982
+        ],
+        [
+          689.357,
+          348.429
+        ]
+      ],
+      "observedEyes": [
+        [
+          640.482,
+          336.982
+        ],
+        [
+          689.357,
+          348.429
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 2.7440004838515653,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 87,
+      "seconds": 3.625,
+      "eyes": [
+        [
+          639.966,
+          335.729
+        ],
+        [
+          688.425,
+          348.6
+        ]
+      ],
+      "observedEyes": [
+        [
+          639.966,
+          335.729
+        ],
+        [
+          688.425,
+          348.6
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 2.30318404641552,
+      "candidateCount": 3,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 88,
+      "seconds": 3.6666666666666665,
+      "eyes": [
+        [
+          639.509,
+          334.298
+        ],
+        [
+          687.714,
+          348.214
+        ]
+      ],
+      "observedEyes": [
+        [
+          639.509,
+          334.298
+        ],
+        [
+          687.714,
+          348.214
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 2.3105253697007324,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 89,
+      "seconds": 3.7083333333333335,
+      "eyes": [
+        [
+          637.879,
+          331.069
+        ],
+        [
+          685.465,
+          347.372
+        ]
+      ],
+      "observedEyes": [
+        [
+          637.879,
+          331.069
+        ],
+        [
+          685.465,
+          347.372
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 6.018774440389424,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 90,
+      "seconds": 3.75,
+      "eyes": [
+        [
+          636.467,
+          328.817
+        ],
+        [
+          684.071,
+          346.238
+        ]
+      ],
+      "observedEyes": [
+        [
+          636.467,
+          328.817
+        ],
+        [
+          684.071,
+          346.238
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 4.455400205685614,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 91,
+      "seconds": 3.7916666666666665,
+      "eyes": [
+        [
+          635.23,
+          326.902
+        ],
+        [
+          682.205,
+          344.773
+        ]
+      ],
+      "observedEyes": [
+        [
+          635.23,
+          326.902
+        ],
+        [
+          682.205,
+          344.773
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 4.653188936986815,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 92,
+      "seconds": 3.8333333333333335,
+      "eyes": [
+        [
+          634.242,
+          325.21
+        ],
+        [
+          681.116,
+          343.233
+        ]
+      ],
+      "observedEyes": [
+        [
+          634.242,
+          325.21
+        ],
+        [
+          681.116,
+          343.233
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 3.844944188823379,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 93,
+      "seconds": 3.875,
+      "eyes": [
+        [
+          632.312,
+          322.562
+        ],
+        [
+          678.956,
+          340.156
+        ]
+      ],
+      "observedEyes": [
+        [
+          632.312,
+          322.562
+        ],
+        [
+          678.956,
+          340.156
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 7.0355854804427755,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 94,
+      "seconds": 3.9166666666666665,
+      "eyes": [
+        [
+          630.387,
+          320.419
+        ],
+        [
+          676.796,
+          338.041
+        ]
+      ],
+      "observedEyes": [
+        [
+          630.387,
+          320.419
+        ],
+        [
+          676.796,
+          338.041
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 5.90362251522904,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 95,
+      "seconds": 3.9583333333333335,
+      "eyes": [
+        [
+          628.982,
+          318.893
+        ],
+        [
+          675.463,
+          336.39
+        ]
+      ],
+      "observedEyes": [
+        [
+          628.982,
+          318.893
+        ],
+        [
+          675.463,
+          336.39
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 4.1959401230643,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 96,
+      "seconds": 4.0,
+      "eyes": [
+        [
+          628.032,
+          317.194
+        ],
+        [
+          673.955,
+          334.932
+        ]
+      ],
+      "observedEyes": [
+        [
+          628.032,
+          317.194
+        ],
+        [
+          673.955,
+          334.932
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 4.045272112271289,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 97,
+      "seconds": 4.041666666666667,
+      "eyes": [
+        [
+          625.673,
+          315.018
+        ],
+        [
+          672.535,
+          331.791
+        ]
+      ],
+      "observedEyes": [
+        [
+          625.673,
+          315.018
+        ],
+        [
+          672.535,
+          331.791
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 6.656338753164777,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 98,
+      "seconds": 4.083333333333333,
+      "eyes": [
+        [
+          624.127,
+          313.291
+        ],
+        [
+          670.708,
+          329.938
+        ]
+      ],
+      "observedEyes": [
+        [
+          624.127,
+          313.291
+        ],
+        [
+          670.708,
+          329.938
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 4.919779174257911,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 99,
+      "seconds": 4.125,
+      "eyes": [
+        [
+          623.17,
+          312.698
+        ],
+        [
+          669.767,
+          329.14
+        ]
+      ],
+      "observedEyes": [
+        [
+          623.17,
+          312.698
+        ],
+        [
+          669.767,
+          329.14
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 2.3598207240164193,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 100,
+      "seconds": 4.166666666666667,
+      "eyes": [
+        [
+          622.218,
+          311.873
+        ],
+        [
+          668.83,
+          327.936
+        ]
+      ],
+      "observedEyes": [
+        [
+          622.218,
+          311.873
+        ],
+        [
+          668.83,
+          327.936
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 2.7852499947282494,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 101,
+      "seconds": 4.208333333333333,
+      "eyes": [
+        [
+          620.271,
+          310.271
+        ],
+        [
+          667.393,
+          326.25
+        ]
+      ],
+      "observedEyes": [
+        [
+          620.271,
+          310.271
+        ],
+        [
+          667.393,
+          326.25
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 4.7364427997118455,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 102,
+      "seconds": 4.25,
+      "eyes": [
+        [
+          619.085,
+          309.576
+        ],
+        [
+          666.475,
+          325.356
+        ]
+      ],
+      "observedEyes": [
+        [
+          619.085,
+          309.576
+        ],
+        [
+          666.475,
+          325.356
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 2.656610650068873,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 103,
+      "seconds": 4.291666666666667,
+      "eyes": [
+        [
+          618.207,
+          309.069
+        ],
+        [
+          665.561,
+          324.965
+        ]
+      ],
+      "observedEyes": [
+        [
+          618.207,
+          309.069
+        ],
+        [
+          665.561,
+          324.965
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 2.007261185841843,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 104,
+      "seconds": 4.333333333333333,
+      "eyes": [
+        [
+          617.55,
+          308.967
+        ],
+        [
+          664.966,
+          324.603
+        ]
+      ],
+      "observedEyes": [
+        [
+          617.55,
+          308.967
+        ],
+        [
+          664.966,
+          324.603
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.3617624726708029,
+      "candidateCount": 3,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 105,
+      "seconds": 4.375,
+      "eyes": [
+        [
+          616.65,
+          308.817
+        ],
+        [
+          664.153,
+          324.254
+        ]
+      ],
+      "observedEyes": [
+        [
+          616.65,
+          308.817
+        ],
+        [
+          664.153,
+          324.254
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.7972174371559075,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 106,
+      "seconds": 4.416666666666667,
+      "eyes": [
+        [
+          615.724,
+          308.931
+        ],
+        [
+          663.169,
+          324.246
+        ]
+      ],
+      "observedEyes": [
+        [
+          615.724,
+          308.931
+        ],
+        [
+          663.169,
+          324.246
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.9162438413992073,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 107,
+      "seconds": 4.458333333333333,
+      "eyes": [
+        [
+          615.484,
+          308.887
+        ],
+        [
+          663.136,
+          324.593
+        ]
+      ],
+      "observedEyes": [
+        [
+          615.484,
+          308.887
+        ],
+        [
+          663.136,
+          324.593
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.5929441302432414,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 108,
+      "seconds": 4.5,
+      "eyes": [
+        [
+          614.842,
+          309.035
+        ],
+        [
+          662.421,
+          324.509
+        ]
+      ],
+      "observedEyes": [
+        [
+          614.842,
+          309.035
+        ],
+        [
+          662.421,
+          324.509
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.378121608213828,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 109,
+      "seconds": 4.541666666666667,
+      "eyes": [
+        [
+          614.344,
+          309.148
+        ],
+        [
+          662.172,
+          324.594
+        ]
+      ],
+      "observedEyes": [
+        [
+          614.344,
+          309.148
+        ],
+        [
+          662.172,
+          324.594
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.7736548752143065,
+      "candidateCount": 4,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 110,
+      "seconds": 4.583333333333333,
+      "eyes": [
+        [
+          614.033,
+          309.393
+        ],
+        [
+          661.297,
+          325.078
+        ]
+      ],
+      "observedEyes": [
+        [
+          614.033,
+          309.393
+        ],
+        [
+          661.297,
+          325.078
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.3969652903025565,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 111,
+      "seconds": 4.625,
+      "eyes": [
+        [
+          613.917,
+          309.667
+        ],
+        [
+          661.18,
+          325.607
+        ]
+      ],
+      "observedEyes": [
+        [
+          613.917,
+          309.667
+        ],
+        [
+          661.18,
+          325.607
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.8380080283370666,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 112,
+      "seconds": 4.666666666666667,
+      "eyes": [
+        [
+          613.75,
+          310.0
+        ],
+        [
+          660.897,
+          325.81
+        ]
+      ],
+      "observedEyes": [
+        [
+          613.75,
+          310.0
+        ],
+        [
+          660.897,
+          325.81
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.722046319521318,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 113,
+      "seconds": 4.708333333333333,
+      "eyes": [
+        [
+          613.578,
+          310.547
+        ],
+        [
+          660.407,
+          326.407
+        ]
+      ],
+      "observedEyes": [
+        [
+          613.578,
+          310.547
+        ],
+        [
+          660.407,
+          326.407
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.3450937764526505,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 114,
+      "seconds": 4.75,
+      "eyes": [
+        [
+          613.466,
+          310.931
+        ],
+        [
+          660.707,
+          326.879
+        ]
+      ],
+      "observedEyes": [
+        [
+          613.466,
+          310.931
+        ],
+        [
+          660.707,
+          326.879
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.9592387750313429,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 115,
+      "seconds": 4.791666666666667,
+      "eyes": [
+        [
+          613.5,
+          311.435
+        ],
+        [
+          660.709,
+          327.618
+        ]
+      ],
+      "observedEyes": [
+        [
+          613.5,
+          311.435
+        ],
+        [
+          660.709,
+          327.618
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.244501319253441,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 116,
+      "seconds": 4.833333333333333,
+      "eyes": [
+        [
+          613.483,
+          311.767
+        ],
+        [
+          660.358,
+          327.887
+        ]
+      ],
+      "observedEyes": [
+        [
+          613.483,
+          311.767
+        ],
+        [
+          660.358,
+          327.887
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.7732717722735076,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 117,
+      "seconds": 4.875,
+      "eyes": [
+        [
+          613.344,
+          312.164
+        ],
+        [
+          660.164,
+          328.273
+        ]
+      ],
+      "observedEyes": [
+        [
+          613.344,
+          312.164
+        ],
+        [
+          660.164,
+          328.273
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.8532420109846299,
+      "candidateCount": 3,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 118,
+      "seconds": 4.916666666666667,
+      "eyes": [
+        [
+          613.05,
+          312.733
+        ],
+        [
+          660.351,
+          328.561
+        ]
+      ],
+      "observedEyes": [
+        [
+          613.05,
+          312.733
+        ],
+        [
+          660.351,
+          328.561
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.985024018073734,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 119,
+      "seconds": 4.958333333333333,
+      "eyes": [
+        [
+          613.211,
+          313.123
+        ],
+        [
+          660.439,
+          329.193
+        ]
+      ],
+      "observedEyes": [
+        [
+          613.211,
+          313.123
+        ],
+        [
+          660.439,
+          329.193
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 1.058899641774426,
+      "candidateCount": 2,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    },
+    {
+      "frame": 120,
+      "seconds": 5.0,
+      "eyes": [
+        [
+          613.271,
+          313.305
+        ],
+        [
+          660.151,
+          329.585
+        ]
+      ],
+      "observedEyes": [
+        [
+          613.271,
+          313.305
+        ],
+        [
+          660.151,
+          329.585
+        ]
+      ],
+      "poseSource": "blue-component-pair",
+      "flowMedianResidualPixels": null,
+      "gapFrames": 0,
+      "selectionDisplacementPixels": 0.6782627325727192,
+      "candidateCount": 3,
+      "scope": "Observed pair or explicitly labeled short-gap lower-face optical-flow estimate; not manually validated facial landmarks."
+    }
+  ],
+  "missingFrames": [],
+  "estimatedFrames": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81
+  ],
+  "humanApproval": false,
+  "runtimeIntegration": false,
+  "scope": "Source-only observed pair plus bounded short-gap lower-face-flow estimates. Missing poses hide experimental mouth. All estimates require motion review."
+}

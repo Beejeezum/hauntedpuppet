@@ -1,0 +1,23 @@
+Wisp live-character recovery — 2026-10-28
+
+Human result: scary painted-mouth-on-film V6 rejected for drift and pasted-on appearance. Native-pixel deformation trials V1 and V2 also rejected in self-review for stretched jaw/chest. No failed version goes into the live app. Original approved body films, friendly experimental proof and all older paths stay intact.
+
+Diagnosis: two-eye rigidity does not describe independent jaw acting. Automatic cavity components deviate median4.18/max7.28 source pixels from that anchor; this is diagnostic proxy evidence, not ground-truth lip annotation. Repainting cheeks also changes texture/lighting. The open attack performance is not an authored neutral talking rig. Do not spend credits repeatedly generating overlay mouths for it.
+
+Primary-source findings, checked2026-10-28:
+1. Runway Characters supports custom stylized avatars and live WebRTC sessions, with a5minute session cap. Its LiveKit integration accepts externally synthesized agent audio and supplies avatar video. Configured avatar voice/personality is bypassed in this visual-only integration. This could reuse the laptop speech adapter rather than splice a mouth onto an action movie. It still needs an actual Wisp visual/latency/framing audition; documentation is not proof of quality. The available Runway connector currently exposes generation tools, not realtime-session operations; inspect existing Runway UI or privately configured official API before choosing integration.
+https://docs.dev.runwayml.com/characters/concepts/
+https://docs.dev.runwayml.com/characters/livekit/
+https://docs.dev.runwayml.com/characters/integration/
+https://runway.com/product/characters
+Session workers are billed while active; normal shutdown cancels them. A failed/force-killed integration needs a server-enforced max_duration. Keep all provider keys server-side. No paid live session has been started in this recovery pass.
+
+2. Inochi2D deforms meshes from layered art with live parameters; official Creator/Session offer a real authoring path and macOS builds. This requires an authored neutral model, hidden-surface art, jaw/teeth topology, hands and deformation/physics work. It cannot turn a finished attack movie into a rig automatically. Session repository says it is under heavy development and not production ready; do not promise a production solution merely by installing it.
+https://github.com/Inochi2D/inochi2d
+https://github.com/Inochi2D/inochi-session
+https://inochi2d.com/download/
+
+3. MuseTalk1.5 provides prepared-video audio-driven lip inpainting; published realtime performance is on NVIDIA V100. Its official material does not establish Mac performance or Wisp/nonhuman skull suitability. A low-cost actual-face-detection/quality test must precede large downloads or GPU commitments. No install or model download performed.
+https://github.com/TMElyralab/MuseTalk
+
+Next audition: whole-character audio-driven rendering on the exact approved padded Wisp reference. Use an existing signed-in official interface if available; pre-existing fictional Wisp audio only, no microphone/camera. One short test with explicit duration/cost cap, no batch or automatic retries. Judge full-body coherence, jaw/eye mechanics, exact identity, fog material,20percent reserve, no tail loss, cancellation and actual latency. No renderer migration or full integration before that evidence. Independent16-cue video-library/playlist work remains in scope; the rejected puppet does not block shipping genuinely approved standalone movie cues.

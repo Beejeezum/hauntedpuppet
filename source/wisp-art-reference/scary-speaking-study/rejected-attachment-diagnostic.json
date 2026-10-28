@@ -1,0 +1,3765 @@
+{
+  "scope": "Diagnostic native mouth-cavity components vs a first-frame two-eye-rigid anchor. Not manually labeled lips, jaw accuracy or a replacement tracker.",
+  "source": "source/wisp-performance-reference/runway-pilots/motion-transfer-study/wisp-scary-motion-transfer-v35.mp4",
+  "sourceSha256": "21e8efec67ec7e024fc954cc16af458cad8f8427553a998341ff9d37286ca35a",
+  "humanVerdict": "Rejected: mouth drifts and looks pasted on.",
+  "validCandidateFrames": 121,
+  "frameCount": 121,
+  "medianEyeRigidResidualPixels": 4.180469148291308,
+  "maximumEyeRigidResidualPixels": 7.283498861072459,
+  "maximumResidualFractionOfFirstEyeDistance": 0.14808405896612128,
+  "frames": [
+    {
+      "frame": 0,
+      "valid": true,
+      "candidateCenter": [
+        623.646,
+        356.496
+      ],
+      "headPlaneMouthRect": [
+        -39.59732804381363,
+        15.265140794315286,
+        78.42551886851578,
+        43.37032545629823
+      ],
+      "eyes": [
+        [
+          613.544,
+          315.074
+        ],
+        [
+          659.868,
+          331.604
+        ]
+      ],
+      "candidateArea": 1204,
+      "eyeRigidPredictedCenter": [
+        623.646,
+        356.496
+      ],
+      "eyeRigidResidualPixels": 0.0,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 1,
+      "valid": true,
+      "candidateCenter": [
+        623.439,
+        356.621
+      ],
+      "headPlaneMouthRect": [
+        -39.65410726469103,
+        15.607094862451921,
+        77.48520621316183,
+        43.01901722074002
+      ],
+      "eyes": [
+        [
+          613.623,
+          315.13
+        ],
+        [
+          659.868,
+          331.604
+        ]
+      ],
+      "candidateArea": 1184,
+      "eyeRigidPredictedCenter": [
+        623.728,
+        356.468
+      ],
+      "eyeRigidResidualPixels": 0.3268300955937086,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 2,
+      "valid": true,
+      "candidateCenter": [
+        623.432,
+        357.179
+      ],
+      "headPlaneMouthRect": [
+        -39.380557897041115,
+        15.09266441406953,
+        77.47322234006933,
+        43.47270105048634
+      ],
+      "eyes": [
+        [
+          613.328,
+          315.953
+        ],
+        [
+          659.771,
+          332.708
+        ]
+      ],
+      "candidateArea": 1187,
+      "eyeRigidPredictedCenter": [
+        623.324,
+        357.568
+      ],
+      "eyeRigidResidualPixels": 0.40357022134418313,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 3,
+      "valid": true,
+      "candidateCenter": [
+        623.272,
+        357.69
+      ],
+      "headPlaneMouthRect": [
+        -39.38301210024397,
+        14.560203853595533,
+        77.47469113749727,
+        44.212638942486606
+      ],
+      "eyes": [
+        [
+          613.079,
+          316.46
+        ],
+        [
+          659.635,
+          333.231
+        ]
+      ],
+      "candidateArea": 1186,
+      "eyeRigidPredictedCenter": [
+        623.117,
+        358.165
+      ],
+      "eyeRigidResidualPixels": 0.4996643077936258,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 4,
+      "valid": true,
+      "candidateCenter": [
+        623.143,
+        358.14
+      ],
+      "headPlaneMouthRect": [
+        -39.372767790575836,
+        14.769464885006661,
+        77.47923241593723,
+        44.7651116726067
+      ],
+      "eyes": [
+        [
+          613.066,
+          316.689
+        ],
+        [
+          659.453,
+          333.321
+        ]
+      ],
+      "candidateArea": 1202,
+      "eyeRigidPredictedCenter": [
+        623.124,
+        358.205
+      ],
+      "eyeRigidResidualPixels": 0.06794409268994996,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 5,
+      "valid": true,
+      "candidateCenter": [
+        622.907,
+        358.342
+      ],
+      "headPlaneMouthRect": [
+        -40.14042417802001,
+        14.910351240128715,
+        78.10937209889397,
+        44.21523779362775
+      ],
+      "eyes": [
+        [
+          612.625,
+          317.156
+        ],
+        [
+          659.68,
+          333.68
+        ]
+      ],
+      "candidateArea": 1198,
+      "eyeRigidPredictedCenter": [
+        623.08,
+        359.104
+      ],
+      "eyeRigidResidualPixels": 0.7813820260549461,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 6,
+      "valid": true,
+      "candidateCenter": [
+        622.961,
+        358.858
+      ],
+      "headPlaneMouthRect": [
+        -39.75209976509855,
+        15.275065098653789,
+        78.12271034425842,
+        44.422937343597475
+      ],
+      "eyes": [
+        [
+          612.381,
+          317.571
+        ],
+        [
+          659.429,
+          333.898
+        ]
+      ],
+      "candidateArea": 1197,
+      "eyeRigidPredictedCenter": [
+        622.975,
+        359.42
+      ],
+      "eyeRigidResidualPixels": 0.5626148964816062,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 7,
+      "valid": true,
+      "candidateCenter": [
+        622.691,
+        359.352
+      ],
+      "headPlaneMouthRect": [
+        -39.72357233200207,
+        15.196685462243764,
+        78.14117819026166,
+        44.23166211912279
+      ],
+      "eyes": [
+        [
+          612.177,
+          318.29
+        ],
+        [
+          658.982,
+          334.236
+        ]
+      ],
+      "candidateArea": 1209,
+      "eyeRigidPredictedCenter": [
+        622.931,
+        359.782
+      ],
+      "eyeRigidResidualPixels": 0.492664464289084,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 8,
+      "valid": true,
+      "candidateCenter": [
+        622.702,
+        359.607
+      ],
+      "headPlaneMouthRect": [
+        -39.84034177005132,
+        14.93439289976935,
+        78.13071618513044,
+        44.34330883444082
+      ],
+      "eyes": [
+        [
+          612.061,
+          318.318
+        ],
+        [
+          659.34,
+          334.6
+        ]
+      ],
+      "candidateArea": 1217,
+      "eyeRigidPredictedCenter": [
+        622.798,
+        360.313
+      ],
+      "eyeRigidResidualPixels": 0.7125230356885475,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 9,
+      "valid": true,
+      "candidateCenter": [
+        622.474,
+        359.925
+      ],
+      "headPlaneMouthRect": [
+        -39.75973636799434,
+        15.189294088699723,
+        77.51625788358848,
+        44.57040181515866
+      ],
+      "eyes": [
+        [
+          611.623,
+          318.738
+        ],
+        [
+          659.224,
+          334.98
+        ]
+      ],
+      "candidateArea": 1189,
+      "eyeRigidPredictedCenter": [
+        622.542,
+        360.947
+      ],
+      "eyeRigidResidualPixels": 1.0244662656190664,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 10,
+      "valid": true,
+      "candidateCenter": [
+        622.265,
+        360.507
+      ],
+      "headPlaneMouthRect": [
+        -39.959445753767795,
+        15.146322439634556,
+        77.85230029610736,
+        44.22998039854619
+      ],
+      "eyes": [
+        [
+          611.238,
+          319.286
+        ],
+        [
+          658.8,
+          335.0
+        ]
+      ],
+      "candidateArea": 1212,
+      "eyeRigidPredictedCenter": [
+        622.521,
+        361.216
+      ],
+      "eyeRigidResidualPixels": 0.7530097174677057,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 11,
+      "valid": true,
+      "candidateCenter": [
+        622.226,
+        361.07
+      ],
+      "headPlaneMouthRect": [
+        -40.19778885472248,
+        15.373420156935587,
+        77.88478444637596,
+        44.473774369441294
+      ],
+      "eyes": [
+        [
+          611.161,
+          320.081
+        ],
+        [
+          658.614,
+          335.158
+        ]
+      ],
+      "candidateArea": 1201,
+      "eyeRigidPredictedCenter": [
+        622.853,
+        361.628
+      ],
+      "eyeRigidResidualPixels": 0.8399429188793511,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 12,
+      "valid": true,
+      "candidateCenter": [
+        622.11,
+        361.498
+      ],
+      "headPlaneMouthRect": [
+        -39.51710880418672,
+        15.246144525304773,
+        77.60678099504412,
+        43.895610311462775
+      ],
+      "eyes": [
+        [
+          610.333,
+          320.783
+        ],
+        [
+          658.0,
+          335.5
+        ]
+      ],
+      "candidateArea": 1208,
+      "eyeRigidPredictedCenter": [
+        622.388,
+        362.314
+      ],
+      "eyeRigidResidualPixels": 0.8612437477839213,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 13,
+      "valid": true,
+      "candidateCenter": [
+        621.947,
+        362.143
+      ],
+      "headPlaneMouthRect": [
+        -40.15437242550599,
+        14.934854627456593,
+        77.33467087839674,
+        43.18249556213587
+      ],
+      "eyes": [
+        [
+          609.905,
+          321.397
+        ],
+        [
+          657.82,
+          335.84
+        ]
+      ],
+      "candidateArea": 1190,
+      "eyeRigidPredictedCenter": [
+        622.277,
+        362.977
+      ],
+      "eyeRigidResidualPixels": 0.896458323765263,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 14,
+      "valid": true,
+      "candidateCenter": [
+        621.76,
+        362.771
+      ],
+      "headPlaneMouthRect": [
+        -39.6287095180681,
+        14.899197157569574,
+        77.3513391026436,
+        43.30076694680408
+      ],
+      "eyes": [
+        [
+          609.387,
+          322.339
+        ],
+        [
+          657.156,
+          336.444
+        ]
+      ],
+      "candidateArea": 1197,
+      "eyeRigidPredictedCenter": [
+        621.934,
+        363.652
+      ],
+      "eyeRigidResidualPixels": 0.8976241303274236,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 15,
+      "valid": true,
+      "candidateCenter": [
+        621.818,
+        363.397
+      ],
+      "headPlaneMouthRect": [
+        -40.57831761225034,
+        15.429223443222691,
+        79.05812687845813,
+        43.976346315500535
+      ],
+      "eyes": [
+        [
+          608.907,
+          322.981
+        ],
+        [
+          657.264,
+          336.17
+        ]
+      ],
+      "candidateArea": 1200,
+      "eyeRigidPredictedCenter": [
+        622.397,
+        364.283
+      ],
+      "eyeRigidResidualPixels": 1.0587598912935738,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 16,
+      "valid": true,
+      "candidateCenter": [
+        621.756,
+        363.994
+      ],
+      "headPlaneMouthRect": [
+        -40.355577972685396,
+        15.34589728429144,
+        79.07500775599112,
+        44.11321800822491
+      ],
+      "eyes": [
+        [
+          608.371,
+          323.645
+        ],
+        [
+          656.804,
+          336.482
+        ]
+      ],
+      "candidateArea": 1207,
+      "eyeRigidPredictedCenter": [
+        622.152,
+        364.834
+      ],
+      "eyeRigidResidualPixels": 0.9292185149447538,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 17,
+      "valid": true,
+      "candidateCenter": [
+        621.519,
+        364.734
+      ],
+      "headPlaneMouthRect": [
+        -40.44702381206135,
+        15.571731086961925,
+        77.89521684987432,
+        42.19096118308494
+      ],
+      "eyes": [
+        [
+          607.897,
+          324.931
+        ],
+        [
+          656.778,
+          336.722
+        ]
+      ],
+      "candidateArea": 1169,
+      "eyeRigidPredictedCenter": [
+        622.649,
+        365.946
+      ],
+      "eyeRigidResidualPixels": 1.6574650521657777,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 18,
+      "valid": true,
+      "candidateCenter": [
+        621.553,
+        365.579
+      ],
+      "headPlaneMouthRect": [
+        -39.90331872404404,
+        14.914520501926377,
+        77.88981830368758,
+        43.789724301074656
+      ],
+      "eyes": [
+        [
+          607.367,
+          325.717
+        ],
+        [
+          656.385,
+          337.769
+        ]
+      ],
+      "candidateArea": 1177,
+      "eyeRigidPredictedCenter": [
+        621.996,
+        366.956
+      ],
+      "eyeRigidResidualPixels": 1.4467720760235856,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 19,
+      "valid": true,
+      "candidateCenter": [
+        621.388,
+        366.355
+      ],
+      "headPlaneMouthRect": [
+        -40.651449334340406,
+        15.648538853724641,
+        78.4495397375641,
+        43.41042110008043
+      ],
+      "eyes": [
+        [
+          607.036,
+          326.946
+        ],
+        [
+          656.0,
+          337.667
+        ]
+      ],
+      "candidateArea": 1157,
+      "eyeRigidPredictedCenter": [
+        622.603,
+        367.512
+      ],
+      "eyeRigidResidualPixels": 1.6771438689885285,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 20,
+      "valid": true,
+      "candidateCenter": [
+        621.321,
+        367.148
+      ],
+      "headPlaneMouthRect": [
+        -40.58627022106304,
+        15.61090495156586,
+        78.46045922655932,
+        42.542451967941844
+      ],
+      "eyes": [
+        [
+          606.786,
+          328.036
+        ],
+        [
+          655.857,
+          338.339
+        ]
+      ],
+      "candidateArea": 1163,
+      "eyeRigidPredictedCenter": [
+        622.706,
+        368.48
+      ],
+      "eyeRigidResidualPixels": 1.9221531583765263,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 21,
+      "valid": true,
+      "candidateCenter": [
+        621.545,
+        368.381
+      ],
+      "headPlaneMouthRect": [
+        -40.64386236847582,
+        15.596282890111981,
+        78.46592098860353,
+        42.176063648894775
+      ],
+      "eyes": [
+        [
+          606.315,
+          329.574
+        ],
+        [
+          655.961,
+          339.49
+        ]
+      ],
+      "candidateArea": 1111,
+      "eyeRigidPredictedCenter": [
+        622.79,
+        370.25
+      ],
+      "eyeRigidResidualPixels": 2.245981500817718,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 22,
+      "valid": true,
+      "candidateCenter": [
+        621.41,
+        370.025
+      ],
+      "headPlaneMouthRect": [
+        -41.14702894233952,
+        15.154640781721627,
+        79.07968539099616,
+        41.381305403203875
+      ],
+      "eyes": [
+        [
+          605.158,
+          332.026
+        ],
+        [
+          655.972,
+          341.444
+        ]
+      ],
+      "candidateArea": 1073,
+      "eyeRigidPredictedCenter": [
+        622.55,
+        373.311
+      ],
+      "eyeRigidResidualPixels": 3.4774679108805824,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 23,
+      "valid": true,
+      "candidateCenter": [
+        621.352,
+        371.073
+      ],
+      "headPlaneMouthRect": [
+        -40.90455572740126,
+        14.614903061815731,
+        78.10025251838216,
+        41.37186712633925
+      ],
+      "eyes": [
+        [
+          604.81,
+          333.647
+        ],
+        [
+          655.501,
+          342.821
+        ]
+      ],
+      "candidateArea": 1058,
+      "eyeRigidPredictedCenter": [
+        622.32,
+        374.726
+      ],
+      "eyeRigidResidualPixels": 3.7795821663942073,
+      "poseSource": "short-gap-lower-face-flow-estimate"
+    },
+    {
+      "frame": 24,
+      "valid": true,
+      "candidateCenter": [
+        621.241,
+        372.054
+      ],
+      "headPlaneMouthRect": [
+        -40.8151450426506,
+        14.590708813460894,
+        78.09368492490552,
+        39.934403670757504
+      ],
+      "eyes": [
+        [
+          604.914,
+          334.955
+        ],
+        [
+          655.267,
+          344.411
+        ]
+      ],
+      "candidateArea": 1033,
+      "eyeRigidPredictedCenter": [
+        622.059,
+        375.924
+      ],
+      "eyeRigidResidualPixels": 3.9550483160579435,
+      "poseSource": "short-gap-lower-face-flow-estimate"
+    },
+    {
+      "frame": 25,
+      "valid": true,
+      "candidateCenter": [
+        621.072,
+        373.086
+      ],
+      "headPlaneMouthRect": [
+        -40.723453390896125,
+        13.909032713829799,
+        78.46514223656787,
+        38.7423215339831
+      ],
+      "eyes": [
+        [
+          604.887,
+          336.44
+        ],
+        [
+          654.848,
+          346.562
+        ]
+      ],
+      "candidateArea": 949,
+      "eyeRigidPredictedCenter": [
+        621.363,
+        377.442
+      ],
+      "eyeRigidResidualPixels": 4.365604262663575,
+      "poseSource": "short-gap-lower-face-flow-estimate"
+    },
+    {
+      "frame": 26,
+      "valid": true,
+      "candidateCenter": [
+        620.452,
+        373.467
+      ],
+      "headPlaneMouthRect": [
+        -40.51213788674531,
+        13.70040361144299,
+        77.90217184798257,
+        36.948044719342406
+      ],
+      "eyes": [
+        [
+          605.08,
+          337.086
+        ],
+        [
+          654.466,
+          348.44
+        ]
+      ],
+      "candidateArea": 915,
+      "eyeRigidPredictedCenter": [
+        620.389,
+        378.259
+      ],
+      "eyeRigidResidualPixels": 4.792694744863647,
+      "poseSource": "short-gap-lower-face-flow-estimate"
+    },
+    {
+      "frame": 27,
+      "valid": true,
+      "candidateCenter": [
+        620.141,
+        373.153
+      ],
+      "headPlaneMouthRect": [
+        -40.60338373176496,
+        13.785830135132839,
+        78.367935120567,
+        35.9634771931978
+      ],
+      "eyes": [
+        [
+          605.516,
+          336.617
+        ],
+        [
+          654.473,
+          349.323
+        ]
+      ],
+      "candidateArea": 880,
+      "eyeRigidPredictedCenter": [
+        619.642,
+        378.123
+      ],
+      "eyeRigidResidualPixels": 4.9950627402483505,
+      "poseSource": "short-gap-lower-face-flow-estimate"
+    },
+    {
+      "frame": 28,
+      "valid": true,
+      "candidateCenter": [
+        620.227,
+        372.339
+      ],
+      "headPlaneMouthRect": [
+        -40.35028851061851,
+        13.053958029149829,
+        77.92087734913031,
+        35.74822947548125
+      ],
+      "eyes": [
+        [
+          605.5,
+          335.9
+        ],
+        [
+          655.588,
+          350.412
+        ]
+      ],
+      "candidateArea": 881,
+      "eyeRigidPredictedCenter": [
+        618.857,
+        379.086
+      ],
+      "eyeRigidResidualPixels": 6.884334922961609,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 29,
+      "valid": true,
+      "candidateCenter": [
+        620.267,
+        370.176
+      ],
+      "headPlaneMouthRect": [
+        -40.62177077706689,
+        13.852007288914393,
+        77.84289059613354,
+        37.40221021891976
+      ],
+      "eyes": [
+        [
+          607.206,
+          332.353
+        ],
+        [
+          657.186,
+          348.488
+        ]
+      ],
+      "candidateArea": 869,
+      "eyeRigidPredictedCenter": [
+        619.336,
+        376.234
+      ],
+      "eyeRigidResidualPixels": 6.129157035761075,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 30,
+      "valid": true,
+      "candidateCenter": [
+        621.099,
+        367.261
+      ],
+      "headPlaneMouthRect": [
+        -40.58000716447073,
+        15.080330829390896,
+        78.82546577456337,
+        35.43502230584029
+      ],
+      "eyes": [
+        [
+          609.224,
+          328.082
+        ],
+        [
+          658.14,
+          346.96
+        ]
+      ],
+      "candidateArea": 903,
+      "eyeRigidPredictedCenter": [
+        618.861,
+        372.5
+      ],
+      "eyeRigidResidualPixels": 5.696192814675229,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 31,
+      "valid": true,
+      "candidateCenter": [
+        622.321,
+        364.736
+      ],
+      "headPlaneMouthRect": [
+        -40.38584167363789,
+        15.37879167006851,
+        78.99725907120279,
+        36.38909529248237
+      ],
+      "eyes": [
+        [
+          611.614,
+          324.789
+        ],
+        [
+          659.368,
+          345.158
+        ]
+      ],
+      "candidateArea": 921,
+      "eyeRigidPredictedCenter": [
+        619.618,
+        369.076
+      ],
+      "eyeRigidResidualPixels": 5.112883069182287,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 32,
+      "valid": true,
+      "candidateCenter": [
+        623.538,
+        362.282
+      ],
+      "headPlaneMouthRect": [
+        -40.90683526291384,
+        15.510149898080924,
+        79.78123078489193,
+        36.24924861945913
+      ],
+      "eyes": [
+        [
+          614.0,
+          321.741
+        ],
+        [
+          660.719,
+          343.386
+        ]
+      ],
+      "candidateArea": 928,
+      "eyeRigidPredictedCenter": [
+        620.586,
+        365.886
+      ],
+      "eyeRigidResidualPixels": 4.658067311772514,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 33,
+      "valid": true,
+      "candidateCenter": [
+        625.196,
+        358.602
+      ],
+      "headPlaneMouthRect": [
+        -40.114796516102274,
+        15.315749532773392,
+        78.80435593751714,
+        34.87245904122207
+      ],
+      "eyes": [
+        [
+          616.677,
+          317.597
+        ],
+        [
+          662.948,
+          341.241
+        ]
+      ],
+      "candidateArea": 925,
+      "eyeRigidPredictedCenter": [
+        621.602,
+        362.37
+      ],
+      "eyeRigidResidualPixels": 5.20672409683383,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 34,
+      "valid": true,
+      "candidateCenter": [
+        626.995,
+        355.44
+      ],
+      "headPlaneMouthRect": [
+        -40.79844627171471,
+        15.573481731770684,
+        79.71214188045292,
+        34.2623399520094
+      ],
+      "eyes": [
+        [
+          619.323,
+          314.5
+        ],
+        [
+          665.131,
+          338.525
+        ]
+      ],
+      "candidateArea": 938,
+      "eyeRigidPredictedCenter": [
+        623.752,
+        359.119
+      ],
+      "eyeRigidResidualPixels": 4.904284997515425,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 35,
+      "valid": true,
+      "candidateCenter": [
+        628.625,
+        352.948
+      ],
+      "headPlaneMouthRect": [
+        -41.497247583237026,
+        15.26378424962029,
+        80.17318951192247,
+        34.64636242457884
+      ],
+      "eyes": [
+        [
+          622.0,
+          312.386
+        ],
+        [
+          667.333,
+          336.921
+        ]
+      ],
+      "candidateArea": 966,
+      "eyeRigidPredictedCenter": [
+        625.833,
+        356.904
+      ],
+      "eyeRigidResidualPixels": 4.842242334357717,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 36,
+      "valid": true,
+      "candidateCenter": [
+        630.578,
+        351.062
+      ],
+      "headPlaneMouthRect": [
+        -41.49512459834029,
+        15.6147009740811,
+        80.64371576919925,
+        34.62673563138587
+      ],
+      "eyes": [
+        [
+          624.183,
+          310.267
+        ],
+        [
+          669.404,
+          335.509
+        ]
+      ],
+      "candidateArea": 974,
+      "eyeRigidPredictedCenter": [
+        627.451,
+        355.041
+      ],
+      "eyeRigidResidualPixels": 5.061292237354876,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 37,
+      "valid": true,
+      "candidateCenter": [
+        632.659,
+        348.803
+      ],
+      "headPlaneMouthRect": [
+        -40.846292504783854,
+        15.594432394453277,
+        79.76900520669365,
+        35.01140444681978
+      ],
+      "eyes": [
+        [
+          626.652,
+          308.03
+        ],
+        [
+          671.766,
+          333.375
+        ]
+      ],
+      "candidateArea": 979,
+      "eyeRigidPredictedCenter": [
+        629.794,
+        352.776
+      ],
+      "eyeRigidResidualPixels": 4.897967556531109,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 38,
+      "valid": true,
+      "candidateCenter": [
+        634.866,
+        346.983
+      ],
+      "headPlaneMouthRect": [
+        -40.9773978258519,
+        15.504709531616268,
+        79.76954135690573,
+        36.40443835370827
+      ],
+      "eyes": [
+        [
+          628.797,
+          306.203
+        ],
+        [
+          673.767,
+          331.417
+        ]
+      ],
+      "candidateArea": 988,
+      "eyeRigidPredictedCenter": [
+        631.965,
+        350.782
+      ],
+      "eyeRigidResidualPixels": 4.780161141675138,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 39,
+      "valid": true,
+      "candidateCenter": [
+        636.783,
+        345.943
+      ],
+      "headPlaneMouthRect": [
+        -40.62102876316847,
+        15.488915830802993,
+        79.76890932309043,
+        36.36774574660132
+      ],
+      "eyes": [
+        [
+          630.492,
+          305.063
+        ],
+        [
+          675.429,
+          330.317
+        ]
+      ],
+      "candidateArea": 990,
+      "eyeRigidPredictedCenter": [
+        633.616,
+        349.637
+      ],
+      "eyeRigidResidualPixels": 4.865633241386902,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 40,
+      "valid": true,
+      "candidateCenter": [
+        638.421,
+        344.89
+      ],
+      "headPlaneMouthRect": [
+        -41.00927651831542,
+        15.771413915130694,
+        80.64431784769052,
+        36.49914889528402
+      ],
+      "eyes": [
+        [
+          631.879,
+          303.909
+        ],
+        [
+          677.016,
+          329.065
+        ]
+      ],
+      "candidateArea": 997,
+      "eyeRigidPredictedCenter": [
+        635.169,
+        348.581
+      ],
+      "eyeRigidResidualPixels": 4.919921527028032,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 41,
+      "valid": true,
+      "candidateCenter": [
+        640.266,
+        343.872
+      ],
+      "headPlaneMouthRect": [
+        -40.783998815009944,
+        15.572720271483117,
+        79.29431380211406,
+        36.13936422771965
+      ],
+      "eyes": [
+        [
+          633.18,
+          303.082
+        ],
+        [
+          678.762,
+          327.54
+        ]
+      ],
+      "candidateArea": 979,
+      "eyeRigidPredictedCenter": [
+        637.188,
+        347.744
+      ],
+      "eyeRigidResidualPixels": 4.946168047960273,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 42,
+      "valid": true,
+      "candidateCenter": [
+        641.994,
+        343.252
+      ],
+      "headPlaneMouthRect": [
+        -40.77118051295747,
+        15.773689068049,
+        79.71464316679481,
+        35.510878914687844
+      ],
+      "eyes": [
+        [
+          634.175,
+          302.571
+        ],
+        [
+          680.048,
+          326.111
+        ]
+      ],
+      "candidateArea": 987,
+      "eyeRigidPredictedCenter": [
+        638.986,
+        347.006
+      ],
+      "eyeRigidResidualPixels": 4.810503642191374,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 43,
+      "valid": true,
+      "candidateCenter": [
+        643.543,
+        342.967
+      ],
+      "headPlaneMouthRect": [
+        -41.00686868014645,
+        15.675434418112987,
+        80.19055536722223,
+        35.207832540163494
+      ],
+      "eyes": [
+        [
+          634.361,
+          302.459
+        ],
+        [
+          681.015,
+          324.821
+        ]
+      ],
+      "candidateArea": 1003,
+      "eyeRigidPredictedCenter": [
+        640.397,
+        346.899
+      ],
+      "eyeRigidResidualPixels": 5.035443400295969,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 44,
+      "valid": true,
+      "candidateCenter": [
+        644.692,
+        342.77
+      ],
+      "headPlaneMouthRect": [
+        -40.63012961176269,
+        15.841818593821282,
+        79.790574292816,
+        35.00347523217749
+      ],
+      "eyes": [
+        [
+          634.55,
+          302.5
+        ],
+        [
+          681.565,
+          323.548
+        ]
+      ],
+      "candidateArea": 1012,
+      "eyeRigidPredictedCenter": [
+        641.71,
+        346.575
+      ],
+      "eyeRigidResidualPixels": 4.834448336720643,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 45,
+      "valid": true,
+      "candidateCenter": [
+        646.106,
+        342.52
+      ],
+      "headPlaneMouthRect": [
+        -40.71142349291562,
+        15.728319684392405,
+        79.18567643702109,
+        34.279908837964626
+      ],
+      "eyes": [
+        [
+          634.407,
+          302.831
+        ],
+        [
+          682.319,
+          321.208
+        ]
+      ],
+      "candidateArea": 997,
+      "eyeRigidPredictedCenter": [
+        643.928,
+        346.283
+      ],
+      "eyeRigidResidualPixels": 4.348115976120598,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 46,
+      "valid": true,
+      "candidateCenter": [
+        647.868,
+        342.543
+      ],
+      "headPlaneMouthRect": [
+        -40.95204060251166,
+        15.786710799776918,
+        79.44304638287593,
+        36.03809514891194
+      ],
+      "eyes": [
+        [
+          634.049,
+          303.541
+        ],
+        [
+          682.887,
+          319.085
+        ]
+      ],
+      "candidateArea": 1011,
+      "eyeRigidPredictedCenter": [
+        646.063,
+        346.314
+      ],
+      "eyeRigidResidualPixels": 4.180469148291308,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 47,
+      "valid": true,
+      "candidateCenter": [
+        649.36,
+        342.924
+      ],
+      "headPlaneMouthRect": [
+        -40.05776486778427,
+        15.632241163650585,
+        78.88349928495597,
+        37.2490711885975
+      ],
+      "eyes": [
+        [
+          633.295,
+          304.262
+        ],
+        [
+          683.029,
+          317.912
+        ]
+      ],
+      "candidateArea": 1015,
+      "eyeRigidPredictedCenter": [
+        647.108,
+        346.781
+      ],
+      "eyeRigidResidualPixels": 4.466185472400307,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 48,
+      "valid": true,
+      "candidateCenter": [
+        650.376,
+        342.893
+      ],
+      "headPlaneMouthRect": [
+        -40.9532774799269,
+        15.60079176134981,
+        80.81396294193726,
+        36.774484753228165
+      ],
+      "eyes": [
+        [
+          633.136,
+          305.085
+        ],
+        [
+          682.903,
+          317.016
+        ]
+      ],
+      "candidateArea": 1043,
+      "eyeRigidPredictedCenter": [
+        648.209,
+        346.809
+      ],
+      "eyeRigidResidualPixels": 4.4756194492720365,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 49,
+      "valid": true,
+      "candidateCenter": [
+        651.894,
+        343.076
+      ],
+      "headPlaneMouthRect": [
+        -40.577361890901905,
+        15.582649356499987,
+        80.07114680778578,
+        36.56801896690214
+      ],
+      "eyes": [
+        [
+          632.679,
+          306.429
+        ],
+        [
+          683.333,
+          315.444
+        ]
+      ],
+      "candidateArea": 1026,
+      "eyeRigidPredictedCenter": [
+        650.286,
+        347.406
+      ],
+      "eyeRigidResidualPixels": 4.618418330169404,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 50,
+      "valid": true,
+      "candidateCenter": [
+        653.334,
+        343.593
+      ],
+      "headPlaneMouthRect": [
+        -40.12847200365622,
+        15.456485694327746,
+        79.51521653784576,
+        36.900839013003875
+      ],
+      "eyes": [
+        [
+          632.414,
+          307.966
+        ],
+        [
+          683.379,
+          314.242
+        ]
+      ],
+      "candidateArea": 1037,
+      "eyeRigidPredictedCenter": [
+        652.153,
+        347.863
+      ],
+      "eyeRigidResidualPixels": 4.429998272512563,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 51,
+      "valid": true,
+      "candidateCenter": [
+        654.356,
+        344.14
+      ],
+      "headPlaneMouthRect": [
+        -40.24376140720425,
+        15.289799218837953,
+        80.22143978250037,
+        37.130672323884184
+      ],
+      "eyes": [
+        [
+          631.951,
+          309.164
+        ],
+        [
+          683.25,
+          313.7
+        ]
+      ],
+      "candidateArea": 1039,
+      "eyeRigidPredictedCenter": [
+        653.109,
+        348.474
+      ],
+      "eyeRigidResidualPixels": 4.509874712573058,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 52,
+      "valid": true,
+      "candidateCenter": [
+        655.625,
+        344.737
+      ],
+      "headPlaneMouthRect": [
+        -40.731252944119696,
+        14.996339123316858,
+        81.04249319609401,
+        38.18426569243885
+      ],
+      "eyes": [
+        [
+          631.929,
+          310.5
+        ],
+        [
+          683.35,
+          313.383
+        ]
+      ],
+      "candidateArea": 1054,
+      "eyeRigidPredictedCenter": [
+        654.342,
+        349.11
+      ],
+      "eyeRigidResidualPixels": 4.557450547465802,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 53,
+      "valid": true,
+      "candidateCenter": [
+        656.748,
+        345.305
+      ],
+      "headPlaneMouthRect": [
+        -40.61533387424526,
+        15.80144180433611,
+        80.98348803346613,
+        36.80543246117673
+      ],
+      "eyes": [
+        [
+          632.322,
+          311.881
+        ],
+        [
+          683.6,
+          312.923
+        ]
+      ],
+      "candidateArea": 1040,
+      "eyeRigidPredictedCenter": [
+        656.0,
+        349.511
+      ],
+      "eyeRigidResidualPixels": 4.271735158575216,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 54,
+      "valid": true,
+      "candidateCenter": [
+        657.801,
+        346.084
+      ],
+      "headPlaneMouthRect": [
+        -40.19584931374184,
+        15.270508502425029,
+        80.03713045409681,
+        37.63619166731327
+      ],
+      "eyes": [
+        [
+          632.322,
+          313.356
+        ],
+        [
+          683.683,
+          312.825
+        ]
+      ],
+      "candidateArea": 1034,
+      "eyeRigidPredictedCenter": [
+        657.179,
+        350.296
+      ],
+      "eyeRigidResidualPixels": 4.257702145767527,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 55,
+      "valid": true,
+      "candidateCenter": [
+        658.722,
+        346.846
+      ],
+      "headPlaneMouthRect": [
+        -40.926290108501234,
+        15.391872985326332,
+        81.12444073964191,
+        38.01705564993552
+      ],
+      "eyes": [
+        [
+          632.582,
+          314.673
+        ],
+        [
+          684.0,
+          312.908
+        ]
+      ],
+      "candidateArea": 1049,
+      "eyeRigidPredictedCenter": [
+        658.36,
+        351.066
+      ],
+      "eyeRigidResidualPixels": 4.236412952317104,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 56,
+      "valid": true,
+      "candidateCenter": [
+        659.457,
+        347.311
+      ],
+      "headPlaneMouthRect": [
+        -40.192660507339625,
+        14.519669963582562,
+        80.23730560280897,
+        39.35931655581432
+      ],
+      "eyes": [
+        [
+          632.655,
+          315.362
+        ],
+        [
+          683.911,
+          313.018
+        ]
+      ],
+      "candidateArea": 1064,
+      "eyeRigidPredictedCenter": [
+        658.775,
+        351.362
+      ],
+      "eyeRigidResidualPixels": 4.108203166753528,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 57,
+      "valid": true,
+      "candidateCenter": [
+        660.257,
+        347.678
+      ],
+      "headPlaneMouthRect": [
+        -41.35614101171199,
+        15.083041171433598,
+        81.45623123234408,
+        37.25641756483023
+      ],
+      "eyes": [
+        [
+          633.0,
+          316.754
+        ],
+        [
+          684.667,
+          312.75
+        ]
+      ],
+      "candidateArea": 1037,
+      "eyeRigidPredictedCenter": [
+        660.518,
+        352.261
+      ],
+      "eyeRigidResidualPixels": 4.590438946991119,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 58,
+      "valid": true,
+      "candidateCenter": [
+        660.925,
+        348.192
+      ],
+      "headPlaneMouthRect": [
+        -41.04559159026419,
+        15.105878823924263,
+        81.5661322305005,
+        38.50470934539318
+      ],
+      "eyes": [
+        [
+          633.476,
+          317.286
+        ],
+        [
+          685.098,
+          312.787
+        ]
+      ],
+      "candidateArea": 1057,
+      "eyeRigidPredictedCenter": [
+        661.331,
+        352.525
+      ],
+      "eyeRigidResidualPixels": 4.351409967663621,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 59,
+      "valid": true,
+      "candidateCenter": [
+        661.134,
+        348.463
+      ],
+      "headPlaneMouthRect": [
+        -41.40033601977067,
+        15.095469718047841,
+        81.68752071810475,
+        37.73213827966545
+      ],
+      "eyes": [
+        [
+          633.774,
+          317.855
+        ],
+        [
+          685.035,
+          312.895
+        ]
+      ],
+      "candidateArea": 1059,
+      "eyeRigidPredictedCenter": [
+        661.791,
+        352.612
+      ],
+      "eyeRigidResidualPixels": 4.201360378408138,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 60,
+      "valid": true,
+      "candidateCenter": [
+        661.728,
+        348.817
+      ],
+      "headPlaneMouthRect": [
+        -40.53831954548862,
+        14.748672543504082,
+        80.77907744588853,
+        38.89773732366561
+      ],
+      "eyes": [
+        [
+          633.667,
+          318.083
+        ],
+        [
+          685.351,
+          313.193
+        ]
+      ],
+      "candidateArea": 1073,
+      "eyeRigidPredictedCenter": [
+        661.834,
+        353.18
+      ],
+      "eyeRigidResidualPixels": 4.364088210298547,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 61,
+      "valid": true,
+      "candidateCenter": [
+        662.363,
+        349.442
+      ],
+      "headPlaneMouthRect": [
+        -41.25252331300045,
+        14.886401043835686,
+        81.82409380317219,
+        39.34162568370476
+      ],
+      "eyes": [
+        [
+          634.209,
+          318.881
+        ],
+        [
+          685.852,
+          313.333
+        ]
+      ],
+      "candidateArea": 1077,
+      "eyeRigidPredictedCenter": [
+        662.833,
+        353.635
+      ],
+      "eyeRigidResidualPixels": 4.219239589871325,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 62,
+      "valid": true,
+      "candidateCenter": [
+        662.66,
+        349.63
+      ],
+      "headPlaneMouthRect": [
+        -41.470008517850296,
+        14.670570975675076,
+        81.93292554494845,
+        38.866982976991174
+      ],
+      "eyes": [
+        [
+          634.294,
+          319.118
+        ],
+        [
+          686.019,
+          313.537
+        ]
+      ],
+      "candidateArea": 1075,
+      "eyeRigidPredictedCenter": [
+        662.981,
+        353.916
+      ],
+      "eyeRigidResidualPixels": 4.297864330729617,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 63,
+      "valid": true,
+      "candidateCenter": [
+        662.678,
+        349.794
+      ],
+      "headPlaneMouthRect": [
+        -41.83814767915208,
+        14.53237443892882,
+        81.93157623325493,
+        39.336087986871355
+      ],
+      "eyes": [
+        [
+          634.453,
+          319.328
+        ],
+        [
+          686.654,
+          313.712
+        ]
+      ],
+      "candidateArea": 1090,
+      "eyeRigidPredictedCenter": [
+        663.393,
+        354.454
+      ],
+      "eyeRigidResidualPixels": 4.714470974617716,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 64,
+      "valid": true,
+      "candidateCenter": [
+        663.028,
+        349.961
+      ],
+      "headPlaneMouthRect": [
+        -41.214052895063126,
+        14.990053440503774,
+        81.10260279296006,
+        39.50294038848002
+      ],
+      "eyes": [
+        [
+          634.754,
+          319.574
+        ],
+        [
+          686.407,
+          313.407
+        ]
+      ],
+      "candidateArea": 1088,
+      "eyeRigidPredictedCenter": [
+        663.831,
+        354.04
+      ],
+      "eyeRigidResidualPixels": 4.157091205721221,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 65,
+      "valid": true,
+      "candidateCenter": [
+        663.224,
+        350.174
+      ],
+      "headPlaneMouthRect": [
+        -41.25768381262357,
+        14.771237864550184,
+        81.08444643141655,
+        38.937455122625096
+      ],
+      "eyes": [
+        [
+          634.689,
+          319.672
+        ],
+        [
+          686.755,
+          313.66
+        ]
+      ],
+      "candidateArea": 1078,
+      "eyeRigidPredictedCenter": [
+        663.851,
+        354.511
+      ],
+      "eyeRigidResidualPixels": 4.381890035785357,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 66,
+      "valid": true,
+      "candidateCenter": [
+        663.162,
+        350.405
+      ],
+      "headPlaneMouthRect": [
+        -41.06299839393469,
+        14.646407983656637,
+        81.9153941611037,
+        38.574790304869715
+      ],
+      "eyes": [
+        [
+          634.885,
+          319.836
+        ],
+        [
+          686.723,
+          314.447
+        ]
+      ],
+      "candidateArea": 1079,
+      "eyeRigidPredictedCenter": [
+        663.487,
+        354.807
+      ],
+      "eyeRigidResidualPixels": 4.413854031287252,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 67,
+      "valid": true,
+      "candidateCenter": [
+        663.121,
+        350.531
+      ],
+      "headPlaneMouthRect": [
+        -41.30500198922759,
+        14.78438211024309,
+        81.94055728524492,
+        38.483937638148234
+      ],
+      "eyes": [
+        [
+          635.049,
+          320.033
+        ],
+        [
+          686.833,
+          314.352
+        ]
+      ],
+      "candidateArea": 1084,
+      "eyeRigidPredictedCenter": [
+        663.837,
+        354.826
+      ],
+      "eyeRigidResidualPixels": 4.353567243400784,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 68,
+      "valid": true,
+      "candidateCenter": [
+        663.221,
+        350.661
+      ],
+      "headPlaneMouthRect": [
+        -41.315966336198656,
+        14.753080678077646,
+        81.94846502483108,
+        39.41188580093628
+      ],
+      "eyes": [
+        [
+          634.965,
+          320.193
+        ],
+        [
+          686.887,
+          314.396
+        ]
+      ],
+      "candidateArea": 1100,
+      "eyeRigidPredictedCenter": [
+        663.903,
+        355.03
+      ],
+      "eyeRigidResidualPixels": 4.422260862349759,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 69,
+      "valid": true,
+      "candidateCenter": [
+        663.368,
+        350.894
+      ],
+      "headPlaneMouthRect": [
+        -41.44482018944704,
+        14.537245865016626,
+        81.95087447547405,
+        39.279654695034964
+      ],
+      "eyes": [
+        [
+          635.105,
+          320.544
+        ],
+        [
+          687.058,
+          314.712
+        ]
+      ],
+      "candidateArea": 1087,
+      "eyeRigidPredictedCenter": [
+        664.083,
+        355.387
+      ],
+      "eyeRigidResidualPixels": 4.54937549406056,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 70,
+      "valid": true,
+      "candidateCenter": [
+        663.565,
+        351.323
+      ],
+      "headPlaneMouthRect": [
+        -41.76551318770579,
+        14.878040337397385,
+        82.09904948735183,
+        39.873700811597516
+      ],
+      "eyes": [
+        [
+          635.233,
+          320.8
+        ],
+        [
+          687.054,
+          314.571
+        ]
+      ],
+      "candidateArea": 1093,
+      "eyeRigidPredictedCenter": [
+        664.435,
+        355.358
+      ],
+      "eyeRigidResidualPixels": 4.1282623251716055,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 71,
+      "valid": true,
+      "candidateCenter": [
+        663.401,
+        351.679
+      ],
+      "headPlaneMouthRect": [
+        -41.77285420752356,
+        14.872903805865814,
+        81.96643936914472,
+        40.24399088497559
+      ],
+      "eyes": [
+        [
+          635.5,
+          321.3
+        ],
+        [
+          687.093,
+          315.296
+        ]
+      ],
+      "candidateArea": 1096,
+      "eyeRigidPredictedCenter": [
+        664.431,
+        355.8
+      ],
+      "eyeRigidResidualPixels": 4.2484063651534605,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 72,
+      "valid": true,
+      "candidateCenter": [
+        663.771,
+        352.037
+      ],
+      "headPlaneMouthRect": [
+        -41.85689342874414,
+        15.020837311490062,
+        82.97933114989348,
+        39.915810575829525
+      ],
+      "eyes": [
+        [
+          635.364,
+          321.655
+        ],
+        [
+          687.218,
+          315.309
+        ]
+      ],
+      "candidateArea": 1107,
+      "eyeRigidPredictedCenter": [
+        664.667,
+        356.181
+      ],
+      "eyeRigidResidualPixels": 4.240051696026963,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 73,
+      "valid": true,
+      "candidateCenter": [
+        663.713,
+        353.334
+      ],
+      "headPlaneMouthRect": [
+        -41.448468351024395,
+        13.992852329625128,
+        81.96519618226486,
+        40.14048056580512
+      ],
+      "eyes": [
+        [
+          635.286,
+          323.306
+        ],
+        [
+          686.902,
+          317.317
+        ]
+      ],
+      "candidateArea": 1065,
+      "eyeRigidPredictedCenter": [
+        664.217,
+        357.83
+      ],
+      "eyeRigidResidualPixels": 4.524141720915402,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 74,
+      "valid": true,
+      "candidateCenter": [
+        663.923,
+        354.468
+      ],
+      "headPlaneMouthRect": [
+        -41.248018420843756,
+        14.39228793584346,
+        82.01350212271055,
+        39.307831818297785
+      ],
+      "eyes": [
+        [
+          635.056,
+          325.194
+        ],
+        [
+          688.0,
+          318.2
+        ]
+      ],
+      "candidateArea": 1075,
+      "eyeRigidPredictedCenter": [
+        665.347,
+        360.201
+      ],
+      "eyeRigidResidualPixels": 5.907490575625809,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 75,
+      "valid": true,
+      "candidateCenter": [
+        663.886,
+        355.85
+      ],
+      "headPlaneMouthRect": [
+        -41.32101719639503,
+        14.380503135352779,
+        81.01626418543776,
+        39.65053641196434
+      ],
+      "eyes": [
+        [
+          635.42,
+          326.754
+        ],
+        [
+          688.031,
+          319.923
+        ]
+      ],
+      "candidateArea": 1057,
+      "eyeRigidPredictedCenter": [
+        665.435,
+        361.598
+      ],
+      "eyeRigidResidualPixels": 5.952856873737651,
+      "poseSource": "short-gap-lower-face-flow-estimate"
+    },
+    {
+      "frame": 76,
+      "valid": true,
+      "candidateCenter": [
+        663.914,
+        357.329
+      ],
+      "headPlaneMouthRect": [
+        -41.52001294701395,
+        14.30771073588882,
+        80.88279196309924,
+        39.03677808626215
+      ],
+      "eyes": [
+        [
+          635.88,
+          328.32
+        ],
+        [
+          688.229,
+          321.66
+        ]
+      ],
+      "candidateArea": 1049,
+      "eyeRigidPredictedCenter": [
+        665.646,
+        363.055
+      ],
+      "eyeRigidResidualPixels": 5.9825864547877785,
+      "poseSource": "short-gap-lower-face-flow-estimate"
+    },
+    {
+      "frame": 77,
+      "valid": true,
+      "candidateCenter": [
+        663.672,
+        360.413
+      ],
+      "headPlaneMouthRect": [
+        -41.00548040334351,
+        14.282506819937666,
+        79.73760964502394,
+        37.551678624925884
+      ],
+      "eyes": [
+        [
+          636.817,
+          331.317
+        ],
+        [
+          688.905,
+          325.531
+        ]
+      ],
+      "candidateArea": 983,
+      "eyeRigidPredictedCenter": [
+        665.826,
+        366.28
+      ],
+      "eyeRigidResidualPixels": 6.24944148460236,
+      "poseSource": "short-gap-lower-face-flow-estimate"
+    },
+    {
+      "frame": 78,
+      "valid": true,
+      "candidateCenter": [
+        663.535,
+        362.918
+      ],
+      "headPlaneMouthRect": [
+        -41.25176178210264,
+        13.52832959633825,
+        80.47706421571985,
+        36.51009691064459
+      ],
+      "eyes": [
+        [
+          637.778,
+          333.676
+        ],
+        [
+          689.724,
+          329.291
+        ]
+      ],
+      "candidateArea": 973,
+      "eyeRigidPredictedCenter": [
+        665.705,
+        369.203
+      ],
+      "eyeRigidResidualPixels": 6.649441915488045,
+      "poseSource": "short-gap-lower-face-flow-estimate"
+    },
+    {
+      "frame": 79,
+      "valid": true,
+      "candidateCenter": [
+        662.999,
+        365.407
+      ],
+      "headPlaneMouthRect": [
+        -41.398364792165715,
+        13.063645622761694,
+        79.27970066947903,
+        36.94806342574017
+      ],
+      "eyes": [
+        [
+          638.441,
+          335.619
+        ],
+        [
+          690.345,
+          332.494
+        ]
+      ],
+      "candidateArea": 937,
+      "eyeRigidPredictedCenter": [
+        665.435,
+        371.716
+      ],
+      "eyeRigidResidualPixels": 6.763785034158464,
+      "poseSource": "short-gap-lower-face-flow-estimate"
+    },
+    {
+      "frame": 80,
+      "valid": true,
+      "candidateCenter": [
+        663.005,
+        367.368
+      ],
+      "headPlaneMouthRect": [
+        -40.68746503331227,
+        13.03586611836194,
+        79.16599686464343,
+        36.782005602907375
+      ],
+      "eyes": [
+        [
+          639.158,
+          337.158
+        ],
+        [
+          690.983,
+          335.282
+        ]
+      ],
+      "candidateArea": 929,
+      "eyeRigidPredictedCenter": [
+        665.21,
+        373.793
+      ],
+      "eyeRigidResidualPixels": 6.792914829093854,
+      "poseSource": "short-gap-lower-face-flow-estimate"
+    },
+    {
+      "frame": 81,
+      "valid": true,
+      "candidateCenter": [
+        661.242,
+        369.955
+      ],
+      "headPlaneMouthRect": [
+        -41.63062231570542,
+        13.71945743222901,
+        77.99354613451959,
+        36.192147072820774
+      ],
+      "eyes": [
+        [
+          639.83,
+          338.953
+        ],
+        [
+          691.592,
+          339.23
+        ]
+      ],
+      "candidateArea": 890,
+      "eyeRigidPredictedCenter": [
+        664.293,
+        376.569
+      ],
+      "eyeRigidResidualPixels": 7.283498861072459,
+      "poseSource": "short-gap-lower-face-flow-estimate"
+    },
+    {
+      "frame": 82,
+      "valid": true,
+      "candidateCenter": [
+        660.372,
+        372.12
+      ],
+      "headPlaneMouthRect": [
+        -41.703795344128366,
+        13.895757394028324,
+        78.02368583719232,
+        36.409464851325886
+      ],
+      "eyes": [
+        [
+          640.364,
+          340.273
+        ],
+        [
+          691.542,
+          341.208
+        ]
+      ],
+      "candidateArea": 889,
+      "eyeRigidPredictedCenter": [
+        664.072,
+        377.779
+      ],
+      "eyeRigidResidualPixels": 6.761005283097553,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 83,
+      "valid": true,
+      "candidateCenter": [
+        659.613,
+        373.376
+      ],
+      "headPlaneMouthRect": [
+        -41.302586090406784,
+        14.706925115148296,
+        77.1642953194914,
+        35.88987962269794
+      ],
+      "eyes": [
+        [
+          640.535,
+          339.953
+        ],
+        [
+          691.871,
+          343.323
+        ]
+      ],
+      "candidateArea": 891,
+      "eyeRigidPredictedCenter": [
+        662.555,
+        378.734
+      ],
+      "eyeRigidResidualPixels": 6.112608496095281,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 84,
+      "valid": true,
+      "candidateCenter": [
+        658.245,
+        373.989
+      ],
+      "headPlaneMouthRect": [
+        -42.03147768493881,
+        14.442464053404677,
+        77.22088210052382,
+        37.19920081272212
+      ],
+      "eyes": [
+        [
+          640.979,
+          339.723
+        ],
+        [
+          692.029,
+          344.794
+        ]
+      ],
+      "candidateArea": 901,
+      "eyeRigidPredictedCenter": [
+        661.631,
+        379.107
+      ],
+      "eyeRigidResidualPixels": 6.136840807791256,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 85,
+      "valid": true,
+      "candidateCenter": [
+        655.074,
+        374.227
+      ],
+      "headPlaneMouthRect": [
+        -40.16951801716017,
+        14.867440043220281,
+        75.94802873227346,
+        36.06878514254959
+      ],
+      "eyes": [
+        [
+          640.667,
+          338.451
+        ],
+        [
+          690.351,
+          347.649
+        ]
+      ],
+      "candidateArea": 890,
+      "eyeRigidPredictedCenter": [
+        657.68,
+        378.812
+      ],
+      "eyeRigidResidualPixels": 5.274014061507418,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 86,
+      "valid": true,
+      "candidateCenter": [
+        653.135,
+        373.891
+      ],
+      "headPlaneMouthRect": [
+        -40.12523040605605,
+        14.61952658024647,
+        76.47083342919694,
+        36.927730829028874
+      ],
+      "eyes": [
+        [
+          640.482,
+          336.982
+        ],
+        [
+          689.357,
+          348.429
+        ]
+      ],
+      "candidateArea": 911,
+      "eyeRigidPredictedCenter": [
+        655.481,
+        377.829
+      ],
+      "eyeRigidResidualPixels": 4.583500106863242,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 87,
+      "valid": true,
+      "candidateCenter": [
+        651.546,
+        373.03
+      ],
+      "headPlaneMouthRect": [
+        -40.25000077178793,
+        14.419298082981289,
+        75.91773971297258,
+        37.87684996137
+      ],
+      "eyes": [
+        [
+          639.966,
+          335.729
+        ],
+        [
+          688.425,
+          348.6
+        ]
+      ],
+      "candidateArea": 928,
+      "eyeRigidPredictedCenter": [
+        653.735,
+        376.953
+      ],
+      "eyeRigidResidualPixels": 4.492566847006524,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 88,
+      "valid": true,
+      "candidateCenter": [
+        650.032,
+        371.914
+      ],
+      "headPlaneMouthRect": [
+        -40.307334889426,
+        14.661317137999923,
+        76.12840965786174,
+        37.90631730249359
+      ],
+      "eyes": [
+        [
+          639.509,
+          334.298
+        ],
+        [
+          687.714,
+          348.214
+        ]
+      ],
+      "candidateArea": 958,
+      "eyeRigidPredictedCenter": [
+        652.4,
+        375.836
+      ],
+      "eyeRigidResidualPixels": 4.581485795211741,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 89,
+      "valid": true,
+      "candidateCenter": [
+        647.138,
+        369.762
+      ],
+      "headPlaneMouthRect": [
+        -39.76552907814082,
+        14.908814075156748,
+        75.91971684661394,
+        37.58849827352926
+      ],
+      "eyes": [
+        [
+          637.879,
+          331.069
+        ],
+        [
+          685.465,
+          347.372
+        ]
+      ],
+      "candidateArea": 947,
+      "eyeRigidPredictedCenter": [
+        648.747,
+        373.297
+      ],
+      "eyeRigidResidualPixels": 3.8830022991063586,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 90,
+      "valid": true,
+      "candidateCenter": [
+        645.085,
+        367.701
+      ],
+      "headPlaneMouthRect": [
+        -40.3792648918528,
+        15.078120814008217,
+        75.5798436085507,
+        37.536630401659195
+      ],
+      "eyes": [
+        [
+          636.467,
+          328.817
+        ],
+        [
+          684.071,
+          346.238
+        ]
+      ],
+      "candidateArea": 957,
+      "eyeRigidPredictedCenter": [
+        646.534,
+        371.59
+      ],
+      "eyeRigidResidualPixels": 4.150392040797636,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 91,
+      "valid": true,
+      "candidateCenter": [
+        643.484,
+        366.116
+      ],
+      "headPlaneMouthRect": [
+        -39.73597394531292,
+        15.107352627837455,
+        75.89379291274383,
+        39.07681642901925
+      ],
+      "eyes": [
+        [
+          635.23,
+          326.902
+        ],
+        [
+          682.205,
+          344.773
+        ]
+      ],
+      "candidateArea": 976,
+      "eyeRigidPredictedCenter": [
+        644.671,
+        369.434
+      ],
+      "eyeRigidResidualPixels": 3.524582026207315,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 92,
+      "valid": true,
+      "candidateCenter": [
+        641.988,
+        364.359
+      ],
+      "headPlaneMouthRect": [
+        -39.77203396169388,
+        15.548376260207549,
+        74.94996688516098,
+        38.258697810817026
+      ],
+      "eyes": [
+        [
+          634.242,
+          325.21
+        ],
+        [
+          681.116,
+          343.233
+        ]
+      ],
+      "candidateArea": 988,
+      "eyeRigidPredictedCenter": [
+        643.525,
+        367.742
+      ],
+      "eyeRigidResidualPixels": 3.7151538873807985,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 93,
+      "valid": true,
+      "candidateCenter": [
+        639.83,
+        361.565
+      ],
+      "headPlaneMouthRect": [
+        -39.89414017699984,
+        15.62145989734752,
+        75.31873749129684,
+        37.11304947206334
+      ],
+      "eyes": [
+        [
+          632.312,
+          322.562
+        ],
+        [
+          678.956,
+          340.156
+        ]
+      ],
+      "candidateArea": 996,
+      "eyeRigidPredictedCenter": [
+        641.796,
+        364.723
+      ],
+      "eyeRigidResidualPixels": 3.7192704181864937,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 94,
+      "valid": true,
+      "candidateCenter": [
+        637.853,
+        359.655
+      ],
+      "headPlaneMouthRect": [
+        -39.76923133594441,
+        15.652029079092275,
+        74.96068871870668,
+        38.121273354149565
+      ],
+      "eyes": [
+        [
+          630.387,
+          320.419
+        ],
+        [
+          676.796,
+          338.041
+        ]
+      ],
+      "candidateArea": 1012,
+      "eyeRigidPredictedCenter": [
+        639.739,
+        362.423
+      ],
+      "eyeRigidResidualPixels": 3.349179308460206,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 95,
+      "valid": true,
+      "candidateCenter": [
+        636.852,
+        358.244
+      ],
+      "headPlaneMouthRect": [
+        -40.204083625867,
+        15.234894689204307,
+        75.90318786529382,
+        39.31476436859498
+      ],
+      "eyes": [
+        [
+          628.982,
+          318.893
+        ],
+        [
+          675.463,
+          336.39
+        ]
+      ],
+      "candidateArea": 1028,
+      "eyeRigidPredictedCenter": [
+        638.459,
+        360.889
+      ],
+      "eyeRigidResidualPixels": 3.094810667011501,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 96,
+      "valid": true,
+      "candidateCenter": [
+        635.759,
+        356.521
+      ],
+      "headPlaneMouthRect": [
+        -39.980315524034744,
+        14.82443068034941,
+        76.81138393056669,
+        38.88135703771609
+      ],
+      "eyes": [
+        [
+          628.032,
+          317.194
+        ],
+        [
+          673.955,
+          334.932
+        ]
+      ],
+      "candidateArea": 1043,
+      "eyeRigidPredictedCenter": [
+        637.068,
+        358.901
+      ],
+      "eyeRigidResidualPixels": 2.7166005279280503,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 97,
+      "valid": true,
+      "candidateCenter": [
+        633.978,
+        354.173
+      ],
+      "headPlaneMouthRect": [
+        -40.3126708199976,
+        15.621263642566166,
+        75.59785898074176,
+        38.7786948254293
+      ],
+      "eyes": [
+        [
+          625.673,
+          315.018
+        ],
+        [
+          672.535,
+          331.791
+        ]
+      ],
+      "candidateArea": 1028,
+      "eyeRigidPredictedCenter": [
+        635.856,
+        356.945
+      ],
+      "eyeRigidResidualPixels": 3.348285228453868,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 98,
+      "valid": true,
+      "candidateCenter": [
+        633.049,
+        352.65
+      ],
+      "headPlaneMouthRect": [
+        -39.74571010827177,
+        15.56408135167967,
+        75.93548171381448,
+        38.94476284668867
+      ],
+      "eyes": [
+        [
+          624.127,
+          313.291
+        ],
+        [
+          670.708,
+          329.938
+        ]
+      ],
+      "candidateArea": 1038,
+      "eyeRigidPredictedCenter": [
+        634.267,
+        354.955
+      ],
+      "eyeRigidResidualPixels": 2.60639581033439,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 99,
+      "valid": true,
+      "candidateCenter": [
+        632.138,
+        351.587
+      ],
+      "headPlaneMouthRect": [
+        -40.57655016717898,
+        15.433738215078527,
+        76.55034011401798,
+        38.27329553161151
+      ],
+      "eyes": [
+        [
+          623.17,
+          312.698
+        ],
+        [
+          669.767,
+          329.14
+        ]
+      ],
+      "candidateArea": 1046,
+      "eyeRigidPredictedCenter": [
+        633.466,
+        354.276
+      ],
+      "eyeRigidResidualPixels": 2.998843436144412,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 100,
+      "valid": true,
+      "candidateCenter": [
+        631.519,
+        350.714
+      ],
+      "headPlaneMouthRect": [
+        -40.760253066157226,
+        15.393933155959592,
+        77.51040982004974,
+        37.99401154357867
+      ],
+      "eyes": [
+        [
+          622.218,
+          311.873
+        ],
+        [
+          668.83,
+          327.936
+        ]
+      ],
+      "candidateArea": 1056,
+      "eyeRigidPredictedCenter": [
+        632.796,
+        353.281
+      ],
+      "eyeRigidResidualPixels": 2.8668198525686104,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 101,
+      "valid": true,
+      "candidateCenter": [
+        630.214,
+        349.693
+      ],
+      "headPlaneMouthRect": [
+        -40.309441054274,
+        15.651486727769417,
+        76.57250841061243,
+        39.43175455524792
+      ],
+      "eyes": [
+        [
+          620.271,
+          310.271
+        ],
+        [
+          667.393,
+          326.25
+        ]
+      ],
+      "candidateArea": 1049,
+      "eyeRigidPredictedCenter": [
+        631.152,
+        352.008
+      ],
+      "eyeRigidResidualPixels": 2.498273571778479,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 102,
+      "valid": true,
+      "candidateCenter": [
+        629.229,
+        349.024
+      ],
+      "headPlaneMouthRect": [
+        -40.105320241843394,
+        15.626689280535084,
+        76.26280516359176,
+        39.253247084509496
+      ],
+      "eyes": [
+        [
+          619.085,
+          309.576
+        ],
+        [
+          666.475,
+          325.356
+        ]
+      ],
+      "candidateArea": 1066,
+      "eyeRigidPredictedCenter": [
+        630.238,
+        351.412
+      ],
+      "eyeRigidResidualPixels": 2.592585103649337,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 103,
+      "valid": true,
+      "candidateCenter": [
+        628.462,
+        348.82
+      ],
+      "headPlaneMouthRect": [
+        -40.33505923913425,
+        15.684769359305378,
+        76.57626114785704,
+        40.59859144714742
+      ],
+      "eyes": [
+        [
+          618.207,
+          309.069
+        ],
+        [
+          665.561,
+          324.965
+        ]
+      ],
+      "candidateArea": 1074,
+      "eyeRigidPredictedCenter": [
+        629.259,
+        350.935
+      ],
+      "eyeRigidResidualPixels": 2.2596505584707307,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 104,
+      "valid": true,
+      "candidateCenter": [
+        628.06,
+        348.621
+      ],
+      "headPlaneMouthRect": [
+        -40.39843855437687,
+        15.571689874765973,
+        76.90444573250461,
+        41.05795352042162
+      ],
+      "eyes": [
+        [
+          617.55,
+          308.967
+        ],
+        [
+          664.966,
+          324.603
+        ]
+      ],
+      "candidateArea": 1084,
+      "eyeRigidPredictedCenter": [
+        628.82,
+        350.754
+      ],
+      "eyeRigidResidualPixels": 2.2641385744423332,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 105,
+      "valid": true,
+      "candidateCenter": [
+        627.149,
+        348.407
+      ],
+      "headPlaneMouthRect": [
+        -40.53886972648441,
+        15.688253252852347,
+        76.9163672894627,
+        39.96770682369086
+      ],
+      "eyes": [
+        [
+          616.65,
+          308.817
+        ],
+        [
+          664.153,
+          324.254
+        ]
+      ],
+      "candidateArea": 1084,
+      "eyeRigidPredictedCenter": [
+        628.105,
+        350.572
+      ],
+      "eyeRigidResidualPixels": 2.3670546582275347,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 106,
+      "valid": true,
+      "candidateCenter": [
+        626.372,
+        348.588
+      ],
+      "headPlaneMouthRect": [
+        -39.99066332327046,
+        15.411555003516904,
+        76.27685393102297,
+        40.885317608749574
+      ],
+      "eyes": [
+        [
+          615.724,
+          308.931
+        ],
+        [
+          663.169,
+          324.246
+        ]
+      ],
+      "candidateArea": 1099,
+      "eyeRigidPredictedCenter": [
+        627.24,
+        350.586
+      ],
+      "eyeRigidResidualPixels": 2.1783027441154164,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 107,
+      "valid": true,
+      "candidateCenter": [
+        625.885,
+        348.714
+      ],
+      "headPlaneMouthRect": [
+        -40.74955734182268,
+        15.322603236794064,
+        77.21791010277082,
+        41.36623713676526
+      ],
+      "eyes": [
+        [
+          615.484,
+          308.887
+        ],
+        [
+          663.136,
+          324.593
+        ]
+      ],
+      "candidateArea": 1115,
+      "eyeRigidPredictedCenter": [
+        626.816,
+        350.878
+      ],
+      "eyeRigidResidualPixels": 2.3555527424235287,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 108,
+      "valid": true,
+      "candidateCenter": [
+        625.459,
+        348.756
+      ],
+      "headPlaneMouthRect": [
+        -40.18462387122039,
+        15.217222955265994,
+        77.22504142740686,
+        41.54485164315308
+      ],
+      "eyes": [
+        [
+          614.842,
+          309.035
+        ],
+        [
+          662.421,
+          324.509
+        ]
+      ],
+      "candidateArea": 1122,
+      "eyeRigidPredictedCenter": [
+        626.307,
+        350.862
+      ],
+      "eyeRigidResidualPixels": 2.2709190068282896,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 109,
+      "valid": true,
+      "candidateCenter": [
+        624.92,
+        349.212
+      ],
+      "headPlaneMouthRect": [
+        -40.53994099877935,
+        15.694555665540932,
+        76.92097438131029,
+        40.859740154381505
+      ],
+      "eyes": [
+        [
+          614.344,
+          309.148
+        ],
+        [
+          662.172,
+          324.594
+        ]
+      ],
+      "candidateArea": 1126,
+      "eyeRigidPredictedCenter": [
+        625.948,
+        351.142
+      ],
+      "eyeRigidResidualPixels": 2.1867604488748524,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 110,
+      "valid": true,
+      "candidateCenter": [
+        624.577,
+        349.495
+      ],
+      "headPlaneMouthRect": [
+        -39.94187847403069,
+        15.528512314978311,
+        76.2646601694873,
+        41.12269911127919
+      ],
+      "eyes": [
+        [
+          614.033,
+          309.393
+        ],
+        [
+          661.297,
+          325.078
+        ]
+      ],
+      "candidateArea": 1122,
+      "eyeRigidPredictedCenter": [
+        625.195,
+        351.093
+      ],
+      "eyeRigidResidualPixels": 1.713712210340512,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 111,
+      "valid": true,
+      "candidateCenter": [
+        624.468,
+        349.82
+      ],
+      "headPlaneMouthRect": [
+        -39.87053612358932,
+        15.26014271153802,
+        76.25503876580301,
+        41.593039647649604
+      ],
+      "eyes": [
+        [
+          613.917,
+          309.667
+        ],
+        [
+          661.18,
+          325.607
+        ]
+      ],
+      "candidateArea": 1125,
+      "eyeRigidPredictedCenter": [
+        624.894,
+        351.488
+      ],
+      "eyeRigidResidualPixels": 1.7206736816548922,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 112,
+      "valid": true,
+      "candidateCenter": [
+        624.25,
+        350.159
+      ],
+      "headPlaneMouthRect": [
+        -40.40379471945036,
+        15.311505605128675,
+        76.88884989109354,
+        42.16645349802976
+      ],
+      "eyes": [
+        [
+          613.75,
+          310.0
+        ],
+        [
+          660.897,
+          325.81
+        ]
+      ],
+      "candidateArea": 1154,
+      "eyeRigidPredictedCenter": [
+        624.766,
+        351.675
+      ],
+      "eyeRigidResidualPixels": 1.6008070467495765,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 113,
+      "valid": true,
+      "candidateCenter": [
+        623.889,
+        350.838
+      ],
+      "headPlaneMouthRect": [
+        -40.21675341856786,
+        15.189922639881889,
+        77.19937972856951,
+        41.634658586843486
+      ],
+      "eyes": [
+        [
+          613.578,
+          310.547
+        ],
+        [
+          660.407,
+          326.407
+        ]
+      ],
+      "candidateArea": 1133,
+      "eyeRigidPredictedCenter": [
+        624.406,
+        352.015
+      ],
+      "eyeRigidResidualPixels": 1.2854558558393374,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 114,
+      "valid": true,
+      "candidateCenter": [
+        623.856,
+        351.221
+      ],
+      "headPlaneMouthRect": [
+        -40.46070263619907,
+        15.476064124613856,
+        77.20186862810317,
+        40.97502003260751
+      ],
+      "eyes": [
+        [
+          613.466,
+          310.931
+        ],
+        [
+          660.707,
+          326.879
+        ]
+      ],
+      "candidateArea": 1138,
+      "eyeRigidPredictedCenter": [
+        624.427,
+        352.74
+      ],
+      "eyeRigidResidualPixels": 1.621861376386099,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 115,
+      "valid": true,
+      "candidateCenter": [
+        623.934,
+        351.73
+      ],
+      "headPlaneMouthRect": [
+        -40.27064199147136,
+        15.051297610337466,
+        77.18934887532743,
+        42.079213111641984
+      ],
+      "eyes": [
+        [
+          613.5,
+          311.435
+        ],
+        [
+          660.709,
+          327.618
+        ]
+      ],
+      "candidateArea": 1138,
+      "eyeRigidPredictedCenter": [
+        624.275,
+        353.332
+      ],
+      "eyeRigidResidualPixels": 1.6380528145887996,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 116,
+      "valid": true,
+      "candidateCenter": [
+        623.743,
+        351.919
+      ],
+      "headPlaneMouthRect": [
+        -40.17613411413493,
+        14.998439574508591,
+        77.18650101013507,
+        41.786901154178096
+      ],
+      "eyes": [
+        [
+          613.483,
+          311.767
+        ],
+        [
+          660.358,
+          327.887
+        ]
+      ],
+      "candidateArea": 1144,
+      "eyeRigidPredictedCenter": [
+        624.145,
+        353.392
+      ],
+      "eyeRigidResidualPixels": 1.5275336261590258,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 117,
+      "valid": true,
+      "candidateCenter": [
+        623.749,
+        352.595
+      ],
+      "headPlaneMouthRect": [
+        -39.8179648676459,
+        15.189212832000166,
+        77.18605644415587,
+        42.117157363754416
+      ],
+      "eyes": [
+        [
+          613.344,
+          312.164
+        ],
+        [
+          660.164,
+          328.273
+        ]
+      ],
+      "candidateArea": 1131,
+      "eyeRigidPredictedCenter": [
+        623.987,
+        353.744
+      ],
+      "eyeRigidResidualPixels": 1.173861739581102,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 118,
+      "valid": true,
+      "candidateCenter": [
+        623.556,
+        352.993
+      ],
+      "headPlaneMouthRect": [
+        -40.060543634175474,
+        15.693407405821194,
+        77.20827210008218,
+        41.20162384431981
+      ],
+      "eyes": [
+        [
+          613.05,
+          312.733
+        ],
+        [
+          660.351,
+          328.561
+        ]
+      ],
+      "candidateArea": 1152,
+      "eyeRigidPredictedCenter": [
+        624.126,
+        354.528
+      ],
+      "eyeRigidResidualPixels": 1.6370985529344206,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 119,
+      "valid": true,
+      "candidateCenter": [
+        623.593,
+        353.416
+      ],
+      "headPlaneMouthRect": [
+        -40.25136125264997,
+        15.38860305316881,
+        77.51776296934446,
+        41.05651833706085
+      ],
+      "eyes": [
+        [
+          613.211,
+          313.123
+        ],
+        [
+          660.439,
+          329.193
+        ]
+      ],
+      "candidateArea": 1150,
+      "eyeRigidPredictedCenter": [
+        624.077,
+        354.98
+      ],
+      "eyeRigidResidualPixels": 1.6377926972647585,
+      "poseSource": "blue-component-pair"
+    },
+    {
+      "frame": 120,
+      "valid": true,
+      "candidateCenter": [
+        623.545,
+        353.874
+      ],
+      "headPlaneMouthRect": [
+        -40.12580037606942,
+        15.18857940680112,
+        77.50535246910378,
+        43.15745809698508
+      ],
+      "eyes": [
+        [
+          613.271,
+          313.305
+        ],
+        [
+          660.151,
+          329.585
+        ]
+      ],
+      "candidateArea": 1161,
+      "eyeRigidPredictedCenter": [
+        623.819,
+        355.01
+      ],
+      "eyeRigidResidualPixels": 1.1686650737960174,
+      "poseSource": "blue-component-pair"
+    }
+  ],
+  "decision": "Do not solve by stronger smoothing or additional eye-anchor interpolation. Need a neutral talking base and native jaw/upper-lip registration; generated cheek replacement is also rejected."
+}

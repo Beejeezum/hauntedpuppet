@@ -1,0 +1,20 @@
+{
+  "scope": "Both synthetic native-pixel jaw tests rejected despite passing source-picture/eye-region checks. No new generation credits used.",
+  "studies": [
+    {
+      "artifact": "work/phone-mouth-anchor/scary-native-jaw-study-v1.mp4",
+      "sha256": "d260f63d2ded24f0fb86ec2df33368ec9cb5c602adcbdbd4af4691277ce0ba46",
+      "status": "rejected-visual-self-review",
+      "reason": "Jaw closure creates flattened/stretched lower face and upper chest. V2 monotone coordinate changes did not restore natural character anatomy. Do not ask user to approve or integrate."
+    },
+    {
+      "artifact": "work/phone-mouth-anchor/scary-native-jaw-study-v2.mp4",
+      "sha256": "bea990cac6492e81d6f83ec4464baa788e372d8ff2fec26cae362363a03db716",
+      "status": "rejected-visual-self-review",
+      "reason": "Jaw closure creates flattened/stretched lower face and upper chest. V2 monotone coordinate changes did not restore natural character anatomy. Do not ask user to approve or integrate."
+    }
+  ],
+  "decision": "Stop this local warp route. Audition a character-native video/rig solution before further paid asset revisions.",
+  "humanApproval": false,
+  "runtimeIntegration": false
+}
