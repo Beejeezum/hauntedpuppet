@@ -17,6 +17,10 @@ on:
         description: Test source-only finite-cue MediaSource playback (overrides the seek pilot)
         type: boolean
         default: false
+      native_single_pipeline:
+        description: Test single-pipeline app transport, saved shows and composed output
+        type: boolean
+        default: false
       native_disable_disk_cache:
         description: Disable native on-disk media buffering for the isolated diagnostic
         type: boolean
@@ -400,7 +404,7 @@ jobs:
       - name: Build exact public fixtures
         run: node tests/public_build.cjs
       - name: Check actual native soundtrack and complete bridge
-        if: ${{ !inputs.native_atlas_pilot && !inputs.native_finite_pilot }}
+        if: ${{ !inputs.native_atlas_pilot && !inputs.native_finite_pilot && !inputs.native_single_pipeline }}
         env:
           DEBUG: pw:browser
           GST_DEBUG: autoaudiosink:5,pulsesink:4,webkitmediaplayer:3
@@ -412,11 +416,24 @@ jobs:
           HAUNT_BROWSER=webkit node tests/catalog_bridge_browser.cjs || failed=1
           exit "$failed"
       - name: Check one-decoder source study (not release acceptance)
-        if: ${{ inputs.native_atlas_pilot && !inputs.native_finite_pilot }}
+        if: ${{ inputs.native_atlas_pilot && !inputs.native_finite_pilot && !inputs.native_single_pipeline }}
         run: HAUNT_BROWSER=webkit node tests/atlas_seek_study.cjs
       - name: Check finite-cue source study (not release acceptance)
-        if: ${{ inputs.native_finite_pilot }}
+        if: ${{ inputs.native_finite_pilot && !inputs.native_single_pipeline }}
         run: HAUNT_BROWSER=webkit node tests/finite_cue_study.cjs
+      - name: Check single-pipeline app integration (not release acceptance)
+        if: ${{ inputs.native_single_pipeline }}
+        env:
+          HAUNT_BROWSER: webkit
+          HAUNT_SINGLE_PIPELINE: '1'
+        run: |
+          failed=0
+          node tests/single_pipeline_transport.cjs || failed=1
+          node tests/catalog_bridge_browser.cjs || failed=1
+          node tests/phone_saved_playlist.cjs || failed=1
+          node tests/phone_director_player.cjs || failed=1
+          HAUNT_DESK_ROOT=dist HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs || failed=1
+          exit "$failed"
       - name: Keep diagnostic evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -429,3 +446,7 @@ jobs:
             test-results/atlas-seek-*.json
             test-results/finite-cue-study-*.json
             test-results/finite-cue-study-ui.png
+            test-results/single-pipeline-*.json
+            test-results/catalog-bridge-single-*.json
+            test-results/phone-saved-playlist-single-*.json
+            test-results/showdesk-single-*.json

@@ -18,9 +18,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.mjs",
       "destination": "showdesk.mjs",
-      "sha256": "e5577c4dcae9efc22aca992f55083e20b6de20d1d97b4091bd8e6bab057467ab",
-      "bytes": 18317,
-      "publishedSha256": "59a1c332d5492d0381d82ddbaf66455b11a0960eecd342f85a79a56fa93d1792",
+      "sha256": "1f33b2eb7412423d8cbe679a690cc7166cab7f364a222ac6c2c2df861f57e93e",
+      "bytes": 18493,
+      "publishedSha256": "245cd058e898c1b9a0a14afdccfee473d57eaa6c5a3b6a6aea4c11db7ac4148c",
       "rewrites": [
         {
           "from": "../runway-pilots/wisp-film-output.js",
@@ -39,9 +39,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/film-transport.mjs",
       "destination": "film-transport.mjs",
-      "sha256": "ba9253b4dd94da24a938f090801746d5a216bc130b2568b44715390bb788df05",
-      "bytes": 13258,
-      "publishedSha256": "ba9253b4dd94da24a938f090801746d5a216bc130b2568b44715390bb788df05"
+      "sha256": "76809c936a3a06b006dd77b62a18fc02df07734da03177fb128c1e8e556713c3",
+      "bytes": 13356,
+      "publishedSha256": "76809c936a3a06b006dd77b62a18fc02df07734da03177fb128c1e8e556713c3"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/cue-director.mjs",
@@ -130,8 +130,8 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/director.mjs",
       "destination": "director.mjs",
-      "bytes": 10126,
-      "sha256": "abf1330c958f7fd3c2dbfa1c678e0be7cc7fa2731c944c9839fd1824fd2ff2e3",
+      "bytes": 10319,
+      "sha256": "795d82a21ecccb1b71f4bee66e5ad44cf370201f8a3db31d6c687b044b3ba3cd",
       "rewrites": [
         {
           "from": "../tonight-demo/paired-controls.mjs",
@@ -146,7 +146,7 @@
           "to": "../wisp-mouth-study/phone-painted-mouth-layer.mjs"
         }
       ],
-      "publishedSha256": "bd607e487cf6f14e861cd539b0b5db14b6ab3811836b17f45c38c3c4d9e4c97e"
+      "publishedSha256": "c4883c731399e5e07942ed9167404b1a84e3ee24aa9c49b93ee141f709beaa5d"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/director.css",
@@ -175,6 +175,13 @@
       "bytes": 1563,
       "sha256": "070661e42a1fd2e4f18801b06b5f1638a2e6d59174ea68ce386fa5ba29f94eb6",
       "publishedSha256": "070661e42a1fd2e4f18801b06b5f1638a2e6d59174ea68ce386fa5ba29f94eb6"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/single-film-transport.mjs",
+      "destination": "single-film-transport.mjs",
+      "sha256": "79c6f0524f540071ed11ad75242a1905dc6e475ce372ccfb06e4fc837a707dcc",
+      "bytes": 6187,
+      "publishedSha256": "79c6f0524f540071ed11ad75242a1905dc6e475ce372ccfb06e4fc837a707dcc"
     }
   ]
 }

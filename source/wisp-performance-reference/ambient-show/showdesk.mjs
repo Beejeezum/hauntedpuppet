@@ -4,6 +4,8 @@ import {PlaylistRunner,mountPlaylists,playlistControls} from './saved-playlists.
 import {StageCompositor} from '/assets/stage-compositor.js';
 import {CueDirector} from './cue-director.mjs';
 import {FilmTransport} from './film-transport.mjs';
+import {SingleFilmTransport} from './single-film-transport.mjs';
+const Transport=new URLSearchParams(location.search).get('pipeline')==='single'?SingleFilmTransport:FilmTransport;
 import {StageFrameClock} from './frame-clock.mjs';
 import {createFilmRemote} from './film-remote.mjs';
 import {mountPhoneControls} from '/assets/phone-bridge.js';
@@ -23,7 +25,7 @@ const showError=error=>{$('status').textContent=error.message;};
 if(libraryError){$('status').textContent='Cue library unavailable · stage black';$('start').disabled=true;}
 if(useCatalog){$('stageInfo').textContent='Approved character films. Cue changes follow reviewed cuts, full transition performances or planned empty-stage arrivals.';$('filmSoundInfo').textContent='Film sound plays only on this laptop after you enable it. Preloads, effect videos, phone and projector remain silent. Blackout turns sound off.';$('studyInfo').hidden=true;for(const mode of ['cute','scary','alternate','mostly-scary']){const option=$('mode').querySelector('[value="'+mode+'"]');option.textContent=option.textContent.replace(' · study','');try{picker.assertMode(mode);}catch{option.disabled=true;}}}
 const compositor=new StageCompositor($('stage'),{onLayerError:id=>$('status').textContent='Layer unavailable: '+id});
-const frameClock=new StageFrameClock(),transport=new FilmTransport(compositor,clips,{frameClock,mediaHost:$('mediaSources')}),overlays=new Map();let disposed=false,raf,mode='manual',formSince=0,formPausedAt=null,lastForm=null,activity=0,lastTime=-1,lastVideo=null,lastFresh=performance.now(),stale=false;
+const frameClock=new StageFrameClock(),transport=new Transport(compositor,clips,{frameClock,mediaHost:$('mediaSources')}),overlays=new Map();let disposed=false,raf,mode='manual',formSince=0,formPausedAt=null,lastForm=null,activity=0,lastTime=-1,lastVideo=null,lastFresh=performance.now(),stale=false;
 let soundControls,operatorControls;const playlist=new PlaylistRunner();
 const labels={stopped:'Stage black',preparing:'Preparing next cue',exiting:'Planned exit','empty-stage':'Empty stage · planned transition',entering:'Planned entrance',playing:'On stage',bridging:'Transition performance',unavailable:'Film unavailable · stage black'};
 const directorOptions={fadeMs:900,onState:s=>{

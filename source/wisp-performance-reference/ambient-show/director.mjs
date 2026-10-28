@@ -1,5 +1,7 @@
 import {StageCompositor} from '/assets/stage-compositor.js';
 import {FilmTransport} from './film-transport.mjs';
+import {SingleFilmTransport} from './single-film-transport.mjs';
+const Transport=new URLSearchParams(location.search).get('pipeline')==='single'?SingleFilmTransport:FilmTransport;
 import {StageFrameClock} from './frame-clock.mjs';
 import {PhonePerformanceDirector} from './phone-performance-director.mjs';
 import {DirectorAmbientProgram} from './director-ambient-program.mjs';
@@ -8,7 +10,7 @@ import {mountFilmOutput} from '../runway-pilots/wisp-film-output.js';
 const $=id=>document.getElementById(id),clips=[{id:'friendly-drift',character:'friendly',src:'./friendly.mp4',loop:true,exitPolicy:'finish'},{id:'scary-drift',character:'scary',src:'./scary.mp4',loop:false,exitPolicy:'finish'}];
 let mouthLayer=null,mouthEpoch=0;
 const frameClock=new StageFrameClock();
-const compositor=new StageCompositor($('stage')),transport=new FilmTransport(compositor,clips,{frameClock,mediaHost:$('mediaSources'),characterFilter:raw=>{try{return mouthLayer?.render(raw)}catch{mouthLayer?.stop();$('mouthStatus').textContent='Mouth study unavailable; original film retained';return null}}});
+const compositor=new StageCompositor($('stage')),transport=new Transport(compositor,clips,{frameClock,mediaHost:$('mediaSources'),characterFilter:raw=>{try{return mouthLayer?.render(raw)}catch{mouthLayer?.stop();$('mouthStatus').textContent='Mouth study unavailable; original film retained';return null}}});
 let context,source,enabled=false,disposed=false,frame,activeCharacter='friendly';
 const ambient=new DirectorAmbientProgram(transport,clips,{onState:s=>{if(!s.suspended)activeCharacter=s.character;$('ambientStatus').textContent=s.error||((s.suspended?'Paused':'Between lines')+' · '+s.mode);}});
 function silence(){ambient.suspend();mouthLayer?.stop();if(source){try{source.stop();}catch{}source.disconnect();source=null;}transport.blackout();}
@@ -35,7 +37,7 @@ async function speech(value,{signal,live}){
 }
 const director=new PhonePerformanceDirector({animations:clips,prepareSpeech:speech,
  prepareFilm:async(clip,{signal})=>{ambient.suspend();if(clip.loop&&transport.active?.loop&&transport.active?.dataset.cue===clip.id&&!transport.active.paused&&!compositor.black)return{id:clip.id,clip,video:transport.active,alreadyActive:true,dispose(){}};const abort=()=>transport.cancelPreparation();signal.addEventListener('abort',abort,{once:true});try{return await transport.prepare(clip.id);}finally{signal.removeEventListener('abort',abort);}},
- validatePrepared:({speech,film})=>{if(!film.clip.loop&&speech.buffer.duration+.55>film.video.duration)throw Error('This scary film is too short for that line. Use fewer words.');},
+ validatePrepared:({speech,film})=>{if(!film.clip.loop&&speech.buffer.duration+.55>(film.duration??film.video.duration))throw Error('This scary film is too short for that line. Use fewer words.');},
  enter:async(film,ctx)=>{if(film.alreadyActive)return;await transport.fade(0,550,ctx.live);if(!ctx.live())return;await transport.activate(film,ctx.live);await transport.fade(1,550,ctx.live);},
  play:async({speech,film,value},{signal,live})=>{if(!live())return;activeCharacter=value.character;await new Promise((resolve,reject)=>{
   const node=context.createBufferSource();source=node;node.buffer=speech.buffer;node.connect(context.destination);

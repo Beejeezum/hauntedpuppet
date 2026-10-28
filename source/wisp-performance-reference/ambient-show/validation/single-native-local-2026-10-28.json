@@ -1,0 +1,51 @@
+{
+  "status": "local experimental app path passed; Linux integration pending; default unchanged",
+  "tests": {
+    "single-pipeline-transport-chromium": {
+      "passed": true,
+      "reportSha256": "056cbef95c791729c9cd625bbed9f31622372cdc6dd71a35a1570cece5e4c049"
+    },
+    "single-pipeline-transport-webkit": {
+      "passed": true,
+      "reportSha256": "68a6627a85ced784ad3c4e7feafb643fd26bda8f07ac6af5d7756536f1554fd5"
+    },
+    "phone-saved-playlist-single-chromium": {
+      "passed": true,
+      "reportSha256": "90eebe716000a451eb865ce609b379caca7e956567d269d78f3025de2d23c1a8"
+    },
+    "phone-saved-playlist-single-webkit": {
+      "passed": true,
+      "reportSha256": "90eebe716000a451eb865ce609b379caca7e956567d269d78f3025de2d23c1a8"
+    },
+    "showdesk-single-chromium": {
+      "passed": true,
+      "reportSha256": "02fcbdc9fe77794efc7573f9340b9b14ac714fe3ffad4f3c6d45ceb5cf2592db"
+    },
+    "showdesk-single-webkit": {
+      "passed": true,
+      "reportSha256": "02fcbdc9fe77794efc7573f9340b9b14ac714fe3ffad4f3c6d45ceb5cf2592db"
+    },
+    "catalog-bridge-single-webkit": {
+      "passed": true,
+      "reportSha256": "78aee586bfd18d57e4872554fc21c6be175d97b36210765fba3ff2fc85584280"
+    },
+    "single-pipeline-local-server": {
+      "passed": true,
+      "reportSha256": "14a71469c0968e9dd8b68941bad396420b3ef3ecf1b19dd2525782a2329e09bb"
+    }
+  },
+  "mockProviderTypedPlayer": {
+    "chromium": "passed",
+    "MacWebKit": "passed",
+    "scope": "Generated WAV, actual native painted movies/WebAudio; mocked provider, no genuine voice or lip-sync approval."
+  },
+  "scope": "?pipeline=single compatibility MP4 player in actual showdesk and text director. Not the private continuous MediaSource packet scheduler. No artistic seam, complete16cue, genuine remote phone/provider, acoustic or physical projection acceptance.",
+  "sha256": {
+    "source/wisp-performance-reference/ambient-show/single-film-transport.mjs": "79c6f0524f540071ed11ad75242a1905dc6e475ce372ccfb06e4fc837a707dcc",
+    "source/wisp-performance-reference/ambient-show/film-transport.mjs": "76809c936a3a06b006dd77b62a18fc02df07734da03177fb128c1e8e556713c3",
+    "source/wisp-performance-reference/ambient-show/showdesk.mjs": "1f33b2eb7412423d8cbe679a690cc7166cab7f364a222ac6c2c2df861f57e93e",
+    "source/wisp-performance-reference/ambient-show/director.mjs": "795d82a21ecccb1b71f4bee66e5ad44cf370201f8a3db31d6c687b044b3ba3cd"
+  },
+  "unchangedReleaseGates": true,
+  "newGenerationCredits": 0
+}
