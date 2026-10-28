@@ -16,11 +16,11 @@ export async function waitForFilmData(video,signal){
 }
 
 export async function waitForFilmFrame(video,signal,frameClock){
-  // Canvas sources can keep decoding after WebKit omits a presentation callback
-  // on resume. Accept decoded future data with an advancing clock as a fallback;
-  // a pending play() promise alone is never a readiness signal.
+  // Accept a fresh presented picture with an advancing clock, including when
+  // the engine reports only current data. Future data plus clock remains the
+  // fallback when presentation callbacks are omitted. A Play promise is insufficient.
   await new Promise((resolve,reject)=>{
-   let callback,timer,paintTask,settled=false;const requestedTime=video.currentTime;
+   let callback,timer,paintTask,settled=false,presentedMediaTime=-Infinity;const requestedTime=video.currentTime;
    const request=cb=>frameClock?frameClock.request(cb):requestAnimationFrame(cb),cancel=id=>frameClock?frameClock.cancel(id):cancelAnimationFrame(id);
    const aborted=()=>failed(Object.assign(Error('Film preparation cancelled'),{cancelled:true}));
    const cleanup=()=>{clearTimeout(timer);if(paintTask!==undefined)cancel(paintTask);if(callback!==undefined)video.cancelVideoFrameCallback?.(callback);video.removeEventListener('playing',presented);video.removeEventListener('error',failed);signal?.removeEventListener('abort',aborted);};
@@ -29,8 +29,12 @@ export async function waitForFilmFrame(video,signal,frameClock){
    // through the callback's microtask checkpoint.
    const playing=()=>{if(settled)return;settled=true;cleanup();setTimeout(resolve,0);};
    const failed=error=>{if(settled)return;settled=true;cleanup();reject(error instanceof Error?error:Error('Film unavailable'));};
-   const ready=()=>!video.paused&&!video.seeking&&video.readyState>=3&&Number.isFinite(video.currentTime)&&video.currentTime-requestedTime>=1/30;
-   const presented=()=>{if(settled)return;if(ready()){playing();return;}if(video.requestVideoFrameCallback)callback=video.requestVideoFrameCallback(presented);};
+   // A decoded, presented frame is stronger evidence than buffered-future data.
+   // GStreamer may present continuous moving pictures while readyState stays2.
+   // https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/requestVideoFrameCallback
+   const progressing=()=>!video.paused&&!video.seeking&&video.readyState>=2&&Number.isFinite(video.currentTime)&&video.currentTime-requestedTime>=1/30;
+   const ready=()=>progressing()&&(video.readyState>=3||presentedMediaTime>=requestedTime+1/30&&presentedMediaTime<=video.currentTime+2/30);
+   const presented=(_,metadata)=>{if(settled)return;if(progressing()&&Number.isFinite(metadata?.mediaTime)&&metadata.mediaTime>=requestedTime+1/30&&metadata.mediaTime<=video.currentTime+2/30)presentedMediaTime=Math.max(presentedMediaTime,metadata.mediaTime);if(ready()){playing();return;}if(video.requestVideoFrameCallback)callback=video.requestVideoFrameCallback(presented);};
    const decoded=()=>{if(settled)return;if(ready()){playing();return;}paintTask=request(decoded);};
    if(signal?.aborted){aborted();return;}signal?.addEventListener('abort',aborted,{once:true});
    timer=setTimeout(()=>failed(Error('Film did not deliver a frame')),6000);video.addEventListener('error',failed,{once:true});

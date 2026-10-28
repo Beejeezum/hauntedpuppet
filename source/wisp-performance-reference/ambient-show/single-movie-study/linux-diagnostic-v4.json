@@ -1,0 +1,126 @@
+{
+  "run": "https://github.com/Beejeezum/hauntedpuppet/actions/runs/40777053642",
+  "commit": "bc0877974fdcc7d830ad696b5a3e43c5f44832f5",
+  "conclusion": "failure",
+  "failure": {
+    "passed": false,
+    "stage": "initial sound readiness",
+    "message": "Initial sound action must settle before interruption stress: {\"ok\":false,\"error\":\"Atlas media readiness deadline\",\"cancelled\":false}",
+    "state": {
+      "phase": "failed",
+      "current": null,
+      "sourceLoads": 1,
+      "currentTime": 5.911767333,
+      "seeking": false,
+      "paused": true,
+      "readyState": 2,
+      "networkState": 2,
+      "lastWait": {
+        "phase": "playing",
+        "startedAt": 3685,
+        "startTime": 0.020833333,
+        "checks": 250,
+        "checkedAt": 9680,
+        "currentTime": 5.895028333,
+        "readyState": 2,
+        "seeking": false,
+        "paused": false
+      },
+      "lastPresented": {
+        "frames": 117,
+        "mediaTime": 5.875,
+        "presentedFrames": 153,
+        "at": 9680,
+        "readyState": 2,
+        "currentTime": 5.895028333
+      },
+      "muted": true,
+      "ready": true,
+      "disposed": false,
+      "metrics": [
+        {
+          "cue": "friendly-drift-A",
+          "targetSeconds": 0.020833333333333332,
+          "firstPictureMs": 296,
+          "totalReadyMs": 296,
+          "playing": false
+        },
+        {
+          "cue": "scary-drift",
+          "targetSeconds": 20.1875,
+          "firstPictureMs": 135,
+          "totalReadyMs": 135,
+          "playing": false
+        },
+        {
+          "cue": "cute-to-evil",
+          "targetSeconds": 5.104166666666667,
+          "firstPictureMs": 100,
+          "totalReadyMs": 100,
+          "playing": false
+        },
+        {
+          "cue": "scary-eyes",
+          "targetSeconds": 10.145833333333334,
+          "firstPictureMs": 124,
+          "totalReadyMs": 124,
+          "playing": false
+        },
+        {
+          "cue": "evil-to-cute",
+          "targetSeconds": 25.229166666666668,
+          "firstPictureMs": 113,
+          "totalReadyMs": 113,
+          "playing": false
+        },
+        {
+          "cue": "friendly-drift-B",
+          "targetSeconds": 30.270833333333332,
+          "firstPictureMs": 113,
+          "totalReadyMs": 113,
+          "playing": false
+        },
+        {
+          "cue": "scary-eyes",
+          "targetSeconds": 10.145833333333334,
+          "firstPictureMs": 109,
+          "totalReadyMs": 109,
+          "playing": false
+        },
+        {
+          "cue": "friendly-drift-A",
+          "targetSeconds": 0.020833333333333332,
+          "firstPictureMs": 111,
+          "totalReadyMs": 111,
+          "playing": false
+        }
+      ]
+    },
+    "compositor": {
+      "black": true,
+      "suspended": false,
+      "level": 1,
+      "draws": 380,
+      "layers": [
+        {
+          "id": "character",
+          "opacity": 1,
+          "blend": "source-over",
+          "visible": true,
+          "kind": "character",
+          "scale": 1,
+          "x": 0,
+          "y": 0
+        }
+      ]
+    },
+    "status": "Atlas media readiness deadline"
+  },
+  "finding": "With initial sound action awaited before interruptions, deadline occurs at initial playback readiness:117 actual frame callbacks, last mediaTime5.875s,clock5.895s,readyState2. The future-data buffering requirement incorrectly rejects genuine presented video movement.",
+  "correctiveChange": "Accept current decoded data only when a fresh native presented frame and advancing clock prove progress; reject stale/unrelated timestamps, paused/seeking data and clock-only success. Existing future-data fallback and actual readiness deadline remain.",
+  "primarySources": [
+    "https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/requestVideoFrameCallback",
+    "https://html.spec.whatwg.org/multipage/media.html#ready-states"
+  ],
+  "scope": "This is evidence for the correction, not Linux acceptance of the new code or physical projection."
+}

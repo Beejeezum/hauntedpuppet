@@ -1,0 +1,38 @@
+{
+  "status": "local actual-media tests passed; Linux full regression pending",
+  "sourceHashes": {
+    "source/wisp-performance-reference/ambient-show/film-transport.mjs": "c25d5f20929399c9f013d6e1c40e2180fa99fe15ffc5921185874593a5ac6fbc",
+    "tests/film_frame_readiness.cjs": "2efbb4e59857aaa13f2eee30f0d9f95b2c72f4efe81d561840b197ad6a147150",
+    "tests/film_transport_readiness.cjs": "50887531aeaca32ab8e912a3d9c962977794fcf027382568d7c5613e34ea017f",
+    "scripts/public-showdesk.json": "5c4ed9eaa3b0c4ba27e09dd76a7461a7bb9ba525058ee110e6a4f3cd4d8eea5b"
+  },
+  "evidence": "../single-movie-study/linux-diagnostic-v4.json",
+  "guardTests": [
+    "Current data plus resolved Play promise and advancing clock stays pending without a fresh picture.",
+    "Old frame, unrelated future timestamp, paused or seeking callbacks cannot establish fresh current-data readiness.",
+    "Fresh presented picture with advancing clock can establish readiness at current data.",
+    "Future-data fallback unchanged, abort and late Play rejection clean up callbacks.",
+    "Existing standby/future-data, active-clock, cancellation and real six-second deadline suite passed unchanged."
+  ],
+  "actualMediaLocal": {
+    "chromium": [
+      "film_single_clock.cjs",
+      "showdesk_film_audio.cjs",
+      "catalog_bridge_browser.cjs",
+      "atlas_seek_study.cjs"
+    ],
+    "webkit": [
+      "film_single_clock.cjs",
+      "showdesk_film_audio.cjs",
+      "catalog_bridge_browser.cjs",
+      "atlas_seek_study.cjs"
+    ]
+  },
+  "otherLocal": [
+    "phone_director_player.cjs",
+    "director_output_clock.cjs",
+    "public_build.cjs",
+    "browser_test_shards.cjs (102 suites)"
+  ],
+  "limits": "Actual film/audio decoding and synthetic/null audio sinks, no human voice/mix, new cue approval or physical projection. Provider mocked in phone director tests. No new Runway credits. Full release gate retained."
+}

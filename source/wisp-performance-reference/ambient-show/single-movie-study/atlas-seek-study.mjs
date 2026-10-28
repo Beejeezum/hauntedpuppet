@@ -42,10 +42,11 @@ export class AtlasSeekStudy {
  async play(){
   if(!this.current||this.disposed)throw Error('Choose an atlas cue');const epoch=this.epoch,at=this.video.currentTime;this.phase='playing';this.syncSound();let callback;this.lastPresented=null;
   // Observe actual decoder presentation without pausing/unloading inside its callback.
-  // This is diagnostic evidence only; the existing readiness predicate is unchanged.
+  // A fresh presented picture can establish readiness at HAVE_CURRENT_DATA.
+  // An advancing audio clock alone still cannot satisfy that path.
   const observed=(_,metadata)=>{if(this.epoch!==epoch||this.disposed)return;this.lastPresented={frames:(this.lastPresented?.frames||0)+1,mediaTime:metadata.mediaTime,presentedFrames:metadata.presentedFrames,at:performance.now(),readyState:this.video.readyState,currentTime:this.video.currentTime};callback=this.video.requestVideoFrameCallback(observed);};
   if(this.video.requestVideoFrameCallback)callback=this.video.requestVideoFrameCallback(observed);
-  try{await this.wait(()=>!this.video.paused&&this.video.readyState>=3&&this.video.currentTime-at>=1/this.fps,this.pending?.signal,()=>this.video.play());if(this.epoch!==epoch||this.disposed)throw Object.assign(Error('Atlas play cancelled'),{cancelled:true});}
+  try{await this.wait(()=>!this.video.paused&&!this.video.seeking&&this.video.readyState>=2&&this.video.currentTime-at>=1/this.fps&&(this.video.readyState>=3||this.lastPresented?.mediaTime>=at+1/this.fps&&this.lastPresented.mediaTime<=this.video.currentTime+2/this.fps),this.pending?.signal,()=>this.video.play());if(this.epoch!==epoch||this.disposed)throw Object.assign(Error('Atlas play cancelled'),{cancelled:true});}
   catch(error){if(this.epoch===epoch&&!this.disposed){this.phase='failed';this.current=null;this.video.muted=true;this.compositor.blackout();setTimeout(()=>{if(this.epoch===epoch&&!this.disposed&&this.phase==='failed')this.video.pause();},0);}throw error;}finally{if(callback!==undefined)this.video.cancelVideoFrameCallback?.(callback);}
  }
  stop(){this.epoch++;this.pending?.abort();this.pending=null;this.soundEnabled=false;this.current=null;this.holding=false;this.phase='stopped';this.video.muted=true;this.compositor.setLevel(0);this.compositor.blackout();const epoch=this.epoch;setTimeout(()=>{if(this.epoch===epoch&&!this.disposed)this.video.pause();},0);}
