@@ -9,6 +9,10 @@ on:
         description: Run only the Linux native-media diagnostic (not release acceptance)
         type: boolean
         default: false
+      native_atlas_pilot:
+        description: Test source-only single-movie seeks instead of the normal native-media cases
+        type: boolean
+        default: false
       native_disable_disk_cache:
         description: Disable native on-disk media buffering for the isolated diagnostic
         type: boolean
@@ -386,6 +390,7 @@ jobs:
       - name: Build exact public fixtures
         run: node tests/public_build.cjs
       - name: Check actual native soundtrack and complete bridge
+        if: ${{ !inputs.native_atlas_pilot }}
         env:
           DEBUG: pw:browser
           GST_DEBUG: autoaudiosink:5,pulsesink:4,webkitmediaplayer:3
@@ -396,6 +401,9 @@ jobs:
           HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/showdesk_film_audio.cjs || failed=1
           HAUNT_BROWSER=webkit node tests/catalog_bridge_browser.cjs || failed=1
           exit "$failed"
+      - name: Check one-decoder source study (not release acceptance)
+        if: ${{ inputs.native_atlas_pilot }}
+        run: HAUNT_BROWSER=webkit node tests/atlas_seek_study.cjs
       - name: Keep diagnostic evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -404,3 +412,4 @@ jobs:
           path: |
             test-results/showdesk-film-audio-webkit*.json
             test-results/catalog-bridge-webkit*.json
+            test-results/atlas-seek-*.json

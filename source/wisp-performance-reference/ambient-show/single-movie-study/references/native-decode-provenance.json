@@ -1,0 +1,42 @@
+{
+  "masterSha256": "de832a10253bb872ec0b522d408383df2555eac43098ebf38c83d5451f5a5eca",
+  "method": "One video frame stream-copy from original keyframe; no re-encoding. All decoded pixels checked against original PNG goldens. Native references allow same-engine colour conversion comparison rather than changing pixel tolerance.",
+  "references": [
+    {
+      "id": "friendly-drift-A",
+      "masterFrame": 0,
+      "nativeReferenceSha256": "c0e39736616c616d2e6b0cc470e5d57977265571e21cd4b3438c630e1f54eff3",
+      "decodedPixelsEqualOriginalGolden": true
+    },
+    {
+      "id": "cute-to-evil",
+      "masterFrame": 122,
+      "nativeReferenceSha256": "a7ce0a7b7bacf705804c82dd21470e5a93419105406cfab634623fe08f224e68",
+      "decodedPixelsEqualOriginalGolden": true
+    },
+    {
+      "id": "scary-eyes",
+      "masterFrame": 243,
+      "nativeReferenceSha256": "6b80afebd4704353a19109852dbc2dc679638eb285d9aa89a4fedbfef26dd930",
+      "decodedPixelsEqualOriginalGolden": true
+    },
+    {
+      "id": "scary-drift",
+      "masterFrame": 484,
+      "nativeReferenceSha256": "46d915867d32fa9adb61659e9fe7512ce699b94603652878c08414551af8fd2a",
+      "decodedPixelsEqualOriginalGolden": true
+    },
+    {
+      "id": "evil-to-cute",
+      "masterFrame": 605,
+      "nativeReferenceSha256": "1586b04565dfc6c6ea37420d9926937d2682bc81356d32e47ac72a40a8c84b2b",
+      "decodedPixelsEqualOriginalGolden": true
+    },
+    {
+      "id": "friendly-drift-B",
+      "masterFrame": 726,
+      "nativeReferenceSha256": "ecfd6512206d19a30eae5351e8af23a65c647405455ed8657fada4ade1876847",
+      "decodedPixelsEqualOriginalGolden": true
+    }
+  ]
+}

@@ -1,0 +1,271 @@
+{
+  "status": "source-only local readiness passed; Linux diagnostic and runtime integration pending",
+  "sourceHashes": {
+    "source/wisp-performance-reference/ambient-show/single-movie-study/atlas-seek-study.mjs": "b7c9a023b0e1b3e3f7e4e431f6feec91a8ed854ca9064ad4c13e0e7f78177b08",
+    "source/wisp-performance-reference/ambient-show/single-movie-study/index.html": "eeb54bed919226c508c1853628394422a4f0d14848497c7623c1cd9c79e3d5a2",
+    "tests/atlas_seek_study.cjs": "3c4c8257c4779f74186dec564d75ab4bbd572aca3e318af8794cabcd7ad2b26b"
+  },
+  "tests": {
+    "chromium": {
+      "passed": true,
+      "masterSha256": "de832a10253bb872ec0b522d408383df2555eac43098ebf38c83d5451f5a5eca",
+      "sourceLoads": 1,
+      "comparisons": [
+        {
+          "id": "friendly-drift-A",
+          "mae": 0
+        },
+        {
+          "id": "scary-drift",
+          "mae": 0
+        },
+        {
+          "id": "cute-to-evil",
+          "mae": 0
+        },
+        {
+          "id": "scary-eyes",
+          "mae": 0
+        },
+        {
+          "id": "evil-to-cute",
+          "mae": 0
+        },
+        {
+          "id": "friendly-drift-B",
+          "mae": 0
+        },
+        {
+          "id": "scary-eyes",
+          "mae": 0
+        },
+        {
+          "id": "friendly-drift-A",
+          "mae": 0
+        }
+      ],
+      "metrics": [
+        {
+          "cue": "friendly-drift-A",
+          "targetSeconds": 0.020833333333333332,
+          "firstPictureMs": 11.300000011920929,
+          "totalReadyMs": 11.300000011920929,
+          "playing": false
+        },
+        {
+          "cue": "scary-drift",
+          "targetSeconds": 20.1875,
+          "firstPictureMs": 20.600000023841858,
+          "totalReadyMs": 20.600000023841858,
+          "playing": false
+        },
+        {
+          "cue": "cute-to-evil",
+          "targetSeconds": 5.104166666666667,
+          "firstPictureMs": 20.5,
+          "totalReadyMs": 20.5,
+          "playing": false
+        },
+        {
+          "cue": "scary-eyes",
+          "targetSeconds": 10.145833333333334,
+          "firstPictureMs": 21.599999994039536,
+          "totalReadyMs": 21.599999994039536,
+          "playing": false
+        },
+        {
+          "cue": "evil-to-cute",
+          "targetSeconds": 25.229166666666668,
+          "firstPictureMs": 17.80000001192093,
+          "totalReadyMs": 17.80000001192093,
+          "playing": false
+        },
+        {
+          "cue": "friendly-drift-B",
+          "targetSeconds": 30.270833333333332,
+          "firstPictureMs": 22.599999994039536,
+          "totalReadyMs": 22.599999994039536,
+          "playing": false
+        },
+        {
+          "cue": "scary-eyes",
+          "targetSeconds": 10.145833333333334,
+          "firstPictureMs": 24,
+          "totalReadyMs": 24,
+          "playing": false
+        },
+        {
+          "cue": "friendly-drift-A",
+          "targetSeconds": 0.020833333333333332,
+          "firstPictureMs": 24,
+          "totalReadyMs": 24,
+          "playing": false
+        },
+        {
+          "cue": "scary-drift",
+          "targetSeconds": 20.1875,
+          "firstPictureMs": 15.099999994039536,
+          "totalReadyMs": 110.39999997615814,
+          "playing": true
+        },
+        {
+          "cue": "friendly-drift-B",
+          "targetSeconds": 30.270833333333332,
+          "firstPictureMs": 30.099999994039536,
+          "totalReadyMs": 30.099999994039536,
+          "playing": false
+        },
+        {
+          "cue": "scary-eyes",
+          "targetSeconds": 10.145833333333334,
+          "firstPictureMs": 23.700000017881393,
+          "totalReadyMs": 23.700000017881393,
+          "playing": false
+        }
+      ],
+      "medianFirstPictureMs": 21.599999994039536,
+      "maximumFirstPictureMs": 30.099999994039536,
+      "fivePauseRecoveries": true,
+      "videoEffectRemoval": true,
+      "outputDrivenSeekWithOwnerRafSuppressed": true,
+      "staleSeekCancellation": true,
+      "lostClockDeadline": {
+        "message": "Atlas paint readiness deadline",
+        "elapsedMs": 40.29999998211861,
+        "pending": 0
+      },
+      "scope": "Source-only native single-movie seek stress, actual paused pixels versus stream-copied same-engine native goldens, zero-volume sound audition, overlay release,5real pause/stale-black/recover cycles, silent output and Stop/disposal. Deliberate diagnostic jumps are not authored routes. No logical cue-end player, human seam/motion/voice, provider, physical projection or production migration acceptance."
+    },
+    "webkit": {
+      "passed": true,
+      "masterSha256": "de832a10253bb872ec0b522d408383df2555eac43098ebf38c83d5451f5a5eca",
+      "sourceLoads": 1,
+      "comparisons": [
+        {
+          "id": "friendly-drift-A",
+          "mae": 0
+        },
+        {
+          "id": "scary-drift",
+          "mae": 0
+        },
+        {
+          "id": "cute-to-evil",
+          "mae": 0
+        },
+        {
+          "id": "scary-eyes",
+          "mae": 0
+        },
+        {
+          "id": "evil-to-cute",
+          "mae": 0
+        },
+        {
+          "id": "friendly-drift-B",
+          "mae": 0
+        },
+        {
+          "id": "scary-eyes",
+          "mae": 0
+        },
+        {
+          "id": "friendly-drift-A",
+          "mae": 0
+        }
+      ],
+      "metrics": [
+        {
+          "cue": "friendly-drift-A",
+          "targetSeconds": 0.020833333333333332,
+          "firstPictureMs": 15,
+          "totalReadyMs": 15,
+          "playing": false
+        },
+        {
+          "cue": "scary-drift",
+          "targetSeconds": 20.1875,
+          "firstPictureMs": 19,
+          "totalReadyMs": 19,
+          "playing": false
+        },
+        {
+          "cue": "cute-to-evil",
+          "targetSeconds": 5.104166666666667,
+          "firstPictureMs": 18,
+          "totalReadyMs": 18,
+          "playing": false
+        },
+        {
+          "cue": "scary-eyes",
+          "targetSeconds": 10.145833333333334,
+          "firstPictureMs": 13,
+          "totalReadyMs": 13,
+          "playing": false
+        },
+        {
+          "cue": "evil-to-cute",
+          "targetSeconds": 25.229166666666668,
+          "firstPictureMs": 13,
+          "totalReadyMs": 13,
+          "playing": false
+        },
+        {
+          "cue": "friendly-drift-B",
+          "targetSeconds": 30.270833333333332,
+          "firstPictureMs": 19,
+          "totalReadyMs": 19,
+          "playing": false
+        },
+        {
+          "cue": "scary-eyes",
+          "targetSeconds": 10.145833333333334,
+          "firstPictureMs": 13,
+          "totalReadyMs": 13,
+          "playing": false
+        },
+        {
+          "cue": "friendly-drift-A",
+          "targetSeconds": 0.020833333333333332,
+          "firstPictureMs": 13,
+          "totalReadyMs": 13,
+          "playing": false
+        },
+        {
+          "cue": "scary-drift",
+          "targetSeconds": 20.1875,
+          "firstPictureMs": 20,
+          "totalReadyMs": 71,
+          "playing": true
+        },
+        {
+          "cue": "friendly-drift-B",
+          "targetSeconds": 30.270833333333332,
+          "firstPictureMs": 47,
+          "totalReadyMs": 47,
+          "playing": false
+        },
+        {
+          "cue": "scary-eyes",
+          "targetSeconds": 10.145833333333334,
+          "firstPictureMs": 27,
+          "totalReadyMs": 27,
+          "playing": false
+        }
+      ],
+      "medianFirstPictureMs": 18,
+      "maximumFirstPictureMs": 47,
+      "fivePauseRecoveries": true,
+      "videoEffectRemoval": true,
+      "outputDrivenSeekWithOwnerRafSuppressed": true,
+      "staleSeekCancellation": true,
+      "lostClockDeadline": {
+        "message": "Atlas paint readiness deadline",
+        "elapsedMs": 41,
+        "pending": 0
+      },
+      "scope": "Source-only native single-movie seek stress, actual paused pixels versus stream-copied same-engine native goldens, zero-volume sound audition, overlay release,5real pause/stale-black/recover cycles, silent output and Stop/disposal. Deliberate diagnostic jumps are not authored routes. No logical cue-end player, human seam/motion/voice, provider, physical projection or production migration acceptance."
+    }
+  },
+  "acceptance": "No logical cue-end scheduler, authored-route/human seam, audio audition, production release, physical projection, or puppet face acceptance."
+}
