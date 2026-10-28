@@ -1,3 +1,4 @@
+import {registeredMouthPose} from './registered-mouth-pose.mjs';
 import {PaintedMouthSurface} from './painted-mouth-surface.js';
 /** Source-only compositing study. Candidate registration and artwork are unapproved. */
 export class NativeFilmMouthStudy{
@@ -6,7 +7,7 @@ export class NativeFilmMouthStudy{
  draw(ctx,video,weights={rest:1}){
   if(this.disposed||!this.surface.ready||!this.data)return false;
   if((weights.rest||0)>=.999)return false; // Original movie is exact at rest.
-  const frame=Math.min(121,Math.max(0,Math.round(video.currentTime*24))),anchor=this.data.frames[frame];
+  const anchor=registeredMouthPose(this.data,video.currentTime);
   if(!anchor||anchor.correlation<.72)return false;
   this.surface.drawWeights(weights);const p=this.patch.getContext('2d');p.clearRect(0,0,136,136);p.globalCompositeOperation='source-over';p.drawImage(this.surface.canvas,0,0);
   // Local oval, away from the eyes and outer fog. Its edge still needs visual review.

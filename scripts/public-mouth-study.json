@@ -4,9 +4,9 @@
     {
       "source": "source/wisp-art-reference/painted-speech-study/native-film-mouth-study.mjs",
       "destination": "native-film-mouth-study.mjs",
-      "bytes": 2336,
-      "sha256": "244d1550dabf91a5fa101902f2aadf6abcb7eaf08e56d7a5a5c80374cfa542cd",
-      "publishedSha256": "244d1550dabf91a5fa101902f2aadf6abcb7eaf08e56d7a5a5c80374cfa542cd"
+      "bytes": 2361,
+      "sha256": "8645779f5c2376ef1d41596cda71b2dc1753fa3126d93817c312defe8093a9c5",
+      "publishedSha256": "8645779f5c2376ef1d41596cda71b2dc1753fa3126d93817c312defe8093a9c5"
     },
     {
       "source": "source/wisp-art-reference/painted-speech-study/painted-mouth-surface.js",
@@ -62,6 +62,13 @@
       "bytes": 26706,
       "sha256": "95591814f27e92de6d73ecb7698ed623516811a316d6f92ba9233b0b913cf3ab",
       "publishedSha256": "95591814f27e92de6d73ecb7698ed623516811a316d6f92ba9233b0b913cf3ab"
+    },
+    {
+      "source": "source/wisp-art-reference/painted-speech-study/registered-mouth-pose.mjs",
+      "destination": "registered-mouth-pose.mjs",
+      "bytes": 981,
+      "sha256": "0effc30301c6a4ec84aa8361aa99d0134274c37921e0cc501b4fa7a707359615",
+      "publishedSha256": "0effc30301c6a4ec84aa8361aa99d0134274c37921e0cc501b4fa7a707359615"
     }
   ]
 }
