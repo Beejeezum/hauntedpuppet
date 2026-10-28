@@ -1,0 +1,18 @@
+{
+  "taskId": "1d8068cf-5ebe-4918-a77c-2ab7e14709dc",
+  "cueId": "friendly-boo-fail",
+  "status": "generation complete; postprocessed runtime candidate pending human acting, sound and exact-join review",
+  "workspaceId": 1709631,
+  "reference": "source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-fuller-loop-anchor-v1.png",
+  "referenceSha256": "681333d01e4ead7cd3be6845963844d0ad5ecfe80cef23a48c5f19a017ccec81",
+  "model": "seedance-2-fast",
+  "durationSeconds": 10,
+  "resolution": "720p",
+  "nativeAudio": true,
+  "manualOnly": false,
+  "observedDebit": 240,
+  "acceptedSubmissions": 1,
+  "maximumFurtherRetries": 0,
+  "promptFile": "friendly-boo-fail-pilot-v1.prompt.txt",
+  "authorization": "User authorized Bruce and endorsed the painted look/acting; original first-batch brief. No raw signed asset URLs retained."
+}

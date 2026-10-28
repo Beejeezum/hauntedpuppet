@@ -1,6 +1,6 @@
 {
   "taskId": "3451d643-eef0-4496-b1ea-ffdb518d36a6",
-  "status": "rejected for ready library: smoke clearance and empty entry fail; human acting review pending",
+  "status": "rejected export: smoke clearance and empty entry fail; human painted look and acting direction endorsed",
   "cueId": "friendly-wave",
   "workspace": {
     "id": 1709631,
@@ -42,5 +42,11 @@
     "audition": "friendly-wave-pilot-v1-audition.mp4",
     "scope": "Gain-only listening proxy; original video unchanged, no human no-speech/audio-quality acceptance."
   },
-  "observedDebit": 300
+  "observedDebit": 300,
+  "humanDirectionReview": {
+    "date": "2026-10-28",
+    "question": "In the wave draft above, does Wisp\u2019s painted look and full-body acting feel right? The clipped smoke and missing empty-stage lead are already failures being corrected.",
+    "answer": "Yes\u2014keep this look and acting",
+    "scope": "Painted look and acting direction endorsed. Does not override the known v1 framing/entry rejection or approve the revised v2 soundtrack/exact joins."
+  }
 }

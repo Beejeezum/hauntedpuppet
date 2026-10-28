@@ -1,0 +1,52 @@
+{
+  "file": "scary-reach-runtime-candidate-v1.mp4",
+  "sha256": "2a003d4f575262ba20651eebf24d6e9d56c32a936533541c3e081453d4e48ecf",
+  "status": "review candidate, not ready library",
+  "source": "scary-reach-pilot-v1.mp4",
+  "constantFramingScale": 0.65,
+  "processing": "Original outer vapor clips at source frame edges. Feathered outer 32 source pixels before constant framing; this is not reconstruction of missing smoke. Human visual approval required.",
+  "entry": "Added 0.25 seconds black; only already empty endpoint frames calibrated to exact black.",
+  "audioProcessing": "Native generated audio with fixed gain, matching 250ms delay and endpoint fades.",
+  "framing": {
+    "4": {
+      "emptyFrames": 31,
+      "reserveFailures": 0,
+      "minimumMarginsLTRB": [
+        0.24140625,
+        0.17777777777777778,
+        0.3515625,
+        0.18333333333333332
+      ]
+    },
+    "8": {
+      "emptyFrames": 31,
+      "reserveFailures": 0,
+      "minimumMarginsLTRB": [
+        0.2421875,
+        0.18055555555555555,
+        0.35234375,
+        0.18472222222222223
+      ]
+    },
+    "16": {
+      "emptyFrames": 32,
+      "reserveFailures": 0,
+      "minimumMarginsLTRB": [
+        0.24375,
+        0.18472222222222223,
+        0.35390625,
+        0.19027777777777777
+      ]
+    }
+  },
+  "audio": {
+    "sampleRate": 48000,
+    "peak": 0.3403221666812897,
+    "rmsDbFS": -25.08925948488928,
+    "lastHalfSecondPeak": 0.0,
+    "scope": "Decoded generated soundtrack levels only. No human sound-quality or no-speech approval."
+  },
+  "humanReview": "pending",
+  "physicalProjection": "not tested",
+  "manualOnly": true
+}

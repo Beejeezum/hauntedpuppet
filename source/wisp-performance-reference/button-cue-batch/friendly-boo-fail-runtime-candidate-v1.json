@@ -1,0 +1,52 @@
+{
+  "file": "friendly-boo-fail-runtime-candidate-v1.mp4",
+  "sha256": "4d35f8db6b482ca469acb3e1e17f07efa089a4b676dc428da3c0e6fcbad27b45",
+  "status": "review candidate, not ready library",
+  "source": "friendly-boo-fail-pilot-v1.mp4",
+  "constantFramingScale": 0.95,
+  "processing": "Original has one frame below the 15 percent reserve; constant fit restores margin without animated resizing.",
+  "entry": "Added 0.25 seconds black; only already empty endpoint frames calibrated to exact black.",
+  "audioProcessing": "Native generated audio with fixed gain, matching 250ms delay and endpoint fades.",
+  "framing": {
+    "4": {
+      "emptyFrames": 35,
+      "reserveFailures": 0,
+      "minimumMarginsLTRB": [
+        0.35078125,
+        0.1638888888888889,
+        0.36875,
+        0.18611111111111112
+      ]
+    },
+    "8": {
+      "emptyFrames": 35,
+      "reserveFailures": 0,
+      "minimumMarginsLTRB": [
+        0.35078125,
+        0.1638888888888889,
+        0.36875,
+        0.18888888888888888
+      ]
+    },
+    "16": {
+      "emptyFrames": 35,
+      "reserveFailures": 0,
+      "minimumMarginsLTRB": [
+        0.3515625,
+        0.16527777777777777,
+        0.3703125,
+        0.18888888888888888
+      ]
+    }
+  },
+  "audio": {
+    "sampleRate": 48000,
+    "peak": 0.4865974187850952,
+    "rmsDbFS": -34.18047441262154,
+    "lastHalfSecondPeak": 0.0,
+    "scope": "Decoded generated soundtrack levels only. No human sound-quality or no-speech approval."
+  },
+  "humanReview": "pending",
+  "physicalProjection": "not tested",
+  "manualOnly": false
+}
