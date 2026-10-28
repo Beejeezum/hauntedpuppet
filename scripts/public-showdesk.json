@@ -18,9 +18,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.mjs",
       "destination": "showdesk.mjs",
-      "sha256": "235f568533eca6488695f7d79c06d76f5febce67ef402262fbe1756645aef593",
-      "bytes": 17650,
-      "publishedSha256": "1a3536231e82265bcaf94d4291dc5fd851a602aae895088ff1e82a7b1886e83c",
+      "sha256": "934d6d7c2af2e795b50268dc2e99916ab1d0fbcc667bb1b5f1c4fc1ce2c884ef",
+      "bytes": 17688,
+      "publishedSha256": "e5005b6e697f162a427965a828e1a6bcf252de40b9a84cc035517b0a4f4f6987",
       "rewrites": [
         {
           "from": "../runway-pilots/wisp-film-output.js",
@@ -39,9 +39,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/film-transport.mjs",
       "destination": "film-transport.mjs",
-      "sha256": "9a32e388382c5704559380131580fa834226800414d7cf9437e4a69cd17f3bd9",
-      "bytes": 8825,
-      "publishedSha256": "9a32e388382c5704559380131580fa834226800414d7cf9437e4a69cd17f3bd9"
+      "sha256": "d6d2aafcb7ddadd8c93275a7a07ffe77370b0b9d3554716a7b7270360e9c5ded",
+      "bytes": 9736,
+      "publishedSha256": "d6d2aafcb7ddadd8c93275a7a07ffe77370b0b9d3554716a7b7270360e9c5ded"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/cue-director.mjs",

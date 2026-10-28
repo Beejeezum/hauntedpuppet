@@ -39,7 +39,7 @@ export async function waitForFilmFrame(video,signal){
 
 /** Laptop-only media; sound requires an explicit operator enable. The compositor is the sole picture sent to output. */
 export class FilmTransport {
- constructor(compositor,clips,{mediaHost}={}){this.compositor=compositor;this.clips=clips;this.active=null;this.videos=[document.createElement('video'),document.createElement('video')];this.disposed=false;this.prepared=null;this.preparing=null;this.prepareEpoch=0;this.soundEnabled=false;this.soundLevel=.5;this.soundSuspended=false;for(const v of this.videos){v.muted=true;v.playsInline=true;v.preload='auto';v.setAttribute('aria-hidden','true');v.className='source-preview';v.title='Laptop film source';mediaHost?.append(v);}compositor.add({id:'character',source:()=>this.active,kind:'character'});}
+ constructor(compositor,clips,{mediaHost}={}){this.compositor=compositor;this.clips=clips;this.active=null;this.heldFrame=null;this.frameCanvas=null;this.videos=[document.createElement('video'),document.createElement('video')];this.disposed=false;this.prepared=null;this.preparing=null;this.prepareEpoch=0;this.soundEnabled=false;this.soundLevel=.5;this.soundSuspended=false;for(const v of this.videos){v.muted=true;v.playsInline=true;v.preload='auto';v.setAttribute('aria-hidden','true');v.className='source-preview';v.title='Laptop film source';mediaHost?.append(v);}compositor.add({id:'character',source:()=>this.heldFrame||this.active,kind:'character'});}
  frame(video,signal){return waitForFilmFrame(video,signal);}
  setSound(enabled,level=this.soundLevel){if(typeof enabled!=='boolean'||!Number.isFinite(level)||level<0||level>1)throw Error('Invalid film sound settings');this.soundEnabled=enabled&&!this.disposed;this.soundLevel=level;this.syncSound();}
  suspendSound(suspended){this.soundSuspended=!!suspended;this.syncSound();}
@@ -65,6 +65,7 @@ export class FilmTransport {
 
  async exit(ms,live,{keepPicture=false}={}){
   const video=this.active,clip=this.clips.find(c=>c.id===video?.dataset.cue);
+  if(!video&&keepPicture&&this.heldFrame)return;
   if(!video||clip?.exitPolicy!=='finish'){if(keepPicture&&video)throw Error('Reviewed cut requires a complete-performance exit');return this.fade(0,ms,live);}
   // Finish this loop iteration naturally before an approved route leaves it.
   video.loop=false;
@@ -78,9 +79,26 @@ export class FilmTransport {
   });
   if(live()&&this.active===video&&!keepPicture){this.compositor.setLevel(0);this.compositor.blackout();this.syncSound();}
  }
- async activate(prepared,live){const previous=this.active;await this.frame(prepared.video);if(!live())return;this.active=prepared.video;if(this.prepared===prepared)this.prepared=null;this.active.dataset.cue=prepared.id;this.compositor.reveal();this.syncSound();if(previous&&previous!==this.active){previous.pause();previous.removeAttribute('src');previous.load();}}
+ holdPicture(video){
+  if(video.readyState<2||!video.videoWidth||!video.videoHeight)return false;
+  this.frameCanvas||=document.createElement('canvas');const canvas=this.frameCanvas;
+  if(canvas.width!==video.videoWidth||canvas.height!==video.videoHeight){canvas.width=video.videoWidth;canvas.height=video.videoHeight;}
+  canvas.getContext('2d').drawImage(video,0,0);this.heldFrame=canvas;return true;
+ }
+ async activate(prepared,live){
+  const previous=this.active;
+  if(previous&&previous!==prepared.video){
+   // Hold the exact outgoing picture while releasing its clock. Starting the
+   // next GStreamer pipeline first can block native pause/load on Linux.
+   this.holdPicture(previous);this.active=null;previous.muted=true;
+   previous.pause();previous.removeAttribute('src');previous.load();this.syncSound();
+  }
+  await this.frame(prepared.video);if(!live())return;
+  this.active=prepared.video;this.heldFrame=null;if(this.prepared===prepared)this.prepared=null;
+  this.active.dataset.cue=prepared.id;this.compositor.reveal();this.syncSound();
+ }
  fade(target,ms,live){const start=this.compositor.level,at=performance.now();return new Promise(resolve=>{const tick=now=>{if(!live()){resolve();return;}const t=Math.min(1,(now-at)/Math.max(1,ms)),ease=t*t*(3-2*t);this.compositor.setLevel(start+(target-start)*ease);this.syncSound();if(t<1)requestAnimationFrame(tick);else resolve();};requestAnimationFrame(tick);});}
  hold(ms,live){const at=performance.now();return new Promise(resolve=>{const tick=now=>{if(!live()||now-at>=ms)resolve();else requestAnimationFrame(tick);};requestAnimationFrame(tick);});}
- blackout(){this.finishWait?.();this.soundEnabled=false;this.cancelPreparation();this.active=null;this.compositor.setLevel(0);this.compositor.blackout();for(const v of this.videos){v.pause();v.muted=true;}}
- dispose(){this.blackout();this.disposed=true;for(const v of this.videos){v.removeAttribute('src');v.load();v.remove();}}
+ blackout(){this.finishWait?.();this.soundEnabled=false;this.cancelPreparation();this.active=null;this.heldFrame=null;if(this.frameCanvas){this.frameCanvas.width=0;this.frameCanvas.height=0;}this.compositor.setLevel(0);this.compositor.blackout();for(const v of this.videos){v.pause();v.muted=true;}}
+ dispose(){this.blackout();this.frameCanvas=null;this.disposed=true;for(const v of this.videos){v.removeAttribute('src');v.load();v.remove();}}
 }

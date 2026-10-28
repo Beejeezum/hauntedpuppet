@@ -192,7 +192,7 @@ jobs:
       # Clocked null sink: https://wiki.freedesktop.org/www/Software/PulseAudio/Documentation/User/Modules/#module-null-sink
       - name: Provide a clocked silent audio device for Linux media
         run: |
-          sudo apt-get install -y pulseaudio gstreamer1.0-pulseaudio libasound2-plugins
+          sudo apt-get install -y pulseaudio gstreamer1.0-pulseaudio gstreamer1.0-gl libasound2-plugins
           pulseaudio --check || pulseaudio --start --exit-idle-time=-1
           pactl load-module module-null-sink sink_name=wisp_ci rate=48000
           pactl set-default-sink wisp_ci
@@ -203,6 +203,7 @@ jobs:
       - name: Check native film sound and complete bridge playback
         run: |
           failed=0
+          HAUNT_BROWSER=webkit node tests/film_single_clock.cjs || failed=1
           HAUNT_TONIGHT_ROOT=dist node tests/showdesk_film_audio.cjs || failed=1
           HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/showdesk_film_audio.cjs || failed=1
           node tests/catalog_bridge_browser.cjs || failed=1
@@ -342,6 +343,7 @@ jobs:
           GST_DEBUG: autoaudiosink:5,pulsesink:4,webkitmediaplayer:3
         run: |
           failed=0
+          HAUNT_BROWSER=webkit node tests/film_single_clock.cjs || failed=1
           HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/showdesk_film_audio.cjs || failed=1
           HAUNT_BROWSER=webkit node tests/catalog_bridge_browser.cjs || failed=1
           exit "$failed"

@@ -34,7 +34,7 @@ const directorOptions={fadeMs:900,onState:s=>{
 }};
 const director=useCatalog?new CatalogCueDirector(transport,runtime,directorOptions):new CueDirector(transport,directorOptions);
 const activate=transport.activate.bind(transport);transport.activate=async(prepared,live)=>{await activate(prepared,live);if(live())for(const {source}of overlays.values())if(source.tagName==='VIDEO')source.play().catch(()=>{});};
-const output=mountFilmOutput($('stage'),()=>({black:compositor.black||stale||!transport.active,paused:transport.active?.paused??true,disposed,metrics:{draws:activity}}));
+const output=mountFilmOutput($('stage'),()=>({black:compositor.black||stale||!transport.active&&!transport.heldFrame,paused:transport.active?.paused??!transport.heldFrame,disposed,metrics:{draws:activity}}));
 function refreshLayers(){
  $('layers').replaceChildren();const layers=compositor.inspect().layers;
  layers.forEach((layer,index)=>{
