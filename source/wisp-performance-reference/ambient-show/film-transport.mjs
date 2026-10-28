@@ -59,7 +59,7 @@ export class FilmTransport {
   job.promise=(async()=>{
    video._wispPrepareEpoch=epoch;video.pause();video.muted=true;video.loop=!!clip.loop;video.src=clip.src;video.load();await waitForFilmData(video,abort.signal);
    if(epoch!==this.prepareEpoch||this.disposed)throw Object.assign(Error('Film preparation cancelled'),{cancelled:true});
-   const prepared={id,clip,video,dispose:()=>{if(video._wispPrepareEpoch!==epoch)return;if(this.prepared===prepared)this.prepared=null;if(video!==this.active){video.pause();video.removeAttribute('src');video.load();}}};this.prepared=prepared;return prepared;
+   const prepared={id,clip,video,signal:abort.signal,epoch,dispose:()=>{abort.abort();if(video._wispPrepareEpoch!==epoch)return;if(this.prepared===prepared)this.prepared=null;if(video!==this.active){video.pause();video.removeAttribute('src');video.load();}}};this.prepared=prepared;return prepared;
   })().finally(()=>{if(this.preparing===job)this.preparing=null;});return job.promise;
  }
  cancelPreparation(){this.prepareEpoch++;this.preparing?.abort.abort();this.preparing=null;this.prepared?.dispose();this.prepared=null;}
@@ -88,6 +88,12 @@ export class FilmTransport {
   canvas.getContext('2d').drawImage(video,0,0);this.heldFrame=canvas;return true;
  }
  async activate(prepared,live){
+  if(!live())return;
+  const cancelled=()=>Object.assign(Error('Film activation cancelled'),{cancelled:true});
+  // A disposed preparation may refer to a video element since reused by a new
+  // cue. Reject it before it can release the current picture or play that cue.
+  const ownsPreparation=()=>!this.disposed&&!prepared.signal?.aborted&&prepared.epoch===this.prepareEpoch&&prepared.video._wispPrepareEpoch===prepared.epoch;
+  if(!ownsPreparation())throw cancelled();
   const previous=this.active;
   if(previous&&previous!==prepared.video){
    // Hold the exact outgoing picture while releasing its clock. Starting the
@@ -95,7 +101,7 @@ export class FilmTransport {
    this.holdPicture(previous);this.active=null;previous.muted=true;
    previous.pause();previous.removeAttribute('src');previous.load();this.syncSound();
   }
-  await this.frame(prepared.video);if(!live())return;
+  await this.frame(prepared.video,prepared.signal);if(!live())return;if(!ownsPreparation())throw cancelled();
   this.active=prepared.video;this.heldFrame=null;if(this.prepared===prepared)this.prepared=null;
   this.active.dataset.cue=prepared.id;this.compositor.reveal();this.syncSound();
  }
