@@ -46,9 +46,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/cue-director.mjs",
       "destination": "cue-director.mjs",
-      "sha256": "74ab9b929a0f5bc7bed7add63021050c6e24acf95ca77585f5cfbc54ea67e56c",
-      "bytes": 2531,
-      "publishedSha256": "74ab9b929a0f5bc7bed7add63021050c6e24acf95ca77585f5cfbc54ea67e56c"
+      "sha256": "1736012cd45e638e860a190fbe1c123a1c28f0454698276bec31cae783e81a56",
+      "bytes": 2690,
+      "publishedSha256": "1736012cd45e638e860a190fbe1c123a1c28f0454698276bec31cae783e81a56"
     },
     {
       "source": "source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4",

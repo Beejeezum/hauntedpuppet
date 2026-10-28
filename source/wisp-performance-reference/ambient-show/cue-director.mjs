@@ -3,7 +3,7 @@ export class CueDirector {
  constructor(transport,{fadeMs=700,blackMs=500,onState=()=>{}}={}){this.transport=transport;this.fadeMs=fadeMs;this.blackMs=blackMs;this.onState=onState;this.current=null;this.queued=null;this.phase='stopped';this.epoch=0;this.running=null;this.disposed=false;}
  inspect(){return{current:this.current,queued:this.queued,phase:this.phase,disposed:this.disposed};}
  emit(phase){this.phase=phase;this.onState(this.inspect());}
- request(id){if(this.disposed)throw Error('Director disposed');const superseded=this.queued&&this.queued!==id;this.queued=id;if(superseded&&this.running&&this.phase==='preparing')this.transport.cancelPreparation?.();if(!this.running){const epoch=this.epoch;this.running=this.pump(epoch).finally(()=>{this.running=null;if(this.queued&&!this.disposed)this.request(this.queued);});}return this.running;}
+ request(id){if(this.disposed)throw Error('Director disposed');const superseded=this.queued&&this.queued!==id;this.queued=id;if(superseded&&this.running&&this.phase==='preparing')this.transport.cancelPreparation?.();if(!this.running||this.runningEpoch!==this.epoch){const epoch=this.epoch;let job;job=Promise.resolve().then(()=>this.pump(epoch)).finally(()=>{if(this.running!==job)return;this.running=null;this.runningEpoch=null;if(this.queued&&!this.disposed)return this.request(this.queued);});this.runningEpoch=epoch;this.running=job;}return this.running;}
  async pump(epoch){
   const live=()=>epoch===this.epoch&&!this.disposed;
   try{while(this.queued&&live()){
