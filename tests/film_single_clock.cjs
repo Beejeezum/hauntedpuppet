@@ -4,8 +4,8 @@ process.env.HAUNT_TONIGHT_ROOT='dist';
  page=await browser.newPage();await page.goto(fixture.base+'/assets/wisp-showdesk/director.html');
  const result=await page.evaluate(async()=>{
   const {FilmTransport}=await import('/assets/wisp-showdesk/film-transport.mjs'),{StageCompositor}=await import('/assets/stage-compositor.js');
-  const canvas=document.createElement('canvas');canvas.width=1280;canvas.height=720;document.body.append(canvas);const host=document.createElement('div');document.body.append(host);
-  const comp=new StageCompositor(canvas),transport=new FilmTransport(comp,[{id:'first',src:'/assets/wisp-showdesk/friendly.mp4',loop:true,exitPolicy:'finish'},{id:'next',src:'/assets/wisp-showdesk/scary.mp4',loop:false,exitPolicy:'finish'}],{mediaHost:host});
+  const canvas=document.createElement('canvas');canvas.width=1280;canvas.height=720;document.body.append(canvas);const host=document.createElement('div');host.style.cssText='position:fixed;top:8px;left:8px;display:flex;z-index:9999';host.setAttribute('aria-label','Visible single-clock film fixture');document.body.append(host);
+  const comp=new StageCompositor(canvas),transport=new FilmTransport(comp,[{id:'first',src:'/assets/wisp-showdesk/friendly.mp4',loop:true,exitPolicy:'finish'},{id:'next',src:'/assets/wisp-showdesk/scary.mp4',loop:false,exitPolicy:'finish'}],{mediaHost:host});for(const video of transport.videos)video.style.cssText='display:block;width:96px;height:54px;opacity:1';
   window.__singleClockPhase='initial decode';const one=await transport.prepare('first');window.__singleClockPhase='initial activation';await transport.activate(one,()=>true);comp.setLevel(1);comp.render();
   window.__singleClockPhase='standby decode';const two=await transport.prepare('next'),old=transport.active;
   const checksum=()=>{comp.render();const d=canvas.getContext('2d').getImageData(0,0,1280,720).data;let sum=0;for(let i=0;i<d.length;i+=4)sum=(sum+d[i]*3+d[i+1]*5+d[i+2]*7)>>>0;return sum};
