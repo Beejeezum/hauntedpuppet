@@ -1,0 +1,98 @@
+{
+  "source": "source/wisp-performance-reference/runway-pilots/scary-fog-living-loop-study/wisp-scary-fog-living-loop-v1.mp4",
+  "sha256": "79d82aec97102f266353d5c4449fa6c65bbedc9fc4f2f0282b77330b00bb6cc5",
+  "method": "Blurred native grayscale endpoint pose, four-frame incoming/outgoing image velocity cosine and edge-to-source median motion. No interpolation, frame generation or approval. Pixel metrics are not joint mechanics or anatomy.",
+  "candidates": [
+    {
+      "firstFrame": 45,
+      "lastFrameExclusive": 226,
+      "seconds": 7.541666666666667,
+      "endpointForegroundMAE": 6.466291427612305,
+      "velocityCosine": 0.15390297770500183,
+      "edgeMotionToMedian": 0.3204560029618082,
+      "score": 17.210335635916117
+    },
+    {
+      "firstFrame": 45,
+      "lastFrameExclusive": 225,
+      "seconds": 7.5,
+      "endpointForegroundMAE": 6.466884136199951,
+      "velocityCosine": 0.13148121535778046,
+      "edgeMotionToMedian": 0.3204560029618082,
+      "score": 17.47998949267042
+    },
+    {
+      "firstFrame": 46,
+      "lastFrameExclusive": 225,
+      "seconds": 7.458333333333333,
+      "endpointForegroundMAE": 6.534451961517334,
+      "velocityCosine": 0.07276025414466858,
+      "edgeMotionToMedian": 0.3631927168841525,
+      "score": 17.66132891178131
+    },
+    {
+      "firstFrame": 46,
+      "lastFrameExclusive": 226,
+      "seconds": 7.5,
+      "endpointForegroundMAE": 6.534979343414307,
+      "velocityCosine": 0.08678708970546722,
+      "edgeMotionToMedian": 0.335871473557582,
+      "score": 17.77610479579706
+    },
+    {
+      "firstFrame": 46,
+      "lastFrameExclusive": 224,
+      "seconds": 7.416666666666667,
+      "endpointForegroundMAE": 6.511241436004639,
+      "velocityCosine": 0.04992512986063957,
+      "edgeMotionToMedian": 0.4066811557591506,
+      "score": 17.912139877676964
+    },
+    {
+      "firstFrame": 46,
+      "lastFrameExclusive": 223,
+      "seconds": 7.375,
+      "endpointForegroundMAE": 6.488401889801025,
+      "velocityCosine": 0.04369411617517471,
+      "edgeMotionToMedian": 0.41512865090586715,
+      "score": 17.96407249569893
+    },
+    {
+      "firstFrame": 47,
+      "lastFrameExclusive": 225,
+      "seconds": 7.416666666666667,
+      "endpointForegroundMAE": 6.519203186035156,
+      "velocityCosine": 0.04601564258337021,
+      "edgeMotionToMedian": 0.3631927168841525,
+      "score": 17.967015475034714
+    },
+    {
+      "firstFrame": 47,
+      "lastFrameExclusive": 224,
+      "seconds": 7.375,
+      "endpointForegroundMAE": 6.498534202575684,
+      "velocityCosine": 0.043836984783411026,
+      "edgeMotionToMedian": 0.4066811557591506,
+      "score": 17.97249038517475
+    },
+    {
+      "firstFrame": 47,
+      "lastFrameExclusive": 223,
+      "seconds": 7.333333333333333,
+      "endpointForegroundMAE": 6.476380348205566,
+      "velocityCosine": 0.036734871566295624,
+      "edgeMotionToMedian": 0.43305679330471025,
+      "score": 18.03556188941002
+    },
+    {
+      "firstFrame": 44,
+      "lastFrameExclusive": 226,
+      "seconds": 7.583333333333333,
+      "endpointForegroundMAE": 6.402445316314697,
+      "velocityCosine": 0.18288302421569824,
+      "edgeMotionToMedian": 0.2502135919360342,
+      "score": 18.203577187005635
+    }
+  ],
+  "decision": "Do not promote or render a supposed seamless loop. Best candidate has incoming/outgoing image-velocity cosine0.154 and edge-motion ratio0.320, insufficient evidence of a moving seamless boundary. Original raw loop remains unapproved. A low pose difference alone cannot establish a natural repeat."
+}
