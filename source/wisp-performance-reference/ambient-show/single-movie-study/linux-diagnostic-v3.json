@@ -1,0 +1,113 @@
+{
+  "run": "https://github.com/Beejeezum/hauntedpuppet/actions/runs/40774224114",
+  "commit": "005e81470bb96b21af9b3186c3ffb3a660ccbfe7",
+  "conclusion": "failure",
+  "failure": {
+    "passed": false,
+    "stage": "pause recovery 1",
+    "message": "page.evaluate: Error: Choose an atlas cue",
+    "state": {
+      "phase": "failed",
+      "current": null,
+      "sourceLoads": 1,
+      "currentTime": 1.366911333,
+      "seeking": false,
+      "paused": true,
+      "readyState": 2,
+      "networkState": 2,
+      "lastWait": {
+        "phase": "playing",
+        "startedAt": 3579,
+        "startTime": 0.020833333,
+        "checks": 114,
+        "checkedAt": 6261,
+        "currentTime": 1.366911333,
+        "readyState": 2,
+        "seeking": false,
+        "paused": true
+      },
+      "muted": true,
+      "ready": true,
+      "disposed": false,
+      "metrics": [
+        {
+          "cue": "friendly-drift-A",
+          "targetSeconds": 0.020833333333333332,
+          "firstPictureMs": 304,
+          "totalReadyMs": 304,
+          "playing": false
+        },
+        {
+          "cue": "scary-drift",
+          "targetSeconds": 20.1875,
+          "firstPictureMs": 121,
+          "totalReadyMs": 121,
+          "playing": false
+        },
+        {
+          "cue": "cute-to-evil",
+          "targetSeconds": 5.104166666666667,
+          "firstPictureMs": 101,
+          "totalReadyMs": 101,
+          "playing": false
+        },
+        {
+          "cue": "scary-eyes",
+          "targetSeconds": 10.145833333333334,
+          "firstPictureMs": 119,
+          "totalReadyMs": 119,
+          "playing": false
+        },
+        {
+          "cue": "evil-to-cute",
+          "targetSeconds": 25.229166666666668,
+          "firstPictureMs": 99,
+          "totalReadyMs": 99,
+          "playing": false
+        },
+        {
+          "cue": "friendly-drift-B",
+          "targetSeconds": 30.270833333333332,
+          "firstPictureMs": 114,
+          "totalReadyMs": 114,
+          "playing": false
+        },
+        {
+          "cue": "scary-eyes",
+          "targetSeconds": 10.145833333333334,
+          "firstPictureMs": 112,
+          "totalReadyMs": 112,
+          "playing": false
+        },
+        {
+          "cue": "friendly-drift-A",
+          "targetSeconds": 0.020833333333333332,
+          "firstPictureMs": 112,
+          "totalReadyMs": 112,
+          "playing": false
+        }
+      ]
+    },
+    "compositor": {
+      "black": true,
+      "suspended": false,
+      "level": 1,
+      "draws": 247,
+      "layers": [
+        {
+          "id": "character",
+          "opacity": 1,
+          "blend": "source-over",
+          "visible": true,
+          "kind": "character",
+          "scale": 1,
+          "x": 0,
+          "y": 0
+        }
+      ]
+    },
+    "status": "The operation was aborted."
+  },
+  "inference": "Fail-closed safety works (failed/null cue/black/muted) while the test reaches pause recovery1. Sound-button play readiness was not awaited before injecting overlay/pause operations; its error was The operation was aborted. Therefore next isolate initial play settlement before attributing failure to recovery. readyState2 with advancing time alone does not prove fresh native pictures.",
+  "next": "Expose/await the source UI action completion, capture native presented-media-time without pausing or unloading in that callback. Keep actual picture/clock/readiness evidence; no production migration or release-gate removal."
+}
