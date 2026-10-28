@@ -1,0 +1,8 @@
+{
+  "run": "https://github.com/Beejeezum/hauntedpuppet/actions/runs/40773224041",
+  "commit": "511d928e3a86694806079cffb51cf831a1f128b8",
+  "conclusion": "failure",
+  "actualFailure": "Native reference deadline in the auxiliary single-frame comparison video, on the second cue. Main atlas had reached scary-drift paused at20.1875s,sourceLoads1,readytrue.",
+  "scope": "Does not establish that the main one-decoder stress passes Linux; execution never reached five-pause stress. Not production acceptance.",
+  "changeForNextAttempt": "Decode reference frames in independent fresh browser processes before opening main atlas. Do not introduce/release an auxiliary decoder inside the one-decoder test. Keep same reference bytes/pixel threshold/readiness deadlines and all release gates."
+}
