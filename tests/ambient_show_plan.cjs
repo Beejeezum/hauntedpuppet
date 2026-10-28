@@ -3,7 +3,9 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
  const root=path.join(__dirname,'../source/wisp-performance-reference/ambient-show');
  const {planJoin,planShow}=await import(require('node:url').pathToFileURL(path.join(root,'transition-plan.mjs')));
  const catalog=JSON.parse(fs.readFileSync(path.join(root,'catalog.json'),'utf8'));
- assert.equal(catalog.clips.length,32);assert.equal(new Set(catalog.clips.map(c=>c.id)).size,32);
+ assert.equal(catalog.clips.length,16);assert.equal(new Set(catalog.clips.map(c=>c.id)).size,16);
+ assert.equal(catalog.deferredClips.length,16);assert(catalog.deferredClips.every(c=>!catalog.clips.some(a=>a.id===c.id)));
+ for(const show of catalog.shows)assert(show.clipIds.every(id=>catalog.clips.some(c=>c.id===id&&!c.manualOnly)),'Active show references only active non-manual cues');
  assert(catalog.clips.every(c=>c.dialogue===false&&c.status==='planned'&&c.media===null));
  assert.throws(()=>planShow(catalog,catalog.shows[0].id),/Unavailable/);
  for(const study of catalog.productionStudies.filter(s=>s.evidence)){
@@ -45,5 +47,5 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
  c.manualOnly=false;assert.equal(planShow(bridged,'loop').transitions[0].bridge,'c');
  b.manualOnly=true;assert.throws(()=>planShow(tiny,'loop'),/Unavailable/,'Manual scares cannot enter ambient playlist');
  b.manualOnly=false;b.dialogue=true;assert.throws(()=>planJoin(a,b),/Unreviewed/,'Ambient films cannot include speech');
- console.log('PASS: 32 silent planned cards; exact-media join reviews, authored bridges, verified empty-stage boundaries, closing seam, no automatic scare or dialogue. Planner scenarios use synthetic approvals; candidate hashes/evidence checked against real tracked files. No new human approval or media decode claimed here.');
+ console.log('PASS: 16 active silent planned cards; exact-media join reviews, authored bridges, verified empty-stage boundaries, closing seam, no automatic scare or dialogue. Planner scenarios use synthetic approvals; candidate hashes/evidence checked against real tracked files. No new human approval or media decode claimed here.');
 })().catch(e=>{console.error(e);process.exitCode=1;});

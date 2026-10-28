@@ -205,6 +205,7 @@ jobs:
           node tests/cue_director.cjs
           node tests/film_transport_readiness.cjs
           node tests/ambient_show_plan.cjs
+          node tests/wisp_library_publication.cjs
           node tests/stage_compositor.cjs
           node tests/stage_geometry.cjs
       - name: Rehearse actual films and composed output on both browser engines

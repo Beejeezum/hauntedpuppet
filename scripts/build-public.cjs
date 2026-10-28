@@ -37,6 +37,10 @@ for (const item of desk.files) {
   if (hash(bytes) !== item.publishedSha256) throw Error('Show desk publication checksum mismatch');
   fs.writeFileSync(path.join(deskOut, item.destination), bytes);
 }
+// Final library media is published only from explicit hash-linked approvals.
+const approvedLibrary=require('./compile-wisp-library.cjs').compileLibrary(JSON.parse(fs.readFileSync(path.join(root,'source/wisp-performance-reference/ambient-show/catalog.json'),'utf8')),{root});
+for(const file of approvedLibrary.files)fs.writeFileSync(path.join(deskOut,file.destination),file.data);
+fs.writeFileSync(path.join(deskOut,'playback-library.json'),JSON.stringify(approvedLibrary.runtime,null,2)+'\n');
 // A single-file review reel, deliberately separate from the approved show library.
 const cueReview=JSON.parse(fs.readFileSync(path.join(root,'scripts/public-cue-review.json'),'utf8'));
 const cueReviewOut=path.join(out,'assets/wisp-cue-review');fs.mkdirSync(cueReviewOut,{recursive:true});

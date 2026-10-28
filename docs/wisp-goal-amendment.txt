@@ -1,0 +1,9 @@
+WISP GOAL AMENDMENT — 2026-10-28
+
+Human instruction: "maybe lets reduce to 16 cues and try to limit credits a bit"
+
+This supersedes older 32-cue inventory references in the continuing goal. The active deliverables are the 16 catalog.clips entries. The other 16 are deferredClips, not required for completion under this amendment. Both live puppet players, expressive webcam face/eyes, supported hand control, character voice conversion, smooth planned transitions, saved playlists/autoplay, sound/output isolation and human/technical acceptance remain required.
+
+Prioritize suitable existing assets; do not turn one combined action into multiple supposedly finished cues. Do not bulk-generate or buy credits automatically. Work one targeted draft at a time and review before retries. Production drafts stay unapproved until their actual review gates pass.
+
+Keep the goal active until all 16 cues and the unchanged software/acceptance requirements are complete.

@@ -1,0 +1,13 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const {compileLibrary}=require('../scripts/compile-wisp-library.cjs'),root=path.resolve(__dirname,'..');
+const real=JSON.parse(fs.readFileSync(path.join(root,'source/wisp-performance-reference/ambient-show/catalog.json')));
+assert.deepEqual(compileLibrary(real).runtime,{schema:1,clips:[],routes:[]},'Planned slots and candidate studies never publish final media');
+const file='source/wisp-performance-reference/button-cue-batch/friendly-wave-runtime-candidate-v2.mp4',sha256=crypto.createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex');
+const clip={id:'test-wave',title:'Synthetic approval fixture',form:'friendly',status:'approved',dialogue:false,entryPort:'empty',exitPort:'empty',media:{file,sha256,reviewEvidence:'SYNTHETIC test approval only',audioReviewEvidence:'SYNTHETIC test audio approval',fps:24,frameCount:241,emptyStartFrames:20,emptyEndFrames:44,audioTailSilenceSeconds:.5}};
+const catalog={clips:[clip],reviewedJoins:[]},result=compileLibrary(catalog);assert.equal(result.files.length,1);assert.equal(result.runtime.clips[0].sha256,sha256);assert.equal(result.runtime.routes[0].kind,'empty-stage');assert(result.files[0].data.equals(fs.readFileSync(path.join(root,file))));
+for(const patch of [{sha256:'0'.repeat(64)},{reviewEvidence:''},{audioReviewEvidence:''},{file:'source/wisp-performance-reference/../../server.py'},{loop:true}])assert.throws(()=>compileLibrary({clips:[{...clip,media:{...clip.media,...patch}}]}));
+for(const patch of [{id:undefined},{id:3},{title:''},{entryPort:'unplanned-port'}])assert.throws(()=>compileLibrary({clips:[{...clip,...patch}]}));
+assert.throws(()=>compileLibrary({clips:[{...clip,dialogue:true}]}));assert.throws(()=>compileLibrary({clips:[clip,clip]}));
+const manual={...clip,id:'manual-scare',manualOnly:true,form:'scary'};assert.equal(compileLibrary({clips:[manual]}).runtime.clips[0].manualOnly,true,'Manual-only policy survives publication');
+const before=JSON.stringify(real);compileLibrary(real);assert.equal(JSON.stringify(real),before,'Compilation cannot grant or mutate approvals');
+console.log('PASS real candidate-byte hash validation with synthetic approvals, silent/visual/audio/loop gates, traversal/duplicate rejection and unchanged real planned catalog.');
