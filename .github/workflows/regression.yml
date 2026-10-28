@@ -318,13 +318,15 @@ jobs:
         env:
           DIAGNOSTIC_AUDIO_SINK: ${{ inputs.native_audio_sink }}
         run: |
-          sudo apt-get install -y pulseaudio gstreamer1.0-pulseaudio gstreamer1.0-tools libasound2-plugins
+          sudo apt-get install -y pulseaudio gstreamer1.0-pulseaudio gstreamer1.0-gl gstreamer1.0-tools libasound2-plugins
           pulseaudio --check || pulseaudio --start --exit-idle-time=-1
           pactl load-module module-null-sink sink_name=wisp_ci rate=48000
           pactl set-default-sink wisp_ci
           pactl list short sinks
           gst-inspect-1.0 pulsesink > /tmp/wisp-pulse-plugin.txt
           sed -n '1,24p' /tmp/wisp-pulse-plugin.txt
+          gst-inspect-1.0 glupload > /tmp/wisp-gl-plugin.txt
+          sed -n '1,20p' /tmp/wisp-gl-plugin.txt
           if [ "$DIAGNOSTIC_AUDIO_SINK" = pulse ]; then
             echo "GST_PLUGIN_FEATURE_RANK=pulsesink:MAX,pipewiresink:NONE,alsasink:NONE,oss4sink:NONE,osssink:NONE" >> "$GITHUB_ENV"
           elif [ "$DIAGNOSTIC_AUDIO_SINK" != auto ]; then
