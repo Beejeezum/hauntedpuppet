@@ -193,6 +193,8 @@ jobs:
         run: |
           HAUNT_TONIGHT_ROOT=dist node tests/film_complete_exit.cjs
           HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/film_complete_exit.cjs
+      - name: Rehearse catalog cuts and natural loop exit with real films
+        run: HAUNT_TONIGHT_ROOT=dist HAUNT_CATALOG_DIRECTOR=1 node tests/film_complete_exit.cjs
       - name: Check animation-first entry and separate live workspace
         run: |
           HAUNT_WORKSPACE_BUILT_ONLY=1 node tests/workspace_entry.cjs
@@ -204,6 +206,7 @@ jobs:
       - name: Check queue and editorial contracts
         run: |
           node tests/cue_director.cjs
+          node tests/catalog_director.cjs
           node tests/film_transport_readiness.cjs
           node tests/ambient_show_plan.cjs
           node tests/wisp_library_publication.cjs

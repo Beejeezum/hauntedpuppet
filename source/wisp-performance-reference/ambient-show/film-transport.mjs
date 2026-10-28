@@ -24,6 +24,7 @@ export class FilmTransport {
  setSound(enabled,level=this.soundLevel){if(typeof enabled!=='boolean'||!Number.isFinite(level)||level<0||level>1)throw Error('Invalid film sound settings');this.soundEnabled=enabled&&!this.disposed;this.soundLevel=level;this.syncSound();}
  suspendSound(suspended){this.soundSuspended=!!suspended;this.syncSound();}
  syncSound(){for(const v of this.videos){v.volume=this.soundLevel*Math.max(0,Math.min(1,this.compositor.level??1));v.muted=!this.soundEnabled||this.soundSuspended||v!==this.active||!!this.compositor.black;}}
+ stageForTransition(cut){this.compositor.setLevel(cut?1:0);if(!cut)this.compositor.blackout();this.syncSound();}
  inspectSound(){return{enabled:this.soundEnabled,level:this.soundLevel,suspended:this.soundSuspended,audibleSources:this.videos.filter(v=>!v.muted&&!v.paused&&v.volume>0).length};}
 
  prepare(id){
@@ -42,9 +43,11 @@ export class FilmTransport {
  cancelPreparation(){this.prepareEpoch++;this.preparing?.abort.abort();this.preparing=null;this.prepared?.dispose();this.prepared=null;}
  preload(id){return this.prepare(id).then(()=>true).catch(()=>false);}
 
- async exit(ms,live){
+ async exit(ms,live,{keepPicture=false}={}){
   const video=this.active,clip=this.clips.find(c=>c.id===video?.dataset.cue);
-  if(!video||clip?.exitPolicy!=='finish')return this.fade(0,ms,live);
+  if(!video||clip?.exitPolicy!=='finish'){if(keepPicture&&video)throw Error('Reviewed cut requires a complete-performance exit');return this.fade(0,ms,live);}
+  // Finish this loop iteration naturally before an approved route leaves it.
+  video.loop=false;
   await new Promise((resolve,reject)=>{
    let frame,timer,settled=false;
    const cleanup=()=>{if(frame!==undefined)cancelAnimationFrame(frame);clearTimeout(timer);video.removeEventListener('ended',complete);video.removeEventListener('error',failed);if(this.finishWait===cancel)this.finishWait=null;};
@@ -53,7 +56,7 @@ export class FilmTransport {
    const tick=()=>{if(!live()||this.disposed||this.active!==video){cancel();return;}if(video.ended){complete();return;}frame=requestAnimationFrame(tick);};
    this.finishWait=cancel;video.addEventListener('ended',complete);video.addEventListener('error',failed);const remaining=Number.isFinite(video.duration)?Math.max(0,video.duration-video.currentTime):0;timer=setTimeout(()=>failed(),(remaining+6)*1000);tick();
   });
-  if(live()&&this.active===video){this.compositor.setLevel(0);this.compositor.blackout();this.syncSound();}
+  if(live()&&this.active===video&&!keepPicture){this.compositor.setLevel(0);this.compositor.blackout();this.syncSound();}
  }
  async activate(prepared,live){const previous=this.active;await this.frame(prepared.video);if(!live())return;this.active=prepared.video;if(this.prepared===prepared)this.prepared=null;this.active.dataset.cue=prepared.id;this.compositor.reveal();this.syncSound();if(previous&&previous!==this.active){previous.pause();previous.removeAttribute('src');previous.load();}}
  fade(target,ms,live){const start=this.compositor.level,at=performance.now();return new Promise(resolve=>{const tick=now=>{if(!live()){resolve();return;}const t=Math.min(1,(now-at)/Math.max(1,ms)),ease=t*t*(3-2*t);this.compositor.setLevel(start+(target-start)*ease);this.syncSound();if(t<1)requestAnimationFrame(tick);else resolve();};requestAnimationFrame(tick);});}

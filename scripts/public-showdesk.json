@@ -39,9 +39,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/film-transport.mjs",
       "destination": "film-transport.mjs",
-      "sha256": "cc086b24e3910b0c16dc968a97f6b93b2971cb087a958f4c54d88b7581d29a41",
-      "bytes": 7091,
-      "publishedSha256": "cc086b24e3910b0c16dc968a97f6b93b2971cb087a958f4c54d88b7581d29a41"
+      "sha256": "c7d539157956d967ff40a02e2f7c9c92ddef05b5779a500cea5ac600cdb266dd",
+      "bytes": 7428,
+      "publishedSha256": "c7d539157956d967ff40a02e2f7c9c92ddef05b5779a500cea5ac600cdb266dd"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/cue-director.mjs",
@@ -98,6 +98,13 @@
       "sha256": "f7478b4f810820a844d5bcbdc658c9474d60e0a8f3cdf97b8969070f1fb3aaa0",
       "bytes": 5404,
       "publishedSha256": "f7478b4f810820a844d5bcbdc658c9474d60e0a8f3cdf97b8969070f1fb3aaa0"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/catalog-director.mjs",
+      "destination": "catalog-director.mjs",
+      "bytes": 4619,
+      "sha256": "97381a35d486601543d0e2e2639029a1788840dc96ad7338bd4056f253c207dc",
+      "publishedSha256": "97381a35d486601543d0e2e2639029a1788840dc96ad7338bd4056f253c207dc"
     }
   ]
 }
