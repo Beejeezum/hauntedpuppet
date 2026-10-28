@@ -37,6 +37,18 @@ for (const item of desk.files) {
   if (hash(bytes) !== item.publishedSha256) throw Error('Show desk publication checksum mismatch');
   fs.writeFileSync(path.join(deskOut, item.destination), bytes);
 }
+// Explicit opt-in mouth study; no other source art, voice recording or study page is published.
+const mouthStudy=JSON.parse(fs.readFileSync(path.join(root,'scripts/public-mouth-study.json'),'utf8'));
+const mouthRegistration=JSON.parse(fs.readFileSync(path.join(root,'source/wisp-art-reference/painted-speech-study/friendly-v28-mouth-template-candidates.json'),'utf8'));
+if(mouthRegistration.sourceSha256!==desk.files.find(item=>item.destination==='friendly.mp4')?.sha256)throw Error('Mouth registration does not match published friendly film');
+const mouthOut=path.join(out,'assets/wisp-mouth-study');fs.mkdirSync(mouthOut,{recursive:true});
+for(const item of mouthStudy.files){
+ if(!item.source.startsWith('source/wisp-art-reference/painted-speech-study/')||path.basename(item.destination)!==item.destination||item.source.includes('/../'))throw Error('Invalid mouth study asset path');
+ let bytes=fs.readFileSync(path.join(root,item.source));const hash=b=>require('node:crypto').createHash('sha256').update(b).digest('hex');
+ if(bytes.length!==item.bytes||hash(bytes)!==item.sha256)throw Error('Mouth study source changed');
+ for(const rewrite of item.rewrites||[]){const text=bytes.toString('utf8');if(text.split(rewrite.from).length!==2)throw Error('Ambiguous mouth study rewrite');bytes=Buffer.from(text.replace(rewrite.from,rewrite.to));}
+ if(hash(bytes)!==item.publishedSha256)throw Error('Mouth study publication checksum mismatch');fs.writeFileSync(path.join(mouthOut,item.destination),bytes);
+}
 // Final library media is published only from explicit hash-linked approvals.
 const approvedLibrary=require('./compile-wisp-library.cjs').compileLibrary(JSON.parse(fs.readFileSync(path.join(root,'source/wisp-performance-reference/ambient-show/catalog.json'),'utf8')),{root});
 for(const file of approvedLibrary.files)fs.writeFileSync(path.join(deskOut,file.destination),file.data);

@@ -4,9 +4,10 @@ import {PhonePerformanceDirector} from './phone-performance-director.mjs';
 import {mountPairedControls} from '../tonight-demo/paired-controls.mjs';
 import {mountFilmOutput} from '../runway-pilots/wisp-film-output.js';
 const $=id=>document.getElementById(id),clips=[{id:'friendly-drift',character:'friendly',src:'./friendly.mp4',loop:true,exitPolicy:'finish'},{id:'scary-drift',character:'scary',src:'./scary.mp4',loop:false,exitPolicy:'finish'}];
-const compositor=new StageCompositor($('stage')),transport=new FilmTransport(compositor,clips,{mediaHost:$('mediaSources')});
+let mouthLayer=null,mouthEpoch=0;
+const compositor=new StageCompositor($('stage')),transport=new FilmTransport(compositor,clips,{mediaHost:$('mediaSources'),characterFilter:raw=>{try{return mouthLayer?.render(raw)}catch{mouthLayer?.stop();$('mouthStatus').textContent='Mouth study unavailable; original film retained';return null}}});
 let context,source,enabled=false,disposed=false,frame,activeCharacter='friendly';
-function silence(){if(source){try{source.stop();}catch{}source.disconnect();source=null;}transport.blackout();}
+function silence(){mouthLayer?.stop();if(source){try{source.stop();}catch{}source.disconnect();source=null;}transport.blackout();}
 async function speech(value,{signal,live}){
  signal=AbortSignal.any([signal,AbortSignal.timeout(70000)]);
  if(!enabled||!context||context.state!=='running')throw Error('Enable laptop sound before sending a line');
@@ -26,7 +27,7 @@ async function speech(value,{signal,live}){
  const bytes=Uint8Array.from(atob(data.audio),c=>c.charCodeAt(0));const buffer=await context.decodeAudioData(bytes.buffer);
  if(signal.aborted||!live())throw Object.assign(Error('Cancelled'),{cancelled:true});
  if(buffer.duration>45)throw Error('Use a shorter line (45 seconds maximum)');
- return{buffer,dispose(){this.buffer=null;}};
+ return{buffer,visemes:Array.isArray(data.visemes)&&data.visemes.length<=5000?data.visemes:[],dispose(){this.buffer=null;}};
 }
 const director=new PhonePerformanceDirector({animations:clips,prepareSpeech:speech,
  prepareFilm:async(clip,{signal})=>{if(clip.loop&&transport.active?.dataset.cue===clip.id&&!transport.active.paused&&!compositor.black)return{id:clip.id,clip,video:transport.active,alreadyActive:true,dispose(){}};const abort=()=>transport.cancelPreparation();signal.addEventListener('abort',abort,{once:true});try{return await transport.prepare(clip.id);}finally{signal.removeEventListener('abort',abort);}},
@@ -34,9 +35,9 @@ const director=new PhonePerformanceDirector({animations:clips,prepareSpeech:spee
  enter:async(film,ctx)=>{if(film.alreadyActive)return;await transport.fade(0,550,ctx.live);if(!ctx.live())return;await transport.activate(film,ctx.live);await transport.fade(1,550,ctx.live);},
  play:async({speech,film,value},{signal,live})=>{if(!live())return;activeCharacter=value.character;await new Promise((resolve,reject)=>{
   const node=context.createBufferSource();source=node;node.buffer=speech.buffer;node.connect(context.destination);
-  const done=()=>{signal.removeEventListener('abort',abort);node.disconnect();if(source===node)source=null;resolve();};
-  const abort=()=>{node.onended=null;try{node.stop();}catch{}node.disconnect();if(source===node)source=null;signal.removeEventListener('abort',abort);reject(Object.assign(Error('Cancelled'),{cancelled:true}));};
-  node.onended=done;signal.addEventListener('abort',abort,{once:true});if(signal.aborted){abort();return;}node.start();
+  const done=()=>{signal.removeEventListener('abort',abort);node.disconnect();mouthLayer?.stop();if(source===node)source=null;resolve();};
+  const abort=()=>{node.onended=null;try{node.stop();}catch{}node.disconnect();mouthLayer?.stop();if(source===node)source=null;signal.removeEventListener('abort',abort);reject(Object.assign(Error('Cancelled'),{cancelled:true}));};
+  node.onended=done;signal.addEventListener('abort',abort,{once:true});if(signal.aborted){abort();return;}const startedAt=context.currentTime;if(value.character==='friendly'&&mouthLayer){const mode=mouthLayer.begin({context,source:node,startedAt,duration:speech.buffer.duration,visemes:speech.visemes});$('mouthStatus').textContent='Friendly mouth study: '+mode;}node.start(startedAt);
  });if(live()&&!film.clip.loop)await transport.exit(0,live,{keepPicture:true});},
  returnAmbient:async ctx=>{if(!ctx.live())return;if(transport.active?.dataset.cue==='friendly-drift'&&transport.active.loop&&!transport.active.paused&&!compositor.black){activeCharacter='friendly';return;}await transport.fade(0,550,ctx.live);if(!ctx.live())return;const film=await transport.prepare('friendly-drift');if(!ctx.live()){film.dispose();return;}await transport.activate(film,ctx.live);await transport.fade(1,550,ctx.live);if(ctx.live())activeCharacter='friendly';},
  stop:silence,onState:s=>{$('status').textContent=s.phase+(s.queued?' · '+s.queued+' queued':'');}
@@ -50,8 +51,9 @@ const remote={remoteState:()=>({state:{workspace:'director',status:director.insp
 }};
 const paired=mountPairedControls(document.querySelector('aside'),{remote,stop,canvas:$('stage')});
 const output=mountFilmOutput($('stage'),()=>({black:compositor.black,disposed,metrics:{draws:compositor.draws}}),{beforePaint:()=>compositor.render()});
+$('mouthStudy').onchange=async()=>{const epoch=++mouthEpoch;mouthLayer?.dispose();mouthLayer=null;if(!$('mouthStudy').checked){$('mouthStatus').textContent='Original film view';return;}try{const {PhonePaintedMouthLayer}=await import('../../wisp-art-reference/painted-speech-study/phone-painted-mouth-layer.mjs');const candidate=new PhonePaintedMouthLayer();try{await candidate.load();if(disposed||epoch!==mouthEpoch){candidate.dispose();return;}mouthLayer=candidate;$('mouthStatus').textContent='Friendly mouth study ready for the next line · unapproved';}catch(error){candidate.dispose();throw error}}catch(error){if(!disposed&&epoch===mouthEpoch){$('mouthStudy').checked=false;$('mouthStatus').textContent=error.message;}}};
 $('enable').onclick=async()=>{try{context||=new AudioContext();await context.resume();enabled=context.state==='running';$('send').disabled=!enabled;$('enable').textContent=enabled?'Laptop sound enabled':'Try enabling sound again';}catch(error){$('detail').textContent=error.message;}};
 $('stop').onclick=stop;$('lineForm').onsubmit=event=>{event.preventDefault();const character=$('character').value;request({text:$('line').value,mode:$('lineMode').value,character,animation:character==='friendly'?'friendly-drift':'scary-drift'}).catch(()=>{});};
 function tick(){if(disposed)return;compositor.render();frame=requestAnimationFrame(tick);}tick();
-window.addEventListener('pagehide',()=>{disposed=true;director.dispose();paired.dispose();output.dispose();transport.dispose();compositor.dispose();cancelAnimationFrame(frame);context?.close();},{once:true});
-window.WispPhoneDirector={inspect:()=>director.inspect(),stop};
+window.addEventListener('pagehide',()=>{disposed=true;mouthEpoch++;mouthLayer?.dispose();mouthLayer=null;director.dispose();paired.dispose();output.dispose();transport.dispose();compositor.dispose();cancelAnimationFrame(frame);context?.close();},{once:true});
+window.WispPhoneDirector={inspect:()=>({...director.inspect(),mouthStudy:mouthLayer?.inspect()||null}),stop};

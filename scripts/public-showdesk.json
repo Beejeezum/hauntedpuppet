@@ -39,9 +39,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/film-transport.mjs",
       "destination": "film-transport.mjs",
-      "sha256": "bb052cd9a1eda7b84d2334a30aee030970639e79e4a45eedd0a3fa3c4b5fac1f",
-      "bytes": 9958,
-      "publishedSha256": "bb052cd9a1eda7b84d2334a30aee030970639e79e4a45eedd0a3fa3c4b5fac1f"
+      "sha256": "53c8d7eb61d970d2d7eb17e843bdf808c6cfcf8499df55a90692e950a9041e39",
+      "bytes": 10021,
+      "publishedSha256": "53c8d7eb61d970d2d7eb17e843bdf808c6cfcf8499df55a90692e950a9041e39"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/cue-director.mjs",
@@ -123,15 +123,15 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/director.html",
       "destination": "director.html",
-      "bytes": 1566,
-      "sha256": "90d4f66a096a0fdcc13f1f8b8404b1b7ac92cd185a4f516bb879e3bf90ab0b90",
-      "publishedSha256": "90d4f66a096a0fdcc13f1f8b8404b1b7ac92cd185a4f516bb879e3bf90ab0b90"
+      "bytes": 1799,
+      "sha256": "e9123c6b85e667d2032ba1ff31cd77e4d72d853bb611196aa6f23e82b27369f3",
+      "publishedSha256": "e9123c6b85e667d2032ba1ff31cd77e4d72d853bb611196aa6f23e82b27369f3"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/director.mjs",
       "destination": "director.mjs",
-      "bytes": 6824,
-      "sha256": "946dc3b3824df6a863a2178f1d80062403a410d5c984db8d536b5b5dd4ec69a0",
+      "bytes": 8260,
+      "sha256": "1fe445a0f27189cf38bcc47e11060d8b1f0ebe274da9b8f98057ef444dad5092",
       "rewrites": [
         {
           "from": "../tonight-demo/paired-controls.mjs",
@@ -140,9 +140,13 @@
         {
           "from": "../runway-pilots/wisp-film-output.js",
           "to": "../wisp-film-preview/wisp-film-output.js"
+        },
+        {
+          "from": "../../wisp-art-reference/painted-speech-study/phone-painted-mouth-layer.mjs",
+          "to": "../wisp-mouth-study/phone-painted-mouth-layer.mjs"
         }
       ],
-      "publishedSha256": "7e9576d1e8f197e37c9619a469d3c411630b594208c6886d3c63eaa258920532"
+      "publishedSha256": "5215cad515b90e4d29a72ad1e843855a0738a63c113ce7a829ec45595ecbea59"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/director.css",

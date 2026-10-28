@@ -1,0 +1,67 @@
+{
+  "purpose": "Opt-in unapproved friendly painted-mouth experiment for phone director; not finished production art or scary support",
+  "files": [
+    {
+      "source": "source/wisp-art-reference/painted-speech-study/native-film-mouth-study.mjs",
+      "destination": "native-film-mouth-study.mjs",
+      "bytes": 2336,
+      "sha256": "244d1550dabf91a5fa101902f2aadf6abcb7eaf08e56d7a5a5c80374cfa542cd",
+      "publishedSha256": "244d1550dabf91a5fa101902f2aadf6abcb7eaf08e56d7a5a5c80374cfa542cd"
+    },
+    {
+      "source": "source/wisp-art-reference/painted-speech-study/painted-mouth-surface.js",
+      "destination": "painted-mouth-surface.js",
+      "bytes": 7354,
+      "sha256": "cf5aceec033818d1f460428a962cc0899d281c67cad09bd81f46ac8d9fa5a280",
+      "publishedSha256": "cf5aceec033818d1f460428a962cc0899d281c67cad09bd81f46ac8d9fa5a280"
+    },
+    {
+      "source": "source/wisp-art-reference/painted-speech-study/painted-mouth-cues.js",
+      "destination": "painted-mouth-cues.js",
+      "bytes": 2388,
+      "sha256": "f8d6da3c90c66281b2ec0f40428e076aff1df7c12687c481b59d06546f9da33c",
+      "publishedSha256": "f8d6da3c90c66281b2ec0f40428e076aff1df7c12687c481b59d06546f9da33c"
+    },
+    {
+      "source": "source/wisp-art-reference/painted-speech-study/film-mouth-timeline.mjs",
+      "destination": "film-mouth-timeline.mjs",
+      "bytes": 1073,
+      "sha256": "8d61bf6a147bf4ca7177365f0e631254b26ac420068438bb5fc53c510b50bb3a",
+      "publishedSha256": "8d61bf6a147bf4ca7177365f0e631254b26ac420068438bb5fc53c510b50bb3a"
+    },
+    {
+      "source": "source/wisp-art-reference/painted-speech-study/phone-painted-mouth-layer.mjs",
+      "destination": "phone-painted-mouth-layer.mjs",
+      "bytes": 2543,
+      "sha256": "7577333845dcd94c183f7ec18d0017dc2c5db03056534827f3cb6c46e8595faf",
+      "rewrites": [
+        {
+          "from": "../../../assets/acoustic-mouth.js",
+          "to": "/assets/acoustic-mouth.js"
+        }
+      ],
+      "publishedSha256": "c697e0ffa92b86a7f0c00491a8d58fad0f6df5c765e8b3743d920a238aa1a8d3"
+    },
+    {
+      "source": "source/wisp-art-reference/painted-speech-study/wisp-friendly-speaking-study-v2.png",
+      "destination": "wisp-friendly-speaking-study-v2.png",
+      "bytes": 1761848,
+      "sha256": "95589123ca2a55cf90ff64637a0c193cd140b491e848e0d8780f248a6b06a04c",
+      "publishedSha256": "95589123ca2a55cf90ff64637a0c193cd140b491e848e0d8780f248a6b06a04c"
+    },
+    {
+      "source": "source/wisp-art-reference/painted-speech-study/wisp-speaking-registration-study.json",
+      "destination": "wisp-speaking-registration-study.json",
+      "bytes": 12772,
+      "sha256": "0eb66ff715079c933075017a66e897c5cffa83f11b0afc64b16790a6e278abc2",
+      "publishedSha256": "0eb66ff715079c933075017a66e897c5cffa83f11b0afc64b16790a6e278abc2"
+    },
+    {
+      "source": "source/wisp-art-reference/painted-speech-study/friendly-v28-mouth-template-candidates.json",
+      "destination": "friendly-v28-mouth-template-candidates.json",
+      "bytes": 26706,
+      "sha256": "95591814f27e92de6d73ecb7698ed623516811a316d6f92ba9233b0b913cf3ab",
+      "publishedSha256": "95591814f27e92de6d73ecb7698ed623516811a316d6f92ba9233b0b913cf3ab"
+    }
+  ]
+}
