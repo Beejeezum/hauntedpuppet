@@ -123,15 +123,15 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/director.html",
       "destination": "director.html",
-      "bytes": 1799,
-      "sha256": "e9123c6b85e667d2032ba1ff31cd77e4d72d853bb611196aa6f23e82b27369f3",
-      "publishedSha256": "e9123c6b85e667d2032ba1ff31cd77e4d72d853bb611196aa6f23e82b27369f3"
+      "bytes": 2646,
+      "sha256": "4071c71a3a2acc9fde4d838105a6c397bb93e176fdf03e067bac4fa75d1ea079",
+      "publishedSha256": "4071c71a3a2acc9fde4d838105a6c397bb93e176fdf03e067bac4fa75d1ea079"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/director.mjs",
       "destination": "director.mjs",
-      "bytes": 8260,
-      "sha256": "1fe445a0f27189cf38bcc47e11060d8b1f0ebe274da9b8f98057ef444dad5092",
+      "bytes": 9900,
+      "sha256": "042f8d22f9c1101860aa07fdb404471b1ab6f80c0ebab063b2277dff6f8159b1",
       "rewrites": [
         {
           "from": "../tonight-demo/paired-controls.mjs",
@@ -146,14 +146,14 @@
           "to": "../wisp-mouth-study/phone-painted-mouth-layer.mjs"
         }
       ],
-      "publishedSha256": "5215cad515b90e4d29a72ad1e843855a0738a63c113ce7a829ec45595ecbea59"
+      "publishedSha256": "2fea33574244e3886fe46780a624902baf2f9aab164f533e095bd3635f753838"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/director.css",
       "destination": "director.css",
-      "bytes": 378,
-      "sha256": "d1730f1b58a0c158771c436b5fa20c9ed2db559663d261307cb8f86a88b0be3f",
-      "publishedSha256": "d1730f1b58a0c158771c436b5fa20c9ed2db559663d261307cb8f86a88b0be3f"
+      "bytes": 937,
+      "sha256": "be34c626bf5a6e480b470c58df4e14be7c02649e7541ae3bdf0407ff640e5376",
+      "publishedSha256": "be34c626bf5a6e480b470c58df4e14be7c02649e7541ae3bdf0407ff640e5376"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/phone-performance-director.mjs",
@@ -161,6 +161,13 @@
       "bytes": 3911,
       "sha256": "96993d902f6482a65f269bd777bbfc8c2f1ed82a428f82139f663490930946ef",
       "publishedSha256": "96993d902f6482a65f269bd777bbfc8c2f1ed82a428f82139f663490930946ef"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/director-ambient-program.mjs",
+      "destination": "director-ambient-program.mjs",
+      "bytes": 4519,
+      "sha256": "14a8b3c518fdbb98958f1cf89f798a818d9b9c88b2b8810cdf4fc9c5687ef09a",
+      "publishedSha256": "14a8b3c518fdbb98958f1cf89f798a818d9b9c88b2b8810cdf4fc9c5687ef09a"
     }
   ]
 }

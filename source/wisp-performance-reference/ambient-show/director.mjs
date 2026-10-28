@@ -1,13 +1,15 @@
 import {StageCompositor} from '/assets/stage-compositor.js';
 import {FilmTransport} from './film-transport.mjs';
 import {PhonePerformanceDirector} from './phone-performance-director.mjs';
+import {DirectorAmbientProgram} from './director-ambient-program.mjs';
 import {mountPairedControls} from '../tonight-demo/paired-controls.mjs';
 import {mountFilmOutput} from '../runway-pilots/wisp-film-output.js';
 const $=id=>document.getElementById(id),clips=[{id:'friendly-drift',character:'friendly',src:'./friendly.mp4',loop:true,exitPolicy:'finish'},{id:'scary-drift',character:'scary',src:'./scary.mp4',loop:false,exitPolicy:'finish'}];
 let mouthLayer=null,mouthEpoch=0;
 const compositor=new StageCompositor($('stage')),transport=new FilmTransport(compositor,clips,{mediaHost:$('mediaSources'),characterFilter:raw=>{try{return mouthLayer?.render(raw)}catch{mouthLayer?.stop();$('mouthStatus').textContent='Mouth study unavailable; original film retained';return null}}});
 let context,source,enabled=false,disposed=false,frame,activeCharacter='friendly';
-function silence(){mouthLayer?.stop();if(source){try{source.stop();}catch{}source.disconnect();source=null;}transport.blackout();}
+const ambient=new DirectorAmbientProgram(transport,clips,{onState:s=>{if(!s.suspended)activeCharacter=s.character;$('ambientStatus').textContent=s.error||((s.suspended?'Paused':'Between lines')+' · '+s.mode);}});
+function silence(){ambient.suspend();mouthLayer?.stop();if(source){try{source.stop();}catch{}source.disconnect();source=null;}transport.blackout();}
 async function speech(value,{signal,live}){
  signal=AbortSignal.any([signal,AbortSignal.timeout(70000)]);
  if(!enabled||!context||context.state!=='running')throw Error('Enable laptop sound before sending a line');
@@ -30,7 +32,7 @@ async function speech(value,{signal,live}){
  return{buffer,visemes:Array.isArray(data.visemes)&&data.visemes.length<=5000?data.visemes:[],dispose(){this.buffer=null;}};
 }
 const director=new PhonePerformanceDirector({animations:clips,prepareSpeech:speech,
- prepareFilm:async(clip,{signal})=>{if(clip.loop&&transport.active?.dataset.cue===clip.id&&!transport.active.paused&&!compositor.black)return{id:clip.id,clip,video:transport.active,alreadyActive:true,dispose(){}};const abort=()=>transport.cancelPreparation();signal.addEventListener('abort',abort,{once:true});try{return await transport.prepare(clip.id);}finally{signal.removeEventListener('abort',abort);}},
+ prepareFilm:async(clip,{signal})=>{ambient.suspend();if(clip.loop&&transport.active?.loop&&transport.active?.dataset.cue===clip.id&&!transport.active.paused&&!compositor.black)return{id:clip.id,clip,video:transport.active,alreadyActive:true,dispose(){}};const abort=()=>transport.cancelPreparation();signal.addEventListener('abort',abort,{once:true});try{return await transport.prepare(clip.id);}finally{signal.removeEventListener('abort',abort);}},
  validatePrepared:({speech,film})=>{if(!film.clip.loop&&speech.buffer.duration+.55>film.video.duration)throw Error('This scary film is too short for that line. Use fewer words.');},
  enter:async(film,ctx)=>{if(film.alreadyActive)return;await transport.fade(0,550,ctx.live);if(!ctx.live())return;await transport.activate(film,ctx.live);await transport.fade(1,550,ctx.live);},
  play:async({speech,film,value},{signal,live})=>{if(!live())return;activeCharacter=value.character;await new Promise((resolve,reject)=>{
@@ -39,13 +41,16 @@ const director=new PhonePerformanceDirector({animations:clips,prepareSpeech:spee
   const abort=()=>{node.onended=null;try{node.stop();}catch{}node.disconnect();mouthLayer?.stop();if(source===node)source=null;signal.removeEventListener('abort',abort);reject(Object.assign(Error('Cancelled'),{cancelled:true}));};
   node.onended=done;signal.addEventListener('abort',abort,{once:true});if(signal.aborted){abort();return;}const startedAt=context.currentTime;if(value.character==='friendly'&&mouthLayer){const mode=mouthLayer.begin({context,source:node,startedAt,duration:speech.buffer.duration,visemes:speech.visemes});$('mouthStatus').textContent='Friendly mouth study: '+mode;}node.start(startedAt);
  });if(live()&&!film.clip.loop)await transport.exit(0,live,{keepPicture:true});},
- returnAmbient:async ctx=>{if(!ctx.live())return;if(transport.active?.dataset.cue==='friendly-drift'&&transport.active.loop&&!transport.active.paused&&!compositor.black){activeCharacter='friendly';return;}await transport.fade(0,550,ctx.live);if(!ctx.live())return;const film=await transport.prepare('friendly-drift');if(!ctx.live()){film.dispose();return;}await transport.activate(film,ctx.live);await transport.fade(1,550,ctx.live);if(ctx.live())activeCharacter='friendly';},
+ returnAmbient:ctx=>ambient.resume(ctx),
  stop:silence,onState:s=>{$('status').textContent=s.phase+(s.queued?' · '+s.queued+' queued':'');}
 });
 function stop(){director.stop();output.blackout();}
 function request(value){$('detail').textContent='';return director.request(value).catch(error=>{if(!error.cancelled)$('detail').textContent=error.message;throw error;});}
-const remote={remoteState:()=>({state:{workspace:'director',status:director.inspect().phase,form:activeCharacter==='scary'?'haunting':'friendly',blackout:compositor.black},cues:enabled?clips.map(c=>c.id):[]}),remoteCommand:(command,value)=>{
+const remote={remoteState:()=>({state:{workspace:'director',status:director.inspect().phase==='idle'&&!ambient.suspended?'Ambience · '+ambient.mode:director.inspect().phase,form:activeCharacter==='scary'?'haunting':'friendly',blackout:compositor.black},cues:[...(enabled?clips.map(c=>c.id):[]),'Ambient-Cute','Ambient-Scary','Ambient-Alternating','Ambient-Mostly-Scary']}),remoteCommand:(command,value)=>{
  if(command==='stop'||command==='blackout'&&value==='on'){stop();return Promise.resolve();}
+ if(command==='blackout'&&value==='off')return ['idle','stopped'].includes(director.inspect().phase)?ambient.resume():Promise.resolve();
+ const modes={'Ambient-Cute':'friendly','Ambient-Scary':'scary','Ambient-Alternating':'alternate','Ambient-Mostly-Scary':'mostly-scary'};
+ if(command==='cue'&&Object.hasOwn(modes,value)){$('ambientMode').value=modes[value];configureAmbient();return ['idle','stopped'].includes(director.inspect().phase)?ambient.resume():Promise.resolve();}
  if(command==='perform')return request(value);
  return Promise.reject(Error('Choose a typed performance in the phone director'));
 }};
@@ -54,6 +59,10 @@ const output=mountFilmOutput($('stage'),()=>({black:compositor.black,disposed,me
 $('mouthStudy').onchange=async()=>{const epoch=++mouthEpoch;mouthLayer?.dispose();mouthLayer=null;if(!$('mouthStudy').checked){$('mouthStatus').textContent='Original film view';return;}try{const {PhonePaintedMouthLayer}=await import('../../wisp-art-reference/painted-speech-study/phone-painted-mouth-layer.mjs');const candidate=new PhonePaintedMouthLayer();try{await candidate.load();if(disposed||epoch!==mouthEpoch){candidate.dispose();return;}mouthLayer=candidate;$('mouthStatus').textContent='Friendly mouth study ready for the next line · unapproved';}catch(error){candidate.dispose();throw error}}catch(error){if(!disposed&&epoch===mouthEpoch){$('mouthStudy').checked=false;$('mouthStatus').textContent=error.message;}}};
 $('enable').onclick=async()=>{try{context||=new AudioContext();await context.resume();enabled=context.state==='running';$('send').disabled=!enabled;$('enable').textContent=enabled?'Laptop sound enabled':'Try enabling sound again';}catch(error){$('detail').textContent=error.message;}};
 $('stop').onclick=stop;$('lineForm').onsubmit=event=>{event.preventDefault();const character=$('character').value;request({text:$('line').value,mode:$('lineMode').value,character,animation:character==='friendly'?'friendly-drift':'scary-drift'}).catch(()=>{});};
-function tick(){if(disposed)return;compositor.render();frame=requestAnimationFrame(tick);}tick();
-window.addEventListener('pagehide',()=>{disposed=true;mouthEpoch++;mouthLayer?.dispose();mouthLayer=null;director.dispose();paired.dispose();output.dispose();transport.dispose();compositor.dispose();cancelAnimationFrame(frame);context?.close();},{once:true});
-window.WispPhoneDirector={inspect:()=>({...director.inspect(),mouthStudy:mouthLayer?.inspect()||null}),stop};
+function configureAmbient(){try{ambient.configure({mode:$('ambientMode').value,seconds:Number($('ambientSeconds').value)});}catch(error){$('detail').textContent=error.message;$('ambientMode').value=ambient.mode;$('ambientSeconds').value=ambient.seconds;return false;}try{localStorage.setItem('hauntedpuppet-director-ambient-v1',JSON.stringify({mode:ambient.mode,seconds:ambient.seconds}));}catch{}return true;}
+try{const saved=JSON.parse(localStorage.getItem('hauntedpuppet-director-ambient-v1'));if(saved){ambient.configure(saved);$('ambientMode').value=ambient.mode;$('ambientSeconds').value=ambient.seconds;}}catch{/* Invalid or blocked preferences retain the safe default. */}
+$('ambientMode').onchange=configureAmbient;$('ambientSeconds').onchange=configureAmbient;
+$('ambientStart').onclick=()=>{if(!configureAmbient())return;if(['idle','stopped'].includes(director.inspect().phase))ambient.resume().catch(error=>$('detail').textContent=error.message);else $('ambientStatus').textContent='Mode saved for after this line';};
+function tick(){if(disposed)return;ambient.tick();compositor.render();frame=requestAnimationFrame(tick);}tick();
+window.addEventListener('pagehide',()=>{disposed=true;ambient.dispose();mouthEpoch++;mouthLayer?.dispose();mouthLayer=null;director.dispose();paired.dispose();output.dispose();transport.dispose();compositor.dispose();cancelAnimationFrame(frame);context?.close();},{once:true});
+window.WispPhoneDirector={inspect:()=>({...director.inspect(),ambient:ambient.inspect(),mouthStudy:mouthLayer?.inspect()||null}),stop};

@@ -47,6 +47,7 @@ document.querySelectorAll('button[data-command]').forEach(b=>{const kind=b.datas
  $('blackout').dataset.value=filmMode?'on':state.blackout?'off':'on';$('blackout').textContent=filmMode?'Blackout':state.blackout?'Restore picture':'Blackout';
  if(d.connected&&d.preview){$('preview').src=d.preview;$('preview').hidden=false;text('previewFreshness',cloud?'Laptop preview · refreshes every few seconds':'Live laptop preview · updates about once a second');}else {$('preview').hidden=true;text('previewFreshness',d.connected?'Laptop preview unavailable':'Preview paused');}
  const cues=JSON.stringify(d.cues||[]);if(cues!==lastCues){lastCues=cues;performanceCues=d.cues||[];refreshPerformanceCues();$('cues').replaceChildren();for(const cue of d.cues||[]){const b=document.createElement('button');b.textContent=cue.replace(/[-_]/g,' ');b.dataset.command='cue';b.dataset.value=cue;b.disabled=!connected;$('cues').append(b);}if(!d.cues?.length)$('cues').textContent='No prepared cues enabled on the laptop.';}
+document.querySelectorAll('[data-ambient-cue]').forEach(button=>button.disabled=!d.connected||!(d.cues||[]).includes(button.dataset.value));
 performanceAvailability();
 }catch(e){connectivity(false,token?'Connection lost. Check Wi-Fi and the laptop.':'Pairing ended. Get a new code from the laptop.');}finally{polling=false;}}
 if(hostedWithoutRoom){token=null;text('pairHelp','Scan the phone remote QR from the laptop desk to join its show.');$('pairForm').hidden=true;}
