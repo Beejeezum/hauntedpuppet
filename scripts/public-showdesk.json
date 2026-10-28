@@ -119,6 +119,44 @@
       "sha256": "8f5cc0a6ab2b3abb71b4864f597416e7b90ef8434cd27c4509a867e51edab011",
       "bytes": 191,
       "publishedSha256": "8f5cc0a6ab2b3abb71b4864f597416e7b90ef8434cd27c4509a867e51edab011"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/director.html",
+      "destination": "director.html",
+      "bytes": 1380,
+      "sha256": "f52b8cd23a3dcded90e974d8e3cc9e2c3a13ea1c1181a2b68b81147b407a2b5a",
+      "publishedSha256": "f52b8cd23a3dcded90e974d8e3cc9e2c3a13ea1c1181a2b68b81147b407a2b5a"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/director.mjs",
+      "destination": "director.mjs",
+      "bytes": 5593,
+      "sha256": "488ce267413ea8a0b51f8b459dbb40e51329f4ad59409b8ae8f53eac2f0502c0",
+      "rewrites": [
+        {
+          "from": "../tonight-demo/paired-controls.mjs",
+          "to": "../wisp-tonight/paired-controls.mjs"
+        },
+        {
+          "from": "../runway-pilots/wisp-film-output.js",
+          "to": "../wisp-film-preview/wisp-film-output.js"
+        }
+      ],
+      "publishedSha256": "0d47d27ff353ecd17710f32cdf199855dfa8613f9d34b08f78ac51798d155dd6"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/director.css",
+      "destination": "director.css",
+      "bytes": 378,
+      "sha256": "d1730f1b58a0c158771c436b5fa20c9ed2db559663d261307cb8f86a88b0be3f",
+      "publishedSha256": "d1730f1b58a0c158771c436b5fa20c9ed2db559663d261307cb8f86a88b0be3f"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/phone-performance-director.mjs",
+      "destination": "phone-performance-director.mjs",
+      "bytes": 3791,
+      "sha256": "a49642afe645c0fdddd65e85c63edcf73adeab56ef8a6e3d3f6a32a6f8ddfa0c",
+      "publishedSha256": "a49642afe645c0fdddd65e85c63edcf73adeab56ef8a6e3d3f6a32a6f8ddfa0c"
     }
   ]
 }
