@@ -1,0 +1,9 @@
+{
+  "run": "https://github.com/Beejeezum/hauntedpuppet/actions/runs/40773690614",
+  "commit": "3be1335feeef52131d3ffde19815b2362860a718",
+  "conclusion": "failure",
+  "observed": "All six isolated native reference pictures decoded; eight native seek comparisons completed. Failure during five-pause recovery sequence after native overlay release, main atlas phaseplaying,currentfriendly-drift-A,sourceLoads1,currentTime8.700414333,pausedfalse,blackfalse,mutedfalse; Atlas media readiness deadline.",
+  "inference": "One main movie source alone does not establish reliability in a composition that also releases an overlay decoder. Existing diagnostics omit readiness/network state and requested-time delta, so the precise stalled predicate is unproven.",
+  "nextChange": "Retain deadline and gates; capture detailed wait observations and failed test stage. Make owned play rejection/deadline mute and black immediately, while stale failures cannot affect a new seek. Do not migrate app transport from this result.",
+  "scope": "Zero-volume/null-device tests. No human listening, character face approval or physical projection."
+}

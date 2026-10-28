@@ -13,3 +13,5 @@ Also covers a removed video effect, five real pause/stale-black/recover cycles, 
 Run with bundled Node24 and existing silent setup:
 NODE_OPTIONS=--require=./work/pinned-silent-playwright.cjs node tests/atlas_seek_study.cjs
 HAUNT_BROWSER=webkit selects Mac WebKit. GitHub manual native_media_only plus native_atlas_pilot runs the isolated Linux WebKit study; ordinary release checks remain unchanged and required.
+
+Second Linux run40773690614 decoded isolated goldens and completed eight seek comparisons, but failed a resume deadline during interruption stress after effect release. Therefore the one-main-decoder hypothesis is not verified on Linux. Failed-resume handling now mutes/blacks the owned action; a late rejection from a cancelled old action cannot affect a new cue. Detailed wait state and failing stage are saved on failure. Keep release gates intact; do not migrate the app from local-only passes.
