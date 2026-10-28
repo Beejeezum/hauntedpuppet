@@ -62,11 +62,11 @@ class Remote:
                     old=self.queue.popleft(); self.results[old['seq']]={'seq':old['seq'],'status':'cancelled','at':now}
             if len(self.queue)>=64: return 503,{'error':'Command queue full.'}
             s['rate'].append(now); self.seq+=1
-            self.results={seq:a for seq,a in self.results.items() if a['at']>now-120}
+            self.results={seq:a for seq,a in self.results.items() if a.get('until',a['at']+120)>now}
             s['ids'][ident]=self.seq
             while len(s['ids'])>256: s['ids'].popitem(last=False)
             self.queue.append({'seq':self.seq,'id':ident,'command':kind,'value':value,'expiresAt':now+3})
-            self.results[self.seq]={'seq':self.seq,'status':'queued','at':now}
+            self.results[self.seq]={'seq':self.seq,'status':'queued','at':now,'until':now+(600 if kind=='perform' else 120)}
             return 202,{'seq':self.seq,'status':'queued'}
     def poll(self):
         with self.lock:
@@ -135,7 +135,8 @@ class Handler(BaseHTTPRequestHandler):
                     if path=='/bridge/ack' and post:
                         d=self.data(); seq=d.get('seq'); status=d.get('status')
                         if type(seq)!=int or seq not in r.results or status not in ('applied','failed'): raise ValueError('Invalid acknowledgement')
-                        r.results[seq]={'seq':seq,'status':status,'at':r.clock()}; return self.send_json(200,{'ok':True})
+                        if r.results[seq]['status']!='queued' or r.results[seq].get('until',r.results[seq]['at']+120)<=r.clock(): return self.send_json(409,{'error':'Command expired or was already settled.'})
+                        r.results[seq]={'seq':seq,'status':status,'at':r.clock(),'until':r.results[seq].get('until',r.clock()+120)}; return self.send_json(200,{'ok':True})
                     if path=='/bridge/revoke' and post:
                         r.sessions.clear(); r.queue.clear(); r.code=None; return self.send_json(200,{'ok':True})
             if path=='/api/pair' and post: return self.send_json(*r.pair(self.client_address[0],self.data().get('code')))
@@ -144,9 +145,8 @@ class Handler(BaseHTTPRequestHandler):
                     s=r.session(self.token())
                     if not s: return self.send_json(401,{'error':'Pair this phone again.'})
                     if path=='/api/state' and not post:
-                        snap=r.snapshot(); owned=set(s['ids'].values()); snap['acks']=[{k:v for k,v in a.items() if k!='at'} for seq,a in r.results.items() if seq in owned]
-                        cutoff=r.clock()-120
-                        r.results={seq:a for seq,a in r.results.items() if a['at']>cutoff}
+                        snap=r.snapshot(); owned=set(s['ids'].values()); snap['acks']=[{k:v for k,v in a.items() if k not in ('at','until')} for seq,a in r.results.items() if seq in owned]
+                        r.results={seq:a for seq,a in r.results.items() if a.get('until',a['at']+120)>r.clock()}
                         return self.send_json(200,snap)
                     if path=='/api/command' and post: return self.send_json(*r.command(self.token(),self.data()))
             if not post and path in ('/','/phone.js','/phone.css'):

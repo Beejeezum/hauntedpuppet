@@ -10,6 +10,7 @@ const assert=require('node:assert/strict'),{chromium}=require('playwright');
  assert.deepEqual(sent[0].value,{text:'Hello, little vampire!',mode:'exact',character:'friendly',animation:'friendly-wave'});assert.equal(sent[0].command,'perform');
  assert.equal(await page.inputValue('#performText'),'Hello, little vampire!');assert.equal(await page.locator('audio,video').count(),0);
  acks=[{seq:'1',status:'applied'}];await page.waitForFunction(()=>actionStatus.textContent==='Applied on the laptop.');
+ await page.selectOption('#performCharacter','scary');assert.deepEqual(await page.locator('#performAnimation option').evaluateAll(options=>options.map(o=>o.value)),['scary-reach']);
  fail=true;await page.click('#performSend');await page.waitForFunction(()=>actionStatus.textContent==='Laptop disconnected');assert.equal(await page.inputValue('#performText'),'Hello, little vampire!');
  connected=false;await page.waitForFunction(()=>performSend.disabled);connected=true;workspace='films';await page.locator('#directorPanel').waitFor({state:'hidden'});assert.equal(await page.inputValue('#performText'),'Hello, little vampire!');
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));console.log('PASS phone director payload, silent mobile composer, failed-send draft preservation, acknowledgement and workspace/disconnect gating');

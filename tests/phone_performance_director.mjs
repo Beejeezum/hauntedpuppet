@@ -21,6 +21,8 @@ const firstJob=d.request({...value,text:'First'}),secondJob=d.request({...value,
 // Stop during the return: old finally must not overwrite the fresh job state.
 const oldReturn=deferred();let returnOnce=true;d=new PhonePerformanceDirector({...config,returnAmbient:async()=>{if(returnOnce){returnOnce=false;await oldReturn.promise}}});
 const returning=d.request(value),returningRejected=assert.rejects(returning,e=>e.cancelled);await new Promise(r=>setImmediate(r));d.stop();await returningRejected;await d.request(value);const snapshot=d.inspect();oldReturn.resolve();await new Promise(r=>setImmediate(r));assert.deepEqual(d.inspect(),snapshot);
+// Reject a voice/film duration mismatch before any visible transition or speech.
+calls=[];d=new PhonePerformanceDirector({...config,validatePrepared:()=>{throw Error('Film too short')}});await assert.rejects(d.request(value),/too short/);assert(!calls.includes('enter')&&!calls.includes('play'));
 // Provider failure must close output and release state without pretending success.
 calls=[];d=new PhonePerformanceDirector({...config,prepareSpeech:async()=>{throw Error('provider unavailable')}});await assert.rejects(d.request(value),/provider unavailable/);assert.deepEqual(calls,['stop','ambient']);d.dispose();await assert.rejects(d.request(value),/closed/);
 console.log('PASS laptop performance ordering, queue bounds, character matching, Stop/restart ownership, late-provider disposal and failure recovery (mock adapters)');

@@ -4,7 +4,7 @@ from http.server import ThreadingHTTPServer,SimpleHTTPRequestHandler
 from pathlib import Path
 from urllib.parse import urlsplit,unquote
 import json,secrets,urllib.request,urllib.error,os,sys,subprocess,threading
-import performance,conversation,realtime_voice,phone_bridge,credential_store,public_workspace
+import performance,conversation,realtime_voice,phone_bridge,credential_store,public_workspace,director_script
 CONNECT_LOCK=threading.Lock()
 SAVED_CREDENTIAL=False
 CREDENTIAL_WARNING=''
@@ -72,7 +72,7 @@ class Handler(SimpleHTTPRequestHandler):
   if not self.allowed() or self.headers.get('Origin') not in (f'http://127.0.0.1:{PORT}',f'http://localhost:{PORT}') or self.headers.get('X-Haunt-Token')!=TOKEN:return self.reply(403,{'error':'Invalid local request'})
   phone_actions=('enable','disable','status','pairing','poll','state','ack','revoke');phone_action=self.path.rsplit('/',1)[-1] if self.path.startswith('/api/phone/') else None
   if phone_action is not None and phone_action not in phone_actions:return self.reply(404,{'error':'Not found'})
-  if phone_action is None and self.path not in ('/api/performance','/api/transcribe','/api/reply','/api/connect','/api/credential/forget','/api/shutdown','/api/realtime/session','/api/realtime/end','/api/realtime/heartbeat','/api/realtime/config'):return self.reply(404,{'error':'Not found'})
+  if phone_action is None and self.path not in ('/api/director/line','/api/performance','/api/transcribe','/api/reply','/api/connect','/api/credential/forget','/api/shutdown','/api/realtime/session','/api/realtime/end','/api/realtime/heartbeat','/api/realtime/config'):return self.reply(404,{'error':'Not found'})
   try:
    n=int(self.headers.get('Content-Length','0'));limit=150000 if self.path=='/api/phone/state' else 8100000 if self.path=='/api/transcribe' else 110000 if self.path=='/api/realtime/session' else 12000
    if not 0<n<=limit:return self.reply(400,{'error':'Invalid speech request size'})
@@ -93,6 +93,7 @@ class Handler(SimpleHTTPRequestHandler):
     return self.reply(200,{'configured':bool(os.getenv('OPENAI_API_KEY')),**credential_status()})
    if self.path=='/api/transcribe':return self.reply(200,conversation.transcribe(parsed))
    if self.path=='/api/reply':return self.reply(200,conversation.reply(parsed))
+   if self.path=='/api/director/line':return self.reply(200,director_script.line(parsed,os.getenv('OPENAI_API_KEY')))
    if os.getenv('OPENAI_API_KEY'):return self.reply(200,performance.performance(parsed))
    base='http://127.0.0.1:8766'
    with urllib.request.urlopen(base+'/api/status',timeout=4) as r:d=json.load(r)

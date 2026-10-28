@@ -1,8 +1,8 @@
 /** Laptop-only coordinator. Adapters own authored film, speech and ambient transport. */
 export class PhonePerformanceDirector {
- constructor({animations,prepareSpeech,prepareFilm,enter,play,returnAmbient,stop,onState=()=>{},capacity=4}){
+ constructor({animations,prepareSpeech,prepareFilm,validatePrepared=()=>{},enter,play,returnAmbient,stop,onState=()=>{},capacity=4}){
   if(!Array.isArray(animations)||!animations.length||!Number.isInteger(capacity)||capacity<1||capacity>8)throw Error('Invalid director configuration');
-  Object.assign(this,{animations,prepareSpeech,prepareFilm,enter,play,returnAmbient,stopOutput:stop,onState,capacity});
+  Object.assign(this,{animations,prepareSpeech,prepareFilm,validatePrepared,enter,play,returnAmbient,stopOutput:stop,onState,capacity});
   this.queue=[];this.epoch=0;this.active=null;this.disposed=false;this.phase='idle';
  }
  inspect(){return{phase:this.phase,queued:this.queue.length,character:this.active?.value.character||null,animation:this.active?.value.animation||null,disposed:this.disposed};}
@@ -29,6 +29,7 @@ export class PhonePerformanceDirector {
    this.emit('preparing');
    const speech=await acquire(()=>this.prepareSpeech(job.value,context));check();
    const film=await acquire(()=>this.prepareFilm(job.clip,context));check();
+   await this.validatePrepared({speech,film,value:job.value},context);check();
    this.emit('transitioning');await this.enter(film,context);check();
    this.emit('playing');await this.play({speech,film,value:job.value},context);check();
    this.emit('returning');await this.returnAmbient(context);check();job.resolve({status:'applied'});

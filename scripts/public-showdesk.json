@@ -123,15 +123,15 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/director.html",
       "destination": "director.html",
-      "bytes": 1380,
-      "sha256": "f52b8cd23a3dcded90e974d8e3cc9e2c3a13ea1c1181a2b68b81147b407a2b5a",
-      "publishedSha256": "f52b8cd23a3dcded90e974d8e3cc9e2c3a13ea1c1181a2b68b81147b407a2b5a"
+      "bytes": 1566,
+      "sha256": "90d4f66a096a0fdcc13f1f8b8404b1b7ac92cd185a4f516bb879e3bf90ab0b90",
+      "publishedSha256": "90d4f66a096a0fdcc13f1f8b8404b1b7ac92cd185a4f516bb879e3bf90ab0b90"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/director.mjs",
       "destination": "director.mjs",
-      "bytes": 5593,
-      "sha256": "488ce267413ea8a0b51f8b459dbb40e51329f4ad59409b8ae8f53eac2f0502c0",
+      "bytes": 6301,
+      "sha256": "3065da071c971541f4c95b7dd00294e48a0cf4444e5e02073a8fc12d4857dcd5",
       "rewrites": [
         {
           "from": "../tonight-demo/paired-controls.mjs",
@@ -142,7 +142,7 @@
           "to": "../wisp-film-preview/wisp-film-output.js"
         }
       ],
-      "publishedSha256": "0d47d27ff353ecd17710f32cdf199855dfa8613f9d34b08f78ac51798d155dd6"
+      "publishedSha256": "22478922ac963b1143e76b72e57bec3e73714571fba3fba8aefd2f9212cd737f"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/director.css",
@@ -154,9 +154,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/phone-performance-director.mjs",
       "destination": "phone-performance-director.mjs",
-      "bytes": 3791,
-      "sha256": "a49642afe645c0fdddd65e85c63edcf73adeab56ef8a6e3d3f6a32a6f8ddfa0c",
-      "publishedSha256": "a49642afe645c0fdddd65e85c63edcf73adeab56ef8a6e3d3f6a32a6f8ddfa0c"
+      "bytes": 3911,
+      "sha256": "96993d902f6482a65f269bd777bbfc8c2f1ed82a428f82139f663490930946ef",
+      "publishedSha256": "96993d902f6482a65f269bd777bbfc8c2f1ed82a428f82139f663490930946ef"
     }
   ]
 }

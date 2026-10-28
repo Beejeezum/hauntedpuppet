@@ -36,6 +36,8 @@ try{
  for(const value of [{...performance,text:'x'.repeat(401)},{...performance,animation:'not-advertised'},{...performance,providerKey:'forbidden'}])assert.equal((await guest('command',{id:randomUUID(),command:'perform',value},token)).status,400);
  await owner('state',{state:{workspace:'films'},cues:['friendly-wave']});assert.equal((await guest('command',{id:randomUUID(),command:'perform',value:performance},token)).status,400);
  await owner('state',{state:{workspace:'films'},cues:['hello']});checks.push('bounded director performance payload and workspace gate');
+ await owner('state',{state:{workspace:'director'},cues:['friendly-wave']});const longPerformance=await guest('command',{id:randomUUID(),command:'perform',value:performance},token);assert.equal(longPerformance.status,202);await owner('poll');clock+=130000;await owner('poll');await owner('state',{state:{workspace:'director'},cues:['friendly-wave']});assert((await guest('state',{},token)).data.acks.some(a=>a.seq===longPerformance.data.seq&&a.status==='queued'));assert.equal((await owner('ack',{seq:longPerformance.data.seq,status:'applied'})).status,200);assert((await guest('state',{},token)).data.acks.some(a=>a.seq===longPerformance.data.seq&&a.status==='applied'));await owner('state',{state:{workspace:'films'},cues:['hello']});checks.push('long queued performance retains acknowledgement beyond two minutes');
+
 
  for(const [command,value] of [['volume',2],['cue','missing'],['gesture',['wave']],['provider','key']])assert.equal((await guest('command',{id:randomUUID(),command,value},token)).status,400);checks.push('typed allowlist');
  clock+=1100;await owner('poll');await owner('state',{state:{audience:'big',form:'haunting',scaryReady:true,revealArmed:true},cues:['hello']});

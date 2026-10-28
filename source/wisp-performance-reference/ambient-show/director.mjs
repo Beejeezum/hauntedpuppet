@@ -8,12 +8,19 @@ const compositor=new StageCompositor($('stage')),transport=new FilmTransport(com
 let context,source,enabled=false,disposed=false,frame,activeCharacter='friendly';
 function silence(){if(source){try{source.stop();}catch{}source.disconnect();source=null;}transport.blackout();}
 async function speech(value,{signal,live}){
+ signal=AbortSignal.any([signal,AbortSignal.timeout(70000)]);
  if(!enabled||!context||context.state!=='running')throw Error('Enable laptop sound before sending a line');
- if(value.mode!=='exact')throw Error('Improvisation is not connected in this proof. Choose exact words.');
  const status=await fetch('/api/status',{signal,credentials:'same-origin'}).then(r=>r.json());
  if(!status.token)throw Error('Sign in to the laptop voice service first');
+ let words=value.text;
+ if(value.mode==='prompt'){
+  const response=await fetch('/api/director/line',{method:'POST',credentials:'same-origin',signal,headers:{'Content-Type':'application/json','X-Haunt-Token':status.token},body:JSON.stringify({text:value.text,mode:'prompt',character:value.character})});
+  const line=await response.json();if(!response.ok)throw Error(line.error||'Wisp could not prepare a line');
+  if(signal.aborted||!live())throw Object.assign(Error('Cancelled'),{cancelled:true});
+  words=line.text;
+ }
  const scary=value.character==='scary';
- const response=await fetch('/api/performance',{method:'POST',credentials:'same-origin',signal,headers:{'Content-Type':'application/json','X-Haunt-Token':status.token},body:JSON.stringify({text:value.text,voice:scary?'cedar':'marin',form:scary?'haunting':'friendly',audience:scary?'big':'family',mood:scary?'sinister':'amused',intensity:.65})});
+ const response=await fetch('/api/performance',{method:'POST',credentials:'same-origin',signal,headers:{'Content-Type':'application/json','X-Haunt-Token':status.token},body:JSON.stringify({text:words,voice:scary?'cedar':'marin',form:scary?'haunting':'friendly',audience:scary?'big':'family',mood:scary?'sinister':'amused',intensity:.65})});
  const data=await response.json();if(!response.ok)throw Error(data.error||'Voice preparation failed');
  if(typeof data.audio!=='string'||data.audio.length>4800000)throw Error('Voice response is unavailable or too large');
  const bytes=Uint8Array.from(atob(data.audio),c=>c.charCodeAt(0));const buffer=await context.decodeAudioData(bytes.buffer);
@@ -23,6 +30,7 @@ async function speech(value,{signal,live}){
 }
 const director=new PhonePerformanceDirector({animations:clips,prepareSpeech:speech,
  prepareFilm:async(clip,{signal})=>{const abort=()=>transport.cancelPreparation();signal.addEventListener('abort',abort,{once:true});try{return await transport.prepare(clip.id);}finally{signal.removeEventListener('abort',abort);}},
+ validatePrepared:({speech,film})=>{if(!film.clip.loop&&speech.buffer.duration+.55>film.video.duration)throw Error('This scary film is too short for that line. Use fewer words.');},
  enter:async(film,ctx)=>{await transport.fade(0,550,ctx.live);if(!ctx.live())return;await transport.activate(film,ctx.live);await transport.fade(1,550,ctx.live);},
  play:async({speech,value},{signal,live})=>{if(!live())return;activeCharacter=value.character;await new Promise((resolve,reject)=>{
   const node=context.createBufferSource();source=node;node.buffer=speech.buffer;node.connect(context.destination);
@@ -41,9 +49,9 @@ const remote={remoteState:()=>({state:{workspace:'director',status:director.insp
  return Promise.reject(Error('Choose a typed performance in the phone director'));
 }};
 const paired=mountPairedControls(document.querySelector('aside'),{remote,stop,canvas:$('stage')});
-const output=mountFilmOutput($('stage'),()=>({composition:compositor.inspect(),director:director.inspect()}));
+const output=mountFilmOutput($('stage'),()=>({black:compositor.black,disposed,metrics:{draws:compositor.draws}}),{beforePaint:()=>compositor.render()});
 $('enable').onclick=async()=>{try{context||=new AudioContext();await context.resume();enabled=context.state==='running';$('send').disabled=!enabled;$('enable').textContent=enabled?'Laptop sound enabled':'Try enabling sound again';}catch(error){$('detail').textContent=error.message;}};
-$('stop').onclick=stop;$('lineForm').onsubmit=event=>{event.preventDefault();const character=$('character').value;request({text:$('line').value,mode:'exact',character,animation:character==='friendly'?'friendly-drift':'scary-drift'}).catch(()=>{});};
+$('stop').onclick=stop;$('lineForm').onsubmit=event=>{event.preventDefault();const character=$('character').value;request({text:$('line').value,mode:$('lineMode').value,character,animation:character==='friendly'?'friendly-drift':'scary-drift'}).catch(()=>{});};
 function tick(){if(disposed)return;compositor.render();frame=requestAnimationFrame(tick);}tick();
 window.addEventListener('pagehide',()=>{disposed=true;director.dispose();paired.dispose();output.dispose();transport.dispose();compositor.dispose();cancelAnimationFrame(frame);context?.close();},{once:true});
 window.WispPhoneDirector={inspect:()=>director.inspect(),stop};

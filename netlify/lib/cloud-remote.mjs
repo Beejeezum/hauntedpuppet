@@ -36,7 +36,7 @@ export function cloudRemote({database,env=runtimeEnv,now=()=>Date.now()}={}){
  function owned(r,clientId,t){if(!r?.enabled)throw new ApiError(409,'Enable the phone remote on this desk first.');if(r.owner_client!==clientId)throw new ApiError(409,'This desk does not own the phone remote. Enable it here after the other desk closes.');}
  async function refreshLease(c,r,t){await c.query('UPDATE haunt_remote_rooms SET owner_until=$2,updated_at=$3 WHERE id=$1',[r.id,at(t+5000),at(t)]);}
  async function expire(c,r,t){
-  await c.query("UPDATE haunt_remote_commands SET status='expired' WHERE room_id=$1 AND generation=$2 AND ((status='queued' AND expires_at<$3) OR (status='claimed' AND created_at<$4))",[r.id,r.generation,at(t),at(t-120000)]);
+  await c.query("UPDATE haunt_remote_commands SET status='expired' WHERE room_id=$1 AND generation=$2 AND ((status='queued' AND expires_at<$3) OR (status='claimed' AND created_at<CASE WHEN command='perform' THEN $5::timestamptz ELSE $4::timestamptz END))",[r.id,r.generation,at(t),at(t-120000),at(t-600000)]);
   await c.query('DELETE FROM haunt_remote_phones WHERE room_id=$1 AND expires_at<$2',[r.id,at(t)]);
   await c.query('DELETE FROM haunt_remote_attempts WHERE room_id=$1 AND window_start<$2',[r.id,at(t-120000)]);
  }
@@ -118,7 +118,7 @@ export function cloudRemote({database,env=runtimeEnv,now=()=>Date.now()}={}){
    await c.query('UPDATE haunt_remote_phones SET seen_at=$2 WHERE id=$1',[p.sid,at(t)]);
    const connected=ms(r.owner_until)>t&&ms(r.heartbeat_at)>t-4500&&ms(r.state_at)>t-4500;
    if(action==='state'){
-    const acks=await c.query('SELECT seq,status FROM haunt_remote_commands WHERE phone_id=$1 AND created_at>$2 ORDER BY seq DESC LIMIT 256',[p.sid,at(t-120000)]);
+    const acks=await c.query("SELECT seq,status FROM haunt_remote_commands WHERE phone_id=$1 AND (created_at>$2 OR command='perform' AND created_at>$3) ORDER BY seq DESC LIMIT 256",[p.sid,at(t-120000),at(t-600000)]);
     return {connected,state:connected?r.state:{},cues:connected?r.cues:[],preview:connected?r.preview:null,stateAge:Math.max(0,(t-ms(r.state_at))/1000),acks:acks.rows.map(row=>({seq:safeSeq(row.seq),status:row.status==='claimed'?'queued':row.status}))};
    }
    if(action!=='command')throw new ApiError(404,'Unknown phone command.');

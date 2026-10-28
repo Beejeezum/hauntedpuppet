@@ -1,7 +1,7 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),{spawnSync}=require('node:child_process');
 const root=path.resolve(__dirname,'..'),out=path.join(root,'dist');
 const build=spawnSync(process.execPath,[path.join(root,'scripts/build-public.cjs')],{encoding:'utf8'});assert.equal(build.status,0,build.stderr);
-for(const name of ['server.py','credential_store.py','realtime_voice.py','.env','package.json','netlify/functions/api.mts','phone_remote/phone_server.py','vendor/qrcodegen.py'])assert(!fs.existsSync(path.join(out,name)),name+' must stay off the CDN');
+for(const name of ['server.py','credential_store.py','realtime_voice.py','.env','package.json','netlify/functions/api.mts','phone_remote/phone_server.py','vendor/qrcodegen.py','director_script.py','director-script-config.json'])assert(!fs.existsSync(path.join(out,name)),name+' must stay off the CDN');
 for(const name of ['index.html','speaking.mp4','idle.mp4','wisp-whole-film-player.js','wisp-whole-film-output.js','wisp-film-output.js'])assert(fs.existsSync(path.join(out,'assets/wisp-film-preview',name)),name+' preview asset missing');
 assert(!fs.existsSync(path.join(out,'source')),'Entire source tree must remain private to the repo');
 for(const name of ['index.html','tonight.mjs','puppet.html','puppet.mjs','live-puppet.html','live-puppet.mjs','friendly-fog-neutral-v1.png','friendly-fog-reference.png','friendly-mouths-v1.png','tonight-picture-review-v1.mp4','tonight-sound-review-v1.m4a','show.json'])assert(fs.existsSync(path.join(out,'assets/wisp-tonight',name)),name+' tonight asset missing');
