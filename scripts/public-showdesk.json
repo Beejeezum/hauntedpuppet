@@ -130,8 +130,8 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/director.mjs",
       "destination": "director.mjs",
-      "bytes": 6301,
-      "sha256": "3065da071c971541f4c95b7dd00294e48a0cf4444e5e02073a8fc12d4857dcd5",
+      "bytes": 6824,
+      "sha256": "946dc3b3824df6a863a2178f1d80062403a410d5c984db8d536b5b5dd4ec69a0",
       "rewrites": [
         {
           "from": "../tonight-demo/paired-controls.mjs",
@@ -142,7 +142,7 @@
           "to": "../wisp-film-preview/wisp-film-output.js"
         }
       ],
-      "publishedSha256": "22478922ac963b1143e76b72e57bec3e73714571fba3fba8aefd2f9212cd737f"
+      "publishedSha256": "7e9576d1e8f197e37c9619a469d3c411630b594208c6886d3c63eaa258920532"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/director.css",

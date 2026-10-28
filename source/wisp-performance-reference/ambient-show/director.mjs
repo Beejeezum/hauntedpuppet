@@ -3,7 +3,7 @@ import {FilmTransport} from './film-transport.mjs';
 import {PhonePerformanceDirector} from './phone-performance-director.mjs';
 import {mountPairedControls} from '../tonight-demo/paired-controls.mjs';
 import {mountFilmOutput} from '../runway-pilots/wisp-film-output.js';
-const $=id=>document.getElementById(id),clips=[{id:'friendly-drift',character:'friendly',src:'./friendly.mp4',loop:true},{id:'scary-drift',character:'scary',src:'./scary.mp4',loop:false}];
+const $=id=>document.getElementById(id),clips=[{id:'friendly-drift',character:'friendly',src:'./friendly.mp4',loop:true,exitPolicy:'finish'},{id:'scary-drift',character:'scary',src:'./scary.mp4',loop:false,exitPolicy:'finish'}];
 const compositor=new StageCompositor($('stage')),transport=new FilmTransport(compositor,clips,{mediaHost:$('mediaSources')});
 let context,source,enabled=false,disposed=false,frame,activeCharacter='friendly';
 function silence(){if(source){try{source.stop();}catch{}source.disconnect();source=null;}transport.blackout();}
@@ -29,16 +29,16 @@ async function speech(value,{signal,live}){
  return{buffer,dispose(){this.buffer=null;}};
 }
 const director=new PhonePerformanceDirector({animations:clips,prepareSpeech:speech,
- prepareFilm:async(clip,{signal})=>{const abort=()=>transport.cancelPreparation();signal.addEventListener('abort',abort,{once:true});try{return await transport.prepare(clip.id);}finally{signal.removeEventListener('abort',abort);}},
+ prepareFilm:async(clip,{signal})=>{if(clip.loop&&transport.active?.dataset.cue===clip.id&&!transport.active.paused&&!compositor.black)return{id:clip.id,clip,video:transport.active,alreadyActive:true,dispose(){}};const abort=()=>transport.cancelPreparation();signal.addEventListener('abort',abort,{once:true});try{return await transport.prepare(clip.id);}finally{signal.removeEventListener('abort',abort);}},
  validatePrepared:({speech,film})=>{if(!film.clip.loop&&speech.buffer.duration+.55>film.video.duration)throw Error('This scary film is too short for that line. Use fewer words.');},
- enter:async(film,ctx)=>{await transport.fade(0,550,ctx.live);if(!ctx.live())return;await transport.activate(film,ctx.live);await transport.fade(1,550,ctx.live);},
- play:async({speech,value},{signal,live})=>{if(!live())return;activeCharacter=value.character;await new Promise((resolve,reject)=>{
+ enter:async(film,ctx)=>{if(film.alreadyActive)return;await transport.fade(0,550,ctx.live);if(!ctx.live())return;await transport.activate(film,ctx.live);await transport.fade(1,550,ctx.live);},
+ play:async({speech,film,value},{signal,live})=>{if(!live())return;activeCharacter=value.character;await new Promise((resolve,reject)=>{
   const node=context.createBufferSource();source=node;node.buffer=speech.buffer;node.connect(context.destination);
   const done=()=>{signal.removeEventListener('abort',abort);node.disconnect();if(source===node)source=null;resolve();};
   const abort=()=>{node.onended=null;try{node.stop();}catch{}node.disconnect();if(source===node)source=null;signal.removeEventListener('abort',abort);reject(Object.assign(Error('Cancelled'),{cancelled:true}));};
   node.onended=done;signal.addEventListener('abort',abort,{once:true});if(signal.aborted){abort();return;}node.start();
- });},
- returnAmbient:async ctx=>{if(!ctx.live())return;await transport.fade(0,550,ctx.live);if(!ctx.live())return;const film=await transport.prepare('friendly-drift');if(!ctx.live()){film.dispose();return;}await transport.activate(film,ctx.live);await transport.fade(1,550,ctx.live);},
+ });if(live()&&!film.clip.loop)await transport.exit(0,live,{keepPicture:true});},
+ returnAmbient:async ctx=>{if(!ctx.live())return;if(transport.active?.dataset.cue==='friendly-drift'&&transport.active.loop&&!transport.active.paused&&!compositor.black){activeCharacter='friendly';return;}await transport.fade(0,550,ctx.live);if(!ctx.live())return;const film=await transport.prepare('friendly-drift');if(!ctx.live()){film.dispose();return;}await transport.activate(film,ctx.live);await transport.fade(1,550,ctx.live);if(ctx.live())activeCharacter='friendly';},
  stop:silence,onState:s=>{$('status').textContent=s.phase+(s.queued?' · '+s.queued+' queued':'');}
 });
 function stop(){director.stop();output.blackout();}
