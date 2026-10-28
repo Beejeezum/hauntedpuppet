@@ -24,3 +24,6 @@ Friendly-wave v1 rejected: head fog crops top, missing empty lead; do not publis
 
 2026-10-28 first-batch update
 Human endorses wave v1 painted look and full-body acting only; known v1 framing failure remains. Scary reach and cute failed-scare are generated, with constant-framed runtime candidates and decoded soundtrack tails. Scary source outer fog was clipped; edge feather is a review treatment, not restoration. Both candidates await human acting/sound and join review. No additional paid tasks queued.
+
+2026-10-28 eyes-only cue
+One new missing-cue submission d6cbac0a-050f-43d5-9712-bab9e9c75f5e in authorizedBruce,240credits actual debit, no further retries. Existing uploaded scary reference reused as both start/end; native sound disabled. Native241frames at24fps show body dispersal, floating eyes/blink and reformation. Original lower emitted fog failed15percent export reserve; no source-boundary clipping observed. New runtime-candidate-v1 uses one constant0.9 whole-frame fit without crop/animated resize/retime. All output frames now retain at least16.25percent RGB4reserve. Original dry broadband-air score follows hand lift, exhale, blink and reform, no music/voice; first/last0.5seconds silent. Exact visible rest-pose joins, human material/acting/mix and physical projection remain open. Publication is human-review-only, not ready-library approval.

@@ -23,5 +23,19 @@
   "generationCreditsSpent": 0,
   "humanApproval": false,
   "runtimePublication": false,
-  "scope": "Original full motion/picture retained without resizing or retiming. Exact dry V7 PCM time window replaces rejected musical audio. Contextual visual approval does not establish standalone cue, loop, new join, level or physical projection acceptance."
+  "scope": "Original full motion/picture retained without resizing or retiming. Exact dry V7 PCM time window replaces rejected musical audio. Contextual visual approval does not establish standalone cue, loop, new join, level or physical projection acceptance.",
+  "humanReview": "pending",
+  "entryPort": "scary-rest",
+  "exitPort": "friendly-rest",
+  "entryReview": "pending",
+  "exitReview": "pending",
+  "emptyStartFrames": 0,
+  "emptyEndFrames": 0,
+  "audioTailSilenceSeconds": 0.5,
+  "audio": {
+    "sampleRate": 48000,
+    "peak": 0.1305006444454193,
+    "lastHalfSecondPeak": 0.0,
+    "scope": "Decoded soundtrack measurements; no human listening or exact cue/transition approval."
+  }
 }

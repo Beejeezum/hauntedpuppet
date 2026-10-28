@@ -465,6 +465,25 @@
       "evidence": "../button-cue-batch/evil-to-cute-runtime-candidate-v3.json",
       "humanDirectionEvidence": "../button-cue-batch/human-morph-review-2026-10-28.json",
       "scope": "Same compressed video and all121decoded pixels as the v2 motion source. Exact V7 dry-swish PCM window replaces its musical audio; encoded first/last half-second are silent. No generation, resize, reversal or retiming. Contextual visual approval retained as direction only; standalone cue, exact level, new joins and loop approval remain pending. Not a ready cue."
+    },
+    {
+      "plannedClipIds": [
+        "scary-eyes"
+      ],
+      "media": "../button-cue-batch/scary-eyes-runtime-candidate-v1.mp4",
+      "sha256": "8d30ec2f4d781fd8b663a04e855949d454e1d09948c1d913e8393437a3a4e1f3",
+      "status": "human-review-pending",
+      "evidence": "../button-cue-batch/scary-eyes-runtime-candidate-v1.json",
+      "scope": "One240credit native eyes-only/reformation draft, then fixed0.9 whole-frame buffering and original dry nonverbal air score.241frames24fps,15percent export reserve passes. No crop, animated resize, body crossfade or retiming. Human full motion/material/sound and exact visible rest-pose joins remain pending; no ready cue."
+    },
+    {
+      "plannedClipIds": [
+        "scary-drift"
+      ],
+      "media": "../runway-pilots/scary-idle-loop-study/wisp-scary-idle-loop-pilot-v1.mp4",
+      "sha256": "05dc6b026876f3be364f6174a51a96075b51df98748fba0d1320389cd28f07e2",
+      "status": "revision-required",
+      "scope": "Existing170credit native-loop draft rejected for solid rubbery middle-motion arms/core and nearly held closing bookends.20percent generation reserve failed86frames. No further retry authorized for that pilot; matching endpoint pictures do not establish a living seam. Recorded to prevent accidental reuse or repeat spending."
     }
   ],
   "deferredClips": [
