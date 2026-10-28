@@ -133,6 +133,15 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts
       - run: npx playwright install --with-deps chromium webkit
+      # Clocked null sink: https://wiki.freedesktop.org/www/Software/PulseAudio/Documentation/User/Modules/#module-null-sink
+      - name: Provide a clocked silent audio device for Linux media
+        run: |
+          sudo apt-get install -y pulseaudio gstreamer1.0-pulseaudio libasound2-plugins
+          pulseaudio --check || pulseaudio --start --exit-idle-time=-1
+          pactl load-module module-null-sink sink_name=wisp_ci rate=48000
+          pactl set-default-sink wisp_ci
+          echo "PULSE_SINK=wisp_ci" >> "$GITHUB_ENV"
+          echo "HAUNT_CI_SILENT_AUDIO=1" >> "$GITHUB_ENV"
       - name: Build explicit public show desk and check privacy
         run: node tests/public_build.cjs
       - name: Wait for complete authored exits before queued cues
