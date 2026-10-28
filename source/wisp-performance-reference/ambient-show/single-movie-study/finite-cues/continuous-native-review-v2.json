@@ -1,0 +1,383 @@
+{
+  "status": "private continuous append proof; not runtime/human acceptance",
+  "tests": {
+    "chromium": {
+      "cases": [
+        {
+          "duration": 5.083333333333333,
+          "windows": [
+            {
+              "id": "friendly",
+              "start": 0,
+              "end": 5.083333333333333
+            }
+          ],
+          "sourceLoads": 1,
+          "sealed": true,
+          "ranges": [
+            [
+              0,
+              5.083333
+            ]
+          ],
+          "first": 0,
+          "last": 5.041666,
+          "count": 77,
+          "maxMediaGap": 0.125,
+          "joinFrames": [
+            0,
+            0.125
+          ],
+          "playbackRate": 4,
+          "time": 5.083333,
+          "ended": true,
+          "mediaError": 0
+        },
+        {
+          "duration": 10.125,
+          "windows": [
+            {
+              "id": "friendly",
+              "start": 0,
+              "end": 5.083333333333333
+            },
+            {
+              "id": "morph",
+              "start": 5.083333333333333,
+              "end": 10.125
+            }
+          ],
+          "sourceLoads": 2,
+          "sealed": true,
+          "ranges": [
+            [
+              0,
+              10.125
+            ]
+          ],
+          "first": 0,
+          "last": 10.083333,
+          "count": 243,
+          "maxMediaGap": 0.04166700000000034,
+          "joinFrames": [
+            0,
+            0.041666,
+            0.083333,
+            0.125,
+            4.958333,
+            5,
+            5.041666,
+            5.083333,
+            5.124999,
+            5.166666,
+            5.208333
+          ],
+          "playbackRate": 1,
+          "time": 10.125,
+          "ended": true,
+          "mediaError": 0
+        },
+        {
+          "duration": 10.125,
+          "windows": [
+            {
+              "id": "morph",
+              "start": 0,
+              "end": 5.041666666666667
+            },
+            {
+              "id": "friendly",
+              "start": 5.041666666666667,
+              "end": 10.125
+            }
+          ],
+          "sourceLoads": 3,
+          "sealed": true,
+          "ranges": [
+            [
+              0,
+              10.125
+            ]
+          ],
+          "first": 0,
+          "last": 10.083332,
+          "count": 153,
+          "maxMediaGap": 0.1666669999999999,
+          "joinFrames": [
+            0,
+            0.041666,
+            0.083333,
+            0.125,
+            4.916666,
+            5,
+            5.041666,
+            5.166666
+          ],
+          "playbackRate": 4,
+          "time": 10.125,
+          "ended": true,
+          "mediaError": 0
+        }
+      ],
+      "continuous": {
+        "duration": 15.208333333333334,
+        "windows": [
+          {
+            "id": "friendly",
+            "start": 0,
+            "end": 5.083333333333333
+          },
+          {
+            "id": "morph",
+            "start": 5.083333333333333,
+            "end": 10.125
+          },
+          {
+            "id": "friendly",
+            "start": 10.125,
+            "end": 15.208333333333334
+          }
+        ],
+        "sourceLoads": 4,
+        "sealed": true,
+        "loads": 1,
+        "sameSource": true,
+        "last": 15.166666,
+        "frames": 365,
+        "maxMediaGap": 0.04166700000000034,
+        "time": 15.208333,
+        "ended": true,
+        "appendDurations": [
+          10.125,
+          15.208333333333334
+        ]
+      },
+      "sealedRejected": true,
+      "stopped": {
+        "src": null,
+        "duration": 0,
+        "paused": true,
+        "objectURL": null
+      },
+      "stale": {
+        "oldResult": "AbortError",
+        "preserved": true,
+        "duration": 5.041666666666667
+      },
+      "appendCancellation": {
+        "results": [
+          "AbortError",
+          "AbortError"
+        ],
+        "preserved": true,
+        "windows": [
+          "morph"
+        ]
+      },
+      "fetchFailure": true,
+      "disposedReject": true,
+      "disposedSrc": null,
+      "sourceLoads": 9,
+      "scope": "Forward order at normal 1x rate; other cases accelerated 4x. Callback gaps are observations, not proof of presentation quality. Muted native MSE finite-media playback and cancellation only; no human smoothness, acoustic, provider, phone or physical projection acceptance."
+    },
+    "webkit": {
+      "cases": [
+        {
+          "duration": 5.083333333333333,
+          "windows": [
+            {
+              "id": "friendly",
+              "start": 0,
+              "end": 5.083333333333333
+            }
+          ],
+          "sourceLoads": 1,
+          "sealed": true,
+          "ranges": [
+            [
+              0,
+              5.083333333333333
+            ]
+          ],
+          "first": 0,
+          "last": 5.041666666666667,
+          "count": 96,
+          "maxMediaGap": 0.08333333333333393,
+          "joinFrames": [
+            0,
+            0.041666666666666664,
+            0.08333333333333333
+          ],
+          "playbackRate": 4,
+          "time": 5.083333333333333,
+          "ended": true,
+          "mediaError": 0
+        },
+        {
+          "duration": 10.125,
+          "windows": [
+            {
+              "id": "friendly",
+              "start": 0,
+              "end": 5.083333333333333
+            },
+            {
+              "id": "morph",
+              "start": 5.083333333333333,
+              "end": 10.125
+            }
+          ],
+          "sourceLoads": 2,
+          "sealed": true,
+          "ranges": [
+            [
+              0,
+              10.125
+            ]
+          ],
+          "first": 0.041666666666666664,
+          "last": 10.083333333333334,
+          "count": 242,
+          "maxMediaGap": 0.041667302449543975,
+          "joinFrames": [
+            0.041666666666666664,
+            0.08333333333333333,
+            0.125,
+            4.958333333333333,
+            5,
+            5.041666666666667,
+            5.083333969116211,
+            5.125,
+            5.166666666666667,
+            5.208333333333333
+          ],
+          "playbackRate": 1,
+          "time": 10.125,
+          "ended": true,
+          "mediaError": 0
+        },
+        {
+          "duration": 10.125,
+          "windows": [
+            {
+              "id": "morph",
+              "start": 0,
+              "end": 5.041666666666667
+            },
+            {
+              "id": "friendly",
+              "start": 5.041666666666667,
+              "end": 10.125
+            }
+          ],
+          "sourceLoads": 3,
+          "sealed": true,
+          "ranges": [
+            [
+              0,
+              10.125
+            ]
+          ],
+          "first": 0.08333333333333333,
+          "last": 10.083333333333334,
+          "count": 189,
+          "maxMediaGap": 0.08333333333333393,
+          "joinFrames": [
+            0.08333333333333333,
+            0.125,
+            4.916666666666667,
+            5,
+            5.041666030883789,
+            5.083333333333333,
+            5.125
+          ],
+          "playbackRate": 4,
+          "time": 10.125,
+          "ended": true,
+          "mediaError": 0
+        }
+      ],
+      "continuous": {
+        "duration": 15.208333333333334,
+        "windows": [
+          {
+            "id": "friendly",
+            "start": 0,
+            "end": 5.083333333333333
+          },
+          {
+            "id": "morph",
+            "start": 5.083333333333333,
+            "end": 10.125
+          },
+          {
+            "id": "friendly",
+            "start": 10.125,
+            "end": 15.208333333333334
+          }
+        ],
+        "sourceLoads": 4,
+        "sealed": true,
+        "loads": 1,
+        "sameSource": true,
+        "last": 15.166666666666666,
+        "frames": 365,
+        "maxMediaGap": 0.041667302449543975,
+        "time": 15.208333333333334,
+        "ended": true,
+        "appendDurations": [
+          10.125,
+          15.208333333333334
+        ]
+      },
+      "sealedRejected": true,
+      "stopped": {
+        "src": null,
+        "duration": 0,
+        "paused": true,
+        "objectURL": null
+      },
+      "stale": {
+        "oldResult": "AbortError",
+        "preserved": true,
+        "duration": 5.041666666666667
+      },
+      "appendCancellation": {
+        "results": [
+          "AbortError",
+          "AbortError"
+        ],
+        "preserved": true,
+        "windows": [
+          "morph"
+        ]
+      },
+      "fetchFailure": true,
+      "disposedReject": true,
+      "disposedSrc": null,
+      "sourceLoads": 9,
+      "scope": "Forward order at normal 1x rate; other cases accelerated 4x. Callback gaps are observations, not proof of presentation quality. Muted native MSE finite-media playback and cancellation only; no human smoothness, acoustic, provider, phone or physical projection acceptance."
+    }
+  },
+  "sha256": {
+    "source/wisp-performance-reference/ambient-show/single-movie-study/finite-cues/finite-player.mjs": "1b5c61dcceecac5712b0476985b4f0562e1d837135f414afe9c63441ab6537c3",
+    "source/wisp-performance-reference/ambient-show/single-movie-study/finite-cues/index.html": "1a560df0f17b1f0faed7338094b7f1b825745d929d60ad68b7491c88a84ddb48",
+    "tests/finite_cue_study.cjs": "9cc6f3a4ff8f828fdedd18537e3e2bdab017b291bc1392420367a3f7abfeb000"
+  },
+  "priorFailure": {
+    "engine": "Mac WebKit",
+    "scope": "Three-cue continuous native timeline",
+    "lastPresentedMediaTime": 15.125,
+    "actualEnd": 15.202333333333334,
+    "intendedEnd": 15.208333333333334,
+    "cause": "Accumulated floating-point end was15.208333333333332, excluding final video frame",
+    "correction": "Maintain integer frame count; derive every cue start/end by dividing total frames by24"
+  },
+  "limits": [
+    "Mac browsers only; Linux diagnostic pending",
+    "No runtime playlist/scheduler/phone integration",
+    "No infinite stream or buffer eviction",
+    "No human visual/audio join approval or physical projection"
+  ],
+  "creditsSpent": 0
+}

@@ -2,7 +2,8 @@ PRIVATE FINITE-CUE PLAYBACK PROOF — NOT PROMOTED TO SHOWDESK
 
 Why: the prior single-master seeking study has no native cue-end boundary.
 This proof appends only selected finite media into one MediaSource/video,
-then ends that timeline. No clock timer is responsible for preventing later
+then seals that timeline when requested. Open timelines also accept serialized
+new selections while the current native video is playing. No clock timer is responsible for preventing later
 master sections or their sound from playing. One source assignment per
 prepared playlist, not per cue. The existing production player is unchanged.
 
@@ -36,9 +37,15 @@ are recorded, not treated as a guarantee of display performance. The source
 UI starts sound off and its Stop button clears the native source.
 
 Limits: accelerated 4x stress cases do not prove smooth 24fps presentation;
-no long soak, phone integration, arbitrary codec compatibility, live append,
+no long soak, phone integration, arbitrary codec compatibility,
 mid-cue seamless replacement, layer compositing, human mix/visual approval,
-provider, microphone or physical projection validation. All cues are fetched
-before play. No automatic fallback, no production migration, no approved
+provider, microphone or physical projection validation. Default finite playlists are fetched before play. The optional open
+timeline can fetch/append during native playback, then explicitly seal at
+the selected final frame. Concurrent selections are serialized and stale
+queued appends cancel on Stop/replacement. Cue endpoints use an integer
+frame count divided by24, avoiding cumulative floating-point end rounding
+that otherwise drops the final WebKit frame on a three-cue sequence.
+This is bounded to64 cues/30minutes, not an indefinite unattended scheduler;
+buffer eviction and runtime show-control integration remain unfinished. No automatic fallback, no production migration, no approved
 16-cue inventory entries. The reverse test has no authored visual join.
 The source UI is manual playback with opt-in laptop sound, not remote output.
