@@ -207,11 +207,13 @@ jobs:
           echo "PULSE_SINK=wisp_ci" >> "$GITHUB_ENV"
           echo "HAUNT_CI_SILENT_AUDIO=1" >> "$GITHUB_ENV"
       - name: Build explicit public show desk and check privacy
+        id: public_showdesk
         run: node tests/public_build.cjs
-      # Collect native failures without skipping independent show tests. The final gate still fails this job.
+      # Independent checks keep collecting evidence after failures; native acceptance remains mandatory.
+      # https://docs.github.com/en/actions/reference/workflows-and-actions/expressions#status-check-functions
       - name: Check native film sound and complete bridge playback
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
         id: native_film
-        continue-on-error: true
         run: |
           failed=0
           HAUNT_BROWSER=webkit node tests/film_single_clock.cjs || failed=1
@@ -221,34 +223,42 @@ jobs:
           HAUNT_BROWSER=webkit node tests/catalog_bridge_browser.cjs || failed=1
           exit "$failed"
       - name: Rehearse the capture-free candidate review reel
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
         run: |
           node tests/cue_review.cjs
           HAUNT_BROWSER=webkit node tests/cue_review.cjs
       - name: Rehearse one-file eyes context and native repeat boundary
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
         run: |
           node tests/eyes_context_review.cjs
           HAUNT_BROWSER=webkit node tests/eyes_context_review.cjs
       - name: Wait for complete authored exits before queued cues
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
         run: |
           HAUNT_TONIGHT_ROOT=dist node tests/film_complete_exit.cjs
           HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/film_complete_exit.cjs
           HAUNT_TONIGHT_ROOT=dist HAUNT_DEPARTURE_CUE=1 node tests/film_complete_exit.cjs
           HAUNT_TONIGHT_ROOT=dist HAUNT_DEPARTURE_CUE=1 HAUNT_BROWSER=webkit node tests/film_complete_exit.cjs
       - name: Rehearse catalog cuts and natural loop exit with real films
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
         run: HAUNT_TONIGHT_ROOT=dist HAUNT_CATALOG_DIRECTOR=1 node tests/film_complete_exit.cjs
       - name: Rehearse eyes-only candidate complete exits
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
         run: |
           HAUNT_TONIGHT_ROOT=dist HAUNT_EYES_CUE=1 node tests/film_complete_exit.cjs
           HAUNT_TONIGHT_ROOT=dist HAUNT_EYES_CUE=1 HAUNT_BROWSER=webkit node tests/film_complete_exit.cjs
       - name: Check animation-first entry and separate live workspace
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
         run: |
           HAUNT_WORKSPACE_BUILT_ONLY=1 node tests/workspace_entry.cjs
           HAUNT_WORKSPACE_BUILT_ONLY=1 HAUNT_BROWSER=webkit node tests/workspace_entry.cjs
       - name: Check existing operator login on real local HTTPS
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
         run: |
           node tests/film_operator_access.mjs
           HAUNT_BROWSER=webkit node tests/film_operator_access.mjs
       - name: Check queue and editorial contracts
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
         run: |
           node tests/cue_director.cjs
           node tests/catalog_director.cjs
@@ -260,24 +270,32 @@ jobs:
           node tests/stage_compositor.cjs
           node tests/stage_geometry.cjs
       - name: Rehearse actual films and composed output on both browser engines
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
         run: |
           mkdir -p work
           HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
           DEBUG=pw:browser HAUNT_BROWSER=webkit HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
       - name: Rehearse approved-catalog controls with synthetic approvals
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
         run: |
           node tests/catalog_desk.cjs
           HAUNT_BROWSER=webkit node tests/catalog_desk.cjs
       - name: Repeat saved playlist closing boundaries in real time
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
         run: HAUNT_PLAYLIST_ONLY=1 HAUNT_PLAYLIST_STALL=1 HAUNT_PLAYLIST_SOAK_CYCLES=4 HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
       - name: Check cancellable laptop-only effects
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
         run: |
           node tests/owner_sound.cjs
           HAUNT_BROWSER=webkit HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_sound.cjs
           HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_sound.cjs
       - name: Check paired film controls with actual local cloud service
-        run: node tests/film_phone_cloud_browser.mjs
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
+        run: |
+          node tests/film_phone_cloud_browser.mjs
+          HAUNT_BROWSER=webkit node tests/phone_saved_playlist.cjs
       - name: Rehearse tonight story and newest painted face study
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
         run: |
           HAUNT_TONIGHT_ROOT=dist node tests/film_output_handoff.cjs
           HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/film_output_handoff.cjs
@@ -317,6 +335,7 @@ jobs:
             test-results/eyes-context-*.json
             test-results/catalog-*.json
             test-results/film-phone-cloud*
+            test-results/phone-saved-playlist*
             test-results/stage-geometry*
             test-results/workspace-entry*
             test-results/film-operator-access*
@@ -325,6 +344,7 @@ jobs:
             test-results/film-complete-exit-*.json
             work/showdesk-rehearsal-*.png
           if-no-files-found: ignore
+
 
   native-media-diagnostic:
     if: github.event_name == 'workflow_dispatch' && inputs.native_media_only

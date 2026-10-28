@@ -1,4 +1,6 @@
 /** Local operator playlists. Only playable library IDs can be saved or scheduled. */
+const controlsBySection=new WeakMap();
+export function playlistControls(section){const value=controlsBySection.get(section);if(!value)throw Error('Playlist controls are unavailable');return value;}
 export function validatePlaylist(value, available) {
  if (!value || typeof value.name !== 'string' || !value.name.trim() || value.name.length > 60 ||
      !Array.isArray(value.steps) || !value.steps.length || value.steps.length > 60) throw Error('Name the playlist and add 1–60 steps.');
@@ -29,7 +31,7 @@ export class PlaylistRunner {
 }
 export function mountPlaylists(host,{clips,onRun,cueAliases={},description}){
  const key='hauntedpuppet-film-playlists-v1',selectionKey=key+'-selected',available=clips.map(c=>c.id);
- const section=document.createElement('section');section.innerHTML='<h2>Saved playlists</h2><label>Playlist name<input maxlength="60" data-name placeholder="My doorstep show"></label><div data-steps></div><button data-add>Add film step</button><button data-save>Save on this laptop</button><label>Saved shows<select data-saved></select></label><button data-run>Run playlist on repeat</button><button data-delete>Delete saved playlist</button><p class="note" data-message role="status">Studies use a planned fade through black. Durations are minimum holds; exits finish before the next arrival. No sound or camera starts here.</p>';
+ const section=document.createElement('section');section.innerHTML='<h2>Saved playlists</h2><label>Playlist name<input maxlength="60" data-name placeholder="My doorstep show"></label><div data-steps></div><button data-add>Add film step</button><button data-save>Save on this laptop</button><label>Saved shows<select data-saved></select></label><p class="note" data-phone-note>On the phone, “Run selected saved show” starts this saved version. Save edits before sending them to the phone.</p><button data-run>Run playlist on repeat</button><button data-delete>Delete saved playlist</button><p class="note" data-message role="status">Studies use a planned fade through black. Durations are minimum holds; exits finish before the next arrival. No sound or camera starts here.</p>';
  if(description)section.querySelector('[data-message]').textContent=description;
  host.append(section);const $=q=>section.querySelector(q);let saved=[],unavailable=[],selectedName=null;
  try{selectedName=localStorage.getItem(selectionKey);const recovered=recoverPlaylists(JSON.parse(localStorage.getItem(key)||'[]'),available,cueAliases);saved=recovered.playable;unavailable=recovered.unavailable;}catch{saved=[];}
@@ -38,13 +40,17 @@ export function mountPlaylists(host,{clips,onRun,cueAliases={},description}){
  const draft=()=>validatePlaylist({name:$('[data-name]').value,steps:[...section.querySelectorAll('.playlist-step')].map(r=>({cue:r.querySelector('select').value,seconds:Number(r.querySelector('input').value)}))},available);
  function remember(name){selectedName=name||null;try{if(selectedName)localStorage.setItem(selectionKey,selectedName);else localStorage.removeItem(selectionKey);}catch{}}
  function load(){const p=saved[Number($('[data-saved]').value)];if(!p)return;$('[data-name]').value=p.name;$('[data-steps]').replaceChildren();p.steps.forEach(row);}
- function refresh(index=Math.max(0,saved.findIndex(p=>p.name===selectedName))){$('[data-saved]').replaceChildren(...saved.map((p,i)=>new Option(p.name,String(i))));$('[data-saved]').value=String(index);$('[data-delete]').disabled=!saved.length;}
- const attempt=fn=>{try{fn();}catch(e){$('[data-message]').textContent=e.message;}};
+ function refresh(index=Math.max(0,saved.findIndex(p=>p.name===selectedName))){$('[data-saved]').replaceChildren(...saved.map((p,i)=>new Option(p.name,String(i))));$('[data-saved]').value=String(index);$('[data-delete]').disabled=!saved.length;$('[data-phone-note]').hidden=!saved.length;}
+ const attempt=fn=>{try{Promise.resolve(fn()).catch(e=>$('[data-message]').textContent=e.message);}catch(e){$('[data-message]').textContent=e.message;}};
  $('[data-add]').onclick=()=>{if(section.querySelectorAll('.playlist-step').length>=60)return;row();};
  $('[data-save]').onclick=()=>attempt(()=>{const p=draft(),index=saved.findIndex(s=>s.name===p.name),next=saved.slice();if(index<0){if(next.length+unavailable.length>=30)throw Error('Delete a saved playlist before adding another.');next.push(p);}else next[index]=p;localStorage.setItem(key,JSON.stringify([...next,...unavailable]));saved=next;remember(p.name);refresh(index<0?saved.length-1:index);$('[data-message]').textContent='Saved on this laptop. Playback has not started.';});
  $('[data-delete]').onclick=()=>attempt(()=>{const next=saved.filter((_,i)=>i!==Number($('[data-saved]').value));localStorage.setItem(key,JSON.stringify([...next,...unavailable]));saved=next;refresh();load();remember(saved[Number($('[data-saved]').value)]?.name);});
- $('[data-run]').onclick=()=>attempt(()=>{const p=draft();onRun(p);$('[data-message]').textContent='Repeating '+p.name+'. Manual cues or Blackout stop the playlist.';});
+ const run=async p=>{await onRun(p);$('[data-message]').textContent='Repeating '+p.name+'. Manual cues or Blackout stop the playlist.';return p.name;};
+ $('[data-run]').onclick=()=>attempt(()=>run(draft()));
  $('[data-saved]').onchange=()=>{load();remember(saved[Number($('[data-saved]').value)]?.name);};refresh();if(saved.length)load();else row();
  if(!available.length){for(const button of section.querySelectorAll('button'))button.disabled=true;$('[data-message]').textContent='No films are ready for automatic playlists.';}
+ // Phone launch reads the selected saved record afresh, never the editable draft.
+ const selected=()=>{const name=saved[Number($('[data-saved]').value)]?.name;if(!name)return null;try{return recoverPlaylists(JSON.parse(localStorage.getItem(key)||'[]'),available,cueAliases).playable.find(p=>p.name===name)||null;}catch{return null;}};
+ controlsBySection.set(section,{selected,run:()=>{const p=selected();if(!p)throw Error('Select an available saved playlist on the laptop');return run(p);}});
  return section;
 }

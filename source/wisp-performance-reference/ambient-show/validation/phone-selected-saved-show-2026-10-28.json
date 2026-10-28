@@ -1,0 +1,70 @@
+{
+  "purpose": "Selected saved-show launch from paired phone; no artwork or release approval",
+  "sourceSha256": {
+    "source/wisp-performance-reference/ambient-show/saved-playlists.mjs": "e0c5e34a8114f763fdd6e9e96177cc8a5d06d2c5a5f1737b4a4b11c4f8faa22f",
+    "source/wisp-performance-reference/ambient-show/film-remote.mjs": "c0788879e88f7ffe358b40b8aed551c32eef6e70559956898aa2c711881fc8b0",
+    "source/wisp-performance-reference/ambient-show/showdesk.mjs": "e5577c4dcae9efc22aca992f55083e20b6de20d1d97b4091bd8e6bab057467ab",
+    "phone_remote/phone.js": "3197b1f810f3cad4a82173506c946d2a74e1c519f4ac52a61915570db38e095a"
+  },
+  "results": {
+    "phone-saved-playlist-chromium": {
+      "passed": true,
+      "savedNotDraft": true,
+      "freshStoredVersion": true,
+      "deletedCorruptFailClosed": true,
+      "closingRouteGate": true,
+      "manualOnlyExcluded": true,
+      "stopDuringLaunch": true,
+      "projectorMediaElements": 0,
+      "scope": "Actual study-film playback and silent output through direct bounded phone controller calls; no physical phone/provider. Synthetic approval metadata only for missing-route/manual-scare gates, never published or played."
+    },
+    "phone-saved-playlist-webkit": {
+      "passed": true,
+      "savedNotDraft": true,
+      "freshStoredVersion": true,
+      "deletedCorruptFailClosed": true,
+      "closingRouteGate": true,
+      "manualOnlyExcluded": true,
+      "stopDuringLaunch": true,
+      "projectorMediaElements": 0,
+      "scope": "Actual study-film playback and silent output through direct bounded phone controller calls; no physical phone/provider. Synthetic approval metadata only for missing-route/manual-scare gates, never published or played."
+    },
+    "film-phone-cloud": {
+      "passed": true,
+      "checks": [
+        "actual operator UI login and logout",
+        "private password clears after submit",
+        "mobile sign-in dialog fits",
+        "sign-out stops film and revokes paired phone before cookie cleanup",
+        "late queued phone command cannot undo sign-out",
+        "actual pairing/auth service",
+        "built owner desk and phone UI",
+        "film workspace hides incompatible live controls",
+        "film cues",
+        "automatic program",
+        "Welcome cancels program",
+        "Stop defeats late decode",
+        "Blackout/restore",
+        "revoke/disable",
+        "zero capture/provider requests",
+        "silent phone and owner videos",
+        "phone Stop blanks actual silent output"
+      ],
+      "scope": "Actual local Postgres-compatible service and real films in isolated Chromium; HTTPS transport routed in fixture. No deployed service or physical phone/projection acceptance.",
+      "errors": [],
+      "outside": []
+    }
+  },
+  "testSha256": {
+    "phone_saved_playlist.cjs": "06c689863def0d72366629803e9eec9dc0d206fdd88401e1168369dd8fe1f060",
+    "catalog_remote.cjs": "651c3de21a4acf4f907f70375bb2941f625d7ae60abfa5ddc255a22776802fdc",
+    "film_phone_cloud_browser.mjs": "5bcdb17807e5da2e27964826572e4c6949d5b273e5f4b95c762e9a155a55f0ff"
+  },
+  "pairedNewCases": [
+    "phone shows current selected saved title and named launch button on390pxviewport",
+    "real cloud service transports bounded Run-Saved-Playlist command",
+    "selected saved definition launches while wrong unsaved draft is preserved",
+    "deletion removes phone control, silence remains on phone/output"
+  ],
+  "scope": "Actual local browser film playback, two-browser paired control through real local test database/auth service. Provider forbidden, fixture credentials only. Missing-route/manual-scare gates use synthetic metadata and are not published. No physical phone/projector, hosted-account authentication or human art/voice acceptance."
+}
