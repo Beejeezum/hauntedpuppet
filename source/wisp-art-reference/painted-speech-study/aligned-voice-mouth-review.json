@@ -1,0 +1,33 @@
+{
+  "scope": "Actual pre-existing approved recorded voice, local automatic English timings and coarse painted mouth. Hardware-muted browser; no new provider request.",
+  "mode": "automatic-alignment",
+  "duration": 8.064,
+  "counts": {
+    "rest": 275,
+    "AH": 21,
+    "OO": 15,
+    "EE": 34
+  },
+  "rested": true,
+  "estimatedOnsetLagMs": null,
+  "samples": 345,
+  "source": "source/wisp-performance-reference/tonight-demo/apology-proof-v1.mp4",
+  "sourceSha256": "d4dfefcfb62bbff4f32ba7b047a28a4bda5ab7b4def711c368f08d23213e819d",
+  "humanApproval": false,
+  "runtimeIntegration": false,
+  "reviewVideo": {
+    "file": "work/phone-mouth-anchor/painted-apology-aligned-v1.mp4",
+    "sha256": "fe96fdddd9614418d1b7533c35aace51246a3db32bea1783e1ca72c9f9185ad0",
+    "fps": 24,
+    "encodedFrames": 193,
+    "renderedFrames": 194,
+    "audioDuration": 8.064,
+    "note": "Existing native body film repeats, automatic mouth cues rendered at24fps; existing approved source audio muxed. Final frame truncated by shortest-stream encoding. New sync/face art not approved."
+  },
+  "limitations": [
+    "Automatic alignment must be reviewed against actual words; expected transcript comes from generation prompt.",
+    "AH/OO/EE painted approximations cannot represent every phoneme; MBP/FV map closed and other consonants use coarse EE.",
+    "An improved shape histogram is not proof of convincing lip sync.",
+    "Human review requested on this exact video; pending."
+  ]
+}
