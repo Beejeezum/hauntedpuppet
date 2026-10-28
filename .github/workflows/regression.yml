@@ -177,6 +177,8 @@ jobs:
           node tests/friendly_live_voice.cjs
           HAUNT_TONIGHT_ROOT=dist node tests/friendly_live_browser.cjs
           HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/friendly_live_browser.cjs
+          HAUNT_TONIGHT_ROOT=dist HAUNT_CHARACTER=scary node tests/friendly_live_browser.cjs
+          HAUNT_TONIGHT_ROOT=dist HAUNT_CHARACTER=scary HAUNT_BROWSER=webkit node tests/friendly_live_browser.cjs
           HAUNT_TONIGHT_ROOT=dist node tests/tonight_readiness.cjs
           HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/tonight_readiness.cjs
           HAUNT_TONIGHT_ROOT=dist node tests/tonight_single_movie.cjs

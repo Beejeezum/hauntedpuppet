@@ -1,0 +1,33 @@
+{
+  "status": "Candidate scary front-view live puppet; human visual/voice acceptance pending",
+  "createdWith": "Built-in image_gen; identity-preserve/precise-object-edit/generation",
+  "references": [
+    "source/wisp-art-reference/approved-friendly-fog.png",
+    "source/wisp-art-reference/scary-fog-candidate-v2-safe.png"
+  ],
+  "promptSet": "source/wisp-art-reference/scary-live-kit/production-notes.txt",
+  "files": [
+    {
+      "path": "assets/wisp-live/scary-fog-live-reference-v1.png",
+      "sha256": "0a708af0292b7fe8f7fffeda01e3111a39f0a294680457c50dc5da4100ab3171"
+    },
+    {
+      "path": "assets/wisp-live/scary-skin-plate-v1.png",
+      "sha256": "eebce1906591292f7a7cd926dd774e2f51d2201c07ed6dc5d76bdb6f812e428e"
+    },
+    {
+      "path": "assets/wisp-live/scary-neutral-eyes-v1.png",
+      "sha256": "dcd9553e359e2360b17317720029728f531abe5eadbd1ee6e2b8489aed92cd7d"
+    },
+    {
+      "path": "assets/wisp-live/scary-mouths-v1.png",
+      "sha256": "fa5d7a4e173cf5f5f47ba6c05a26e1f287b8f73e1af43d6517e5ed52f88719a6"
+    }
+  ],
+  "limits": [
+    "Front view only, restrained head angles",
+    "No all-angle model, finger articulation or live form morph",
+    "Separate character navigation stops inputs; microphone requires explicit start",
+    "Synthetic browser checks do not establish human voice or physical projection acceptance"
+  ]
+}

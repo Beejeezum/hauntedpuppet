@@ -1,0 +1,12 @@
+SCARY LIVE WISP KIT — 2026-10-27
+Status: candidate live-rig materials, NOT human-approved final character or all-angle model.
+Created with built-in image_gen image edits/generation. Approved-friendly-fog.png was the pose/identity edit target; scary-fog-candidate-v2-safe.png supplied the scary identity. Generated images are preserved non-destructively here and copied into assets/wisp-live for the candidate player.
+
+Prompt set:
+1. Transform approved friendly painting into the same scary Wisp, preserving portrait registration, S-shaped coherent fog body and hand locations. Sinister blue eyes, compressed brows, small fangs and claws; soft porous smoke on black. No redesign, text, vector outlines or hard curled tail. Reference output: scary-fog-live-reference-v1.png.
+2. Remove only eyes/sockets/brows/mouth/teeth from the exact new painting; fill seamless warm ivory painted facial skin. Preserve silhouette, claws, fog and registration. Output: scary-skin-plate-v1.png. Only the face mask consumes this generated skin plate; exterior remains reference painting.
+3. Generate eight painted mouth-only expressions in a 4x2 atlas, same dark blue interior and small ivory fangs: closed grin, parted, ah, wide grin, gritted, O, E, pursed. Black background, padded cells, no face/text. Output: scary-mouths-v1.png. Actual output1254square has irregular padding; runtime uses measured per-mouth rectangles, not assumed centered grid cells. The runtime matte retains dark enclosed mouth interiors.
+4. Replace only irises/pupils with pale icy-blue eye whites while preserving exact narrow eyelids, rims and all other artwork. Output: scary-neutral-eyes-v1.png. Runtime consumes eye regions only, not the whole alternate painting.
+
+Runtime limitations:
+Shared connected painted GPU mesh with separately parameterized scary face, webcam eyes/blinks/jaw/rounding/brows and existing hand-arm tracking. Front view with restrained head lean only. Not volumetric, not finger articulation, not a seamless live cute/evil morph. Character selector deliberately stops capture/voice and opens the selected independent puppet. No hidden fallback to raw voice. Generated candidate identity and human facial/voice acting need approval; browser synthetic tests are not physical projection or acoustic tests.
