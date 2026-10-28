@@ -13,6 +13,10 @@ on:
         description: Disable native on-disk media buffering for the isolated diagnostic
         type: boolean
         default: false
+      native_route_audio:
+        description: Isolate Web Audio media routing in the soundtrack diagnostic fixture
+        type: boolean
+        default: false
       native_audio_sink:
         description: Linux diagnostic audio-device selection
         type: choice
@@ -349,6 +353,7 @@ jobs:
         env:
           DEBUG: pw:browser
           GST_DEBUG: autoaudiosink:5,pulsesink:4,webkitmediaplayer:3
+          HAUNT_DIAGNOSTIC_WEBAUDIO_ROUTE: ${{ inputs.native_route_audio && '1' || '0' }}
         run: |
           failed=0
           HAUNT_BROWSER=webkit node tests/film_single_clock.cjs || failed=1
