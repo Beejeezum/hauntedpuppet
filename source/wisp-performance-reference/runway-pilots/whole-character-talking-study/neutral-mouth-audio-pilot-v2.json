@@ -1,0 +1,43 @@
+{
+  "status": "completed; self-rejected for speech articulation",
+  "characterId": "e714fded-3eec-48ba-8b3f-d813c1657d27",
+  "characterName": "Wisp \u2014 neutral-mouth speech test",
+  "reference": "source/wisp-art-reference/scary-speaking-study/neutral-reference/scary-neutral-mouth-v1.png",
+  "optimizeImage": false,
+  "audio": "work/phone-mouth-anchor/apology-audio-study.wav",
+  "audioDurationSeconds": 8.064,
+  "hypothesis": "Neutral closed-mouth source may permit native coordinated speech articulation that the fixed open-toothy-grin source failed. Whole-character generation, no local graft.",
+  "displayedCredits": 2,
+  "maximumCredits": 2,
+  "submissionCap": 1,
+  "submissionCount": 1,
+  "microphoneAccess": false,
+  "cameraAccess": false,
+  "liveCall": false,
+  "humanApproval": false,
+  "runtimeIntegration": false,
+  "scope": "Offline visual audition, not live latency or final scary voice acceptance.",
+  "taskId": "9ad3fca2-60bd-42a4-a95d-9ff217458ca8",
+  "assetId": "fc488735-bedb-4664-8cc1-67989d2817c8",
+  "observedCreditsCharged": 2,
+  "resultFile": "neutral-mouth-audio-pilot-v2.mp4",
+  "resultSha256": "86c71acf6b44eee413afc6b756e32511d9a145f7d967431bd175ee72ca79ffae",
+  "frames": 193,
+  "fps": 24,
+  "dimensions": [
+    1088,
+    704
+  ],
+  "foregroundThreshold24BoundsUnion": [
+    370,
+    124,
+    685,
+    565
+  ],
+  "review": "Inspected nine spread-out frames: coherent whole-body fog preserved but neutral mouth remains essentially closed across speech. This controlled reference change does not solve speech. Reject for runtime, stop this generation route rather than spending further credits on unproven retries.0additional mic/camera/livecall access.",
+  "inputSpeechPresenceCheck": {
+    "tool": "Local PocketSphinx unconstrained recognition after16kHz mono conversion",
+    "detectedSpeech": true,
+    "scope": "Recognized two speech-like phrases consistent with apology cadence; recognition is imperfect, not exact transcript or voice quality approval. Source is not silent."
+  }
+}
