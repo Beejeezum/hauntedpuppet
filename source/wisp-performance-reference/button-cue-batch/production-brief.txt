@@ -1,0 +1,20 @@
+Wisp manual video cue batch 1 — selected 2026-10-27
+Status: production brief only. No new animations generated; never list as playable/ready.
+
+Common direction
+Use the approved soft painted friendly fog identity and its approved scary counterpart. One continuous full-body performance per clip, fixed camera, black background, no spoken words, captions or music. Hands, face, core and edge fog all act together. Fog is porous vapor, not solid ornamental curls. Keep a coherent lower body. Reserve at least 20% framing around every effect in generation and verify at least 15% in the export. Never crop head smoke, hands or lower fog. No arbitrary digital resizing. Depth comes from turning, perspective and travel. No cuts within the action.
+
+1. Sidewalk wave (friendly-wave)
+8–10 seconds. A small friendly vapor formation resolves into Wisp. Eyes notice someone below camera; head and shoulders follow; one connected arm lifts into a broad happy wave with a relaxed wrist. The other hand and lower core counterbalance. Soft delighted bounce, then an intentional dissipating puff to a truly empty stage. No spoken greeting. Sound: airy arrival, tiny bell glint at recognition, gentle clothless vapor swishes with the hand, soft exit. No loud sting.
+
+2. A hand from the mist (scary-reach)
+8–10 seconds. Two eyes appear in a contained bank of spirit-attached mist. The same Wisp shape resolves into the approved scary form. Head turns before shoulders; body leans with weighted menacing curiosity. One long hand reaches toward the audience, slightly into foreground perspective without filling the frame. It withdraws as the head tilts, then the entire being unravels into smoke. Brief eyes linger and blink out. No spoken threat. Sound: low spectral breath, rising airy pressure on reach, textured retreat. Operator-only scare cue; do not schedule automatically for children.
+
+3. Trying to be frightening (friendly-boo-fail)
+10–12 seconds. Friendly Wisp gathers courage; tiny clenched hands and brows anticipate. His smoke rises into a briefly exaggerated spooky silhouette; he overbalances, catches himself with both arms, glances sheepishly at the audience and gives an embarrassed little bow. Cute identity remains recognizable. He folds into a small vapor poof and leaves an empty stage. No spoken boo or apology. Sound: soft inhaling whoosh, comically small airy pop, delicate recovery twinkle. Not the aggressive demon jump scare.
+
+Transition and runtime acceptance
+All first-batch clips enter from empty and return to empty, with at least 0.5 seconds verified black at both ends and contained sound tails. Do not crossfade two visible bodies. A new button queues the current clip's complete exit, then starts the next arrival after decoded readiness. Blackout interrupts immediately. Preload the selected cue. One embedded audio/video file per cue; laptop owns sound, output mirrors picture silently. Add a playable library button only after framing, continuity, audio, cancellation and repeated transition tests pass. Repeated native-rest loops require separate authored bridge approval; do not pretend these empty-stage cues are native-rest joins.
+
+Current blockers
+Runway connector is workspace Bruce, which user previously rejected. Rechecked connector2026-10-27: only Bruce1709631 is exposed. Await original Wisp workspace reconnection or explicit authorization to use Bruce. Check working space before each generation/download batch; earlier storage shortage is not evidence of a current shortage. No new credits spent for this batch.

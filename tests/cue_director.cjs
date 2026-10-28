@@ -8,6 +8,7 @@ const assert=require('node:assert/strict'),{pathToFileURL}=require('node:url'),p
  const late=d.request('c');d.stop();pending.get('c')();await late;assert(!events.includes('activate:c'));assert.equal(level,0);assert.equal(d.inspect().phase,'stopped');
  const stale=d.request('old');d.stop();d.request('new');pending.get('old')();await stale;await new Promise(setImmediate);pending.get('new')();await d.running;assert.equal(d.inspect().current,'new','A new request after Stop must survive stale decode cleanup');
  transport.prepare=async()=>{throw Error('Decode failed')};await d.request('bad');assert.equal(d.inspect().phase,'unavailable');assert.equal(level,0);
+ let rejectPending;const cancelEvents=[];const cancellable={...transport,prepare:id=>id==='slow'?new Promise((_,reject)=>{rejectPending=reject;}):Promise.resolve({id}),cancelPreparation:()=>{cancelEvents.push('cancel');rejectPending(Object.assign(Error('cancelled'),{cancelled:true}));}};const fast=new CueDirector(cancellable);const slow=fast.request('slow');fast.request('ready');await slow;assert.equal(fast.inspect().current,'ready');assert.equal(fast.inspect().phase,'playing');assert.deepEqual(cancelEvents,['cancel']);fast.dispose();
  d.dispose();assert.throws(()=>d.request('a'),/disposed/);
  console.log('PASS: latest queued cue wins, swaps only at black, Stop rejects late decode, failed decode stays black, disposal prevents restart. Synthetic transport, not visual seam acceptance.');
 })().catch(e=>{console.error(e);process.exitCode=1});

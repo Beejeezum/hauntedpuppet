@@ -5,18 +5,18 @@ Goal remains active. This is the full existing 32-cue scope, not a reduction to 
 VIDEO INVENTORY
 - friendly-drift: A small living drift | friendly-rest -> friendly-rest | planned
 - friendly-notice: Did someone pass? | friendly-rest -> friendly-rest | planned
-- friendly-wave: A wave for the sidewalk | friendly-rest -> friendly-rest | planned
+- friendly-wave: A wave for the sidewalk | empty -> empty | planned
 - friendly-peek: Behind an invisible corner | friendly-rest -> friendly-rest | planned
 - friendly-candy: The imaginary candy | friendly-rest -> friendly-rest | planned
 - friendly-twirl: One happy twirl | friendly-rest -> friendly-rest | planned
-- friendly-boo-fail: Trying to be frightening | friendly-rest -> friendly-rest | planned
+- friendly-boo-fail: Trying to be frightening | empty -> empty | planned
 - friendly-writing: Happy Halloween | friendly-rest -> friendly-rest | planned
 - friendly-bow: Thank you for visiting | friendly-rest -> friendly-rest | planned
 - friendly-depart: Off to the next haunting | friendly-rest -> empty | planned
 - scary-drift: The house is watching | scary-rest -> scary-rest | planned
 - scary-notice: I noticed you | scary-rest -> scary-rest | planned
 - scary-pace: Guarding the doorway | scary-rest -> scary-rest | planned
-- scary-reach: A hand from the mist | scary-rest -> scary-rest | planned
+- scary-reach: A hand from the mist | empty -> empty | planned
 - scary-orbit: The far side of the room | scary-rest -> scary-rest | planned
 - scary-inspect: What are you doing here? | scary-rest -> scary-rest | planned
 - scary-eyes: Only the eyes remain | scary-rest -> scary-rest | planned
@@ -48,6 +48,7 @@ Approved painted identity at front/side; continuous coherent whole-body/fog moti
 CURRENT EVIDENCE / NEXT WORK
 - Friendly painted proof and integrated Seed-VC conversion exist; references remain voice candidates.
 - Scary front-view candidate now uses its own newly generated painted reference, blank skin, iris-free eye plate and fang mouth atlas; shares connected mesh, tracking, voice conversion and stop safeguards. Synthetic browser tests pass; human visual/voice acceptance, all-angle acting and seamless live morph remain open.
+- Added single-film silent preloading, reuse and cancellation to reduce decode waits at playlist boundaries. Repeated actual-film study cycles are covered separately from visual transition approval.
 - Added saved playlist editor and runtime on current show desk: finite library IDs, bounded storage/steps, per-step holds, repeat, manual/Blackout cancellation. Automated coverage in tests/saved_playlists.cjs and tests/showdesk_rehearsal.cjs.
 - Existing source catalog remains accurately planned; 32 finished cue assets and authored joins are NOT delivered.
 - New generation needs original Wisp Runway workspace confirmation: user previously rejected Bruce. Do not spend there without resolving identity. Continue independent runtime/puppet work meanwhile.

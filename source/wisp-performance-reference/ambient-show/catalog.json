@@ -68,13 +68,15 @@
       "form": "friendly",
       "targetSeconds": 7,
       "status": "planned",
-      "entryPort": "friendly-rest",
-      "exitPort": "friendly-rest",
+      "entryPort": "empty",
+      "exitPort": "empty",
       "acting": "A hesitant finger wave grows into a whole-arm greeting, then the arm relaxes with follow-through.",
       "dialogue": false,
       "audioIntent": "warm airy brush following the hand",
       "manualOnly": false,
-      "media": null
+      "media": null,
+      "productionBrief": "../button-cue-batch/production-brief.txt",
+      "transitionRequirement": "At least 0.5 seconds exact black and finished sound tails at each end; no visible-body crossfade; complete one-shot performance."
     },
     {
       "id": "friendly-peek",
@@ -124,13 +126,15 @@
       "form": "friendly",
       "targetSeconds": 7,
       "status": "planned",
-      "entryPort": "friendly-rest",
-      "exitPort": "friendly-rest",
+      "entryPort": "empty",
+      "exitPort": "empty",
       "acting": "Wisp rehearses a scary pose, startles at its own little spark and sheepishly smooths its crest.",
       "dialogue": false,
       "audioIntent": "tiny pop; no spoken boo or laugh",
       "manualOnly": false,
-      "media": null
+      "media": null,
+      "productionBrief": "../button-cue-batch/production-brief.txt",
+      "transitionRequirement": "At least 0.5 seconds exact black and finished sound tails at each end; no visible-body crossfade; complete one-shot performance."
     },
     {
       "id": "friendly-writing",
@@ -222,13 +226,15 @@
       "form": "scary",
       "targetSeconds": 8,
       "status": "planned",
-      "entryPort": "scary-rest",
-      "exitPort": "scary-rest",
+      "entryPort": "empty",
+      "exitPort": "empty",
       "acting": "A shoulder-led hand reaches into perspective, fingers fan, then wrist and elbow recover naturally.",
       "dialogue": false,
       "audioIntent": "finger-linked rising whisper of air, no words",
-      "manualOnly": false,
-      "media": null
+      "manualOnly": true,
+      "media": null,
+      "productionBrief": "../button-cue-batch/production-brief.txt",
+      "transitionRequirement": "At least 0.5 seconds exact black and finished sound tails at each end; no visible-body crossfade; complete one-shot performance."
     },
     {
       "id": "scary-orbit",
@@ -496,7 +502,7 @@
         "scary-drift",
         "scary-notice",
         "scary-pace",
-        "scary-reach",
+        "scary-hands",
         "scary-orbit",
         "scary-inspect",
         "scary-eyes",

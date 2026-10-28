@@ -26,15 +26,18 @@ const root=process.env.HAUNT_DESK_ROOT||path.resolve(__dirname,'..'),mime={'.htm
   await page.reload();await page.waitForFunction(()=>window.WispDesk);
   assert.equal(await page.locator('[data-name]').inputValue(),'Rehearsal playlist');
   assert.equal(await page.locator('[data-steps] select').count(),2);
-  await page.locator('[data-run]').click();
+  const playlistStartedAt=Date.now();await page.locator('[data-run]').click();
   await page.waitForFunction(()=>WispDesk.inspect().director.phase==='playing'&&WispDesk.inspect().director.current==='cute');
+  await page.waitForFunction(()=>WispDesk.inspect().preparation.ready==='scary');
+  assert(await page.evaluate(()=>WispDesk.inspect().media.every(v=>v.muted)),'Preloading never opens sound');
   await page.waitForFunction(()=>WispDesk.inspect().director.phase==='playing'&&WispDesk.inspect().director.current==='scary',{},{timeout:15000});
+  for(let i=0;i<Number(process.env.HAUNT_PLAYLIST_SOAK_CYCLES||0);i++){for(const id of ['cute','scary'])await page.waitForFunction(id=>WispDesk.inspect().director.phase==='playing'&&WispDesk.inspect().director.current===id,id,{timeout:15000});assert.equal(await page.locator('#mediaSources video').count(),2);step('real-time playlist closing seam cycle '+(i+1));}
   await page.click('#start');await page.waitForFunction(()=>WispDesk.inspect().director.phase==='playing');
   assert.equal(await page.evaluate(()=>WispDesk.inspect().playlist.name),'Rehearsal playlist');
-  await page.click('#blackout');assert.equal(await page.evaluate(()=>WispDesk.inspect().playlist.name),null);
+  await page.click('#blackout');assert.equal(await page.evaluate(()=>WispDesk.inspect().playlist.name),null);assert.deepEqual(await page.evaluate(()=>WispDesk.inspect().preparation),{ready:null,pending:null});
   assert.equal(await page.evaluate(()=>WispDesk.inspect().composition.black),true);
   step('saved playlist survives reload, advances actual films, restarts and cancels on Blackout');
-  if(process.env.HAUNT_PLAYLIST_ONLY){assert.deepEqual(errors,[]);return;}
+  if(process.env.HAUNT_PLAYLIST_ONLY){assert.deepEqual(errors,[]);fs.mkdirSync('test-results',{recursive:true});fs.writeFileSync('test-results/playlist-'+(process.env.HAUNT_BROWSER||'chromium')+'.json',JSON.stringify({passed:true,elapsedMs:Date.now()-playlistStartedAt,closingCycles:Number(process.env.HAUNT_PLAYLIST_SOAK_CYCLES||0),persistence:true,reordering:true,restart:true,blackoutCancelsPreload:true,scope:'Actual muted browser films and real elapsed time; study fade-through-black transitions only, not human seam approval or physical output'},null,2));return;}
 
   await page.getByRole('button',{name:/Friendly Wisp/}).click();await page.waitForFunction(()=>WispDesk.inspect().director.phase==='playing');
   step('friendly playing');const popup=context.waitForEvent('page');await page.getByRole('button',{name:'Open silent rehearsal output'}).click();const output=await popup;output.setDefaultTimeout(10000);await output.waitForFunction(()=>window.WispFilmOutput);assert.equal(await output.locator('audio,video').count(),0);

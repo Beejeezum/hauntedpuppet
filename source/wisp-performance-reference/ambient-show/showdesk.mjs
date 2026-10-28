@@ -19,6 +19,7 @@ const director=new CueDirector(transport,{fadeMs:900,onState:s=>{
  if(s.phase!=='playing')soundControls?.cancel();
  $('status').textContent=labels[s.phase]+(s.current?' · '+clips.find(c=>c.id===s.current)?.title:'');$('queue').textContent=s.queued?'Queued · '+clips.find(c=>c.id===s.queued)?.title:'No cue queued';
  for(const b of $('cues').querySelectorAll('button'))b.setAttribute('aria-pressed',String(b.dataset.cue===s.current));
+ if(s.phase==='playing'&&mode==='playlist'){const state=playlist.inspect(),steps=playlist.playlist.steps;transport.preload(steps[(state.index+1)%steps.length].cue);}
  if(s.phase==='playing'&&s.current!==lastForm){lastForm=s.current;formSince=performance.now();}
 }});
 const activate=transport.activate.bind(transport);transport.activate=async(prepared,live)=>{await activate(prepared,live);if(live())for(const {source}of overlays.values())if(source.tagName==='VIDEO')source.play().catch(()=>{});};
@@ -80,7 +81,7 @@ function tick(now){
 }
 refreshLayers();tick(performance.now());
 soundControls=mountOwnerSound(document.querySelector('main>aside'),{canPlay:()=>!disposed&&!stale&&!compositor.black&&director.phase==='playing'});
-const inspectDesk=()=>({director:director.inspect(),composition:compositor.inspect(),mode,playlist:playlist.inspect(),media:transport.videos.map(v=>({muted:v.muted,paused:v.paused,cue:v.dataset.cue||null,currentTime:v.currentTime,loop:v.loop})),effects:overlays.size,sound:soundControls.inspect(),operator:operatorControls?.inspect()||null});
+const inspectDesk=()=>({director:director.inspect(),composition:compositor.inspect(),mode,playlist:playlist.inspect(),preparation:{ready:transport.prepared?.id||null,pending:transport.preparing?.id||null},media:transport.videos.map(v=>({muted:v.muted,paused:v.paused,cue:v.dataset.cue||null,currentTime:v.currentTime,loop:v.loop})),effects:overlays.size,sound:soundControls.inspect(),operator:operatorControls?.inspect()||null});
 const remote=createFilmRemote({chooseCue,startProgram,stop,inspect:inspectDesk});
 window.WispDesk={inspect:inspectDesk,...remote};
 const phoneRemote={remoteState:remote.remoteState,remoteCommand:(...args)=>{const access=operatorControls?.inspect();if(access?.cloud&&(!access.authenticated||access.busy||access.disposed))return Promise.reject(Object.assign(Error('Operator sign-in required'),{cancelled:true}));return remote.remoteCommand(...args);}};
