@@ -57,3 +57,6 @@ CURRENT EVIDENCE / NEXT WORK
 - Workspace gate resolved2026-10-28: user explicitly authorized Bruce for Wisp. Two wave pilots submitted;v1rejected for cropped smoke/nonempty lead, v2runtime candidate passes all decoded15percent framing thresholds and20/44exact-black endpoint frames. Motion/audio human review pending. Approved v28 video reused unchanged with new soft-air candidate soundtrack for friendly-drift, no new generation credits.
 - Candidate complete-exit playback now waits for the entire one-shot performance/EOS before activating the next prepared arrival; Blackout cancels immediately. Actual candidate video tests pass Chromium/WebKit. Existing study fades remain unchanged and are not final authored joins.
 - No production-main publication or full-goal completion claimed.
+
+EMPTY-STAGE MEDIA RECORDS — 2026-10-28
+For an approved clip, record decoded fps and frameCount alongside integer exact-black emptyStartFrames/emptyEndFrames. Empty-to-empty planning requires at least0.5seconds on each side, not a fixed count of8frames. Record audioTailSilenceSeconds on the outgoing exact media; at least0.5seconds is required for the automatic empty-stage shortcut. Deliberately continued audio requires an explicit hash-linked reviewed boundary rather than this shortcut. These measurements do not replace human motion/audio acceptance or approve a candidate.

@@ -10,11 +10,23 @@ function reviewed(from, to, joins) {
     j.fromSha256 === from.media.sha256 && j.toSha256 === to.media.sha256 &&
     j.reviewEvidence);
 }
+function emptySeconds(media, field) {
+  const {fps, frameCount} = media, frames = media[field];
+  if (!Number.isFinite(fps) || fps <= 0 || fps > 240 ||
+      !Number.isInteger(frameCount) || frameCount < 1 ||
+      !Number.isInteger(frames) || frames < 0 || frames > frameCount) return 0;
+  return frames / fps;
+}
+function silentTail(media) {
+  const seconds = media.audioTailSilenceSeconds;
+  return Number.isFinite(seconds) && seconds >= .5 && seconds <= media.frameCount / media.fps;
+}
 export function planJoin(from, to, {joins = [], bridges = []} = {}) {
   if (!ready(from) || !ready(to)) throw Error('Unreviewed or missing silent film');
   // Empty-frame review is tied to the exact media hash through its approved record.
   if (from.exitPort === 'empty' && to.entryPort === 'empty' &&
-      from.media.emptyEndFrames >= 8 && to.media.emptyStartFrames >= 8) {
+      emptySeconds(from.media, 'emptyEndFrames') >= .5 &&
+      emptySeconds(to.media, 'emptyStartFrames') >= .5 && silentTail(from.media)) {
     return {kind: 'empty-stage', from: from.id, to: to.id, minimumBlackMs: 500};
   }
   if (reviewed(from, to, joins)) return {kind: 'reviewed-cut', from: from.id, to: to.id};

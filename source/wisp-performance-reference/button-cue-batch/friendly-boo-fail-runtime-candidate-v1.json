@@ -48,5 +48,11 @@
   },
   "humanReview": "pending",
   "physicalProjection": "not tested",
-  "manualOnly": false
+  "manualOnly": false,
+  "fps": 24.0,
+  "frameCount": 247,
+  "emptyEndFrames": 21,
+  "emptyStartFrames": 14,
+  "audioTailSilenceSeconds": 0.5,
+  "measurementScope": "Exact-black endpoint frame counts from all-frame decode; last half-second decoded audio is exactly silent. No human approval implied."
 }

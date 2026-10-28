@@ -6,6 +6,15 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
  assert.equal(catalog.clips.length,32);assert.equal(new Set(catalog.clips.map(c=>c.id)).size,32);
  assert(catalog.clips.every(c=>c.dialogue===false&&c.status==='planned'&&c.media===null));
  assert.throws(()=>planShow(catalog,catalog.shows[0].id),/Unavailable/);
+ for(const study of catalog.productionStudies.filter(s=>s.evidence)){
+  const mediaPath=path.resolve(root,study.media),evidence=JSON.parse(fs.readFileSync(path.resolve(root,study.evidence),'utf8'));
+  assert.equal(require('node:crypto').createHash('sha256').update(fs.readFileSync(mediaPath)).digest('hex'),study.sha256,'Candidate bytes must match the tracked record');
+  assert.equal(evidence.sha256,study.sha256);assert.equal(study.status,'human-review-pending');
+  assert.equal(evidence.humanReview,'pending');assert(evidence.emptyStartFrames/evidence.fps>=.5&&evidence.emptyEndFrames/evidence.fps>=.5);
+  assert(evidence.audioTailSilenceSeconds>=.5);assert.equal(evidence.audio.lastHalfSecondPeak,0);
+  assert.equal(catalog.clips.find(c=>c.id===study.plannedClipIds[0]).status,'planned','Candidate evidence must not promote an unapproved slot');
+ }
+
  const film=(id,entry='rest',exit='rest')=>({id,status:'approved',dialogue:false,entryPort:entry,exitPort:exit,media:{file:id+'.mp4',sha256:id.repeat(64).slice(0,64),reviewEvidence:'synthetic test only'}});
  const a=film('a'),b=film('b'),c=film('c');
  const join=(x,y)=>({status:'approved',from:x.id,to:y.id,fromSha256:x.media.sha256,toSha256:y.media.sha256,reviewEvidence:'synthetic join review'});
@@ -16,7 +25,16 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
  assert.equal(planJoin(a,b,{joins:[join(a,c),join(c,b)],bridges:[c]}).bridge,'c');
  const out=film('a','rest','empty'),inside=film('b','empty','rest');
  assert.throws(()=>planJoin(out,inside),/No reviewed/);
- out.media.emptyEndFrames=8;inside.media.emptyStartFrames=8;
+ Object.assign(out.media,{fps:24,frameCount:240,emptyEndFrames:8,audioTailSilenceSeconds:.5});
+ Object.assign(inside.media,{fps:24,frameCount:240,emptyStartFrames:8});
+ assert.throws(()=>planJoin(out,inside),/No reviewed/,'Eight frames at 24fps do not provide half a second');
+ out.media.emptyEndFrames=12;inside.media.emptyStartFrames=12;
+ for(const [key,value] of [['fps',30],['fps',NaN],['frameCount',4],['emptyEndFrames',12.5],['audioTailSilenceSeconds',0],['audioTailSilenceSeconds',Infinity],['audioTailSilenceSeconds',20]]){
+  const invalid={...out,media:{...out.media,[key]:value}};
+  assert.throws(()=>planJoin(invalid,inside),/No reviewed/,'Reject insufficient or invalid endpoint evidence: '+key);
+ }
+ assert.throws(()=>planJoin(out,{...inside,media:{...inside.media,fps:30}}),/No reviewed/,'Incoming buffer is also measured in seconds');
+ assert.throws(()=>planJoin(out,{...inside,media:{...inside.media,emptyStartFrames:undefined}}),/No reviewed/,'Missing incoming black evidence is not accepted');
  assert.equal(planJoin(out,inside).kind,'empty-stage');
  const tiny={clips:[a,b],reviewedJoins:[join(a,b)],shows:[{id:'loop',clipIds:['a','b']}]};
  assert.throws(()=>planShow(tiny,'loop'),/No reviewed/,'Loop closing boundary is mandatory');
@@ -27,5 +45,5 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
  c.manualOnly=false;assert.equal(planShow(bridged,'loop').transitions[0].bridge,'c');
  b.manualOnly=true;assert.throws(()=>planShow(tiny,'loop'),/Unavailable/,'Manual scares cannot enter ambient playlist');
  b.manualOnly=false;b.dialogue=true;assert.throws(()=>planJoin(a,b),/Unreviewed/,'Ambient films cannot include speech');
- console.log('PASS: 32 silent planned cards; exact-media join reviews, authored bridges, verified empty-stage boundaries, closing seam, no automatic scare or dialogue. Synthetic planner tests only.');
+ console.log('PASS: 32 silent planned cards; exact-media join reviews, authored bridges, verified empty-stage boundaries, closing seam, no automatic scare or dialogue. Planner scenarios use synthetic approvals; candidate hashes/evidence checked against real tracked files. No new human approval or media decode claimed here.');
 })().catch(e=>{console.error(e);process.exitCode=1;});

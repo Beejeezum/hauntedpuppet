@@ -585,6 +585,26 @@
       "sha256": "a2a183ad8f433e74dc14328dd8019beedeb8e04f4519bad4d312a3a5a554a064",
       "status": "original-motion-endorsed;new-audio-review-pending",
       "scope": "Original v28 compressed video stream preserved exactly, with soft-air candidate soundtrack. No new animation credits. Human-endorsed motion and loop retained; new audio/exact-file joins still need review. Not a ready catalog slot."
+    },
+    {
+      "plannedClipIds": [
+        "friendly-boo-fail"
+      ],
+      "media": "../button-cue-batch/friendly-boo-fail-runtime-candidate-v1.mp4",
+      "sha256": "4d35f8db6b482ca469acb3e1e17f07efa089a4b676dc428da3c0e6fcbad27b45",
+      "status": "human-review-pending",
+      "evidence": "../button-cue-batch/friendly-boo-fail-runtime-candidate-v1.json",
+      "scope": "Generated full-body performance, fixed framing and verified black endpoints. Human motion/sound and exact joins pending; not a ready cue."
+    },
+    {
+      "plannedClipIds": [
+        "scary-reach"
+      ],
+      "media": "../button-cue-batch/scary-reach-runtime-candidate-v1.mp4",
+      "sha256": "2a003d4f575262ba20651eebf24d6e9d56c32a936533541c3e081453d4e48ecf",
+      "status": "human-review-pending",
+      "evidence": "../button-cue-batch/scary-reach-runtime-candidate-v1.json",
+      "scope": "Generated full-body performance, fixed framing and verified black endpoints. Human motion/sound and exact joins pending; not a ready cue. Original outer vapor clipped; 32px perimeter feather is a review treatment, not reconstruction. Manual-only scare."
     }
   ]
 }
