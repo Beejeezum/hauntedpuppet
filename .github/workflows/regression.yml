@@ -13,6 +13,10 @@ on:
         description: Test source-only single-movie seeks instead of the normal native-media cases
         type: boolean
         default: false
+      native_finite_pilot:
+        description: Test source-only finite-cue MediaSource playback (overrides the seek pilot)
+        type: boolean
+        default: false
       native_disable_disk_cache:
         description: Disable native on-disk media buffering for the isolated diagnostic
         type: boolean
@@ -396,7 +400,7 @@ jobs:
       - name: Build exact public fixtures
         run: node tests/public_build.cjs
       - name: Check actual native soundtrack and complete bridge
-        if: ${{ !inputs.native_atlas_pilot }}
+        if: ${{ !inputs.native_atlas_pilot && !inputs.native_finite_pilot }}
         env:
           DEBUG: pw:browser
           GST_DEBUG: autoaudiosink:5,pulsesink:4,webkitmediaplayer:3
@@ -408,8 +412,11 @@ jobs:
           HAUNT_BROWSER=webkit node tests/catalog_bridge_browser.cjs || failed=1
           exit "$failed"
       - name: Check one-decoder source study (not release acceptance)
-        if: ${{ inputs.native_atlas_pilot }}
+        if: ${{ inputs.native_atlas_pilot && !inputs.native_finite_pilot }}
         run: HAUNT_BROWSER=webkit node tests/atlas_seek_study.cjs
+      - name: Check finite-cue source study (not release acceptance)
+        if: ${{ inputs.native_finite_pilot }}
+        run: HAUNT_BROWSER=webkit node tests/finite_cue_study.cjs
       - name: Keep diagnostic evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -420,3 +427,5 @@ jobs:
             test-results/film-single-clock-*.json
             test-results/catalog-bridge-webkit*.json
             test-results/atlas-seek-*.json
+            test-results/finite-cue-study-*.json
+            test-results/finite-cue-study-ui.png

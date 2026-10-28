@@ -1,0 +1,33 @@
+{
+  "status": "private finite-media packaging proof; not approved runtime cues",
+  "source": "source/wisp-performance-reference/button-cue-batch/wisp-eyes-context-review-v1.mp4",
+  "sourceSha256": "de832a10253bb872ec0b522d408383df2555eac43098ebf38c83d5451f5a5eca",
+  "video": "Copied original H264 packets; decoded RGB pixel identity verified over every frame.",
+  "audio": "Per-cue AAC encode from matching sample ranges in original 48k stereo authoring PCM. appendWindow trims padding; acoustic joins not approved.",
+  "cues": [
+    {
+      "id": "friendly-drift",
+      "startFrame": 0,
+      "frames": 122,
+      "fps": 24,
+      "compressedAssetSha256": "078b044575faa62cc5c2450374d9329478986cc6fc14fe86a59f351084c73bb4",
+      "decoded": {
+        "sha256": "fc2466648569729e17aa6e2b8f0379ba31ff685d45de3eafbaefa20076975a7f",
+        "bytes": 337305600,
+        "frames": 122
+      }
+    },
+    {
+      "id": "cute-to-evil",
+      "startFrame": 122,
+      "frames": 121,
+      "fps": 24,
+      "compressedAssetSha256": "b12bc5bd6b75ce9913a9556aa5e6fd69e62bab104b5eb666ff8529cb77594420",
+      "decoded": {
+        "sha256": "d4869cfa504dbd54b9456aad7c0e79e6822e756be8565823922645cbec9ebbb5",
+        "bytes": 334540800,
+        "frames": 121
+      }
+    }
+  ]
+}
