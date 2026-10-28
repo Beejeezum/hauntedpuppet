@@ -1,0 +1,13 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Native painted Wisp — mouth study</title>
+<style>body{margin:0;background:#10121b;color:#eee;font:16px system-ui}main{max-width:1100px;margin:auto;padding:20px}canvas{width:100%;background:black}button,label{margin:8px}button{padding:12px}video{display:none}</style>
+<main><h1>Painted film + speaking-mouth study</h1><p>Unapproved source study. Original body/fog film, candidate tracked mouth and painted shapes. Synthetic motion only—no voice, camera or microphone.</p><button id="play" disabled>Play silent study</button><button id="stop">Stop</button><label>Shape<select id="shape"><option value="AH">Ah</option><option value="OO">Oo</option><option value="EE">Ee</option></select></label><p id="status">Loading…</p><canvas width="1916" height="1080"></canvas><video muted playsinline loop></video></main>
+<script type="module">
+import {NativeFilmMouthStudy} from './native-film-mouth-study.mjs';
+const study=new NativeFilmMouthStudy(),video=document.querySelector('video'),canvas=document.querySelector('canvas'),ctx=canvas.getContext('2d'),play=document.querySelector('#play'),status=document.querySelector('#status');let disposed=false,stopped=false,frame;
+video.src='../../wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4';
+function draw(){if(disposed)return;if(!stopped&&video.readyState>=2){ctx.drawImage(video,0,0);const opening=video.paused?0:(1-Math.cos(video.currentTime*Math.PI*5))*.5;study.draw(ctx,video,{rest:1-opening,[document.querySelector('#shape').value]:opening});}frame=requestAnimationFrame(draw)}
+try{await Promise.all([study.load(),new Promise((r,j)=>{video.onloadeddata=r;video.onerror=j})]);play.disabled=false;status.textContent='Candidate study ready. Check mouth placement, patch edges and continuous body motion.';draw()}catch(e){status.textContent=e.message;study.dispose()}
+play.onclick=async()=>{try{stopped=false;await video.play()}catch(e){status.textContent=e.message}};
+document.querySelector('#stop').onclick=()=>{stopped=true;video.pause();ctx.clearRect(0,0,canvas.width,canvas.height)};
+window.addEventListener('pagehide',()=>{disposed=true;cancelAnimationFrame(frame);video.pause();video.removeAttribute('src');video.load();study.dispose()},{once:true});
+</script>
