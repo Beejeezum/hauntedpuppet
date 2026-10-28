@@ -29,6 +29,14 @@ try{
  assert.equal((await db.pool.query('SELECT count(*)::int AS count FROM haunt_remote_commands WHERE command_id=$1',[id])).rows[0].count,1);checks.push('sequential UUID dedup + SQL unique constraint');
  const poll=await owner('poll');assert.equal(poll.data.commands.length,1);assert.equal(poll.data.commands[0].seq,seq);assert.equal((await owner('ack',{seq,status:'applied'})).status,200);assert((await guest('state',{},token)).data.acks.some(a=>a.seq===seq&&a.status==='applied'));checks.push('claim then applied acknowledgement');
  await owner('state',{state:{workspace:'films'},cues:['hello']});assert.equal((await guest('state',{},token)).data.state.workspace,'films');await owner('state',{state:{workspace:'arbitrary-workspace'},cues:['hello']});assert(!('workspace' in (await guest('state',{},token)).data.state));checks.push('bounded film workspace state');
+ await owner('state',{state:{workspace:'director'},cues:['friendly-wave']});
+ const performance={text:'Boo! Happy Halloween!',mode:'exact',character:'friendly',animation:'friendly-wave'};
+ assert.equal((await guest('command',{id:randomUUID(),command:'perform',value:performance},token)).status,202);
+ assert.deepEqual((await owner('poll')).data.commands[0].value,performance);
+ for(const value of [{...performance,text:'x'.repeat(401)},{...performance,animation:'not-advertised'},{...performance,providerKey:'forbidden'}])assert.equal((await guest('command',{id:randomUUID(),command:'perform',value},token)).status,400);
+ await owner('state',{state:{workspace:'films'},cues:['friendly-wave']});assert.equal((await guest('command',{id:randomUUID(),command:'perform',value:performance},token)).status,400);
+ await owner('state',{state:{workspace:'films'},cues:['hello']});checks.push('bounded director performance payload and workspace gate');
+
  for(const [command,value] of [['volume',2],['cue','missing'],['gesture',['wave']],['provider','key']])assert.equal((await guest('command',{id:randomUUID(),command,value},token)).status,400);checks.push('typed allowlist');
  clock+=1100;await owner('poll');await owner('state',{state:{audience:'big',form:'haunting',scaryReady:true,revealArmed:true},cues:['hello']});
  for(const [command,value]of [['move','phantom'],['move','dance'],['move','twirl'],['form','haunting'],['reveal','arm'],['reveal','fire']])assert.equal((await guest('command',{id:randomUUID(),command,value},token)).status,202);
