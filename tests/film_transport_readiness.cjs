@@ -15,6 +15,7 @@ const assert=require('node:assert/strict'),{pathToFileURL}=require('node:url'),p
  const delivered=new Media('frame');let deadline;
  try{await Promise.race([FilmTransport.prototype.frame(delivered),new Promise((_,reject)=>{deadline=setTimeout(()=>reject(Error('Delivered frame waited for pending play promise')),500);})]);}finally{clearTimeout(deadline);}
  assert.equal(delivered.cancelled,1);assert.equal(delivered.listeners,0);
+ const callbackFence=new Media('frame');callbackFence.play=function(){this.playCount++;queueMicrotask(()=>{this.frame();queueMicrotask(()=>this.presentationReturned=true)});return new Promise(()=>{});};await waitForFilmFrame(callbackFence);assert.equal(callbackFence.presentationReturned,true,'Media lifecycle mutations must happen after native presentation callback microtasks return');
  const decoded=new Media('stalled');Object.assign(decoded,{currentTime:0,readyState:4,paused:false,seeking:false});let pendingPaint=0;
  const oldRAF=globalThis.requestAnimationFrame,oldCancel=globalThis.cancelAnimationFrame;
  globalThis.requestAnimationFrame=callback=>{pendingPaint++;return setTimeout(()=>{pendingPaint--;decoded.currentTime+=.05;callback();},1);};globalThis.cancelAnimationFrame=id=>{clearTimeout(id);};

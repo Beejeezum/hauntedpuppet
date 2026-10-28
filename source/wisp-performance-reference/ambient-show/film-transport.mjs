@@ -23,7 +23,10 @@ export async function waitForFilmFrame(video,signal){
    let callback,timer,paintTask,settled=false;const requestedTime=video.currentTime;
    const aborted=()=>failed(Object.assign(Error('Film preparation cancelled'),{cancelled:true}));
    const cleanup=()=>{clearTimeout(timer);if(paintTask!==undefined)cancelAnimationFrame(paintTask);if(callback!==undefined)video.cancelVideoFrameCallback?.(callback);video.removeEventListener('playing',playing);video.removeEventListener('error',failed);signal?.removeEventListener('abort',aborted);};
-   const playing=()=>{if(settled)return;settled=true;cleanup();resolve();};
+   // Leave the native presentation callback before the caller can pause or
+   // unload another media pipeline. WebKit/GStreamer can hold drawing locks
+   // through the callback's microtask checkpoint.
+   const playing=()=>{if(settled)return;settled=true;cleanup();setTimeout(resolve,0);};
    const failed=error=>{if(settled)return;settled=true;cleanup();reject(error instanceof Error?error:Error('Film unavailable'));};
    const decoded=()=>{if(settled)return;if(!video.paused&&!video.seeking&&video.readyState>=3&&Math.abs(video.currentTime-requestedTime)>=1/30){playing();return;}paintTask=requestAnimationFrame(decoded);};
    if(signal?.aborted){aborted();return;}signal?.addEventListener('abort',aborted,{once:true});
