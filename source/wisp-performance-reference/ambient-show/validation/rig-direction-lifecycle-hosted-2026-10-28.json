@@ -1,0 +1,36 @@
+{
+  "surface": "https://deploy-preview-12--hauntedpuppet.netlify.app",
+  "rigModuleSha256": "f3c532dc59aa1ee5335eab0bb314ef839d1b3f2812954446a72bd9f2a51a183e",
+  "remoteRigBytesEqualLocal": true,
+  "hostedTest": {
+    "passed": true,
+    "results": [
+      {
+        "delayed": "manifest",
+        "actualGpuRig": true,
+        "cancelled": true,
+        "noLateDirections": true,
+        "noRestart": true,
+        "noUnhandledErrors": true
+      },
+      {
+        "delayed": "image",
+        "actualGpuRig": true,
+        "cancelled": true,
+        "noLateDirections": true,
+        "noRestart": true,
+        "noUnhandledErrors": true
+      },
+      {
+        "delayed": "pagehide",
+        "actualGpuRig": true,
+        "cancelled": true,
+        "noLateDirections": true,
+        "noRestart": true,
+        "noUnhandledErrors": true
+      }
+    ],
+    "scope": "Actual Pixi/WebGL painting setup, deliberately delayed optional direction manifest/image, explicit destroy cancellation and no restart. Not visual motion/face acceptance or physical projection."
+  },
+  "scope": "Actual hosted module and artwork, real local Chrome/Pixi initialization with deliberately intercepted/delayed optional artwork requests. No provider, authenticated phone, microphone, human visual or physical projection test. Production main unchanged."
+}

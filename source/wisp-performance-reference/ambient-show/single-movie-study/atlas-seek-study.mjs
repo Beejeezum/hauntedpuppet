@@ -40,11 +40,15 @@ export class AtlasSeekStudy {
   try{frame=this.request(next);}catch(error){finish(error);}
  });}
  async play(){
-  if(!this.current||this.disposed)throw Error('Choose an atlas cue');const epoch=this.epoch,at=this.video.currentTime;this.phase='playing';this.syncSound();
+  if(!this.current||this.disposed)throw Error('Choose an atlas cue');const epoch=this.epoch,at=this.video.currentTime;this.phase='playing';this.syncSound();let callback;this.lastPresented=null;
+  // Observe actual decoder presentation without pausing/unloading inside its callback.
+  // This is diagnostic evidence only; the existing readiness predicate is unchanged.
+  const observed=(_,metadata)=>{if(this.epoch!==epoch||this.disposed)return;this.lastPresented={frames:(this.lastPresented?.frames||0)+1,mediaTime:metadata.mediaTime,presentedFrames:metadata.presentedFrames,at:performance.now(),readyState:this.video.readyState,currentTime:this.video.currentTime};callback=this.video.requestVideoFrameCallback(observed);};
+  if(this.video.requestVideoFrameCallback)callback=this.video.requestVideoFrameCallback(observed);
   try{await this.wait(()=>!this.video.paused&&this.video.readyState>=3&&this.video.currentTime-at>=1/this.fps,this.pending?.signal,()=>this.video.play());if(this.epoch!==epoch||this.disposed)throw Object.assign(Error('Atlas play cancelled'),{cancelled:true});}
-  catch(error){if(this.epoch===epoch&&!this.disposed){this.phase='failed';this.current=null;this.video.muted=true;this.compositor.blackout();setTimeout(()=>{if(this.epoch===epoch&&!this.disposed&&this.phase==='failed')this.video.pause();},0);}throw error;}
+  catch(error){if(this.epoch===epoch&&!this.disposed){this.phase='failed';this.current=null;this.video.muted=true;this.compositor.blackout();setTimeout(()=>{if(this.epoch===epoch&&!this.disposed&&this.phase==='failed')this.video.pause();},0);}throw error;}finally{if(callback!==undefined)this.video.cancelVideoFrameCallback?.(callback);}
  }
  stop(){this.epoch++;this.pending?.abort();this.pending=null;this.soundEnabled=false;this.current=null;this.holding=false;this.phase='stopped';this.video.muted=true;this.compositor.setLevel(0);this.compositor.blackout();const epoch=this.epoch;setTimeout(()=>{if(this.epoch===epoch&&!this.disposed)this.video.pause();},0);}
- inspect(){return{phase:this.phase,current:this.current?.id||null,sourceLoads:this.sourceLoads,currentTime:this.video.currentTime,seeking:this.video.seeking,paused:this.video.paused,readyState:this.video.readyState,networkState:this.video.networkState,lastWait:this.lastWait?{...this.lastWait}:null,muted:this.video.muted,ready:this.ready,disposed:this.disposed,metrics:this.metrics.map(m=>({...m}))};}
+ inspect(){return{phase:this.phase,current:this.current?.id||null,sourceLoads:this.sourceLoads,currentTime:this.video.currentTime,seeking:this.video.seeking,paused:this.video.paused,readyState:this.video.readyState,networkState:this.video.networkState,lastWait:this.lastWait?{...this.lastWait}:null,lastPresented:this.lastPresented?{...this.lastPresented}:null,muted:this.video.muted,ready:this.ready,disposed:this.disposed,metrics:this.metrics.map(m=>({...m}))};}
  dispose(){if(this.disposed)return;this.stop();this.disposed=true;this.phase='closed';this.video.pause();this.video.removeAttribute('src');this.video.load();this.video.remove();this.held.width=this.held.height=1;}
 }

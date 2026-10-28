@@ -1,9 +1,9 @@
 {
   "status": "source-only local readiness and failed-resume safety passed; Linux interruption recovery fails; no runtime integration",
   "sourceHashes": {
-    "source/wisp-performance-reference/ambient-show/single-movie-study/atlas-seek-study.mjs": "a55217f270de8ddbc04045ed1f7078339adea5d0898a8ce984d3ba97033dd544",
-    "source/wisp-performance-reference/ambient-show/single-movie-study/index.html": "eeb54bed919226c508c1853628394422a4f0d14848497c7623c1cd9c79e3d5a2",
-    "tests/atlas_seek_study.cjs": "0d5c24bb9863c5268b769e26ac53336a582134d6db77ea8c05c101399f0d68b4",
+    "source/wisp-performance-reference/ambient-show/single-movie-study/atlas-seek-study.mjs": "64d34dc5e5b7e9a51bf7681cbf9e98f92d0326baf9db592d27d9010e03e64463",
+    "source/wisp-performance-reference/ambient-show/single-movie-study/index.html": "8743c19ee3b85ba4547c55a17bc7e2e96f087020463c7745c3aaa7d3035f2aaf",
+    "tests/atlas_seek_study.cjs": "b291f39a0c45c422614bb875d310c8bb9a414a0df734a7654c3047203f97eadb",
     "tests/atlas_native_goldens.cjs": "def713be08cb7882c3d5bee8095c1fc9d6272e1e9a36c99848e130b724e2d35a"
   },
   "tests": {
@@ -49,98 +49,99 @@
         {
           "cue": "friendly-drift-A",
           "targetSeconds": 0.020833333333333332,
-          "firstPictureMs": 15.199999988079071,
-          "totalReadyMs": 15.199999988079071,
+          "firstPictureMs": 19.400000005960464,
+          "totalReadyMs": 19.400000005960464,
           "playing": false
         },
         {
           "cue": "scary-drift",
           "targetSeconds": 20.1875,
-          "firstPictureMs": 20.80000001192093,
-          "totalReadyMs": 20.900000005960464,
-          "playing": false
-        },
-        {
-          "cue": "cute-to-evil",
-          "targetSeconds": 5.104166666666667,
-          "firstPictureMs": 16.700000017881393,
-          "totalReadyMs": 16.700000017881393,
-          "playing": false
-        },
-        {
-          "cue": "scary-eyes",
-          "targetSeconds": 10.145833333333334,
-          "firstPictureMs": 20.69999998807907,
-          "totalReadyMs": 20.69999998807907,
-          "playing": false
-        },
-        {
-          "cue": "evil-to-cute",
-          "targetSeconds": 25.229166666666668,
-          "firstPictureMs": 22.80000001192093,
-          "totalReadyMs": 22.80000001192093,
-          "playing": false
-        },
-        {
-          "cue": "friendly-drift-B",
-          "targetSeconds": 30.270833333333332,
           "firstPictureMs": 22,
           "totalReadyMs": 22,
           "playing": false
         },
         {
-          "cue": "scary-eyes",
-          "targetSeconds": 10.145833333333334,
-          "firstPictureMs": 13,
-          "totalReadyMs": 13,
-          "playing": false
-        },
-        {
-          "cue": "friendly-drift-A",
-          "targetSeconds": 0.020833333333333332,
-          "firstPictureMs": 19.5,
-          "totalReadyMs": 19.5,
-          "playing": false
-        },
-        {
-          "cue": "scary-drift",
-          "targetSeconds": 20.1875,
-          "firstPictureMs": 15.799999982118607,
-          "totalReadyMs": 109.2999999821186,
-          "playing": true
-        },
-        {
-          "cue": "friendly-drift-B",
-          "targetSeconds": 30.270833333333332,
-          "firstPictureMs": 32.30000001192093,
-          "totalReadyMs": 32.30000001192093,
+          "cue": "cute-to-evil",
+          "targetSeconds": 5.104166666666667,
+          "firstPictureMs": 21.80000001192093,
+          "totalReadyMs": 21.80000001192093,
           "playing": false
         },
         {
           "cue": "scary-eyes",
           "targetSeconds": 10.145833333333334,
-          "firstPictureMs": 39.099999994039536,
-          "totalReadyMs": 39.099999994039536,
-          "playing": false
-        },
-        {
-          "cue": "scary-eyes",
-          "targetSeconds": 10.145833333333334,
-          "firstPictureMs": 29.900000005960464,
-          "totalReadyMs": 29.900000005960464,
+          "firstPictureMs": 20.600000023841858,
+          "totalReadyMs": 20.600000023841858,
           "playing": false
         },
         {
           "cue": "evil-to-cute",
           "targetSeconds": 25.229166666666668,
-          "firstPictureMs": 33.5,
-          "totalReadyMs": 33.5,
+          "firstPictureMs": 20.900000005960464,
+          "totalReadyMs": 20.900000005960464,
+          "playing": false
+        },
+        {
+          "cue": "friendly-drift-B",
+          "targetSeconds": 30.270833333333332,
+          "firstPictureMs": 21.400000005960464,
+          "totalReadyMs": 21.400000005960464,
+          "playing": false
+        },
+        {
+          "cue": "scary-eyes",
+          "targetSeconds": 10.145833333333334,
+          "firstPictureMs": 9.100000023841858,
+          "totalReadyMs": 9.100000023841858,
+          "playing": false
+        },
+        {
+          "cue": "friendly-drift-A",
+          "targetSeconds": 0.020833333333333332,
+          "firstPictureMs": 8.199999988079071,
+          "totalReadyMs": 8.199999988079071,
+          "playing": false
+        },
+        {
+          "cue": "scary-drift",
+          "targetSeconds": 20.1875,
+          "firstPictureMs": 20.30000001192093,
+          "totalReadyMs": 116.90000000596046,
+          "playing": true
+        },
+        {
+          "cue": "friendly-drift-B",
+          "targetSeconds": 30.270833333333332,
+          "firstPictureMs": 32.79999998211861,
+          "totalReadyMs": 32.79999998211861,
+          "playing": false
+        },
+        {
+          "cue": "scary-eyes",
+          "targetSeconds": 10.145833333333334,
+          "firstPictureMs": 23.099999994039536,
+          "totalReadyMs": 23.099999994039536,
+          "playing": false
+        },
+        {
+          "cue": "scary-eyes",
+          "targetSeconds": 10.145833333333334,
+          "firstPictureMs": 28.099999994039536,
+          "totalReadyMs": 28.099999994039536,
+          "playing": false
+        },
+        {
+          "cue": "evil-to-cute",
+          "targetSeconds": 25.229166666666668,
+          "firstPictureMs": 33.19999998807907,
+          "totalReadyMs": 33.19999998807907,
           "playing": false
         }
       ],
-      "medianFirstPictureMs": 20.80000001192093,
-      "maximumFirstPictureMs": 39.099999994039536,
+      "medianFirstPictureMs": 21.400000005960464,
+      "maximumFirstPictureMs": 33.19999998807907,
       "fivePauseRecoveries": true,
+      "initialLoadFailureCleanup": true,
       "videoEffectRemoval": true,
       "outputDrivenSeekWithOwnerRafSuppressed": true,
       "staleSeekCancellation": true,
@@ -159,7 +160,7 @@
       },
       "lostClockDeadline": {
         "message": "Atlas paint readiness deadline",
-        "elapsedMs": 41.099999994039536,
+        "elapsedMs": 42.69999998807907,
         "pending": 0
       },
       "scope": "Source-only native single-movie seek stress, actual paused pixels versus stream-copied same-engine native goldens, zero-volume sound audition, overlay release,5real pause/stale-black/recover cycles, silent output and Stop/disposal. Deliberate diagnostic jumps are not authored routes. No logical cue-end player, human seam/motion/voice, provider, physical projection or production migration acceptance."
@@ -206,43 +207,43 @@
         {
           "cue": "friendly-drift-A",
           "targetSeconds": 0.020833333333333332,
-          "firstPictureMs": 14,
-          "totalReadyMs": 14,
+          "firstPictureMs": 4,
+          "totalReadyMs": 4,
           "playing": false
         },
         {
           "cue": "scary-drift",
           "targetSeconds": 20.1875,
-          "firstPictureMs": 14,
-          "totalReadyMs": 14,
-          "playing": false
-        },
-        {
-          "cue": "cute-to-evil",
-          "targetSeconds": 5.104166666666667,
-          "firstPictureMs": 18,
-          "totalReadyMs": 18,
-          "playing": false
-        },
-        {
-          "cue": "scary-eyes",
-          "targetSeconds": 10.145833333333334,
-          "firstPictureMs": 21,
-          "totalReadyMs": 21,
-          "playing": false
-        },
-        {
-          "cue": "evil-to-cute",
-          "targetSeconds": 25.229166666666668,
           "firstPictureMs": 17,
           "totalReadyMs": 17,
           "playing": false
         },
         {
+          "cue": "cute-to-evil",
+          "targetSeconds": 5.104166666666667,
+          "firstPictureMs": 21,
+          "totalReadyMs": 21,
+          "playing": false
+        },
+        {
+          "cue": "scary-eyes",
+          "targetSeconds": 10.145833333333334,
+          "firstPictureMs": 14,
+          "totalReadyMs": 14,
+          "playing": false
+        },
+        {
+          "cue": "evil-to-cute",
+          "targetSeconds": 25.229166666666668,
+          "firstPictureMs": 15,
+          "totalReadyMs": 15,
+          "playing": false
+        },
+        {
           "cue": "friendly-drift-B",
           "targetSeconds": 30.270833333333332,
-          "firstPictureMs": 20,
-          "totalReadyMs": 20,
+          "firstPictureMs": 13,
+          "totalReadyMs": 13,
           "playing": false
         },
         {
@@ -255,29 +256,29 @@
         {
           "cue": "friendly-drift-A",
           "targetSeconds": 0.020833333333333332,
-          "firstPictureMs": 24,
-          "totalReadyMs": 24,
+          "firstPictureMs": 20,
+          "totalReadyMs": 20,
           "playing": false
         },
         {
           "cue": "scary-drift",
           "targetSeconds": 20.1875,
-          "firstPictureMs": 25,
-          "totalReadyMs": 80,
+          "firstPictureMs": 21,
+          "totalReadyMs": 72,
           "playing": true
         },
         {
           "cue": "friendly-drift-B",
           "targetSeconds": 30.270833333333332,
-          "firstPictureMs": 35,
-          "totalReadyMs": 35,
+          "firstPictureMs": 33,
+          "totalReadyMs": 33,
           "playing": false
         },
         {
           "cue": "scary-eyes",
           "targetSeconds": 10.145833333333334,
-          "firstPictureMs": 20,
-          "totalReadyMs": 20,
+          "firstPictureMs": 21,
+          "totalReadyMs": 21,
           "playing": false
         },
         {
@@ -296,8 +297,9 @@
         }
       ],
       "medianFirstPictureMs": 21,
-      "maximumFirstPictureMs": 35,
+      "maximumFirstPictureMs": 33,
       "fivePauseRecoveries": true,
+      "initialLoadFailureCleanup": true,
       "videoEffectRemoval": true,
       "outputDrivenSeekWithOwnerRafSuppressed": true,
       "staleSeekCancellation": true,
@@ -323,5 +325,6 @@
     }
   },
   "acceptance": "No logical cue-end scheduler, authored-route/human seam, audio audition, production release, physical projection, or puppet face acceptance.",
-  "referenceIsolation": "Each native golden decoded before main player in a separate, fully closed browser process; no second decoder introduced into main stress browser."
+  "referenceIsolation": "Each native golden decoded before main player in a separate, fully closed browser process; no second decoder introduced into main stress browser.",
+  "initialSoundReadiness": "Test now awaits the explicit sound UI action settlement before overlay and pause stress. A pending play request is not success. No readiness predicate weakened."
 }
