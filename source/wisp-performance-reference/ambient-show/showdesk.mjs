@@ -12,7 +12,7 @@ const $=id=>document.getElementById(id),clips=[
  {id:'scary',title:'Menacing Wisp',detail:'Full-body motion study · exits through black',loop:false,src:'../runway-pilots/motion-transfer-study/wisp-scary-motion-transfer-v35.mp4'}
 ];
 const compositor=new StageCompositor($('stage'),{onLayerError:id=>$('status').textContent='Layer unavailable: '+id});
-const transport=new FilmTransport(compositor,clips,{mediaHost:$('mediaSources')}),overlays=new Map();let disposed=false,raf,mode='manual',formSince=0,lastForm=null,activity=0,lastTime=-1,lastVideo=null,lastFresh=performance.now(),stale=false;
+const transport=new FilmTransport(compositor,clips,{mediaHost:$('mediaSources')}),overlays=new Map();let disposed=false,raf,mode='manual',formSince=0,formPausedAt=null,lastForm=null,activity=0,lastTime=-1,lastVideo=null,lastFresh=performance.now(),stale=false;
 let soundControls,operatorControls;const playlist=new PlaylistRunner();
 const labels={stopped:'Stage black',preparing:'Preparing next cue',exiting:'Planned exit','empty-stage':'Empty stage · planned transition',entering:'Planned entrance',playing:'On stage',unavailable:'Film unavailable · stage black'};
 const director=new CueDirector(transport,{fadeMs:900,onState:s=>{
@@ -20,7 +20,7 @@ const director=new CueDirector(transport,{fadeMs:900,onState:s=>{
  $('status').textContent=labels[s.phase]+(s.current?' · '+clips.find(c=>c.id===s.current)?.title:'');$('queue').textContent=s.queued?'Queued · '+clips.find(c=>c.id===s.queued)?.title:'No cue queued';
  for(const b of $('cues').querySelectorAll('button'))b.setAttribute('aria-pressed',String(b.dataset.cue===s.current));
  if(s.phase==='playing'&&mode==='playlist'){const state=playlist.inspect(),steps=playlist.playlist.steps;transport.preload(steps[(state.index+1)%steps.length].cue);}
- if(s.phase==='playing'&&s.current!==lastForm){lastForm=s.current;formSince=performance.now();}
+ if(s.phase==='playing'&&s.current!==lastForm){lastForm=s.current;formSince=performance.now();formPausedAt=null;}
 }});
 const activate=transport.activate.bind(transport);transport.activate=async(prepared,live)=>{await activate(prepared,live);if(live())for(const {source}of overlays.values())if(source.tagName==='VIDEO')source.play().catch(()=>{});};
 const output=mountFilmOutput($('stage'),()=>({black:compositor.black||stale||!transport.active,paused:transport.active?.paused??true,disposed,metrics:{draws:activity}}));
@@ -55,11 +55,11 @@ $('effectFile').onchange=async event=>{
  try{source.src=url;if(isVideo){await transport.frame(source);if(!transport.active)source.pause();}else await source.decode();if(disposed){source.pause?.();source.removeAttribute('src');if(isVideo){source.load();source.remove();}URL.revokeObjectURL(url);return;}overlays.set(id,{url,source,name:file.name,lastTime:-1});compositor.add({id,source,opacity:.4,blend:'screen'});activity++;refreshLayers();}
  catch{source.pause?.();source.removeAttribute('src');source.remove();URL.revokeObjectURL(url);$('status').textContent='Effect could not load';}
 };
-function stop(){playlist.stop();mode='manual';$('mode').value=mode;timing();director.stop();for(const {source}of overlays.values())source.pause?.();output.blackout();lastForm=null;}
+function stop(){playlist.stop();formPausedAt=null;mode='manual';$('mode').value=mode;timing();director.stop();for(const {source}of overlays.values())source.pause?.();output.blackout();lastForm=null;}
 for(const clip of clips){const b=document.createElement('button');b.dataset.cue=clip.id;b.innerHTML='<strong></strong><small></small>';b.querySelector('strong').textContent=clip.title;b.querySelector('small').textContent=clip.detail;b.onclick=()=>chooseCue(clip.id);$('cues').append(b);}
-function chooseCue(id){playlist.stop();mode='manual';$('mode').value=mode;timing();if(director.current===id&&director.phase==='playing')return Promise.resolve();return director.request(id);}
-function startProgram(selected){playlist.stop();mode=selected;$('mode').value=mode;timing();lastForm=null;formSince=performance.now();const id=['scary','mostly-scary'].includes(mode)?'scary':'cute';if(director.current===id&&director.phase==='playing')return Promise.resolve();return director.request(id);}
-mountPlaylists(document.querySelector('main>aside'),{clips,onRun:p=>{const id=playlist.start(p,clips.map(c=>c.id));mode='playlist';$('mode').value='playlist';$('programTiming').textContent='Repeating playlist · '+p.name;lastForm=null;formSince=performance.now();director.request(id);}});
+function chooseCue(id){playlist.stop();formPausedAt=null;mode='manual';$('mode').value=mode;timing();if(director.current===id&&director.phase==='playing')return Promise.resolve();return director.request(id);}
+function startProgram(selected){playlist.stop();mode=selected;$('mode').value=mode;timing();lastForm=null;formSince=performance.now();formPausedAt=null;const id=['scary','mostly-scary'].includes(mode)?'scary':'cute';if(director.current===id&&director.phase==='playing')return Promise.resolve();return director.request(id);}
+mountPlaylists(document.querySelector('main>aside'),{clips,onRun:p=>{const id=playlist.start(p,clips.map(c=>c.id));mode='playlist';$('mode').value='playlist';$('programTiming').textContent='Repeating playlist · '+p.name;lastForm=null;formSince=performance.now();formPausedAt=null;director.request(id);}});
 $('filmSound').onchange=()=>transport.setSound($('filmSound').checked,Number($('filmLevel').value)/100);$('filmLevel').oninput=()=>transport.setSound($('filmSound').checked,Number($('filmLevel').value)/100);
 $('start').onclick=()=>{$('mode').value==='playlist'?document.querySelector('[data-run]').click():startProgram($('mode').value);};
 function timing(){const n=Number($('dwell').value),selected=$('mode').value;$('dwellValue').textContent=n+'s';$('programTiming').textContent=selected==='playlist'?'Repeating playlist · '+(playlist.inspect().name||'saved show'):selected==='manual'?'Manual cueing · no automatic form changes':selected==='mostly-scary'?`Scary ${n*3}s · cute ${n*.5}s`:selected==='alternate'?`Cute ${n}s · scary ${n}s`:`${selected==='cute'?'Friendly':'Scary'} only · no automatic form changes`;}
@@ -70,10 +70,12 @@ function tick(now){
  if(disposed)return;const v=transport.active;if(v&&(v!==lastVideo||v.currentTime!==lastTime)){activity++;lastVideo=v;lastTime=v.currentTime;lastFresh=now;}
  const wasStale=stale;stale=!!v&&now-lastFresh>1200;if(stale&&!wasStale)soundControls?.cancel();compositor.suspend(stale);transport.suspendSound(stale);
  for(const item of overlays.values())if(item.source.tagName==='VIDEO'&&item.source.currentTime!==item.lastTime){item.lastTime=item.source.currentTime;activity++;}
+ // Automatic pacing counts visible performance, excluding decode/transition/stall time.
+ if(mode!=='manual'&&mode!=='playlist'){if(stale||director.phase!=='playing'){if(formPausedAt===null)formPausedAt=now;}else if(formPausedAt!==null){formSince+=Math.max(0,now-formPausedAt);formPausedAt=null;}}
  if(mode==='playlist')playlist.suspend(stale||director.phase!=='playing',now);
  if(mode==='playlist'&&!stale&&director.phase==='playing'){playlist.observe(director.current,now);if(playlist.due(now))director.request(playlist.advance());}
  if(v&&!v.loop&&v.ended&&director.phase==='playing'){compositor.blackout();director.request(mode==='manual'?'cute':nextForm());}
- else if(v&&director.phase==='playing'){
+ else if(v&&!stale&&director.phase==='playing'){
   const seconds=Number($('dwell').value)*(mode==='mostly-scary'?(director.current==='scary'?3:.5):1),due=now-formSince>=seconds*1000;
   const exitDue=!v.loop&&Number.isFinite(v.duration)&&v.currentTime>=v.duration-director.fadeMs/1000-.65;
   if(exitDue){director.request(mode==='manual'?'cute':due?nextForm():director.current);}
@@ -83,7 +85,7 @@ function tick(now){
 }
 refreshLayers();tick(performance.now());
 soundControls=mountOwnerSound(document.querySelector('main>aside'),{canPlay:()=>!disposed&&!stale&&!compositor.black&&director.phase==='playing'});
-const inspectDesk=()=>({director:director.inspect(),composition:compositor.inspect(),mode,playlist:playlist.inspect(),filmSound:transport.inspectSound(),preparation:{ready:transport.prepared?.id||null,pending:transport.preparing?.id||null},media:transport.videos.map(v=>({muted:v.muted,paused:v.paused,cue:v.dataset.cue||null,currentTime:v.currentTime,loop:v.loop})),effects:overlays.size,sound:soundControls.inspect(),operator:operatorControls?.inspect()||null});
+const inspectDesk=()=>({director:director.inspect(),composition:compositor.inspect(),mode,program:{visibleMs:Math.max(0,(formPausedAt??performance.now())-formSince),paused:formPausedAt!==null},playlist:playlist.inspect(),filmSound:transport.inspectSound(),preparation:{ready:transport.prepared?.id||null,pending:transport.preparing?.id||null},media:transport.videos.map(v=>({muted:v.muted,paused:v.paused,cue:v.dataset.cue||null,currentTime:v.currentTime,loop:v.loop})),effects:overlays.size,sound:soundControls.inspect(),operator:operatorControls?.inspect()||null});
 const remote=createFilmRemote({chooseCue,startProgram,stop,inspect:inspectDesk});
 window.WispDesk={inspect:inspectDesk,...remote};
 const phoneRemote={remoteState:remote.remoteState,remoteCommand:(...args)=>{const access=operatorControls?.inspect();if(access?.cloud&&(!access.authenticated||access.busy||access.disposed))return Promise.reject(Object.assign(Error('Operator sign-in required'),{cancelled:true}));return remote.remoteCommand(...args);}};

@@ -18,9 +18,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.mjs",
       "destination": "showdesk.mjs",
-      "sha256": "d100406b59a2dd2c35fd07535d36bdf635fd15a7ca03d2ce4254a9309fe797e3",
-      "bytes": 13172,
-      "publishedSha256": "631c262521ac3b5b5e6b9d247bbd76f5476f1c8618ae1e512d983e01931cb4d5",
+      "sha256": "1bcd26be8114e7f52e328fef943c147e2f5a0f35d3c16d05d87ec55f16d7bb1a",
+      "bytes": 13689,
+      "publishedSha256": "f64f3cac83328e66ed1e6be945b44cd506e386a278a3deb012fd831ac86965e2",
       "rewrites": [
         {
           "from": "../runway-pilots/wisp-film-output.js",
