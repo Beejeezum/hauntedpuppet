@@ -60,3 +60,6 @@ CURRENT EVIDENCE / NEXT WORK
 
 EMPTY-STAGE MEDIA RECORDS — 2026-10-28
 For an approved clip, record decoded fps and frameCount alongside integer exact-black emptyStartFrames/emptyEndFrames. Empty-to-empty planning requires at least0.5seconds on each side, not a fixed count of8frames. Record audioTailSilenceSeconds on the outgoing exact media; at least0.5seconds is required for the automatic empty-stage shortcut. Deliberately continued audio requires an explicit hash-linked reviewed boundary rather than this shortcut. These measurements do not replace human motion/audio acceptance or approve a candidate.
+
+CANDIDATE PLAYBACK CYCLES — 2026-10-28
+The strict-exit test now finishes the scary clip and returns to the opening wave before testing Blackout. HAUNT_CUE_CYCLES=3 runs three complete wave/comic/scary cycles. Local Chromium completed nine actual media EOS events over97.763seconds with a fixed two-video fixture and immediate cancellation afterward. This is decoded-media transport evidence using a test compositor, not full-scene rendered seam review, human sound approval, physical projection or an overnight soak.
