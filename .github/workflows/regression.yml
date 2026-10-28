@@ -59,6 +59,8 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts
       - run: npx playwright install --with-deps chromium
+      - name: Build public fixtures for this isolated worker
+        run: npm run build
       - name: Start isolated rehearsal server
         run: |
           python3 server.py > /tmp/wisp-server.log 2>&1 &
