@@ -188,7 +188,7 @@ jobs:
   showdesk:
     if: github.event_name != 'workflow_dispatch' || !inputs.native_media_only
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -208,7 +208,10 @@ jobs:
           echo "HAUNT_CI_SILENT_AUDIO=1" >> "$GITHUB_ENV"
       - name: Build explicit public show desk and check privacy
         run: node tests/public_build.cjs
+      # Collect native failures without skipping independent show tests. The final gate still fails this job.
       - name: Check native film sound and complete bridge playback
+        id: native_film
+        continue-on-error: true
         run: |
           failed=0
           HAUNT_BROWSER=webkit node tests/film_single_clock.cjs || failed=1
@@ -221,6 +224,10 @@ jobs:
         run: |
           node tests/cue_review.cjs
           HAUNT_BROWSER=webkit node tests/cue_review.cjs
+      - name: Rehearse one-file eyes context and native repeat boundary
+        run: |
+          node tests/eyes_context_review.cjs
+          HAUNT_BROWSER=webkit node tests/eyes_context_review.cjs
       - name: Wait for complete authored exits before queued cues
         run: |
           HAUNT_TONIGHT_ROOT=dist node tests/film_complete_exit.cjs
@@ -296,6 +303,9 @@ jobs:
           HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/tonight_demo.cjs
           HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/tonight_puppet.cjs
           HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/tonight_puppet_capture.cjs
+      - name: Require native film acceptance
+        if: always()
+        run: test "${{ steps.native_film.outcome }}" = success
       - name: Keep show desk evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -303,6 +313,8 @@ jobs:
           name: showdesk-evidence
           path: |
             test-results/showdesk-*.json
+            test-results/cue-review-*.json
+            test-results/eyes-context-*.json
             test-results/catalog-*.json
             test-results/film-phone-cloud*
             test-results/stage-geometry*

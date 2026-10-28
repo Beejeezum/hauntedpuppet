@@ -1,0 +1,159 @@
+{
+  "file": "wisp-eyes-context-review-v1.mp4",
+  "sha256": "de832a10253bb872ec0b522d408383df2555eac43098ebf38c83d5451f5a5eca",
+  "status": "contextual motion/sound/join review only; not approved library or loop",
+  "frames": 848,
+  "fps": 24,
+  "seconds": 35.333333333333336,
+  "sourcePins": {
+    "wisp-morph-roundtrip-review-v7.mp4": "275acb319821ed88d9eda3220f6c9a61e59d484450537293588d601784de08dc",
+    "scary-eyes-runtime-candidate-v1.mp4": "8d30ec2f4d781fd8b663a04e855949d454e1d09948c1d913e8393437a3a4e1f3",
+    "wisp-morph-dry-swishes-v2.wav": "040f3712ba542d39d2a587d6a11fbeb4e4ea4e87a61c7e2689eeb11e2e2ab715",
+    "scary-eyes-dry-air-v1.wav": "63d02358efeb2613d1bb0161a149cc8f14c24a8f49a2effcdd02016b4352fb80"
+  },
+  "insertAtOriginalFrame": 243,
+  "segments": [
+    {
+      "source": "wisp-morph-roundtrip-review-v7.mp4",
+      "firstFrame": 0,
+      "frameCount": 243,
+      "fixedWholeFrameScale": 0.765
+    },
+    {
+      "source": "scary-eyes-runtime-candidate-v1.mp4",
+      "firstFrame": 0,
+      "frameCount": 241,
+      "fixedWholeFrameScale": 1,
+      "sourceAlreadyBuffered": 0.9
+    },
+    {
+      "source": "wisp-morph-roundtrip-review-v7.mp4",
+      "firstFrame": 243,
+      "frameCount": 364,
+      "fixedWholeFrameScale": 0.765
+    }
+  ],
+  "audioSamples": 1696000,
+  "audioRate": 48000,
+  "audioPcmSha256": "86754e2687af3ff6ed5ca076f60b05b9fa86f6d5a0ea95badf4c825b0c4c858c",
+  "audioProcessing": "Exact original dry16bitPCM arrays concatenated at frame243*2000samples, then oneAAC encode. No new voices/music/noise bed or inserted silence.",
+  "cutFrames": [
+    122,
+    243,
+    484,
+    605,
+    726
+  ],
+  "cutSeconds": [
+    5.083333333333333,
+    10.125,
+    20.166666666666668,
+    25.208333333333332,
+    30.25
+  ],
+  "newEyesCutFrames": [
+    243,
+    484
+  ],
+  "allCutPixelDiagnostics": [
+    {
+      "frames": [
+        121,
+        122
+      ],
+      "silhouetteIoU": 0.983453798185941,
+      "visibleRGBMeanAbsoluteDifference": 5.10795776643991
+    },
+    {
+      "frames": [
+        242,
+        243
+      ],
+      "silhouetteIoU": 0.9659525861205186,
+      "visibleRGBMeanAbsoluteDifference": 7.004963160390908
+    },
+    {
+      "frames": [
+        483,
+        484
+      ],
+      "silhouetteIoU": 0.9715050565139798,
+      "visibleRGBMeanAbsoluteDifference": 6.622579152620794
+    },
+    {
+      "frames": [
+        604,
+        605
+      ],
+      "silhouetteIoU": 0.9848725225124573,
+      "visibleRGBMeanAbsoluteDifference": 4.551992790055043
+    },
+    {
+      "frames": [
+        725,
+        726
+      ],
+      "silhouetteIoU": 0.987583132871091,
+      "visibleRGBMeanAbsoluteDifference": 4.724694589877836
+    }
+  ],
+  "closingPixelDiagnostics": {
+    "silhouetteIoU": 0.9891979666760802,
+    "visibleRGBMeanAbsoluteDifference": 3.111785747905488
+  },
+  "keyframeTimes": [
+    0.0,
+    5.083333,
+    10.125,
+    20.125,
+    20.166667,
+    25.208333,
+    30.25
+  ],
+  "closedGopAtAllCuts": true,
+  "reserveFailuresRGB4": 0,
+  "minimumMarginsLTRB_RGB4": [
+    0.3703125,
+    0.22361111111111112,
+    0.2375,
+    0.16805555555555557
+  ],
+  "generationCreditsSpent": 0,
+  "processing": "All607old frames and241eyes frames in original order/duration. Uniform fixed0.765 whole-frame staging of the complete old review, eyes retains its existing fixed0.9 staging. No animated resize, body deformation, interpolation, reversal, added freeze, body crossfade or cut concealment. One continuous picture/audio clock; forced closed-GOP cut points permit future pixel-identical approved segment extraction.",
+  "scope": "New size calibration and both new visible cuts require human motion/material/sound review. Pixel metrics are diagnostic, not velocity or seam approval. Old contextual visual endorsement does not approve this newly staged file, closing loop or arbitrary routes. Physical projection untested.",
+  "humanApproval": false,
+  "runtimePublication": false,
+  "cueWindows": [
+    {
+      "id": "friendly-drift-A",
+      "firstFrame": 0,
+      "frameCount": 122
+    },
+    {
+      "id": "cute-to-evil",
+      "firstFrame": 122,
+      "frameCount": 121
+    },
+    {
+      "id": "scary-eyes",
+      "firstFrame": 243,
+      "frameCount": 241
+    },
+    {
+      "id": "scary-drift",
+      "firstFrame": 484,
+      "frameCount": 121
+    },
+    {
+      "id": "evil-to-cute",
+      "firstFrame": 605,
+      "frameCount": 121
+    },
+    {
+      "id": "friendly-drift-B",
+      "firstFrame": 726,
+      "frameCount": 122
+    }
+  ],
+  "cutPixelDiagnosticScope": "Staged input pictures before final encoding; not decoded output pixel equality, joint velocity or human seam approval."
+}

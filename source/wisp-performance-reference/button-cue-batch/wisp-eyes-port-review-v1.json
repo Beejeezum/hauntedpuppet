@@ -1,0 +1,22 @@
+{
+  "status": "Direct idle-to-eyes cut rejected; different authored route under review",
+  "sourceIdle": "source/wisp-performance-reference/runway-pilots/motion-transfer-study/wisp-scary-motion-transfer-v35.mp4",
+  "sourceIdleSha256": "21e8efec67ec7e024fc954cc16af458cad8f8427553a998341ff9d37286ca35a",
+  "eyes": "scary-eyes-runtime-candidate-v1.mp4",
+  "eyesSha256": "8d30ec2f4d781fd8b663a04e855949d454e1d09948c1d913e8393437a3a4e1f3",
+  "idleStaging": "Fit whole source to1280x720 then fixed.765centered staging; no per-frame transform",
+  "rejectedOutgoingIdleFrame": 120,
+  "targetEyesFrame": 0,
+  "rejectedCut": {
+    "silhouetteIoU": 0.8571232769423559,
+    "visibleRGBMeanAbsoluteDifference": 31.45014228279031
+  },
+  "search": "All native idle frames48..120 compared to eyes frame0. Best remains120; no acceptable returned pose identified. Earlier entry frames are not treated as a completed idle performance.",
+  "differentRoute": "OriginalV7forward transformation endingframe242 -> eyes -> OriginalV7scary hover startingframe243, with fixed.765staging across allV7frames",
+  "newCutFramesInMaster": [
+    243,
+    484
+  ],
+  "reviewMaster": "wisp-eyes-context-review-v1.mp4",
+  "scope": "Pixel/contact diagnostics only; human motion, mix and closing-loop review remains pending. Do not reverse, freeze, warp or conceal the rejected cut."
+}

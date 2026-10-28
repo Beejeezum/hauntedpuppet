@@ -4,14 +4,14 @@
     {
       "source": "source/wisp-performance-reference/button-cue-batch/review.html",
       "destination": "index.html",
-      "bytes": 3533,
-      "sha256": "c43f6c9f41e032bdbbaaf1248b05de47b80e6a3b6101224dc23291db6aeb1cc4"
+      "bytes": 3704,
+      "sha256": "c5d3917089a4505d6cd9efd7851a160c52946f2add8a26efd0d29c3660261589"
     },
     {
       "source": "source/wisp-performance-reference/button-cue-batch/review.mjs",
       "destination": "review.mjs",
-      "bytes": 6048,
-      "sha256": "2a355b4dc2548cfb0815cbb59eecdab9bddf4ffabd361aaabf4c1ec0f3af6c0d"
+      "bytes": 7198,
+      "sha256": "5682280c01eba68bf44b7788e49b9cd87643853f1d9297228f92502b61ce79e8"
     },
     {
       "source": "source/wisp-performance-reference/button-cue-batch/first-batch-rehearsal-v2.mp4",
@@ -42,6 +42,12 @@
       "destination": "scary-eyes-runtime-candidate-v1.mp4",
       "bytes": 793366,
       "sha256": "8d30ec2f4d781fd8b663a04e855949d454e1d09948c1d913e8393437a3a4e1f3"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/wisp-eyes-context-review-v1.mp4",
+      "destination": "wisp-eyes-context-review-v1.mp4",
+      "bytes": 1824191,
+      "sha256": "de832a10253bb872ec0b522d408383df2555eac43098ebf38c83d5451f5a5eca"
     }
   ]
 }

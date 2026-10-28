@@ -1,6 +1,8 @@
 const film=document.getElementById('film'),message=document.getElementById('message');
 const defaultKnownLimit=document.getElementById('knownLimit').innerHTML;
+const repeat=document.getElementById('repeat');
 const films={
+ 'eyes-context':{src:'wisp-eyes-context-review-v1.mp4',title:'One spirit, after dark',description:'One continuous 35-second performance: friendly drift, transformation, floating eyes and reformation, a menacing hover, then a friendly return. All sound is embedded in this one movie; no speech or music.',warning:'New cuts near 10.13 and 20.17 seconds need visual review. This is not an approved show or loop.',facts:'848 original-order frames at 24 fps with one continuous dry-effects soundtrack. Fixed compact framing keeps Wisp at a consistent hero size across the two new cuts; all frames retain15percent reserve. No body crossfade, retiming, added holds or animated resizing.',knownLimit:'<strong>Review the joins:</strong> compact framing is applied consistently to the existing performance and the eyes cue. Judge both visible cuts and, if you choose Repeat, the last-to-first boundary. Matching picture metrics do not prove smooth motion.'},
  eyes:{src:'scary-eyes-runtime-candidate-v1.mp4',title:'Eyes in the dark',description:'Wisp exhales into fog until only his eyes remain. A glance, a blink, then the same spirit gathers himself back together. One continuous performance with dry air effects and no speech or music.',warning:'Spooky review only. This is a draft; its visible rest-pose joins are not approved.',facts:'241 frames at24fps. Every frame retains15percent fog reserve after one fixed10percent whole-frame reduction; no crop, animated resizing, visual crossfade or retiming. Sound is embedded in this one file; its first and last half-second are silent. Human motion, material, mix and exact join review remain open.'},
  morph:{src:'wisp-morph-roundtrip-review-v7.mp4',title:'One spirit, two sides',description:'One continuous 25-second review: friendly drift, authored transformation, scary drift, authored return and friendly drift again. Framing stays fixed so the character does not shrink at the joins.',warning:'Manual spooky review. Identity, motion and four joins are approved; dry sound direction is endorsed, with effects raised by6dB in this revision.',facts:'607 original-order frames at24fps. Four cuts at5.08,10.13,15.17 and20.21seconds. All frames retain15percent effect reserve. No body crossfade, reversed performance, interpolated frames or animated resize. This is not a perfect-loop or physical projection claim.'},
  rehearsal:{src:'first-batch-rehearsal-v2.mp4',title:'Three little hauntings',description:'One continuous 31-second rehearsal: a friendly wave, a failed scare, then a menacing reach. Each performance leaves an intentional empty stage before the next arrival.',warning:'The last chapter is a manual scare.',facts:'All 735 frames decode at 24 fps. Both joins have exact-black frames and silent sound tails. These technical checks do not prove artistic quality or physical projection performance.'},
@@ -10,13 +12,14 @@ const films={
 let selected='rehearsal',epoch=0,disposed=false;
 for(const button of document.querySelectorAll('[data-review]'))button.onclick=()=>{
  if(disposed)return;const next=films[button.dataset.review];if(!next)return;
- epoch++;film.pause();film.muted=true;selected=button.dataset.review;film.src=next.src;film.load();
+ epoch++;film.pause();film.muted=true;film.loop=false;repeat.checked=false;selected=button.dataset.review;film.src=next.src;film.load();
  film.setAttribute('aria-label',next.title+' review with sound effects');
- document.getElementById('reviewTitle').textContent=next.title;document.getElementById('reviewDescription').textContent=next.description;document.getElementById('reviewWarning').textContent=next.warning;document.getElementById('reviewFacts').textContent=next.facts;document.getElementById('knownLimit').hidden=!['rehearsal','eyes'].includes(selected);document.getElementById('knownLimit').innerHTML=selected==='eyes'?'<strong>Known limitation:</strong> emitted fog failed the original border target. Fixed whole-frame buffering now contains it, but the changed rest-pose size needs exact incoming/outgoing transition review. This does not establish a loop.':defaultKnownLimit;
+ document.getElementById('reviewTitle').textContent=next.title;document.getElementById('reviewDescription').textContent=next.description;document.getElementById('reviewWarning').textContent=next.warning;document.getElementById('reviewFacts').textContent=next.facts;document.getElementById('knownLimit').hidden=!(['rehearsal','eyes'].includes(selected)||next.knownLimit);document.getElementById('knownLimit').innerHTML=next.knownLimit||(selected==='eyes'?'<strong>Known limitation:</strong> emitted fog failed the original border target. Fixed whole-frame buffering now contains it, but the changed rest-pose size needs exact incoming/outgoing transition review. This does not establish a loop.':defaultKnownLimit);
  for(const b of document.querySelectorAll('[data-review]'))b.setAttribute('aria-pressed',String(b.dataset.review===selected));
  for(const b of document.querySelectorAll('[data-time]'))b.disabled=selected!=='rehearsal';
  message.textContent='Film selected and paused. Choose Play from start with sound when ready.';
 };
+repeat.onchange=()=>{if(!disposed)film.loop=repeat.checked;};
 document.getElementById('listen').onclick=async()=>{
  if(disposed)return;const attempt=++epoch;film.pause();film.load();film.muted=false;film.volume=.65;
  try{await film.play();if(attempt===epoch&&!disposed)message.textContent='Playing the selected film with sound. Use the video controls to adjust volume or pause.';}
@@ -26,7 +29,7 @@ for(const button of document.querySelectorAll('[data-time]'))button.onclick=()=>
  if(disposed||selected!=='rehearsal')return;epoch++;film.pause();film.currentTime=Number(button.dataset.time);message.textContent='Chapter selected. Press play when ready; the current sound setting is kept.';
 };
 film.addEventListener('error',()=>{if(disposed)return;epoch++;film.pause();film.muted=true;message.textContent='The review video could not load. Refresh this preview or return to the show desk.';});
-window.addEventListener('pagehide',()=>{disposed=true;epoch++;film.pause();film.muted=true;film.removeAttribute('src');film.querySelector('source')?.remove();film.load();},{once:true});
+window.addEventListener('pagehide',()=>{disposed=true;epoch++;film.pause();film.muted=true;film.loop=false;film.removeAttribute('src');film.querySelector('source')?.remove();film.load();},{once:true});
 
 // Bookmark a finite review choice without ever starting sound.
 const requestedReview=new URL(location.href).searchParams.get('review');
