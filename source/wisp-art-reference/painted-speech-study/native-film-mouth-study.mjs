@@ -10,8 +10,9 @@ export class NativeFilmMouthStudy{
   if(!anchor||anchor.correlation<.72)return false;
   this.surface.drawWeights(weights);const p=this.patch.getContext('2d');p.clearRect(0,0,136,136);p.globalCompositeOperation='source-over';p.drawImage(this.surface.canvas,0,0);
   // Local oval, away from the eyes and outer fog. Its edge still needs visual review.
-  p.globalCompositeOperation='destination-in';p.save();p.translate(67.5,60);p.scale(1,.78);const mask=p.createRadialGradient(0,0,22,0,0,47);mask.addColorStop(0,'white');mask.addColorStop(1,'transparent');p.fillStyle=mask;p.fillRect(-68,-90,136,180);p.restore();p.globalCompositeOperation='source-over';
-  ctx.save();ctx.translate(...anchor.center);ctx.rotate(-anchor.rotationDegrees*Math.PI/180);const scale=.59*anchor.scale;ctx.scale(scale,scale);ctx.drawImage(this.patch,-67.5,-50.5);ctx.restore();return true;
+  p.globalCompositeOperation='destination-in';p.save();p.translate(67.5,60);p.scale(1,.78);const mask=p.createRadialGradient(0,0,38,0,0,58);mask.addColorStop(0,'white');mask.addColorStop(1,'transparent');p.fillStyle=mask;p.fillRect(-68,-90,136,180);p.restore();p.globalCompositeOperation='source-over';
+  const opening=1-Math.min(1,Math.max(0,Number(weights.rest)||0)),fade=Math.min(1,opening/.15);
+  ctx.save();ctx.globalAlpha=fade*fade*(3-2*fade);ctx.translate(...anchor.center);ctx.rotate(-anchor.rotationDegrees*Math.PI/180);const scale=.59*anchor.scale;ctx.scale(scale,scale);ctx.drawImage(this.patch,-67.5,-50.5);ctx.restore();return true;
  }
  dispose(){if(this.disposed)return;this.disposed=true;this.surface.dispose();this.data=null;this.patch.width=this.patch.height=1;}
 }
