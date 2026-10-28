@@ -33,7 +33,34 @@ def byte_range(header, size):
     return start, end
 
 
+def approved_asset(name):
+    """Use the compiler's checksummed export; no Node process or private source route."""
+    descriptor, _ = asset('/assets/wisp-showdesk/approved-publication.json')
+    publication = json.loads(descriptor)
+    catalog = ROOT / 'source/wisp-performance-reference/ambient-show/catalog.json'
+    if (publication.get('schema') != 1 or
+            hashlib.sha256(catalog.read_bytes()).hexdigest() != publication.get('catalogSha256')):
+        raise ValueError('Approved catalog export is stale')
+    if name == 'playback-library.json':
+        return (json.dumps(publication['runtime'], ensure_ascii=False, indent=2) + '\n').encode(), 'application/json'
+    item = next((f for f in publication['files'] if f['destination'] == name), None)
+    if item is None:
+        raise FileNotFoundError('Unknown approved film')
+    source = (ROOT / item['source']).resolve()
+    folder = (ROOT / 'source/wisp-performance-reference').resolve()
+    if folder not in source.parents or source.suffix != '.mp4':
+        raise FileNotFoundError('Invalid approved film source')
+    data = source.read_bytes()
+    if hashlib.sha256(data).hexdigest() != item['sha256']:
+        raise ValueError('Approved film checksum mismatch')
+    return data, 'video/mp4'
+
+
 def asset(path):
+    if path.startswith('/assets/wisp-showdesk/'):
+        name = path[len('/assets/wisp-showdesk/'):]
+        if name == 'playback-library.json' or re.fullmatch(r'[a-z0-9][a-z0-9-]*-[a-f0-9]{12}\.mp4', name):
+            return approved_asset(name)
     for prefix, manifest_name in WORKSPACES.items():
         if not path.startswith(prefix):
             continue

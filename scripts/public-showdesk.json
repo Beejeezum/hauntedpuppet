@@ -112,6 +112,13 @@
       "bytes": 2946,
       "sha256": "94761cac71a863dabd56229b62f8d2ea22f9b8b4cfa7c23734ccd62104abcea9",
       "publishedSha256": "94761cac71a863dabd56229b62f8d2ea22f9b8b4cfa7c23734ccd62104abcea9"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/approved-publication.json",
+      "destination": "approved-publication.json",
+      "sha256": "8f5cc0a6ab2b3abb71b4864f597416e7b90ef8434cd27c4509a867e51edab011",
+      "bytes": 191,
+      "publishedSha256": "8f5cc0a6ab2b3abb71b4864f597416e7b90ef8434cd27c4509a867e51edab011"
     }
   ]
 }

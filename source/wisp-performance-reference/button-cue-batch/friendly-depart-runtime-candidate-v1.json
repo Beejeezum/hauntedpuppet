@@ -1,0 +1,74 @@
+{
+  "file": "friendly-depart-runtime-candidate-v1.mp4",
+  "sha256": "58d6bd30ab6540e3d7d8eb1f086fe18c2986fa85a04dc45e6cd7301c6e89c59d",
+  "status": "review candidate, not ready library",
+  "source": "friendly-depart-pilot-v1.mp4",
+  "constantFramingScale": 1,
+  "processing": "No crop, resize, retiming, body deformation or visual fade added. Only decoded nearly empty source frames225\u2013240 (maximumRGB<=4) replaced with exact black; native body/fog performance unchanged.",
+  "entry": "Friendly painted rest pose; no empty-stage arrival. Requires exact reviewed rest-pose join or separate arrival bridge.",
+  "exit": "Intentional native rear turn, depth flight and vapor dispersal, followed by16 exact-black frames.",
+  "audioProcessing": "Native generated SFX resampled to48kHz with fixed3x gain,150ms onset fade and450ms tail ending9.15s; no added dialogue/music or source mixing.",
+  "framing": {
+    "4": {
+      "emptyFrames": 16,
+      "reserveFailures": 0,
+      "minimumMarginsLTRB": [
+        0.3734375,
+        0.2361111111111111,
+        0.3875,
+        0.18888888888888888
+      ]
+    },
+    "8": {
+      "emptyFrames": 17,
+      "reserveFailures": 0,
+      "minimumMarginsLTRB": [
+        0.375,
+        0.2388888888888889,
+        0.38828125,
+        0.19305555555555556
+      ]
+    },
+    "16": {
+      "emptyFrames": 20,
+      "reserveFailures": 0,
+      "minimumMarginsLTRB": [
+        0.3765625,
+        0.24027777777777778,
+        0.3890625,
+        0.19305555555555556
+      ]
+    }
+  },
+  "frameCount": 241,
+  "fps": 24.0,
+  "blackTail": {
+    "frames": 16,
+    "seconds": 0.6666666666666666
+  },
+  "audio": {
+    "sampleRate": 48000,
+    "peak": 0.14616522192955017,
+    "rmsDbFS": -33.065147399902344,
+    "lastHalfSecondDbFS": -240.0,
+    "scope": "Numerical native soundtrack measurements, not human listening or proof of absent speech.",
+    "lastHalfSecondPeak": 0
+  },
+  "assistantFrameReview": "Sampled frames show continuous side/back turn, connected arms, look-back wave and reduced body transitioning to a contained vapor puff. Every decoded frame passed15percent RGB envelope reserve. No exact join or human artistic approval inferred.",
+  "remainingGates": [
+    "human full-motion and sound review",
+    "exact incoming rest-pose seam review",
+    "physical projection unavailable"
+  ],
+  "humanReview": "pending",
+  "physicalProjection": "not tested",
+  "entryPort": "friendly-rest",
+  "entryReview": "pending",
+  "emptyStartFrames": 0,
+  "emptyEndFrames": 16,
+  "audioTailSilenceSeconds": 0.5,
+  "playerEvidence": [
+    "test-results/film-complete-exit-chromium-departure.json",
+    "test-results/film-complete-exit-webkit-departure.json"
+  ]
+}

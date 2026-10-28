@@ -12,7 +12,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
   const mediaPath=path.resolve(root,study.media),evidence=JSON.parse(fs.readFileSync(path.resolve(root,study.evidence),'utf8'));
   assert.equal(require('node:crypto').createHash('sha256').update(fs.readFileSync(mediaPath)).digest('hex'),study.sha256,'Candidate bytes must match the tracked record');
   assert.equal(evidence.sha256,study.sha256);assert.equal(study.status,'human-review-pending');
-  assert.equal(evidence.humanReview,'pending');assert(evidence.emptyStartFrames/evidence.fps>=.5&&evidence.emptyEndFrames/evidence.fps>=.5);
+  assert.equal(evidence.humanReview,'pending');const planned=catalog.clips.find(c=>c.id===study.plannedClipIds[0]);assert(evidence.emptyEndFrames/evidence.fps>=.5);if(planned.entryPort==='empty')assert(evidence.emptyStartFrames/evidence.fps>=.5);else{assert.equal(evidence.entryPort,planned.entryPort);assert.equal(evidence.entryReview,'pending','A visible rest-pose entrance still needs its exact incoming cut reviewed');}
   assert(evidence.audioTailSilenceSeconds>=.5);assert.equal(evidence.audio.lastHalfSecondPeak,0);
   assert(catalog.clips.some(c=>c.id===study.plannedClipIds[0]),'Candidate evidence must reference an active inventory slot');
  }

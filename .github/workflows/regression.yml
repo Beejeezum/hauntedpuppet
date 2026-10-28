@@ -193,6 +193,8 @@ jobs:
         run: |
           HAUNT_TONIGHT_ROOT=dist node tests/film_complete_exit.cjs
           HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/film_complete_exit.cjs
+          HAUNT_TONIGHT_ROOT=dist HAUNT_DEPARTURE_CUE=1 node tests/film_complete_exit.cjs
+          HAUNT_TONIGHT_ROOT=dist HAUNT_DEPARTURE_CUE=1 HAUNT_BROWSER=webkit node tests/film_complete_exit.cjs
       - name: Rehearse catalog cuts and natural loop exit with real films
         run: HAUNT_TONIGHT_ROOT=dist HAUNT_CATALOG_DIRECTOR=1 node tests/film_complete_exit.cjs
       - name: Check animation-first entry and separate live workspace
@@ -223,14 +225,16 @@ jobs:
         run: |
           node tests/catalog_desk.cjs
           HAUNT_BROWSER=webkit node tests/catalog_desk.cjs
-          node tests/catalog_bridge_browser.cjs
-          HAUNT_BROWSER=webkit node tests/catalog_bridge_browser.cjs
       - name: Repeat saved playlist closing boundaries in real time
         run: HAUNT_PLAYLIST_ONLY=1 HAUNT_PLAYLIST_STALL=1 HAUNT_PLAYLIST_SOAK_CYCLES=4 HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
-      - name: Check opt-in embedded film soundtracks with silent test sinks
+      - name: Check native film sound and complete bridge playback
         run: |
-          HAUNT_TONIGHT_ROOT=dist node tests/showdesk_film_audio.cjs
-          HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/showdesk_film_audio.cjs
+          failed=0
+          HAUNT_TONIGHT_ROOT=dist node tests/showdesk_film_audio.cjs || failed=1
+          HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/showdesk_film_audio.cjs || failed=1
+          node tests/catalog_bridge_browser.cjs || failed=1
+          HAUNT_BROWSER=webkit node tests/catalog_bridge_browser.cjs || failed=1
+          exit "$failed"
       - name: Check cancellable laptop-only effects
         run: |
           node tests/owner_sound.cjs

@@ -1,5 +1,8 @@
 import json
 import unittest
+import tempfile
+from pathlib import Path
+from contextlib import contextmanager
 from unittest.mock import patch
 import public_workspace
 
@@ -24,6 +27,56 @@ class PublicWorkspace(unittest.TestCase):
                     self.assertEqual(public_workspace.hashlib.sha256(data).hexdigest(),
                                      item.get('publishedSha256', item['sha256']))
                     self.assertTrue(mime)
+
+    def test_compiled_library_is_available_on_local_workspace(self):
+        data, mime = public_workspace.asset('/assets/wisp-showdesk/playback-library.json')
+        self.assertEqual(mime, 'application/json')
+        self.assertEqual(json.loads(data)['schema'], 1)
+        publication, _ = public_workspace.asset('/assets/wisp-showdesk/approved-publication.json')
+        self.assertEqual(json.loads(data), json.loads(publication)['runtime'])
+
+    @contextmanager
+    def compiled_fixture(self):
+        # Synthetic publication fixture tests serving policy, not movie/visual approval.
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            folder = root / 'source/wisp-performance-reference/ambient-show'
+            folder.mkdir(parents=True)
+            (root / 'scripts').mkdir()
+            catalog = folder / 'catalog.json'
+            catalog.write_bytes(b'{"clips":[]}')
+            movie = folder / 'fixture.mp4'
+            movie.write_bytes(b'synthetic movie bytes, no decode claim')
+            sha = public_workspace.hashlib.sha256(movie.read_bytes()).hexdigest()
+            name = 'fixture-' + sha[:12] + '.mp4'
+            descriptor = {'schema': 1, 'catalogSha256': public_workspace.hashlib.sha256(catalog.read_bytes()).hexdigest(),
+                          'runtime': {'schema': 1, 'clips': [], 'routes': []},
+                          'files': [{'source': str(movie.relative_to(root)), 'destination': name, 'sha256': sha}]}
+            source = folder / 'approved-publication.json'
+            source.write_text(json.dumps(descriptor))
+            digest = public_workspace.hashlib.sha256(source.read_bytes()).hexdigest()
+            (root / 'scripts/public-showdesk.json').write_text(json.dumps({'files': [{
+                'source': str(source.relative_to(root)), 'destination': 'approved-publication.json',
+                'bytes': source.stat().st_size, 'sha256': digest, 'publishedSha256': digest}]}))
+            with patch.object(public_workspace, 'ROOT', root):
+                yield catalog, movie, name
+
+    def test_changed_catalog_requires_new_compiler_export(self):
+        with self.compiled_fixture() as (catalog, _, __):
+            catalog.write_text('{"clips":[],"changed":true}')
+            with self.assertRaisesRegex(ValueError, 'stale'):
+                public_workspace.asset('/assets/wisp-showdesk/playback-library.json')
+
+    def test_approved_media_requires_exact_bytes_and_listed_name(self):
+        with self.compiled_fixture() as (_, movie, name):
+            data, mime = public_workspace.asset('/assets/wisp-showdesk/' + name)
+            self.assertEqual(data, movie.read_bytes())
+            self.assertEqual(mime, 'video/mp4')
+            with self.assertRaises(FileNotFoundError):
+                public_workspace.asset('/assets/wisp-showdesk/unknown-0123456789ab.mp4')
+            movie.write_bytes(b'changed')
+            with self.assertRaisesRegex(ValueError, 'checksum'):
+                public_workspace.asset('/assets/wisp-showdesk/' + name)
 
     def test_unknown_and_private_paths_are_not_exposed(self):
         self.assertIsNone(public_workspace.asset('/server.py'))

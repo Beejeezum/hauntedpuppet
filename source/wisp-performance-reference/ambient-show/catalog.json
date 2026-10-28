@@ -410,6 +410,16 @@
       "status": "human-review-pending",
       "evidence": "../button-cue-batch/scary-reach-runtime-candidate-v1.json",
       "scope": "Generated full-body performance, fixed framing and verified black endpoints. Human motion/sound and exact joins pending; not a ready cue. Original outer vapor clipped; 32px perimeter feather is a review treatment, not reconstruction. Manual-only scare."
+    },
+    {
+      "plannedClipIds": [
+        "friendly-depart"
+      ],
+      "media": "../button-cue-batch/friendly-depart-runtime-candidate-v1.mp4",
+      "sha256": "58d6bd30ab6540e3d7d8eb1f086fe18c2986fa85a04dc45e6cd7301c6e89c59d",
+      "status": "human-review-pending",
+      "evidence": "../button-cue-batch/friendly-depart-runtime-candidate-v1.json",
+      "scope": "Single targeted240credit departure draft. No animated resize/crop; complete side/back turn and native fog vapor ending, all-frame15percent reserve. Rest-pose entry needs a reviewed incoming join; no claim of arbitrary seamless start. Actual motion/sound review remains pending."
     }
   ],
   "deferredClips": [
