@@ -54,5 +54,6 @@ CURRENT EVIDENCE / NEXT WORK
 - Added single-film silent preloading, reuse and cancellation to reduce decode waits at playlist boundaries. Repeated actual-film study cycles are covered separately from visual transition approval.
 - Added saved playlist editor and runtime on current show desk: finite library IDs, bounded storage/steps, per-step holds, repeat, manual/Blackout cancellation. Automated coverage in tests/saved_playlists.cjs and tests/showdesk_rehearsal.cjs.
 - Existing source catalog remains accurately planned; 32 finished cue assets and authored joins are NOT delivered.
-- New generation needs original Wisp Runway workspace confirmation: user previously rejected Bruce. Do not spend there without resolving identity. Continue independent runtime/puppet work meanwhile.
+- Workspace gate resolved2026-10-28: user explicitly authorized Bruce for Wisp. Two wave pilots submitted;v1rejected for cropped smoke/nonempty lead, v2runtime candidate passes all decoded15percent framing thresholds and20/44exact-black endpoint frames. Motion/audio human review pending. Approved v28 video reused unchanged with new soft-air candidate soundtrack for friendly-drift, no new generation credits.
+- Candidate complete-exit playback now waits for the entire one-shot performance/EOS before activating the next prepared arrival; Blackout cancels immediately. Actual candidate video tests pass Chromium/WebKit. Existing study fades remain unchanged and are not final authored joins.
 - No production-main publication or full-goal completion claimed.

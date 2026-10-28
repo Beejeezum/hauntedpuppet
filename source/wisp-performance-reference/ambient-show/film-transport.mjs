@@ -42,9 +42,22 @@ export class FilmTransport {
  cancelPreparation(){this.prepareEpoch++;this.preparing?.abort.abort();this.preparing=null;this.prepared?.dispose();this.prepared=null;}
  preload(id){return this.prepare(id).then(()=>true).catch(()=>false);}
 
+ async exit(ms,live){
+  const video=this.active,clip=this.clips.find(c=>c.id===video?.dataset.cue);
+  if(!video||clip?.exitPolicy!=='finish')return this.fade(0,ms,live);
+  await new Promise((resolve,reject)=>{
+   let frame,timer,settled=false;
+   const cleanup=()=>{if(frame!==undefined)cancelAnimationFrame(frame);clearTimeout(timer);video.removeEventListener('ended',complete);video.removeEventListener('error',failed);if(this.finishWait===cancel)this.finishWait=null;};
+   const finish=(error)=>{if(settled)return;settled=true;cleanup();error?reject(error):resolve();};
+   const complete=()=>finish(),cancel=()=>finish(),failed=()=>finish(Error('Film exit unavailable'));
+   const tick=()=>{if(!live()||this.disposed||this.active!==video){cancel();return;}if(video.ended){complete();return;}frame=requestAnimationFrame(tick);};
+   this.finishWait=cancel;video.addEventListener('ended',complete);video.addEventListener('error',failed);const remaining=Number.isFinite(video.duration)?Math.max(0,video.duration-video.currentTime):0;timer=setTimeout(()=>failed(),(remaining+6)*1000);tick();
+  });
+  if(live()&&this.active===video){this.compositor.setLevel(0);this.compositor.blackout();this.syncSound();}
+ }
  async activate(prepared,live){const previous=this.active;await this.frame(prepared.video);if(!live())return;this.active=prepared.video;if(this.prepared===prepared)this.prepared=null;this.active.dataset.cue=prepared.id;this.compositor.reveal();this.syncSound();if(previous&&previous!==this.active){previous.pause();previous.removeAttribute('src');previous.load();}}
  fade(target,ms,live){const start=this.compositor.level,at=performance.now();return new Promise(resolve=>{const tick=now=>{if(!live()){resolve();return;}const t=Math.min(1,(now-at)/Math.max(1,ms)),ease=t*t*(3-2*t);this.compositor.setLevel(start+(target-start)*ease);this.syncSound();if(t<1)requestAnimationFrame(tick);else resolve();};requestAnimationFrame(tick);});}
  hold(ms,live){const at=performance.now();return new Promise(resolve=>{const tick=now=>{if(!live()||now-at>=ms)resolve();else requestAnimationFrame(tick);};requestAnimationFrame(tick);});}
- blackout(){this.soundEnabled=false;this.cancelPreparation();this.active=null;this.compositor.setLevel(0);this.compositor.blackout();for(const v of this.videos){v.pause();v.muted=true;}}
+ blackout(){this.finishWait?.();this.soundEnabled=false;this.cancelPreparation();this.active=null;this.compositor.setLevel(0);this.compositor.blackout();for(const v of this.videos){v.pause();v.muted=true;}}
  dispose(){this.blackout();this.disposed=true;for(const v of this.videos){v.removeAttribute('src');v.load();v.remove();}}
 }

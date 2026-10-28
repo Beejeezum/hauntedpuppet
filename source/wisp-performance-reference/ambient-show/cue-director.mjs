@@ -9,7 +9,7 @@ export class CueDirector {
   try{while(this.queued&&live()){
    let id=this.queued;this.emit('preparing');let prepared;try{prepared=await this.transport.prepare(id);}catch(error){if(error.cancelled&&live()&&this.queued&&id!==this.queued)continue;throw error;}if(!live()){prepared?.dispose?.();return;}
    if(id!==this.queued){prepared?.dispose?.();continue;}
-   this.emit('exiting');await this.transport.fade(0,this.fadeMs,live);if(!live()){prepared?.dispose?.();return;}
+   this.emit('exiting');if(this.transport.exit)await this.transport.exit(this.fadeMs,live);else await this.transport.fade(0,this.fadeMs,live);if(!live()){prepared?.dispose?.();return;}
    this.emit('empty-stage');if(this.transport.hold)await this.transport.hold(this.blackMs,live);else await new Promise(resolve=>setTimeout(resolve,this.blackMs));if(!live()){prepared?.dispose?.();return;}
    // A changed destination during exit is decoded behind black, never flashed onscreen.
    while(id!==this.queued&&live()){prepared?.dispose?.();id=this.queued;prepared=await this.transport.prepare(id);}

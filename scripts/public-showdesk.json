@@ -39,16 +39,16 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/film-transport.mjs",
       "destination": "film-transport.mjs",
-      "sha256": "3044bd63702e0e8ec43afdde4301702d4ca9465efac6be15f85bed99695c12ba",
-      "bytes": 5864,
-      "publishedSha256": "3044bd63702e0e8ec43afdde4301702d4ca9465efac6be15f85bed99695c12ba"
+      "sha256": "cc086b24e3910b0c16dc968a97f6b93b2971cb087a958f4c54d88b7581d29a41",
+      "bytes": 7091,
+      "publishedSha256": "cc086b24e3910b0c16dc968a97f6b93b2971cb087a958f4c54d88b7581d29a41"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/cue-director.mjs",
       "destination": "cue-director.mjs",
-      "sha256": "38f38b7f92b6ee8b8a64f293f15517b89ba17b1ee0201586312833dcc3916177",
-      "bytes": 2459,
-      "publishedSha256": "38f38b7f92b6ee8b8a64f293f15517b89ba17b1ee0201586312833dcc3916177"
+      "sha256": "74ab9b929a0f5bc7bed7add63021050c6e24acf95ca77585f5cfbc54ea67e56c",
+      "bytes": 2531,
+      "publishedSha256": "74ab9b929a0f5bc7bed7add63021050c6e24acf95ca77585f5cfbc54ea67e56c"
     },
     {
       "source": "source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4",

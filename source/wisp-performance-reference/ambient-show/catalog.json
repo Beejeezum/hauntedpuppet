@@ -567,6 +567,24 @@
       "sha256": "955635d3b7ed8353c0a514fbf4d18c557e02131b6a443866b94a57fdfabb7345",
       "status": "review-pending",
       "scope": "Distant glimmer and friendly arrival; editorial black lead has41exact-black frames, all20percent reserve. New motion/anatomy and actual arrival-to-idle join pending human review; not a finished cue."
+    },
+    {
+      "plannedClipIds": [
+        "friendly-wave"
+      ],
+      "media": "../button-cue-batch/friendly-wave-runtime-candidate-v2.mp4",
+      "sha256": "6ce40f478e0aec3570266dcef7cfd6dae071f8476914fd583de402babeab7b55",
+      "status": "human-review-pending",
+      "scope": "New continuous wave/formation/dispersal candidate. All decoded framing thresholds pass;20exact-black startframes/44endframes. Native SFX mastered; no human sound/motion approval. Actual EOS-before-next and immediateBlackout browser tests pass. Not a ready library cue."
+    },
+    {
+      "plannedClipIds": [
+        "friendly-drift"
+      ],
+      "media": "../button-cue-batch/friendly-drift-candidate-v1.mp4",
+      "sha256": "a2a183ad8f433e74dc14328dd8019beedeb8e04f4519bad4d312a3a5a554a064",
+      "status": "original-motion-endorsed;new-audio-review-pending",
+      "scope": "Original v28 compressed video stream preserved exactly, with soft-air candidate soundtrack. No new animation credits. Human-endorsed motion and loop retained; new audio/exact-file joins still need review. Not a ready catalog slot."
     }
   ]
 }

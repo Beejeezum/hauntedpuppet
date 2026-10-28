@@ -1,0 +1,46 @@
+{
+  "taskId": "3451d643-eef0-4496-b1ea-ffdb518d36a6",
+  "status": "rejected for ready library: smoke clearance and empty entry fail; human acting review pending",
+  "cueId": "friendly-wave",
+  "workspace": {
+    "id": 1709631,
+    "name": "Bruce",
+    "authorization": "Explicit user reply2026-10-28: Use Bruce for Wisp"
+  },
+  "reference": "source/wisp-art-reference/approved-friendly-fog.png",
+  "referenceSha256": "42c2a586c05b69d596d136dae7f0500e5a567619b699d6e02bad0a4c765082f4",
+  "durationSeconds": 10,
+  "resolution": "720p",
+  "nativeAudio": true,
+  "model": "seedance-2",
+  "submissionCount": 1,
+  "furtherSubmissions": "Review this pilot before spending on another task",
+  "acceptance": [
+    "same painted identity",
+    "coherent full-body fog and hands",
+    "no speech/music/text",
+    "at least15percent effect reserve",
+    "intentional arrival/departure, no chopped-body edit",
+    "empty stage at both endpoints, bounded sound tail",
+    "human motion and audio review",
+    "exact-media transition review"
+  ],
+  "sha256": "56c7ffe2491dd4f3c4127d0378a044b4c74f65370117a8535ff9e12c4ec65750",
+  "framing": {
+    "threshold8ReserveFailures": 183,
+    "minimumTopMargin": 0,
+    "minimumBottomMargin": 0.03194444444444444,
+    "emptyHeadFrames": 0,
+    "emptyTailUnderRgb8Frames": 17,
+    "exactBlackTailFrames": 0
+  },
+  "internalVisualReview": "Painted identity and coherent full body are plausible; body notice/wave/dispersal can be reviewed. Top smoke clips during exit. Does not meet export reserve; padding cannot restore already missing smoke. Not published as ready.",
+  "audio": {
+    "rmsDbFS": -47.69486844301895,
+    "samplePeak": 0.021087646484375,
+    "auditionOnlyGain": 8,
+    "audition": "friendly-wave-pilot-v1-audition.mp4",
+    "scope": "Gain-only listening proxy; original video unchanged, no human no-speech/audio-quality acceptance."
+  },
+  "observedDebit": 300
+}
