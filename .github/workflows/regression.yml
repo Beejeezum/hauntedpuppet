@@ -144,6 +144,10 @@ jobs:
           echo "HAUNT_CI_SILENT_AUDIO=1" >> "$GITHUB_ENV"
       - name: Build explicit public show desk and check privacy
         run: node tests/public_build.cjs
+      - name: Rehearse the capture-free candidate review reel
+        run: |
+          node tests/cue_review.cjs
+          HAUNT_BROWSER=webkit node tests/cue_review.cjs
       - name: Wait for complete authored exits before queued cues
         run: |
           HAUNT_TONIGHT_ROOT=dist node tests/film_complete_exit.cjs

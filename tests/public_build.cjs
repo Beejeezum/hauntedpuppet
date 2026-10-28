@@ -12,6 +12,7 @@ assert.equal(tonightShow.releaseApproved,false,'Review export must not claim fin
 for(const name of ['index.html','showdesk.css','showdesk.mjs','film-transport.mjs','cue-director.mjs','friendly.mp4','scary.mp4'])assert(fs.existsSync(path.join(out,'assets/wisp-showdesk',name)),name+' show desk asset missing');
 assert(!fs.existsSync(path.join(out,'assets/wisp-showdesk/wisp-scary-return-bridge-v36.mp4')),'Rejected bridge must stay off CDN');
 for(const file of ['showdesk.mjs','film-transport.mjs','cue-director.mjs'])assert(!fs.readFileSync(path.join(out,'assets/wisp-showdesk',file),'utf8').includes('runway-pilots/'),'Unresolved source path in published desk');
+assert.deepEqual(fs.readdirSync(path.join(out,'assets/wisp-cue-review')).sort(),['first-batch-rehearsal-v1.mp4','index.html','review.mjs'],'Review publication must not include raw generations or other source files');
 let modules=0;
 function visit(dir){for(const item of fs.readdirSync(dir,{withFileTypes:true})){const file=path.join(dir,item.name);if(item.isDirectory())visit(file);else if(item.name.endsWith('.js')){modules++;const text=fs.readFileSync(file,'utf8');for(const match of text.matchAll(/(?:from\s*|import\s*\()(['"])(\/[^'"]+\.js)\1/g))assert(fs.existsSync(path.join(out,match[2])), 'Missing published runtime module '+match[2]);}}}
 visit(out);assert(modules>10);assert(fs.existsSync(path.join(out,'assets/scenes/haunted-window.png')));assert(fs.existsSync(path.join(out,'phone_remote/index.html')));

@@ -1,0 +1,23 @@
+{
+  "purpose": "Explicit human review only; these candidates are not approved show library clips.",
+  "files": [
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/review.html",
+      "destination": "index.html",
+      "bytes": 2885,
+      "sha256": "1607056fb9a8447df94c3efa9a8a1d079fe87059b8ee22af8716160b44974bd8"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/review.mjs",
+      "destination": "review.mjs",
+      "bytes": 1034,
+      "sha256": "f75282f0c9f543645e44c5d040298e57a002de21dd623e85972e047a41c62728"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/first-batch-rehearsal-v1.mp4",
+      "destination": "first-batch-rehearsal-v1.mp4",
+      "bytes": 2056172,
+      "sha256": "c492c59e768e1fa35e5bc15290ab44a2a0c301412efd19c24977d4a28ec4ed26"
+    }
+  ]
+}

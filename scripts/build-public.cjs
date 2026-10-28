@@ -37,6 +37,15 @@ for (const item of desk.files) {
   if (hash(bytes) !== item.publishedSha256) throw Error('Show desk publication checksum mismatch');
   fs.writeFileSync(path.join(deskOut, item.destination), bytes);
 }
+// A single-file review reel, deliberately separate from the approved show library.
+const cueReview=JSON.parse(fs.readFileSync(path.join(root,'scripts/public-cue-review.json'),'utf8'));
+const cueReviewOut=path.join(out,'assets/wisp-cue-review');fs.mkdirSync(cueReviewOut,{recursive:true});
+for(const item of cueReview.files){
+ if(!item.source.startsWith('source/wisp-performance-reference/button-cue-batch/')||path.basename(item.destination)!==item.destination)throw Error('Invalid cue review path');
+ const bytes=fs.readFileSync(path.join(root,item.source));
+ if(bytes.length!==item.bytes||require('node:crypto').createHash('sha256').update(bytes).digest('hex')!==item.sha256)throw Error('Cue review checksum mismatch');
+ fs.writeFileSync(path.join(cueReviewOut,item.destination),bytes);
+}
 // Tonight's opt-in review is an exact file list, not general source publication.
 const tonight = JSON.parse(fs.readFileSync(path.join(root, 'scripts/public-tonight-demo.json'), 'utf8'));
 const tonightOut = path.join(out, 'assets/wisp-tonight');
