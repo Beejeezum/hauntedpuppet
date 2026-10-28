@@ -1,0 +1,49 @@
+{
+  "status": "numerical transport improvement; rejected as finished lettering material",
+  "reference": "https://developer.nvidia.com/gpugems/gpugems3/part-v-physics-simulation/chapter-30-real-time-simulation-and-rendering-3d-fluids",
+  "implementation": "Independent limited MacCormack two-way advection with local four-texel extrema clamp. Same analytic velocity and dye decay; no copied upstream source, pressure projection or3Dvolumetric simulation.",
+  "files": {
+    "fog-dye.mjs": "02ae2fab30e73a7ee1d485d3d52c6246909ba5457139b81f0fc3309720d4f548",
+    "fog-dye-high-order.mjs": "bc4ec5389a340f80f376cb70099c9943f3b92e8ceb2b342632d2a7a88db12a65",
+    "source/wisp-performance-reference/ambient-show/fog-lettering-study/happy-halloween-vapor-v4.png": "c3b784ea6a44c0085faf38c93bf9a8fb7143463a6c2e2a3e0407fad75ca7e6be"
+  },
+  "gpuTest": {
+    "identicalSeed": true,
+    "finiteBoundedDensity": true,
+    "simulatedSeconds": 12,
+    "resourcesReleased": true,
+    "samples": [
+      {
+        "seconds": 0,
+        "originalEdgeEnergy": 0.0052564471215764234,
+        "correctedEdgeEnergy": 0.0052564471215764234,
+        "correctedDensityRange": [
+          0,
+          0.615234375
+        ]
+      },
+      {
+        "seconds": 6,
+        "originalEdgeEnergy": 0.0018382555426796898,
+        "correctedEdgeEnergy": 0.003855966638240469,
+        "correctedDensityRange": [
+          0,
+          0.5322265625
+        ]
+      },
+      {
+        "seconds": 12,
+        "originalEdgeEnergy": 2.9216720981316434e-06,
+        "correctedEdgeEnergy": 8.481959356023803e-06,
+        "correctedDensityRange": [
+          0,
+          0.0010595321655273438
+        ]
+      }
+    ]
+  },
+  "visualReview": "At6seconds corrected transport retains sharper fine structures than the diffused baseline, but both still turn letters into broad planar curled strokes. No porous volumetric smoke, causal bat wakes or finished atmosphere cue. Not promoted.",
+  "humanApproval": false,
+  "runtimeIntegration": false,
+  "runwayCreditsSpent": 0
+}
