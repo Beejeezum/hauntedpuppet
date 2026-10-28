@@ -156,7 +156,7 @@ jobs:
           HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
           DEBUG=pw:browser HAUNT_BROWSER=webkit HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
       - name: Repeat saved playlist closing boundaries in real time
-        run: HAUNT_PLAYLIST_ONLY=1 HAUNT_PLAYLIST_SOAK_CYCLES=4 HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
+        run: HAUNT_PLAYLIST_ONLY=1 HAUNT_PLAYLIST_STALL=1 HAUNT_PLAYLIST_SOAK_CYCLES=4 HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
       - name: Check cancellable laptop-only effects
         run: |
           node tests/owner_sound.cjs

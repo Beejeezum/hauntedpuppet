@@ -69,7 +69,8 @@ function tick(now){
  if(disposed)return;const v=transport.active;if(v&&(v!==lastVideo||v.currentTime!==lastTime)){activity++;lastVideo=v;lastTime=v.currentTime;lastFresh=now;}
  const wasStale=stale;stale=!!v&&now-lastFresh>1200;if(stale&&!wasStale)soundControls?.cancel();compositor.suspend(stale);
  for(const item of overlays.values())if(item.source.tagName==='VIDEO'&&item.source.currentTime!==item.lastTime){item.lastTime=item.source.currentTime;activity++;}
- if(mode==='playlist'&&director.phase==='playing'){playlist.observe(director.current,now);if(playlist.due(now))director.request(playlist.advance());}
+ if(mode==='playlist')playlist.suspend(stale||director.phase!=='playing',now);
+ if(mode==='playlist'&&!stale&&director.phase==='playing'){playlist.observe(director.current,now);if(playlist.due(now))director.request(playlist.advance());}
  if(v&&!v.loop&&v.ended&&director.phase==='playing'){compositor.blackout();director.request(mode==='manual'?'cute':nextForm());}
  else if(v&&director.phase==='playing'){
   const seconds=Number($('dwell').value)*(mode==='mostly-scary'?(director.current==='scary'?3:.5):1),due=now-formSince>=seconds*1000;

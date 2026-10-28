@@ -8,6 +8,7 @@ const assert=require('node:assert/strict');
  r.observe('scary',0);assert.equal(r.inspect().since,null);r.observe('cute',100);assert.equal(r.due(10099),false);assert.equal(r.due(10100),true);
  assert.equal(r.advance(),'scary');r.observe('scary',11000);assert.equal(r.due(16000),true);assert.equal(r.advance(),'scary');assert.equal(r.inspect().since,null,'Consecutive same-form steps get independent holds');
  r.observe('scary',17000);assert.equal(r.due(25000),true);assert.equal(r.advance(),'cute');r.stop();assert.equal(r.current(),null);assert.equal(r.due(999999),false);
+ const stalled=new PlaylistRunner();stalled.start(p,available);stalled.observe('cute',0);stalled.suspend(true,4000);assert.equal(stalled.due(100000),false,'Black/stalled time must not advance a step');stalled.suspend(false,14000);assert.equal(stalled.due(19999),false);assert.equal(stalled.due(20000),true);stalled.stop();assert.equal(stalled.inspect().paused,false);
  p.steps[0].seconds=200;assert.equal(validatePlaylist({name:'  Show  ',steps:[{cue:'cute',seconds:5}]},available).name,'Show');
  console.log('PASS playlist validation, unavailable asset rejection, preparation timing, repeated forms, wraparound and stop.');
 })().catch(e=>{console.error(e);process.exitCode=1;});

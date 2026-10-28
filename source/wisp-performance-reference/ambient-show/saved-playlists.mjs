@@ -9,13 +9,14 @@ export function validatePlaylist(value, available) {
 }
 export class PlaylistRunner {
  constructor(){this.stop();}
- start(playlist,available){this.playlist=validatePlaylist(playlist,available);this.index=0;this.since=null;return this.current().cue;}
+ start(playlist,available){this.playlist=validatePlaylist(playlist,available);this.index=0;this.since=null;this.pausedAt=null;return this.current().cue;}
  current(){return this.playlist?.steps[this.index]||null;}
  observe(cue,now){if(this.current()?.cue===cue && this.since===null)this.since=now;}
- due(now){return this.since!==null && now-this.since>=this.current().seconds*1000;}
- advance(){if(!this.playlist)return null;this.index=(this.index+1)%this.playlist.steps.length;this.since=null;return this.current().cue;}
- stop(){this.playlist=null;this.index=0;this.since=null;}
- inspect(){return {name:this.playlist?.name||null,index:this.index,step:this.current(),since:this.since};}
+ suspend(paused,now){if(this.since===null)return;if(paused&&this.pausedAt===null)this.pausedAt=now;else if(!paused&&this.pausedAt!==null){this.since+=Math.max(0,now-this.pausedAt);this.pausedAt=null;}}
+ due(now){return this.pausedAt===null&&this.since!==null && now-this.since>=this.current().seconds*1000;}
+ advance(){if(!this.playlist)return null;this.index=(this.index+1)%this.playlist.steps.length;this.since=null;this.pausedAt=null;return this.current().cue;}
+ stop(){this.playlist=null;this.index=0;this.since=null;this.pausedAt=null;}
+ inspect(){return {name:this.playlist?.name||null,index:this.index,step:this.current(),since:this.since,paused:this.pausedAt!==null};}
 }
 export function mountPlaylists(host,{clips,onRun}){
  const key='hauntedpuppet-film-playlists-v1',available=clips.map(c=>c.id);
