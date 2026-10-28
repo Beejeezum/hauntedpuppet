@@ -24,5 +24,5 @@ export class WispRigRuntime{
   this.root.position.set(180+motion.body.dx,100+motion.body.dy);this.root.rotation=motion.body.rotation;this.app.renderer.render(this.app.stage);this.current={ready:true,engine:'PixiJS 8.22.0 textured GPU rig',frames:++this.frames,motion,input:live?'webcam-performer':'autonomous-acting',vertices:v.length/2,viewAngle:angle,directional:!!directional,directionalViews:this.directionFrames?.length||0,mouth,eyes:this.eyes.inspect()};return this.canvas;
  }
  inspect(){return{...this.current,ready:this.ready,error:this.error||null};}
- destroy(){this.app?.destroy(true,{children:true,texture:true,textureSource:true});this.ready=false;}
+ destroy(){this.eyes.destroy();this.app?.destroy(true,{children:true,texture:true,textureSource:true});this.ready=false;}
 }
