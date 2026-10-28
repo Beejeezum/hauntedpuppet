@@ -4,20 +4,32 @@
     {
       "source": "source/wisp-performance-reference/button-cue-batch/review.html",
       "destination": "index.html",
-      "bytes": 2885,
-      "sha256": "1607056fb9a8447df94c3efa9a8a1d079fe87059b8ee22af8716160b44974bd8"
+      "bytes": 3346,
+      "sha256": "707fc791a62a3570ad1dc4100a7ae7e93febd1161fb52e91a00293ce390a5bff"
     },
     {
       "source": "source/wisp-performance-reference/button-cue-batch/review.mjs",
       "destination": "review.mjs",
-      "bytes": 1034,
-      "sha256": "f75282f0c9f543645e44c5d040298e57a002de21dd623e85972e047a41c62728"
+      "bytes": 3962,
+      "sha256": "a125b476aa6d9b2c6e4ac3510b710f493b19438713890053535e977a66768050"
     },
     {
       "source": "source/wisp-performance-reference/button-cue-batch/first-batch-rehearsal-v1.mp4",
       "destination": "first-batch-rehearsal-v1.mp4",
       "bytes": 2056172,
       "sha256": "c492c59e768e1fa35e5bc15290ab44a2a0c301412efd19c24977d4a28ec4ed26"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/friendly-depart-runtime-candidate-v1.mp4",
+      "destination": "friendly-depart-runtime-candidate-v1.mp4",
+      "bytes": 575720,
+      "sha256": "58d6bd30ab6540e3d7d8eb1f086fe18c2986fa85a04dc45e6cd7301c6e89c59d"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/friendly-idle-departure-review-v1.mp4",
+      "destination": "friendly-idle-departure-review-v1.mp4",
+      "bytes": 905533,
+      "sha256": "8403320f59974e9e04a584e44209737d03f3712cdfe01d52d5eb9f2f3eb21c10"
     }
   ]
 }

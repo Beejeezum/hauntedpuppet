@@ -1,3 +1,20 @@
+/** Decode a standby film without starting and immediately pausing its clock. */
+export async function waitForFilmData(video,signal){
+ await new Promise((resolve,reject)=>{
+  let timer,settled=false;
+  const cleanup=()=>{clearTimeout(timer);for(const event of ['loadeddata','canplay','canplaythrough'])video.removeEventListener(event,ready);video.removeEventListener('error',failed);signal?.removeEventListener('abort',aborted);};
+  const done=(error)=>{if(settled)return;settled=true;cleanup();error?reject(error):resolve();};
+  const ready=()=>{if(video.readyState>=3&&!video.seeking)done();};
+  const failed=()=>done(Error('Film unavailable'));
+  const aborted=()=>done(Object.assign(Error('Film preparation cancelled'),{cancelled:true}));
+  if(signal?.aborted){aborted();return;}
+  signal?.addEventListener('abort',aborted,{once:true});
+  for(const event of ['loadeddata','canplay','canplaythrough'])video.addEventListener(event,ready);
+  video.addEventListener('error',failed,{once:true});timer=setTimeout(()=>done(Error('Film did not decode standby data')),6000);
+  if(video.error)failed();else ready();
+ });
+}
+
 export async function waitForFilmFrame(video,signal){
   // Canvas sources can keep decoding after WebKit omits a presentation callback
   // on resume. Accept decoded future data with an advancing clock as a fallback;
@@ -35,9 +52,9 @@ export class FilmTransport {
   const epoch=this.prepareEpoch,abort=new AbortController(),video=this.videos.find(v=>v!==this.active);
   const job={id,abort,promise:null};this.preparing=job;
   job.promise=(async()=>{
-   video._wispPrepareEpoch=epoch;video.pause();video.muted=true;video.loop=!!clip.loop;video.src=clip.src;video.load();await this.frame(video,abort.signal);
+   video._wispPrepareEpoch=epoch;video.pause();video.muted=true;video.loop=!!clip.loop;video.src=clip.src;video.load();await waitForFilmData(video,abort.signal);
    if(epoch!==this.prepareEpoch||this.disposed)throw Object.assign(Error('Film preparation cancelled'),{cancelled:true});
-   video.pause();const prepared={id,clip,video,dispose:()=>{if(video._wispPrepareEpoch!==epoch)return;if(this.prepared===prepared)this.prepared=null;if(video!==this.active){video.pause();video.removeAttribute('src');video.load();}}};this.prepared=prepared;return prepared;
+   const prepared={id,clip,video,dispose:()=>{if(video._wispPrepareEpoch!==epoch)return;if(this.prepared===prepared)this.prepared=null;if(video!==this.active){video.pause();video.removeAttribute('src');video.load();}}};this.prepared=prepared;return prepared;
   })().finally(()=>{if(this.preparing===job)this.preparing=null;});return job.promise;
  }
  cancelPreparation(){this.prepareEpoch++;this.preparing?.abort.abort();this.preparing=null;this.prepared?.dispose();this.prepared=null;}
