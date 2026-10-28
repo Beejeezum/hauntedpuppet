@@ -1,5 +1,5 @@
 Wisp manual video cue batch 1 — selected 2026-10-27
-Status: production brief only. No new animations generated; never list as playable/ready.
+Status: three first-batch clips generated; runtime candidates under review, not ready-library assets. See per-file provenance for known defects, processing and approval scope.
 
 Common direction
 Use the approved soft painted friendly fog identity and its approved scary counterpart. One continuous full-body performance per clip, fixed camera, black background, no spoken words, captions or music. Hands, face, core and edge fog all act together. Fog is porous vapor, not solid ornamental curls. Keep a coherent lower body. Reserve at least 20% framing around every effect in generation and verify at least 15% in the export. Never crop head smoke, hands or lower fog. No arbitrary digital resizing. Depth comes from turning, perspective and travel. No cuts within the action.
@@ -21,3 +21,6 @@ User explicitly answered: Use Bruce for Wisp. Bruce1709631 is now authorized. Be
 
 2026-10-28 production result
 Friendly-wave v1 rejected: head fog crops top, missing empty lead; do not publish as ready. v2 uses wide buffered reference; numeric framing and runtime exact-black head/tail pass. Runtime candidate has unretimed native animation; only decoded-empty intervals made exact black and very quiet native SFX gained/enveloped. Complete-exit-before-next and immediateBlackout tests pass both browsers. Human movement/identity/sound review pending; no ready-library promotion. Two accepted tasks total; no blind batch. Reused human-endorsed v28 drift video without changing its compressed video stream and added a soft-air candidate soundtrack, awaiting audio/exact-file loop review.
+
+2026-10-28 first-batch update
+Human endorses wave v1 painted look and full-body acting only; known v1 framing failure remains. Scary reach and cute failed-scare are generated, with constant-framed runtime candidates and decoded soundtrack tails. Scary source outer fog was clipped; edge feather is a review treatment, not restoration. Both candidates await human acting/sound and join review. No additional paid tasks queued.

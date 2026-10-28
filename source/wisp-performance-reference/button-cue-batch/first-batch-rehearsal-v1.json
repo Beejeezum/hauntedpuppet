@@ -1,0 +1,45 @@
+{
+  "status": "review only; not final story or approved unattended show",
+  "file": "first-batch-rehearsal-v1.mp4",
+  "sha256": "c492c59e768e1fa35e5bc15290ab44a2a0c301412efd19c24977d4a28ec4ed26",
+  "sequence": [
+    {
+      "file": "friendly-wave-runtime-candidate-v2.mp4",
+      "sha256": "6ce40f478e0aec3570266dcef7cfd6dae071f8476914fd583de402babeab7b55"
+    },
+    {
+      "file": "friendly-boo-fail-runtime-candidate-v1.mp4",
+      "sha256": "4d35f8db6b482ca469acb3e1e17f07efa089a4b676dc428da3c0e6fcbad27b45"
+    },
+    {
+      "file": "scary-reach-runtime-candidate-v1.mp4",
+      "sha256": "2a003d4f575262ba20651eebf24d6e9d56c32a936533541c3e081453d4e48ecf"
+    }
+  ],
+  "joinPolicy": "Complete native performances joined at verified empty-stage ports; no crossfade between visible bodies.",
+  "manualOnlyScareIncluded": true,
+  "humanMotionAudioReview": "pending",
+  "physicalProjection": "not tested",
+  "assembly": "Audio sample-aligned per 24fps frame (2000 mono 48k samples per frame), CFR 735 frames; no body retiming.",
+  "decodedQA": {
+    "frameCount": 735,
+    "fps": 24.0,
+    "joins": [
+      {
+        "frame": 241,
+        "seconds": 10.041666666666666,
+        "exactBlackFramesBefore": 44,
+        "exactBlackFramesAfter": 14,
+        "audioPeakWithin150msEachSide": 0.0
+      },
+      {
+        "frame": 488,
+        "seconds": 20.333333333333332,
+        "exactBlackFramesBefore": 21,
+        "exactBlackFramesAfter": 12,
+        "audioPeakWithin150msEachSide": 0.0
+      }
+    ],
+    "scope": "Every output frame decoded; black adjacency and audio levels at joins. Not human motion/sound or physical projection approval."
+  }
+}
