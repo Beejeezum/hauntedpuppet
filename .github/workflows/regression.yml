@@ -4,6 +4,16 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+    inputs:
+      native_media_only:
+        description: Run only the Linux native-media diagnostic (not release acceptance)
+        type: boolean
+        default: false
+      native_audio_sink:
+        description: Linux diagnostic audio-device selection
+        type: choice
+        options: [pulse, auto]
+        default: pulse
 concurrency:
   group: regressions-${{ github.ref }}
   cancel-in-progress: true
@@ -11,6 +21,7 @@ permissions:
   contents: read
 jobs:
   regression:
+    if: github.event_name != 'workflow_dispatch' || !inputs.native_media_only
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
@@ -42,6 +53,7 @@ jobs:
           path: test-results/
           if-no-files-found: ignore
   browser-regression:
+    if: github.event_name != 'workflow_dispatch' || !inputs.native_media_only
     runs-on: ubuntu-latest
     timeout-minutes: 18
     strategy:
@@ -77,6 +89,7 @@ jobs:
           path: test-results/
           if-no-files-found: ignore
   webkit:
+    if: github.event_name != 'workflow_dispatch' || !inputs.native_media_only
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
@@ -131,6 +144,7 @@ jobs:
           path: test-results/
           if-no-files-found: ignore
   native-avatar-offline:
+    if: github.event_name != 'workflow_dispatch' || !inputs.native_media_only
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
@@ -164,6 +178,7 @@ jobs:
           if-no-files-found: ignore
 
   showdesk:
+    if: github.event_name != 'workflow_dispatch' || !inputs.native_media_only
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -285,3 +300,54 @@ jobs:
             test-results/film-complete-exit-*.json
             work/showdesk-rehearsal-*.png
           if-no-files-found: ignore
+
+  native-media-diagnostic:
+    if: github.event_name == 'workflow_dispatch' && inputs.native_media_only
+    name: Native media diagnostic (not release acceptance)
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps webkit
+      - name: Set up a clocked silent audio device
+        env:
+          DIAGNOSTIC_AUDIO_SINK: ${{ inputs.native_audio_sink }}
+        run: |
+          sudo apt-get install -y pulseaudio gstreamer1.0-pulseaudio gstreamer1.0-tools libasound2-plugins
+          pulseaudio --check || pulseaudio --start --exit-idle-time=-1
+          pactl load-module module-null-sink sink_name=wisp_ci rate=48000
+          pactl set-default-sink wisp_ci
+          pactl list short sinks
+          gst-inspect-1.0 pulsesink > /tmp/wisp-pulse-plugin.txt
+          sed -n '1,24p' /tmp/wisp-pulse-plugin.txt
+          if [ "$DIAGNOSTIC_AUDIO_SINK" = pulse ]; then
+            echo "GST_PLUGIN_FEATURE_RANK=pulsesink:MAX,pipewiresink:NONE,alsasink:NONE,oss4sink:NONE,osssink:NONE" >> "$GITHUB_ENV"
+          elif [ "$DIAGNOSTIC_AUDIO_SINK" != auto ]; then
+            exit 1
+          fi
+          echo "PULSE_SINK=wisp_ci" >> "$GITHUB_ENV"
+          echo "HAUNT_CI_SILENT_AUDIO=1" >> "$GITHUB_ENV"
+      - name: Build exact public fixtures
+        run: node tests/public_build.cjs
+      - name: Check actual native soundtrack and complete bridge
+        env:
+          DEBUG: pw:browser
+          GST_DEBUG: autoaudiosink:5,pulsesink:4,webkitmediaplayer:3
+        run: |
+          failed=0
+          HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/showdesk_film_audio.cjs || failed=1
+          HAUNT_BROWSER=webkit node tests/catalog_bridge_browser.cjs || failed=1
+          exit "$failed"
+      - name: Keep diagnostic evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-media-diagnostic
+          path: |
+            test-results/showdesk-film-audio-webkit*.json
+            test-results/catalog-bridge-webkit*.json
