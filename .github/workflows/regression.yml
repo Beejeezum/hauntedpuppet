@@ -291,6 +291,9 @@ jobs:
       - name: Check cancellable laptop-only effects
         if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
         run: |
+          node tests/owner_sound_cancel.cjs
+          node tests/owner_sound_render.cjs
+          HAUNT_BROWSER=webkit node tests/owner_sound_render.cjs
           node tests/owner_sound.cjs
           HAUNT_BROWSER=webkit HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_sound.cjs
           HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_sound.cjs
@@ -336,6 +339,8 @@ jobs:
           name: showdesk-evidence
           path: |
             test-results/showdesk-*.json
+            test-results/film-single-clock-*.json
+            test-results/owner-sound-*.json
             test-results/cue-review-*.json
             test-results/eyes-context-*.json
             test-results/catalog-*.json
@@ -412,5 +417,6 @@ jobs:
           name: native-media-diagnostic
           path: |
             test-results/showdesk-film-audio-webkit*.json
+            test-results/film-single-clock-*.json
             test-results/catalog-bridge-webkit*.json
             test-results/atlas-seek-*.json

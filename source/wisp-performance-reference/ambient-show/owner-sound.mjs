@@ -1,7 +1,7 @@
 /** Laptop-only effect playback. Nothing is created or audible until explicit enable. */
 export class OwnerSound {
- constructor(){this.context=null;this.master=null;this.buffers=new Map();this.voices=new Set();this.epoch=0;this.disposed=false;this.level=.35;}
- inspect(){return{enabled:!!this.context&&!this.disposed,contextState:this.context?.state||'not-created',voices:this.voices.size,buffers:this.buffers.size,level:this.level,disposed:this.disposed};}
+ constructor(){this.context=null;this.master=null;this.buffers=new Map();this.voices=new Set();this.retiring=new Set();this.epoch=0;this.disposed=false;this.level=.35;}
+ inspect(){return{enabled:!!this.context&&!this.disposed,contextState:this.context?.state||'not-created',voices:this.voices.size,retiring:this.retiring.size,buffers:this.buffers.size,level:this.level,disposed:this.disposed};}
  async enable(){
   if(this.disposed)throw Error('Sound disposed');
   if(!this.context){this.context=new AudioContext();this.master=this.context.createGain();this.master.gain.value=this.level;this.master.connect(this.context.destination);}
@@ -22,12 +22,26 @@ export class OwnerSound {
   const buffer=this.buffers.get(id);if(!buffer)throw Error('Effect audio unavailable');
   const source=this.context.createBufferSource(),level=this.context.createGain();source.buffer=buffer;level.gain.value=gain;source.connect(level);level.connect(this.master);
   const voice={source,level,at:this.context.currentTime+delay};this.voices.add(voice);
-  source.onended=()=>{this.voices.delete(voice);source.disconnect();level.disconnect();};source.start(voice.at);return voice;
+  source.onended=()=>this.release(voice);try{source.start(voice.at);}catch(error){this.release(voice);throw error;}return voice;
+ }
+ release(voice){
+  if(voice.released)return;voice.released=true;clearTimeout(voice.cleanupTimer);voice.cleanupTimer=null;this.voices.delete(voice);this.retiring.delete(voice);voice.source.onended=null;voice.source.disconnect();voice.level.disconnect();
  }
  cancel(){
   this.epoch++;if(!this.context)return;const now=this.context.currentTime;
-  for(const voice of this.voices){voice.level.gain.cancelScheduledValues(now);voice.level.gain.setValueAtTime(voice.at>now?0:voice.level.gain.value,now);voice.level.gain.linearRampToValueAtTime(0,now+.012);try{voice.source.stop(now+.015);}catch{} }
-  this.voices.clear();
+  for(const voice of [...this.voices]){
+   voice.level.gain.cancelScheduledValues(now);
+   if(voice.at>now){
+    // A not-yet-started effect needs no fade. Release its graph synchronously,
+    // even if the audio clock is idle or the native ended event is delayed.
+    voice.level.gain.setValueAtTime(0,now);try{voice.source.stop(0);}catch{}this.release(voice);
+   }else{
+    voice.level.gain.setValueAtTime(voice.level.gain.value,now);voice.level.gain.linearRampToValueAtTime(0,now+.012);try{voice.source.stop(now+.015);}catch{}
+    if(voice.released)continue;this.voices.delete(voice);this.retiring.add(voice);
+    // Bound resource ownership independently of native ended delivery.
+    voice.cleanupTimer=setTimeout(()=>this.release(voice),40);
+   }
+  }
  }
- async dispose(){if(this.disposed)return;this.cancel();this.disposed=true;this.buffers.clear();const context=this.context;this.context=null;this.master=null;if(context&&context.state!=='closed')await context.close();}
+ async dispose(){if(this.disposed)return;this.cancel();for(const voice of [...this.retiring])this.release(voice);this.disposed=true;this.buffers.clear();const context=this.context;this.context=null;this.master?.disconnect();this.master=null;if(context&&context.state!=='closed')await context.close();}
 }

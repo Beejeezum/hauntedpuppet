@@ -21,20 +21,22 @@ export async function waitForFilmFrame(video,signal,frameClock){
   // fallback when presentation callbacks are omitted. A Play promise is insufficient.
   await new Promise((resolve,reject)=>{
    let callback,timer,paintTask,settled=false,presentedMediaTime=-Infinity;const requestedTime=video.currentTime;
+   const observation={stage:'waiting',requestedTime,startedAt:performance.now(),prepareEpoch:video._wispPrepareEpoch??null,frameCallbacks:0,lastMetadataTime:null};video._wispFrameReadiness=observation;
+   const observe=()=>Object.assign(observation,{checkedAt:performance.now(),currentTime:video.currentTime,readyState:video.readyState,paused:video.paused,seeking:video.seeking,acceptedMediaTime:Number.isFinite(presentedMediaTime)?presentedMediaTime:null});
    const request=cb=>frameClock?frameClock.request(cb):requestAnimationFrame(cb),cancel=id=>frameClock?frameClock.cancel(id):cancelAnimationFrame(id);
    const aborted=()=>failed(Object.assign(Error('Film preparation cancelled'),{cancelled:true}));
    const cleanup=()=>{clearTimeout(timer);if(paintTask!==undefined)cancel(paintTask);if(callback!==undefined)video.cancelVideoFrameCallback?.(callback);video.removeEventListener('playing',presented);video.removeEventListener('error',failed);signal?.removeEventListener('abort',aborted);};
    // Leave the native presentation callback before the caller can pause or
    // unload another media pipeline. WebKit/GStreamer can hold drawing locks
    // through the callback's microtask checkpoint.
-   const playing=()=>{if(settled)return;settled=true;cleanup();setTimeout(resolve,0);};
-   const failed=error=>{if(settled)return;settled=true;cleanup();reject(error instanceof Error?error:Error('Film unavailable'));};
+   const playing=()=>{if(settled)return;observe();observation.stage='ready';observation.path=video.readyState>=3?'future-data':'fresh-presented-frame';settled=true;cleanup();setTimeout(resolve,0);};
+   const failed=error=>{if(settled)return;observe();observation.stage=error?.cancelled?'cancelled':'failed';observation.error=error?.message||'Film unavailable';settled=true;cleanup();reject(error instanceof Error?error:Error('Film unavailable'));};
    // A decoded, presented frame is stronger evidence than buffered-future data.
    // GStreamer may present continuous moving pictures while readyState stays2.
    // https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/requestVideoFrameCallback
    const progressing=()=>!video.paused&&!video.seeking&&video.readyState>=2&&Number.isFinite(video.currentTime)&&video.currentTime-requestedTime>=1/30;
-   const ready=()=>progressing()&&(video.readyState>=3||presentedMediaTime>=requestedTime+1/30&&presentedMediaTime<=video.currentTime+2/30);
-   const presented=(_,metadata)=>{if(settled)return;if(progressing()&&Number.isFinite(metadata?.mediaTime)&&metadata.mediaTime>=requestedTime+1/30&&metadata.mediaTime<=video.currentTime+2/30)presentedMediaTime=Math.max(presentedMediaTime,metadata.mediaTime);if(ready()){playing();return;}if(video.requestVideoFrameCallback)callback=video.requestVideoFrameCallback(presented);};
+   const ready=()=>{observe();return progressing()&&(video.readyState>=3||presentedMediaTime>=requestedTime+1/30&&presentedMediaTime<=video.currentTime+2/30);};
+   const presented=(_,metadata)=>{if(settled)return;if(Number.isFinite(metadata?.mediaTime)){observation.frameCallbacks++;observation.lastMetadataTime=metadata.mediaTime;}if(progressing()&&Number.isFinite(metadata?.mediaTime)&&metadata.mediaTime>=requestedTime+1/30&&metadata.mediaTime<=video.currentTime+2/30)presentedMediaTime=Math.max(presentedMediaTime,metadata.mediaTime);if(ready()){playing();return;}if(video.requestVideoFrameCallback)callback=video.requestVideoFrameCallback(presented);};
    const decoded=()=>{if(settled)return;if(ready()){playing();return;}paintTask=request(decoded);};
    if(signal?.aborted){aborted();return;}signal?.addEventListener('abort',aborted,{once:true});
    timer=setTimeout(()=>failed(Error('Film did not deliver a frame')),6000);video.addEventListener('error',failed,{once:true});

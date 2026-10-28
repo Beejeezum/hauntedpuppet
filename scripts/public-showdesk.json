@@ -39,9 +39,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/film-transport.mjs",
       "destination": "film-transport.mjs",
-      "sha256": "c25d5f20929399c9f013d6e1c40e2180fa99fe15ffc5921185874593a5ac6fbc",
-      "bytes": 12430,
-      "publishedSha256": "c25d5f20929399c9f013d6e1c40e2180fa99fe15ffc5921185874593a5ac6fbc"
+      "sha256": "ba9253b4dd94da24a938f090801746d5a216bc130b2568b44715390bb788df05",
+      "bytes": 13258,
+      "publishedSha256": "ba9253b4dd94da24a938f090801746d5a216bc130b2568b44715390bb788df05"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/cue-director.mjs",
@@ -74,9 +74,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/owner-sound.mjs",
       "destination": "owner-sound.mjs",
-      "sha256": "63d38e81c169ef8c8314a032c8e260d38151423f0057fa42ff00ec211f4ccbb8",
-      "bytes": 2946,
-      "publishedSha256": "63d38e81c169ef8c8314a032c8e260d38151423f0057fa42ff00ec211f4ccbb8"
+      "sha256": "17a1eee840fcb2bf58c3dd1bec08fec30266bc991a9d44993b48b79218fdc0e2",
+      "bytes": 3827,
+      "publishedSha256": "17a1eee840fcb2bf58c3dd1bec08fec30266bc991a9d44993b48b79218fdc0e2"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/owner-sound-controls.mjs",

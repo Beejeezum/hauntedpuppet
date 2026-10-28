@@ -1,0 +1,166 @@
+{
+  "status": "source-only Linux readiness stress passed; not a finished cue engine",
+  "run": "https://github.com/Beejeezum/hauntedpuppet/actions/runs/40780944628",
+  "commit": "3adde90ba9ae97d0082a4a7b3afafa65477ac5d8",
+  "nativeReport": {
+    "passed": true,
+    "masterSha256": "de832a10253bb872ec0b522d408383df2555eac43098ebf38c83d5451f5a5eca",
+    "sourceLoads": 1,
+    "comparisons": [
+      {
+        "id": "friendly-drift-A",
+        "mae": 0
+      },
+      {
+        "id": "scary-drift",
+        "mae": 0
+      },
+      {
+        "id": "cute-to-evil",
+        "mae": 0
+      },
+      {
+        "id": "scary-eyes",
+        "mae": 0
+      },
+      {
+        "id": "evil-to-cute",
+        "mae": 0
+      },
+      {
+        "id": "friendly-drift-B",
+        "mae": 0
+      },
+      {
+        "id": "scary-eyes",
+        "mae": 0
+      },
+      {
+        "id": "friendly-drift-A",
+        "mae": 0
+      }
+    ],
+    "metrics": [
+      {
+        "cue": "friendly-drift-A",
+        "targetSeconds": 0.020833333333333332,
+        "firstPictureMs": 145,
+        "totalReadyMs": 145,
+        "playing": false
+      },
+      {
+        "cue": "scary-drift",
+        "targetSeconds": 20.1875,
+        "firstPictureMs": 94,
+        "totalReadyMs": 94,
+        "playing": false
+      },
+      {
+        "cue": "cute-to-evil",
+        "targetSeconds": 5.104166666666667,
+        "firstPictureMs": 96,
+        "totalReadyMs": 96,
+        "playing": false
+      },
+      {
+        "cue": "scary-eyes",
+        "targetSeconds": 10.145833333333334,
+        "firstPictureMs": 86,
+        "totalReadyMs": 86,
+        "playing": false
+      },
+      {
+        "cue": "evil-to-cute",
+        "targetSeconds": 25.229166666666668,
+        "firstPictureMs": 86,
+        "totalReadyMs": 86,
+        "playing": false
+      },
+      {
+        "cue": "friendly-drift-B",
+        "targetSeconds": 30.270833333333332,
+        "firstPictureMs": 84,
+        "totalReadyMs": 84,
+        "playing": false
+      },
+      {
+        "cue": "scary-eyes",
+        "targetSeconds": 10.145833333333334,
+        "firstPictureMs": 76,
+        "totalReadyMs": 76,
+        "playing": false
+      },
+      {
+        "cue": "friendly-drift-A",
+        "targetSeconds": 0.020833333333333332,
+        "firstPictureMs": 69,
+        "totalReadyMs": 70,
+        "playing": false
+      },
+      {
+        "cue": "scary-drift",
+        "targetSeconds": 20.1875,
+        "firstPictureMs": 94,
+        "totalReadyMs": 250,
+        "playing": true
+      },
+      {
+        "cue": "friendly-drift-B",
+        "targetSeconds": 30.270833333333332,
+        "firstPictureMs": 83,
+        "totalReadyMs": 83,
+        "playing": false
+      },
+      {
+        "cue": "scary-eyes",
+        "targetSeconds": 10.145833333333334,
+        "firstPictureMs": 53,
+        "totalReadyMs": 53,
+        "playing": false
+      },
+      {
+        "cue": "scary-eyes",
+        "targetSeconds": 10.145833333333334,
+        "firstPictureMs": 42,
+        "totalReadyMs": 42,
+        "playing": false
+      },
+      {
+        "cue": "evil-to-cute",
+        "targetSeconds": 25.229166666666668,
+        "firstPictureMs": 80,
+        "totalReadyMs": 80,
+        "playing": false
+      }
+    ],
+    "medianFirstPictureMs": 84,
+    "maximumFirstPictureMs": 145,
+    "fivePauseRecoveries": true,
+    "initialLoadFailureCleanup": true,
+    "videoEffectRemoval": true,
+    "outputDrivenSeekWithOwnerRafSuppressed": true,
+    "staleSeekCancellation": true,
+    "failedResumeSafety": {
+      "error": "Injected resume failure",
+      "phase": "failed",
+      "muted": true,
+      "black": true,
+      "current": null
+    },
+    "lateResumeIsolation": {
+      "cancelled": true,
+      "current": "evil-to-cute",
+      "phase": "paused",
+      "black": false
+    },
+    "lostClockDeadline": {
+      "message": "Atlas paint readiness deadline",
+      "elapsedMs": 46,
+      "pending": 0
+    },
+    "scope": "Source-only native single-movie seek stress, actual paused pixels versus stream-copied same-engine native goldens, zero-volume sound audition, overlay release,5real pause/stale-black/recover cycles, silent output and Stop/disposal. Deliberate diagnostic jumps are not authored routes. No logical cue-end player, human seam/motion/voice, provider, physical projection or production migration acceptance."
+  },
+  "comparison": "Same branch multi-movie composed full regression40778491995 remains failed (6other jobs passed). Controlled single-master stress passed. Not a universal benchmark or proof of every media format.",
+  "demonstratedBenefit": "Eight exact native frame comparisonsMAE0, one main source load,145ms maximum/84ms median first-picture readiness, five real pause/recover cycles, native effect release, owner-RAF suppression, Stop/stale seek/failure cleanup.",
+  "remaining": "Logical cue end and audio boundary enforcement, reviewed routes, saved playlist/autoplay integration, live speech integration and human/physical acceptance are not implemented by this study."
+}
