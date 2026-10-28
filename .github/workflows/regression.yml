@@ -28,12 +28,50 @@ jobs:
         run: |
           python3 server.py > /tmp/wisp-server.log 2>&1 &
           python3 scripts/wait-for-server.py
-      - run: npm test
+      - name: Core service, projection and cloud regressions
+        run: |
+          node tests/browser_test_shards.cjs
+          npm run test:python
+          npm run test:projection
+          npm run test:cloud
       - name: Keep test evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: regression-evidence
+          path: test-results/
+          if-no-files-found: ignore
+  browser-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: ['1/3', '2/3', '3/3']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps chromium
+      - name: Start isolated rehearsal server
+        run: |
+          python3 server.py > /tmp/wisp-server.log 2>&1 &
+          python3 scripts/wait-for-server.py
+      - name: Run every assigned browser regression
+        env:
+          HAUNT_BROWSER_SHARD: ${{ matrix.shard }}
+        run: npm run test:browser
+      - name: Keep shard evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-regression-${{ strategy.job-index }}
           path: test-results/
           if-no-files-found: ignore
   webkit:
