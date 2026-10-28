@@ -35,9 +35,9 @@ export class FilmTransport {
   const epoch=this.prepareEpoch,abort=new AbortController(),video=this.videos.find(v=>v!==this.active);
   const job={id,abort,promise:null};this.preparing=job;
   job.promise=(async()=>{
-   video.pause();video.muted=true;video.loop=!!clip.loop;video.src=clip.src;video.load();await this.frame(video,abort.signal);
+   video._wispPrepareEpoch=epoch;video.pause();video.muted=true;video.loop=!!clip.loop;video.src=clip.src;video.load();await this.frame(video,abort.signal);
    if(epoch!==this.prepareEpoch||this.disposed)throw Object.assign(Error('Film preparation cancelled'),{cancelled:true});
-   video.pause();const prepared={id,clip,video,dispose:()=>{if(this.prepared===prepared)this.prepared=null;if(video!==this.active){video.pause();video.removeAttribute('src');video.load();}}};this.prepared=prepared;return prepared;
+   video.pause();const prepared={id,clip,video,dispose:()=>{if(video._wispPrepareEpoch!==epoch)return;if(this.prepared===prepared)this.prepared=null;if(video!==this.active){video.pause();video.removeAttribute('src');video.load();}}};this.prepared=prepared;return prepared;
   })().finally(()=>{if(this.preparing===job)this.preparing=null;});return job.promise;
  }
  cancelPreparation(){this.prepareEpoch++;this.preparing?.abort.abort();this.preparing=null;this.prepared?.dispose();this.prepared=null;}

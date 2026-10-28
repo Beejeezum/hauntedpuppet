@@ -6,15 +6,15 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
  assert.equal(catalog.clips.length,16);assert.equal(new Set(catalog.clips.map(c=>c.id)).size,16);
  assert.equal(catalog.deferredClips.length,16);assert(catalog.deferredClips.every(c=>!catalog.clips.some(a=>a.id===c.id)));
  for(const show of catalog.shows)assert(show.clipIds.every(id=>catalog.clips.some(c=>c.id===id&&!c.manualOnly)),'Active show references only active non-manual cues');
- assert(catalog.clips.every(c=>c.dialogue===false&&c.status==='planned'&&c.media===null));
- assert.throws(()=>planShow(catalog,catalog.shows[0].id),/Unavailable/);
+ assert(catalog.clips.every(c=>c.dialogue===false&&(c.status==='planned'?c.media===null:c.status==='approved'&&c.media?.file&&/^[a-f0-9]{64}$/.test(c.media.sha256))));
+ if(catalog.shows[0].clipIds.some(id=>catalog.clips.find(c=>c.id===id)?.status!=='approved'))assert.throws(()=>planShow(catalog,catalog.shows[0].id),/Unavailable/);
  for(const study of catalog.productionStudies.filter(s=>s.evidence)){
   const mediaPath=path.resolve(root,study.media),evidence=JSON.parse(fs.readFileSync(path.resolve(root,study.evidence),'utf8'));
   assert.equal(require('node:crypto').createHash('sha256').update(fs.readFileSync(mediaPath)).digest('hex'),study.sha256,'Candidate bytes must match the tracked record');
   assert.equal(evidence.sha256,study.sha256);assert.equal(study.status,'human-review-pending');
   assert.equal(evidence.humanReview,'pending');assert(evidence.emptyStartFrames/evidence.fps>=.5&&evidence.emptyEndFrames/evidence.fps>=.5);
   assert(evidence.audioTailSilenceSeconds>=.5);assert.equal(evidence.audio.lastHalfSecondPeak,0);
-  assert.equal(catalog.clips.find(c=>c.id===study.plannedClipIds[0]).status,'planned','Candidate evidence must not promote an unapproved slot');
+  assert(catalog.clips.some(c=>c.id===study.plannedClipIds[0]),'Candidate evidence must reference an active inventory slot');
  }
 
  const film=(id,entry='rest',exit='rest')=>({id,status:'approved',dialogue:false,entryPort:entry,exitPort:exit,media:{file:id+'.mp4',sha256:id.repeat(64).slice(0,64),reviewEvidence:'synthetic test only'}});
@@ -47,5 +47,11 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
  c.manualOnly=false;assert.equal(planShow(bridged,'loop').transitions[0].bridge,'c');
  b.manualOnly=true;assert.throws(()=>planShow(tiny,'loop'),/Unavailable/,'Manual scares cannot enter ambient playlist');
  b.manualOnly=false;b.dialogue=true;assert.throws(()=>planJoin(a,b),/Unreviewed/,'Ambient films cannot include speech');
- console.log('PASS: 16 active silent planned cards; exact-media join reviews, authored bridges, verified empty-stage boundaries, closing seam, no automatic scare or dialogue. Planner scenarios use synthetic approvals; candidate hashes/evidence checked against real tracked files. No new human approval or media decode claimed here.');
+ const friendly=Object.assign(film('a','friendly-rest','friendly-rest'),{form:'friendly'}),depart=Object.assign(film('b','friendly-rest','empty'),{form:'friendly',bridgeEligible:true}),arrival=Object.assign(film('c','empty','scary-rest'),{form:'transition'}),haunt=Object.assign(film('d','scary-rest','scary-rest'),{form:'scary'});
+ for(const c of [depart,arrival])Object.assign(c.media,{fps:24,frameCount:240,emptyEndFrames:12,emptyStartFrames:12,audioTailSilenceSeconds:.5});
+ const chained=planJoin(friendly,haunt,{joins:[join(friendly,depart),join(arrival,haunt)],bridges:[depart,arrival]});assert.deepEqual(chained.sequence,['b','c'],'Reviewed departure, black port and arrival may form a two-film bridge');
+ arrival.manualOnly=true;assert.throws(()=>planJoin(friendly,haunt,{joins:[join(friendly,depart),join(arrival,haunt)],bridges:[depart,arrival]}),/No reviewed/);arrival.manualOnly=false;
+ const friendlyEnd=Object.assign(film('d','friendly-rest','friendly-rest'),{form:'friendly'}),outMorph=Object.assign(film('e','friendly-rest','scary-rest'),{form:'transition'}),back=Object.assign(film('f','scary-rest','friendly-rest'),{form:'transition'});
+ assert.throws(()=>planJoin(friendly,friendlyEnd,{joins:[join(friendly,outMorph),join(outMorph,back),join(back,friendlyEnd)],bridges:[outMorph,back]}),/No reviewed/,'Friendly-to-friendly routing cannot introduce a hidden scary excursion');
+ console.log('PASS: 16 active silent cue slots; exact-media join reviews, authored bridges, verified empty-stage boundaries, closing seam, no automatic scare or dialogue. Planner scenarios use synthetic approvals; candidate hashes/evidence checked against real tracked files. No new human approval or media decode claimed here.');
 })().catch(e=>{console.error(e);process.exitCode=1;});

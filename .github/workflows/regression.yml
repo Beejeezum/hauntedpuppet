@@ -165,7 +165,7 @@ jobs:
 
   showdesk:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -207,6 +207,8 @@ jobs:
         run: |
           node tests/cue_director.cjs
           node tests/catalog_director.cjs
+          node tests/runtime_library.cjs
+          node tests/catalog_remote.cjs
           node tests/film_transport_readiness.cjs
           node tests/ambient_show_plan.cjs
           node tests/wisp_library_publication.cjs
@@ -217,6 +219,12 @@ jobs:
           mkdir -p work
           HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
           DEBUG=pw:browser HAUNT_BROWSER=webkit HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
+      - name: Rehearse approved-catalog controls with synthetic approvals
+        run: |
+          node tests/catalog_desk.cjs
+          HAUNT_BROWSER=webkit node tests/catalog_desk.cjs
+          node tests/catalog_bridge_browser.cjs
+          HAUNT_BROWSER=webkit node tests/catalog_bridge_browser.cjs
       - name: Repeat saved playlist closing boundaries in real time
         run: HAUNT_PLAYLIST_ONLY=1 HAUNT_PLAYLIST_STALL=1 HAUNT_PLAYLIST_SOAK_CYCLES=4 HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
       - name: Check opt-in embedded film soundtracks with silent test sinks
@@ -263,6 +271,7 @@ jobs:
           name: showdesk-evidence
           path: |
             test-results/showdesk-*.json
+            test-results/catalog-*.json
             test-results/film-phone-cloud*
             test-results/stage-geometry*
             test-results/workspace-entry*

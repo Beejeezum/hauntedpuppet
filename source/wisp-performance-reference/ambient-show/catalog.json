@@ -47,7 +47,8 @@
       "dialogue": false,
       "audioIntent": "soft air only",
       "manualOnly": false,
-      "media": null
+      "media": null,
+      "bridgeEligible": false
     },
     {
       "id": "friendly-wave",
@@ -63,7 +64,8 @@
       "manualOnly": false,
       "media": null,
       "productionBrief": "../button-cue-batch/production-brief.txt",
-      "transitionRequirement": "At least 0.5 seconds exact black and finished sound tails at each end; no visible-body crossfade; complete one-shot performance."
+      "transitionRequirement": "At least 0.5 seconds exact black and finished sound tails at each end; no visible-body crossfade; complete one-shot performance.",
+      "bridgeEligible": false
     },
     {
       "id": "friendly-boo-fail",
@@ -79,7 +81,8 @@
       "manualOnly": false,
       "media": null,
       "productionBrief": "../button-cue-batch/production-brief.txt",
-      "transitionRequirement": "At least 0.5 seconds exact black and finished sound tails at each end; no visible-body crossfade; complete one-shot performance."
+      "transitionRequirement": "At least 0.5 seconds exact black and finished sound tails at each end; no visible-body crossfade; complete one-shot performance.",
+      "bridgeEligible": false
     },
     {
       "id": "friendly-depart",
@@ -93,7 +96,8 @@
       "dialogue": false,
       "audioIntent": "receding airy trail",
       "manualOnly": false,
-      "media": null
+      "media": null,
+      "bridgeEligible": true
     },
     {
       "id": "friendly-reform",
@@ -107,7 +111,8 @@
       "dialogue": false,
       "audioIntent": "warm localized fog poof",
       "manualOnly": false,
-      "media": null
+      "media": null,
+      "bridgeEligible": true
     },
     {
       "id": "scary-drift",
@@ -121,7 +126,8 @@
       "dialogue": false,
       "audioIntent": "very low breathing wind; no voice",
       "manualOnly": false,
-      "media": null
+      "media": null,
+      "bridgeEligible": false
     },
     {
       "id": "scary-pace",
@@ -135,7 +141,8 @@
       "dialogue": false,
       "audioIntent": "two drifting air passes",
       "manualOnly": false,
-      "media": null
+      "media": null,
+      "bridgeEligible": false
     },
     {
       "id": "scary-reach",
@@ -151,7 +158,8 @@
       "manualOnly": true,
       "media": null,
       "productionBrief": "../button-cue-batch/production-brief.txt",
-      "transitionRequirement": "At least 0.5 seconds exact black and finished sound tails at each end; no visible-body crossfade; complete one-shot performance."
+      "transitionRequirement": "At least 0.5 seconds exact black and finished sound tails at each end; no visible-body crossfade; complete one-shot performance.",
+      "bridgeEligible": false
     },
     {
       "id": "scary-eyes",
@@ -165,7 +173,8 @@
       "dialogue": false,
       "audioIntent": "body exhale; restrained reform swell",
       "manualOnly": false,
-      "media": null
+      "media": null,
+      "bridgeEligible": false
     },
     {
       "id": "scary-retreat",
@@ -179,7 +188,8 @@
       "dialogue": false,
       "audioIntent": "receding wind",
       "manualOnly": false,
-      "media": null
+      "media": null,
+      "bridgeEligible": true
     },
     {
       "id": "scary-fakeout",
@@ -193,7 +203,8 @@
       "dialogue": false,
       "audioIntent": "restrained rise that deliberately releases",
       "manualOnly": false,
-      "media": null
+      "media": null,
+      "bridgeEligible": false
     },
     {
       "id": "scary-reform",
@@ -207,7 +218,8 @@
       "dialogue": false,
       "audioIntent": "low fog poof",
       "manualOnly": false,
-      "media": null
+      "media": null,
+      "bridgeEligible": true
     },
     {
       "id": "cute-to-evil",
@@ -221,7 +233,8 @@
       "dialogue": false,
       "audioIntent": "low transformation bloom; no voice",
       "manualOnly": false,
-      "media": null
+      "media": null,
+      "bridgeEligible": true
     },
     {
       "id": "evil-to-cute",
@@ -235,7 +248,8 @@
       "dialogue": false,
       "audioIntent": "tension releases into a warm airy chime",
       "manualOnly": false,
-      "media": null
+      "media": null,
+      "bridgeEligible": true
     },
     {
       "id": "fog-lettering",
@@ -250,7 +264,8 @@
       "audioIntent": "airy letter formation with delicate ghostly shimmer; no voice",
       "manualOnly": false,
       "media": null,
-      "productionChoreography": "atmosphere-scenes.json#fog-lettering"
+      "productionChoreography": "atmosphere-scenes.json#fog-lettering",
+      "bridgeEligible": false
     },
     {
       "id": "bats-through-letters",
@@ -265,7 +280,8 @@
       "audioIntent": "restrained wing flutters, a wide airy pass and soft dissipating shimmer",
       "manualOnly": false,
       "media": null,
-      "productionChoreography": "atmosphere-scenes.json#bats-through-letters"
+      "productionChoreography": "atmosphere-scenes.json#bats-through-letters",
+      "bridgeEligible": false
     }
   ],
   "reviewedJoins": [],

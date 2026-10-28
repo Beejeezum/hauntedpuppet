@@ -1,0 +1,12 @@
+const assert=require('node:assert/strict');
+(async()=>{const {validateRuntime,ProgramPicker,cueForm}=await import('../source/wisp-performance-reference/ambient-show/runtime-library.mjs');
+ const clip=(id,form,manualOnly=false)=>({id,title:id,form,manualOnly,src:'./'+id+'-'+'a'.repeat(12)+'.mp4',sha256:'a'.repeat(64),loop:false,entryPort:'empty',exitPort:'empty',exitPolicy:'finish'});
+ const clips=[clip('wave','friendly'),clip('drift','friendly'),clip('haunt','scary'),clip('reach','scary',true)],library={schema:1,clips,routes:clips.flatMap(a=>clips.map(b=>({from:a.id,to:b.id,kind:'empty-stage',minimumBlackMs:500})))};
+ validateRuntime(library);const p=new ProgramPicker(library);for(const mode of ['cute','scary','alternate','mostly-scary'])p.assertMode(mode);
+ assert.equal(p.pick('friendly',null),'wave');assert.equal(p.pick('friendly','wave'),'drift');assert.equal(p.pick('friendly','drift'),'wave');for(let n=0;n<20;n++)assert.equal(p.pick('scary','wave'),'haunt','Operator-only reach must never enter automatic selection');
+ assert.throws(()=>p.assertMode('unreviewed-mode'));assert.equal(cueForm({form:'transition',exitPort:'scary-rest'}),'scary');assert.throws(()=>validateRuntime({...library,clips:[{...clips[0],src:'https://example.com/unreviewed.mp4'}]}));assert.throws(()=>validateRuntime({...library,clips:[{...clips[0],src:'/source/wisp-performance-reference/../private.mp4'}]}));
+ const partial=new ProgramPicker({...library,routes:library.routes.filter(r=>!(r.from==='wave'&&r.to==='drift'))});assert.throws(()=>partial.assertMode('cute'),/transitions/,'One outgoing path does not prove complete automatic cue coverage');
+ const disconnected=new ProgramPicker({...library,routes:[]});assert.throws(()=>disconnected.assertMode('alternate'),/transitions/);assert.throws(()=>disconnected.pick('friendly','haunt'),/destination/);
+ assert.throws(()=>validateRuntime({...library,routes:[{from:'wave',to:'haunt',kind:'empty-stage',minimumBlackMs:Infinity}]}));
+ console.log('PASS catalog shape/source validation, same-form variety, compatible routing, mode readiness and manual-scare exclusion. Synthetic metadata only.');
+})().catch(e=>{console.error(e);process.exitCode=1});

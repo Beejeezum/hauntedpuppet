@@ -21,18 +21,27 @@ function silentTail(media) {
   const seconds = media.audioTailSilenceSeconds;
   return Number.isFinite(seconds) && seconds >= .5 && seconds <= media.frameCount / media.fps;
 }
-export function planJoin(from, to, {joins = [], bridges = []} = {}) {
-  if (!ready(from) || !ready(to)) throw Error('Unreviewed or missing silent film');
-  // Empty-frame review is tied to the exact media hash through its approved record.
-  if (from.exitPort === 'empty' && to.entryPort === 'empty' &&
-      emptySeconds(from.media, 'emptyEndFrames') >= .5 &&
-      emptySeconds(to.media, 'emptyStartFrames') >= .5 && silentTail(from.media)) {
-    return {kind: 'empty-stage', from: from.id, to: to.id, minimumBlackMs: 500};
-  }
-  if (reviewed(from, to, joins)) return {kind: 'reviewed-cut', from: from.id, to: to.id};
-  const bridge = bridges.find(b => ready(b) && reviewed(from, b, joins) && reviewed(b, to, joins));
-  if (bridge) return {kind: 'authored-bridge', from: from.id, bridge: bridge.id, to: to.id};
-  throw Error(`No reviewed transition: ${from.id} → ${to.id}`);
+function directJoin(from,to,joins){
+ if(from.exitPort==='empty'&&to.entryPort==='empty'&&emptySeconds(from.media,'emptyEndFrames')>=.5&&emptySeconds(to.media,'emptyStartFrames')>=.5&&silentTail(from.media))return{kind:'empty-stage',from:from.id,to:to.id,minimumBlackMs:500};
+ if(reviewed(from,to,joins))return{kind:'reviewed-cut',from:from.id,to:to.id};
+ return null;
+}
+const portForm=port=>port?.startsWith('friendly-')?'friendly':port?.startsWith('scary-')?'scary':null;
+function characterForms(clip){return new Set([clip.form==='friendly'||clip.form==='scary'?clip.form:null,portForm(clip.entryPort),portForm(clip.exitPort)].filter(Boolean));}
+export function planJoin(from,to,{joins=[],bridges=[]}={}){
+ if(!ready(from)||!ready(to))throw Error('Unreviewed or missing silent film');
+ const direct=directJoin(from,to,joins);if(direct)return direct;
+ // A same-form request may disappear/reappear, but may not smuggle the other
+ // character into its bridge. An explicit cross-form request permits both.
+ const allowed=new Set([portForm(from.exitPort),...characterForms(to)].filter(Boolean));
+ const candidates=bridges.filter(b=>ready(b)&&!b.manualOnly&&[...characterForms(b)].every(form=>allowed.has(form)));
+ const queue=[{clip:from,path:[]}],visited=new Set([from.id]);
+ for(let i=0;i<queue.length;i++){
+  const current=queue[i];
+  if(current.path.length&&directJoin(current.clip,to,joins))return{kind:'authored-bridge',from:from.id,to:to.id,bridge:current.path[0],sequence:current.path};
+  for(const bridge of candidates){if(visited.has(bridge.id)||bridge.id===to.id||!directJoin(current.clip,bridge,joins))continue;visited.add(bridge.id);queue.push({clip:bridge,path:[...current.path,bridge.id]});}
+ }
+ throw Error(`No reviewed transition: ${from.id} → ${to.id}`);
 }
 export function planShow(catalog, showId) {
   const show = catalog.shows.find(s => s.id === showId);
@@ -43,7 +52,7 @@ export function planShow(catalog, showId) {
     return clip;
   });
   const transitions = clips.map((clip, i) => planJoin(clip, clips[(i + 1) % clips.length], {
-    joins: catalog.reviewedJoins, bridges: catalog.clips.filter(c => c.form === 'transition' && !c.manualOnly)
+    joins: catalog.reviewedJoins, bridges: catalog.clips.filter(c => (c.form === 'transition'||c.bridgeEligible) && !c.manualOnly)
   }));
   return {id: show.id, clips: clips.map(c => c.id), transitions};
 }

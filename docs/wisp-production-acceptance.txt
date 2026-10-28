@@ -49,3 +49,15 @@ For an approved clip, record decoded fps and frameCount alongside integer exact-
 
 CANDIDATE PLAYBACK CYCLES — 2026-10-28
 The strict-exit test now finishes the scary clip and returns to the opening wave before testing Blackout. HAUNT_CUE_CYCLES=3 runs three complete wave/comic/scary cycles. Local Chromium completed nine actual media EOS events over97.763seconds with a fixed two-video fixture and immediate cancellation afterward. This is decoded-media transport evidence using a test compositor, not full-scene rendered seam review, human sound approval, physical projection or an overnight soak.
+
+CATALOG RUNTIME INTEGRATION — 2026-10-28
+The show desk now consumes playback-library.json. Public builds compile explicit approvals with hash-checked immutable movie filenames; local preview metadata is refreshed with node scripts/export-wisp-library.cjs after an approval record changes. The source preview export must match the compiler. An empty valid catalog preserves the original two-study workspace; malformed/unavailable metadata leaves a black, disabled stage.
+
+Approved cue buttons use the catalog director, including reviewed cuts and authored bridges. Automatic modes select compatible non-manual films, preserve same-form timing across different films, and reject incomplete transition graphs. Saved playlists exclude operator-only scares and validate every boundary, closing boundary and required repeat before starting. Existing cute/scary study IDs migrate to ordinary catalog entries when available; saved-show selection persists across reload. Phone commands expose the same bounded cue IDs while preserving legacy welcome/scary aliases.
+
+Connected-desk browser tests use synthetic approval records with real MP4s, including a reused scary file tagged differently solely as a controls fixture. They do not approve source art, sound or a production scare policy. Human visual/voice and physical projection gates remain open.
+
+Reusable bridges are explicitly marked bridgeEligible (departures, arrivals and morphs). The planner may chain a reviewed departure, verified black boundary and reviewed arrival; it cannot use manual scares as hidden bridges or insert a scary excursion into a same-friendly request. Both bridge movies play completely, and an arrival after black is faded up before its performance continues. Atmosphere is a supported cue type for lettering and bats.
+
+CANCELLATION OWNERSHIP — 2026-10-28
+Requests queued at pump completion wait for the new destination; Stop followed by an immediate cue starts a new epoch without waiting for an old decode. Completion from that old decode cannot clear the current job. Prepared-video disposal checks assignment ownership so a stale handle cannot unload a newer standby movie. Synthetic regression cases pass. Actual candidate-media bridge/compositor tests pass in local Chromium and WebKit, including visible arrival after black, complete EOS performances, fixed two-video allocation and Blackout. This is transport evidence with synthetic approval labels, not approved artistic seams or physical projection. The separate legacy Linux embedded-film-audio failure remains unresolved.
