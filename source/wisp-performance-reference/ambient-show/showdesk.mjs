@@ -16,7 +16,7 @@ const transport=new FilmTransport(compositor,clips,{mediaHost:$('mediaSources')}
 let soundControls,operatorControls;const playlist=new PlaylistRunner();
 const labels={stopped:'Stage black',preparing:'Preparing next cue',exiting:'Planned exit','empty-stage':'Empty stage · planned transition',entering:'Planned entrance',playing:'On stage',unavailable:'Film unavailable · stage black'};
 const director=new CueDirector(transport,{fadeMs:900,onState:s=>{
- if(s.phase!=='playing')soundControls?.cancel();
+ if(s.phase!=='playing')soundControls?.cancel();if(['stopped','unavailable'].includes(s.phase))$('filmSound').checked=false;
  $('status').textContent=labels[s.phase]+(s.current?' · '+clips.find(c=>c.id===s.current)?.title:'');$('queue').textContent=s.queued?'Queued · '+clips.find(c=>c.id===s.queued)?.title:'No cue queued';
  for(const b of $('cues').querySelectorAll('button'))b.setAttribute('aria-pressed',String(b.dataset.cue===s.current));
  if(s.phase==='playing'&&mode==='playlist'){const state=playlist.inspect(),steps=playlist.playlist.steps;transport.preload(steps[(state.index+1)%steps.length].cue);}
@@ -60,6 +60,7 @@ for(const clip of clips){const b=document.createElement('button');b.dataset.cue=
 function chooseCue(id){playlist.stop();mode='manual';$('mode').value=mode;timing();if(director.current===id&&director.phase==='playing')return Promise.resolve();return director.request(id);}
 function startProgram(selected){playlist.stop();mode=selected;$('mode').value=mode;timing();lastForm=null;formSince=performance.now();const id=['scary','mostly-scary'].includes(mode)?'scary':'cute';if(director.current===id&&director.phase==='playing')return Promise.resolve();return director.request(id);}
 mountPlaylists(document.querySelector('main>aside'),{clips,onRun:p=>{const id=playlist.start(p,clips.map(c=>c.id));mode='playlist';$('mode').value='playlist';$('programTiming').textContent='Repeating playlist · '+p.name;lastForm=null;formSince=performance.now();director.request(id);}});
+$('filmSound').onchange=()=>transport.setSound($('filmSound').checked,Number($('filmLevel').value)/100);$('filmLevel').oninput=()=>transport.setSound($('filmSound').checked,Number($('filmLevel').value)/100);
 $('start').onclick=()=>{$('mode').value==='playlist'?document.querySelector('[data-run]').click():startProgram($('mode').value);};
 function timing(){const n=Number($('dwell').value),selected=$('mode').value;$('dwellValue').textContent=n+'s';$('programTiming').textContent=selected==='playlist'?'Repeating playlist · '+(playlist.inspect().name||'saved show'):selected==='manual'?'Manual cueing · no automatic form changes':selected==='mostly-scary'?`Scary ${n*3}s · cute ${n*.5}s`:selected==='alternate'?`Cute ${n}s · scary ${n}s`:`${selected==='cute'?'Friendly':'Scary'} only · no automatic form changes`;}
 $('dwell').oninput=timing;$('mode').onchange=timing;$('pace').onchange=()=>{director.fadeMs=Number($('pace').value);};
@@ -67,7 +68,7 @@ $('blackout').onclick=stop;document.addEventListener('keydown',e=>{if(e.key==='E
 function nextForm(){if(mode==='playlist')return playlist.current().cue;if(mode==='cute')return'cute';if(mode==='scary')return'scary';return director.current==='cute'?'scary':'cute';}
 function tick(now){
  if(disposed)return;const v=transport.active;if(v&&(v!==lastVideo||v.currentTime!==lastTime)){activity++;lastVideo=v;lastTime=v.currentTime;lastFresh=now;}
- const wasStale=stale;stale=!!v&&now-lastFresh>1200;if(stale&&!wasStale)soundControls?.cancel();compositor.suspend(stale);
+ const wasStale=stale;stale=!!v&&now-lastFresh>1200;if(stale&&!wasStale)soundControls?.cancel();compositor.suspend(stale);transport.suspendSound(stale);
  for(const item of overlays.values())if(item.source.tagName==='VIDEO'&&item.source.currentTime!==item.lastTime){item.lastTime=item.source.currentTime;activity++;}
  if(mode==='playlist')playlist.suspend(stale||director.phase!=='playing',now);
  if(mode==='playlist'&&!stale&&director.phase==='playing'){playlist.observe(director.current,now);if(playlist.due(now))director.request(playlist.advance());}
@@ -82,7 +83,7 @@ function tick(now){
 }
 refreshLayers();tick(performance.now());
 soundControls=mountOwnerSound(document.querySelector('main>aside'),{canPlay:()=>!disposed&&!stale&&!compositor.black&&director.phase==='playing'});
-const inspectDesk=()=>({director:director.inspect(),composition:compositor.inspect(),mode,playlist:playlist.inspect(),preparation:{ready:transport.prepared?.id||null,pending:transport.preparing?.id||null},media:transport.videos.map(v=>({muted:v.muted,paused:v.paused,cue:v.dataset.cue||null,currentTime:v.currentTime,loop:v.loop})),effects:overlays.size,sound:soundControls.inspect(),operator:operatorControls?.inspect()||null});
+const inspectDesk=()=>({director:director.inspect(),composition:compositor.inspect(),mode,playlist:playlist.inspect(),filmSound:transport.inspectSound(),preparation:{ready:transport.prepared?.id||null,pending:transport.preparing?.id||null},media:transport.videos.map(v=>({muted:v.muted,paused:v.paused,cue:v.dataset.cue||null,currentTime:v.currentTime,loop:v.loop})),effects:overlays.size,sound:soundControls.inspect(),operator:operatorControls?.inspect()||null});
 const remote=createFilmRemote({chooseCue,startProgram,stop,inspect:inspectDesk});
 window.WispDesk={inspect:inspectDesk,...remote};
 const phoneRemote={remoteState:remote.remoteState,remoteCommand:(...args)=>{const access=operatorControls?.inspect();if(access?.cloud&&(!access.authenticated||access.busy||access.disposed))return Promise.reject(Object.assign(Error('Operator sign-in required'),{cancelled:true}));return remote.remoteCommand(...args);}};

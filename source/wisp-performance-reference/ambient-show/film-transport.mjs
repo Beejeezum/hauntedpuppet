@@ -17,10 +17,15 @@ export async function waitForFilmFrame(video,signal){
   });
  }
 
-/** Laptop-only muted media. The compositor is the sole picture sent to output. */
+/** Laptop-only media; sound requires an explicit operator enable. The compositor is the sole picture sent to output. */
 export class FilmTransport {
- constructor(compositor,clips,{mediaHost}={}){this.compositor=compositor;this.clips=clips;this.active=null;this.videos=[document.createElement('video'),document.createElement('video')];this.disposed=false;this.prepared=null;this.preparing=null;this.prepareEpoch=0;for(const v of this.videos){v.muted=true;v.playsInline=true;v.preload='auto';v.setAttribute('aria-hidden','true');v.className='source-preview';v.title='Muted film preview';mediaHost?.append(v);}compositor.add({id:'character',source:()=>this.active,kind:'character'});}
+ constructor(compositor,clips,{mediaHost}={}){this.compositor=compositor;this.clips=clips;this.active=null;this.videos=[document.createElement('video'),document.createElement('video')];this.disposed=false;this.prepared=null;this.preparing=null;this.prepareEpoch=0;this.soundEnabled=false;this.soundLevel=.5;this.soundSuspended=false;for(const v of this.videos){v.muted=true;v.playsInline=true;v.preload='auto';v.setAttribute('aria-hidden','true');v.className='source-preview';v.title='Laptop film source';mediaHost?.append(v);}compositor.add({id:'character',source:()=>this.active,kind:'character'});}
  frame(video,signal){return waitForFilmFrame(video,signal);}
+ setSound(enabled,level=this.soundLevel){if(typeof enabled!=='boolean'||!Number.isFinite(level)||level<0||level>1)throw Error('Invalid film sound settings');this.soundEnabled=enabled&&!this.disposed;this.soundLevel=level;this.syncSound();}
+ suspendSound(suspended){this.soundSuspended=!!suspended;this.syncSound();}
+ syncSound(){for(const v of this.videos){v.volume=this.soundLevel*Math.max(0,Math.min(1,this.compositor.level??1));v.muted=!this.soundEnabled||this.soundSuspended||v!==this.active||!!this.compositor.black;}}
+ inspectSound(){return{enabled:this.soundEnabled,level:this.soundLevel,suspended:this.soundSuspended,audibleSources:this.videos.filter(v=>!v.muted&&!v.paused&&v.volume>0).length};}
+
  prepare(id){
   if(this.disposed)return Promise.reject(Error('Film transport disposed'));
   if(this.prepared?.id===id&&this.prepared.video!==this.active)return Promise.resolve(this.prepared);
@@ -37,9 +42,9 @@ export class FilmTransport {
  cancelPreparation(){this.prepareEpoch++;this.preparing?.abort.abort();this.preparing=null;this.prepared?.dispose();this.prepared=null;}
  preload(id){return this.prepare(id).then(()=>true).catch(()=>false);}
 
- async activate(prepared,live){const previous=this.active;await this.frame(prepared.video);if(!live())return;this.active=prepared.video;if(this.prepared===prepared)this.prepared=null;this.active.dataset.cue=prepared.id;this.compositor.reveal();if(previous&&previous!==this.active){previous.pause();previous.removeAttribute('src');previous.load();}}
- fade(target,ms,live){const start=this.compositor.level,at=performance.now();return new Promise(resolve=>{const tick=now=>{if(!live()){resolve();return;}const t=Math.min(1,(now-at)/Math.max(1,ms)),ease=t*t*(3-2*t);this.compositor.setLevel(start+(target-start)*ease);if(t<1)requestAnimationFrame(tick);else resolve();};requestAnimationFrame(tick);});}
+ async activate(prepared,live){const previous=this.active;await this.frame(prepared.video);if(!live())return;this.active=prepared.video;if(this.prepared===prepared)this.prepared=null;this.active.dataset.cue=prepared.id;this.compositor.reveal();this.syncSound();if(previous&&previous!==this.active){previous.pause();previous.removeAttribute('src');previous.load();}}
+ fade(target,ms,live){const start=this.compositor.level,at=performance.now();return new Promise(resolve=>{const tick=now=>{if(!live()){resolve();return;}const t=Math.min(1,(now-at)/Math.max(1,ms)),ease=t*t*(3-2*t);this.compositor.setLevel(start+(target-start)*ease);this.syncSound();if(t<1)requestAnimationFrame(tick);else resolve();};requestAnimationFrame(tick);});}
  hold(ms,live){const at=performance.now();return new Promise(resolve=>{const tick=now=>{if(!live()||now-at>=ms)resolve();else requestAnimationFrame(tick);};requestAnimationFrame(tick);});}
- blackout(){this.cancelPreparation();this.active=null;this.compositor.setLevel(0);this.compositor.blackout();for(const v of this.videos){v.pause();v.muted=true;}}
+ blackout(){this.soundEnabled=false;this.cancelPreparation();this.active=null;this.compositor.setLevel(0);this.compositor.blackout();for(const v of this.videos){v.pause();v.muted=true;}}
  dispose(){this.blackout();this.disposed=true;for(const v of this.videos){v.removeAttribute('src');v.load();v.remove();}}
 }
