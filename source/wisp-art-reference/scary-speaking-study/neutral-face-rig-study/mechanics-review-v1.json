@@ -1,0 +1,168 @@
+{
+  "status": "source-only mechanics candidate; unfinished speech art, no runtime integration or human approval",
+  "sourceSha256": {
+    "face-topology.json": "3a0b660a5a9a898579edb30157a2e0b01e6555af2b37db85c668816d59a5c4ac",
+    "neutral-face-rig.mjs": "6c548520675b34f114a037eb47f9a6d1812c5cd7085f771efa7d09ba1a8a363c",
+    "index.html": "caa4fe7eddb360541eefd1998a71b9506b4ce7afc870352976ddbb37701bc28b"
+  },
+  "referenceSha256": "1f1bc12a36644b3c0d372d86535d229987194862574fd3e545b4155703713888",
+  "browserResults": {
+    "chromium": {
+      "passed": true,
+      "states": [
+        {
+          "name": "rest",
+          "changed": 0,
+          "outside": 0,
+          "irisChanges": 0,
+          "ready": true,
+          "disposed": false,
+          "vertices": 34417,
+          "minimumTriangleAreaRatio": 1,
+          "maxLipGapError": 0,
+          "state": {
+            "open": 0,
+            "round": 0,
+            "wide": 0
+          }
+        },
+        {
+          "name": "AH",
+          "changed": 5226,
+          "outside": 0,
+          "irisChanges": 0,
+          "ready": true,
+          "disposed": false,
+          "vertices": 34417,
+          "minimumTriangleAreaRatio": 0.3193990099296529,
+          "maxLipGapError": 2.9945670824815807e-05,
+          "state": {
+            "open": 1,
+            "round": 0,
+            "wide": 0
+          }
+        },
+        {
+          "name": "OO",
+          "changed": 7440,
+          "outside": 0,
+          "irisChanges": 0,
+          "ready": true,
+          "disposed": false,
+          "vertices": 34417,
+          "minimumTriangleAreaRatio": 0.1870621656998992,
+          "maxLipGapError": 2.857252192112192e-05,
+          "state": {
+            "open": 0.7,
+            "round": 1,
+            "wide": 0
+          }
+        },
+        {
+          "name": "EE",
+          "changed": 7065,
+          "outside": 0,
+          "irisChanges": 0,
+          "ready": true,
+          "disposed": false,
+          "vertices": 34417,
+          "minimumTriangleAreaRatio": 0.5065775392577052,
+          "maxLipGapError": 2.2714597786688273e-05,
+          "state": {
+            "open": 0.35,
+            "round": 0,
+            "wide": 1
+          }
+        }
+      ],
+      "minRatio": 0.1870621656998992,
+      "exactReset": true,
+      "gpuError": 0,
+      "scope": "Original still painting and authored split-lip topology only. Synthetic controls, no body film/provider/voice/camera/physical projection or human visual approval."
+    },
+    "webkit": {
+      "passed": true,
+      "states": [
+        {
+          "name": "rest",
+          "changed": 0,
+          "outside": 0,
+          "irisChanges": 0,
+          "ready": true,
+          "disposed": false,
+          "vertices": 34417,
+          "minimumTriangleAreaRatio": 1,
+          "maxLipGapError": 0,
+          "state": {
+            "open": 0,
+            "round": 0,
+            "wide": 0
+          }
+        },
+        {
+          "name": "AH",
+          "changed": 5236,
+          "outside": 0,
+          "irisChanges": 0,
+          "ready": true,
+          "disposed": false,
+          "vertices": 34417,
+          "minimumTriangleAreaRatio": 0.3193990099296529,
+          "maxLipGapError": 2.9945670824815807e-05,
+          "state": {
+            "open": 1,
+            "round": 0,
+            "wide": 0
+          }
+        },
+        {
+          "name": "OO",
+          "changed": 7437,
+          "outside": 0,
+          "irisChanges": 0,
+          "ready": true,
+          "disposed": false,
+          "vertices": 34417,
+          "minimumTriangleAreaRatio": 0.1870621656998992,
+          "maxLipGapError": 2.857252192112192e-05,
+          "state": {
+            "open": 0.7,
+            "round": 1,
+            "wide": 0
+          }
+        },
+        {
+          "name": "EE",
+          "changed": 7074,
+          "outside": 0,
+          "irisChanges": 0,
+          "ready": true,
+          "disposed": false,
+          "vertices": 34417,
+          "minimumTriangleAreaRatio": 0.5065775392577052,
+          "maxLipGapError": 2.2714597786688273e-05,
+          "state": {
+            "open": 0.35,
+            "round": 0,
+            "wide": 1
+          }
+        }
+      ],
+      "minRatio": 0.1870621656998992,
+      "exactReset": true,
+      "gpuError": 0,
+      "scope": "Original still painting and authored split-lip topology only. Synthetic controls, no body film/provider/voice/camera/physical projection or human visual approval."
+    }
+  },
+  "silentRender": {
+    "path": "work/neutral-face-topology/mechanics-v1.mp4",
+    "sha256": "7327a71ca6a1cfc509b926e5894948768a0a243e92dc08b76a1a5003e85b0221",
+    "frames": 144,
+    "fps": 24,
+    "seconds": 6,
+    "audio": false
+  },
+  "visualReview": "Useful connected jaw/cheek movement without grafted texture boundaries; cavity remains flat/unfinished and narrow pose is not an adequate OO. Not final or production-ready.",
+  "runwayCredits": 0,
+  "testSha256": "db0b2047179e1f84881a382c66528feaef15b07257a417b6bc51dafee2371a9a"
+}

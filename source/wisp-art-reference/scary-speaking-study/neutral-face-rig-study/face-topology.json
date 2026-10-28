@@ -1,0 +1,10 @@
+{
+  "status": "source-only authored topology proof; not a finished puppet or approved art",
+  "reference": "../neutral-reference/scary-neutral-mouth-v1.png",
+  "dimensions": [1672, 941],
+  "lipSeam": [[785,433],[790,434],[795,441],[800,445],[805,448],[810,451],[815,453],[820,456],[825,458],[830,459],[835,460],[840,460],[845,461],[850,461],[855,460],[860,458],[865,459],[870,462]],
+  "upperFixedY": 400,
+  "lowerFixedY": 510,
+  "mouthCorners": [785,870],
+  "limits": "Front-view lower-face mechanics only. Cavity samples the original dark contact line, with no authored hidden teeth/tongue yet. No turn, live tracking, voice, full-body animation or fog simulation acceptance."
+}
