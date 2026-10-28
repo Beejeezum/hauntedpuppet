@@ -43,7 +43,7 @@ export class FriendlyPaintedRig {
   const v=this.mesh.vertices;for(let k=0;k<this.base.length;k+=2){const p=reference?[this.base[k],this.base[k+1]]:deformPoint(this.base[k],this.base[k+1],m);v[k]=p[0];v[k+1]=p[1];}this.mesh.geometry.getBuffer('aPosition').update();
   this.mesh.position.set(640+(reference?0:m.root.x*.275),360+(reference?0:m.root.y*.275));this.mesh.rotation=reference?0:m.root.rotation;
   const u=this.shader.resources.liveUniforms.uniforms;u.uTime=m.clock;u.uFlow=flow;u.uReference=reference?1:0;this.app.renderer.render(this.app.stage);
-  this.current={ready:true,form:this.form,engine:'PixiJS 8.22.0 painted mesh',vertices:this.base.length/2,singleConnectedSurface:true,paintedReferencePreserved:true,headAnglesLimited:true,flow,reference,frames:++this.frames,costMs:performance.now()-started,face:{...m.face},arms:{...m.arms},tail:{...m.tail},input:m.input||null};return this.canvas;
+  this.current={ready:true,form:this.form,engine:'PixiJS 8.22.0 painted mesh',vertices:this.base.length/2,singleConnectedSurface:true,paintedReferencePreserved:true,headAnglesLimited:true,flow,reference,frames:++this.frames,costMs:performance.now()-started,face:{...m.face},arms:{...m.arms},tail:{...m.tail},gesture:m.gesture,acting:{reach:m.reach||0,bow:m.bow||0},input:m.input||null};return this.canvas;
  }
  inspect(){return{...this.current,ready:this.ready,error:this.error||null};}
  destroy(){this.ready=false;this.app?.destroy(true,{children:true});for(const t of this.sources)t.destroy(true);this.sources=[];}

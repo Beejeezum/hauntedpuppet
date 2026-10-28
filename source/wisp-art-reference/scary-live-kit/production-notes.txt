@@ -10,3 +10,5 @@ Prompt set:
 
 Runtime limitations:
 Shared connected painted GPU mesh with separately parameterized scary face, webcam eyes/blinks/jaw/rounding/brows and existing hand-arm tracking. Front view with restrained head lean only. Not volumetric, not finger articulation, not a seamless live cute/evil morph. Character selector deliberately stops capture/voice and opens the selected independent puppet. No hidden fallback to raw voice. Generated candidate identity and human facial/voice acting need approval; browser synthetic tests are not physical projection or acoustic tests.
+
+Revision v2 mouth prompt: Edit the eight-mouth atlas preserving exact layout, mouth centers, expressions, small ivory fangs and black background. Remove ONLY thick luminous white lip tubing, replacing it with a fine soft dark blue seam matching the reference ghost's natural cavity. No white halos, stickers, new face or labels. Keep dark interiors and blue bounced light. Built-in image_gen edit; scary-mouths-v2.png is the candidate runtime atlas; v1 is preserved.

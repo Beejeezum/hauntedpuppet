@@ -156,9 +156,9 @@
     {
       "source": "source/wisp-performance-reference/tonight-demo/live-puppet.html",
       "destination": "live-puppet.html",
-      "bytes": 6894,
-      "sha256": "cd44eddd35bf769c15a1f2967b7820802ab22537c9b1a3e62e683d21337ca590",
-      "publishedSha256": "cd44eddd35bf769c15a1f2967b7820802ab22537c9b1a3e62e683d21337ca590"
+      "bytes": 7060,
+      "sha256": "9da03b762a0abeb873851cfab84295e3ff56d3214dc631925fd88e0ffde76b49",
+      "publishedSha256": "9da03b762a0abeb873851cfab84295e3ff56d3214dc631925fd88e0ffde76b49"
     },
     {
       "source": "source/wisp-performance-reference/tonight-demo/live-puppet.mjs",
@@ -181,9 +181,9 @@
           "to": "friendly-mouths-v1.png"
         }
       ],
-      "bytes": 12536,
-      "sha256": "2ddea1ffdaa60b28764ba1cc7b31d803a5876b5635c879c8f4f20c74e25c9d1a",
-      "publishedSha256": "ba12f9a3030452173cd8f96ecafbe9d846d08436933597776a23a86e2367cb29"
+      "bytes": 12616,
+      "sha256": "cce2410b29229a6bf762bbd94aa98bc3bb24c260c40150baa0d49ee9483c0131",
+      "publishedSha256": "15fc213f8cd62306faceaa17a6a95bd1e35bd139899180ad1a7e4db9f5547a31"
     }
   ]
 }

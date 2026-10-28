@@ -22,6 +22,11 @@
     {
       "path": "assets/wisp-live/scary-mouths-v1.png",
       "sha256": "fa5d7a4e173cf5f5f47ba6c05a26e1f287b8f73e1af43d6517e5ed52f88719a6"
+    },
+    {
+      "path": "assets/wisp-live/scary-mouths-v2.png",
+      "sha256": "8fe905892ae764932007c22ecbdd938323c9a9b26d2748b5e62eee6fbd39aca3",
+      "use": "Current candidate runtime mouth atlas; softened dark seams remove bright white lip tubing; v1 retained non-destructively."
     }
   ],
   "limits": [
