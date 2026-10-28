@@ -1,6 +1,6 @@
 const film=document.getElementById('film'),message=document.getElementById('message');
 const films={
- rehearsal:{src:'first-batch-rehearsal-v1.mp4',title:'Three little hauntings',description:'One continuous 31-second rehearsal: a friendly wave, a failed scare, then a menacing reach. Each performance leaves an intentional empty stage before the next arrival.',warning:'The last chapter is a manual scare.',facts:'All 735 frames decode at 24 fps. Both joins have exact-black frames and silent sound tails. These technical checks do not prove artistic quality or physical projection performance.'},
+ rehearsal:{src:'first-batch-rehearsal-v2.mp4',title:'Three little hauntings',description:'One continuous 31-second rehearsal: a friendly wave, a failed scare, then a menacing reach. Each performance leaves an intentional empty stage before the next arrival.',warning:'The last chapter is a manual scare.',facts:'All 735 frames decode at 24 fps. Both joins have exact-black frames and silent sound tails. These technical checks do not prove artistic quality or physical projection performance.'},
  departure:{src:'friendly-depart-runtime-candidate-v1.mp4',title:'Off to the next haunting',description:'A side/back turn, a look-back wave, then flight into depth and a contained vapor disappearance. One continuous performance with native sound effects.',warning:'Its visible opening pose still needs an approved incoming transition.',facts:'241 frames at 24 fps; no animated resize, crop or retiming. Every decoded frame passes the 15% fog reserve. The ending has 16 exact-black frames and a silent sound tail. Full motion, sound and incoming seam review remain open.'},
  handoff:{src:'friendly-idle-departure-review-v1.mp4',title:'From living idle to departure',description:'One 15-second file: the existing friendly idle flows directly into the new departure. Judge the handoff at about 5.08 seconds, then the flight and vapor ending.',warning:'This is an exact-cut review, not an approved seamless transition.',facts:'363 frames at 24 fps. Original frame order and durations, fixed framing, no visual crossfade or pose interpolation. Candidate soundtracks are joined at the same frame boundary. Pixel similarity alone does not approve motion or sound continuity.'}
 };
@@ -15,7 +15,7 @@ for(const button of document.querySelectorAll('[data-review]'))button.onclick=()
  message.textContent='Film selected and paused. Choose Play from start with sound when ready.';
 };
 document.getElementById('listen').onclick=async()=>{
- if(disposed)return;const attempt=++epoch;film.pause();film.currentTime=0;film.muted=false;film.volume=.65;
+ if(disposed)return;const attempt=++epoch;film.pause();film.load();film.muted=false;film.volume=.65;
  try{await film.play();if(attempt===epoch&&!disposed)message.textContent='Playing the selected film with sound. Use the video controls to adjust volume or pause.';}
  catch{if(attempt===epoch&&!disposed){film.muted=true;message.textContent='Playback could not start. Try the video’s play control.';}}
 };

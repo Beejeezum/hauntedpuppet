@@ -1,0 +1,19 @@
+{
+  "request": "User rejected choir/holy/music in first wave of cue review; motion direction and other effects liked",
+  "status": "sound revision for review; no final approval",
+  "wave": "friendly-wave-runtime-candidate-v3.mp4",
+  "waveSha256": "32177fb6e3f49de6e8f4bf761575fa1709358ac56ee4c3464f029ffbb9a6300a",
+  "reel": "first-batch-rehearsal-v2.mp4",
+  "reelSha256": "93962f93bcfdfe5ee4d8e1ab61ee409b3fd56da15d07d8f97d63eeb1d9b4a70d",
+  "soundSource": "friendly-wave-dry-fog-sfx-v1.wav",
+  "soundSourceSha256": "60f428ab7541ae8f116a2f75c76bcf4df82b53b409b3abddc72ac0068b472db3",
+  "method": "Deterministic broadband filtered air/noise with formation, hand-swish and dispersal envelopes, plus brief non-tonal noise shimmer. No voices, instrument notes or musical bed. Original wave and reel compressed video streams copied unchanged. Only first482000 audio samples replaced; later decoded SFX retained in the input mix and re-encoded once.",
+  "sampleRate": 48000,
+  "channels": 2,
+  "firstClipSamples": 482000,
+  "reelSamples": 1470000,
+  "seed": 68177,
+  "peakTarget": 0.18,
+  "generationCreditsSpent": 0,
+  "humanSoundReview": "pending"
+}

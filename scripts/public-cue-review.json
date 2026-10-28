@@ -5,19 +5,19 @@
       "source": "source/wisp-performance-reference/button-cue-batch/review.html",
       "destination": "index.html",
       "bytes": 3346,
-      "sha256": "707fc791a62a3570ad1dc4100a7ae7e93febd1161fb52e91a00293ce390a5bff"
+      "sha256": "b7821224470cfeffd1c7d7a1c415fb75997f2b1004a834ed271e8b77146dbbf5"
     },
     {
       "source": "source/wisp-performance-reference/button-cue-batch/review.mjs",
       "destination": "review.mjs",
-      "bytes": 3962,
-      "sha256": "a125b476aa6d9b2c6e4ac3510b710f493b19438713890053535e977a66768050"
+      "bytes": 3955,
+      "sha256": "f839d9893f6153c516f1946524d7d988b2d0e045a572da5e8f31ba8d9118033d"
     },
     {
-      "source": "source/wisp-performance-reference/button-cue-batch/first-batch-rehearsal-v1.mp4",
-      "destination": "first-batch-rehearsal-v1.mp4",
-      "bytes": 2056172,
-      "sha256": "c492c59e768e1fa35e5bc15290ab44a2a0c301412efd19c24977d4a28ec4ed26"
+      "source": "source/wisp-performance-reference/button-cue-batch/first-batch-rehearsal-v2.mp4",
+      "destination": "first-batch-rehearsal-v2.mp4",
+      "bytes": 2161273,
+      "sha256": "93962f93bcfdfe5ee4d8e1ab61ee409b3fd56da15d07d8f97d63eeb1d9b4a70d"
     },
     {
       "source": "source/wisp-performance-reference/button-cue-batch/friendly-depart-runtime-candidate-v1.mp4",
