@@ -1,9 +1,15 @@
 const assert=require('node:assert/strict');
 (async()=>{
- const {validatePlaylist,PlaylistRunner}=await import('../source/wisp-performance-reference/ambient-show/saved-playlists.mjs');
+ const {validatePlaylist,PlaylistRunner,recoverPlaylists}=await import('../source/wisp-performance-reference/ambient-show/saved-playlists.mjs');
  const available=['cute','scary'],p={name:'Doorstep',steps:[{cue:'cute',seconds:10},{cue:'scary',seconds:5},{cue:'scary',seconds:8}]};
  assert.throws(()=>validatePlaylist({...p,steps:[{cue:'unmade',seconds:10}]},available));
  for(const seconds of [0,301,NaN,8.5])assert.throws(()=>validatePlaylist({...p,steps:[{cue:'cute',seconds}]},available));
+ const missing={name:'Missing turn',steps:[{cue:'retired',seconds:10}]};
+ const mixed=recoverPlaylists([p,missing,null,{name:'Legacy',steps:[{cue:'old-cute',seconds:10}]}],available,{'old-cute':'cute'});
+ assert.deepEqual(mixed.playable.map(p=>p.name),['Doorstep','Legacy']);assert.deepEqual(mixed.unavailable,[missing,null]);
+ assert.equal(mixed.playable[1].steps[0].cue,'cute');assert.equal(missing.steps[0].cue,'retired');
+ const restored=recoverPlaylists([...mixed.playable,...mixed.unavailable],available.concat('retired'));
+ assert(restored.playable.some(p=>p.name==='Missing turn'),'Unavailable shows must recover when their films return');
  const r=new PlaylistRunner();assert.equal(r.start(p,available),'cute');assert.equal(r.due(999999),false,'Preparation must not consume hold time');
  r.observe('scary',0);assert.equal(r.inspect().since,null);r.observe('cute',100);assert.equal(r.due(10099),false);assert.equal(r.due(10100),true);
  assert.equal(r.advance(),'scary');r.observe('scary',11000);assert.equal(r.due(16000),true);assert.equal(r.advance(),'scary');assert.equal(r.inspect().since,null,'Consecutive same-form steps get independent holds');

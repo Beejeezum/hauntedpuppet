@@ -95,9 +95,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/saved-playlists.mjs",
       "destination": "saved-playlists.mjs",
-      "sha256": "b8fdb8022fc7b9fde5ff247b74b8e7048fc5eb191b2b2b248072c8673bb3372a",
-      "bytes": 6208,
-      "publishedSha256": "b8fdb8022fc7b9fde5ff247b74b8e7048fc5eb191b2b2b248072c8673bb3372a"
+      "sha256": "6eea9fa73189f31e64710248a393c87342d30297dd7a002c8ade60d80225c9b1",
+      "bytes": 6803,
+      "publishedSha256": "6eea9fa73189f31e64710248a393c87342d30297dd7a002c8ade60d80225c9b1"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/catalog-director.mjs",
