@@ -1,3 +1,4 @@
+import {PlaylistRunner,mountPlaylists} from './saved-playlists.mjs';
 import {StageCompositor} from '/assets/stage-compositor.js';
 import {CueDirector} from './cue-director.mjs';
 import {FilmTransport} from './film-transport.mjs';
@@ -12,7 +13,7 @@ const $=id=>document.getElementById(id),clips=[
 ];
 const compositor=new StageCompositor($('stage'),{onLayerError:id=>$('status').textContent='Layer unavailable: '+id});
 const transport=new FilmTransport(compositor,clips,{mediaHost:$('mediaSources')}),overlays=new Map();let disposed=false,raf,mode='manual',formSince=0,lastForm=null,activity=0,lastTime=-1,lastVideo=null,lastFresh=performance.now(),stale=false;
-let soundControls,operatorControls;
+let soundControls,operatorControls;const playlist=new PlaylistRunner();
 const labels={stopped:'Stage black',preparing:'Preparing next cue',exiting:'Planned exit','empty-stage':'Empty stage · planned transition',entering:'Planned entrance',playing:'On stage',unavailable:'Film unavailable · stage black'};
 const director=new CueDirector(transport,{fadeMs:900,onState:s=>{
  if(s.phase!=='playing')soundControls?.cancel();
@@ -53,31 +54,33 @@ $('effectFile').onchange=async event=>{
  try{source.src=url;if(isVideo){await transport.frame(source);if(!transport.active)source.pause();}else await source.decode();if(disposed){source.pause?.();source.removeAttribute('src');if(isVideo){source.load();source.remove();}URL.revokeObjectURL(url);return;}overlays.set(id,{url,source,name:file.name,lastTime:-1});compositor.add({id,source,opacity:.4,blend:'screen'});activity++;refreshLayers();}
  catch{source.pause?.();source.removeAttribute('src');source.remove();URL.revokeObjectURL(url);$('status').textContent='Effect could not load';}
 };
-function stop(){mode='manual';$('mode').value=mode;timing();director.stop();for(const {source}of overlays.values())source.pause?.();output.blackout();lastForm=null;}
+function stop(){playlist.stop();mode='manual';$('mode').value=mode;timing();director.stop();for(const {source}of overlays.values())source.pause?.();output.blackout();lastForm=null;}
 for(const clip of clips){const b=document.createElement('button');b.dataset.cue=clip.id;b.innerHTML='<strong></strong><small></small>';b.querySelector('strong').textContent=clip.title;b.querySelector('small').textContent=clip.detail;b.onclick=()=>chooseCue(clip.id);$('cues').append(b);}
-function chooseCue(id){mode='manual';$('mode').value=mode;timing();if(director.current===id&&director.phase==='playing')return Promise.resolve();return director.request(id);}
-function startProgram(selected){mode=selected;$('mode').value=mode;timing();lastForm=null;formSince=performance.now();const id=['scary','mostly-scary'].includes(mode)?'scary':'cute';if(director.current===id&&director.phase==='playing')return Promise.resolve();return director.request(id);}
-$('start').onclick=()=>startProgram($('mode').value);
-function timing(){const n=Number($('dwell').value),selected=$('mode').value;$('dwellValue').textContent=n+'s';$('programTiming').textContent=selected==='manual'?'Manual cueing · no automatic form changes':selected==='mostly-scary'?`Scary ${n*3}s · cute ${n*.5}s`:selected==='alternate'?`Cute ${n}s · scary ${n}s`:`${selected==='cute'?'Friendly':'Scary'} only · no automatic form changes`;}
+function chooseCue(id){playlist.stop();mode='manual';$('mode').value=mode;timing();if(director.current===id&&director.phase==='playing')return Promise.resolve();return director.request(id);}
+function startProgram(selected){playlist.stop();mode=selected;$('mode').value=mode;timing();lastForm=null;formSince=performance.now();const id=['scary','mostly-scary'].includes(mode)?'scary':'cute';if(director.current===id&&director.phase==='playing')return Promise.resolve();return director.request(id);}
+mountPlaylists(document.querySelector('main>aside'),{clips,onRun:p=>{const id=playlist.start(p,clips.map(c=>c.id));mode='playlist';$('mode').value='playlist';$('programTiming').textContent='Repeating playlist · '+p.name;lastForm=null;formSince=performance.now();director.request(id);}});
+$('start').onclick=()=>{$('mode').value==='playlist'?document.querySelector('[data-run]').click():startProgram($('mode').value);};
+function timing(){const n=Number($('dwell').value),selected=$('mode').value;$('dwellValue').textContent=n+'s';$('programTiming').textContent=selected==='playlist'?'Repeating playlist · '+(playlist.inspect().name||'saved show'):selected==='manual'?'Manual cueing · no automatic form changes':selected==='mostly-scary'?`Scary ${n*3}s · cute ${n*.5}s`:selected==='alternate'?`Cute ${n}s · scary ${n}s`:`${selected==='cute'?'Friendly':'Scary'} only · no automatic form changes`;}
 $('dwell').oninput=timing;$('mode').onchange=timing;$('pace').onchange=()=>{director.fadeMs=Number($('pace').value);};
 $('blackout').onclick=stop;document.addEventListener('keydown',e=>{if(e.key==='Escape')stop();});$('puppet').onclick=stop;
-function nextForm(){if(mode==='cute')return'cute';if(mode==='scary')return'scary';return director.current==='cute'?'scary':'cute';}
+function nextForm(){if(mode==='playlist')return playlist.current().cue;if(mode==='cute')return'cute';if(mode==='scary')return'scary';return director.current==='cute'?'scary':'cute';}
 function tick(now){
  if(disposed)return;const v=transport.active;if(v&&(v!==lastVideo||v.currentTime!==lastTime)){activity++;lastVideo=v;lastTime=v.currentTime;lastFresh=now;}
  const wasStale=stale;stale=!!v&&now-lastFresh>1200;if(stale&&!wasStale)soundControls?.cancel();compositor.suspend(stale);
  for(const item of overlays.values())if(item.source.tagName==='VIDEO'&&item.source.currentTime!==item.lastTime){item.lastTime=item.source.currentTime;activity++;}
+ if(mode==='playlist'&&director.phase==='playing'){playlist.observe(director.current,now);if(playlist.due(now))director.request(playlist.advance());}
  if(v&&!v.loop&&v.ended&&director.phase==='playing'){compositor.blackout();director.request(mode==='manual'?'cute':nextForm());}
  else if(v&&director.phase==='playing'){
   const seconds=Number($('dwell').value)*(mode==='mostly-scary'?(director.current==='scary'?3:.5):1),due=now-formSince>=seconds*1000;
   const exitDue=!v.loop&&Number.isFinite(v.duration)&&v.currentTime>=v.duration-director.fadeMs/1000-.65;
   if(exitDue){director.request(mode==='manual'?'cute':due?nextForm():director.current);}
-  else if(mode!=='manual'&&due){const next=nextForm();if(next===director.current)formSince=now;else director.request(next);}
+  else if(mode!=='manual'&&mode!=='playlist'&&due){const next=nextForm();if(next===director.current)formSince=now;else director.request(next);}
  }
  compositor.render();raf=requestAnimationFrame(tick);
 }
 refreshLayers();tick(performance.now());
 soundControls=mountOwnerSound(document.querySelector('main>aside'),{canPlay:()=>!disposed&&!stale&&!compositor.black&&director.phase==='playing'});
-const inspectDesk=()=>({director:director.inspect(),composition:compositor.inspect(),mode,media:transport.videos.map(v=>({muted:v.muted,paused:v.paused,cue:v.dataset.cue||null,currentTime:v.currentTime,loop:v.loop})),effects:overlays.size,sound:soundControls.inspect(),operator:operatorControls?.inspect()||null});
+const inspectDesk=()=>({director:director.inspect(),composition:compositor.inspect(),mode,playlist:playlist.inspect(),media:transport.videos.map(v=>({muted:v.muted,paused:v.paused,cue:v.dataset.cue||null,currentTime:v.currentTime,loop:v.loop})),effects:overlays.size,sound:soundControls.inspect(),operator:operatorControls?.inspect()||null});
 const remote=createFilmRemote({chooseCue,startProgram,stop,inspect:inspectDesk});
 window.WispDesk={inspect:inspectDesk,...remote};
 const phoneRemote={remoteState:remote.remoteState,remoteCommand:(...args)=>{const access=operatorControls?.inspect();if(access?.cloud&&(!access.authenticated||access.busy||access.disposed))return Promise.reject(Object.assign(Error('Operator sign-in required'),{cancelled:true}));return remote.remoteCommand(...args);}};

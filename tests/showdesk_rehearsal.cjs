@@ -13,6 +13,29 @@ const root=process.env.HAUNT_DESK_ROOT||path.resolve(__dirname,'..'),mime={'.htm
   await page.addInitScript(()=>{const original=HTMLMediaElement.prototype.play;window.__testMedia=[];window.__mediaTrace=[];HTMLMediaElement.prototype.play=function(...args){window.__mediaTrace.push({event:'js-play',cue:this.dataset.cue,connected:this.isConnected,time:this.currentTime,at:performance.now()});if(window.__mediaTrace.length>30)window.__mediaTrace.shift();if(!window.__testMedia.includes(this)){window.__testMedia.push(this);for(const event of ['play','pause','ended'])this.addEventListener(event,()=>{window.__mediaTrace.push({event,cue:this.dataset.cue,connected:this.isConnected,paused:this.paused,time:this.currentTime,at:performance.now()});if(window.__mediaTrace.length>30)window.__mediaTrace.shift();});}return original.apply(this,args);};});
   await page.goto(base+(process.env.HAUNT_DESK_PAGE||'/source/wisp-performance-reference/ambient-show/showdesk.html'));await page.waitForFunction(()=>window.WispDesk);step('desk ready');
   assert.equal(await page.evaluate(()=>WispDesk.inspect().composition.black),true);
+  await page.locator('[data-name]').fill('Rehearsal playlist');
+  await page.locator('[data-steps] input').fill('5');
+  await page.locator('[data-add]').click();
+  await page.locator('[data-steps] select').nth(1).selectOption('scary');
+  await page.locator('[data-steps] input').nth(1).fill('5');
+  await page.getByRole('button',{name:'Move earlier',exact:true}).nth(1).click();
+  assert.equal(await page.locator('[data-steps] select').first().inputValue(),'scary');
+  await page.getByRole('button',{name:'Move later',exact:true}).first().click();
+  assert.equal(await page.locator('[data-steps] select').first().inputValue(),'cute');
+  await page.locator('[data-save]').click();
+  await page.reload();await page.waitForFunction(()=>window.WispDesk);
+  assert.equal(await page.locator('[data-name]').inputValue(),'Rehearsal playlist');
+  assert.equal(await page.locator('[data-steps] select').count(),2);
+  await page.locator('[data-run]').click();
+  await page.waitForFunction(()=>WispDesk.inspect().director.phase==='playing'&&WispDesk.inspect().director.current==='cute');
+  await page.waitForFunction(()=>WispDesk.inspect().director.phase==='playing'&&WispDesk.inspect().director.current==='scary',{},{timeout:15000});
+  await page.click('#start');await page.waitForFunction(()=>WispDesk.inspect().director.phase==='playing');
+  assert.equal(await page.evaluate(()=>WispDesk.inspect().playlist.name),'Rehearsal playlist');
+  await page.click('#blackout');assert.equal(await page.evaluate(()=>WispDesk.inspect().playlist.name),null);
+  assert.equal(await page.evaluate(()=>WispDesk.inspect().composition.black),true);
+  step('saved playlist survives reload, advances actual films, restarts and cancels on Blackout');
+  if(process.env.HAUNT_PLAYLIST_ONLY){assert.deepEqual(errors,[]);return;}
+
   await page.getByRole('button',{name:/Friendly Wisp/}).click();await page.waitForFunction(()=>WispDesk.inspect().director.phase==='playing');
   step('friendly playing');const popup=context.waitForEvent('page');await page.getByRole('button',{name:'Open silent rehearsal output'}).click();const output=await popup;output.setDefaultTimeout(10000);await output.waitForFunction(()=>window.WispFilmOutput);assert.equal(await output.locator('audio,video').count(),0);
   step('silent output ready; importing video effect');const effectMovie=path.join(root,process.env.HAUNT_DESK_ROOT?'assets/wisp-showdesk/friendly.mp4':'source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4');

@@ -4,9 +4,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.html",
       "destination": "index.html",
-      "sha256": "1faec22e3b9265edf1e9b8ea9222468bb223dd228b8ed43537aea7ab281009ec",
-      "bytes": 3250,
-      "publishedSha256": "1faec22e3b9265edf1e9b8ea9222468bb223dd228b8ed43537aea7ab281009ec"
+      "sha256": "e7f7028c1fe3a75397e1fb426f653b82fbccda6ea8ff3c108a32c10c50d01e78",
+      "bytes": 3315,
+      "publishedSha256": "e7f7028c1fe3a75397e1fb426f653b82fbccda6ea8ff3c108a32c10c50d01e78"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.css",
@@ -18,9 +18,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.mjs",
       "destination": "showdesk.mjs",
-      "sha256": "9de6d987e11654dd80f49ad1c846562769adbd2ea61aa85723813ae0895904f6",
-      "bytes": 11629,
-      "publishedSha256": "fd9117cd910637daa94154b99fc1e4bae313fad92d97f4308ab07db9f325a440",
+      "sha256": "8c6d644cb559abc873f8ae8b34b6b304a5beead2543fc4a47e1870111b7f2315",
+      "bytes": 12483,
+      "publishedSha256": "934c9c7115ed96d47289566dd9cd8a3f67d8da394697063ad466f9187cfef473",
       "rewrites": [
         {
           "from": "../runway-pilots/wisp-film-output.js",
@@ -67,9 +67,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/film-remote.mjs",
       "destination": "film-remote.mjs",
-      "bytes": 2624,
-      "sha256": "4fe740f7e1835cd0ede48b229cd4c068457f4aebed4b3ebcb473fa1982297e60",
-      "publishedSha256": "4fe740f7e1835cd0ede48b229cd4c068457f4aebed4b3ebcb473fa1982297e60"
+      "bytes": 2650,
+      "sha256": "92d048e6d8e0bb56ccdd98284cd849f700e83382243103abc576fa99a2e4c565",
+      "publishedSha256": "92d048e6d8e0bb56ccdd98284cd849f700e83382243103abc576fa99a2e4c565"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/owner-sound.mjs",
@@ -91,6 +91,13 @@
       "sha256": "b20ed362ef93ce4cb2be538883b05ff0bfc32c883357d1060dfc8dd0a742e067",
       "bytes": 5839,
       "publishedSha256": "b20ed362ef93ce4cb2be538883b05ff0bfc32c883357d1060dfc8dd0a742e067"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/saved-playlists.mjs",
+      "destination": "saved-playlists.mjs",
+      "sha256": "f9e9aec02cc53eb4170b908a8a6800d318fdb6794d60790ce67917b569106b69",
+      "bytes": 5095,
+      "publishedSha256": "f9e9aec02cc53eb4170b908a8a6800d318fdb6794d60790ce67917b569106b69"
     }
   ]
 }

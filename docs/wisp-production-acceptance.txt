@@ -1,0 +1,53 @@
+WISP PRODUCTION ACCEPTANCE — 2026-10-27
+
+Goal remains active. This is the full existing 32-cue scope, not a reduction to the two playable studies. No listed planned cue is a finished deliverable.
+
+VIDEO INVENTORY
+- friendly-drift: A small living drift | friendly-rest -> friendly-rest | planned
+- friendly-notice: Did someone pass? | friendly-rest -> friendly-rest | planned
+- friendly-wave: A wave for the sidewalk | friendly-rest -> friendly-rest | planned
+- friendly-peek: Behind an invisible corner | friendly-rest -> friendly-rest | planned
+- friendly-candy: The imaginary candy | friendly-rest -> friendly-rest | planned
+- friendly-twirl: One happy twirl | friendly-rest -> friendly-rest | planned
+- friendly-boo-fail: Trying to be frightening | friendly-rest -> friendly-rest | planned
+- friendly-writing: Happy Halloween | friendly-rest -> friendly-rest | planned
+- friendly-bow: Thank you for visiting | friendly-rest -> friendly-rest | planned
+- friendly-depart: Off to the next haunting | friendly-rest -> empty | planned
+- scary-drift: The house is watching | scary-rest -> scary-rest | planned
+- scary-notice: I noticed you | scary-rest -> scary-rest | planned
+- scary-pace: Guarding the doorway | scary-rest -> scary-rest | planned
+- scary-reach: A hand from the mist | scary-rest -> scary-rest | planned
+- scary-orbit: The far side of the room | scary-rest -> scary-rest | planned
+- scary-inspect: What are you doing here? | scary-rest -> scary-rest | planned
+- scary-eyes: Only the eyes remain | scary-rest -> scary-rest | planned
+- scary-hands: Counting the visitors | scary-rest -> scary-rest | planned
+- scary-distant: Something far away | empty -> scary-rest | planned
+- scary-poof: Wrong place, right ghost | empty -> scary-rest | planned
+- scary-dissolve: Gone before you blink | scary-rest -> empty | planned
+- scary-magic: A little forbidden magic | scary-rest -> scary-rest | planned
+- scary-fakeout: Almost a scare | scary-rest -> scary-rest | planned
+- scary-reveal: The operator chooses the scare | scary-rest -> scary-rest | planned
+- scary-retreat: Back into the house | scary-rest -> empty | planned
+- cute-to-evil: The same spirit darkens | friendly-rest -> scary-rest | planned
+- evil-to-cute: Welcome, little visitors | scary-rest -> friendly-rest | planned
+- friendly-reform: A friendly arrival | empty -> friendly-rest | planned
+- scary-reform: A haunting arrival | empty -> scary-rest | planned
+- shared-empty: The house waits | empty -> empty | planned
+- fog-lettering: A greeting in the mist | empty -> empty | planned
+- bats-through-letters: Bats steal Halloween | empty -> empty | planned
+
+VIDEO ACCEPTANCE (every cue and every allowed playlist boundary)
+One coherent painted full-body performance; approved cute/scary identity; fluid connected arms, hands, core and porous fog. No clipping: >=15% export reserve. No arbitrary resize/pixel puppet substitute. Silent ambient acting with action-matched embedded SFX; no unintended dialogue. Review full motion and exact first/last frames. Natural exit/arrival, authored bridge or reviewed matching cut only; no doubled bodies. Empty-stage exits include sound tails and >=0.5 seconds black. Hash-linked review evidence; repeated closing seam review. Human visual acceptance required, not inferred from automated bounds.
+
+AUTOPLAY / OPERATOR ACCEPTANCE
+Saved editable ordered playlists; duplicate steps; duration and form pacing; cute/scary/alternate/mostly-scary modes; repeat closing boundary; readiness before reveal; cancellation, manual takeover and Blackout; decoder stall/recovery; refresh persistence; mobile controls; laptop-only sound; silent projector/phone; extended browser soak. Current two study films can rehearse fade-through-black only. Those fades do not fulfill final authored transition acceptance.
+
+PUPPET ACCEPTANCE (both forms separately)
+Approved painted identity at front/side; continuous coherent whole-body/fog motion; independently tracked eyes/blinks and expressive mouth; supported hand gestures without detached anatomy; integrated local character conversion with explicit monitoring; no automatic capture; stop/late permission cleanup; camera loss recovery; calibrated mouth sync. Actual human mic/face, voice casting and acoustic latency acceptance required. Physical projection remains untested without footage/device access.
+
+CURRENT EVIDENCE / NEXT WORK
+- Friendly painted proof and integrated Seed-VC conversion exist; references remain voice candidates.
+- Added saved playlist editor and runtime on current show desk: finite library IDs, bounded storage/steps, per-step holds, repeat, manual/Blackout cancellation. Automated coverage in tests/saved_playlists.cjs and tests/showdesk_rehearsal.cjs.
+- Existing source catalog remains accurately planned; 32 finished cue assets and authored joins are NOT delivered.
+- New generation needs original Wisp Runway workspace confirmation: user previously rejected Bruce. Do not spend there without resolving identity. Continue independent runtime/puppet work meanwhile.
+- No production-main publication or full-goal completion claimed.
