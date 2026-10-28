@@ -1,0 +1,22 @@
+{
+  "commit": "ee2bc6266cd63b2e0dd15a30584d6de75c0279ae",
+  "preview": "https://deploy-preview-12--hauntedpuppet.netlify.app",
+  "netlifyDeploy": "6ae256588d6231faa17c86fa",
+  "publishedModulesVerifiedByteEqualToDist": {
+    "frame-clock.mjs": "070661e42a1fd2e4f18801b06b5f1638a2e6d59174ea68ce386fa5ba29f94eb6",
+    "film-transport.mjs": "5ab0f257425e11c56115acae7e3196d364ca9c125f4eba52248074e29a6b3323",
+    "director.mjs": "bd607e487cf6f14e861cd539b0b5db14b6ab3811836b17f45c38c3c4d9e4c97e",
+    "showdesk.mjs": "4f2e85075f3d83c5798b7fdf8d9860f457d11c441707fd54d984bd8c5e27520e"
+  },
+  "hostedChromiumSavedPlaylist": {
+    "passed": true,
+    "ownerRafDisabled": true,
+    "outputDrivenAlternation": true,
+    "projectorMediaElements": 0,
+    "mutedDecoderCount": 2,
+    "stopDuringTransition": true,
+    "pendingCallbacksAfterDisposal": 0,
+    "scope": "Actual films/compositor/output, simulated owner RAF loss with foreground output; no human/provider/device/physical-projection acceptance."
+  },
+  "scope": "Actual hosted films and output; mocked operator/auth API only, no provider or microphone, no human listening or physical projection. Deliberately suppressed owner RAF. Full CI still in progress at checkpoint."
+}
