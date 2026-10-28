@@ -9,6 +9,10 @@ on:
         description: Run only the Linux native-media diagnostic (not release acceptance)
         type: boolean
         default: false
+      native_disable_disk_cache:
+        description: Disable native on-disk media buffering for the isolated diagnostic
+        type: boolean
+        default: false
       native_audio_sink:
         description: Linux diagnostic audio-device selection
         type: choice
@@ -318,6 +322,7 @@ jobs:
       - name: Set up a clocked silent audio device
         env:
           DIAGNOSTIC_AUDIO_SINK: ${{ inputs.native_audio_sink }}
+          DIAGNOSTIC_DISABLE_DISK_CACHE: ${{ inputs.native_disable_disk_cache }}
         run: |
           sudo apt-get install -y pulseaudio gstreamer1.0-pulseaudio gstreamer1.0-gl gstreamer1.0-tools libasound2-plugins
           pulseaudio --check || pulseaudio --start --exit-idle-time=-1
@@ -332,6 +337,9 @@ jobs:
             echo "GST_PLUGIN_FEATURE_RANK=pulsesink:MAX,pipewiresink:NONE,alsasink:NONE,oss4sink:NONE,osssink:NONE" >> "$GITHUB_ENV"
           elif [ "$DIAGNOSTIC_AUDIO_SINK" != auto ]; then
             exit 1
+          fi
+          if [ "$DIAGNOSTIC_DISABLE_DISK_CACHE" = true ]; then
+            echo "WPE_SHELL_DISABLE_MEDIA_DISK_CACHE=1" >> "$GITHUB_ENV"
           fi
           echo "PULSE_SINK=wisp_ci" >> "$GITHUB_ENV"
           echo "HAUNT_CI_SILENT_AUDIO=1" >> "$GITHUB_ENV"
