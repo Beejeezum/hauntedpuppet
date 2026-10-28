@@ -49,3 +49,12 @@ This is bounded to64 cues/30minutes, not an indefinite unattended scheduler;
 buffer eviction and runtime show-control integration remain unfinished. No automatic fallback, no production migration, no approved
 16-cue inventory entries. The reverse test has no authored visual join.
 The source UI is manual playback with opt-in laptop sound, not remote output.
+
+Audio timing follow-up: audio-timing-review-v1.json measures an FFmpeg-decoded
+1024-sample/21.333ms AAC lead-in against original PCM for each fragment.
+Aligned correlations exceed.9995. This does not establish browser MSE
+presentation latency; do not apply an unmeasured global A/V shift based only
+on that result. Native audio capture/quiet-handle join review remains open.
+The three-cue append order is a decoder/cancellation stress test, not an
+approved cute/scary transition sequence; its last cut is not authored.
+The forward two-cue order is contiguous in the original master.

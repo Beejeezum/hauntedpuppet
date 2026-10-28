@@ -1,0 +1,22 @@
+{
+  "scope": "FFmpeg decoded AAC versus original mono-folded PCM correlation. Not browser MSE audio capture, acoustic or human join validation.",
+  "sampleRate": 48000,
+  "results": [
+    {
+      "id": "friendly-drift",
+      "originalSamples": 244000,
+      "decodedSamples": 245760,
+      "bestCorrelationLagSamples": 1024,
+      "lagMilliseconds": 21.333333333333332,
+      "alignedCorrelation": 0.9995321204040896
+    },
+    {
+      "id": "cute-to-evil",
+      "originalSamples": 242000,
+      "decodedSamples": 243712,
+      "bestCorrelationLagSamples": 1024,
+      "lagMilliseconds": 21.333333333333332,
+      "alignedCorrelation": 0.9995786756140396
+    }
+  ]
+}
