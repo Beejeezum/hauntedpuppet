@@ -443,6 +443,28 @@
       "evidence": "../button-cue-batch/evil-to-cute-runtime-candidate-v2.json",
       "scope": "Original authored transformation with fixed canonical framing calibration. Cropped matte peakRGB1 only; all121frames retain15percent reserve. No animated resize, body crossfade, reversal or retiming. OriginalAAC packets copied unchanged. Full motion/sound and four exact incoming/outgoing joins need human review; see wisp-morph-roundtrip-review-v6.mp4. Not an approved cue. Human approved identity, motion and four joins in the contextualV5reel, but rejected its soundtrack. V6preserves exact compressed picture and replaces all sound with sparse dry swishes. Revised mix, individual cue acceptance and closing loop still pending.",
       "humanDirectionEvidence": "../button-cue-batch/human-morph-review-2026-10-28.json"
+    },
+    {
+      "plannedClipIds": [
+        "cute-to-evil"
+      ],
+      "media": "../button-cue-batch/cute-to-evil-runtime-candidate-v3.mp4",
+      "sha256": "ec9b8a65b525f43991c07b57197b8108ee46d0c0e9c7d83cdb3b2b5f610b0dec",
+      "status": "dry-level-and-standalone-review-pending",
+      "evidence": "../button-cue-batch/cute-to-evil-runtime-candidate-v3.json",
+      "humanDirectionEvidence": "../button-cue-batch/human-morph-review-2026-10-28.json",
+      "scope": "Same compressed video and all121decoded pixels as the v2 motion source. Exact V7 dry-swish PCM window replaces its musical audio; encoded first/last half-second are silent. No generation, resize, reversal or retiming. Contextual visual approval retained as direction only; standalone cue, exact level, new joins and loop approval remain pending. Not a ready cue."
+    },
+    {
+      "plannedClipIds": [
+        "evil-to-cute"
+      ],
+      "media": "../button-cue-batch/evil-to-cute-runtime-candidate-v3.mp4",
+      "sha256": "c3ccb74d44a44e658c723405b51fcd9e3b57a81749f89f8903dd66e455d70463",
+      "status": "dry-level-and-standalone-review-pending",
+      "evidence": "../button-cue-batch/evil-to-cute-runtime-candidate-v3.json",
+      "humanDirectionEvidence": "../button-cue-batch/human-morph-review-2026-10-28.json",
+      "scope": "Same compressed video and all121decoded pixels as the v2 motion source. Exact V7 dry-swish PCM window replaces its musical audio; encoded first/last half-second are silent. No generation, resize, reversal or retiming. Contextual visual approval retained as direction only; standalone cue, exact level, new joins and loop approval remain pending. Not a ready cue."
     }
   ],
   "deferredClips": [
