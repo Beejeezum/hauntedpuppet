@@ -85,7 +85,11 @@ export class FilmTransport {
   if(video.readyState<2||!video.videoWidth||!video.videoHeight)return false;
   this.frameCanvas||=document.createElement('canvas');const canvas=this.frameCanvas;
   if(canvas.width!==video.videoWidth||canvas.height!==video.videoHeight){canvas.width=video.videoWidth;canvas.height=video.videoHeight;}
-  canvas.getContext('2d').drawImage(video,0,0);this.heldFrame=canvas;return true;
+  const ctx=canvas.getContext('2d');ctx.drawImage(video,0,0);
+  // Materialize independent pixels before releasing the decoder. A deferred
+  // video-backed canvas draw can otherwise retain its native presentation buffer.
+  ctx.putImageData(ctx.getImageData(0,0,canvas.width,canvas.height),0,0);
+  this.heldFrame=canvas;return true;
  }
  async activate(prepared,live){
   if(!live())return;
@@ -99,6 +103,10 @@ export class FilmTransport {
    // Hold the exact outgoing picture while releasing its clock. Starting the
    // next GStreamer pipeline first can block native pause/load on Linux.
    this.holdPicture(previous);this.active=null;previous.muted=true;
+   // Exit the current paint/animation task before asking the native pipeline
+   // to pause. Stop may cancel or reassign this handle during the fence.
+   await new Promise(resolve=>setTimeout(resolve,0));
+   if(!live())return;if(!ownsPreparation())throw cancelled();
    previous.pause();previous.removeAttribute('src');previous.load();this.syncSound();
   }
   await this.frame(prepared.video,prepared.signal);if(!live())return;if(!ownsPreparation())throw cancelled();
