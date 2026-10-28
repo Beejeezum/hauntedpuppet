@@ -21,3 +21,14 @@ New built-in-imagegen corrective-ah-v1 drawing is a high-resolution connected AH
 Version2 oral-depth comparison (2026-10-28):
 NODE_OPTIONS=--require=./work/pinned-silent-playwright.cjs node scripts/render-neutral-face-study.cjs work/neutral-face-topology/oral-depth-comparison-v2.mp4 --compare-oral
 The144-frame24fps silent comparison magnifies the same connected face: old flat interior left, painted hidden oral detail right. Only the cavity samples the generated AH drawing, through authored upper/lower UV curves. Lips, cheeks, jaw, eyes and fog retain the native painting. Chrome1546 and MacWebKit1548 changed oral pixels, zero outside the actual cavity triangles; exact rest identity between modes. Bounded mesh deformation still passes45 combinations/minimum area ratio.18706. The v2 AH frame visibly gains fang depth; OO remains a grin. Existing85-pixel lip span limits detail. Interior teeth still scale with opening instead of separate upper/lower occlusion planes; keep this as a source study, not a finished speech rig. No new generation/Runway credits. No human approval, head motion, body/fog animation or audio lip-sync acceptance.
+
+Version3 upper/lower oral projection (2026-10-28):
+The interior now samples separate upper-lip-relative and lower-jaw-relative paint coordinates. Reducing the opening occludes hidden content rather than vertically scaling the whole oral texture. A narrow central material blend joins the two interior samples; this is2D projection, not a3D dental rig. Horizontal narrowing/widening, source resolution and a true OO corrective remain unresolved. Head yaw, depth ordering during turns, body attachment and spoken performance remain unverified.
+
+New actual-shader calibration test:
+NODE_OPTIONS=--require=./work/pinned-silent-playwright.cjs node tests/neutral_oral_projection.cjs
+It substitutes explicit calibration stripes, not character art. In Chrome and MacWebKit, both8-pixel oral features retain8-pixel thickness at1,.75,.5 opening; upper stays atrow14, lower shifts40pixels with jaw. Prior stretch mode shrinks to4pixels at.5. Near closure clips features to1visiblepixel. This proves the rendering mechanics in a controlled quad, not the artistic quality of Wisp teeth. Existing native-face tests still prove no outside-cavity paint changes, fixed observed irises, bounded positive mesh areas, rest and resource cleanup.
+
+New six-second magnified comparison:
+NODE_OPTIONS=--require=./work/pinned-silent-playwright.cjs node scripts/render-neutral-face-study.cjs work/neutral-face-topology/oral-attachment-comparison-v3.mp4 --compare-rigid
+Left is painted V2 with stretching; right uses upper/lower projection. The old --compare-oral option explicitly retains the V2 stretch branch for that historical comparison. No production integration, new generation or Runway credit. A human review of this close-up is pending; no head/body speech approval follows from it.
