@@ -2,20 +2,21 @@ const assert=require('node:assert/strict'),{pathToFileURL}=require('node:url'),p
 (async()=>{
  const {FilmTransport,waitForFilmFrame,waitForFilmData}=await import(pathToFileURL(path.join(__dirname,'../source/wisp-performance-reference/ambient-show/film-transport.mjs')));
  class Media extends EventTarget {
-  constructor(mode){super();this.mode=mode;this.playCount=0;this.readyState=0;this.cancelled=0;this.activeListeners=new Set();}
+  constructor(mode){super();this.mode=mode;this.playCount=0;this.readyState=0;this.currentTime=0;this.paused=true;this.cancelled=0;this.activeListeners=new Set();}
   get listeners(){return this.activeListeners.size;}
   addEventListener(...args){this.activeListeners.add(args[1]);return super.addEventListener(...args);}
   removeEventListener(...args){this.activeListeners.delete(args[1]);return super.removeEventListener(...args);}
   requestVideoFrameCallback(callback){this.frame=callback;return 7;}
   cancelVideoFrameCallback(id){assert.equal(id,7);this.cancelled++;}
-  play(){this.playCount++;if(this.mode==='reject')return Promise.reject(Error('Playback denied'));if(this.mode==='frame')queueMicrotask(()=>this.frame());return new Promise(()=>{});}
+  play(){this.playCount++;if(this.mode==='reject')return Promise.reject(Error('Playback denied'));if(this.mode==='frame'){this.readyState=4;this.paused=false;this.currentTime=.05;queueMicrotask(()=>this.frame());}return new Promise(()=>{});}
  }
  const standby=new Media('frame');let decodedData=false;const standbyData=waitForFilmData(standby).then(()=>decodedData=true);standby.readyState=2;standby.dispatchEvent(new Event('loadeddata'));await Promise.resolve();assert.equal(decodedData,false,'A metadata/first-data event without future decoded data is insufficient');standby.readyState=3;standby.dispatchEvent(new Event('canplay'));await standbyData;assert.equal(standby.playCount,0,'Standby readiness cannot autoplay or pause a newly started clock');assert.equal(standby.listeners,0);
  const standbyAbort=new AbortController(),cold=new Media('stalled'),coldWait=waitForFilmData(cold,standbyAbort.signal);standbyAbort.abort();await assert.rejects(coldWait,/cancelled/);assert.equal(cold.listeners,0);
  const delivered=new Media('frame');let deadline;
  try{await Promise.race([FilmTransport.prototype.frame(delivered),new Promise((_,reject)=>{deadline=setTimeout(()=>reject(Error('Delivered frame waited for pending play promise')),500);})]);}finally{clearTimeout(deadline);}
  assert.equal(delivered.cancelled,1);assert.equal(delivered.listeners,0);
- const callbackFence=new Media('frame');callbackFence.play=function(){this.playCount++;queueMicrotask(()=>{this.frame();queueMicrotask(()=>this.presentationReturned=true)});return new Promise(()=>{});};await waitForFilmFrame(callbackFence);assert.equal(callbackFence.presentationReturned,true,'Media lifecycle mutations must happen after native presentation callback microtasks return');
+ const callbackFence=new Media('frame');callbackFence.play=function(){this.playCount++;queueMicrotask(()=>{this.readyState=4;this.paused=false;this.currentTime=.05;this.frame();queueMicrotask(()=>this.presentationReturned=true)});return new Promise(()=>{});};await waitForFilmFrame(callbackFence);assert.equal(callbackFence.presentationReturned,true,'Media lifecycle mutations must happen after native presentation callback microtasks return');
+ const early=new Media('stalled');let earlyResolved=false;Object.assign(early,{readyState:4,currentTime:0,paused:true});const earlyWait=waitForFilmFrame(early).then(()=>earlyResolved=true);early.currentTime=.05;early.frame();await new Promise(r=>setTimeout(r,3));assert.equal(earlyResolved,false,'A callback for paused decoded data is not active playback');early.paused=false;early.currentTime=0;early.frame();await new Promise(r=>setTimeout(r,3));assert.equal(earlyResolved,false,'A time-zero callback without an advancing clock is insufficient');early.currentTime=.05;early.frame();await earlyWait;assert.equal(early.listeners,0);
  const decoded=new Media('stalled');Object.assign(decoded,{currentTime:0,readyState:4,paused:false,seeking:false});let pendingPaint=0;
  const oldRAF=globalThis.requestAnimationFrame,oldCancel=globalThis.cancelAnimationFrame;
  globalThis.requestAnimationFrame=callback=>{pendingPaint++;return setTimeout(()=>{pendingPaint--;decoded.currentTime+=.05;callback();},1);};globalThis.cancelAnimationFrame=id=>{clearTimeout(id);};

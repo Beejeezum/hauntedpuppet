@@ -22,16 +22,18 @@ export async function waitForFilmFrame(video,signal){
   await new Promise((resolve,reject)=>{
    let callback,timer,paintTask,settled=false;const requestedTime=video.currentTime;
    const aborted=()=>failed(Object.assign(Error('Film preparation cancelled'),{cancelled:true}));
-   const cleanup=()=>{clearTimeout(timer);if(paintTask!==undefined)cancelAnimationFrame(paintTask);if(callback!==undefined)video.cancelVideoFrameCallback?.(callback);video.removeEventListener('playing',playing);video.removeEventListener('error',failed);signal?.removeEventListener('abort',aborted);};
+   const cleanup=()=>{clearTimeout(timer);if(paintTask!==undefined)cancelAnimationFrame(paintTask);if(callback!==undefined)video.cancelVideoFrameCallback?.(callback);video.removeEventListener('playing',presented);video.removeEventListener('error',failed);signal?.removeEventListener('abort',aborted);};
    // Leave the native presentation callback before the caller can pause or
    // unload another media pipeline. WebKit/GStreamer can hold drawing locks
    // through the callback's microtask checkpoint.
    const playing=()=>{if(settled)return;settled=true;cleanup();setTimeout(resolve,0);};
    const failed=error=>{if(settled)return;settled=true;cleanup();reject(error instanceof Error?error:Error('Film unavailable'));};
-   const decoded=()=>{if(settled)return;if(!video.paused&&!video.seeking&&video.readyState>=3&&Math.abs(video.currentTime-requestedTime)>=1/30){playing();return;}paintTask=requestAnimationFrame(decoded);};
+   const ready=()=>!video.paused&&!video.seeking&&video.readyState>=3&&Number.isFinite(video.currentTime)&&video.currentTime-requestedTime>=1/30;
+   const presented=()=>{if(settled)return;if(ready()){playing();return;}if(video.requestVideoFrameCallback)callback=video.requestVideoFrameCallback(presented);};
+   const decoded=()=>{if(settled)return;if(ready()){playing();return;}paintTask=requestAnimationFrame(decoded);};
    if(signal?.aborted){aborted();return;}signal?.addEventListener('abort',aborted,{once:true});
    timer=setTimeout(()=>failed(Error('Film did not deliver a frame')),6000);video.addEventListener('error',failed,{once:true});
-   if(video.requestVideoFrameCallback)callback=video.requestVideoFrameCallback(playing);else video.addEventListener('playing',playing,{once:true});
+   if(video.requestVideoFrameCallback)callback=video.requestVideoFrameCallback(presented);else video.addEventListener('playing',presented,{once:true});
    if(typeof requestAnimationFrame==='function')paintTask=requestAnimationFrame(decoded);
    try{Promise.resolve(video.play()).catch(failed);}catch(error){failed(error);}
   });
