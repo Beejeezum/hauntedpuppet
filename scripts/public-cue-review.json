@@ -10,8 +10,8 @@
     {
       "source": "source/wisp-performance-reference/button-cue-batch/review.mjs",
       "destination": "review.mjs",
-      "bytes": 4920,
-      "sha256": "834032df606bcc337f4a6b52a434899094c8dd75c68ee94921df12aba22e9887"
+      "bytes": 4949,
+      "sha256": "dae64703bae93e9bd8efe2a3f43b7fdbc79bcb11aa3e47aa4e95df6ac038a46a"
     },
     {
       "source": "source/wisp-performance-reference/button-cue-batch/first-batch-rehearsal-v2.mp4",
@@ -32,10 +32,10 @@
       "sha256": "8403320f59974e9e04a584e44209737d03f3712cdfe01d52d5eb9f2f3eb21c10"
     },
     {
-      "source": "source/wisp-performance-reference/button-cue-batch/wisp-morph-roundtrip-review-v6.mp4",
-      "destination": "wisp-morph-roundtrip-review-v6.mp4",
-      "bytes": 1483555,
-      "sha256": "ff3e9f419730a241b11f903cd902589d930ef43e20f92ae9e36421790448d515"
+      "source": "source/wisp-performance-reference/button-cue-batch/wisp-morph-roundtrip-review-v7.mp4",
+      "destination": "wisp-morph-roundtrip-review-v7.mp4",
+      "bytes": 1484215,
+      "sha256": "275acb319821ed88d9eda3220f6c9a61e59d484450537293588d601784de08dc"
     }
   ]
 }

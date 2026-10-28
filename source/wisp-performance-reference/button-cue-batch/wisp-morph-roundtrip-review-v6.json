@@ -109,8 +109,13 @@
     "carriedToThisMovie": "Exact compressed video essence equality verified."
   },
   "humanAudioReview": {
-    "status": "pending",
-    "replacesRejectedSoundtrack": "wisp-morph-roundtrip-review-v5.mp4"
+    "status": "direction-endorsed;gain-revision-requested",
+    "date": "2026-10-28",
+    "movie": "wisp-morph-roundtrip-review-v6.mp4",
+    "sha256": "ff3e9f419730a241b11f903cd902589d930ef43e20f92ae9e36421790448d515",
+    "userResponse": "Keep it dry, but make effects louder",
+    "questionItem": "call_ec1f6aae097c41e99845d080481a33ba:0",
+    "scope": "Dry sound direction endorsed; requested level increase. New level still needs listening acceptance."
   },
   "soundRevision": {
     "file": "wisp-morph-dry-swishes-v1.wav",
