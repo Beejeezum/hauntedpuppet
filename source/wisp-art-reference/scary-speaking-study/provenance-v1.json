@@ -1,0 +1,30 @@
+{
+  "tool": "built-in image_gen",
+  "generatedArtifact": "exec-7cf75bbc-8e19-4ae8-8e11-5022633c8b9d.png",
+  "promptFile": "generation-prompt-v1.txt",
+  "referenceMovie": "source/wisp-performance-reference/runway-pilots/motion-transfer-study/wisp-scary-motion-transfer-v35.mp4",
+  "referenceMovieSha256": "21e8efec67ec7e024fc954cc16af458cad8f8427553a998341ff9d37286ca35a",
+  "referenceFrame": 0,
+  "assetSha256": "0f6cdbe1339534ab37d902ecb14f1f2bc3dee920073ee3f4095a41eb8b9ec7a9",
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "rgbaAlphaRange": [
+    0,
+    254
+  ],
+  "zeroAlphaFraction": 0.4009691874,
+  "humanApproval": false,
+  "runtimeIntegration": false,
+  "status": "source-only speaking-face candidate; registration/contours required",
+  "review": [
+    "Matches reference ivory/blue skull, dark sockets, multiple pointed teeth more closely than old blue two-fang mouth kit.",
+    "Four distinct rest/AH/OO/EE shapes; AH cavity larger and OO narrower.",
+    "Cell framing offsets about32pixels horizontally/vertically; raw maximum eye-anchor drift46.27pixels. Do not swap raw cells.",
+    "Candidate two-eye transforms measured; no geometry/art acceptance follows from exact two-point fitting.",
+    "Dark-component convex hulls are unreviewed, may include cheek/socket creases and omit tooth anatomy.",
+    "Whole head/fog margins and animated transitions unapproved; intended future use is registered local mouth region.",
+    "One image generation, no Runway generation. Original assets preserved."
+  ]
+}

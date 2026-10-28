@@ -1,0 +1,478 @@
+{
+  "source": "source/wisp-art-reference/scary-speaking-study/scary-speaking-atlas-candidate-v1.png",
+  "sha256": "0f6cdbe1339534ab37d902ecb14f1f2bc3dee920073ee3f4095a41eb8b9ec7a9",
+  "size": [
+    1024,
+    1536
+  ],
+  "humanApproval": false,
+  "runtimeIntegration": false,
+  "scope": "Generated scary speaking-face art and automatic registration candidates. Not a finished atlas/rig or approved facial contours.",
+  "panels": [
+    {
+      "name": "rest",
+      "panel": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "eyes": [
+        {
+          "center": [
+            259.0875912408759,
+            432.65936739659367
+          ],
+          "area": 411
+        },
+        {
+          "center": [
+            351.2077922077922,
+            465.04155844155844
+          ],
+          "area": 385
+        }
+      ],
+      "mouthBounds": [
+        215,
+        460,
+        151,
+        78
+      ],
+      "mouthDarkArea": 2806,
+      "candidateCavityHullContours": {
+        "top": [
+          461.0,
+          460.0,
+          460.0,
+          461.0,
+          462.0,
+          464.0,
+          465.0,
+          467.0,
+          468.0,
+          470.0,
+          471.0,
+          473.0,
+          474.0,
+          476.0,
+          478.0,
+          479.0,
+          481.0,
+          482.0,
+          484.0,
+          485.0,
+          487.0,
+          489.0,
+          490.0,
+          491.0,
+          493.0,
+          495.0,
+          496.0,
+          498.0,
+          499.0,
+          501.0,
+          502.0,
+          505.0
+        ],
+        "bottom": [
+          464.0,
+          472.0,
+          479.0,
+          486.0,
+          492.0,
+          499.0,
+          506.0,
+          513.0,
+          519.0,
+          523.0,
+          526.0,
+          530.0,
+          532.0,
+          534.0,
+          535.0,
+          537.0,
+          537.0,
+          537.0,
+          536.0,
+          535.0,
+          533.0,
+          531.0,
+          530.0,
+          527.0,
+          525.0,
+          522.0,
+          520.0,
+          517.0,
+          515.0,
+          513.0,
+          510.0,
+          507.0
+        ]
+      },
+      "scope": "Color-component/hull candidates only; teeth, jaw and lip anatomy require correction and visual review.",
+      "candidatePanelToRestSimilarity": [
+        [
+          1.0,
+          -1.462312248900444e-17,
+          0.0
+        ],
+        [
+          1.462312248900444e-17,
+          1.0,
+          0.0
+        ]
+      ],
+      "registrationWarning": "Two-eye fit only, not full face/teeth validation. Do not use raw cells as interchangeable sprites."
+    },
+    {
+      "name": "AH",
+      "panel": [
+        512,
+        0,
+        512,
+        768
+      ],
+      "eyes": [
+        {
+          "center": [
+            226.91727493917276,
+            432.3065693430657
+          ],
+          "area": 411
+        },
+        {
+          "center": [
+            318.2025974025974,
+            464.63116883116885
+          ],
+          "area": 385
+        }
+      ],
+      "mouthBounds": [
+        205,
+        472,
+        124,
+        107
+      ],
+      "mouthDarkArea": 5737,
+      "candidateCavityHullContours": {
+        "top": [
+          472.0,
+          473.0,
+          474.0,
+          475.0,
+          476.0,
+          478.0,
+          479.0,
+          480.0,
+          481.0,
+          482.0,
+          483.0,
+          484.0,
+          485.0,
+          487.0,
+          488.0,
+          489.0,
+          490.0,
+          491.0,
+          492.0,
+          493.0,
+          494.0,
+          495.0,
+          496.0,
+          498.0,
+          499.0,
+          500.0,
+          501.0,
+          502.0,
+          503.0,
+          504.0,
+          507.0,
+          511.0
+        ],
+        "bottom": [
+          543.0,
+          552.0,
+          560.0,
+          566.0,
+          570.0,
+          573.0,
+          575.0,
+          577.0,
+          578.0,
+          578.0,
+          578.0,
+          578.0,
+          577.0,
+          574.0,
+          571.0,
+          568.0,
+          565.0,
+          562.0,
+          558.0,
+          555.0,
+          551.0,
+          548.0,
+          545.0,
+          541.0,
+          538.0,
+          535.0,
+          531.0,
+          528.0,
+          524.0,
+          521.0,
+          518.0,
+          514.0
+        ]
+      },
+      "scope": "Color-component/hull candidates only; teeth, jaw and lip anatomy require correction and visual review.",
+      "candidatePanelToRestSimilarity": [
+        [
+          1.0083253033293678,
+          0.0023171363497338626,
+          29.279447891107424
+        ],
+        [
+          -0.0023171363497338626,
+          1.0083253033293678,
+          -2.720487001387255
+        ]
+      ],
+      "registrationWarning": "Two-eye fit only, not full face/teeth validation. Do not use raw cells as interchangeable sprites."
+    },
+    {
+      "name": "OO",
+      "panel": [
+        0,
+        768,
+        512,
+        768
+      ],
+      "eyes": [
+        {
+          "center": [
+            258.965,
+            400.045
+          ],
+          "area": 400
+        },
+        {
+          "center": [
+            350.5748663101604,
+            432.4331550802139
+          ],
+          "area": 374
+        }
+      ],
+      "mouthBounds": [
+        250,
+        460,
+        64,
+        62
+      ],
+      "mouthDarkArea": 2339,
+      "candidateCavityHullContours": {
+        "top": [
+          473.0,
+          471.0,
+          470.0,
+          468.0,
+          467.0,
+          465.0,
+          464.0,
+          462.0,
+          461.0,
+          461.0,
+          460.0,
+          460.0,
+          460.0,
+          460.0,
+          460.0,
+          460.0,
+          460.0,
+          460.0,
+          460.0,
+          460.0,
+          461.0,
+          461.0,
+          462.0,
+          462.0,
+          463.0,
+          464.0,
+          466.0,
+          468.0,
+          470.0,
+          476.0,
+          484.0,
+          492.0
+        ],
+        "bottom": [
+          477.0,
+          486.0,
+          496.0,
+          504.0,
+          507.0,
+          510.0,
+          512.0,
+          514.0,
+          516.0,
+          517.0,
+          518.0,
+          519.0,
+          520.0,
+          521.0,
+          521.0,
+          521.0,
+          521.0,
+          520.0,
+          519.0,
+          518.0,
+          517.0,
+          515.0,
+          513.0,
+          511.0,
+          509.0,
+          507.0,
+          506.0,
+          504.0,
+          502.0,
+          500.0,
+          498.0,
+          496.0
+        ]
+      },
+      "scope": "Color-component/hull candidates only; teeth, jaw and lip anatomy require correction and visual review.",
+      "candidatePanelToRestSimilarity": [
+        [
+          1.004931336652701,
+          0.0018085489934960008,
+          -1.8779533374939206
+        ],
+        [
+          -0.0018085489934960008,
+          1.004931336652701,
+          31.10996171546452
+        ]
+      ],
+      "registrationWarning": "Two-eye fit only, not full face/teeth validation. Do not use raw cells as interchangeable sprites."
+    },
+    {
+      "name": "EE",
+      "panel": [
+        512,
+        768,
+        512,
+        768
+      ],
+      "eyes": [
+        {
+          "center": [
+            227.07,
+            399.61
+          ],
+          "area": 400
+        },
+        {
+          "center": [
+            318.3255208333333,
+            432.4895833333333
+          ],
+          "area": 384
+        }
+      ],
+      "mouthBounds": [
+        205,
+        460,
+        130,
+        48
+      ],
+      "mouthDarkArea": 2856,
+      "candidateCavityHullContours": {
+        "top": [
+          460.0,
+          460.0,
+          460.0,
+          460.0,
+          460.0,
+          460.0,
+          460.0,
+          460.0,
+          460.0,
+          460.0,
+          460.0,
+          460.0,
+          461.0,
+          461.0,
+          462.0,
+          462.0,
+          463.0,
+          463.0,
+          464.0,
+          464.0,
+          465.0,
+          465.0,
+          466.0,
+          466.0,
+          467.0,
+          467.0,
+          468.0,
+          468.0,
+          469.0,
+          470.0,
+          472.0,
+          476.0
+        ],
+        "bottom": [
+          475.0,
+          479.0,
+          483.0,
+          487.0,
+          492.0,
+          495.0,
+          497.0,
+          499.0,
+          501.0,
+          503.0,
+          505.0,
+          506.0,
+          507.0,
+          507.0,
+          507.0,
+          507.0,
+          507.0,
+          506.0,
+          505.0,
+          503.0,
+          502.0,
+          500.0,
+          497.0,
+          495.0,
+          493.0,
+          491.0,
+          489.0,
+          487.0,
+          484.0,
+          482.0,
+          480.0,
+          478.0
+        ]
+      },
+      "scope": "Color-component/hull candidates only; teeth, jaw and lip anatomy require correction and visual review.",
+      "candidatePanelToRestSimilarity": [
+        [
+          1.0066484427233733,
+          0.00784599450411597,
+          27.372591487889764
+        ],
+        [
+          -0.00784599450411597,
+          1.0066484427233733,
+          32.17417317195611
+        ]
+      ],
+      "registrationWarning": "Two-eye fit only, not full face/teeth validation. Do not use raw cells as interchangeable sprites."
+    }
+  ],
+  "maximumEyeCenterDriftPixels": 46.269588869905306
+}
