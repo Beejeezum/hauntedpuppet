@@ -15,14 +15,15 @@ export async function waitForFilmData(video,signal){
  });
 }
 
-export async function waitForFilmFrame(video,signal){
+export async function waitForFilmFrame(video,signal,frameClock){
   // Canvas sources can keep decoding after WebKit omits a presentation callback
   // on resume. Accept decoded future data with an advancing clock as a fallback;
   // a pending play() promise alone is never a readiness signal.
   await new Promise((resolve,reject)=>{
    let callback,timer,paintTask,settled=false;const requestedTime=video.currentTime;
+   const request=cb=>frameClock?frameClock.request(cb):requestAnimationFrame(cb),cancel=id=>frameClock?frameClock.cancel(id):cancelAnimationFrame(id);
    const aborted=()=>failed(Object.assign(Error('Film preparation cancelled'),{cancelled:true}));
-   const cleanup=()=>{clearTimeout(timer);if(paintTask!==undefined)cancelAnimationFrame(paintTask);if(callback!==undefined)video.cancelVideoFrameCallback?.(callback);video.removeEventListener('playing',presented);video.removeEventListener('error',failed);signal?.removeEventListener('abort',aborted);};
+   const cleanup=()=>{clearTimeout(timer);if(paintTask!==undefined)cancel(paintTask);if(callback!==undefined)video.cancelVideoFrameCallback?.(callback);video.removeEventListener('playing',presented);video.removeEventListener('error',failed);signal?.removeEventListener('abort',aborted);};
    // Leave the native presentation callback before the caller can pause or
    // unload another media pipeline. WebKit/GStreamer can hold drawing locks
    // through the callback's microtask checkpoint.
@@ -30,19 +31,21 @@ export async function waitForFilmFrame(video,signal){
    const failed=error=>{if(settled)return;settled=true;cleanup();reject(error instanceof Error?error:Error('Film unavailable'));};
    const ready=()=>!video.paused&&!video.seeking&&video.readyState>=3&&Number.isFinite(video.currentTime)&&video.currentTime-requestedTime>=1/30;
    const presented=()=>{if(settled)return;if(ready()){playing();return;}if(video.requestVideoFrameCallback)callback=video.requestVideoFrameCallback(presented);};
-   const decoded=()=>{if(settled)return;if(ready()){playing();return;}paintTask=requestAnimationFrame(decoded);};
+   const decoded=()=>{if(settled)return;if(ready()){playing();return;}paintTask=request(decoded);};
    if(signal?.aborted){aborted();return;}signal?.addEventListener('abort',aborted,{once:true});
    timer=setTimeout(()=>failed(Error('Film did not deliver a frame')),6000);video.addEventListener('error',failed,{once:true});
    if(video.requestVideoFrameCallback)callback=video.requestVideoFrameCallback(presented);else video.addEventListener('playing',presented,{once:true});
-   if(typeof requestAnimationFrame==='function')paintTask=requestAnimationFrame(decoded);
+   if(frameClock||typeof requestAnimationFrame==='function')paintTask=request(decoded);
    try{Promise.resolve(video.play()).catch(failed);}catch(error){failed(error);}
   });
  }
 
 /** Laptop-only media; sound requires an explicit operator enable. The compositor is the sole picture sent to output. */
 export class FilmTransport {
- constructor(compositor,clips,{mediaHost,characterFilter}={}){this.compositor=compositor;this.clips=clips;this.active=null;this.heldFrame=null;this.frameCanvas=null;this.videos=[document.createElement('video'),document.createElement('video')];this.disposed=false;this.prepared=null;this.preparing=null;this.prepareEpoch=0;this.soundEnabled=false;this.soundLevel=.5;this.soundSuspended=false;for(const v of this.videos){v.muted=true;v.playsInline=true;v.preload='auto';v.setAttribute('aria-hidden','true');v.className='source-preview';v.title='Laptop film source';mediaHost?.append(v);}compositor.add({id:'character',source:()=>{const raw=this.heldFrame||this.active;return characterFilter?.(raw)||raw},kind:'character'});}
- frame(video,signal){return waitForFilmFrame(video,signal);}
+ constructor(compositor,clips,{mediaHost,characterFilter,frameClock}={}){this.frameClock=frameClock;this.motionWaits=new Set();this.compositor=compositor;this.clips=clips;this.active=null;this.heldFrame=null;this.frameCanvas=null;this.videos=[document.createElement('video'),document.createElement('video')];this.disposed=false;this.prepared=null;this.preparing=null;this.prepareEpoch=0;this.soundEnabled=false;this.soundLevel=.5;this.soundSuspended=false;for(const v of this.videos){v.muted=true;v.playsInline=true;v.preload='auto';v.setAttribute('aria-hidden','true');v.className='source-preview';v.title='Laptop film source';mediaHost?.append(v);}compositor.add({id:'character',source:()=>{const raw=this.heldFrame||this.active;return characterFilter?.(raw)||raw},kind:'character'});}
+ frame(video,signal){return waitForFilmFrame(video,signal,this.frameClock);}
+ requestFrame(callback){return this.frameClock?this.frameClock.request(callback):requestAnimationFrame(callback);}
+ cancelFrame(id){if(this.frameClock)this.frameClock.cancel(id);else cancelAnimationFrame(id);}
  setSound(enabled,level=this.soundLevel){if(typeof enabled!=='boolean'||!Number.isFinite(level)||level<0||level>1)throw Error('Invalid film sound settings');this.soundEnabled=enabled&&!this.disposed;this.soundLevel=level;this.syncSound();}
  suspendSound(suspended){this.soundSuspended=!!suspended;this.syncSound();}
  syncSound(){for(const v of this.videos){v.volume=this.soundLevel*Math.max(0,Math.min(1,this.compositor.level??1));v.muted=!this.soundEnabled||this.soundSuspended||v!==this.active||!!this.compositor.black;}}
@@ -73,10 +76,10 @@ export class FilmTransport {
   video.loop=false;
   await new Promise((resolve,reject)=>{
    let frame,timer,settled=false;
-   const cleanup=()=>{if(frame!==undefined)cancelAnimationFrame(frame);clearTimeout(timer);video.removeEventListener('ended',complete);video.removeEventListener('error',failed);if(this.finishWait===cancel)this.finishWait=null;};
+   const cleanup=()=>{if(frame!==undefined)this.cancelFrame(frame);clearTimeout(timer);video.removeEventListener('ended',complete);video.removeEventListener('error',failed);if(this.finishWait===cancel)this.finishWait=null;};
    const finish=(error)=>{if(settled)return;settled=true;cleanup();error?reject(error):resolve();};
    const complete=()=>finish(),cancel=()=>finish(),failed=()=>finish(Error('Film exit unavailable'));
-   const tick=()=>{if(!live()||this.disposed||this.active!==video){cancel();return;}if(video.ended){complete();return;}frame=requestAnimationFrame(tick);};
+   const tick=()=>{if(!live()||this.disposed||this.active!==video){cancel();return;}if(video.ended){complete();return;}frame=this.requestFrame(tick);};
    this.finishWait=cancel;video.addEventListener('ended',complete);video.addEventListener('error',failed);const remaining=Number.isFinite(video.duration)?Math.max(0,video.duration-video.currentTime):0;timer=setTimeout(()=>failed(),(remaining+6)*1000);tick();
   });
   if(live()&&this.active===video&&!keepPicture){this.compositor.setLevel(0);this.compositor.blackout();this.syncSound();}
@@ -113,8 +116,10 @@ export class FilmTransport {
   this.active=prepared.video;this.heldFrame=null;if(this.prepared===prepared)this.prepared=null;
   this.active.dataset.cue=prepared.id;this.compositor.reveal();this.syncSound();
  }
- fade(target,ms,live){const start=this.compositor.level,at=performance.now();return new Promise(resolve=>{const tick=now=>{if(!live()){resolve();return;}const t=Math.min(1,(now-at)/Math.max(1,ms)),ease=t*t*(3-2*t);this.compositor.setLevel(start+(target-start)*ease);this.syncSound();if(t<1)requestAnimationFrame(tick);else resolve();};requestAnimationFrame(tick);});}
- hold(ms,live){const at=performance.now();return new Promise(resolve=>{const tick=now=>{if(!live()||now-at>=ms)resolve();else requestAnimationFrame(tick);};requestAnimationFrame(tick);});}
- blackout(){this.finishWait?.();this.soundEnabled=false;this.cancelPreparation();this.active=null;this.heldFrame=null;if(this.frameCanvas){this.frameCanvas.width=0;this.frameCanvas.height=0;}this.compositor.setLevel(0);this.compositor.blackout();for(const v of this.videos){v.pause();v.muted=true;}}
+ animate(ms,live,apply=()=>{}){const at=performance.now();return new Promise(resolve=>{let frame,settled=false;const finish=()=>{if(settled)return;settled=true;if(frame!==undefined)this.cancelFrame(frame);this.motionWaits.delete(finish);resolve();};const tick=now=>{if(!live()||this.disposed){finish();return;}const t=Math.min(1,(now-at)/Math.max(1,ms));apply(t);if(t<1)frame=this.requestFrame(tick);else finish();};if(this.disposed){resolve();return;}this.motionWaits.add(finish);frame=this.requestFrame(tick);});}
+ fade(target,ms,live){const start=this.compositor.level;return this.animate(ms,live,t=>{const ease=t*t*(3-2*t);this.compositor.setLevel(start+(target-start)*ease);this.syncSound();});}
+ hold(ms,live){return this.animate(ms,live);}
+
+ blackout(){this.finishWait?.();for(const finish of [...this.motionWaits])finish();this.soundEnabled=false;this.cancelPreparation();this.active=null;this.heldFrame=null;if(this.frameCanvas){this.frameCanvas.width=0;this.frameCanvas.height=0;}this.compositor.setLevel(0);this.compositor.blackout();for(const v of this.videos){v.pause();v.muted=true;}}
  dispose(){this.blackout();this.frameCanvas=null;this.disposed=true;for(const v of this.videos){v.removeAttribute('src');v.load();v.remove();}}
 }

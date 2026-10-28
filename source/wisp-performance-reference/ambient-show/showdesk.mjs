@@ -4,6 +4,7 @@ import {PlaylistRunner,mountPlaylists} from './saved-playlists.mjs';
 import {StageCompositor} from '/assets/stage-compositor.js';
 import {CueDirector} from './cue-director.mjs';
 import {FilmTransport} from './film-transport.mjs';
+import {StageFrameClock} from './frame-clock.mjs';
 import {createFilmRemote} from './film-remote.mjs';
 import {mountPhoneControls} from '/assets/phone-bridge.js';
 import {mountOwnerSound} from './owner-sound-controls.mjs';
@@ -22,7 +23,7 @@ const showError=error=>{$('status').textContent=error.message;};
 if(libraryError){$('status').textContent='Cue library unavailable · stage black';$('start').disabled=true;}
 if(useCatalog){$('stageInfo').textContent='Approved character films. Cue changes follow reviewed cuts, full transition performances or planned empty-stage arrivals.';$('filmSoundInfo').textContent='Film sound plays only on this laptop after you enable it. Preloads, effect videos, phone and projector remain silent. Blackout turns sound off.';$('studyInfo').hidden=true;for(const mode of ['cute','scary','alternate','mostly-scary']){const option=$('mode').querySelector('[value="'+mode+'"]');option.textContent=option.textContent.replace(' · study','');try{picker.assertMode(mode);}catch{option.disabled=true;}}}
 const compositor=new StageCompositor($('stage'),{onLayerError:id=>$('status').textContent='Layer unavailable: '+id});
-const transport=new FilmTransport(compositor,clips,{mediaHost:$('mediaSources')}),overlays=new Map();let disposed=false,raf,mode='manual',formSince=0,formPausedAt=null,lastForm=null,activity=0,lastTime=-1,lastVideo=null,lastFresh=performance.now(),stale=false;
+const frameClock=new StageFrameClock(),transport=new FilmTransport(compositor,clips,{frameClock,mediaHost:$('mediaSources')}),overlays=new Map();let disposed=false,raf,mode='manual',formSince=0,formPausedAt=null,lastForm=null,activity=0,lastTime=-1,lastVideo=null,lastFresh=performance.now(),stale=false;
 let soundControls,operatorControls;const playlist=new PlaylistRunner();
 const labels={stopped:'Stage black',preparing:'Preparing next cue',exiting:'Planned exit','empty-stage':'Empty stage · planned transition',entering:'Planned entrance',playing:'On stage',bridging:'Transition performance',unavailable:'Film unavailable · stage black'};
 const directorOptions={fadeMs:900,onState:s=>{
@@ -34,7 +35,7 @@ const directorOptions={fadeMs:900,onState:s=>{
 }};
 const director=useCatalog?new CatalogCueDirector(transport,runtime,directorOptions):new CueDirector(transport,directorOptions);
 const activate=transport.activate.bind(transport);transport.activate=async(prepared,live)=>{await activate(prepared,live);if(live())for(const {source}of overlays.values())if(source.tagName==='VIDEO')source.play().catch(()=>{});};
-const output=mountFilmOutput($('stage'),()=>({black:compositor.black||stale||!transport.active&&!transport.heldFrame,paused:transport.active?.paused??!transport.heldFrame,disposed,metrics:{draws:activity}}));
+const output=mountFilmOutput($('stage'),()=>({black:compositor.black||stale||!transport.active&&!transport.heldFrame,paused:transport.active?.paused??!transport.heldFrame,disposed,metrics:{draws:activity}}),{beforePaint:()=>paintDesk(performance.now())});
 function refreshLayers(){
  $('layers').replaceChildren();const layers=compositor.inspect().layers;
  layers.forEach((layer,index)=>{
@@ -89,8 +90,8 @@ function nextForm(){if(mode==='playlist')return playlist.current().cue;if(useCat
 function idleReturn(){if(!useCatalog)return'cute';const preferred=clips.find(c=>c.id==='friendly-drift'&&!c.manualOnly&&picker.can(director.current,c.id));return preferred?.id||picker.pick('friendly',director.current);}
 function autoQueue(select){try{director.request(select()).catch(showError);}catch(error){stop();showError(Error('Program stopped · '+error.message));}}
 
-function tick(now){
- if(disposed)return;const v=transport.active;if(v&&(v!==lastVideo||v.currentTime!==lastTime)){activity++;lastVideo=v;lastTime=v.currentTime;lastFresh=now;}
+function paintDesk(now){
+ if(disposed)return;frameClock.pulse();const v=transport.active;if(v&&(v!==lastVideo||v.currentTime!==lastTime)){activity++;lastVideo=v;lastTime=v.currentTime;lastFresh=now;}
  const wasStale=stale;stale=!!v&&now-lastFresh>1200;if(stale&&!wasStale)soundControls?.cancel();compositor.suspend(stale);transport.suspendSound(stale);
  for(const item of overlays.values())if(item.source.tagName==='VIDEO'&&item.source.currentTime!==item.lastTime){item.lastTime=item.source.currentTime;activity++;}
  // Automatic pacing counts visible performance, excluding decode/transition/stall time.
@@ -104,14 +105,15 @@ function tick(now){
   if(exitDue){autoQueue(()=>mode==='manual'?idleReturn():mode==='playlist'?playlist.current().cue:due?nextForm():useCatalog?picker.pick(formOf(director.current),director.current):director.current);}
   else if(mode!=='manual'&&mode!=='playlist'&&due){try{const next=nextForm();if(next===director.current&&v.loop)formSince=now;else director.request(next);}catch(error){stop();showError(error);}}
  }
- compositor.render();raf=requestAnimationFrame(tick);
+ compositor.render();
 }
+function tick(now){if(disposed)return;paintDesk(now);raf=requestAnimationFrame(tick);}
 refreshLayers();tick(performance.now());
 soundControls=mountOwnerSound(document.querySelector('main>aside'),{canPlay:()=>!disposed&&!stale&&!compositor.black&&director.phase==='playing'});
-const inspectDesk=()=>({director:director.inspect(),composition:compositor.inspect(),mode,library:{approved:useCatalog,count:clips.length,error:libraryError},program:{visibleMs:Math.max(0,(formPausedAt??performance.now())-formSince),paused:formPausedAt!==null},playlist:playlist.inspect(),filmSound:transport.inspectSound(),preparation:{ready:transport.prepared?.id||null,pending:transport.preparing?.id||null},media:transport.videos.map(v=>({muted:v.muted,paused:v.paused,cue:v.dataset.cue||null,currentTime:v.currentTime,loop:v.loop})),effects:overlays.size,sound:soundControls.inspect(),operator:operatorControls?.inspect()||null});
+const inspectDesk=()=>({director:director.inspect(),composition:compositor.inspect(),frameClock:frameClock.inspect(),mode,library:{approved:useCatalog,count:clips.length,error:libraryError},program:{visibleMs:Math.max(0,(formPausedAt??performance.now())-formSince),paused:formPausedAt!==null},playlist:playlist.inspect(),filmSound:transport.inspectSound(),preparation:{ready:transport.prepared?.id||null,pending:transport.preparing?.id||null},media:transport.videos.map(v=>({muted:v.muted,paused:v.paused,cue:v.dataset.cue||null,currentTime:v.currentTime,loop:v.loop})),effects:overlays.size,sound:soundControls.inspect(),operator:operatorControls?.inspect()||null});
 const remote=createFilmRemote({chooseCue,startProgram,stop,inspect:inspectDesk,clips:useCatalog||libraryError?clips:undefined,programModes:libraryError?[]:[...$('mode').options].filter(o=>!o.disabled).map(o=>o.value)});
 window.WispDesk={inspect:inspectDesk,...remote};
 const phoneRemote={remoteState:remote.remoteState,remoteCommand:(...args)=>{const access=operatorControls?.inspect();if(access?.cloud&&(!access.authenticated||access.busy||access.disposed))return Promise.reject(Object.assign(Error('Operator sign-in required'),{cancelled:true}));return remote.remoteCommand(...args);}};
 mountPhoneControls({controller:()=>phoneRemote,previewCanvas:()=>$('stage')});
 operatorControls=mountOperatorAccess(document.querySelector('main>aside'),{onSignedOut:stop,beforeSignOut:async()=>{if(window.HauntPhone?.inspect().enabled)await window.HauntPhone.disable();},onSignedIn:async()=>{try{await window.HauntPhone?.refresh();}catch(error){$('phoneStatus').textContent='Signed in. '+error.message;}}});
-window.addEventListener('pagehide',()=>{disposed=true;cancelAnimationFrame(raf);director.dispose();operatorControls.dispose();soundControls.dispose();for(const id of [...overlays.keys()])release(id);compositor.dispose();output.dispose();},{once:true});
+window.addEventListener('pagehide',()=>{disposed=true;cancelAnimationFrame(raf);director.dispose();frameClock.dispose();operatorControls.dispose();soundControls.dispose();for(const id of [...overlays.keys()])release(id);compositor.dispose();output.dispose();},{once:true});

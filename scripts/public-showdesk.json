@@ -18,9 +18,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.mjs",
       "destination": "showdesk.mjs",
-      "sha256": "934d6d7c2af2e795b50268dc2e99916ab1d0fbcc667bb1b5f1c4fc1ce2c884ef",
-      "bytes": 17688,
-      "publishedSha256": "e5005b6e697f162a427965a828e1a6bcf252de40b9a84cc035517b0a4f4f6987",
+      "sha256": "f7475c242a3d0ea5f1c700f4b97690cbd060c72497df7627729ff4c7d1ae567f",
+      "bytes": 17962,
+      "publishedSha256": "4f2e85075f3d83c5798b7fdf8d9860f457d11c441707fd54d984bd8c5e27520e",
       "rewrites": [
         {
           "from": "../runway-pilots/wisp-film-output.js",
@@ -39,9 +39,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/film-transport.mjs",
       "destination": "film-transport.mjs",
-      "sha256": "ad74dea2ba95fcd7db938caea59cd5b4e70be0b0006df55bdceaf09aaf35ee6f",
-      "bytes": 11107,
-      "publishedSha256": "ad74dea2ba95fcd7db938caea59cd5b4e70be0b0006df55bdceaf09aaf35ee6f"
+      "sha256": "5ab0f257425e11c56115acae7e3196d364ca9c125f4eba52248074e29a6b3323",
+      "bytes": 11764,
+      "publishedSha256": "5ab0f257425e11c56115acae7e3196d364ca9c125f4eba52248074e29a6b3323"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/cue-director.mjs",
@@ -130,8 +130,8 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/director.mjs",
       "destination": "director.mjs",
-      "bytes": 9900,
-      "sha256": "042f8d22f9c1101860aa07fdb404471b1ab6f80c0ebab063b2277dff6f8159b1",
+      "bytes": 10126,
+      "sha256": "abf1330c958f7fd3c2dbfa1c678e0be7cc7fa2731c944c9839fd1824fd2ff2e3",
       "rewrites": [
         {
           "from": "../tonight-demo/paired-controls.mjs",
@@ -146,7 +146,7 @@
           "to": "../wisp-mouth-study/phone-painted-mouth-layer.mjs"
         }
       ],
-      "publishedSha256": "2fea33574244e3886fe46780a624902baf2f9aab164f533e095bd3635f753838"
+      "publishedSha256": "bd607e487cf6f14e861cd539b0b5db14b6ab3811836b17f45c38c3c4d9e4c97e"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/director.css",
@@ -168,6 +168,13 @@
       "bytes": 4519,
       "sha256": "14a8b3c518fdbb98958f1cf89f798a818d9b9c88b2b8810cdf4fc9c5687ef09a",
       "publishedSha256": "14a8b3c518fdbb98958f1cf89f798a818d9b9c88b2b8810cdf4fc9c5687ef09a"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/frame-clock.mjs",
+      "destination": "frame-clock.mjs",
+      "bytes": 1563,
+      "sha256": "070661e42a1fd2e4f18801b06b5f1638a2e6d59174ea68ce386fa5ba29f94eb6",
+      "publishedSha256": "070661e42a1fd2e4f18801b06b5f1638a2e6d59174ea68ce386fa5ba29f94eb6"
     }
   ]
 }
