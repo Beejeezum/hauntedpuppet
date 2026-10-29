@@ -24,5 +24,13 @@
   "humanReview": "pending",
   "runtimePublication": false,
   "physicalProjection": false,
-  "paidCreditsSpent": 0
+  "paidCreditsSpent": 0,
+  "laterLinuxComparisons": {
+    "head": "80033a97302164d271b02b8229f7cd6047bfa5f2",
+    "softwareRun": 40824982164,
+    "softwareResult": "pass:6speechStarts/2canonicalPreparations/zeroPageErrors/closedCleanly",
+    "normalRun": 40825262219,
+    "normalResult": "failure:3speechStarts;4thpreparation voice request stalled;853published/0captureFailures;owner responsive",
+    "limits": "One software pass does not establish reliability. Native normal-backend glcolorconvertelement1 reports inability to transform I4201280x720 GLMemory around transition; causal link to stalled request unproven. No production switch or release approval."
+  }
 }
