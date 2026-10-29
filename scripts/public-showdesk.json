@@ -4,23 +4,23 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.html",
       "destination": "index.html",
-      "sha256": "605f06beb66ab76e4265cab72a254c8f019c2e486b79a8641f21c57998e2f736",
-      "bytes": 3731,
-      "publishedSha256": "605f06beb66ab76e4265cab72a254c8f019c2e486b79a8641f21c57998e2f736"
+      "sha256": "f0cafa0224955dee7be9f61988edd97994605ff3a439ac1a0f3cede1afc7cbf9",
+      "bytes": 3992,
+      "publishedSha256": "f0cafa0224955dee7be9f61988edd97994605ff3a439ac1a0f3cede1afc7cbf9"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.css",
       "destination": "showdesk.css",
-      "sha256": "60264afb62128679ea928d356cdbe405882a97b5225e676347f7e0aa987e9f89",
-      "bytes": 4593,
-      "publishedSha256": "60264afb62128679ea928d356cdbe405882a97b5225e676347f7e0aa987e9f89"
+      "sha256": "60c29bc98f2f2c4b52494891713c4b76f2eec3569454d5e974e2377347d53a1a",
+      "bytes": 6900,
+      "publishedSha256": "60c29bc98f2f2c4b52494891713c4b76f2eec3569454d5e974e2377347d53a1a"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.mjs",
       "destination": "showdesk.mjs",
-      "sha256": "3337d57d382b2b015d22a67487161462b734e365cd4d47b8eb2aa55bdc3694e8",
-      "bytes": 20366,
-      "publishedSha256": "989a4a8bf3978b4be8cb7f4ca2a76be65499ee34433b3d95bcdaf65335a60bb4",
+      "sha256": "f99f7d419e8f803474347eca65e9fe3c97c99a8f601e0f032789762243c20a25",
+      "bytes": 21555,
+      "publishedSha256": "b49352836d85466672c010054c44f17bb070720d1a990a8b321bbc855dbc6709",
       "rewrites": [
         {
           "from": "../runway-pilots/wisp-film-output.js",
@@ -39,16 +39,16 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/film-transport.mjs",
       "destination": "film-transport.mjs",
-      "sha256": "0afa391b631400d12e3cec1fd2c3a9027b52478a672fc9c424aa5108f4ca9bc9",
-      "bytes": 13828,
-      "publishedSha256": "0afa391b631400d12e3cec1fd2c3a9027b52478a672fc9c424aa5108f4ca9bc9"
+      "sha256": "b8fb031909dcb5f9b71f76d966d9cbd13716372c08c6ca3832cf8e8dc1eaf1a9",
+      "bytes": 14096,
+      "publishedSha256": "b8fb031909dcb5f9b71f76d966d9cbd13716372c08c6ca3832cf8e8dc1eaf1a9"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/cue-director.mjs",
       "destination": "cue-director.mjs",
-      "sha256": "1736012cd45e638e860a190fbe1c123a1c28f0454698276bec31cae783e81a56",
-      "bytes": 2690,
-      "publishedSha256": "1736012cd45e638e860a190fbe1c123a1c28f0454698276bec31cae783e81a56"
+      "sha256": "fc18284f2165fc007cbced36bfcc86ea87fb5b3aed7db1ccf95f6f03d38e9a64",
+      "bytes": 2801,
+      "publishedSha256": "fc18284f2165fc007cbced36bfcc86ea87fb5b3aed7db1ccf95f6f03d38e9a64"
     },
     {
       "source": "source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4",
@@ -95,9 +95,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/saved-playlists.mjs",
       "destination": "saved-playlists.mjs",
-      "sha256": "e0c5e34a8114f763fdd6e9e96177cc8a5d06d2c5a5f1737b4a4b11c4f8faa22f",
-      "bytes": 7797,
-      "publishedSha256": "e0c5e34a8114f763fdd6e9e96177cc8a5d06d2c5a5f1737b4a4b11c4f8faa22f"
+      "sha256": "99e08bf6716a0a8ad1acff98b7fdcad622b36cc9d13de6cc8dd6b679f16f4531",
+      "bytes": 8678,
+      "publishedSha256": "99e08bf6716a0a8ad1acff98b7fdcad622b36cc9d13de6cc8dd6b679f16f4531"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/catalog-director.mjs",
@@ -223,6 +223,76 @@
       "sha256": "174a88eb2731c66ea503328437bd71639a165070ebc02d4cd44f022837bcf993",
       "bytes": 1896,
       "publishedSha256": "174a88eb2731c66ea503328437bd71639a165070ebc02d4cd44f022837bcf993"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/friendly-wave-runtime-candidate-v3.mp4",
+      "destination": "rehearsal-friendly-wave.mp4",
+      "sha256": "32177fb6e3f49de6e8f4bf761575fa1709358ac56ee4c3464f029ffbb9a6300a",
+      "bytes": 476267,
+      "publishedSha256": "32177fb6e3f49de6e8f4bf761575fa1709358ac56ee4c3464f029ffbb9a6300a"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/friendly-boo-fail-runtime-candidate-v1.mp4",
+      "destination": "rehearsal-friendly-boo-fail.mp4",
+      "sha256": "4d35f8db6b482ca469acb3e1e17f07efa089a4b676dc428da3c0e6fcbad27b45",
+      "bytes": 627704,
+      "publishedSha256": "4d35f8db6b482ca469acb3e1e17f07efa089a4b676dc428da3c0e6fcbad27b45"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/scary-reach-runtime-candidate-v1.mp4",
+      "destination": "rehearsal-scary-reach.mp4",
+      "sha256": "2a003d4f575262ba20651eebf24d6e9d56c32a936533541c3e081453d4e48ecf",
+      "bytes": 960621,
+      "publishedSha256": "2a003d4f575262ba20651eebf24d6e9d56c32a936533541c3e081453d4e48ecf"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/friendly-depart-runtime-candidate-v1.mp4",
+      "destination": "rehearsal-friendly-depart.mp4",
+      "sha256": "58d6bd30ab6540e3d7d8eb1f086fe18c2986fa85a04dc45e6cd7301c6e89c59d",
+      "bytes": 575720,
+      "publishedSha256": "58d6bd30ab6540e3d7d8eb1f086fe18c2986fa85a04dc45e6cd7301c6e89c59d"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/scary-eyes-runtime-candidate-v1.mp4",
+      "destination": "rehearsal-scary-eyes.mp4",
+      "sha256": "8d30ec2f4d781fd8b663a04e855949d454e1d09948c1d913e8393437a3a4e1f3",
+      "bytes": 793366,
+      "publishedSha256": "8d30ec2f4d781fd8b663a04e855949d454e1d09948c1d913e8393437a3a4e1f3"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/cute-to-evil-runtime-candidate-v3.mp4",
+      "destination": "rehearsal-cute-to-evil.mp4",
+      "sha256": "ec9b8a65b525f43991c07b57197b8108ee46d0c0e9c7d83cdb3b2b5f610b0dec",
+      "bytes": 250660,
+      "publishedSha256": "ec9b8a65b525f43991c07b57197b8108ee46d0c0e9c7d83cdb3b2b5f610b0dec"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/evil-to-cute-runtime-candidate-v3.mp4",
+      "destination": "rehearsal-evil-to-cute.mp4",
+      "sha256": "c3ccb74d44a44e658c723405b51fcd9e3b57a81749f89f8903dd66e455d70463",
+      "bytes": 193416,
+      "publishedSha256": "c3ccb74d44a44e658c723405b51fcd9e3b57a81749f89f8903dd66e455d70463"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/cue-board.mjs",
+      "destination": "cue-board.mjs",
+      "bytes": 3600,
+      "sha256": "b727182c06e4bc5b681ee509598dbdc5806354593f7a5e90f5456035327f51f8",
+      "publishedSha256": "b727182c06e4bc5b681ee509598dbdc5806354593f7a5e90f5456035327f51f8"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/cue-board-inventory.json",
+      "destination": "cue-board-inventory.json",
+      "bytes": 1723,
+      "sha256": "a1b05b3ebabee3ec1fe49823c8b7531615354d3b49c661c796671c191e466fae",
+      "publishedSha256": "a1b05b3ebabee3ec1fe49823c8b7531615354d3b49c661c796671c191e466fae"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/rehearsal-cues.json",
+      "destination": "rehearsal-cues.json",
+      "bytes": 2387,
+      "sha256": "b42e8a66299f122f121c9c0381649d5af139601f77f27185e30cf349b2b9cc13",
+      "publishedSha256": "b42e8a66299f122f121c9c0381649d5af139601f77f27185e30cf349b2b9cc13"
     }
   ]
 }

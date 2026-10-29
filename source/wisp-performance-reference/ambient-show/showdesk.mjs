@@ -1,3 +1,4 @@
+import {mountCueBoard} from './cue-board.mjs';
 import {loadRuntime,ProgramPicker,cueForm} from './runtime-library.mjs';
 import {CatalogCueDirector} from './catalog-director.mjs';
 import {PlaylistRunner,mountPlaylists,playlistControls} from './saved-playlists.mjs';
@@ -16,9 +17,13 @@ const $=id=>document.getElementById(id),studies=[
  {id:'cute',form:'friendly',title:'Friendly Wisp',detail:'Fuller living motion · approved direction',loop:true,src:'../runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4'},
  {id:'scary',form:'scary',title:'Menacing Wisp',detail:'Full-body motion study · exits through black',loop:false,src:'../runway-pilots/motion-transfer-study/wisp-scary-motion-transfer-v35.mp4'}
 ];
+const expanded=new URLSearchParams(location.search).get('rehearsal')==='expanded';
+if(expanded){const bank=await fetch(new URL('./rehearsal-cues.json',import.meta.url)).then(r=>{if(!r.ok)throw Error('Rehearsal bank unavailable');return r.json()});studies.push(...bank.clips);}
+const inventory=await fetch(new URL('./cue-board-inventory.json',import.meta.url)).then(r=>r.json());
 let libraryError=null;
 const runtime=await loadRuntime(new URL('./playback-library.json',import.meta.url)).catch(error=>{libraryError=error.message;return null;});
 const useCatalog=!!runtime?.clips.length,clips=runtime?(useCatalog?runtime.clips.map(c=>({...c,detail:c.manualOnly?'Operator cue · complete performance':'Approved film · planned transitions'})):studies):[];
+if(expanded&&!useCatalog){$('stageInfo').textContent='Rehearsal board ·9 actual films, final reviews pending. Requests finish one-shot acting, fade through black, then enter the next clip. This is not an invisible body morph.';$('studyInfo').textContent='Record any available film buttons into a saved running order. Missing films are labeled, never replaced with placeholders.';}
 const picker=useCatalog?new ProgramPicker(runtime):null;
 const formOf=id=>cueForm(clips.find(c=>c.id===id));
 const showError=error=>{$('status').textContent=error.message;};
@@ -30,8 +35,8 @@ let soundControls,operatorControls;const playlist=new PlaylistRunner();
 const labels={stopped:'Stage black',preparing:'Preparing next cue',exiting:'Planned exit','empty-stage':'Empty stage · planned transition',entering:'Planned entrance',playing:'On stage',bridging:'Transition performance',unavailable:'Film unavailable · stage black'};
 const directorOptions={fadeMs:900,onState:s=>{
  if(s.phase!=='playing')soundControls?.cancel();if(['stopped','unavailable'].includes(s.phase))$('filmSound').checked=false;
- $('status').textContent=labels[s.phase]+(s.current?' · '+clips.find(c=>c.id===s.current)?.title:'');$('queue').textContent=s.queued?'Queued · '+clips.find(c=>c.id===s.queued)?.title:'No cue queued';
- for(const b of $('cues').querySelectorAll('button')){b.setAttribute('aria-pressed',String(b.dataset.cue===s.current));if(useCatalog){b.disabled=!!s.current&&s.current!==b.dataset.cue&&!picker.can(s.current,b.dataset.cue);b.title=b.disabled?'This cue needs a transition. Blackout lets you start it on an empty stage.':'';}}
+ $('status').textContent=labels[s.phase]+(s.phase==='unavailable'&&s.error?' · '+s.error:'')+(s.current?' · '+clips.find(c=>c.id===s.current)?.title:'');$('queue').textContent=s.queued?'Queued · '+clips.find(c=>c.id===s.queued)?.title:'No cue queued';
+ for(const b of $('cues').querySelectorAll('button[data-cue]')){b.setAttribute('aria-pressed',String(b.dataset.cue===s.current));if(useCatalog){b.disabled=!!s.current&&s.current!==b.dataset.cue&&!picker.can(s.current,b.dataset.cue);b.title=b.disabled?'This cue needs a transition. Blackout lets you start it on an empty stage.':'';}}
  if(s.phase==='playing'&&mode==='playlist'){const state=playlist.inspect(),steps=playlist.playlist.steps;transport.preload(steps[(state.index+1)%steps.length].cue);}
  if(s.phase==='playing'&&formOf(s.current)!==lastForm){lastForm=formOf(s.current);formSince=performance.now();formPausedAt=null;}
 }};
@@ -86,7 +91,7 @@ $('effectFile').onchange=async event=>{
  finally{pendingEffects.delete(item);}
 };
 function stop(){cancelPendingEffects();playlist.stop();formPausedAt=null;mode='manual';$('mode').value=mode;timing();director.stop();for(const {source}of overlays.values())source.pause?.();output.blackout();lastForm=null;}
-for(const clip of clips){const b=document.createElement('button');b.dataset.cue=clip.id;b.innerHTML='<strong></strong><small></small>';b.querySelector('strong').textContent=clip.title;b.querySelector('small').textContent=clip.detail;b.onclick=()=>{try{chooseCue(clip.id).catch(showError);}catch(error){showError(error);}};$('cues').append(b);}
+
 function chooseCue(id){if(useCatalog)director.resolve(director.current,id);playlist.stop();formPausedAt=null;mode='manual';$('mode').value=mode;timing();if(director.current===id&&director.phase==='playing')return Promise.resolve();return director.request(id);}
 function startProgram(selected){
  let id;if(useCatalog){if(selected!=='manual')picker.assertMode(selected);picker.reset();const form=['scary','mostly-scary'].includes(selected)?'scary':'friendly';id=picker.pick(form,director.current);director.resolve(director.current,id);}else{id=['scary','mostly-scary'].includes(selected)?'scary':'cute';if(!clips.length)throw Error('Cue library unavailable');}
@@ -99,9 +104,11 @@ function validatePlaylistRun(p){
  if(disposed)throw Error('Show desk closed');
  if(useCatalog){for(let i=0;i<p.steps.length;i++){director.resolve(p.steps[i].cue,p.steps[(i+1)%p.steps.length].cue);if(!clips.find(c=>c.id===p.steps[i].cue).loop)director.resolve(p.steps[i].cue,p.steps[i].cue);}director.resolve(director.current,p.steps[0].cue);}
 }
-const playlists=playlistControls(mountPlaylists(document.querySelector('main>aside'),{clips:playlistClips,cueAliases,description:useCatalog?'Complete performances and reviewed routes are preserved. Manual cues or Blackout stop the playlist.':undefined,onRun:p=>{
+const playlists=playlistControls(mountPlaylists($('playlistPanel'),{clips:playlistClips,cueAliases,description:useCatalog?'Complete performances and reviewed routes are preserved. Manual cues or Blackout stop the playlist.':undefined,onRun:p=>{
  validatePlaylistRun(p);const id=playlist.start(p,playlistClips.map(c=>c.id));mode='playlist';$('mode').value='playlist';$('programTiming').textContent='Repeating playlist · '+p.name;lastForm=null;formSince=performance.now();formPausedAt=null;return director.request(id);
 }}));
+const boardInventory=useCatalog?[...clips.map(c=>inventory.clips.find(i=>i.id===c.id)||{id:c.id,title:c.title,form:c.form}),...inventory.clips.filter(i=>!clips.some(c=>c.id===i.id))].slice(0,16):inventory.clips;
+const cueBoard=libraryError?{inspect:()=>({available:0,pads:0,recording:false}),dispose(){}}:mountCueBoard($('cues'),{clips,inventory:boardInventory,playlists,chooseCue,stop,runSaved:()=>playlists.run(),toggleSound:()=>{$('filmSound').checked=!$('filmSound').checked;$('filmSound').dispatchEvent(new Event('change'));},openOutput:()=>document.querySelector('.stage-panel>button')?.click(),onError:showError});
 const selectedSavedPlaylist=()=>{const p=playlists.selected();if(!p)return null;try{validatePlaylistRun(p);return p;}catch{return null;}};
 $('filmSound').onchange=()=>transport.setSound($('filmSound').checked,Number($('filmLevel').value)/100);$('filmLevel').oninput=()=>transport.setSound($('filmSound').checked,Number($('filmLevel').value)/100);
 $('start').onclick=()=>{try{if($('mode').value==='playlist')document.querySelector('[data-run]').click();else startProgram($('mode').value).catch(showError);}catch(error){showError(error);}};
@@ -132,10 +139,10 @@ function paintDesk(now){
 function tick(now){if(disposed)return;paintDesk(now);raf=requestAnimationFrame(tick);}
 refreshLayers();tick(performance.now());
 soundControls=mountOwnerSound(document.querySelector('main>aside'),{canPlay:()=>!disposed&&!stale&&!compositor.black&&director.phase==='playing'});
-const inspectDesk=()=>({director:director.inspect(),composition:compositor.inspect(),frameClock:frameClock.inspect(),mode,library:{approved:useCatalog,count:clips.length,error:libraryError},program:{visibleMs:Math.max(0,(formPausedAt??performance.now())-formSince),paused:formPausedAt!==null},playlist:playlist.inspect(),filmSound:transport.inspectSound(),preparation:{ready:transport.prepared?.id||null,pending:transport.preparing?.id||null},media:transport.videos.map(v=>({muted:v.muted,paused:v.paused,cue:v.dataset.cue||null,currentTime:v.currentTime,loop:v.loop})),effects:overlays.size,pendingEffects:pendingEffects.size,lastEffectFailure:lastEffectFailure?structuredClone(lastEffectFailure):null,sound:soundControls.inspect(),operator:operatorControls?.inspect()||null});
-const remote=createFilmRemote({chooseCue,startProgram,stop,inspect:inspectDesk,clips:useCatalog||libraryError?clips:undefined,programModes:libraryError?[]:[...$('mode').options].filter(o=>!o.disabled).map(o=>o.value),savedPlaylist:{selected:selectedSavedPlaylist,run:()=>playlists.run()}});
+const inspectDesk=()=>({cueBoard:cueBoard.inspect(),director:director.inspect(),composition:compositor.inspect(),frameClock:frameClock.inspect(),mode,library:{approved:useCatalog,count:clips.length,error:libraryError},program:{visibleMs:Math.max(0,(formPausedAt??performance.now())-formSince),paused:formPausedAt!==null},playlist:playlist.inspect(),filmSound:transport.inspectSound(),preparation:{ready:transport.prepared?.id||null,pending:transport.preparing?.id||null},media:transport.videos.map(v=>({muted:v.muted,paused:v.paused,cue:v.dataset.cue||null,currentTime:v.currentTime,loop:v.loop})),effects:overlays.size,pendingEffects:pendingEffects.size,lastEffectFailure:lastEffectFailure?structuredClone(lastEffectFailure):null,sound:soundControls.inspect(),operator:operatorControls?.inspect()||null});
+const remote=createFilmRemote({chooseCue,startProgram,stop,inspect:inspectDesk,clips:useCatalog||libraryError||expanded?clips:undefined,programModes:libraryError?[]:[...$('mode').options].filter(o=>!o.disabled).map(o=>o.value),savedPlaylist:{selected:selectedSavedPlaylist,run:()=>playlists.run()}});
 window.WispDesk={inspect:inspectDesk,...remote};
 const phoneRemote={remoteState:remote.remoteState,remoteCommand:(...args)=>{const access=operatorControls?.inspect();if(access?.cloud&&(!access.authenticated||access.busy||access.disposed))return Promise.reject(Object.assign(Error('Operator sign-in required'),{cancelled:true}));return remote.remoteCommand(...args);}};
 mountPhoneControls({controller:()=>phoneRemote,previewCanvas:()=>$('stage')});
 operatorControls=mountOperatorAccess(document.querySelector('main>aside'),{onSignedOut:stop,beforeSignOut:async()=>{if(window.HauntPhone?.inspect().enabled)await window.HauntPhone.disable();},onSignedIn:async()=>{try{await window.HauntPhone?.refresh();}catch(error){$('phoneStatus').textContent='Signed in. '+error.message;}}});
-window.addEventListener('pagehide',()=>{disposed=true;cancelPendingEffects();cancelAnimationFrame(raf);director.dispose();frameClock.dispose();operatorControls.dispose();soundControls.dispose();for(const id of [...overlays.keys()])release(id);compositor.dispose();output.dispose();},{once:true});
+window.addEventListener('pagehide',()=>{disposed=true;cueBoard.dispose();cancelPendingEffects();cancelAnimationFrame(raf);director.dispose();frameClock.dispose();operatorControls.dispose();soundControls.dispose();for(const id of [...overlays.keys()])release(id);compositor.dispose();output.dispose();},{once:true});

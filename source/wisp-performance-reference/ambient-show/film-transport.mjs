@@ -74,20 +74,22 @@ export class FilmTransport {
  cancelPreparation(){this.prepareEpoch++;this.preparing?.abort.abort();this.preparing=null;this.prepared?.dispose();this.prepared=null;}
  preload(id){return this.prepare(id).then(()=>true).catch(()=>false);}
 
- async exit(ms,live,{keepPicture=false}={}){
+ async exit(ms,live,{keepPicture=false,fadeAfterFinish=false}={}){
   const video=this.active,clip=this.clips.find(c=>c.id===video?.dataset.cue);
   if(!video&&keepPicture&&this.heldFrame)return;
   if(!video||clip?.exitPolicy!=='finish'){if(keepPicture&&video)throw Error('Reviewed cut requires a complete-performance exit');return this.fade(0,ms,live);}
   // Finish this loop iteration naturally before an approved route leaves it.
   video.loop=false;
+  let tailFade=null;
   await new Promise((resolve,reject)=>{
    let frame,timer,settled=false;
    const cleanup=()=>{if(frame!==undefined)this.cancelFrame(frame);clearTimeout(timer);video.removeEventListener('ended',complete);video.removeEventListener('error',failed);if(this.finishWait===cancel)this.finishWait=null;};
    const finish=(error)=>{if(settled)return;settled=true;cleanup();error?reject(error):resolve();};
    const complete=()=>finish(),cancel=()=>finish(),failed=()=>finish(Error('Film exit unavailable'));
-   const tick=()=>{if(!live()||this.disposed||this.active!==video){cancel();return;}if(video.ended){complete();return;}frame=this.requestFrame(tick);};
+   const tick=()=>{if(!live()||this.disposed||this.active!==video){cancel();return;}if(video.ended){complete();return;}if(fadeAfterFinish&&!tailFade&&Number.isFinite(video.duration)&&video.currentTime>=video.duration-ms/1000)tailFade=this.fade(0,ms,live);frame=this.requestFrame(tick);};
    this.finishWait=cancel;video.addEventListener('ended',complete);video.addEventListener('error',failed);const remaining=Number.isFinite(video.duration)?Math.max(0,video.duration-video.currentTime):0;timer=setTimeout(()=>failed(),(remaining+6)*1000);tick();
   });
+  if(fadeAfterFinish&&live()&&this.active===video)await(tailFade||this.fade(0,ms,live));
   if(live()&&this.active===video&&!keepPicture){this.compositor.setLevel(0);this.compositor.blackout();this.syncSound();}
  }
  holdPicture(video){

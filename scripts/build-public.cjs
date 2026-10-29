@@ -22,7 +22,7 @@ const desk = JSON.parse(fs.readFileSync(path.join(root, 'scripts/public-showdesk
 const deskOut = path.join(out, 'assets/wisp-showdesk');
 fs.mkdirSync(deskOut, {recursive:true});
 for (const item of desk.files) {
-  if (!/^source\/wisp-performance-reference\/(ambient-show|runway-pilots)\//.test(item.source) || path.basename(item.destination) !== item.destination) throw Error('Invalid show desk asset path');
+  if (!/^source\/wisp-performance-reference\/(ambient-show|runway-pilots|button-cue-batch)\//.test(item.source) || path.basename(item.destination) !== item.destination) throw Error('Invalid show desk asset path');
   let bytes = fs.readFileSync(path.join(root, item.source));
   const hash = b => require('node:crypto').createHash('sha256').update(b).digest('hex');
   if (bytes.length !== item.bytes || hash(bytes) !== item.sha256) throw Error('Unreviewed show desk asset: '+item.destination);

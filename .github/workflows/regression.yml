@@ -318,6 +318,11 @@ jobs:
           mkdir -p work
           HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
           DEBUG=pw:browser HAUNT_BROWSER=webkit HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
+      - name: Rehearse the cue keyboard and recorded playlists
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
+        run: |
+          node tests/cue_board.cjs
+          HAUNT_BROWSER=webkit node tests/cue_board.cjs
       - name: Rehearse approved-catalog controls with synthetic approvals
         if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
         run: |

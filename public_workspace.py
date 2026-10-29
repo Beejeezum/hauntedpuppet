@@ -16,7 +16,7 @@ WORKSPACES = {
 
 
 SOURCE_ROOTS = {
-    'public-showdesk.json': ('source/wisp-performance-reference/ambient-show/', 'source/wisp-performance-reference/runway-pilots/'),
+    'public-showdesk.json': ('source/wisp-performance-reference/ambient-show/', 'source/wisp-performance-reference/runway-pilots/', 'source/wisp-performance-reference/button-cue-batch/'),
     'public-film-preview.json': ('source/wisp-performance-reference/runway-pilots/',),
     'public-tonight-demo.json': ('source/wisp-performance-reference/tonight-demo/',),
     'public-mouth-study.json': ('source/wisp-art-reference/painted-speech-study/',),

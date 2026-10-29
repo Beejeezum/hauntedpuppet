@@ -1,0 +1,82 @@
+{
+  "purpose": "Explicit rehearsal candidates, not approved playback-library entries. Fade through black only; final motion/sound/join review pending.",
+  "clips": [
+    {
+      "id": "friendly-wave",
+      "title": "A wave for the sidewalk",
+      "form": "friendly",
+      "detail": "Rehearsal film \u00b7 final review pending",
+      "src": "./rehearsal-friendly-wave.mp4",
+      "loop": false,
+      "seconds": 10,
+      "exitPolicy": "finish",
+      "exitPort": "empty"
+    },
+    {
+      "id": "friendly-boo-fail",
+      "title": "Trying to be frightening",
+      "form": "friendly",
+      "detail": "Rehearsal film \u00b7 final review pending",
+      "src": "./rehearsal-friendly-boo-fail.mp4",
+      "loop": false,
+      "seconds": 10,
+      "exitPolicy": "finish",
+      "exitPort": "empty"
+    },
+    {
+      "id": "scary-reach",
+      "title": "A hand from the mist",
+      "form": "scary",
+      "detail": "Rehearsal film \u00b7 final review pending",
+      "src": "./rehearsal-scary-reach.mp4",
+      "loop": false,
+      "seconds": 10,
+      "exitPolicy": "finish",
+      "exitPort": "empty"
+    },
+    {
+      "id": "friendly-depart",
+      "title": "Off to the next haunting",
+      "form": "friendly",
+      "detail": "Rehearsal film \u00b7 final review pending",
+      "src": "./rehearsal-friendly-depart.mp4",
+      "loop": false,
+      "seconds": 10,
+      "exitPolicy": "finish",
+      "exitPort": "empty"
+    },
+    {
+      "id": "scary-eyes",
+      "title": "Only the eyes remain",
+      "form": "scary",
+      "detail": "Rehearsal film \u00b7 final review pending",
+      "src": "./rehearsal-scary-eyes.mp4",
+      "loop": false,
+      "seconds": 10,
+      "exitPolicy": "finish",
+      "exitPort": "empty"
+    },
+    {
+      "id": "cute-to-evil",
+      "title": "The same spirit darkens",
+      "form": "transition",
+      "detail": "Rehearsal film \u00b7 final review pending",
+      "src": "./rehearsal-cute-to-evil.mp4",
+      "loop": false,
+      "seconds": 5,
+      "exitPolicy": "finish",
+      "exitPort": "scary-rest"
+    },
+    {
+      "id": "evil-to-cute",
+      "title": "Welcome, little visitors",
+      "form": "transition",
+      "detail": "Rehearsal film \u00b7 final review pending",
+      "src": "./rehearsal-evil-to-cute.mp4",
+      "loop": false,
+      "seconds": 5,
+      "exitPolicy": "finish",
+      "exitPort": "friendly-rest"
+    }
+  ]
+}
