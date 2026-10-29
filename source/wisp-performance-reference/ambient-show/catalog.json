@@ -500,6 +500,16 @@
       "status": "contextual-join-review-pending",
       "reviewMetadata": "../button-cue-batch/wisp-eyes-context-review-v1.json",
       "scope": "One848frame35.33second source review with the eyes cue between the forward morph and native scary hover. One fixed compact staging profile, continuous original dry score, all15percent reserve.6authored windows extract to pixel-identical independently decodable videos. New size calibration, both new visible cuts, sound and closing loop still need human review. This is not5finished library cues or any arbitrary-route approval."
+    },
+    {
+      "plannedClipIds": [
+        "fog-lettering"
+      ],
+      "media": "../button-cue-batch/fog-lettering-runtime-candidate-v1.mp4",
+      "sha256": "238c41a03bff96ce54957422f1d3fe99f679894b9e64749dc9865a1edccf4931",
+      "status": "human-review-pending",
+      "evidence": "../button-cue-batch/fog-lettering-runtime-candidate-v1.json",
+      "scope": "One complete265frame11.04second smoke-lettering performance with embedded dry effects. Global black-point16 grade plus fixed60percent whole-frame fit; all20percent reserve passes,13exact-black head/26tailframes and silent audio handles. Human typography, smoke detail, size, motion and dry mix review pending; no automatic cue admission or physical projection approval."
     }
   ],
   "deferredClips": [

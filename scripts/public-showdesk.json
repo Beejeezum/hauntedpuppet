@@ -116,9 +116,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/approved-publication.json",
       "destination": "approved-publication.json",
-      "sha256": "72389461cfea447584dc91ce44ba29f8993088fdb4bedb09abd6b7d68cea68b9",
+      "sha256": "eab7820859cb1955ea945c96651220f37b78294e943faaad4763b007293c144d",
       "bytes": 191,
-      "publishedSha256": "72389461cfea447584dc91ce44ba29f8993088fdb4bedb09abd6b7d68cea68b9"
+      "publishedSha256": "eab7820859cb1955ea945c96651220f37b78294e943faaad4763b007293c144d"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/director.html",

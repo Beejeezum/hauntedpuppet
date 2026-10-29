@@ -43,7 +43,8 @@
         "lowpassHz": 3500
       }
     ],
-    "recipe": "Deterministic shaped broadband dry air with stereo envelopes; no speech, notes, music or choir."
+    "recipe": "Deterministic shaped broadband dry air with stereo envelopes; no speech, notes, music or choir.",
+    "lastHalfSecondPeak": 0.0
   },
   "humanApproval": false,
   "runtimePublication": false,
@@ -57,5 +58,16 @@
     "firstHalfSecondPeak": 0.0,
     "lastHalfSecondPeak": 0.0,
     "scope": "Encoded audio waveform only; not human sound acceptance."
+  },
+  "humanReview": "pending",
+  "emptyStartFrames": 13,
+  "emptyEndFrames": 26,
+  "audioTailSilenceSeconds": 0.5,
+  "entryPort": "empty",
+  "exitPort": "empty",
+  "privatePlaylistReview": {
+    "technical": "PASS Chrome and Mac WebKit: lettering to wave to lettering, full ending, both planned black holds and cleanup.",
+    "evidence": "fog-lettering-runtime-candidate-v1-handoff.json",
+    "visual": "pending; a planned empty stage is not an invisible pose-matched join"
   }
 }
