@@ -10,7 +10,8 @@ import {DirectorAmbientProgram} from './director-ambient-program.mjs';
 import {mountPairedControls} from '../tonight-demo/paired-controls.mjs';
 import {mountFilmOutput} from '../runway-pilots/wisp-film-output.js';
 const $=id=>document.getElementById(id),clips=[{id:'friendly-drift',character:'friendly',src:'./friendly.mp4',loop:true,exitPolicy:'finish'},{id:'scary-drift',character:'scary',src:'./scary.mp4',loop:false,exitPolicy:'finish'}];
-const ownedMouth=new URLSearchParams(location.search).get('mouth')==='owned-native';
+const authoredMouth=new URLSearchParams(location.search).get('mouth')==='authored-native';
+const ownedMouth=authoredMouth||new URLSearchParams(location.search).get('mouth')==='owned-native';
 // Keep body capture independent of optional face-renderer disposal.
 const ownedBodySource=ownedMouth?new OwnedVideoFrameSource():null;
 let ownedBodyPull=null,ownedBodyFailed=false;
@@ -93,7 +94,7 @@ $('mouthStudy').onchange=async()=>{
    ambient.suspend();compositor.blackout();ownedBodySource?.stop();ownedBodyPull=null;$('stage').width=$('stage').width;compositor.render();output.releasePictures();
    await new Promise(resolve=>setTimeout(resolve,0));if(disposed||epoch!==mouthEpoch)return;isolatedReference=false;transport.blackout();
   }
-  const native=ownedMouth||new URLSearchParams(location.search).get('mouth')==='native-surface';const Layer=ownedMouth?(await import('../../wisp-art-reference/painted-speech-study/phone-owned-native-lip-layer.mjs')).PhoneOwnedNativeLipLayer:native?(await import('../../wisp-art-reference/painted-speech-study/phone-native-lip-layer.mjs')).PhoneNativeLipLayer:(await import('../../wisp-art-reference/painted-speech-study/phone-painted-mouth-layer.mjs')).PhonePaintedMouthLayer;
+  const native=ownedMouth||new URLSearchParams(location.search).get('mouth')==='native-surface';const Layer=authoredMouth?(await import('../../wisp-art-reference/painted-speech-study/phone-authored-painted-layer.mjs')).PhoneAuthoredPaintedLayer:ownedMouth?(await import('../../wisp-art-reference/painted-speech-study/phone-owned-native-lip-layer.mjs')).PhoneOwnedNativeLipLayer:native?(await import('../../wisp-art-reference/painted-speech-study/phone-native-lip-layer.mjs')).PhoneNativeLipLayer:(await import('../../wisp-art-reference/painted-speech-study/phone-painted-mouth-layer.mjs')).PhonePaintedMouthLayer;
   if(disposed||epoch!==mouthEpoch)return;
   const candidate=new Layer(ownedMouth?{frameSource:ownedBodySource}:undefined);mouthCandidate=candidate;
   try{await candidate.load();if(disposed||epoch!==mouthEpoch){candidate.dispose();return;}
@@ -115,7 +116,7 @@ $('mouthStudy').onchange=async()=>{
      if(!live()){prepared.registration?.dispose();return;}candidate.registration=prepared.registration;
     }finally{abort.signal.removeEventListener('abort',cancelFilm);if(mouthPreparationAbort===abort)mouthPreparationAbort=null;}
    }
-   if(disposed||epoch!==mouthEpoch){candidate.dispose();return;}mouthLayer=candidate;$('mouthStatus').textContent=(ownedMouth?'Picture-registered painted lips':native?'Native painted lips':'Friendly mouth study')+' ready for the next line · unapproved';}catch(error){candidate.dispose();throw error;}
+   if(disposed||epoch!==mouthEpoch){candidate.dispose();return;}mouthLayer=candidate;$('mouthStatus').textContent=(authoredMouth?'Authored painted face':ownedMouth?'Picture-registered painted lips':native?'Native painted lips':'Friendly mouth study')+' ready for the next line · unapproved';}catch(error){candidate.dispose();throw error;}
  }catch(error){if(!disposed&&epoch===mouthEpoch){$('mouthStudy').checked=false;$('mouthStatus').textContent=error.message;}}
  finally{if(epoch===mouthEpoch){mouthPreparing=false;mouthCandidate=null;}}
 };

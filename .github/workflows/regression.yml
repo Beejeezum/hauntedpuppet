@@ -25,6 +25,10 @@ on:
         description: Run only the owned-picture director within the single-pipeline diagnostic
         type: boolean
         default: false
+      native_authored_face:
+        description: Test the explicit authored-face director preview and its preparation cancellation
+        type: boolean
+        default: false
       native_container_pilot:
         description: Compare original and lossless faststart scary-container decoding only
         type: boolean
@@ -461,6 +465,12 @@ jobs:
             exit $?
           fi
           if [ "${{ inputs.native_director_pilot }}" = "true" ]; then
+            if [ "${{ inputs.native_authored_face }}" = "true" ]; then
+              failed=0
+              node tests/authored_phone_director.cjs || failed=1
+              node tests/authored_director_preparation_cancel.cjs || failed=1
+              exit "$failed"
+            fi
             node tests/owned_native_director.cjs
             exit $?
           fi
@@ -514,6 +524,9 @@ jobs:
             work/native-picture-preparation/*.json
             work/owned-speaking-player/*.json
             work/owned-native-director-*.json
+            work/authored-painted-director-*.json
+            work/authored-director-preparation/*.json
+            test-results/authored-director-preparation-*.json
             work/scary-container/*.json
             work/native-video-switch/*.json
             work/native-media-gstreamer*.log

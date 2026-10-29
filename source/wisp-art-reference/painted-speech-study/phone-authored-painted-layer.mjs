@@ -14,7 +14,7 @@ async function readAsset([path,expected],signal){
  const hash=[...new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))].map(x=>x.toString(16).padStart(2,'0')).join('');
  if(hash!==expected)throw Error('Painted face asset identity mismatch');return bytes;
 }
-/** Private candidate adapter for the phone director. Not wired into the app.
+/** Private candidate adapter for the phone director. Explicit unapproved app preview only.
  * Four authored shape weights drive original skin + painted oral material.
  * No mouth is drawn without a matched picture ID; no timestamp-only fallback.
  */
@@ -34,7 +34,7 @@ export class PhoneAuthoredPaintedLayer extends PhonePaintedMouthLayer{
  }
  begin(value){this.captureFailure=false;return super.begin(value);}
  render(video){
-  if(this.disposed)return null;const epoch=this.pullEpoch,pull=this.frameSource.pull(video);
+  if(this.disposed||video?.tagName!=='VIDEO')return null;const epoch=this.pullEpoch,pull=this.frameSource.pull(video);
   if(pull!==this.pullPromise){this.pullPromise=pull;pull.catch(()=>{if(!this.disposed&&epoch===this.pullEpoch)this.captureFailure=true;});}
   if(this.captureFailure)throw Error('Owned body picture unavailable');const packet=this.frameSource.packet;if(!packet)return null;
   if(!this.mouth.ready||!this.advanceWeights(video))return packet.canvas;

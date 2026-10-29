@@ -147,6 +147,81 @@
       "bytes": 323448,
       "sha256": "da457307ec91b289600c60a7428e464399a1ebe6d7538eedb96e9431ca4d4163",
       "publishedSha256": "da457307ec91b289600c60a7428e464399a1ebe6d7538eedb96e9431ca4d4163"
+    },
+    {
+      "source": "source/wisp-art-reference/painted-speech-study/phone-authored-painted-layer.mjs",
+      "destination": "phone-authored-painted-layer.mjs",
+      "bytes": 4725,
+      "sha256": "64bcaf08b394ff2dce974e428977caa5192e928f87ce958c96c42f6e10e58ea9",
+      "publishedSha256": "38e19b59bfbd34ce838fc570c75f11b6b9e59c0782f4f76f040a99862b332aed",
+      "rewrites": [
+        {
+          "from": "../../wisp-performance-reference/ambient-show/owned-video-frame-source.mjs",
+          "to": "../wisp-showdesk/owned-video-frame-source.mjs"
+        },
+        {
+          "from": "./authored-face-study/native-painted-face-study.mjs",
+          "to": "./native-painted-face-study.mjs"
+        },
+        {
+          "from": "./authored-face-study/friendly-painted-mouth-mesh-candidate-v1.json",
+          "to": "./friendly-painted-mouth-mesh-candidate-v1.json"
+        },
+        {
+          "from": "./native-lip-mesh-study/friendly-native-lip-candidates-v1.json",
+          "to": "./friendly-native-lip-candidates-v1.json"
+        },
+        {
+          "from": "./authored-face-study/wisp-friendly-speech-design-v1-anchor-study.json",
+          "to": "./wisp-friendly-speech-design-v1-anchor-study.json"
+        },
+        {
+          "from": "./authored-face-study/wisp-friendly-speech-design-v1.png",
+          "to": "./wisp-friendly-speech-design-v1.png"
+        }
+      ]
+    },
+    {
+      "source": "source/wisp-art-reference/painted-speech-study/authored-face-study/native-painted-face-study.mjs",
+      "destination": "native-painted-face-study.mjs",
+      "bytes": 7107,
+      "sha256": "cdd28b68387776e9db85f10f95ffd1e96fe1a4ab454241d660cbd15e52f825cd",
+      "publishedSha256": "cdd28b68387776e9db85f10f95ffd1e96fe1a4ab454241d660cbd15e52f825cd"
+    },
+    {
+      "source": "source/wisp-art-reference/painted-speech-study/authored-face-study/native-painted-mouth-binding.mjs",
+      "destination": "native-painted-mouth-binding.mjs",
+      "bytes": 2506,
+      "sha256": "f7074d6a4698a6788b44d148cb2d9623a32df2073f289844b7a38715f3c17516",
+      "publishedSha256": "f7074d6a4698a6788b44d148cb2d9623a32df2073f289844b7a38715f3c17516"
+    },
+    {
+      "source": "source/wisp-art-reference/painted-speech-study/authored-face-study/native-mouth-inverse-warp.mjs",
+      "destination": "native-mouth-inverse-warp.mjs",
+      "bytes": 4210,
+      "sha256": "b66c6dd842fe7f2d291df32c229504187c982d64e092c23fe92b327ecf7e7e67",
+      "publishedSha256": "b66c6dd842fe7f2d291df32c229504187c982d64e092c23fe92b327ecf7e7e67"
+    },
+    {
+      "source": "source/wisp-art-reference/painted-speech-study/authored-face-study/friendly-painted-mouth-mesh-candidate-v1.json",
+      "destination": "friendly-painted-mouth-mesh-candidate-v1.json",
+      "bytes": 41513,
+      "sha256": "c5a80ef9fe36ab5c33415c8537c12c079561a789e0d7889809b3d42b4cfc8e20",
+      "publishedSha256": "c5a80ef9fe36ab5c33415c8537c12c079561a789e0d7889809b3d42b4cfc8e20"
+    },
+    {
+      "source": "source/wisp-art-reference/painted-speech-study/authored-face-study/wisp-friendly-speech-design-v1-anchor-study.json",
+      "destination": "wisp-friendly-speech-design-v1-anchor-study.json",
+      "bytes": 2610,
+      "sha256": "0c89c561c43b56a427f502fb1ca294a9d016f645aa3dc7d3130b478a5e5210ca",
+      "publishedSha256": "0c89c561c43b56a427f502fb1ca294a9d016f645aa3dc7d3130b478a5e5210ca"
+    },
+    {
+      "source": "source/wisp-art-reference/painted-speech-study/authored-face-study/wisp-friendly-speech-design-v1.png",
+      "destination": "wisp-friendly-speech-design-v1.png",
+      "bytes": 2003001,
+      "sha256": "53fb90cc32fd065ca64456f03261ab370e1a2263da8a49cb366754091e254c34",
+      "publishedSha256": "53fb90cc32fd065ca64456f03261ab370e1a2263da8a49cb366754091e254c34"
     }
   ]
 }

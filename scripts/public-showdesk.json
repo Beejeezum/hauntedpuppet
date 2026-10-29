@@ -130,8 +130,8 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/director.mjs",
       "destination": "director.mjs",
-      "bytes": 16608,
-      "sha256": "07b2c7ac6620032d2db14765a082c306dad80f7e6d906368440fe430a73919fe",
+      "bytes": 16889,
+      "sha256": "8b10b0f7093db11acd213ebb32c27198bdf51a03da963c8e907c0e32b4ebfe28",
       "rewrites": [
         {
           "from": "../tonight-demo/paired-controls.mjs",
@@ -160,9 +160,13 @@
         {
           "from": "../../wisp-art-reference/painted-speech-study/native-lip-mesh-study/friendly-v28-canonical-head-samples-v1.json",
           "to": "../wisp-mouth-study/friendly-v28-canonical-head-samples-v1.json"
+        },
+        {
+          "from": "../../wisp-art-reference/painted-speech-study/phone-authored-painted-layer.mjs",
+          "to": "../wisp-mouth-study/phone-authored-painted-layer.mjs"
         }
       ],
-      "publishedSha256": "cc05dcddf13b61def4e91340b4fa3c6eff92edff655849d3e730622fbab19087"
+      "publishedSha256": "e714bccc32642ab83c449db33aaca364b552a9f8cfcabe86b315da7734570fd8"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/director.css",
