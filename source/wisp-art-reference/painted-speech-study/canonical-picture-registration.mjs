@@ -1,6 +1,6 @@
 /** Experimental fixed-film normalized-color matching. Exact source hash and
  * unknown/ambiguous rejection remain mandatory; no clock fallback or artwork
- * approval. No app selector consumes this source-only study yet. */
+ * approval. Used by the opt-in unapproved owned-native director path; default routes stay unchanged. */
 function normalized(bytes){
  const mean=[0,0,0],count=bytes.length/3;for(let i=0;i<bytes.length;i++)mean[i%3]+=bytes[i]/count;
  const rms=[0,0,0];for(let i=0;i<bytes.length;i++){const d=bytes[i]-mean[i%3];rms[i%3]+=d*d/count;}

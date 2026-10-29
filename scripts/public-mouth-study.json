@@ -137,9 +137,9 @@
     {
       "source": "source/wisp-art-reference/painted-speech-study/canonical-picture-registration.mjs",
       "destination": "canonical-picture-registration.mjs",
-      "bytes": 2987,
-      "sha256": "cc2c644cb1b1ff764cec379890837b4540be75c2148dc1d2b09e3971a5831478",
-      "publishedSha256": "cc2c644cb1b1ff764cec379890837b4540be75c2148dc1d2b09e3971a5831478"
+      "bytes": 3023,
+      "sha256": "d4a16cb29db2afbe20dab7c0e83d47bacd244314ba2077030f3080f98cfbdda3",
+      "publishedSha256": "d4a16cb29db2afbe20dab7c0e83d47bacd244314ba2077030f3080f98cfbdda3"
     },
     {
       "source": "source/wisp-art-reference/painted-speech-study/native-lip-mesh-study/friendly-v28-canonical-head-samples-v1.json",

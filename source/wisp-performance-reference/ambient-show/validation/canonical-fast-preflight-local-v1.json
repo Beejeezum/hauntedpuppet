@@ -3298,7 +3298,8 @@
     "All122 actual source-frame IDs remain covered by the separate canonical browser audit, including Linux.",
     "Nine preparation guard/fault cases pass locally; cancellation occurs at1of3 checkpoints, not after completion.",
     "Six mock-provider/native-zero-PCM lines, actor reuse, EOS, Stop and ambience return pass in both built browser runs. Two actual successful canonical preparation records are retained outside browser cleanup and tied to compiled director SHA.",
-    "Public build credential/path/import checks and121 suite shard coverage pass."
+    "Public build credential/path/import checks and121 suite shard coverage pass.",
+    "Both app readiness assertions require canonical kind, success and3/3, and retain two transactions host-side. Latest artifacts include these records explicitly."
   ],
   "remaining": [
     "Full Linux app diagnostic for this exact integration.",
