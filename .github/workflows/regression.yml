@@ -25,6 +25,11 @@ on:
         description: Run only the owned-picture director within the single-pipeline diagnostic
         type: boolean
         default: false
+      native_director_visibility:
+        description: Select foreground window in the director diagnostic only
+        type: choice
+        options: [projector-front, owner-front]
+        default: projector-front
       native_director_retirement:
         description: Isolate forced GL context loss in the director diagnostic only
         type: choice
@@ -440,6 +445,7 @@ jobs:
           HAUNT_BROWSER: webkit
           HAUNT_SINGLE_PIPELINE: '1'
           HAUNT_DIAGNOSTIC_NO_CONTEXT_LOSS: ${{ inputs.native_director_retirement == 'no-context-loss' && '1' || '0' }}
+          HAUNT_DIAGNOSTIC_OWNER_FRONT: ${{ inputs.native_director_visibility == 'owner-front' && '1' || '0' }}
         run: |
           if [ "${{ inputs.native_director_pilot }}" = "true" ]; then
             node tests/owned_native_director.cjs
