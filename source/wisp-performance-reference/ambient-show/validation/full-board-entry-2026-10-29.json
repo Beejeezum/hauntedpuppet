@@ -1,0 +1,23 @@
+{
+  "change": "Main entry and return from Live open the expanded 9-film rehearsal cue board by default. Existing direct desk URLs and explicit rehearsal options remain available.",
+  "tests": {
+    "builtChrome": "PASS",
+    "builtMacWebKit": "PASS",
+    "publicBuild": "PASS"
+  },
+  "verified": [
+    "24 pads with 9 actual films and 7 disabled unfinished films",
+    "Root navigation and return from Live",
+    "Other query parameters and hash preserved",
+    "Legacy projector/character/live queries preserved exactly",
+    "No microphone/camera or audio context on entry",
+    "Silent output stops when leaving the desk",
+    "390px layout does not overflow"
+  ],
+  "limits": [
+    "No new films or seamless visual joins created",
+    "Local built-site tests, not physical projection or human sound approval",
+    "Broader Linux failures remain unresolved"
+  ],
+  "scope": "Entry/navigation only; no voice, renderer, film or transition behavior changed."
+}
