@@ -1,0 +1,107 @@
+{
+  "status": "automatic_anchor_candidates_not_ground_truth",
+  "method": "Connected blue-iris components within fixed head ROI; no generated image modified. Centers are coarse authoring aids, not accepted rig anchors.",
+  "cells": [
+    {
+      "shape": "rest",
+      "eyeComponents": [
+        {
+          "area": 1665,
+          "center": [
+            190.93153153153153,
+            424.9303303303303
+          ]
+        },
+        {
+          "area": 1698,
+          "center": [
+            327.93698468786806,
+            450.04181389870433
+          ]
+        }
+      ],
+      "eyeMidpointDeltaFromRest": [
+        0.0,
+        0.0
+      ],
+      "eyeDistanceRatioToRest": 1.0,
+      "eyeAngleDeltaDegrees": 0.0
+    },
+    {
+      "shape": "AH",
+      "eyeComponents": [
+        {
+          "area": 1679,
+          "center": [
+            159.42048838594403,
+            425.2019058963669
+          ]
+        },
+        {
+          "area": 1695,
+          "center": [
+            297.22654867256637,
+            450.24129793510326
+          ]
+        }
+      ],
+      "eyeMidpointDeltaFromRest": [
+        -31.1107395804446,
+        0.2355298012176945
+      ],
+      "eyeDistanceRatioToRest": 1.0055615589767053,
+      "eyeAngleDeltaDegrees": -0.08805208111245365
+    },
+    {
+      "shape": "OO",
+      "eyeComponents": [
+        {
+          "area": 1750,
+          "center": [
+            192.73771428571428,
+            406.9685714285714
+          ]
+        },
+        {
+          "area": 1658,
+          "center": [
+            329.0657418576598,
+            432.39806996381185
+          ]
+        }
+      ],
+      "eyeMidpointDeltaFromRest": [
+        1.4674699619872626,
+        -17.802751418325727
+      ],
+      "eyeDistanceRatioToRest": 0.9956327086296806,
+      "eyeAngleDeltaDegrees": 0.17969430593207653
+    },
+    {
+      "shape": "EE",
+      "eyeComponents": [
+        {
+          "area": 1689,
+          "center": [
+            158.3108348134991,
+            405.1782119597395
+          ]
+        },
+        {
+          "area": 1742,
+          "center": [
+            297.5419058553387,
+            430.7003444316877
+          ]
+        }
+      ],
+      "eyeMidpointDeltaFromRest": [
+        -31.507887775280892,
+        -19.546793918803758
+      ],
+      "eyeDistanceRatioToRest": 1.0162482594085798,
+      "eyeAngleDeltaDegrees": 0.0010826978992576001
+    }
+  ],
+  "interpretation": "Head/eye placement is not pixel locked across the generated sheet. Align/review head and stable features before extracting any lower-face art; never play these full cells as a runtime sprite atlas."
+}

@@ -1,0 +1,33 @@
+{
+  "status": "candidate_human_review_pending_not_runtime_asset",
+  "tool": "built-in image_gen",
+  "generationCalls": 1,
+  "runwayCreditsSpent": 0,
+  "reference": "source/wisp-art-reference/approved-friendly-fog.png",
+  "referenceSha256": "42c2a586c05b69d596d136dae7f0500e5a567619b699d6e02bad0a4c765082f4",
+  "imageSha256": "53fb90cc32fd065ca64456f03261ab370e1a2263da8a49cb366754091e254c34",
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "mode": "RGB",
+  "cells": [
+    "top-left rest",
+    "top-right AH",
+    "bottom-left OO",
+    "bottom-right EE"
+  ],
+  "visualReview": "Viewed complete generated sheet. Painted luminous ivory/blue porous fog identity retained qualitatively. OO now has a small recessed round cavity and softly painted lip rim rather than smile-derived triangular opening. AH/EE have integrated cheek/jaw shading. Generated eyes/head placement not proven pixel-locked; EE may be too grin-like and cell smoke clearance is not a final projection export.",
+  "nextAcceptance": [
+    "Human lower-face/material/art-direction review.",
+    "Measure and align stable eye/head anchors before any motion proof.",
+    "Author closed consonants and in-betweens with consistent jaw/cheek topology.",
+    "Test on moving approved full-body film; reject visible patch boundaries, sliding mouth, texture mismatches and eye deformation."
+  ],
+  "limitations": [
+    "Static design reference only, not a rig, lip-sync proof, transparent mouth atlas or completed animation.",
+    "No runtime consumption or default asset replacement.",
+    "No voice/provider/acoustic/physical projection validation."
+  ],
+  "anchorAnalysis": "Automatic blue-iris component study estimates AH shifted31.1px left, OO17.8px up, EE31.5px left/19.5px up relative to rest within equal cells; eye-distance ratios0.996\u20131.016 and angle differences<=0.18degrees. These are candidate measurements, not ground-truth landmarks. Do not play sheet cells unaligned or treat it as a finished atlas."
+}
