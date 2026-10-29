@@ -28,8 +28,11 @@ One coherent painted full-body performance; approved cute/scary identity; fluid 
 AUTOPLAY / OPERATOR ACCEPTANCE
 Saved editable ordered playlists; duplicate steps; duration and form pacing; cute/scary/alternate/mostly-scary modes; repeat closing boundary; readiness before reveal; cancellation, manual takeover and Blackout; decoder stall/recovery; refresh persistence; mobile controls; laptop-only sound; silent projector/phone; extended browser soak. Current two study films can rehearse fade-through-black only. Those fades do not fulfill final authored transition acceptance.
 
-PUPPET ACCEPTANCE (both forms separately)
+ARCHIVED WEBCAM PUPPET ACCEPTANCE (superseded as the primary deliverable by docs/wisp-phone-director-amendment.txt)
 Approved painted identity at front/side; continuous coherent whole-body/fog motion; independently tracked eyes/blinks and expressive mouth; supported hand gestures without detached anatomy; integrated local character conversion with explicit monitoring; no automatic capture; stop/late permission cleanup; camera loss recovery; calibrated mouth sync. Actual human mic/face, voice casting and acoustic latency acceptance required. Physical projection remains untested without footage/device access.
+
+PHONE-DIRECTED CHARACTER ACCEPTANCE (current primary live interaction)
+Paired silent phone sends bounded exact text or improvisation prompts, friendly/scary form and selected authored performance. Laptop alone prepares and plays character voice and coherent painted speaking motion, with visible queue/send state, interruption/Stop, late-result disposal and return to selected ambient show. Native face/mouth integration and genuine voice quality need human acceptance for both forms. Preserve archived webcam paths; do not count closed-mouth film plus audio as lip sync. See docs/wisp-phone-director-amendment.txt for controlling scope.
 
 CURRENT EVIDENCE / NEXT WORK
 - Friendly painted proof and integrated Seed-VC conversion exist; references remain voice candidates.
