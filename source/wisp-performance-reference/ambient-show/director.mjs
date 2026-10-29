@@ -2,6 +2,7 @@ import {StageCompositor} from '/assets/stage-compositor.js';
 import {FilmTransport} from './film-transport.mjs';
 import {SingleFilmTransport} from './single-film-transport.mjs';
 import {decodePcmVoice} from './pcm-voice.mjs';
+import {OwnedVideoFrameSource} from './owned-video-frame-source.mjs';
 const Transport=new URLSearchParams(location.search).get('pipeline')==='single'?SingleFilmTransport:FilmTransport;
 import {StageFrameClock} from './frame-clock.mjs';
 import {PhonePerformanceDirector} from './phone-performance-director.mjs';
@@ -10,9 +11,17 @@ import {mountPairedControls} from '../tonight-demo/paired-controls.mjs';
 import {mountFilmOutput} from '../runway-pilots/wisp-film-output.js';
 const $=id=>document.getElementById(id),clips=[{id:'friendly-drift',character:'friendly',src:'./friendly.mp4',loop:true,exitPolicy:'finish'},{id:'scary-drift',character:'scary',src:'./scary.mp4',loop:false,exitPolicy:'finish'}];
 const ownedMouth=new URLSearchParams(location.search).get('mouth')==='owned-native';
+// Keep body capture independent of optional face-renderer disposal.
+const ownedBodySource=ownedMouth?new OwnedVideoFrameSource():null;
+let ownedBodyPull=null,ownedBodyFailed=false;
+function bodyPicture(raw){
+ if(!ownedBodySource||ownedBodyFailed||mouthPreparing||raw?.tagName!=='VIDEO')return null;
+ const pending=ownedBodySource.pull(raw);if(pending!==ownedBodyPull){ownedBodyPull=pending;pending.catch(()=>{ownedBodyFailed=true;ownedBodySource.stop();});}
+ return ownedBodySource.canvas;
+}
 let mouthLayer=null,mouthCandidate=null,mouthPreparing=false,mouthEpoch=0,mouthPreparationAbort=null,isolatedReference=false,mouthReferenceState=null;
 const frameClock=new StageFrameClock();
-const compositor=new StageCompositor($('stage')),transport=new Transport(compositor,clips,{frameClock,mediaHost:$('mediaSources'),characterFilter:raw=>{try{const picture=mouthLayer?.render(raw);return picture||(ownedMouth&&mouthLayer&&raw?.tagName==='VIDEO'?mouthLayer.frameSource.canvas:null)}catch{const failed=mouthLayer;mouthLayer=null;failed?.dispose();$('mouthStudy').checked=false;$('mouthStatus').textContent='Mouth study unavailable; original film retained';return null}}});
+const compositor=new StageCompositor($('stage')),transport=new Transport(compositor,clips,{frameClock,mediaHost:$('mediaSources'),characterFilter:raw=>{const body=bodyPicture(raw);try{return mouthLayer?.render(raw)||body}catch{const failed=mouthLayer;mouthLayer=null;failed?.dispose();$('mouthStudy').checked=false;$('mouthStatus').textContent='Mouth study unavailable; original film retained';return body}}});
 let context,source,enabled=false,disposed=false,frame,activeCharacter='friendly',speechStage='idle';
 const ambient=new DirectorAmbientProgram(transport,clips,{onState:s=>{if(!s.suspended)activeCharacter=s.character;$('ambientStatus').textContent=s.error||((s.suspended?'Paused':'Between lines')+' · '+s.mode);}});
 function resumeAmbient(ctx){
@@ -22,7 +31,7 @@ function resumeAmbient(ctx){
  if(ownedMouth&&isolatedReference&&transport.active?.paused&&compositor.black){transport.blackout();isolatedReference=false;}
  return ambient.resume(ctx);
 }
-function silence(){isolatedReference=false;cancelMouthPreparation();ambient.suspend();mouthLayer?.stop();if(source){try{source.stop();}catch{}source.disconnect();source=null;}transport.blackout();}
+function silence(){isolatedReference=false;cancelMouthPreparation();ambient.suspend();mouthLayer?.stop();ownedBodySource?.stop();ownedBodyPull=null;if(source){try{source.stop();}catch{}source.disconnect();source=null;}transport.blackout();}
 async function speech(value,{signal,live}){
  signal=AbortSignal.any([signal,AbortSignal.timeout(70000)]);
  if(!enabled||!context||context.state!=='running')throw Error('Enable laptop sound before sending a line');
@@ -81,12 +90,12 @@ $('mouthStudy').onchange=async()=>{
   if(ownedMouth){
    // Retire old movie-backed owner/output canvases while already black,
    // before imports or native decoder release. Never do this per frame.
-   ambient.suspend();compositor.blackout();$('stage').width=$('stage').width;compositor.render();output.releasePictures();
+   ambient.suspend();compositor.blackout();ownedBodySource?.stop();ownedBodyPull=null;$('stage').width=$('stage').width;compositor.render();output.releasePictures();
    await new Promise(resolve=>setTimeout(resolve,0));if(disposed||epoch!==mouthEpoch)return;isolatedReference=false;transport.blackout();
   }
   const native=ownedMouth||new URLSearchParams(location.search).get('mouth')==='native-surface';const Layer=ownedMouth?(await import('../../wisp-art-reference/painted-speech-study/phone-owned-native-lip-layer.mjs')).PhoneOwnedNativeLipLayer:native?(await import('../../wisp-art-reference/painted-speech-study/phone-native-lip-layer.mjs')).PhoneNativeLipLayer:(await import('../../wisp-art-reference/painted-speech-study/phone-painted-mouth-layer.mjs')).PhonePaintedMouthLayer;
   if(disposed||epoch!==mouthEpoch)return;
-  const candidate=new Layer();mouthCandidate=candidate;
+  const candidate=new Layer(ownedMouth?{frameSource:ownedBodySource}:undefined);mouthCandidate=candidate;
   try{await candidate.load();if(disposed||epoch!==mouthEpoch){candidate.dispose();return;}
    if(ownedMouth){
     if(!['idle','stopped'].includes(director.inspect().phase))throw Error('Stop the current line before preparing this face study');
@@ -118,5 +127,5 @@ $('ambientMode').onchange=configureAmbient;$('ambientSeconds').onchange=configur
 $('ambientStart').onclick=()=>{if(!configureAmbient())return;if(['idle','stopped'].includes(director.inspect().phase))resumeAmbient().catch(error=>$('detail').textContent=error.message);else $('ambientStatus').textContent='Mode saved for after this line';};
 function paintDirector(){if(disposed)return;frameClock.pulse();ambient.tick();compositor.render();}
 function tick(){if(disposed)return;paintDirector();frame=requestAnimationFrame(tick);}tick();
-window.addEventListener('pagehide',()=>{disposed=true;cancelMouthPreparation(false);ambient.dispose();mouthEpoch++;mouthLayer?.dispose();mouthLayer=null;director.dispose();paired.dispose();output.dispose();transport.dispose();frameClock.dispose();compositor.dispose();cancelAnimationFrame(frame);context?.close();},{once:true});
-window.WispPhoneDirector={inspect:()=>({...director.inspect(),speechStage,mouthPreparation:{pending:mouthPreparing,allocated:!!mouthCandidate,isolatedReference,reference:mouthReferenceState},ambient:ambient.inspect(),frameClock:frameClock.inspect(),mouthStudy:mouthLayer?.inspect()||null}),stop};
+window.addEventListener('pagehide',()=>{disposed=true;cancelMouthPreparation(false);ambient.dispose();mouthEpoch++;mouthLayer?.dispose();mouthLayer=null;ownedBodySource?.dispose();director.dispose();paired.dispose();output.dispose();transport.dispose();frameClock.dispose();compositor.dispose();cancelAnimationFrame(frame);context?.close();},{once:true});
+window.WispPhoneDirector={inspect:()=>({...director.inspect(),speechStage,bodyPicture:ownedBodySource?{...ownedBodySource.inspect(),failed:ownedBodyFailed}:null,mouthPreparation:{pending:mouthPreparing,allocated:!!mouthCandidate,isolatedReference,reference:mouthReferenceState},ambient:ambient.inspect(),frameClock:frameClock.inspect(),mouthStudy:mouthLayer?.inspect()||null}),stop};

@@ -1,11 +1,12 @@
 import {PhoneNativeLipLayer} from './phone-native-lip-layer.mjs';
 import {OwnedVideoFrameSource} from '../../wisp-performance-reference/ambient-show/owned-video-frame-source.mjs';
 /** Opt-in unapproved detached-picture director study. Default route is unchanged.
- * Source owns continuous body pixels, even outside speech. Mouth uses that same
- * packet's canvas + browser-reported timestamp (frame registration unverified); no native video is sampled by the mouth surface.
+ * A standalone layer owns its source; the director can lend a persistent one.
+ * Mouth uses the same detached packet as body paint. Optional picture matching
+ * identifies contours; a browser timestamp alone is not a verified frame ID.
  */
 export class PhoneOwnedNativeLipLayer extends PhoneNativeLipLayer{
- constructor({registration=null}={}){super();this.registration=registration;this.registrationResult=null;this.frameSource=new OwnedVideoFrameSource();this.pullPromise=null;this.pullEpoch=0;}
+ constructor({registration=null,frameSource=null}={}){super();this.registration=registration;this.registrationResult=null;this.ownsFrameSource=!frameSource;this.frameSource=frameSource||new OwnedVideoFrameSource();this.pullPromise=null;this.pullEpoch=0;}
  render(video){
   if(this.disposed)return null;
   const epoch=this.pullEpoch,pull=this.frameSource.pull(video);
@@ -20,7 +21,7 @@ export class PhoneOwnedNativeLipLayer extends PhoneNativeLipLayer{
   if(!this.mouth.draw(ctx,packet.canvas,contourTime,opening))return packet.canvas;
   this.draws++;return this.canvas;
  }
- inspect(){return{...super.inspect(),sourceKind:'owned-rgba',registration:this.registration?'picture-match-study':'unverified-browser-timestamp',registeredFrame:this.registrationResult?.frame??null,registrationMetrics:this.registration?.inspect()??null,owned:this.frameSource?.inspect()??null};}
- stop(){this.pullEpoch=(this.pullEpoch||0)+1;this.frameSource?.stop();this.pullPromise=null;this.registrationResult=null;this.registration?.reset();super.stop();}
- dispose(){if(this.disposed)return;super.dispose();this.frameSource?.dispose();this.registration?.dispose();}
+ inspect(){return{...super.inspect(),sourceKind:'owned-rgba',ownsFrameSource:this.ownsFrameSource,registration:this.registration?'picture-match-study':'unverified-browser-timestamp',registeredFrame:this.registrationResult?.frame??null,registrationMetrics:this.registration?.inspect()??null,owned:this.frameSource?.inspect()??null};}
+ stop(){this.pullEpoch=(this.pullEpoch||0)+1;if(this.ownsFrameSource)this.frameSource?.stop();this.pullPromise=null;this.registrationResult=null;this.registration?.reset();super.stop();}
+ dispose(){if(this.disposed)return;super.dispose();if(this.ownsFrameSource)this.frameSource?.dispose();this.registration?.dispose();}
 }

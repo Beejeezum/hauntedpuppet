@@ -106,9 +106,9 @@
           "to": "../wisp-showdesk/owned-video-frame-source.mjs"
         }
       ],
-      "bytes": 2326,
-      "sha256": "afecf136cd393a7251dfd35b9a0f270c43df00b17bbcecb95ce6960b26fcfba5",
-      "publishedSha256": "6e18cff550bdd6ab56c022ef6f7346cf01c38afb85e20a8e568b3d4a56c9ccbb"
+      "bytes": 2501,
+      "sha256": "8769df16f3c7f519928d276c0dd8e229060c377bdfd5fdbf6df7856d9049893f",
+      "publishedSha256": "c42ab85dba22cfe8b90488e451e6ab9fa53daec1436a46d550e1ef81b34c4f75"
     },
     {
       "source": "source/wisp-art-reference/painted-speech-study/prepare-native-picture-profile.mjs",
