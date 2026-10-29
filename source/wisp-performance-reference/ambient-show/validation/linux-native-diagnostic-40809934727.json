@@ -1,0 +1,21 @@
+{
+  "run": 40809934727,
+  "head": "a00c84cd582676dc6c8bca3a8e51b1074e8d4384",
+  "status": "completed_failure",
+  "logSha256": "9907a1211278bb1aa4e5e5c700b243aaf681ad02aa76e6ae91723bc98cbf8471",
+  "passes": [
+    "Corrected native metadata/pixel ownership test.",
+    "Unprepared owned short-line player and canonical-independent matcher guard tests.",
+    "First3 owned director cancellation cases (Stop/uncheck/pagehide).",
+    "Old8pendingmouth cancellation cases, single transport/effect cancellation/authored bridge.",
+    "Saved phone playlist test this run."
+  ],
+  "failures": [
+    "Native122-seek profile preparation exceeded unchanged20second cap.",
+    "New owned app never became ready; capture-failure test did not reach ready before20second test deadline.",
+    "Prepared speaking-player failed during native picture preparation.",
+    "Legacy/native/original-film app speech/import paths and live effect import remain unreliable."
+  ],
+  "evidenceGap": "Current upload allowlist omitted new owned-player/preparation diagnostic files. Added their explicit patterns for future runs; do not invent missing failure progress.",
+  "interpretation": "Full app is not accepted. Source-only normalized-correlation alternative is being tested as a potential fast preparation path, not an app acceptance substitute."
+}
