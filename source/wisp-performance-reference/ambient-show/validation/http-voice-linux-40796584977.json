@@ -1,0 +1,20 @@
+{
+  "run": 40796584977,
+  "head": "c112b7d423e39fa4d2ee1bb564650e15f16c9338",
+  "status": "completed",
+  "conclusion": "failure",
+  "passed": [
+    "standalone native-lip browser component including continuous source, lateGLload+fetch and cleanup",
+    "PCM parse/offline WebAudio",
+    "single transport core",
+    "pending effect lifecycle",
+    "authored bridge",
+    "saved phone playlist"
+  ],
+  "httpComparison": "HTTP original-film stalls at status despite server received/sent; other HTTP and intercepted paths advance past second line but fail later at ambience activation after Stop. Not explained solely by interception or old mouth.",
+  "activationEvidence": "Film did not deliver a frame; new ambient source remains at0/paused after failure",
+  "effectImport": "Still pending at test timeout; no registered layer or failure state",
+  "nextExperiment": "Investigate native GPU drawing completion before unloading/replacing video; one-pixel canvas readback is a hypothesis, not a demonstrated fix. Preserve current release gates.",
+  "newPhoneNativeAdapter": "Not part of this exact head; local-only integration tested separately.",
+  "notReleaseAcceptance": true
+}

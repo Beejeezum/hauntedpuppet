@@ -1,0 +1,35 @@
+{
+  "status": "unapproved optional local build; not deployed",
+  "route": "/assets/wisp-showdesk/director.html?pipeline=single&mouth=native-surface",
+  "defaultChanged": false,
+  "nativeAdapterSha256": "42b377d90d8a81604ea78ef830c343197a600d10454327edc26683bb0dbc1eb6",
+  "tests": {
+    "public_build": "pass",
+    "native_lip_surface_study": {
+      "chromium": "pass",
+      "webkit": "pass",
+      "timestampBoundaries": "0.041666->1,0.083333->2,5.041666->121,5.083333->0"
+    },
+    "phone_director_player": {
+      "chromiumNativeHttp": "pass",
+      "webkitNativeHttp": "pass",
+      "chromiumLegacyIntercepted": "pass",
+      "provider": "synthetic PCM; no capture",
+      "nativeAssertions": [
+        "original painted film decode",
+        "native snapshots and oral-only draws occurred",
+        "Stop removes active frame watch and registration",
+        "late response cannot restart",
+        "one-shot EOS precedes ambient return",
+        "projector has no audio/video elements"
+      ]
+    }
+  },
+  "limitations": [
+    "Pending mouth preparation immediate Stop/pagehide cancellation still needs implementation/coverage.",
+    "Acoustic aperture only, no rounded/consonant shapes.",
+    "Friendly only; no scary native-mouth integration.",
+    "Human painted attachment/voice and physical projection acceptance missing.",
+    "Complete Linux phone director remains failing."
+  ]
+}

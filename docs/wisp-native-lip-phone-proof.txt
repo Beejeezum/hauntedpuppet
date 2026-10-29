@@ -1,0 +1,38 @@
+NATIVE PAINTED LIPS — OPTIONAL PHONE DIRECTOR PROOF
+
+Status: unapproved friendly-only experiment. Not the default renderer, not a
+finished viseme rig, not scary support and not permission to approve a cue.
+
+Local built route:
+/assets/wisp-showdesk/director.html?pipeline=single&mouth=native-surface
+Enable the existing mouth-study checkbox to load it. Without that URL option,
+the legacy optional mouth experiment remains available; default film playback
+is unchanged. Laptop sound still requires explicit enablement and an authorized
+voice service. Phone and projector output never own speech or capture.
+
+The native adapter reuses the existing prepared-voice/acoustic timing observer.
+It captures the ORIGINAL body frame in a presented-video-frame callback and
+keeps that callback's mediaTime beside the snapshot. A later render task uses
+that same snapshot and timestamp for the native face contour/paint deformation.
+No native video texture enters WebGL. No source pause, load or unload occurs
+inside a presented-frame callback. Rounded microsecond timestamps map to the
+nearest 24fps drawing, avoiding floor's one-frame-underflow at0.041666.
+
+At rest within an active speech observation, the snapshot remains native paint.
+New oral paint appears only inside the native lip opening. Stop cancels the
+frame callback and drops the snapshot's active registration; disposal releases
+the native surface and both canvases. Shader warmup happens during loading.
+The build pins geometry to the exact published friendly film SHA.
+
+Current limitations: acoustic aperture only; proper rounded/consonant shapes,
+artistic lip contour correction and human full-motion/speech review remain.
+Four low-contrast source frames49–52 are still uncertain. The snapshot path can
+lag the direct native film by one presentation interval and needs visual review
+at activation/closure. Pending mouth preparation is still owned by the legacy
+checkbox handler; its immediate Stop/pagehide cancellation needs explicit
+coverage before production approval. Genuine provider and physical projection
+checks are not replaced by synthetic PCM or browser tests.
+
+Tests: HAUNT_NATIVE_LIPS=1 HAUNT_PHONE_HTTP_FIXTURE=1
+HAUNT_SINGLE_PIPELINE=1 node tests/phone_director_player.cjs (mute browser audio).
+Run both local engines; retain the legacy mouth and original-film gates.

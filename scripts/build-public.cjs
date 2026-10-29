@@ -41,6 +41,8 @@ for (const item of desk.files) {
 const mouthStudy=JSON.parse(fs.readFileSync(path.join(root,'scripts/public-mouth-study.json'),'utf8'));
 const mouthRegistration=JSON.parse(fs.readFileSync(path.join(root,'source/wisp-art-reference/painted-speech-study/friendly-v28-mouth-template-candidates.json'),'utf8'));
 if(mouthRegistration.sourceSha256!==desk.files.find(item=>item.destination==='friendly.mp4')?.sha256)throw Error('Mouth registration does not match published friendly film');
+const nativeLipRegistration=JSON.parse(fs.readFileSync(path.join(root,'source/wisp-art-reference/painted-speech-study/native-lip-mesh-study/friendly-native-lip-candidates-v1.json'),'utf8'));
+if(nativeLipRegistration.sourceSha256!==mouthRegistration.sourceSha256||nativeLipRegistration.dimensions?.join()!=='1916,1080'||nativeLipRegistration.frames?.length!==122)throw Error('Native lip geometry does not match published friendly film');
 const mouthOut=path.join(out,'assets/wisp-mouth-study');fs.mkdirSync(mouthOut,{recursive:true});
 for(const item of mouthStudy.files){
  if(!item.source.startsWith('source/wisp-art-reference/painted-speech-study/')||path.basename(item.destination)!==item.destination||item.source.includes('/../'))throw Error('Invalid mouth study asset path');

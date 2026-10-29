@@ -32,15 +32,15 @@
     {
       "source": "source/wisp-art-reference/painted-speech-study/phone-painted-mouth-layer.mjs",
       "destination": "phone-painted-mouth-layer.mjs",
-      "bytes": 2543,
-      "sha256": "7577333845dcd94c183f7ec18d0017dc2c5db03056534827f3cb6c46e8595faf",
+      "bytes": 2650,
+      "sha256": "5f97b24b313bd170b9daae376a9c3111edd31a2f68c026678d8a36a5a9f76650",
       "rewrites": [
         {
           "from": "../../../assets/acoustic-mouth.js",
           "to": "/assets/acoustic-mouth.js"
         }
       ],
-      "publishedSha256": "c697e0ffa92b86a7f0c00491a8d58fad0f6df5c765e8b3743d920a238aa1a8d3"
+      "publishedSha256": "32e4c6dd77062d3bf3524ac811ce54fce82b18fa6ec94d733ca87ce1309ba829"
     },
     {
       "source": "source/wisp-art-reference/painted-speech-study/wisp-friendly-speaking-study-v2.png",
@@ -69,6 +69,33 @@
       "bytes": 981,
       "sha256": "0effc30301c6a4ec84aa8361aa99d0134274c37921e0cc501b4fa7a707359615",
       "publishedSha256": "0effc30301c6a4ec84aa8361aa99d0134274c37921e0cc501b4fa7a707359615"
+    },
+    {
+      "source": "source/wisp-art-reference/painted-speech-study/phone-native-lip-layer.mjs",
+      "destination": "phone-native-lip-layer.mjs",
+      "bytes": 2540,
+      "sha256": "42b377d90d8a81604ea78ef830c343197a600d10454327edc26683bb0dbc1eb6",
+      "publishedSha256": "42b377d90d8a81604ea78ef830c343197a600d10454327edc26683bb0dbc1eb6"
+    },
+    {
+      "source": "source/wisp-art-reference/painted-speech-study/native-lip-surface.mjs",
+      "destination": "native-lip-surface.mjs",
+      "rewrites": [
+        {
+          "from": "native-lip-mesh-study/friendly-native-lip-candidates-v1.json",
+          "to": "friendly-native-lip-candidates-v1.json"
+        }
+      ],
+      "bytes": 8590,
+      "sha256": "058719240bbb22e7167666efedb0e71d030a17ceab8850e295d486a7f65c6aa9",
+      "publishedSha256": "218e17354703f223a219cb1621d510085a1e8d5554941ca31fbb8fb6b150ccf2"
+    },
+    {
+      "source": "source/wisp-art-reference/painted-speech-study/native-lip-mesh-study/friendly-native-lip-candidates-v1.json",
+      "destination": "friendly-native-lip-candidates-v1.json",
+      "bytes": 758319,
+      "sha256": "89bf67ffb376604bc58a1ebc6d65df5f5f71d74475d6df8deefc02b6852b3ff0",
+      "publishedSha256": "89bf67ffb376604bc58a1ebc6d65df5f5f71d74475d6df8deefc02b6852b3ff0"
     }
   ]
 }
