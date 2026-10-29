@@ -1,0 +1,17 @@
+{
+  "scope": "Existing 9-film rehearsal bank; no new asset, human mix, live voice or physical projection approval.",
+  "run": 40963783525,
+  "commit": "9d3c09d5d28db9c91390114ed74736bd469cce74",
+  "fullRunPassed": false,
+  "evidence": {
+    "cueBoardChromium": "PASS",
+    "cueBoardLinuxWebKit": "PASS",
+    "autoplayChromiumMostlyScary": "PASS",
+    "autoplayLinuxWebKit": "FAIL: friendly-wave wait timed out after 20 seconds",
+    "autoplayMacWebKitReproduction": "PASS: actual friendly/scary variety, alternate and Blackout",
+    "autoplayMacChromiumInstrumented": "PASS: actual friendly/scary variety, alternate, operator-only exclusion, muted movies and Blackout"
+  },
+  "diagnosis": "Linux failure remains unresolved. Its test wrote an autoplay failure JSON, but the workflow upload allowlist omitted this filename, leaving no authoritative playback snapshot in the downloaded artifacts. Do not infer a decoder or scheduling root cause from the timeout alone.",
+  "change": "Preserve autoplay failure JSON and screenshot; keep bounded 500ms state observations (maximum 240 entries). No increased deadlines or removed acceptance assertions.",
+  "remaining": "Repeat on Linux with retained evidence before claiming unattended reliability; complete 7 missing film slots and visual/audio/transition acceptance."
+}

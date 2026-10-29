@@ -424,6 +424,7 @@ jobs:
             test-results/catalog-*.json
             test-results/film-phone-cloud*
             test-results/phone-saved-playlist*
+            test-results/rehearsal-autoplay-*
             test-results/stage-geometry*
             test-results/workspace-entry*
             test-results/film-operator-access*

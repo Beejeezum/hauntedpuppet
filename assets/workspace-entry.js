@@ -5,5 +5,8 @@ if (location.protocol === 'file:') {
 } else {
   const native = query.get('workspace') === 'live' ||
     ['projector', 'controller', 'character', 'testRealtime'].some(key => query.has(key));
-  location.replace((native ? '/live.html' : '/assets/wisp-showdesk/index.html') + location.search + location.hash);
+  if (!native && !query.has('rehearsal')) query.set('rehearsal', 'expanded');
+  const search = query.toString();
+  location.replace((native ? '/live.html' : '/assets/wisp-showdesk/index.html') +
+    (native ? location.search : search ? '?' + search : '') + location.hash);
 }
