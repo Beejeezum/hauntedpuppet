@@ -1,0 +1,170 @@
+{
+  "candidate": "friendly-reform-runtime-candidate-v1.mp4",
+  "candidateSha256": "988724884a899a5248715731fbafd40d00dcf994e91b2dcfc57e80ae73b3b103",
+  "scope": "Private actual-app handoff qualification, not catalog admission, human review or physical projection.",
+  "technical": {
+    "chromium": {
+      "passed": true,
+      "trace": [
+        {
+          "id": null,
+          "phase": "stopped",
+          "level": 1,
+          "wall": 204.29999995231628,
+          "mediaTime": null
+        },
+        {
+          "id": null,
+          "phase": "preparing",
+          "level": 1,
+          "wall": 243,
+          "mediaTime": null
+        },
+        {
+          "id": null,
+          "phase": "exiting",
+          "level": 1,
+          "wall": 321.39999997615814,
+          "mediaTime": null
+        },
+        {
+          "id": null,
+          "phase": "empty-stage",
+          "level": 0,
+          "wall": 1241.5999999642372,
+          "mediaTime": null
+        },
+        {
+          "id": "friendly-reform",
+          "phase": "entering",
+          "level": 0.0036571099150906313,
+          "wall": 1846.199999988079,
+          "mediaTime": 0.081788
+        },
+        {
+          "id": "friendly-reform",
+          "phase": "playing",
+          "level": 1,
+          "wall": 2728.599999964237,
+          "mediaTime": 0.96378
+        },
+        {
+          "id": "friendly-reform",
+          "phase": "exiting",
+          "level": 1,
+          "wall": 5763.099999964237,
+          "mediaTime": 3.997804
+        },
+        {
+          "id": "friendly-reform",
+          "phase": "empty-stage",
+          "level": 0,
+          "wall": 7362.799999952316,
+          "mediaTime": 5.541667
+        },
+        {
+          "id": "cute",
+          "phase": "entering",
+          "level": 0.0008240740740740741,
+          "wall": 7921.399999976158,
+          "mediaTime": 0.0703
+        },
+        {
+          "id": "cute",
+          "phase": "playing",
+          "level": 1,
+          "wall": 8844.899999976158,
+          "mediaTime": 0.9938
+        }
+      ],
+      "actualBlackSamples": 29,
+      "maximumBlackPixel": 0,
+      "muted": true
+    },
+    "webkit": {
+      "passed": true,
+      "trace": [
+        {
+          "id": null,
+          "phase": "preparing",
+          "level": 1,
+          "wall": 239,
+          "mediaTime": null
+        },
+        {
+          "id": null,
+          "phase": "exiting",
+          "level": 1,
+          "wall": 321,
+          "mediaTime": null
+        },
+        {
+          "id": null,
+          "phase": "empty-stage",
+          "level": 0,
+          "wall": 1233,
+          "mediaTime": null
+        },
+        {
+          "id": "friendly-reform",
+          "phase": "entering",
+          "level": 0.0010568916323731138,
+          "wall": 1805,
+          "mediaTime": 0.07073512502200156
+        },
+        {
+          "id": "friendly-reform",
+          "phase": "playing",
+          "level": 1,
+          "wall": 2685,
+          "mediaTime": 0.9502453750276976
+        },
+        {
+          "id": "friendly-reform",
+          "phase": "exiting",
+          "level": 1,
+          "wall": 5765,
+          "mediaTime": 4.030696374651189
+        },
+        {
+          "id": "friendly-reform",
+          "phase": "empty-stage",
+          "level": 0,
+          "wall": 7306,
+          "mediaTime": 5.542
+        },
+        {
+          "id": "cute",
+          "phase": "entering",
+          "level": 0,
+          "wall": 7879,
+          "mediaTime": 0.06576704161096737
+        },
+        {
+          "id": "cute",
+          "phase": "playing",
+          "level": 1,
+          "wall": 8801,
+          "mediaTime": 0.9883781249670126
+        }
+      ],
+      "actualBlackSamples": 26,
+      "maximumBlackPixel": 0,
+      "muted": true
+    }
+  },
+  "visualVerdict": "NOT ACCEPTED as continuous arrival-to-idle. The rendered context reveals a second disappearance and a size/pose change across the dark bridge. No paid retry or public cue admission.",
+  "movie": "work/friendly-reform/arrival-handoff-review-v1.mp4",
+  "movieSha256": "34c0265ab13bc8f68186218d9afb4d33bbf0505539b804541a30beedf0b7399b",
+  "pictureSource": "Actual generated-only canvas recording; no camera or microphone. Original native video files unchanged.",
+  "audioSource": "Original candidate embedded dry-effects master, faded at native tail and muxed at estimated wall/media offset.40ms trace sampling makes this a review approximation, not acoustic latency proof.",
+  "runtimePublication": false,
+  "humanApproval": false,
+  "renderBounds": {
+    "frameCount": 251,
+    "minimumReserve": 0.18888888888888888,
+    "hard15PercentPass": true,
+    "target20PercentPass": false,
+    "scope": "All decoded effect envelopes in this browser review, not source/art approval.15percent hard reserve passes;20percent target not met by the native idle bottom margin."
+  }
+}

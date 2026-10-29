@@ -112,5 +112,15 @@
   "runtimePublication": false,
   "scope": "Technical video identity, all-frame clearance, exact empty arrival handle, non-identical ending frames and encoded sound checks. This does not establish convincing depth, no perceived pause, character anatomy, matching scale/pose to the current desk idle, human sound/acting approval or physical projection. Small distant glimmer and arrival pacing require human review.",
   "cueId": "friendly-reform",
-  "briefAdaptation": "Existing footage forms in depth from a small glimmer, rather than a fog knot in place. This adaptation and the small early silhouette need human review before this can satisfy the finite reform slot."
+  "briefAdaptation": "Existing footage forms in depth from a small glimmer, rather than a fog knot in place. This adaptation and the small early silhouette need human review before this can satisfy the finite reform slot.",
+  "joinQualification": {
+    "status": "technical playback passes; visual continuity not accepted",
+    "testedAgainst": "friendly v28 idle in actual showdesk at11820c2 using private candidate injection only",
+    "engines": [
+      "local Chromium",
+      "local MacWebKit"
+    ],
+    "observed": "The default fade-through-black route makes the arriving ghost disappear a second time before the native idle reappears in a different pose/framing. It is a deliberate editorial black transition, not a continuous settle from arrival into idle.",
+    "next": "After arrival art/size approval, author a short connected settle bridge from the exact native arrival ending to the idle entrance. Do not claim a generic fade is a seamless same-body arrival."
+  }
 }
