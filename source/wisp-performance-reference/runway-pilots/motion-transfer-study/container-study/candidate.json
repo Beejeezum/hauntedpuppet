@@ -15,5 +15,13 @@
     "originalBlob": true,
     "faststartBlob": true,
     "conclusion": "Container position alone does not explain app failure. Same-element resolution/character reuse remains untested."
+  },
+  "sameElementLinuxComparison": {
+    "run": 40824613028,
+    "head": "285cd0096e350d9d1f5e1b51a7fb382e19265687",
+    "softwareSink": true,
+    "casesPassed": 6,
+    "scope": "Original/remux plus same element friendly/scary/friendly after loadeddata. No continuous owned capture or mouth disposal.",
+    "conclusion": "Basic resolution/character reuse alone does not reproduce full app failure."
   }
 }
