@@ -1,0 +1,28 @@
+{
+  "run": 40798337458,
+  "head": "c046207e22f9d6b19d7c5b34a883af634936ef1c",
+  "status": "completed",
+  "conclusion": "failure",
+  "passed": [
+    "PCM parsing/offline audio",
+    "standalone native mouth surface",
+    "all eight pending mouth cancellation cases",
+    "single transport core",
+    "pending effect cancellation",
+    "authored bridge"
+  ],
+  "failed": [
+    "whole director tests",
+    "saved-show advance in this run",
+    "effect video registration"
+  ],
+  "visibilityChange": "Explicit header visibility did not make the diagnostic suite pass. No claim that it resolves native stalls.",
+  "nativePhoneObservation": {
+    "phaseAtFailure": "idle",
+    "mouthStudy": null,
+    "speechEvents": "one start and ended for0.2sec voice",
+    "implication": "Initial playing-phase polling missed a short completed utterance before the new mouth was loaded. Native adapter integration is not disproved or verified by that failure."
+  },
+  "nextTestCorrection": "Await actual AudioBufferSourceNode.start via a test event bridge, assert playing state at start, and preserve complete-end/Stop/mouth/silence checks. Retain30sec deadlines. Do not label missed transient polling as a demonstrated runtime failure. Other preparing/frame timeouts still need diagnosis.",
+  "notReleaseAcceptance": true
+}
