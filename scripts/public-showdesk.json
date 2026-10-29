@@ -209,9 +209,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/owned-video-frame-source.mjs",
       "destination": "owned-video-frame-source.mjs",
-      "bytes": 4637,
-      "sha256": "1cf342a04cc9381b7af2f7a63763f8581f733be77d7dc7bf591bc21feb8a176c",
-      "publishedSha256": "1cf342a04cc9381b7af2f7a63763f8581f733be77d7dc7bf591bc21feb8a176c"
+      "bytes": 5273,
+      "sha256": "18266fd58004386a134c1dff08f822b6df20b8b27d449f3a4e7d331a051d7823",
+      "publishedSha256": "18266fd58004386a134c1dff08f822b6df20b8b27d449f3a4e7d331a051d7823"
     }
   ]
 }
