@@ -428,6 +428,8 @@ jobs:
           HAUNT_SINGLE_PIPELINE: '1'
         run: |
           failed=0
+          node tests/pcm_voice.cjs || failed=1
+          node tests/pcm_voice_browser.cjs || failed=1
           node tests/single_pipeline_transport.cjs || failed=1
           node tests/effect_import_cancel.cjs || failed=1
           node tests/catalog_bridge_browser.cjs || failed=1

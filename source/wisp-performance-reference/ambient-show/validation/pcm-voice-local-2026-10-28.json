@@ -1,0 +1,30 @@
+{
+  "status": "local mock-provider integration passed; Linux pending",
+  "change": "Parse bounded backend PCM16 WAV contract directly into Web Audio buffers, avoiding native file decode for each typed line.",
+  "tests": {
+    "pcm_voice.cjs": "pass: synthetic parsing/bounds/cancellation",
+    "pcm_voice_browser.cjs": {
+      "chromium": "pass",
+      "webkit": "pass",
+      "sourceRate": 24000,
+      "outputRate": 48000,
+      "frequencyHz": 440,
+      "durationSeconds": 0.5,
+      "repeatedPreparations": 20,
+      "silentOffline": true
+    },
+    "phone_director_player.cjs": {
+      "chromiumSinglePipeline": "pass",
+      "webkitSinglePipeline": "pass",
+      "provider": "mock",
+      "capture": false
+    },
+    "public_build.cjs": "pass",
+    "browser_test_shards.cjs": "108 suites preserved"
+  },
+  "limitations": [
+    "Original Linux second-line failure not yet retested.",
+    "No genuine provider, live voice quality, physical phone or projection acceptance.",
+    "No native mouth proof promoted."
+  ]
+}

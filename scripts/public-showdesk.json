@@ -130,8 +130,8 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/director.mjs",
       "destination": "director.mjs",
-      "bytes": 10319,
-      "sha256": "795d82a21ecccb1b71f4bee66e5ad44cf370201f8a3db31d6c687b044b3ba3cd",
+      "bytes": 10556,
+      "sha256": "8cce22b1b61664657547982fd6ac84b27dded0500b33c59a5cc4a15107fc0dcb",
       "rewrites": [
         {
           "from": "../tonight-demo/paired-controls.mjs",
@@ -146,7 +146,7 @@
           "to": "../wisp-mouth-study/phone-painted-mouth-layer.mjs"
         }
       ],
-      "publishedSha256": "c4883c731399e5e07942ed9167404b1a84e3ee24aa9c49b93ee141f709beaa5d"
+      "publishedSha256": "199435268afd3de51f7ded2c125f8969c22b792dac64a02d65ceb5aac5b09a8b"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/director.css",
@@ -182,6 +182,13 @@
       "sha256": "79c6f0524f540071ed11ad75242a1905dc6e475ce372ccfb06e4fc837a707dcc",
       "bytes": 6187,
       "publishedSha256": "79c6f0524f540071ed11ad75242a1905dc6e475ce372ccfb06e4fc837a707dcc"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/pcm-voice.mjs",
+      "destination": "pcm-voice.mjs",
+      "bytes": 2473,
+      "sha256": "a2274ee506c75ddd2fbef4dff70f97d0efed19baf90d1dd76e5c6b9b8b6a43a4",
+      "publishedSha256": "a2274ee506c75ddd2fbef4dff70f97d0efed19baf90d1dd76e5c6b9b8b6a43a4"
     }
   ]
 }

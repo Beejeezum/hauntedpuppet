@@ -1,6 +1,7 @@
 import {StageCompositor} from '/assets/stage-compositor.js';
 import {FilmTransport} from './film-transport.mjs';
 import {SingleFilmTransport} from './single-film-transport.mjs';
+import {decodePcmVoice} from './pcm-voice.mjs';
 const Transport=new URLSearchParams(location.search).get('pipeline')==='single'?SingleFilmTransport:FilmTransport;
 import {StageFrameClock} from './frame-clock.mjs';
 import {PhonePerformanceDirector} from './phone-performance-director.mjs';
@@ -11,26 +12,27 @@ const $=id=>document.getElementById(id),clips=[{id:'friendly-drift',character:'f
 let mouthLayer=null,mouthEpoch=0;
 const frameClock=new StageFrameClock();
 const compositor=new StageCompositor($('stage')),transport=new Transport(compositor,clips,{frameClock,mediaHost:$('mediaSources'),characterFilter:raw=>{try{return mouthLayer?.render(raw)}catch{mouthLayer?.stop();$('mouthStatus').textContent='Mouth study unavailable; original film retained';return null}}});
-let context,source,enabled=false,disposed=false,frame,activeCharacter='friendly';
+let context,source,enabled=false,disposed=false,frame,activeCharacter='friendly',speechStage='idle';
 const ambient=new DirectorAmbientProgram(transport,clips,{onState:s=>{if(!s.suspended)activeCharacter=s.character;$('ambientStatus').textContent=s.error||((s.suspended?'Paused':'Between lines')+' · '+s.mode);}});
 function silence(){ambient.suspend();mouthLayer?.stop();if(source){try{source.stop();}catch{}source.disconnect();source=null;}transport.blackout();}
 async function speech(value,{signal,live}){
  signal=AbortSignal.any([signal,AbortSignal.timeout(70000)]);
  if(!enabled||!context||context.state!=='running')throw Error('Enable laptop sound before sending a line');
+ const stage=value=>{if(live())speechStage=value;};stage('status');
  const status=await fetch('/api/status',{signal,credentials:'same-origin'}).then(r=>r.json());
  if(!status.token)throw Error('Sign in to the laptop voice service first');
  let words=value.text;
  if(value.mode==='prompt'){
-  const response=await fetch('/api/director/line',{method:'POST',credentials:'same-origin',signal,headers:{'Content-Type':'application/json','X-Haunt-Token':status.token},body:JSON.stringify({text:value.text,mode:'prompt',character:value.character})});
+  stage('prompt');const response=await fetch('/api/director/line',{method:'POST',credentials:'same-origin',signal,headers:{'Content-Type':'application/json','X-Haunt-Token':status.token},body:JSON.stringify({text:value.text,mode:'prompt',character:value.character})});
   const line=await response.json();if(!response.ok)throw Error(line.error||'Wisp could not prepare a line');
   if(signal.aborted||!live())throw Object.assign(Error('Cancelled'),{cancelled:true});
   words=line.text;
  }
- const scary=value.character==='scary';
+ stage('voice request');const scary=value.character==='scary';
  const response=await fetch('/api/performance',{method:'POST',credentials:'same-origin',signal,headers:{'Content-Type':'application/json','X-Haunt-Token':status.token},body:JSON.stringify({text:words,voice:scary?'cedar':'marin',form:scary?'haunting':'friendly',audience:scary?'big':'family',mood:scary?'sinister':'amused',intensity:.65})});
  const data=await response.json();if(!response.ok)throw Error(data.error||'Voice preparation failed');
  if(typeof data.audio!=='string'||data.audio.length>4800000)throw Error('Voice response is unavailable or too large');
- const bytes=Uint8Array.from(atob(data.audio),c=>c.charCodeAt(0));const buffer=await context.decodeAudioData(bytes.buffer);
+ const bytes=Uint8Array.from(atob(data.audio),c=>c.charCodeAt(0));stage('PCM decode');const buffer=decodePcmVoice(context,bytes.buffer,{maxSeconds:45,signal});stage('ready');
  if(signal.aborted||!live())throw Object.assign(Error('Cancelled'),{cancelled:true});
  if(buffer.duration>45)throw Error('Use a shorter line (45 seconds maximum)');
  return{buffer,visemes:Array.isArray(data.visemes)&&data.visemes.length<=5000?data.visemes:[],dispose(){this.buffer=null;}};
@@ -70,4 +72,4 @@ $('ambientStart').onclick=()=>{if(!configureAmbient())return;if(['idle','stopped
 function paintDirector(){if(disposed)return;frameClock.pulse();ambient.tick();compositor.render();}
 function tick(){if(disposed)return;paintDirector();frame=requestAnimationFrame(tick);}tick();
 window.addEventListener('pagehide',()=>{disposed=true;ambient.dispose();mouthEpoch++;mouthLayer?.dispose();mouthLayer=null;director.dispose();paired.dispose();output.dispose();transport.dispose();frameClock.dispose();compositor.dispose();cancelAnimationFrame(frame);context?.close();},{once:true});
-window.WispPhoneDirector={inspect:()=>({...director.inspect(),ambient:ambient.inspect(),frameClock:frameClock.inspect(),mouthStudy:mouthLayer?.inspect()||null}),stop};
+window.WispPhoneDirector={inspect:()=>({...director.inspect(),speechStage,ambient:ambient.inspect(),frameClock:frameClock.inspect(),mouthStudy:mouthLayer?.inspect()||null}),stop};
