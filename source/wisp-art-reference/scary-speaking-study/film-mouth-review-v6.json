@@ -1,0 +1,51 @@
+{
+  "scope": "Silent synthetic scary mouth shapes on original v35 body/fog movie. Not speaking, voice conversion, human visual approval or physical projection.",
+  "artifact": "work/phone-mouth-anchor/scary-painted-mouth-film-v6.mp4",
+  "sha256": "6f3d2d69502f580bb21206c9ac2f91c6e4e7abd426664ef4fe0b9edf915908c6",
+  "fps": 24.0,
+  "frames": 121,
+  "humanApproval": false,
+  "runtimeIntegration": false,
+  "sourceMovieSha256": "21e8efec67ec7e024fc954cc16af458cad8f8427553a998341ff9d37286ca35a",
+  "checks": {
+    "visibleNativeBodyEveryFrame": true,
+    "nativeEyeROIsPixelIdenticalAll121Frames": true,
+    "shapeCanvasEyePixelsFixed": true,
+    "lateLoadCancellation": true,
+    "disposal": true
+  },
+  "estimatedTrackingFrames": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81
+  ],
+  "visualReview": "V6 contact sheet reviewed: body, hands and fog retained, mouth attached through sampled nods/blinks. Teeth/cheek blend and rapid shape changes need human judgment.",
+  "failedDrafts": {
+    "v1": "Missing tracking filename; export aborted before movie creation",
+    "v2-v4": "Fixture seeking was unavailable, causing tests to compare new pose data against old picture; rejected. Encoders cleaned up.",
+    "v5": "Body black at first frame; rejected. Warm-up and explicit source-picture check added."
+  },
+  "nextGates": [
+    "Reject eye-rigid lower-face replacement for production",
+    "Create/validate a speech-ready neutral base and native upper-lip/jaw attachment",
+    "Avoid replacing cheek texture with a regenerated face patch",
+    "Validate representative poses and actual talking motion before paid full-video revisions"
+  ],
+  "status": "rejected-human-review",
+  "humanReview": {
+    "question": "In the scary Wisp motion proof above, does the new mouth stay convincingly part of the face through the head movement and blinks?",
+    "answer": "The mouth drifts",
+    "followup": "and looks pasted on a bit too much",
+    "questionId": "call_f8fa73e9eddc4adaa566ab808ad0ee9f",
+    "approval": false
+  }
+}

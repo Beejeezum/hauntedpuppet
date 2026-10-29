@@ -1,0 +1,26 @@
+{
+  "status": "selectedv2material/angle-reference-human-review-pending",
+  "selected": "scary-body-angles-v2.png",
+  "tool": "built-in imagegen",
+  "calls": 2,
+  "runwayCreditsSpent": 0,
+  "references": [
+    {
+      "file": "source/wisp-performance-reference/runway-pilots/film-return-handoff-study/scary-end-staged.png",
+      "sha256": "95a81dfe1d1436cfc86c73b26e6c21e7809bf34b5ff53fa7a7f64e40512a0757",
+      "role": "primary exact front identity"
+    },
+    {
+      "file": "source/wisp-art-reference/scary-rear-guide/scary-rear-v1.png",
+      "sha256": "0455356986bfbae46b9ec65fd7c65526f068d6fd4a077eab9432de6c1c9d12a7",
+      "role": "existing unapproved rear material interpretation"
+    }
+  ],
+  "generation": [
+    "v1newside/rearinterpretationsfailedper-panel15percentreserve",
+    "v2singleframingcorrectionpasses20and22percentperpanel;25percentprompttargetnotfullymet"
+  ],
+  "use": "Reference material/angles only. Never use the two-view sheet directly as the first/last frame of a one-ghost movie. Keep existing single-character hero/empty anchors. This does not prove shared topology, actual90/135degree views, animated anatomy, projection, or human approval.",
+  "runtimeIntegration": false,
+  "humanApproval": false
+}

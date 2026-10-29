@@ -1,0 +1,185 @@
+{
+  "run": "https://github.com/Beejeezum/hauntedpuppet/actions/runs/40786031527",
+  "head": "2484a899dda7b3635847f583d56907d9b06bab6d",
+  "status": "success",
+  "evidence": {
+    "cases": [
+      {
+        "duration": 5.083333333333333,
+        "windows": [
+          {
+            "id": "friendly",
+            "start": 0,
+            "end": 5.083333333333333
+          }
+        ],
+        "sourceLoads": 1,
+        "sealed": true,
+        "ranges": [
+          [
+            0,
+            5.083333
+          ]
+        ],
+        "first": 0,
+        "last": 5.041666,
+        "count": 79,
+        "maxMediaGap": 0.08333400000000002,
+        "joinFrames": [
+          0,
+          0.041666,
+          0.083333
+        ],
+        "playbackRate": 4,
+        "time": 5.083333,
+        "ended": true,
+        "mediaError": 0
+      },
+      {
+        "duration": 10.125,
+        "windows": [
+          {
+            "id": "friendly",
+            "start": 0,
+            "end": 5.083333333333333
+          },
+          {
+            "id": "morph",
+            "start": 5.083333333333333,
+            "end": 10.125
+          }
+        ],
+        "sourceLoads": 2,
+        "sealed": true,
+        "ranges": [
+          [
+            0,
+            10.124999
+          ]
+        ],
+        "first": 0,
+        "last": 10.083333,
+        "count": 243,
+        "maxMediaGap": 0.04166700000000034,
+        "joinFrames": [
+          0,
+          0.041666,
+          0.083333,
+          0.125,
+          4.958333,
+          5,
+          5.041666,
+          5.083333,
+          5.124999,
+          5.166666,
+          5.208333
+        ],
+        "playbackRate": 1,
+        "time": 10.124999,
+        "ended": true,
+        "mediaError": 0
+      },
+      {
+        "duration": 10.125,
+        "windows": [
+          {
+            "id": "morph",
+            "start": 0,
+            "end": 5.041666666666667
+          },
+          {
+            "id": "friendly",
+            "start": 5.041666666666667,
+            "end": 10.125
+          }
+        ],
+        "sourceLoads": 3,
+        "sealed": true,
+        "ranges": [
+          [
+            0,
+            10.125
+          ]
+        ],
+        "first": 0,
+        "last": 10.083333,
+        "count": 157,
+        "maxMediaGap": 0.08333400000000069,
+        "joinFrames": [
+          0,
+          0.083333,
+          0.125,
+          4.916666,
+          5,
+          5.083333,
+          5.125
+        ],
+        "playbackRate": 4,
+        "time": 10.125,
+        "ended": true,
+        "mediaError": 0
+      }
+    ],
+    "continuous": {
+      "duration": 15.208333333333334,
+      "windows": [
+        {
+          "id": "friendly",
+          "start": 0,
+          "end": 5.083333333333333
+        },
+        {
+          "id": "morph",
+          "start": 5.083333333333333,
+          "end": 10.125
+        },
+        {
+          "id": "friendly",
+          "start": 10.125,
+          "end": 15.208333333333334
+        }
+      ],
+      "sourceLoads": 4,
+      "sealed": true,
+      "loads": 1,
+      "sameSource": true,
+      "last": 15.166666,
+      "frames": 365,
+      "maxMediaGap": 0.04166700000000034,
+      "time": 15.208333,
+      "ended": true,
+      "appendDurations": [
+        10.125,
+        15.208333333333334
+      ]
+    },
+    "sealedRejected": true,
+    "stopped": {
+      "src": null,
+      "duration": 0,
+      "paused": true,
+      "objectURL": null
+    },
+    "stale": {
+      "oldResult": "AbortError",
+      "preserved": true,
+      "duration": 5.041666666666667
+    },
+    "appendCancellation": {
+      "results": [
+        "AbortError",
+        "AbortError"
+      ],
+      "preserved": true,
+      "windows": [
+        "morph"
+      ]
+    },
+    "fetchFailure": true,
+    "disposedReject": true,
+    "disposedSrc": null,
+    "sourceLoads": 9,
+    "scope": "Forward order at normal 1x rate; other cases accelerated 4x. Callback gaps are observations, not proof of presentation quality. Muted native MSE finite-media playback and cancellation only; no human smoothness, acoustic, provider, phone or physical projection acceptance."
+  },
+  "scope": "Actual muted Linux WebKit MSE playback; corrected edit-list packages. Not full app, human joins/audio, provider or physical projection acceptance."
+}

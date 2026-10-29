@@ -1,0 +1,230 @@
+{
+  "duration": 8.064,
+  "visemes": [
+    {
+      "start": 0,
+      "end": 0.38,
+      "shape": "rest",
+      "phoneme": "SIL"
+    },
+    {
+      "start": 0.38,
+      "end": 0.58,
+      "shape": "U",
+      "phoneme": "UW"
+    },
+    {
+      "start": 0.58,
+      "end": 0.79,
+      "shape": "rest",
+      "phoneme": "P"
+    },
+    {
+      "start": 0.79,
+      "end": 0.81,
+      "shape": "S",
+      "phoneme": "S"
+    },
+    {
+      "start": 0.81,
+      "end": 1.72,
+      "shape": "rest",
+      "phoneme": "S"
+    },
+    {
+      "start": 1.72,
+      "end": 1.82,
+      "shape": "O",
+      "phoneme": "OW"
+    },
+    {
+      "start": 1.82,
+      "end": 1.9,
+      "shape": "rest",
+      "phoneme": "OW"
+    },
+    {
+      "start": 1.9,
+      "end": 2.02,
+      "shape": "A",
+      "phoneme": "AY"
+    },
+    {
+      "start": 2.02,
+      "end": 2.05,
+      "shape": "S",
+      "phoneme": "D"
+    },
+    {
+      "start": 2.05,
+      "end": 2.22,
+      "shape": "E",
+      "phoneme": "IH"
+    },
+    {
+      "start": 2.22,
+      "end": 2.32,
+      "shape": "rest",
+      "phoneme": "N"
+    },
+    {
+      "start": 2.32,
+      "end": 2.38,
+      "shape": "S",
+      "phoneme": "S"
+    },
+    {
+      "start": 2.38,
+      "end": 2.49,
+      "shape": "rest",
+      "phoneme": "S"
+    },
+    {
+      "start": 2.49,
+      "end": 2.64,
+      "shape": "E",
+      "phoneme": "EH"
+    },
+    {
+      "start": 2.64,
+      "end": 2.73,
+      "shape": "U",
+      "phoneme": "R"
+    },
+    {
+      "start": 2.73,
+      "end": 2.95,
+      "shape": "E",
+      "phoneme": "Y"
+    },
+    {
+      "start": 2.95,
+      "end": 3.03,
+      "shape": "U",
+      "phoneme": "UW"
+    },
+    {
+      "start": 3.03,
+      "end": 3.89,
+      "shape": "rest",
+      "phoneme": "UW"
+    },
+    {
+      "start": 3.89,
+      "end": 4.04,
+      "shape": "A",
+      "phoneme": "AY"
+    },
+    {
+      "start": 4.04,
+      "end": 4.13,
+      "shape": "MBP",
+      "phoneme": "M"
+    },
+    {
+      "start": 4.13,
+      "end": 4.2,
+      "shape": "rest",
+      "phoneme": "JH"
+    },
+    {
+      "start": 4.2,
+      "end": 4.25,
+      "shape": "E",
+      "phoneme": "IH"
+    },
+    {
+      "start": 4.25,
+      "end": 4.56,
+      "shape": "rest",
+      "phoneme": "S"
+    },
+    {
+      "start": 4.56,
+      "end": 4.58,
+      "shape": "S",
+      "phoneme": "T"
+    },
+    {
+      "start": 4.58,
+      "end": 4.62,
+      "shape": "rest",
+      "phoneme": "T"
+    },
+    {
+      "start": 4.62,
+      "end": 4.65,
+      "shape": "U",
+      "phoneme": "R"
+    },
+    {
+      "start": 4.65,
+      "end": 4.74,
+      "shape": "A",
+      "phoneme": "AY"
+    },
+    {
+      "start": 4.74,
+      "end": 4.89,
+      "shape": "S",
+      "phoneme": "NG"
+    },
+    {
+      "start": 4.89,
+      "end": 4.92,
+      "shape": "rest",
+      "phoneme": "T"
+    },
+    {
+      "start": 4.92,
+      "end": 4.98,
+      "shape": "E",
+      "phoneme": "IH"
+    },
+    {
+      "start": 4.98,
+      "end": 5.0,
+      "shape": "MBP",
+      "phoneme": "B"
+    },
+    {
+      "start": 5.0,
+      "end": 5.05,
+      "shape": "rest",
+      "phoneme": "B"
+    },
+    {
+      "start": 5.05,
+      "end": 5.11,
+      "shape": "E",
+      "phoneme": "IY"
+    },
+    {
+      "start": 5.11,
+      "end": 5.3,
+      "shape": "rest",
+      "phoneme": "IY"
+    },
+    {
+      "start": 5.3,
+      "end": 5.44,
+      "shape": "A",
+      "phoneme": "AH"
+    },
+    {
+      "start": 5.44,
+      "end": 8.05,
+      "shape": "rest",
+      "phoneme": "AH"
+    }
+  ],
+  "syncMode": "forced-phoneme-alignment",
+  "alignmentWarning": "Automatic English alignment. Review names, whispers and unusually theatrical delivery.",
+  "scope": "Automatic local English alignment of existing approved recorded voice, requires timing review; not manual phoneme annotation.",
+  "source": "source/wisp-performance-reference/tonight-demo/apology-proof-v1.mp4",
+  "audioSha256": "b8aaead412459184f4f1c5329210dd553c3cd621a9357c95c1e719d315322170",
+  "text": "Oops! Hope I didn't scare you. I'm just trying to be tough.",
+  "humanApproval": false,
+  "sourceSha256": "d4dfefcfb62bbff4f32ba7b047a28a4bda5ab7b4def711c368f08d23213e819d",
+  "runtimeIntegration": false
+}

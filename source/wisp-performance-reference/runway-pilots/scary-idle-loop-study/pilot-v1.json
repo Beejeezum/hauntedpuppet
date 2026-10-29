@@ -1,0 +1,35 @@
+{
+  "taskId": "47e1d939-2407-4e44-9185-9bd684a2b3b1",
+  "status": "completed; rejected for held bookends and solid-looking middle-motion material",
+  "workspaceId": 1709631,
+  "workspaceName": "Bruce",
+  "submissionCap": 1,
+  "submissionCount": 1,
+  "model": "kling-o3-pro",
+  "duration": 10,
+  "generateAudio": false,
+  "sourceImage": "source/wisp-performance-reference/runway-pilots/film-morph-handoff-study/scary-start-staged.png",
+  "sameStartEndReference": true,
+  "prompt": "One continuous ten-second seamless ambient character loop on pure black, locked camera. Animate the EXACT painted scary Wisp in the reference: same blue eyes, grin, head shape, attached hands and coherent ivory-blue porous fog body. This is the same approved ghost, not a redesign or a transformation. Keep the fixed hero scale and framing. Begin and end in the supplied SAME mid-hover passing pose, both gently drifting upward at the same speed so motion continues through the loop boundary. One relaxed weighted rise-and-fall hover cycle. The torso and lower vapor core softly bend and counterbalance throughout; shoulders lead, elbows articulate, wrists lag and pointed fingers slowly curl and uncurl. Independent eyes glance briefly down toward the path, then slyly return to camera as the head follows slightly later; brows react separately. Small asymmetric arm gestures carry real weight and follow-through. Always retain a connected readable core and both complete hands. Irregular soft fog constantly sheds from the silhouette itself and disperses nearby, never a screen-wide smoke overlay. No rigid unmoving body under a distortion filter. No fish curls, tentacle tail, solid muscular ribs, glossy plastic or detached facial parts. All fog, fingertips and head vapor remain inside the central60percent of frame height and width at every moment. No approaching camera, resizing, vanishing, cuts, body crossfade, freeze, final settling hold, text, new objects or scary jump. Silent nonspeaking acting, no mouth speech. Continue light full-body motion in the first and last second; the loop has no intro or outro.",
+  "humanApproval": false,
+  "runtimeIntegration": false,
+  "remainingGates": [
+    "all-frame fog reserve and connected core/hands",
+    "no intro/outro or end freeze",
+    "actual multi-cycle loop review",
+    "exact incoming/outgoing rest-pose joins",
+    "browser playback and cancellation"
+  ],
+  "observedCreditsCharged": 170,
+  "automaticRetryAllowed": false,
+  "reviewFindings": {
+    "frameCount": 241,
+    "fps": 24,
+    "last12MedianFrameDifference": 0.1983,
+    "middleMedianFrameDifference": 8.5324,
+    "runtime15PercentReserve": "passes",
+    "generation20PercentReserve": "fails 86 frames at RGB4",
+    "visualFailure": "Middle-motion arms and core become solid rubbery tubes; closing movement nearly freezes. Matching endpoint pictures do not prove a seamless moving loop."
+  },
+  "sourceImageSha256": "37e7b42d062ad926ba663990c42814c0c6f22cf3d148d792b11a13911ed562d1"
+}

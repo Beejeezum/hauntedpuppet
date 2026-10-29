@@ -7,6 +7,15 @@ from urllib.parse import urlsplit
 
 TTL=90
 COMMANDS={'gesture':{'wave','laugh','shy','surprise'},'gaze':{'left','right','center'},'audience':{'little','family','big'},'loop':{'on','off'},'move':{'phantom','enter', 'laugh', 'surprise', 'twirl', 'dance', 'bounce', 'orbit', 'exit', 'celebrate', 'peekaboo', 'shy', 'wave'},'form':{'friendly','haunting'},'welcome':{None},'reveal':{'arm','fire','cancel'},'stop':{None},'blackout':{'on','off'}}
+def valid_performance(value, state, cues):
+    """Phone sends bounded direction only; the laptop owns provider/audio work."""
+    return (state.get('workspace') == 'director' and isinstance(value, dict)
+        and set(value) == {'text', 'mode', 'character', 'animation'}
+        and isinstance(value['text'], str) and 0 < len(value['text'].strip()) <= 400
+        and len(value['text']) <= 400 and not any(ord(c) < 32 and c not in '\n\t' for c in value['text'])
+        and value['mode'] in ('exact', 'prompt') and value['character'] in ('friendly', 'scary')
+        and isinstance(value['animation'], str) and value['animation'] in cues)
+
 class Remote:
     def __init__(self, clock=time.monotonic):
         self.clock=clock; self.lock=threading.RLock(); self.secret=secrets.token_urlsafe(32)
@@ -43,7 +52,7 @@ class Remote:
             if not isinstance(ident,str) or not 8<=len(ident)<=80: return 400,{'error':'Invalid command ID.'}
             if ident in s['ids']: return 409,{'error':'Duplicate command ID.','seq':s['ids'][ident]}
             if not self.snapshot()['connected'] and kind not in ('stop','blackout','welcome'): return 503,{'error':'Laptop bridge is disconnected.'}
-            valid=(kind in COMMANDS and value in COMMANDS[kind]) or (kind=='volume' and type(value) in (int,float) and 0<=value<=1) or (kind=='cue' and isinstance(value,str) and value in self.cues)
+            valid=(isinstance(kind,str) and kind in COMMANDS and isinstance(value,(str,type(None))) and value in COMMANDS[kind]) or (kind=='volume' and type(value) in (int,float) and 0<=value<=1) or (kind=='cue' and isinstance(value,str) and value in self.cues) or (kind=='perform' and valid_performance(value,self.state,self.cues))
             if not valid: return 400,{'error':'Unsupported command or value.'}
             while s['rate'] and s['rate'][0]<now-1: s['rate'].popleft()
             emergency=kind in ('stop','welcome') or (kind=='blackout' and value=='on') or (kind=='reveal' and value=='cancel')
@@ -53,11 +62,11 @@ class Remote:
                     old=self.queue.popleft(); self.results[old['seq']]={'seq':old['seq'],'status':'cancelled','at':now}
             if len(self.queue)>=64: return 503,{'error':'Command queue full.'}
             s['rate'].append(now); self.seq+=1
-            self.results={seq:a for seq,a in self.results.items() if a['at']>now-120}
+            self.results={seq:a for seq,a in self.results.items() if a.get('until',a['at']+120)>now}
             s['ids'][ident]=self.seq
             while len(s['ids'])>256: s['ids'].popitem(last=False)
             self.queue.append({'seq':self.seq,'id':ident,'command':kind,'value':value,'expiresAt':now+3})
-            self.results[self.seq]={'seq':self.seq,'status':'queued','at':now}
+            self.results[self.seq]={'seq':self.seq,'status':'queued','at':now,'until':now+(600 if kind=='perform' else 120)}
             return 202,{'seq':self.seq,'status':'queued'}
     def poll(self):
         with self.lock:
@@ -120,13 +129,14 @@ class Handler(BaseHTTPRequestHandler):
                         if not isinstance(state,dict) or not isinstance(cues,list) or len(cues)>40 or any(not isinstance(c,str) or len(c)>64 for c in cues): raise ValueError('Invalid state')
                         # Only projection state. Never forward credentials, transcripts, or arbitrary server data.
                         r.state={k:v for k,v in state.items() if k in ('mood','audience','loop','blackout','volume','status','gesture','gaze','form','scaryReady','revealArmed','revealRunning','workspace') and isinstance(v,(str,bool,int,float))}
-                        if r.state.get('workspace') not in ('films','live'): r.state.pop('workspace',None)
+                        if r.state.get('workspace') not in ('films','live','director'): r.state.pop('workspace',None)
                         r.cues=cues; r.preview=preview; r.state_at=r.clock(); r.bridge_at=r.clock()
                         return self.send_json(200,{'ok':True})
                     if path=='/bridge/ack' and post:
                         d=self.data(); seq=d.get('seq'); status=d.get('status')
                         if type(seq)!=int or seq not in r.results or status not in ('applied','failed'): raise ValueError('Invalid acknowledgement')
-                        r.results[seq]={'seq':seq,'status':status,'at':r.clock()}; return self.send_json(200,{'ok':True})
+                        if r.results[seq]['status']!='queued' or r.results[seq].get('until',r.results[seq]['at']+120)<=r.clock(): return self.send_json(409,{'error':'Command expired or was already settled.'})
+                        r.results[seq]={'seq':seq,'status':status,'at':r.clock(),'until':r.results[seq].get('until',r.clock()+120)}; return self.send_json(200,{'ok':True})
                     if path=='/bridge/revoke' and post:
                         r.sessions.clear(); r.queue.clear(); r.code=None; return self.send_json(200,{'ok':True})
             if path=='/api/pair' and post: return self.send_json(*r.pair(self.client_address[0],self.data().get('code')))
@@ -135,9 +145,8 @@ class Handler(BaseHTTPRequestHandler):
                     s=r.session(self.token())
                     if not s: return self.send_json(401,{'error':'Pair this phone again.'})
                     if path=='/api/state' and not post:
-                        snap=r.snapshot(); owned=set(s['ids'].values()); snap['acks']=[{k:v for k,v in a.items() if k!='at'} for seq,a in r.results.items() if seq in owned]
-                        cutoff=r.clock()-120
-                        r.results={seq:a for seq,a in r.results.items() if a['at']>cutoff}
+                        snap=r.snapshot(); owned=set(s['ids'].values()); snap['acks']=[{k:v for k,v in a.items() if k not in ('at','until')} for seq,a in r.results.items() if seq in owned]
+                        r.results={seq:a for seq,a in r.results.items() if a.get('until',a['at']+120)>r.clock()}
                         return self.send_json(200,snap)
                     if path=='/api/command' and post: return self.send_json(*r.command(self.token(),self.data()))
             if not post and path in ('/','/phone.js','/phone.css'):

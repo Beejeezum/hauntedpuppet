@@ -1,0 +1,66 @@
+{
+  "status": "local_native_mocked_speech_pass_not_release_acceptance",
+  "scope": "Built opt-in owned-native/single app. Actual movies and native WebAudio parsed zero PCM; mock HTTP provider. No genuine provider, listening, phone hardware or projection acceptance.",
+  "behavior": "Director owns persistent detached body capture; face layer borrows without clearing/disposal on uncheck. Normal forced GL cleanup remains enabled.",
+  "engines": {
+    "chromium": {
+      "testedDirectorSha256": "086d2c84a69096257c718c21e3355ff4e131ff6a787175e92546d9ce46d17e66",
+      "starts": 6,
+      "preparations": 2,
+      "bodyAtStop": {
+        "created": 2830,
+        "closed": 2830,
+        "held": 0,
+        "maxHeld": 1,
+        "published": 533,
+        "duplicates": 2297,
+        "unavailable": 0,
+        "discarded": 0,
+        "failures": 0,
+        "rgbaCopies": 533,
+        "canvasCopies": 0,
+        "pending": false,
+        "ready": false,
+        "disposed": false,
+        "time": null,
+        "failed": false
+      },
+      "errors": []
+    },
+    "webkit": {
+      "testedDirectorSha256": "086d2c84a69096257c718c21e3355ff4e131ff6a787175e92546d9ce46d17e66",
+      "starts": 6,
+      "preparations": 2,
+      "bodyAtStop": {
+        "created": 2821,
+        "closed": 2821,
+        "held": 0,
+        "maxHeld": 1,
+        "published": 2622,
+        "duplicates": 199,
+        "unavailable": 0,
+        "discarded": 0,
+        "failures": 0,
+        "rgbaCopies": 0,
+        "canvasCopies": 2622,
+        "pending": false,
+        "ready": false,
+        "disposed": false,
+        "time": null,
+        "failed": false
+      },
+      "errors": []
+    }
+  },
+  "additionalChecks": [
+    "Chrome and MacWebKit4preparation cancellation/failure cases pass with native frames andGLresources closed.",
+    "Standalone owned layer retains default source ownership; six-line Chrome native player/Stop/restart/disposal passes.",
+    "Public import/exclusion/hash build checks pass after comment-only clarification."
+  ],
+  "limitations": [
+    "Local WebKit is not Linux GStreamer.",
+    "New painted mouth study is not integrated; friendly aperture remains visually unapproved.",
+    "Continuous capture performance needs representative laptop profiling and soak.",
+    "16cue,humanvoice,andphysicalprojection acceptance remain incomplete."
+  ]
+}

@@ -1,0 +1,12 @@
+STATUS REQUEST BOUNDARY EXPERIMENT — 2026-10-29
+
+Failure evidence: Linux run40833217524 atcc81752 received/finished status HTTP200 but the speech adapter remained at stage status (before the fetch await resumed). Body925CPUpublications/all2237framesclosed/no capturefailure. CPUstaging did not cure the stall; do not keep changing rendering or repeat that candidate as if successful.
+
+Explicit opt-in query: /assets/wisp-showdesk/director.html?pipeline=single&mouth=authored-native&status=xhr
+Only the speech adapter status request changes to XMLHttpRequest. Native body capture and WebGL ownership stay at the normal non-CPU path. Prompt and paid speech requests retain their existing fetch transport. There are no retries/fallbacks, no duplicate provider requests, no new credentials and no cached authentication token. Default operator route stays unchanged.
+
+Fixed same-origin GET /api/status. Bounded8second native deadline; request abort follows Stop/page disposal; listeners are detached on every settlement. Reject unauthorized, malformed/nonobject or oversized responses. Diagnostics never include response token. Optional helper timeout configuration exists for bounded tests only.
+
+Test distinction: WebKit intercepted-request timeout test did not settle; rejected that harness. Real loopback HTTP tests exercise success,401,oversized/invalid/array payloads, delayed native timeout, pending/pre-abort, and recovery after cancellation in Chrome and MacWebKit. These pass locally; they do not prove the native-media app stall is repaired.
+
+Full-app test-only XHR open/send/load observers count seven completed status transactions: six speaking performances plus the cancelled pending voice preparation. An initial observer assertion mistakenly ran again after page reload, when the earlier page measurements no longer existed. Corrected the test to record seven completed real XHR transactions before terminal cleanup and reload. The later reload separately verifies restored preferences and silent stopped output. Unrelated paired-control status polling remains fetch and must not be misclassified as this speech adapter. Preserve six speech starts, actual films/registered-face preparation, single decoder, continuous actor/EOS, Stop/cancel, silent output and cleanup assertions. Cloud normal-backend qualification remains required; do not promote based on unit success.

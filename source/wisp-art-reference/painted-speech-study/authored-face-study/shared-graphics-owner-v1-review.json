@@ -1,0 +1,377 @@
+{
+  "status": "shared-graphics-local-pass-linux-inconsistent",
+  "defaultRendererChanged": false,
+  "ownership": "One explicit authored director graphics owner; exclusive per-renderer resource lease; standalone renderer retains its own terminal context disposal.",
+  "local": {
+    "chromium": {
+      "directorStarts": 6,
+      "directorErrors": [],
+      "graphicsEndEvidence": {
+        "before": {
+          "disposed": false,
+          "leased": false,
+          "acquisitions": 2,
+          "releases": 2,
+          "forcedLossRequests": 0,
+          "contextLost": false,
+          "contexts": 1
+        },
+        "after": {
+          "graphics": {
+            "disposed": true,
+            "leased": false,
+            "acquisitions": 2,
+            "releases": 2,
+            "forcedLossRequests": 1,
+            "contextLost": true,
+            "contexts": 1
+          },
+          "body": {
+            "created": 2830,
+            "closed": 2830,
+            "held": 0,
+            "maxHeld": 1,
+            "published": 532,
+            "duplicates": 2298,
+            "unavailable": 0,
+            "discarded": 0,
+            "failures": 0,
+            "rgbaCopies": 0,
+            "canvasCopies": 532,
+            "lastFailure": null,
+            "pending": false,
+            "ready": false,
+            "disposed": true,
+            "time": null,
+            "failed": false
+          },
+          "videos": 0,
+          "intercepted": 0
+        }
+      },
+      "sharedResourceTest": {
+        "fault": {
+          "rejected": true,
+          "held": 0,
+          "owner": {
+            "disposed": false,
+            "leased": false,
+            "acquisitions": 1,
+            "releases": 1,
+            "forcedLossRequests": 0,
+            "contextLost": false,
+            "contexts": 1
+          },
+          "source": {
+            "created": 0,
+            "closed": 0,
+            "held": 0,
+            "maxHeld": 0,
+            "published": 0,
+            "duplicates": 0,
+            "unavailable": 0,
+            "discarded": 0,
+            "failures": 0,
+            "rgbaCopies": 0,
+            "canvasCopies": 0,
+            "lastFailure": null,
+            "pending": false,
+            "ready": false,
+            "disposed": true,
+            "time": null
+          }
+        },
+        "active": {
+          "held": 9,
+          "owner": {
+            "disposed": false,
+            "leased": true,
+            "acquisitions": 2,
+            "releases": 1,
+            "forcedLossRequests": 0,
+            "contextLost": false,
+            "contexts": 1
+          },
+          "prematureRejected": true,
+          "concurrentRejected": true,
+          "firstStillReady": true
+        },
+        "released": {
+          "held": 0,
+          "owner": {
+            "disposed": false,
+            "leased": false,
+            "acquisitions": 2,
+            "releases": 2,
+            "forcedLossRequests": 0,
+            "contextLost": false,
+            "contexts": 1
+          },
+          "contextLost": false,
+          "program": null,
+          "texture": null,
+          "buffer": null
+        },
+        "beforeTerminal": {
+          "held": 0,
+          "owner": {
+            "disposed": false,
+            "leased": false,
+            "acquisitions": 3,
+            "releases": 3,
+            "forcedLossRequests": 0,
+            "contextLost": false,
+            "contexts": 1
+          },
+          "error": 0
+        },
+        "sequentialPaint": {
+          "poses": 4,
+          "maximumPixelDelta": 0,
+          "sourceFrame": 49,
+          "body": {
+            "created": 1,
+            "closed": 1,
+            "held": 0,
+            "maxHeld": 1,
+            "published": 1,
+            "duplicates": 0,
+            "unavailable": 0,
+            "discarded": 0,
+            "failures": 0,
+            "rgbaCopies": 0,
+            "canvasCopies": 1,
+            "lastFailure": null,
+            "pending": false,
+            "ready": false,
+            "disposed": true,
+            "time": null
+          }
+        },
+        "terminal": {
+          "disposed": true,
+          "leased": false,
+          "acquisitions": 3,
+          "releases": 3,
+          "forcedLossRequests": 1,
+          "contextLost": true,
+          "contexts": 1,
+          "reuseRejected": true
+        },
+        "scope": "Real local WebGL with explicit upload failure/concurrent-lease misuse. No provider, app rehearsal, human or physical projection acceptance."
+      },
+      "preparationCancellationCases": 4
+    },
+    "webkit": {
+      "directorStarts": 6,
+      "directorErrors": [],
+      "graphicsEndEvidence": {
+        "before": {
+          "disposed": false,
+          "leased": false,
+          "acquisitions": 2,
+          "releases": 2,
+          "forcedLossRequests": 0,
+          "contextLost": false,
+          "contexts": 1
+        },
+        "after": {
+          "graphics": {
+            "disposed": true,
+            "leased": false,
+            "acquisitions": 2,
+            "releases": 2,
+            "forcedLossRequests": 1,
+            "contextLost": true,
+            "contexts": 1
+          },
+          "body": {
+            "created": 2855,
+            "closed": 2855,
+            "held": 0,
+            "maxHeld": 1,
+            "published": 2654,
+            "duplicates": 201,
+            "unavailable": 0,
+            "discarded": 0,
+            "failures": 0,
+            "rgbaCopies": 0,
+            "canvasCopies": 2654,
+            "lastFailure": null,
+            "pending": false,
+            "ready": false,
+            "disposed": true,
+            "time": null,
+            "failed": false
+          },
+          "videos": 0,
+          "intercepted": 0
+        }
+      },
+      "sharedResourceTest": {
+        "fault": {
+          "rejected": true,
+          "held": 0,
+          "owner": {
+            "disposed": false,
+            "leased": false,
+            "acquisitions": 1,
+            "releases": 1,
+            "forcedLossRequests": 0,
+            "contextLost": false,
+            "contexts": 1
+          },
+          "source": {
+            "created": 0,
+            "closed": 0,
+            "held": 0,
+            "maxHeld": 0,
+            "published": 0,
+            "duplicates": 0,
+            "unavailable": 0,
+            "discarded": 0,
+            "failures": 0,
+            "rgbaCopies": 0,
+            "canvasCopies": 0,
+            "lastFailure": null,
+            "pending": false,
+            "ready": false,
+            "disposed": true,
+            "time": null
+          }
+        },
+        "active": {
+          "held": 9,
+          "owner": {
+            "disposed": false,
+            "leased": true,
+            "acquisitions": 2,
+            "releases": 1,
+            "forcedLossRequests": 0,
+            "contextLost": false,
+            "contexts": 1
+          },
+          "prematureRejected": true,
+          "concurrentRejected": true,
+          "firstStillReady": true
+        },
+        "released": {
+          "held": 0,
+          "owner": {
+            "disposed": false,
+            "leased": false,
+            "acquisitions": 2,
+            "releases": 2,
+            "forcedLossRequests": 0,
+            "contextLost": false,
+            "contexts": 1
+          },
+          "contextLost": false,
+          "program": null,
+          "texture": null,
+          "buffer": null
+        },
+        "beforeTerminal": {
+          "held": 0,
+          "owner": {
+            "disposed": false,
+            "leased": false,
+            "acquisitions": 3,
+            "releases": 3,
+            "forcedLossRequests": 0,
+            "contextLost": false,
+            "contexts": 1
+          },
+          "error": 0
+        },
+        "sequentialPaint": {
+          "poses": 4,
+          "maximumPixelDelta": 0,
+          "sourceFrame": 49,
+          "body": {
+            "created": 1,
+            "closed": 1,
+            "held": 0,
+            "maxHeld": 1,
+            "published": 1,
+            "duplicates": 0,
+            "unavailable": 0,
+            "discarded": 0,
+            "failures": 0,
+            "rgbaCopies": 0,
+            "canvasCopies": 1,
+            "lastFailure": null,
+            "pending": false,
+            "ready": false,
+            "disposed": true,
+            "time": null
+          }
+        },
+        "terminal": {
+          "disposed": true,
+          "leased": false,
+          "acquisitions": 3,
+          "releases": 3,
+          "forcedLossRequests": 1,
+          "contextLost": true,
+          "contexts": 1,
+          "reuseRejected": true
+        },
+        "scope": "Real local WebGL with explicit upload failure/concurrent-lease misuse. No provider, app rehearsal, human or physical projection acceptance."
+      },
+      "preparationCancellationCases": 4
+    }
+  },
+  "phonePairing": "Local real pairing/services,4synthetic performances, silent phone and remote Stop pass after ownership change. No physical phone/provider acceptance.",
+  "humanVisualReview": "pending; no painted geometry/material change",
+  "linux": {
+    "head": "0d0f0ca5ba0d4de715ec3d183cac799c6dd9bdd1",
+    "first": {
+      "run": 40828697023,
+      "result": "pass normal backend/no interception",
+      "starts": 6,
+      "preparations": 2,
+      "leaseAcquisitions": 2,
+      "leaseReleases": 2,
+      "terminalLossRequests": 1,
+      "terminalActualContextLost": true,
+      "terminalVideos": 0,
+      "framesCreated": 3116,
+      "framesClosed": 3116,
+      "sharedFourPoseMaxPixelDelta": 0,
+      "cancellationCases": 4,
+      "cancelGlLive": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "repeat": {
+      "run": 40829259060,
+      "result": "failure before fourth speech;status fetch awaiting delivery despite completed HTTP200",
+      "starts": 3,
+      "graphics": {
+        "contexts": 1,
+        "acquisitions": 1,
+        "releases": 1,
+        "forcedLossRequests": 0,
+        "contextLost": false
+      },
+      "body": {
+        "created": 878,
+        "closed": 878,
+        "published": 701,
+        "failures": 0
+      },
+      "nativeWarnings": "GL color conversion caps rejected I420 GLMemory for1916x1080 and1280x720. Causation unproven."
+    },
+    "conclusion": "Context ownership is bounded and locally verified; it is not a complete fix for intermittent Linux native media/fetch delivery stalls. No release acceptance."
+  },
+  "productionApproved": false,
+  "sourceSha256": {
+    "source/wisp-art-reference/painted-speech-study/authored-face-study/native-painted-face-study.mjs": "912972b262e9b366d761f97eaea5de832a8a748ae02b142ae1724323709e8d47",
+    "source/wisp-art-reference/painted-speech-study/phone-authored-painted-layer.mjs": "21bbf9131aa0699d746353de0d7e1e1fb7d6d3ce073ffe62387093472284d3ec",
+    "source/wisp-performance-reference/ambient-show/director.mjs": "50fcfd9a8283d05ed0867db55905440fcea9eed514c8c4878139339ed7477d7e"
+  }
+}

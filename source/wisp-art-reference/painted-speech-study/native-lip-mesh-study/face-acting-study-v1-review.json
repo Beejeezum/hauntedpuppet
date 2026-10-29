@@ -1,0 +1,18 @@
+{
+  "status": "internal_insufficient_not_approved",
+  "method": "Local browser-only intercepted shader variant; broad smooth cheek/jaw deformation, unchanged approved film and recorded voice. Runtime renderer unchanged.",
+  "output": "work/native-face-acting-study-v1/native-speaking-proof.mp4",
+  "evidence": {
+    "browserPaints": 546,
+    "mouthDraws": 310,
+    "bodySnapshots": 192,
+    "maxAudioWallClockDriftMs": 5.2666666607068535
+  },
+  "visual_review": "Eight face-detail frames reviewed. Painted identity retained, but predominantly smile/open-close acting persists; broad displacement alone does not demonstrate integrated speech shapes or resolve human pasted-on criticism.",
+  "next_requirement": "Coherent head-local multi-shape mouth/corner/lower-face acting, including closed consonants and rounded vowels, demonstrated through actual head motion. Do not substitute aperture-only amplitude for speech shapes.",
+  "limitations": [
+    "Source-master audio mux, not recorded live speaker output.",
+    "No provider, physical projector, human approval or live deployment.",
+    "No Runway credits spent."
+  ]
+}

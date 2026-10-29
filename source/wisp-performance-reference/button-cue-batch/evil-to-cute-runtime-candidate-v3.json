@@ -1,0 +1,41 @@
+{
+  "status": "source-only dry sound candidate; human level/file acceptance pending",
+  "file": "evil-to-cute-runtime-candidate-v3.mp4",
+  "sha256": "c3ccb74d44a44e658c723405b51fcd9e3b57a81749f89f8903dd66e455d70463",
+  "sourceVideo": "evil-to-cute-runtime-candidate-v2.mp4",
+  "sourceVideoSha256": "1a769bddfb65ed21cbc236a0b58f6d9191eeabb0ad4e1606785007029ebcd649",
+  "sourceReview": "wisp-morph-roundtrip-review-v7.mp4",
+  "sourceSound": "wisp-morph-dry-swishes-v2.wav",
+  "sourceSoundSha256": "040f3712ba542d39d2a587d6a11fbeb4e4ea4e87a61c7e2689eeb11e2e2ab715",
+  "sourceAudioSampleWindow": [
+    728000,
+    970000
+  ],
+  "sampleRate": 48000,
+  "fps": 24,
+  "frameCount": 121,
+  "compressedVideoEssenceUnchanged": true,
+  "allDecodedFramesPixelIdentical": true,
+  "decodedFrames": 121,
+  "audioPeak": 0.1305006444454193,
+  "decodedAudioHeadHalfSecondPeak": 0.0,
+  "decodedAudioTailHalfSecondPeak": 0.0,
+  "generationCreditsSpent": 0,
+  "humanApproval": false,
+  "runtimePublication": false,
+  "scope": "Original full motion/picture retained without resizing or retiming. Exact dry V7 PCM time window replaces rejected musical audio. Contextual visual approval does not establish standalone cue, loop, new join, level or physical projection acceptance.",
+  "humanReview": "pending",
+  "entryPort": "scary-rest",
+  "exitPort": "friendly-rest",
+  "entryReview": "pending",
+  "exitReview": "pending",
+  "emptyStartFrames": 0,
+  "emptyEndFrames": 0,
+  "audioTailSilenceSeconds": 0.5,
+  "audio": {
+    "sampleRate": 48000,
+    "peak": 0.1305006444454193,
+    "lastHalfSecondPeak": 0.0,
+    "scope": "Decoded soundtrack measurements; no human listening or exact cue/transition approval."
+  }
+}

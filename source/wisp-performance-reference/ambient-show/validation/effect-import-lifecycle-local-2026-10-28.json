@@ -1,0 +1,30 @@
+{
+  "status": "local cancellation checks passed; native effect load correction still needs Linux validation",
+  "checks": {
+    "effect-import-cancel-single-chromium": {
+      "reportSha256": "1cf8d289c21623a4b312601fb5caeaa2976361b2f44d87d426fbd5485ae2ddda",
+      "passed": true
+    },
+    "effect-import-cancel-single-webkit": {
+      "reportSha256": "1cf8d289c21623a4b312601fb5caeaa2976361b2f44d87d426fbd5485ae2ddda",
+      "passed": true
+    },
+    "effect-import-cancel-legacy-chromium": {
+      "reportSha256": "1cf8d289c21623a4b312601fb5caeaa2976361b2f44d87d426fbd5485ae2ddda",
+      "passed": true
+    },
+    "effect-import-cancel-legacy-webkit": {
+      "reportSha256": "1cf8d289c21623a4b312601fb5caeaa2976361b2f44d87d426fbd5485ae2ddda",
+      "passed": true
+    }
+  },
+  "runtimeSha256": "a81d047e1c951dfc9daca482a135d699d16e119208b49532520a214438279124",
+  "scope": "Real native PNG/MP4 inputs, gated image completion and injected registration failure. Tests Stop, late completion, invalid video, rollback, pagehide and0owned URLs. Not artistic effects quality, phone hardware/provider or physical projection.",
+  "localVoice": {
+    "statusHttp": 200,
+    "configured": false,
+    "genuineProviderCallAttempted": false,
+    "openaiKeyReadOrPrinted": false,
+    "serverRestarted": false
+  }
+}

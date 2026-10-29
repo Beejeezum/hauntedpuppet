@@ -1,0 +1,57 @@
+{
+  "runId": 40959700184,
+  "jobId": 123748939150,
+  "headRevision": "11820c2250fd8e196fb7b07e4c39249bb49d63bd",
+  "jobConclusion": "success",
+  "results": {
+    "cue-board-soak-webkit.json": {
+      "passed": true,
+      "cycles": 2,
+      "order": [
+        "cute",
+        "friendly-wave",
+        "friendly-boo-fail",
+        "friendly-depart",
+        "cute-to-evil",
+        "scary",
+        "scary-eyes",
+        "evil-to-cute",
+        "cute",
+        "friendly-wave",
+        "friendly-boo-fail",
+        "friendly-depart",
+        "cute-to-evil",
+        "scary",
+        "scary-eyes",
+        "evil-to-cute",
+        "cute"
+      ],
+      "silent": true
+    },
+    "cue-board-soak-chromium.json": {
+      "passed": true,
+      "cycles": 2,
+      "order": [
+        "cute",
+        "friendly-wave",
+        "friendly-boo-fail",
+        "friendly-depart",
+        "cute-to-evil",
+        "scary",
+        "scary-eyes",
+        "evil-to-cute",
+        "cute",
+        "friendly-wave",
+        "friendly-boo-fail",
+        "friendly-depart",
+        "cute-to-evil",
+        "scary",
+        "scary-eyes",
+        "evil-to-cute",
+        "cute"
+      ],
+      "silent": true
+    }
+  },
+  "scope": "Actual Linux Chrome/WebKit native media in two real-time rounds of8eligible rehearsal films and closing repeat, saved order/black handoffs/silence/Blackout/disposal. Human seams/mix and physical projection unvalidated; no claim that separate legacy/native audio failures are fixed or full CI green."
+}

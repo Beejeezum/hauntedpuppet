@@ -33,3 +33,13 @@ test('prepared speech carries selected character acting without accepting browse
  }
  for(const data of [{audience:'little',form:'haunting'},{audience:'family',form:'haunting'},{audience:'unknown',form:'friendly'},{audience:'big',form:'unknown'}]){const count=h.calls.length;const r=await h.service.handle(h.req('/api/performance',{text:'Hello',...data}));assert.equal(r.status,400);assert.equal(h.calls.length,count,'Invalid character context must fail before a paid provider request');}
 });
+
+test('director line is operator authenticated, exact words bypass generation, prompt uses bounded server character instructions',async()=>{
+ const h=setup(),line={text:'Welcome the pirate',mode:'prompt',character:'scary'};
+ assert.equal((await h.service.handle(h.req('/api/director/line',line))).status,401);await h.login();
+ const exact=await h.service.handle(h.req('/api/director/line',{...line,mode:'exact'}));assert.equal(exact.status,200);assert.equal((await exact.json()).text,line.text);assert.equal(h.calls.length,0);
+ h.setFetch(async(url,init)=>{h.calls.push({url,init});return Response.json({status:'completed',output:[{type:'message',role:'assistant',content:[{type:'output_text',text:'Ahoy, candy captain!'}]}]})});
+ const prompt=await h.service.handle(h.req('/api/director/line',line));assert.equal(prompt.status,200);assert.equal((await prompt.json()).text,'Ahoy, candy captain!');const data=JSON.parse(h.calls[0].init.body);assert.equal(data.store,false);assert.equal(data.input,line.text);assert(data.instructions.includes('same playful being'));
+ const count=h.calls.length;assert.equal((await h.service.handle(h.req('/api/director/line',{...line,model:'untrusted'}))).status,400);assert.equal(h.calls.length,count);
+ assert.equal((await h.service.handle(h.req('/api/director/line',line,{'X-Haunt-Token':'bad'}))).status,403);
+});

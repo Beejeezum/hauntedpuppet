@@ -1,0 +1,575 @@
+{
+  "status": "local_opt_in_app_candidate_not_deployed",
+  "route": "/assets/wisp-showdesk/director.html?pipeline=single&mouth=owned-native",
+  "changes": [
+    "Prepare current-browser reference pictures behind black before sending a line.",
+    "Release owner/projector backing pictures once while black before imports/decoder teardown; no per-frame raster migration.",
+    "Reuse the paused prepared actor for speech; retire an unseen paused reference before starting ambience, including after uncheck.",
+    "Block sends during preparation with visible feedback; abort on Stop/uncheck/pagehide.",
+    "Dispose a failed renderer once and retain original-film fallback."
+  ],
+  "localEvidence": {
+    "chromium": {
+      "director": {
+        "scope": "Built app actual painted films/native parsed zero PCM with mock HTTP speech; no provider or human acceptance.",
+        "starts": {
+          "closed": false,
+          "failure": null,
+          "pending": 0,
+          "events": [
+            {
+              "count": 1,
+              "phase": "playing",
+              "duration": 0.2,
+              "mouthActive": false
+            },
+            {
+              "count": 2,
+              "phase": "playing",
+              "duration": 0.2,
+              "mouthActive": true
+            },
+            {
+              "count": 3,
+              "phase": "playing",
+              "duration": 0.2,
+              "mouthActive": false
+            },
+            {
+              "count": 4,
+              "phase": "playing",
+              "duration": 0.2,
+              "mouthActive": false
+            },
+            {
+              "count": 5,
+              "phase": "playing",
+              "duration": 1,
+              "mouthActive": true
+            },
+            {
+              "count": 6,
+              "phase": "playing",
+              "duration": 0.2,
+              "mouthActive": false
+            }
+          ]
+        },
+        "final": {
+          "phase": "closed",
+          "queued": 0,
+          "character": null,
+          "animation": null,
+          "disposed": true,
+          "speechStage": "idle",
+          "mouthPreparation": {
+            "pending": false,
+            "allocated": false,
+            "isolatedReference": false
+          },
+          "ambient": {
+            "mode": "alternate",
+            "seconds": 5,
+            "character": "friendly",
+            "visibleSeconds": 0,
+            "suspended": true,
+            "transitioning": false,
+            "disposed": true,
+            "error": null
+          },
+          "frameClock": {
+            "pending": 0,
+            "disposed": true
+          },
+          "mouthStudy": null
+        },
+        "errors": []
+      },
+      "preparationCancellation": [
+        {
+          "mode": "stop",
+          "blockedLine": "Wait for face preparation or press Stop",
+          "isolated": {
+            "maxRgb": 0,
+            "paused": true,
+            "preparing": true
+          },
+          "frames": {
+            "created": 3,
+            "closed": 3
+          },
+          "glLive": 0,
+          "state": {
+            "phase": "stopped",
+            "queued": 0,
+            "character": null,
+            "animation": null,
+            "disposed": false,
+            "speechStage": "idle",
+            "mouthPreparation": {
+              "pending": false,
+              "allocated": false,
+              "isolatedReference": false
+            },
+            "ambient": {
+              "mode": "friendly",
+              "seconds": 15,
+              "character": "friendly",
+              "visibleSeconds": 0,
+              "suspended": true,
+              "transitioning": false,
+              "disposed": false,
+              "error": null
+            },
+            "frameClock": {
+              "pending": 0,
+              "disposed": false
+            },
+            "mouthStudy": null
+          },
+          "videos": [
+            {
+              "paused": true,
+              "muted": true
+            }
+          ]
+        },
+        {
+          "mode": "uncheck",
+          "isolated": {
+            "maxRgb": 0,
+            "paused": true,
+            "preparing": true
+          },
+          "frames": {
+            "created": 3,
+            "closed": 3
+          },
+          "glLive": 0,
+          "state": {
+            "phase": "idle",
+            "queued": 0,
+            "character": null,
+            "animation": null,
+            "disposed": false,
+            "speechStage": "idle",
+            "mouthPreparation": {
+              "pending": false,
+              "allocated": false,
+              "isolatedReference": true
+            },
+            "ambient": {
+              "mode": "friendly",
+              "seconds": 15,
+              "character": "friendly",
+              "visibleSeconds": 0,
+              "suspended": true,
+              "transitioning": false,
+              "disposed": false,
+              "error": null
+            },
+            "frameClock": {
+              "pending": 0,
+              "disposed": false
+            },
+            "mouthStudy": null
+          },
+          "videos": [
+            {
+              "paused": true,
+              "muted": true
+            }
+          ],
+          "resumedAmbienceAfterUncheck": true
+        },
+        {
+          "mode": "pagehide",
+          "isolated": {
+            "maxRgb": 0,
+            "paused": true,
+            "preparing": true
+          },
+          "frames": {
+            "created": 3,
+            "closed": 3
+          },
+          "glLive": 0,
+          "state": {
+            "phase": "closed",
+            "queued": 0,
+            "character": null,
+            "animation": null,
+            "disposed": true,
+            "speechStage": "idle",
+            "mouthPreparation": {
+              "pending": false,
+              "allocated": false,
+              "isolatedReference": false
+            },
+            "ambient": {
+              "mode": "friendly",
+              "seconds": 15,
+              "character": "friendly",
+              "visibleSeconds": 0,
+              "suspended": true,
+              "transitioning": false,
+              "disposed": true,
+              "error": null
+            },
+            "frameClock": {
+              "pending": 0,
+              "disposed": true
+            },
+            "mouthStudy": null
+          },
+          "videos": []
+        },
+        {
+          "mode": "capture-failure",
+          "isolated": {
+            "maxRgb": 0,
+            "paused": true,
+            "preparing": false
+          },
+          "frames": {
+            "created": 122,
+            "closed": 122
+          },
+          "glLive": 0,
+          "state": {
+            "phase": "idle",
+            "queued": 0,
+            "character": null,
+            "animation": null,
+            "disposed": false,
+            "speechStage": "idle",
+            "mouthPreparation": {
+              "pending": false,
+              "allocated": false,
+              "isolatedReference": false
+            },
+            "ambient": {
+              "mode": "friendly",
+              "seconds": 15,
+              "character": "friendly",
+              "visibleSeconds": 0,
+              "suspended": false,
+              "transitioning": true,
+              "disposed": false,
+              "error": null
+            },
+            "frameClock": {
+              "pending": 1,
+              "disposed": false
+            },
+            "mouthStudy": null
+          },
+          "videos": [
+            {
+              "paused": false,
+              "muted": true
+            }
+          ]
+        }
+      ],
+      "outputHandoff": {
+        "passed": true,
+        "singleWindow": true,
+        "singleCanvas": true,
+        "formerOwnerCannotStopNewOwner": true,
+        "escapeAndRearm": true,
+        "pagehideCleanup": true,
+        "blackGuardedPictureRelease": true,
+        "outputMedia": 0,
+        "scope": "Synthetic red/green canvases in a real browser; no physical projector/fullscreen acceptance"
+      }
+    },
+    "webkit": {
+      "director": {
+        "scope": "Built app actual painted films/native parsed zero PCM with mock HTTP speech; no provider or human acceptance.",
+        "starts": {
+          "closed": false,
+          "failure": null,
+          "pending": 0,
+          "events": [
+            {
+              "count": 1,
+              "phase": "playing",
+              "duration": 0.2,
+              "mouthActive": false
+            },
+            {
+              "count": 2,
+              "phase": "playing",
+              "duration": 0.2,
+              "mouthActive": true
+            },
+            {
+              "count": 3,
+              "phase": "playing",
+              "duration": 0.2,
+              "mouthActive": false
+            },
+            {
+              "count": 4,
+              "phase": "playing",
+              "duration": 0.2,
+              "mouthActive": false
+            },
+            {
+              "count": 5,
+              "phase": "playing",
+              "duration": 1,
+              "mouthActive": true
+            },
+            {
+              "count": 6,
+              "phase": "playing",
+              "duration": 0.2,
+              "mouthActive": false
+            }
+          ]
+        },
+        "final": {
+          "phase": "closed",
+          "queued": 0,
+          "character": null,
+          "animation": null,
+          "disposed": true,
+          "speechStage": "idle",
+          "mouthPreparation": {
+            "pending": false,
+            "allocated": false,
+            "isolatedReference": false
+          },
+          "ambient": {
+            "mode": "alternate",
+            "seconds": 5,
+            "character": "friendly",
+            "visibleSeconds": 0,
+            "suspended": true,
+            "transitioning": false,
+            "disposed": true,
+            "error": null
+          },
+          "frameClock": {
+            "pending": 0,
+            "disposed": true
+          },
+          "mouthStudy": null
+        },
+        "errors": []
+      },
+      "preparationCancellation": [
+        {
+          "mode": "stop",
+          "blockedLine": "Wait for face preparation or press Stop",
+          "isolated": {
+            "maxRgb": 0,
+            "paused": true,
+            "preparing": true
+          },
+          "frames": {
+            "created": 3,
+            "closed": 3
+          },
+          "glLive": 0,
+          "state": {
+            "phase": "stopped",
+            "queued": 0,
+            "character": null,
+            "animation": null,
+            "disposed": false,
+            "speechStage": "idle",
+            "mouthPreparation": {
+              "pending": false,
+              "allocated": false,
+              "isolatedReference": false
+            },
+            "ambient": {
+              "mode": "friendly",
+              "seconds": 15,
+              "character": "friendly",
+              "visibleSeconds": 0,
+              "suspended": true,
+              "transitioning": false,
+              "disposed": false,
+              "error": null
+            },
+            "frameClock": {
+              "pending": 0,
+              "disposed": false
+            },
+            "mouthStudy": null
+          },
+          "videos": [
+            {
+              "paused": true,
+              "muted": true
+            }
+          ]
+        },
+        {
+          "mode": "uncheck",
+          "isolated": {
+            "maxRgb": 0,
+            "paused": true,
+            "preparing": true
+          },
+          "frames": {
+            "created": 3,
+            "closed": 3
+          },
+          "glLive": 0,
+          "state": {
+            "phase": "idle",
+            "queued": 0,
+            "character": null,
+            "animation": null,
+            "disposed": false,
+            "speechStage": "idle",
+            "mouthPreparation": {
+              "pending": false,
+              "allocated": false,
+              "isolatedReference": true
+            },
+            "ambient": {
+              "mode": "friendly",
+              "seconds": 15,
+              "character": "friendly",
+              "visibleSeconds": 0,
+              "suspended": true,
+              "transitioning": false,
+              "disposed": false,
+              "error": null
+            },
+            "frameClock": {
+              "pending": 0,
+              "disposed": false
+            },
+            "mouthStudy": null
+          },
+          "videos": [
+            {
+              "paused": true,
+              "muted": true
+            }
+          ],
+          "resumedAmbienceAfterUncheck": true
+        },
+        {
+          "mode": "pagehide",
+          "isolated": {
+            "maxRgb": 0,
+            "paused": true,
+            "preparing": true
+          },
+          "frames": {
+            "created": 3,
+            "closed": 3
+          },
+          "glLive": 0,
+          "state": {
+            "phase": "closed",
+            "queued": 0,
+            "character": null,
+            "animation": null,
+            "disposed": true,
+            "speechStage": "idle",
+            "mouthPreparation": {
+              "pending": false,
+              "allocated": false,
+              "isolatedReference": false
+            },
+            "ambient": {
+              "mode": "friendly",
+              "seconds": 15,
+              "character": "friendly",
+              "visibleSeconds": 0,
+              "suspended": true,
+              "transitioning": false,
+              "disposed": true,
+              "error": null
+            },
+            "frameClock": {
+              "pending": 0,
+              "disposed": true
+            },
+            "mouthStudy": null
+          },
+          "videos": []
+        },
+        {
+          "mode": "capture-failure",
+          "isolated": {
+            "maxRgb": 0,
+            "paused": true,
+            "preparing": false
+          },
+          "frames": {
+            "created": 122,
+            "closed": 122
+          },
+          "glLive": 0,
+          "state": {
+            "phase": "idle",
+            "queued": 0,
+            "character": null,
+            "animation": null,
+            "disposed": false,
+            "speechStage": "idle",
+            "mouthPreparation": {
+              "pending": false,
+              "allocated": false,
+              "isolatedReference": false
+            },
+            "ambient": {
+              "mode": "friendly",
+              "seconds": 15,
+              "character": "friendly",
+              "visibleSeconds": 0,
+              "suspended": false,
+              "transitioning": true,
+              "disposed": false,
+              "error": null
+            },
+            "frameClock": {
+              "pending": 1,
+              "disposed": false
+            },
+            "mouthStudy": null
+          },
+          "videos": [
+            {
+              "paused": false,
+              "muted": true
+            }
+          ]
+        }
+      ],
+      "outputHandoff": {
+        "passed": true,
+        "singleWindow": true,
+        "singleCanvas": true,
+        "formerOwnerCannotStopNewOwner": true,
+        "escapeAndRearm": true,
+        "pagehideCleanup": true,
+        "blackGuardedPictureRelease": true,
+        "outputMedia": 0,
+        "scope": "Synthetic red/green canvases in a real browser; no physical projector/fullscreen acceptance"
+      }
+    }
+  },
+  "regressions": [
+    "Original native-lip phone path Chromium PASS.",
+    "Legacy/native import/load cancellation Chromium and WebKit PASS.",
+    "Public allowlist/import/credential exclusions PASS.",
+    "119 suite shard coverage PASS."
+  ],
+  "visualInspection": "Viewed current full-page scary-ambience director screenshot. Original painted character remains on black with no visible crop; controls/experimental status remain present. This is not a speaking-face aesthetic approval or physical projection test.",
+  "remaining": [
+    "New opt-in route needs Linux diagnostic.",
+    "Human approved only new static painted face direction; it is not yet integrated or animated.",
+    "Friendly live mouth artwork, scary speaking mouth,16 cue assets/joins, full playback reliability, genuine voice and physical acceptance remain incomplete."
+  ]
+}

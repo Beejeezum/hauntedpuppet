@@ -1,0 +1,57 @@
+{
+  "master": "wisp-eyes-context-review-v1.mp4",
+  "sha256": "de832a10253bb872ec0b522d408383df2555eac43098ebf38c83d5451f5a5eca",
+  "results": {
+    "eyes-context-chromium": {
+      "passed": true,
+      "fullFirstPlaySeconds": 35.333333333333336,
+      "completedClosingBoundaries": 1,
+      "continuedAfterLoopSeconds": 2,
+      "sampleCount": 374,
+      "quality": {},
+      "trace": [
+        {
+          "type": "emptied",
+          "time": 0
+        },
+        {
+          "type": "seeking",
+          "time": 0
+        }
+      ],
+      "scope": "Actual native35.33second audiovisual movie followed through one native last-to-first closure and continued playback. Explicit sound request through zero-volume sink, one player, no capture, repeat reset on selection and pagehide cleanup. No human sound/seam/motion or physical projection approval; not a sustained unattended soak."
+    },
+    "eyes-context-webkit": {
+      "passed": true,
+      "fullFirstPlaySeconds": 35.333333333333336,
+      "completedClosingBoundaries": 1,
+      "continuedAfterLoopSeconds": 2,
+      "sampleCount": 359,
+      "quality": {},
+      "trace": [
+        {
+          "type": "emptied",
+          "time": 0
+        },
+        {
+          "type": "seeking",
+          "time": 0
+        }
+      ],
+      "scope": "Actual native35.33second audiovisual movie followed through one native last-to-first closure and continued playback. Explicit sound request through zero-volume sink, one player, no capture, repeat reset on selection and pagehide cleanup. No human sound/seam/motion or physical projection approval; not a sustained unattended soak."
+    },
+    "cue-review-chromium": {
+      "passed": true,
+      "scope": "Actual rehearsal, departure,15.125second idle-to-departure and607frame25.29second morph roundtrip files decoded through one player, full morph and eyes-only playback to EOS, deep-linked eyes review and real playback across the handoff, paused/muted film selection, zero-volume audition sink, manual sound enable, chapter seek/pause, no capture, narrow layout and pagehide cleanup. No human sound/motion or physical projection acceptance."
+    },
+    "cue-review-webkit": {
+      "passed": true,
+      "scope": "Actual rehearsal, departure,15.125second idle-to-departure and607frame25.29second morph roundtrip files decoded through one player, full morph and eyes-only playback to EOS, deep-linked eyes review and real playback across the handoff, paused/muted film selection, zero-volume audition sink, manual sound enable, chapter seek/pause, no capture, narrow layout and pagehide cleanup. No human sound/motion or physical projection acceptance."
+    }
+  },
+  "testSha256": {
+    "eyes_context_review.cjs": "a98b42af31ea8129682212bc0bffa7d020da0ee8e5860d4bc9ff3fdc58aa1456",
+    "cue_review.cjs": "94d4401eb35cb3abcf70dce7de79c8df009b83c58acdfdee6be00c608c3ef181"
+  },
+  "scope": "Actual local native full movie and one closing boundary plus continuation in both browsers, zero-volume audition. Not human visual/audio/seam or physical projection approval, not long unattended soak."
+}

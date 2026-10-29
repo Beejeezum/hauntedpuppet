@@ -1,0 +1,27 @@
+{
+  "status": "source-only corrective detail reference; rejected for direct runtime framing",
+  "tool": "built-in imagegen edit",
+  "artifactId": "exec-ba30a6d2-ddcf-49b5-966a-669faed5cb7e.png",
+  "references": [
+    "source/wisp-art-reference/scary-speaking-study/neutral-reference/scary-neutral-mouth-v1.png",
+    "work/scary-neutral-face-inspect.png"
+  ],
+  "inspectionCropRecipe": "Neutral reference crop(750,370,920,510), enlarged5x for inspection; no separate character identity",
+  "sha256": "ce1f8dc17926586bc53efc5b67f0511f965b116909bddb25a59bd438f9ca633a",
+  "dimensions": [
+    1382,
+    1138
+  ],
+  "review": {
+    "useful": "Connected painted lip, cheek and jaw, irregular upper/lower teeth and shadowed oral depth; coherent candidate facial identity. Retain as reference for authored hidden surfaces/correctives.",
+    "failures": [
+      "Requested black backdrop and15percent fog reserve not achieved; head/fog touch image edges",
+      "Single pose, no registration against neutral topology, no speech or head-turn test",
+      "Solid/fibrous cheek material needs review against approved porous fog; not proof of full-character material"
+    ],
+    "humanApproval": false,
+    "runtimeIntegration": false
+  },
+  "runwayCredits": 0,
+  "nextUse": "Reference for separately authored cavity/teeth and connected face correctives; do not paste whole head onto a movie or publish as a projection asset."
+}

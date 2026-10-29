@@ -1,0 +1,38 @@
+{
+  "source": "source/wisp-performance-reference/runway-pilots/film-return-handoff-study/wisp-round-trip-v40-review.mp4",
+  "sourceSHA256": "40f4e00b9b26da6ea69206e2025bba0ae5473c84eabe7669f606a32f97bb68cf",
+  "sourceFrameRange": [
+    0,
+    364
+  ],
+  "frames": 364,
+  "fps": 24,
+  "chapters": [
+    {
+      "id": "friendly-showoff",
+      "frames": [
+        0,
+        122
+      ]
+    },
+    {
+      "id": "cute-to-scary-morph",
+      "frames": [
+        122,
+        243
+      ]
+    },
+    {
+      "id": "menacing-performance",
+      "frames": [
+        243,
+        364
+      ]
+    }
+  ],
+  "stageScale": 0.85,
+  "blackMatte": "same smoothstep12..24 maxRGB as approved scare/apology",
+  "entry": "0.6second smoothstep opacity ramp over moving friendly performance; no tiny-dot arrival",
+  "sha256": "62e5ecdc5911ffdf716e24fbb50af9f941aa606b853168c3c28b9b5a50e39cd0",
+  "scope": "Existing reviewed-motion studies assembled; final context and exact joins remain human-review-pending. No old return morph appended; new approved scare/apology replaces it."
+}

@@ -1,0 +1,23 @@
+{
+  "status": "rejected_intermediate_material_not_runtime_ready",
+  "scope": "Shared topology textured on static approved four-face sheet; not original moving body.",
+  "evidence": [
+    "work/authored-face-registration/mesh-painted-contact.png",
+    "work/authored-face-registration/mesh-painted-halfway.png",
+    "work/authored-face-registration/mesh-render-review.json"
+  ],
+  "passes": [
+    "Shared skin triangles preserve orientation across336 sampled pairwise blends.",
+    "Explicit protected eye ellipses remain pixel-exact in all3 tested halfway poses (zero changed RGB channels).",
+    "Outer oval compositing seam corrected in static pose contact."
+  ],
+  "failures": [
+    "50% rest-to-AH and rest-to-EE show grey/translucent oral paint/teeth from blending the closed face texture with open cavity.",
+    "50% rest-to-OO still reads as a tapered smile rather than rounded puckered lip.",
+    "Convex envelope fills space above the curved closed smile and is not a suitable closed oral surface."
+  ],
+  "next": "Author paired curved upper/lower lip topology and an independently shaded oral interior; do not solve grey cavities by simply removing rest texture weight, which would make a black region pop into the convex closed smile. Keep the successful eye protection, but revalidate it after geometry changes.",
+  "runtimePromoted": false,
+  "humanMotionApproved": false,
+  "paidCreditsSpent": 0
+}

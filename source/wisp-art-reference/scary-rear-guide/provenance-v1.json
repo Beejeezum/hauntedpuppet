@@ -1,0 +1,31 @@
+{
+  "status": "human design review pending; source-only rear guide",
+  "tool": "built-in imagegen reference generation",
+  "artifactId": "exec-d19454fb-7dae-47eb-88ae-a1a444d90afa.png",
+  "file": "scary-rear-v1.png",
+  "sha256": "0455356986bfbae46b9ec65fd7c65526f068d6fd4a077eab9432de6c1c9d12a7",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "reference": "source/wisp-performance-reference/runway-pilots/film-morph-handoff-study/scary-start-staged.png",
+  "referenceSha256": "37e7b42d062ad926ba663990c42814c0c6f22cf3d148d792b11a13911ed562d1",
+  "foregroundThreshold24Bounds": [
+    613,
+    146,
+    1040,
+    771
+  ],
+  "marginsLTRB": [
+    0.3666267942583732,
+    0.155154091392136,
+    0.37739234449760767,
+    0.179596174282678
+  ],
+  "runtime15PercentThreshold24ReservePass": true,
+  "requested22PercentReservePass": false,
+  "observations": "Rear fog volume, attached hands and crest; no rear eyes/mouth, visible spine/ribs or shell. A designed new rear interpretation, not existing approved anatomy or motion. Buffer target must be checked before any generation; no paid follow-up has been submitted.",
+  "humanApproval": false,
+  "runtimeIntegration": false,
+  "runwayCreditsSpent": 0
+}

@@ -1,0 +1,197 @@
+{
+  "status": "source-only native-face browser proof; not approved or published",
+  "engines": {
+    "chromium": {
+      "samples": [
+        {
+          "index": 0,
+          "changes": 324,
+          "minX": 923,
+          "maxX": 954,
+          "minY": 514,
+          "maxY": 535,
+          "elapsed": 58.900000005960464
+        },
+        {
+          "index": 11,
+          "changes": 1651,
+          "minX": 919,
+          "maxX": 953,
+          "minY": 511,
+          "maxY": 569,
+          "elapsed": 0.800000011920929
+        },
+        {
+          "index": 49,
+          "changes": 1678,
+          "minX": 954,
+          "maxX": 989,
+          "minY": 501,
+          "maxY": 559,
+          "elapsed": 2.7000000178813934
+        },
+        {
+          "index": 50,
+          "changes": 1864,
+          "minX": 953,
+          "maxX": 990,
+          "minY": 499,
+          "maxY": 563,
+          "elapsed": 0.8999999761581421
+        },
+        {
+          "index": 51,
+          "changes": 1879,
+          "minX": 953,
+          "maxX": 990,
+          "minY": 500,
+          "maxY": 564,
+          "elapsed": 1.4000000059604645
+        },
+        {
+          "index": 52,
+          "changes": 1898,
+          "minX": 954,
+          "maxX": 991,
+          "minY": 503,
+          "maxY": 565,
+          "elapsed": 0.5999999940395355
+        },
+        {
+          "index": 77,
+          "changes": 1638,
+          "minX": 960,
+          "maxX": 994,
+          "minY": 517,
+          "maxY": 574,
+          "elapsed": 0.7000000178813934
+        },
+        {
+          "index": 99,
+          "changes": 1825,
+          "minX": 939,
+          "maxX": 974,
+          "minY": 503,
+          "maxY": 568,
+          "elapsed": 0.800000011920929
+        },
+        {
+          "index": 121,
+          "changes": 1503,
+          "minX": 923,
+          "maxX": 954,
+          "minY": 505,
+          "maxY": 562,
+          "elapsed": 0.699999988079071
+        }
+      ],
+      "presented": 36,
+      "activeTextures": 3,
+      "disposed": {
+        "ready": false,
+        "draws": 102,
+        "disposed": true,
+        "sourceOnly": true
+      }
+    },
+    "webkit": {
+      "samples": [
+        {
+          "index": 0,
+          "changes": 1493,
+          "minX": 923,
+          "maxX": 954,
+          "minY": 503,
+          "maxY": 562,
+          "elapsed": 3
+        },
+        {
+          "index": 11,
+          "changes": 1644,
+          "minX": 919,
+          "maxX": 953,
+          "minY": 511,
+          "maxY": 569,
+          "elapsed": 2
+        },
+        {
+          "index": 49,
+          "changes": 1687,
+          "minX": 954,
+          "maxX": 989,
+          "minY": 502,
+          "maxY": 559,
+          "elapsed": 3
+        },
+        {
+          "index": 50,
+          "changes": 1860,
+          "minX": 953,
+          "maxX": 990,
+          "minY": 500,
+          "maxY": 562,
+          "elapsed": 3
+        },
+        {
+          "index": 51,
+          "changes": 1865,
+          "minX": 953,
+          "maxX": 990,
+          "minY": 500,
+          "maxY": 564,
+          "elapsed": 3
+        },
+        {
+          "index": 52,
+          "changes": 1886,
+          "minX": 954,
+          "maxX": 991,
+          "minY": 503,
+          "maxY": 564,
+          "elapsed": 3
+        },
+        {
+          "index": 77,
+          "changes": 1656,
+          "minX": 960,
+          "maxX": 994,
+          "minY": 517,
+          "maxY": 574,
+          "elapsed": 2
+        },
+        {
+          "index": 99,
+          "changes": 1823,
+          "minX": 939,
+          "maxX": 974,
+          "minY": 503,
+          "maxY": 568,
+          "elapsed": 3
+        },
+        {
+          "index": 121,
+          "changes": 1498,
+          "minX": 923,
+          "maxX": 954,
+          "minY": 505,
+          "maxY": 562,
+          "elapsed": 2
+        }
+      ],
+      "presented": 37,
+      "activeTextures": 3,
+      "disposed": {
+        "ready": false,
+        "draws": 81,
+        "disposed": true,
+        "sourceOnly": true
+      }
+    }
+  },
+  "limits": [
+    "Friendly acoustic-aperture geometry only; no rounded/consonant shapes.",
+    "Four uncertain contour frames49\u201352 remain candidates.",
+    "Local browser performance is not Linux, projected, long-run or human validation.",
+    "No phone runtime integration or legacy mouth replacement yet."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-28",
+  "movie": "wisp-morph-roundtrip-review-v5.mp4",
+  "sha256": "e881c1929cf0d56538a6e98330b761dcaa3b15dbfd1f105a80a0ca3a876aebfa",
+  "visual": {
+    "status": "approved",
+    "userResponse": "Yes\u2014identity, motion and joins work",
+    "questionItem": "call_c3a0f7756c53486a9eb3b9fdfc2dac49:0",
+    "scope": "Same identity, full motion and four visible joins in the25second V5 review. No closing-loop, arbitrary new cue or physical-projection approval.",
+    "movie": "wisp-morph-roundtrip-review-v5.mp4",
+    "sha256": "e881c1929cf0d56538a6e98330b761dcaa3b15dbfd1f105a80a0ca3a876aebfa"
+  },
+  "audio": {
+    "status": "rejected",
+    "userResponse": "Too musical or distracting",
+    "questionItem": "call_c3a0f7756c53486a9eb3b9fdfc2dac49:1"
+  },
+  "scope": "Human responses apply to the shownV5movie. The soundtrack is rejected. Picture approval can carry only through verified identical video essence; no full-library, physical projection, new cue or loop approval."
+}

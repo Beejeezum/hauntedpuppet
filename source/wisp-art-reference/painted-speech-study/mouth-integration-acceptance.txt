@@ -1,0 +1,24 @@
+MOUTH INTEGRATION — HUMAN REVIEW GATE
+
+Human feedback: scary V6 mouth drifts and looks pasted on. Rejected.
+Friendly voiced study is closer, but is not approved for production.
+
+The mouth must belong to the original moving painted face. A soft mask alone
+does not establish integration. Preserve the native cheeks, upper lip, jaw,
+lighting, grain and translucent material; introduce oral artwork only inside
+the opening. Do not replace the surrounding face with a generated face patch.
+
+Required moving-footage checks before promotion:
+1. Closed/rest mouth returns to the native face without a visible patch pop.
+2. Mouth corners remain attached during head tilt, body drift and blinks.
+3. Lip and jaw motion carries nearby native paint coherently; no sliding decal.
+4. Oral depth/teeth stay behind the lips, without stretching or exposed edges.
+5. Speech onset/closure is smooth, with no rectangular or radial mask outline.
+6. Evaluate full-body footage AND face close-up at original speed, including
+   the weakest contour frames. A still image or landmark test is insufficient.
+7. Preserve original body/hands/fog and review timing with actual recorded
+   speech. Acoustic estimates must not be described as phoneme-accurate.
+8. Human approval of the new moving result is required; prior body-motion
+   approval does not approve a replacement mouth.
+
+No visual fix or runtime approval is established by this checklist.

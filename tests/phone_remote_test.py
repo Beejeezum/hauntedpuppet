@@ -27,6 +27,22 @@ class ServerTest(unittest.TestCase):
         self.assertEqual(self.req('/api/state',token=token)[1]['acks'][0]['status'],'applied')
         self.assertEqual(self.req('/api/command',{'id':'phone-0001','command':'gesture','value':'wave'},token)[0],409)
         self.req('/bridge/revoke',{},bridge=True);self.assertEqual(self.req('/api/state',token=token)[0],401)
+    def test_late_ack_cannot_resurrect_cancelled_performance(self):
+        token=self.pair();self.ready();self.req('/bridge/state',{'state':{'workspace':'director'},'cues':['friendly-wave']},bridge=True)
+        payload=dict(text='Boo!',mode='exact',character='friendly',animation='friendly-wave')
+        _,data=self.req('/api/command',{'id':'cancel-line-001','command':'perform','value':payload},token)
+        self.req('/api/command',{'id':'stop-line-001','command':'stop','value':None},token)
+        self.assertEqual(self.req('/bridge/ack',{'seq':data['seq'],'status':'applied'},bridge=True)[0],409)
+        self.assertTrue(any(a['seq']==data['seq'] and a['status']=='cancelled' for a in self.req('/api/state',token=token)[1]['acks']))
+    def test_long_performance_acknowledgement(self):
+        now=[100];self.r.clock=lambda:now[0];token=self.pair();self.ready()
+        self.req('/bridge/state',{'state':{'workspace':'director'},'cues':['friendly-wave']},bridge=True)
+        payload=dict(text='Boo!',mode='exact',character='friendly',animation='friendly-wave')
+        status,data=self.req('/api/command',{'id':'long-line-001','command':'perform','value':payload},token);self.assertEqual(status,202)
+        self.req('/bridge/commands',bridge=True);now[0]+=130
+        state=self.req('/api/state',token=token)[1];self.assertTrue(any(a['seq']==data['seq'] for a in state['acks']))
+        self.assertEqual(self.req('/bridge/ack',{'seq':data['seq'],'status':'applied'},bridge=True)[0],200)
+        self.assertNotIn('until',self.req('/api/state',token=token)[1]['acks'][0])
     def test_bold_controls_and_welcome_priority(self):
         token=self.pair();self.ready()
         for i,(command,value) in enumerate([('move','dance'),('move','twirl'),('form','haunting'),('reveal','arm'),('reveal','fire')]):

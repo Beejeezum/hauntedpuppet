@@ -1,0 +1,77 @@
+{
+  "file": "scary-eyes-runtime-candidate-v1.mp4",
+  "sha256": "8d30ec2f4d781fd8b663a04e855949d454e1d09948c1d913e8393437a3a4e1f3",
+  "humanReview": "pending",
+  "status": "source-only buffered eyes-only acting and dry-effects candidate",
+  "fps": 24,
+  "frameCount": 241,
+  "entryPort": "scary-rest",
+  "exitPort": "scary-rest",
+  "entryReview": "pending",
+  "exitReview": "pending",
+  "emptyStartFrames": 0,
+  "emptyEndFrames": 0,
+  "audioTailSilenceSeconds": 0.5,
+  "audio": {
+    "sampleRate": 48000,
+    "peak": 0.15889909863471985,
+    "lastHalfSecondPeak": 0.0,
+    "firstHalfSecondPeak": 0.0,
+    "scope": "Numerical decoded audio evidence only; no human listening or acoustic test."
+  },
+  "source": "scary-eyes-pilot-v1.mp4",
+  "sourceSha256": "b5892bcf0e8f3455a0c875d66984b7f19a594eb802b8b1c40520a4985d15283e",
+  "sound": "scary-eyes-dry-air-v1.wav",
+  "soundSha256": "63d02358efeb2613d1bb0161a149cc8f14c24a8f49a2effcdd02016b4352fb80",
+  "processing": "Fixed0.9 whole-frame fit into1280x720; every original frame in order,24fps unchanged. No crop, animated resize, interpolation, reversal, body crossfade or added visual fade. Re-encoded picture for static staging only. One embedded continuous soundtrack, original draft was silent.",
+  "minimumMarginsLTRB_RGB4": [
+    0.36875,
+    0.2222222222222222,
+    0.23671875,
+    0.1625
+  ],
+  "reserveFailuresRGB4": 0,
+  "sourceGenerationTargetReserve": "20percent target failed;15percent export also failed before constant buffering. No original boundary clipping observed; buffering contains emitted vapor without reconstructing missing art.",
+  "audioRecipe": {
+    "seed": 68181,
+    "method": "Deterministic broadband filtered noise and smooth air envelopes, no voices, tonal notes or music. No other recordings mixed.",
+    "events": [
+      {
+        "label": "small hand lift",
+        "start": 0.65,
+        "end": 1.45,
+        "targetPeak": 0.045,
+        "highpassHz": 300,
+        "lowpassHz": 2400
+      },
+      {
+        "label": "body exhales into fog",
+        "start": 1.65,
+        "end": 3.3,
+        "targetPeak": 0.14,
+        "highpassHz": 100,
+        "lowpassHz": 2100
+      },
+      {
+        "label": "eyes blink",
+        "start": 4.9,
+        "end": 5.15,
+        "targetPeak": 0.025,
+        "highpassHz": 700,
+        "lowpassHz": 4300
+      },
+      {
+        "label": "body reforms around eyes",
+        "start": 6.05,
+        "end": 8.9,
+        "targetPeak": 0.16,
+        "highpassHz": 120,
+        "lowpassHz": 2800
+      }
+    ]
+  },
+  "generationCreditsSpent": 0,
+  "humanApproval": false,
+  "runtimePublication": false,
+  "scope": "Native whole-body/eyes/dissolve/reform draft preserved in time. New constant staging, dry sound, exact incoming/outgoing joins and full artistic motion remain unapproved. No physical projection."
+}

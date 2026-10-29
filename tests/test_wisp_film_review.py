@@ -25,7 +25,10 @@ class FilmReviewMargins(unittest.TestCase):
             prefix = root / 'review'
             subprocess.run([sys.executable, str(Path(__file__).resolve().parents[1] / 'scripts/review-wisp-film.py'), str(video), str(prefix)], check=True, capture_output=True)
             report = json.loads(prefix.with_suffix('.json').read_text())
-            self.assertEqual(report['schemaVersion'], 2)
+            self.assertEqual(report['schemaVersion'], 4)
+            self.assertEqual(report['emptyHeadByMaximumDecodedRGB']['0']['frames'], 0)
+            self.assertEqual(report['emptyTailByMaximumDecodedRGB']['0']['frames'], 1)
+            self.assertAlmostEqual(report['emptyTailByMaximumDecodedRGB']['0']['seconds'], 1/24)
             self.assertEqual(report['marginOrder'], ['left', 'top', 'right', 'bottom'])
             expected = [.2, .25, .295, 49/120]
             for threshold in ('4', '8', '16'):

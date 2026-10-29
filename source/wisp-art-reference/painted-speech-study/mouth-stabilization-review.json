@@ -1,0 +1,20 @@
+{
+  "scope": "Friendly painted mouth stabilization study; original body film and existing approved voice unchanged. Direction endorsed on V1 only; V2 needs review.",
+  "artifact": "work/phone-mouth-anchor/painted-apology-aligned-v2.mp4",
+  "sha256": "31ec0b80100886339b73ca3d3d18a2899f9c5da13b53f17df2eb6a3412c14b25",
+  "fps": 24.0,
+  "frames": 193,
+  "changes": [
+    "Use displayed-frame floor rather than rounding to future frame",
+    "Five-sample weighted orientation and scale smoothing",
+    "Patch scale bounded98\u2013102percent; original video scale untouched"
+  ],
+  "measurements": {
+    "maximumPatchScaleStepBefore": 0.1,
+    "maximumPatchScaleStepAfter": 0.011111111111111072,
+    "maximumPatchRotationStepBeforeDegrees": 5,
+    "maximumPatchRotationStepAfterDegrees": 3.333333333333334
+  },
+  "visualReview": "Sampled face contact sheet reviewed, attachment retained through blinks. Near-rest double-line/skin blend remains a refinement concern. Not finished facial acting.",
+  "humanApproval": false
+}

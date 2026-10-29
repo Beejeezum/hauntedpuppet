@@ -1,0 +1,146 @@
+{
+  "purpose": "Shared owner/output frame scheduling validation; not asset or physical projection acceptance",
+  "sourceSha256": {
+    "source/wisp-performance-reference/ambient-show/frame-clock.mjs": "070661e42a1fd2e4f18801b06b5f1638a2e6d59174ea68ce386fa5ba29f94eb6",
+    "source/wisp-performance-reference/ambient-show/film-transport.mjs": "5ab0f257425e11c56115acae7e3196d364ca9c125f4eba52248074e29a6b3323",
+    "source/wisp-performance-reference/ambient-show/director.mjs": "abf1330c958f7fd3c2dbfa1c678e0be7cc7fa2731c944c9839fd1824fd2ff2e3",
+    "source/wisp-performance-reference/ambient-show/showdesk.mjs": "f7475c242a3d0ea5f1c700f4b97690cbd060c72497df7627729ff4c7d1ae567f",
+    "tests/frame_clock.cjs": "79be7cc86bbe733a22eeda8de5d6a3fc5d3ad704946c41c5c1ee758739400b8b",
+    "tests/film_transport_readiness.cjs": "50887531aeaca32ab8e912a3d9c962977794fcf027382568d7c5613e34ea017f",
+    "tests/director_output_clock.cjs": "32143a59e0d1ae543b5158c3e21a2ce16b36b1a6942ec295ac5f4d30e3981945",
+    "tests/showdesk_output_clock.cjs": "23af6e1afe87b653e37d68382df5fb86315883d4a2d948f3553afcdf53dc6901",
+    "tests/playlist_output_clock.cjs": "0c212b5b7e7f30627921bbeca38770e2ef0b17265b38805454f8517211abd2fb"
+  },
+  "results": {
+    "output-clock-director-chromium": {
+      "result": {
+        "passed": true,
+        "ownerRafDisabled": true,
+        "outputDrivenAlternation": true,
+        "projectorMediaElements": 0,
+        "mutedDecoderCount": 2,
+        "stopDuringTransition": true,
+        "pendingCallbacksAfterDisposal": 0,
+        "scope": "Actual films/compositor/output, simulated owner RAF loss with foreground output; no human/provider/device/physical-projection acceptance."
+      },
+      "observedFileMtimeUtc": "2026-10-28T20:03:36.991853+00:00"
+    },
+    "output-clock-showdesk-chromium": {
+      "result": {
+        "passed": true,
+        "ownerRafDisabled": true,
+        "outputDrivenAlternation": true,
+        "projectorMediaElements": 0,
+        "mutedDecoderCount": 2,
+        "stopDuringTransition": true,
+        "pendingCallbacksAfterDisposal": 0,
+        "scope": "Actual films/compositor/output, simulated owner RAF loss with foreground output; no human/provider/device/physical-projection acceptance."
+      },
+      "observedFileMtimeUtc": "2026-10-28T20:05:08.010248+00:00"
+    },
+    "output-clock-showdesk-webkit": {
+      "result": {
+        "passed": true,
+        "ownerRafDisabled": true,
+        "outputDrivenAlternation": true,
+        "projectorMediaElements": 0,
+        "mutedDecoderCount": 2,
+        "stopDuringTransition": true,
+        "pendingCallbacksAfterDisposal": 0,
+        "scope": "Actual films/compositor/output, simulated owner RAF loss with foreground output; no human/provider/device/physical-projection acceptance."
+      },
+      "observedFileMtimeUtc": "2026-10-28T20:01:13.009584+00:00"
+    },
+    "showdesk-film-audio-chromium": {
+      "result": {
+        "passed": true,
+        "diagnosticWebAudioRoute": false,
+        "decoded": {
+          "seconds": 1.361071,
+          "audioTracks": null,
+          "decodedAudioBytes": 28479
+        },
+        "responses": [
+          {
+            "status": 206,
+            "range": "bytes=0-"
+          },
+          {
+            "status": 206,
+            "range": "bytes=0-"
+          }
+        ],
+        "noAutoAudio": true,
+        "singleActiveSource": true,
+        "projectorMediaElements": 0,
+        "stallMuteAndRecovery": true,
+        "blackoutDisarms": true,
+        "scope": "Actual media decoding and native mute/volume controls with a prerecorded generated-audio fixture. Chromium hardware-muted; WebKit uses a clocked null audio sink in CI or explicit zero level locally. No human listening/acoustic or physical projection acceptance."
+      },
+      "observedFileMtimeUtc": "2026-10-28T20:04:59.832767+00:00"
+    },
+    "showdesk-film-audio-webkit": {
+      "result": {
+        "passed": true,
+        "diagnosticWebAudioRoute": false,
+        "decoded": {
+          "seconds": 1.3606981250160244,
+          "audioTracks": 1,
+          "decodedAudioBytes": null
+        },
+        "responses": [
+          {
+            "status": 206,
+            "range": "bytes=0-1"
+          },
+          {
+            "status": 206,
+            "range": "bytes=0-2480138"
+          },
+          {
+            "status": 206,
+            "range": "bytes=0-1"
+          },
+          {
+            "status": 206,
+            "range": "bytes=0-2480138"
+          },
+          {
+            "status": 206,
+            "range": "bytes=0-1"
+          },
+          {
+            "status": 206,
+            "range": "bytes=0-2480138"
+          }
+        ],
+        "noAutoAudio": true,
+        "singleActiveSource": true,
+        "projectorMediaElements": 0,
+        "stallMuteAndRecovery": true,
+        "blackoutDisarms": true,
+        "scope": "Actual media decoding and native mute/volume controls with a prerecorded generated-audio fixture. Chromium hardware-muted; WebKit uses a clocked null audio sink in CI or explicit zero level locally. No human listening/acoustic or physical projection acceptance."
+      },
+      "observedFileMtimeUtc": "2026-10-28T20:05:00.410390+00:00"
+    },
+    "output-clock-playlist-chromium": {
+      "result": {
+        "passed": true,
+        "ownerRafDisabled": true,
+        "outputDrivenAlternation": true,
+        "projectorMediaElements": 0,
+        "mutedDecoderCount": 2,
+        "stopDuringTransition": true,
+        "pendingCallbacksAfterDisposal": 0,
+        "scope": "Actual films/compositor/output, simulated owner RAF loss with foreground output; no human/provider/device/physical-projection acceptance."
+      },
+      "observedFileMtimeUtc": "2026-10-28T20:08:32.669031+00:00"
+    }
+  },
+  "limits": [
+    "Owner RAF loss deliberately simulated; not all browser throttling policies",
+    "No provider call, microphone, human audio/visual approval or physical projection",
+    "Linux native soundtrack/bridge gate remains failing; this is not its verified fix",
+    "Existing 50-cycle soak predates this timing change"
+  ]
+}

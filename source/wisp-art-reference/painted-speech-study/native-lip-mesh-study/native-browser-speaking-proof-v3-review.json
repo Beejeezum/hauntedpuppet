@@ -1,0 +1,60 @@
+{
+  "artifact": "work/native-browser-speaking-proof-v3/native-speaking-proof.mp4",
+  "sha256": "8db18e4db7e48298ce2f20e70824395720b690ed226be7a4e28d5ee6d678a0da",
+  "status": "human review candidate; not runtime cue approval",
+  "picture": "Actual PhoneNativeLipLayer + StageCompositor browser render; original v28 body and native painted mouth surface.",
+  "audio": "Approved source voice master muxed at the scheduled wall-clock start. Not captured output or acoustic latency validation.",
+  "mediaValidation": {
+    "fullVoiceCorrelation": 0.9999261233567635,
+    "voiceOffset": 0.5015833333333334,
+    "scheduledOffset": 0.5015999999940395,
+    "audioSeconds": 9.088,
+    "videoFrames": 546,
+    "videoFps": 60.0,
+    "clockDriftMaxMs": 3.966666648786088,
+    "scope": "Source-master audio integrity and browser-picture media check; not acoustic speaker or human lip-sync acceptance."
+  },
+  "boundsValidation": {
+    "frames": 546,
+    "minimumRGB4Reserve": 0.18888888888888888,
+    "emptyFrames": 0,
+    "threshold": "any RGB channel >4",
+    "pass": true
+  },
+  "snapshotCount": 193,
+  "mouthDraws": 311,
+  "afterSpeech": {
+    "ready": true,
+    "active": false,
+    "opening": 0,
+    "draws": 311,
+    "disposed": false,
+    "sourceKind": "native-pixels",
+    "snapshots": 193,
+    "watching": false,
+    "frameReady": false,
+    "mediaTime": null,
+    "captureFailure": false
+  },
+  "cleanup": {
+    "ready": false,
+    "active": false,
+    "opening": 0,
+    "draws": 311,
+    "disposed": true,
+    "sourceKind": "native-pixels",
+    "snapshots": 193,
+    "watching": false,
+    "frameReady": false,
+    "mediaTime": null,
+    "captureFailure": false
+  },
+  "visualReview": "Eight full-body and face samples inspected. Identity/body/fog retained; native crease/opening mostly follows original smile. Mouth shapes remain rudimentary and four low-contrast source frames uncertain.",
+  "rejectedCaptures": [
+    "V1/V2 browser-recorded audio had timing/tail discrepancies; not delivered or approved. V3 captures video only and muxes complete approved audio master."
+  ],
+  "humanReview": "pending",
+  "genuineProvider": false,
+  "physicalProjection": false,
+  "paidGenerationCredits": 0
+}

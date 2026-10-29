@@ -1,67 +1,75 @@
 {
-  "schema": 1,
+  "schema": 2,
   "id": "ghost-at-the-door",
   "title": "The Ghost at the Door",
-  "status": "assembly-review-pending",
+  "status": "new-continuous-take-review",
   "releaseApproved": false,
   "fps": 24,
-  "frames": 1168,
-  "durationSeconds": 48.666666666666664,
-  "picture": {
-    "file": "tonight-picture-review-v1.mp4",
-    "sha256": "0506155d272b0f6b2753530ee40c46d28d6ccb186dba725c224012ab82b30a02",
-    "silent": true
+  "frames": 721,
+  "durationSeconds": 30.08,
+  "movie": {
+    "file": "wisp-new-one-take-v2.mp4",
+    "sha256": "ff3673f8a0742e3aceba8b73cee9f8c2b4ae074ccbaac987262e711705e22ddd",
+    "embeddedAudio": true,
+    "singleClock": true,
+    "sourceKind": "one newly generated continuous performance"
   },
-  "sound": {
-    "file": "tonight-sound-review-v1.m4a",
-    "sha256": "fddbae1648ba58989ede3817eb5d296de9802d4b5e99ad847d7e85fd82190f5f",
-    "owner": "laptop",
-    "speech": false,
-    "enable": "explicit operator action",
-    "stop": "cancel on pause, Blackout, exit or puppet takeover"
-  },
+  "audioOwner": "laptop",
+  "speech": true,
+  "authoredDialogue": [
+    "Oh! Visitors! Welcome to my haunt!",
+    "Oops! Just trying to be tough.",
+    "Happy Halloween! Boo-bye!"
+  ],
   "chapters": [
     {
-      "title": "A visitor in the mist",
+      "title": "Welcome",
       "startSeconds": 0,
-      "endSeconds": 11.333333333333334
+      "endSeconds": 4
     },
     {
-      "title": "A mischievous haunting",
-      "startSeconds": 11.333333333333334,
-      "endSeconds": 37.333333333333336
+      "title": "A little showing off",
+      "startSeconds": 4,
+      "endSeconds": 7
     },
     {
-      "title": "A friendly goodbye",
-      "startSeconds": 37.333333333333336,
-      "endSeconds": 48.666666666666664
+      "title": "Scare and apology",
+      "startSeconds": 7,
+      "endSeconds": 15
+    },
+    {
+      "title": "Smoke greeting",
+      "startSeconds": 15,
+      "endSeconds": 20
+    },
+    {
+      "title": "Boo-bye",
+      "startSeconds": 20,
+      "endSeconds": 23
+    },
+    {
+      "title": "Drift into mist",
+      "startSeconds": 23,
+      "endSeconds": 27
+    },
+    {
+      "title": "Bats in the fog",
+      "startSeconds": 27,
+      "endSeconds": 29.291666666666668
+    },
+    {
+      "title": "Empty stage",
+      "startSeconds": 29.291666666666668,
+      "endSeconds": 30.08
     }
   ],
-  "soundEvents": [
-    {
-      "at": 1.0,
-      "gain": 0.48,
-      "rate": 1.0,
-      "beat": "A glimmer gathers"
-    },
-    {
-      "at": 16.3,
-      "gain": 0.55,
-      "rate": 0.72,
-      "beat": "The mischievous change"
-    },
-    {
-      "at": 26.5,
-      "gain": 0.38,
-      "rate": 1.12,
-      "beat": "The friendly return"
-    },
-    {
-      "at": 43.1,
-      "gain": 0.42,
-      "rate": 0.9,
-      "beat": "A wave into the mist"
-    }
-  ],
-  "review": "Internal visible joins and acoustic mix need human review; chapter boundaries pass deliberately through black. Physical projection untested."
+  "provenance": {
+    "taskId": "32d109b5-c62a-4e10-bb03-0c158ff891ef",
+    "oldFootageOrAudioUsed": false,
+    "sourceFrames": 721,
+    "nativeAudioUnchanged": true,
+    "animatedWholeFilmFraming": false,
+    "finishing": "One fixed projection fit and a soft late bat-edge vapor phase; no source anatomy restoration, shots, cuts or audio replacement."
+  },
+  "review": "New full-length continuous take replaces the old multi-source film. Actual source framing and full finished-frame buffer audited; human voice/performance and physical projection review remain open."
 }

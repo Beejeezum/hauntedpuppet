@@ -3,9 +3,29 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
  const root=path.join(__dirname,'../source/wisp-performance-reference/ambient-show');
  const {planJoin,planShow}=await import(require('node:url').pathToFileURL(path.join(root,'transition-plan.mjs')));
  const catalog=JSON.parse(fs.readFileSync(path.join(root,'catalog.json'),'utf8'));
- assert.equal(catalog.clips.length,32);assert.equal(new Set(catalog.clips.map(c=>c.id)).size,32);
- assert(catalog.clips.every(c=>c.dialogue===false&&c.status==='planned'&&c.media===null));
- assert.throws(()=>planShow(catalog,catalog.shows[0].id),/Unavailable/);
+ assert.equal(catalog.clips.length,16);assert.equal(new Set(catalog.clips.map(c=>c.id)).size,16);
+ assert.equal(catalog.deferredClips.length,16);assert(catalog.deferredClips.every(c=>!catalog.clips.some(a=>a.id===c.id)));
+ for(const show of catalog.shows)assert(show.clipIds.every(id=>catalog.clips.some(c=>c.id===id&&!c.manualOnly)),'Active show references only active non-manual cues');
+ assert(catalog.clips.every(c=>c.dialogue===false&&(c.status==='planned'?c.media===null:c.status==='approved'&&c.media?.file&&/^[a-f0-9]{64}$/.test(c.media.sha256))));
+ if(catalog.shows[0].clipIds.some(id=>catalog.clips.find(c=>c.id===id)?.status!=='approved'))assert.throws(()=>planShow(catalog,catalog.shows[0].id),/Unavailable/);
+ for(const study of catalog.productionStudies.filter(s=>s.technicalAudit)){
+  const audit=JSON.parse(fs.readFileSync(path.resolve(root,study.technicalAudit),'utf8'));
+  const row=audit.records.find(r=>r.sha256===study.sha256&&r.file===path.basename(study.media));
+  assert(row,'Technical audit must identify these exact candidate bytes');
+  assert.deepEqual(row.failures,[]);assert.equal(row.humanApproval,false);assert.equal(row.runtimeAdmission,false);
+  const metadata=JSON.parse(fs.readFileSync(path.resolve(root,study.reviewMetadata),'utf8'));
+  assert.equal(metadata.sha256,study.sha256);assert.equal(metadata.pcmRepair.videoEssenceVerified,true);
+  assert(catalog.clips.filter(c=>study.plannedClipIds.includes(c.id)).every(c=>c.status==='planned'&&c.media===null),'Technical checks alone must not publish a cue');
+ }
+ for(const study of catalog.productionStudies.filter(s=>s.evidence)){
+  const mediaPath=path.resolve(root,study.media),evidence=JSON.parse(fs.readFileSync(path.resolve(root,study.evidence),'utf8'));
+  assert.equal(require('node:crypto').createHash('sha256').update(fs.readFileSync(mediaPath)).digest('hex'),study.sha256,'Candidate bytes must match the tracked record');
+  assert.equal(evidence.sha256,study.sha256);assert(['human-review-pending','dry-level-and-standalone-review-pending'].includes(study.status),'Tracked candidate must remain explicitly awaiting human review');assert.notEqual(evidence.humanApproval,true);assert.notEqual(evidence.runtimePublication,true);
+  assert.equal(evidence.humanReview,'pending');const planned=catalog.clips.find(c=>c.id===study.plannedClipIds[0]);if(planned.exitPort==='empty')assert(evidence.emptyEndFrames/evidence.fps>=.5);else{assert.equal(evidence.exitPort,planned.exitPort);assert.equal(evidence.exitReview,'pending','A visible rest-pose exit still needs its exact outgoing cut reviewed');}if(planned.entryPort==='empty')assert(evidence.emptyStartFrames/evidence.fps>=.5);else{assert.equal(evidence.entryPort,planned.entryPort);assert.equal(evidence.entryReview,'pending','A visible rest-pose entrance still needs its exact incoming cut reviewed');}
+  assert(evidence.audioTailSilenceSeconds>=.5);assert.equal(evidence.audio.lastHalfSecondPeak,0);
+  assert(catalog.clips.some(c=>c.id===study.plannedClipIds[0]),'Candidate evidence must reference an active inventory slot');
+ }
+
  const film=(id,entry='rest',exit='rest')=>({id,status:'approved',dialogue:false,entryPort:entry,exitPort:exit,media:{file:id+'.mp4',sha256:id.repeat(64).slice(0,64),reviewEvidence:'synthetic test only'}});
  const a=film('a'),b=film('b'),c=film('c');
  const join=(x,y)=>({status:'approved',from:x.id,to:y.id,fromSha256:x.media.sha256,toSha256:y.media.sha256,reviewEvidence:'synthetic join review'});
@@ -16,7 +36,16 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
  assert.equal(planJoin(a,b,{joins:[join(a,c),join(c,b)],bridges:[c]}).bridge,'c');
  const out=film('a','rest','empty'),inside=film('b','empty','rest');
  assert.throws(()=>planJoin(out,inside),/No reviewed/);
- out.media.emptyEndFrames=8;inside.media.emptyStartFrames=8;
+ Object.assign(out.media,{fps:24,frameCount:240,emptyEndFrames:8,audioTailSilenceSeconds:.5});
+ Object.assign(inside.media,{fps:24,frameCount:240,emptyStartFrames:8});
+ assert.throws(()=>planJoin(out,inside),/No reviewed/,'Eight frames at 24fps do not provide half a second');
+ out.media.emptyEndFrames=12;inside.media.emptyStartFrames=12;
+ for(const [key,value] of [['fps',30],['fps',NaN],['frameCount',4],['emptyEndFrames',12.5],['audioTailSilenceSeconds',0],['audioTailSilenceSeconds',Infinity],['audioTailSilenceSeconds',20]]){
+  const invalid={...out,media:{...out.media,[key]:value}};
+  assert.throws(()=>planJoin(invalid,inside),/No reviewed/,'Reject insufficient or invalid endpoint evidence: '+key);
+ }
+ assert.throws(()=>planJoin(out,{...inside,media:{...inside.media,fps:30}}),/No reviewed/,'Incoming buffer is also measured in seconds');
+ assert.throws(()=>planJoin(out,{...inside,media:{...inside.media,emptyStartFrames:undefined}}),/No reviewed/,'Missing incoming black evidence is not accepted');
  assert.equal(planJoin(out,inside).kind,'empty-stage');
  const tiny={clips:[a,b],reviewedJoins:[join(a,b)],shows:[{id:'loop',clipIds:['a','b']}]};
  assert.throws(()=>planShow(tiny,'loop'),/No reviewed/,'Loop closing boundary is mandatory');
@@ -27,5 +56,11 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
  c.manualOnly=false;assert.equal(planShow(bridged,'loop').transitions[0].bridge,'c');
  b.manualOnly=true;assert.throws(()=>planShow(tiny,'loop'),/Unavailable/,'Manual scares cannot enter ambient playlist');
  b.manualOnly=false;b.dialogue=true;assert.throws(()=>planJoin(a,b),/Unreviewed/,'Ambient films cannot include speech');
- console.log('PASS: 32 silent planned cards; exact-media join reviews, authored bridges, verified empty-stage boundaries, closing seam, no automatic scare or dialogue. Synthetic planner tests only.');
+ const friendly=Object.assign(film('a','friendly-rest','friendly-rest'),{form:'friendly'}),depart=Object.assign(film('b','friendly-rest','empty'),{form:'friendly',bridgeEligible:true}),arrival=Object.assign(film('c','empty','scary-rest'),{form:'transition'}),haunt=Object.assign(film('d','scary-rest','scary-rest'),{form:'scary'});
+ for(const c of [depart,arrival])Object.assign(c.media,{fps:24,frameCount:240,emptyEndFrames:12,emptyStartFrames:12,audioTailSilenceSeconds:.5});
+ const chained=planJoin(friendly,haunt,{joins:[join(friendly,depart),join(arrival,haunt)],bridges:[depart,arrival]});assert.deepEqual(chained.sequence,['b','c'],'Reviewed departure, black port and arrival may form a two-film bridge');
+ arrival.manualOnly=true;assert.throws(()=>planJoin(friendly,haunt,{joins:[join(friendly,depart),join(arrival,haunt)],bridges:[depart,arrival]}),/No reviewed/);arrival.manualOnly=false;
+ const friendlyEnd=Object.assign(film('d','friendly-rest','friendly-rest'),{form:'friendly'}),outMorph=Object.assign(film('e','friendly-rest','scary-rest'),{form:'transition'}),back=Object.assign(film('f','scary-rest','friendly-rest'),{form:'transition'});
+ assert.throws(()=>planJoin(friendly,friendlyEnd,{joins:[join(friendly,outMorph),join(outMorph,back),join(back,friendlyEnd)],bridges:[outMorph,back]}),/No reviewed/,'Friendly-to-friendly routing cannot introduce a hidden scary excursion');
+ console.log('PASS: 16 active silent cue slots; exact-media join reviews, authored bridges, verified empty-stage boundaries, closing seam, no automatic scare or dialogue. Planner scenarios use synthetic approvals; candidate hashes/evidence checked against real tracked files. No new human approval or media decode claimed here.');
 })().catch(e=>{console.error(e);process.exitCode=1;});

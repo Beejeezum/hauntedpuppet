@@ -1,0 +1,202 @@
+{
+  "status": "source-only oral-depth iteration, not approved or integrated",
+  "sha256": {
+    "source/wisp-art-reference/scary-speaking-study/neutral-face-rig-study/neutral-face-rig.mjs": "55357182c22f0b2fe261e3f0e1afc605b1a5125576e03be46fc5d9d8a07bc34d",
+    "source/wisp-art-reference/scary-speaking-study/neutral-face-rig-study/face-topology.json": "531f09989cc9aadcc705e5afb1a94cc81b367211396dc3fbb9eed7ae391eecf5",
+    "scripts/render-neutral-face-study.cjs": "df7379aed58f40dce06e2909f46d23a520bc8d96fd46fe712270b8a5cf8610d9",
+    "tests/neutral_face_rig_study.cjs": "8164f19357500c2cf03f2639d2e5b0215ce4b4af8d17ed0c8d160660cb72f2b7",
+    "source/wisp-art-reference/scary-speaking-study/neutral-face-rig-study/corrective-ah-v1/painted-ah-head-v1.png": "ce1f8dc17926586bc53efc5b67f0511f965b116909bddb25a59bd438f9ca633a",
+    "source/wisp-art-reference/scary-speaking-study/neutral-face-rig-study/../neutral-reference/scary-neutral-mouth-v1.png": "1f1bc12a36644b3c0d372d86535d229987194862574fd3e545b4155703713888",
+    "source/wisp-art-reference/scary-speaking-study/neutral-face-rig-study/oral-depth-comparison-v2.mp4": "0402bd4f9120a673f6328f1940a21a9c1d09eb75636ed61e94c7135bf51a597d"
+  },
+  "render": {
+    "file": "oral-depth-comparison-v2.mp4",
+    "frames": 144,
+    "fps": 24,
+    "dimensions": [
+      1280,
+      720
+    ],
+    "audio": false,
+    "closedRestFirstLastEncodedMAE": 0.24029839409722223,
+    "scope": "Magnified cropped split-screen face mechanics. Synthetic open/round/wide controls on a still original painting. No head turn, full-body/fog animation or spoken lip sync."
+  },
+  "tests": {
+    "chromium": {
+      "passed": true,
+      "states": [
+        {
+          "name": "rest",
+          "changed": 0,
+          "outside": 0,
+          "irisChanges": 0,
+          "ready": true,
+          "disposed": false,
+          "oralDetail": true,
+          "vertices": 34417,
+          "minimumTriangleAreaRatio": 1,
+          "maxLipGapError": 0,
+          "state": {
+            "open": 0,
+            "round": 0,
+            "wide": 0
+          }
+        },
+        {
+          "name": "AH",
+          "changed": 5226,
+          "outside": 0,
+          "irisChanges": 0,
+          "ready": true,
+          "disposed": false,
+          "oralDetail": true,
+          "vertices": 34417,
+          "minimumTriangleAreaRatio": 0.3193990099296529,
+          "maxLipGapError": 2.9945670824815807e-05,
+          "state": {
+            "open": 1,
+            "round": 0,
+            "wide": 0
+          }
+        },
+        {
+          "name": "OO",
+          "changed": 7440,
+          "outside": 0,
+          "irisChanges": 0,
+          "ready": true,
+          "disposed": false,
+          "oralDetail": true,
+          "vertices": 34417,
+          "minimumTriangleAreaRatio": 0.1870621656998992,
+          "maxLipGapError": 2.857252192112192e-05,
+          "state": {
+            "open": 0.7,
+            "round": 1,
+            "wide": 0
+          }
+        },
+        {
+          "name": "EE",
+          "changed": 7065,
+          "outside": 0,
+          "irisChanges": 0,
+          "ready": true,
+          "disposed": false,
+          "oralDetail": true,
+          "vertices": 34417,
+          "minimumTriangleAreaRatio": 0.5065775392577052,
+          "maxLipGapError": 2.2714597786688273e-05,
+          "state": {
+            "open": 0.35,
+            "round": 0,
+            "wide": 1
+          }
+        }
+      ],
+      "minRatio": 0.1870621656998992,
+      "exactReset": true,
+      "gpuError": 0,
+      "oralDetail": {
+        "restIdentical": true,
+        "changed": 1546,
+        "outside": 0,
+        "outsideCavity": 0
+      },
+      "scope": "Original still painting and authored split-lip topology only. Synthetic controls, no body film/provider/voice/camera/physical projection or human visual approval."
+    },
+    "webkit": {
+      "passed": true,
+      "states": [
+        {
+          "name": "rest",
+          "changed": 0,
+          "outside": 0,
+          "irisChanges": 0,
+          "ready": true,
+          "disposed": false,
+          "oralDetail": true,
+          "vertices": 34417,
+          "minimumTriangleAreaRatio": 1,
+          "maxLipGapError": 0,
+          "state": {
+            "open": 0,
+            "round": 0,
+            "wide": 0
+          }
+        },
+        {
+          "name": "AH",
+          "changed": 5236,
+          "outside": 0,
+          "irisChanges": 0,
+          "ready": true,
+          "disposed": false,
+          "oralDetail": true,
+          "vertices": 34417,
+          "minimumTriangleAreaRatio": 0.3193990099296529,
+          "maxLipGapError": 2.9945670824815807e-05,
+          "state": {
+            "open": 1,
+            "round": 0,
+            "wide": 0
+          }
+        },
+        {
+          "name": "OO",
+          "changed": 7437,
+          "outside": 0,
+          "irisChanges": 0,
+          "ready": true,
+          "disposed": false,
+          "oralDetail": true,
+          "vertices": 34417,
+          "minimumTriangleAreaRatio": 0.1870621656998992,
+          "maxLipGapError": 2.857252192112192e-05,
+          "state": {
+            "open": 0.7,
+            "round": 1,
+            "wide": 0
+          }
+        },
+        {
+          "name": "EE",
+          "changed": 7074,
+          "outside": 0,
+          "irisChanges": 0,
+          "ready": true,
+          "disposed": false,
+          "oralDetail": true,
+          "vertices": 34417,
+          "minimumTriangleAreaRatio": 0.5065775392577052,
+          "maxLipGapError": 2.2714597786688273e-05,
+          "state": {
+            "open": 0.35,
+            "round": 0,
+            "wide": 1
+          }
+        }
+      ],
+      "minRatio": 0.1870621656998992,
+      "exactReset": true,
+      "gpuError": 0,
+      "oralDetail": {
+        "restIdentical": true,
+        "changed": 1548,
+        "outside": 0,
+        "outsideCavity": 0
+      },
+      "scope": "Original still painting and authored split-lip topology only. Synthetic controls, no body film/provider/voice/camera/physical projection or human visual approval."
+    }
+  },
+  "visualReview": [
+    "AH encoded frame gains oral depth and irregular fang detail while native cheeks/lips/jaw remain connected.",
+    "No generated eyes, nose, outer face or fog drawn. Original neutral rest is unchanged between fill modes.",
+    "OO remains a narrowed grin; not a rounded speech corrective.",
+    "Interior teeth still scale with opening; separate upper/lower occlusion planes and correctives remain needed.",
+    "Original approximately85-pixel lip span limits enlarged detail; GPU mesh density cannot manufacture resolution."
+  ],
+  "acceptance": "Not a replacement for the rejected drifting V6 body-mouth overlay; not a finished talking puppet, cue, human approval or physical projection acceptance. No runtime/public build promotion.",
+  "newRunwayCredits": 0,
+  "newGenerations": 0
+}

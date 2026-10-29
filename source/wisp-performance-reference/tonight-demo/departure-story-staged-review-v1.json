@@ -1,0 +1,7521 @@
+{
+  "schemaVersion": 4,
+  "marginOrder": [
+    "left",
+    "top",
+    "right",
+    "bottom"
+  ],
+  "file": "departure-story-staged-v1.mp4",
+  "sha256": "eea762cc5349e633b2978d5544db0a5fc515af482a2bfe69973f45b551a4872d",
+  "frameCount": 145,
+  "fps": 24.0,
+  "size": [
+    1280,
+    720
+  ],
+  "reserve": 0.2,
+  "thresholdSummaries": {
+    "4": {
+      "emptyFrames": 22,
+      "reserveFailures": 0,
+      "minimumMarginsLTRB": [
+        0.3859375,
+        0.2875,
+        0.39375,
+        0.2916666666666667
+      ]
+    },
+    "8": {
+      "emptyFrames": 23,
+      "reserveFailures": 0,
+      "minimumMarginsLTRB": [
+        0.3859375,
+        0.2875,
+        0.39453125,
+        0.2916666666666667
+      ]
+    },
+    "16": {
+      "emptyFrames": 25,
+      "reserveFailures": 0,
+      "minimumMarginsLTRB": [
+        0.3859375,
+        0.28888888888888886,
+        0.39453125,
+        0.29305555555555557
+      ]
+    }
+  },
+  "emptyTailByMaximumDecodedRGB": {
+    "0": {
+      "frames": 21,
+      "seconds": 0.875
+    },
+    "4": {
+      "frames": 22,
+      "seconds": 0.9166666666666666
+    },
+    "8": {
+      "frames": 23,
+      "seconds": 0.9583333333333334
+    },
+    "16": {
+      "frames": 25,
+      "seconds": 1.0416666666666667
+    }
+  },
+  "emptyHeadByMaximumDecodedRGB": {
+    "0": {
+      "frames": 0,
+      "seconds": 0.0
+    },
+    "4": {
+      "frames": 0,
+      "seconds": 0.0
+    },
+    "8": {
+      "frames": 0,
+      "seconds": 0.0
+    },
+    "16": {
+      "frames": 0,
+      "seconds": 0.0
+    }
+  },
+  "adjacentVisibleRGBMedian": 21.189501272264632,
+  "endpointVisibleRGBDifference": 170.45096203848155,
+  "scope": "Decoded RGB bounds and thumbnails only. Empty frames are diagnostics: inspect intentional vanishing separately. Does not prove anatomy, velocity continuity, camera lock, depth, voice, human approval or physical projection.",
+  "frames": [
+    {
+      "frame": 0,
+      "seconds": 0.0,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.45,
+            0.29305555555555557,
+            0.45625,
+            0.30416666666666664
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            576,
+            211,
+            696,
+            501
+          ],
+          "visibleFraction": 0.025609809027777777
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.45,
+            0.29444444444444445,
+            0.45703125,
+            0.30416666666666664
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            576,
+            212,
+            695,
+            501
+          ],
+          "visibleFraction": 0.025233289930555555
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4515625,
+            0.29583333333333334,
+            0.45703125,
+            0.3055555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            578,
+            213,
+            695,
+            500
+          ],
+          "visibleFraction": 0.02460720486111111
+        }
+      }
+    },
+    {
+      "frame": 1,
+      "seconds": 0.041666666666666664,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.45078125,
+            0.2916666666666667,
+            0.4546875,
+            0.3
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            577,
+            210,
+            698,
+            504
+          ],
+          "visibleFraction": 0.026436631944444445
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4515625,
+            0.29305555555555557,
+            0.4546875,
+            0.3013888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            578,
+            211,
+            698,
+            503
+          ],
+          "visibleFraction": 0.02591579861111111
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4515625,
+            0.29583333333333334,
+            0.45546875,
+            0.3013888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            578,
+            213,
+            697,
+            503
+          ],
+          "visibleFraction": 0.025274522569444444
+        }
+      }
+    },
+    {
+      "frame": 2,
+      "seconds": 0.08333333333333333,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.44765625,
+            0.2916666666666667,
+            0.453125,
+            0.2972222222222222
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            573,
+            210,
+            700,
+            506
+          ],
+          "visibleFraction": 0.02668185763888889
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4484375,
+            0.29305555555555557,
+            0.453125,
+            0.2986111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            574,
+            211,
+            700,
+            505
+          ],
+          "visibleFraction": 0.02623046875
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4484375,
+            0.29583333333333334,
+            0.45390625,
+            0.2986111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            574,
+            213,
+            699,
+            505
+          ],
+          "visibleFraction": 0.025589192708333333
+        }
+      }
+    },
+    {
+      "frame": 3,
+      "seconds": 0.125,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.43828125,
+            0.2916666666666667,
+            0.4515625,
+            0.29444444444444445
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            561,
+            210,
+            702,
+            508
+          ],
+          "visibleFraction": 0.02738498263888889
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4390625,
+            0.29444444444444445,
+            0.4515625,
+            0.29583333333333334
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            562,
+            212,
+            702,
+            507
+          ],
+          "visibleFraction": 0.026904296875
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4390625,
+            0.2972222222222222,
+            0.4515625,
+            0.29583333333333334
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            562,
+            214,
+            702,
+            507
+          ],
+          "visibleFraction": 0.026207682291666666
+        }
+      }
+    },
+    {
+      "frame": 4,
+      "seconds": 0.16666666666666666,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.43125,
+            0.2916666666666667,
+            0.45,
+            0.29305555555555557
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            552,
+            210,
+            704,
+            509
+          ],
+          "visibleFraction": 0.027939453125
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.43125,
+            0.29305555555555557,
+            0.45,
+            0.29444444444444445
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            552,
+            211,
+            704,
+            508
+          ],
+          "visibleFraction": 0.027391493055555556
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.43125,
+            0.29583333333333334,
+            0.45,
+            0.29444444444444445
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            552,
+            213,
+            704,
+            508
+          ],
+          "visibleFraction": 0.026631944444444444
+        }
+      }
+    },
+    {
+      "frame": 5,
+      "seconds": 0.20833333333333334,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.42265625,
+            0.29583333333333334,
+            0.44765625,
+            0.2916666666666667
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            541,
+            213,
+            707,
+            510
+          ],
+          "visibleFraction": 0.028559027777777777
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4234375,
+            0.2972222222222222,
+            0.44765625,
+            0.29305555555555557
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            542,
+            214,
+            707,
+            509
+          ],
+          "visibleFraction": 0.028125
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4234375,
+            0.2972222222222222,
+            0.44765625,
+            0.29305555555555557
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            542,
+            214,
+            707,
+            509
+          ],
+          "visibleFraction": 0.027486979166666668
+        }
+      }
+    },
+    {
+      "frame": 6,
+      "seconds": 0.25,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.41875,
+            0.29583333333333334,
+            0.44609375,
+            0.2916666666666667
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            536,
+            213,
+            709,
+            510
+          ],
+          "visibleFraction": 0.02950412326388889
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.41953125,
+            0.29583333333333334,
+            0.446875,
+            0.2916666666666667
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            537,
+            213,
+            708,
+            510
+          ],
+          "visibleFraction": 0.028935546875
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4203125,
+            0.2972222222222222,
+            0.446875,
+            0.29305555555555557
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            538,
+            214,
+            708,
+            509
+          ],
+          "visibleFraction": 0.028119574652777778
+        }
+      }
+    },
+    {
+      "frame": 7,
+      "seconds": 0.2916666666666667,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.41875,
+            0.29583333333333334,
+            0.4453125,
+            0.2916666666666667
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            536,
+            213,
+            710,
+            510
+          ],
+          "visibleFraction": 0.030016276041666668
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.41875,
+            0.29583333333333334,
+            0.4453125,
+            0.29305555555555557
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            536,
+            213,
+            710,
+            509
+          ],
+          "visibleFraction": 0.029481336805555557
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.41875,
+            0.2972222222222222,
+            0.4453125,
+            0.29305555555555557
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            536,
+            214,
+            710,
+            509
+          ],
+          "visibleFraction": 0.028702256944444445
+        }
+      }
+    },
+    {
+      "frame": 8,
+      "seconds": 0.3333333333333333,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.41875,
+            0.29444444444444445,
+            0.44375,
+            0.29305555555555557
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            536,
+            212,
+            712,
+            509
+          ],
+          "visibleFraction": 0.030358072916666666
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4203125,
+            0.29583333333333334,
+            0.44453125,
+            0.29444444444444445
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            538,
+            213,
+            711,
+            508
+          ],
+          "visibleFraction": 0.029772135416666668
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4203125,
+            0.29583333333333334,
+            0.44453125,
+            0.29444444444444445
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            538,
+            213,
+            711,
+            508
+          ],
+          "visibleFraction": 0.028936631944444444
+        }
+      }
+    },
+    {
+      "frame": 9,
+      "seconds": 0.375,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.425,
+            0.29444444444444445,
+            0.44140625,
+            0.29444444444444445
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            544,
+            212,
+            715,
+            508
+          ],
+          "visibleFraction": 0.03033962673611111
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.425,
+            0.29444444444444445,
+            0.44140625,
+            0.29444444444444445
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            544,
+            212,
+            715,
+            508
+          ],
+          "visibleFraction": 0.02986328125
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.42578125,
+            0.29444444444444445,
+            0.4421875,
+            0.29583333333333334
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            545,
+            212,
+            714,
+            507
+          ],
+          "visibleFraction": 0.029153645833333332
+        }
+      }
+    },
+    {
+      "frame": 10,
+      "seconds": 0.4166666666666667,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.43359375,
+            0.29305555555555557,
+            0.4375,
+            0.29444444444444445
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            555,
+            211,
+            720,
+            508
+          ],
+          "visibleFraction": 0.03039279513888889
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.434375,
+            0.29305555555555557,
+            0.4375,
+            0.29444444444444445
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            556,
+            211,
+            720,
+            508
+          ],
+          "visibleFraction": 0.029790581597222223
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.434375,
+            0.29444444444444445,
+            0.43828125,
+            0.29583333333333334
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            556,
+            212,
+            719,
+            507
+          ],
+          "visibleFraction": 0.028920355902777778
+        }
+      }
+    },
+    {
+      "frame": 11,
+      "seconds": 0.4583333333333333,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4421875,
+            0.2916666666666667,
+            0.434375,
+            0.29583333333333334
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            566,
+            210,
+            724,
+            507
+          ],
+          "visibleFraction": 0.029568142361111112
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4421875,
+            0.2916666666666667,
+            0.434375,
+            0.29583333333333334
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            566,
+            210,
+            724,
+            507
+          ],
+          "visibleFraction": 0.029059244791666668
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.44296875,
+            0.29444444444444445,
+            0.434375,
+            0.2972222222222222
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            567,
+            212,
+            724,
+            506
+          ],
+          "visibleFraction": 0.028271484375
+        }
+      }
+    },
+    {
+      "frame": 12,
+      "seconds": 0.5,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4453125,
+            0.2916666666666667,
+            0.43125,
+            0.2972222222222222
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            570,
+            210,
+            728,
+            506
+          ],
+          "visibleFraction": 0.029019097222222224
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.44609375,
+            0.2916666666666667,
+            0.43203125,
+            0.2986111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            571,
+            210,
+            727,
+            505
+          ],
+          "visibleFraction": 0.028446180555555554
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.446875,
+            0.29444444444444445,
+            0.43203125,
+            0.3
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            572,
+            212,
+            727,
+            504
+          ],
+          "visibleFraction": 0.02767795138888889
+        }
+      }
+    },
+    {
+      "frame": 13,
+      "seconds": 0.5416666666666666,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.44609375,
+            0.2916666666666667,
+            0.4296875,
+            0.3
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            571,
+            210,
+            730,
+            504
+          ],
+          "visibleFraction": 0.028594835069444446
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.446875,
+            0.29305555555555557,
+            0.4296875,
+            0.3
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            572,
+            211,
+            730,
+            504
+          ],
+          "visibleFraction": 0.028169487847222223
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.446875,
+            0.29583333333333334,
+            0.43046875,
+            0.30277777777777776
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            572,
+            213,
+            729,
+            502
+          ],
+          "visibleFraction": 0.027540147569444444
+        }
+      }
+    },
+    {
+      "frame": 14,
+      "seconds": 0.5833333333333334,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.44609375,
+            0.29444444444444445,
+            0.42890625,
+            0.30277777777777776
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            571,
+            212,
+            731,
+            502
+          ],
+          "visibleFraction": 0.028922526041666667
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.446875,
+            0.29583333333333334,
+            0.42890625,
+            0.30277777777777776
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            572,
+            213,
+            731,
+            502
+          ],
+          "visibleFraction": 0.028408203125
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.446875,
+            0.30833333333333335,
+            0.4296875,
+            0.30277777777777776
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            572,
+            222,
+            730,
+            502
+          ],
+          "visibleFraction": 0.02767795138888889
+        }
+      }
+    },
+    {
+      "frame": 15,
+      "seconds": 0.625,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4390625,
+            0.3055555555555556,
+            0.428125,
+            0.30416666666666664
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            562,
+            220,
+            732,
+            501
+          ],
+          "visibleFraction": 0.02906792534722222
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.43984375,
+            0.3055555555555556,
+            0.428125,
+            0.3055555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            563,
+            220,
+            732,
+            500
+          ],
+          "visibleFraction": 0.028563368055555555
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.43984375,
+            0.3055555555555556,
+            0.428125,
+            0.3055555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            563,
+            220,
+            732,
+            500
+          ],
+          "visibleFraction": 0.027824435763888888
+        }
+      }
+    },
+    {
+      "frame": 16,
+      "seconds": 0.6666666666666666,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4328125,
+            0.30277777777777776,
+            0.4265625,
+            0.3055555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            554,
+            218,
+            734,
+            500
+          ],
+          "visibleFraction": 0.029354383680555554
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4328125,
+            0.30277777777777776,
+            0.4265625,
+            0.30694444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            554,
+            218,
+            734,
+            499
+          ],
+          "visibleFraction": 0.028790147569444445
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4328125,
+            0.3055555555555556,
+            0.42734375,
+            0.30833333333333335
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            554,
+            220,
+            733,
+            498
+          ],
+          "visibleFraction": 0.02795681423611111
+        }
+      }
+    },
+    {
+      "frame": 17,
+      "seconds": 0.7083333333333334,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4265625,
+            0.3,
+            0.425,
+            0.30972222222222223
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            546,
+            216,
+            736,
+            497
+          ],
+          "visibleFraction": 0.029117838541666666
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4265625,
+            0.3,
+            0.42578125,
+            0.30972222222222223
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            546,
+            216,
+            735,
+            497
+          ],
+          "visibleFraction": 0.028642578125
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.42734375,
+            0.3013888888888889,
+            0.4265625,
+            0.3111111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            547,
+            217,
+            734,
+            496
+          ],
+          "visibleFraction": 0.02793728298611111
+        }
+      }
+    },
+    {
+      "frame": 18,
+      "seconds": 0.75,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.425,
+            0.2972222222222222,
+            0.42578125,
+            0.3111111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            544,
+            214,
+            735,
+            496
+          ],
+          "visibleFraction": 0.02934787326388889
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.425,
+            0.2986111111111111,
+            0.4265625,
+            0.3125
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            544,
+            215,
+            734,
+            495
+          ],
+          "visibleFraction": 0.02875759548611111
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.42578125,
+            0.3,
+            0.4265625,
+            0.3125
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            545,
+            216,
+            734,
+            495
+          ],
+          "visibleFraction": 0.02795355902777778
+        }
+      }
+    },
+    {
+      "frame": 19,
+      "seconds": 0.7916666666666666,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.425,
+            0.2972222222222222,
+            0.425,
+            0.3138888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            544,
+            214,
+            736,
+            494
+          ],
+          "visibleFraction": 0.02920464409722222
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.425,
+            0.2972222222222222,
+            0.42578125,
+            0.3138888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            544,
+            214,
+            735,
+            494
+          ],
+          "visibleFraction": 0.02862087673611111
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.42578125,
+            0.2972222222222222,
+            0.4265625,
+            0.3138888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            545,
+            214,
+            734,
+            494
+          ],
+          "visibleFraction": 0.027879774305555556
+        }
+      }
+    },
+    {
+      "frame": 20,
+      "seconds": 0.8333333333333334,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4265625,
+            0.29444444444444445,
+            0.425,
+            0.31527777777777777
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            546,
+            212,
+            736,
+            493
+          ],
+          "visibleFraction": 0.029253472222222222
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.42734375,
+            0.29444444444444445,
+            0.425,
+            0.31527777777777777
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            547,
+            212,
+            736,
+            493
+          ],
+          "visibleFraction": 0.028662109375
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.428125,
+            0.29583333333333334,
+            0.42578125,
+            0.31666666666666665
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            548,
+            213,
+            735,
+            492
+          ],
+          "visibleFraction": 0.027802734375
+        }
+      }
+    },
+    {
+      "frame": 21,
+      "seconds": 0.875,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4328125,
+            0.2916666666666667,
+            0.425,
+            0.31666666666666665
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            554,
+            210,
+            736,
+            492
+          ],
+          "visibleFraction": 0.028946397569444445
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4328125,
+            0.29444444444444445,
+            0.42578125,
+            0.31666666666666665
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            554,
+            212,
+            735,
+            492
+          ],
+          "visibleFraction": 0.02842013888888889
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4328125,
+            0.29444444444444445,
+            0.42578125,
+            0.31805555555555554
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            554,
+            212,
+            735,
+            491
+          ],
+          "visibleFraction": 0.027724609375
+        }
+      }
+    },
+    {
+      "frame": 22,
+      "seconds": 0.9166666666666666,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4390625,
+            0.2916666666666667,
+            0.425,
+            0.3194444444444444
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            562,
+            210,
+            736,
+            490
+          ],
+          "visibleFraction": 0.028959418402777777
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.43984375,
+            0.2916666666666667,
+            0.42578125,
+            0.3194444444444444
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            563,
+            210,
+            735,
+            490
+          ],
+          "visibleFraction": 0.028399522569444443
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.43984375,
+            0.29305555555555557,
+            0.4265625,
+            0.32083333333333336
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            563,
+            211,
+            734,
+            489
+          ],
+          "visibleFraction": 0.027628038194444444
+        }
+      }
+    },
+    {
+      "frame": 23,
+      "seconds": 0.9583333333333334,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.44375,
+            0.28888888888888886,
+            0.4265625,
+            0.32222222222222224
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            568,
+            208,
+            734,
+            488
+          ],
+          "visibleFraction": 0.028701171875
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.44375,
+            0.2916666666666667,
+            0.42734375,
+            0.32222222222222224
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            568,
+            210,
+            733,
+            488
+          ],
+          "visibleFraction": 0.02816189236111111
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.44453125,
+            0.2916666666666667,
+            0.428125,
+            0.32222222222222224
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            569,
+            210,
+            732,
+            488
+          ],
+          "visibleFraction": 0.027405598958333333
+        }
+      }
+    },
+    {
+      "frame": 24,
+      "seconds": 1.0,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4421875,
+            0.2902777777777778,
+            0.4265625,
+            0.3236111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            566,
+            209,
+            734,
+            487
+          ],
+          "visibleFraction": 0.028764105902777778
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.44375,
+            0.2902777777777778,
+            0.42734375,
+            0.325
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            568,
+            209,
+            733,
+            486
+          ],
+          "visibleFraction": 0.028184678819444444
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.44453125,
+            0.2916666666666667,
+            0.428125,
+            0.3263888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            569,
+            210,
+            732,
+            485
+          ],
+          "visibleFraction": 0.027387152777777778
+        }
+      }
+    },
+    {
+      "frame": 25,
+      "seconds": 1.0416666666666667,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4390625,
+            0.28888888888888886,
+            0.428125,
+            0.325
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            562,
+            208,
+            732,
+            486
+          ],
+          "visibleFraction": 0.028772786458333335
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.440625,
+            0.28888888888888886,
+            0.428125,
+            0.3277777777777778
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            564,
+            208,
+            732,
+            484
+          ],
+          "visibleFraction": 0.028251953125
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.440625,
+            0.2902777777777778,
+            0.428125,
+            0.32916666666666666
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            564,
+            209,
+            732,
+            483
+          ],
+          "visibleFraction": 0.027564019097222222
+        }
+      }
+    },
+    {
+      "frame": 26,
+      "seconds": 1.0833333333333333,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4296875,
+            0.28888888888888886,
+            0.4296875,
+            0.33055555555555555
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            550,
+            208,
+            730,
+            482
+          ],
+          "visibleFraction": 0.02928168402777778
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4296875,
+            0.28888888888888886,
+            0.4296875,
+            0.33194444444444443
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            550,
+            208,
+            730,
+            481
+          ],
+          "visibleFraction": 0.0286328125
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.43125,
+            0.28888888888888886,
+            0.4296875,
+            0.33194444444444443
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            552,
+            208,
+            730,
+            481
+          ],
+          "visibleFraction": 0.027858072916666667
+        }
+      }
+    },
+    {
+      "frame": 27,
+      "seconds": 1.125,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.42109375,
+            0.2875,
+            0.43203125,
+            0.325
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            539,
+            207,
+            727,
+            486
+          ],
+          "visibleFraction": 0.029415147569444446
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.421875,
+            0.2875,
+            0.43203125,
+            0.3277777777777778
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            540,
+            207,
+            727,
+            484
+          ],
+          "visibleFraction": 0.028869357638888888
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.42265625,
+            0.28888888888888886,
+            0.43203125,
+            0.32916666666666666
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            541,
+            208,
+            727,
+            483
+          ],
+          "visibleFraction": 0.02803493923611111
+        }
+      }
+    },
+    {
+      "frame": 28,
+      "seconds": 1.1666666666666667,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4140625,
+            0.2875,
+            0.43203125,
+            0.32222222222222224
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            530,
+            207,
+            727,
+            488
+          ],
+          "visibleFraction": 0.029638671875
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4140625,
+            0.2875,
+            0.43203125,
+            0.3263888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            530,
+            207,
+            727,
+            485
+          ],
+          "visibleFraction": 0.028981119791666666
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.41484375,
+            0.28888888888888886,
+            0.4328125,
+            0.3263888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            531,
+            208,
+            726,
+            485
+          ],
+          "visibleFraction": 0.028121744791666667
+        }
+      }
+    },
+    {
+      "frame": 29,
+      "seconds": 1.2083333333333333,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.40625,
+            0.2875,
+            0.4390625,
+            0.3194444444444444
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            520,
+            207,
+            718,
+            490
+          ],
+          "visibleFraction": 0.02943576388888889
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.409375,
+            0.2875,
+            0.43984375,
+            0.32083333333333336
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            524,
+            207,
+            717,
+            489
+          ],
+          "visibleFraction": 0.02884331597222222
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.409375,
+            0.28888888888888886,
+            0.440625,
+            0.32222222222222224
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            524,
+            208,
+            716,
+            488
+          ],
+          "visibleFraction": 0.028100043402777778
+        }
+      }
+    },
+    {
+      "frame": 30,
+      "seconds": 1.25,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.40625,
+            0.2902777777777778,
+            0.44375,
+            0.31666666666666665
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            520,
+            209,
+            712,
+            492
+          ],
+          "visibleFraction": 0.029263237847222224
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.40625,
+            0.2916666666666667,
+            0.44375,
+            0.31666666666666665
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            520,
+            210,
+            712,
+            492
+          ],
+          "visibleFraction": 0.028649088541666666
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.40703125,
+            0.29305555555555557,
+            0.44453125,
+            0.31805555555555554
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            521,
+            211,
+            711,
+            491
+          ],
+          "visibleFraction": 0.027846137152777777
+        }
+      }
+    },
+    {
+      "frame": 31,
+      "seconds": 1.2916666666666667,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.40625,
+            0.3,
+            0.44765625,
+            0.3138888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            520,
+            216,
+            707,
+            494
+          ],
+          "visibleFraction": 0.029359809027777777
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.40625,
+            0.3,
+            0.4484375,
+            0.3138888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            520,
+            216,
+            706,
+            494
+          ],
+          "visibleFraction": 0.028776041666666665
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.40703125,
+            0.3013888888888889,
+            0.4484375,
+            0.31527777777777777
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            521,
+            217,
+            706,
+            493
+          ],
+          "visibleFraction": 0.02799262152777778
+        }
+      }
+    },
+    {
+      "frame": 32,
+      "seconds": 1.3333333333333333,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4078125,
+            0.3013888888888889,
+            0.45,
+            0.3138888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            522,
+            217,
+            704,
+            494
+          ],
+          "visibleFraction": 0.029422743055555554
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.40859375,
+            0.30277777777777776,
+            0.45,
+            0.3138888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            523,
+            218,
+            704,
+            494
+          ],
+          "visibleFraction": 0.028872612847222222
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.409375,
+            0.30416666666666664,
+            0.45,
+            0.3138888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            524,
+            219,
+            704,
+            494
+          ],
+          "visibleFraction": 0.02788519965277778
+        }
+      }
+    },
+    {
+      "frame": 33,
+      "seconds": 1.375,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4125,
+            0.3138888888888889,
+            0.45625,
+            0.3111111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            528,
+            226,
+            696,
+            496
+          ],
+          "visibleFraction": 0.028942057291666667
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4125,
+            0.3138888888888889,
+            0.45625,
+            0.3111111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            528,
+            226,
+            696,
+            496
+          ],
+          "visibleFraction": 0.028363715277777778
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4125,
+            0.31527777777777777,
+            0.45625,
+            0.3125
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            528,
+            227,
+            696,
+            495
+          ],
+          "visibleFraction": 0.027509765625
+        }
+      }
+    },
+    {
+      "frame": 34,
+      "seconds": 1.4166666666666667,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.41796875,
+            0.3194444444444444,
+            0.45859375,
+            0.30694444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            535,
+            230,
+            693,
+            499
+          ],
+          "visibleFraction": 0.028550347222222223
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.41875,
+            0.3194444444444444,
+            0.459375,
+            0.30694444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            536,
+            230,
+            692,
+            499
+          ],
+          "visibleFraction": 0.02783420138888889
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.41875,
+            0.32083333333333336,
+            0.459375,
+            0.30833333333333335
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            536,
+            231,
+            692,
+            498
+          ],
+          "visibleFraction": 0.026831597222222222
+        }
+      }
+    },
+    {
+      "frame": 35,
+      "seconds": 1.4583333333333333,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4140625,
+            0.325,
+            0.46015625,
+            0.30694444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            530,
+            234,
+            691,
+            499
+          ],
+          "visibleFraction": 0.027930772569444446
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.41484375,
+            0.3263888888888889,
+            0.4609375,
+            0.30694444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            531,
+            235,
+            690,
+            499
+          ],
+          "visibleFraction": 0.027403428819444443
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.415625,
+            0.3263888888888889,
+            0.4609375,
+            0.30833333333333335
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            532,
+            235,
+            690,
+            498
+          ],
+          "visibleFraction": 0.026548394097222223
+        }
+      }
+    },
+    {
+      "frame": 36,
+      "seconds": 1.5,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.409375,
+            0.3527777777777778,
+            0.4640625,
+            0.3111111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            524,
+            254,
+            686,
+            496
+          ],
+          "visibleFraction": 0.02742730034722222
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.41015625,
+            0.3541666666666667,
+            0.46484375,
+            0.3111111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            525,
+            255,
+            685,
+            496
+          ],
+          "visibleFraction": 0.02685329861111111
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4109375,
+            0.35555555555555557,
+            0.465625,
+            0.3111111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            526,
+            256,
+            684,
+            496
+          ],
+          "visibleFraction": 0.025906032986111112
+        }
+      }
+    },
+    {
+      "frame": 37,
+      "seconds": 1.5416666666666667,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.40234375,
+            0.35555555555555557,
+            0.4640625,
+            0.32222222222222224
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            515,
+            256,
+            686,
+            488
+          ],
+          "visibleFraction": 0.025376519097222223
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.40234375,
+            0.35833333333333334,
+            0.4640625,
+            0.32222222222222224
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            515,
+            258,
+            686,
+            488
+          ],
+          "visibleFraction": 0.024789496527777777
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.403125,
+            0.35833333333333334,
+            0.46796875,
+            0.32222222222222224
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            516,
+            258,
+            681,
+            488
+          ],
+          "visibleFraction": 0.02387261284722222
+        }
+      }
+    },
+    {
+      "frame": 38,
+      "seconds": 1.5833333333333333,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4,
+            0.35833333333333334,
+            0.47265625,
+            0.325
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            512,
+            258,
+            675,
+            486
+          ],
+          "visibleFraction": 0.024735243055555557
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4,
+            0.3597222222222222,
+            0.47265625,
+            0.325
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            512,
+            259,
+            675,
+            486
+          ],
+          "visibleFraction": 0.02412868923611111
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4,
+            0.3611111111111111,
+            0.47265625,
+            0.3277777777777778
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            512,
+            260,
+            675,
+            484
+          ],
+          "visibleFraction": 0.023238932291666667
+        }
+      }
+    },
+    {
+      "frame": 39,
+      "seconds": 1.625,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.39765625,
+            0.3611111111111111,
+            0.471875,
+            0.33055555555555555
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            509,
+            260,
+            676,
+            482
+          ],
+          "visibleFraction": 0.023583984375
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.39765625,
+            0.3625,
+            0.4734375,
+            0.33055555555555555
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            509,
+            261,
+            674,
+            482
+          ],
+          "visibleFraction": 0.0230078125
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.39765625,
+            0.3638888888888889,
+            0.4734375,
+            0.33194444444444443
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            509,
+            262,
+            674,
+            481
+          ],
+          "visibleFraction": 0.022194010416666667
+        }
+      }
+    },
+    {
+      "frame": 40,
+      "seconds": 1.6666666666666667,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3953125,
+            0.3625,
+            0.4734375,
+            0.3402777777777778
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            506,
+            261,
+            674,
+            475
+          ],
+          "visibleFraction": 0.02265625
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3953125,
+            0.3638888888888889,
+            0.47421875,
+            0.3402777777777778
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            506,
+            262,
+            673,
+            475
+          ],
+          "visibleFraction": 0.02214409722222222
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.39609375,
+            0.36527777777777776,
+            0.47421875,
+            0.3416666666666667
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            507,
+            263,
+            673,
+            474
+          ],
+          "visibleFraction": 0.021408420138888887
+        }
+      }
+    },
+    {
+      "frame": 41,
+      "seconds": 1.7083333333333333,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.39375,
+            0.36666666666666664,
+            0.475,
+            0.3416666666666667
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            504,
+            264,
+            672,
+            474
+          ],
+          "visibleFraction": 0.020997178819444445
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.39375,
+            0.3680555555555556,
+            0.475,
+            0.3416666666666667
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            504,
+            265,
+            672,
+            474
+          ],
+          "visibleFraction": 0.020513237847222223
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.39375,
+            0.3680555555555556,
+            0.47578125,
+            0.34305555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            504,
+            265,
+            671,
+            473
+          ],
+          "visibleFraction": 0.019903428819444444
+        }
+      }
+    },
+    {
+      "frame": 42,
+      "seconds": 1.75,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3921875,
+            0.36944444444444446,
+            0.475,
+            0.34305555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            502,
+            266,
+            672,
+            473
+          ],
+          "visibleFraction": 0.020301649305555555
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.39296875,
+            0.36944444444444446,
+            0.4765625,
+            0.34444444444444444
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            503,
+            266,
+            670,
+            472
+          ],
+          "visibleFraction": 0.01980685763888889
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.39375,
+            0.37083333333333335,
+            0.4765625,
+            0.34444444444444444
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            504,
+            267,
+            670,
+            472
+          ],
+          "visibleFraction": 0.019061414930555555
+        }
+      }
+    },
+    {
+      "frame": 43,
+      "seconds": 1.7916666666666667,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3921875,
+            0.36944444444444446,
+            0.4765625,
+            0.34444444444444444
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            502,
+            266,
+            670,
+            472
+          ],
+          "visibleFraction": 0.019360894097222223
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.39296875,
+            0.37083333333333335,
+            0.4765625,
+            0.34444444444444444
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            503,
+            267,
+            670,
+            472
+          ],
+          "visibleFraction": 0.018909505208333333
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.39375,
+            0.37083333333333335,
+            0.478125,
+            0.3458333333333333
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            504,
+            267,
+            668,
+            471
+          ],
+          "visibleFraction": 0.018264973958333333
+        }
+      }
+    },
+    {
+      "frame": 44,
+      "seconds": 1.8333333333333333,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3921875,
+            0.37083333333333335,
+            0.4796875,
+            0.3458333333333333
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            502,
+            267,
+            666,
+            471
+          ],
+          "visibleFraction": 0.018526475694444444
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.39375,
+            0.37222222222222223,
+            0.4796875,
+            0.3472222222222222
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            504,
+            268,
+            666,
+            470
+          ],
+          "visibleFraction": 0.01794487847222222
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.39375,
+            0.37222222222222223,
+            0.4796875,
+            0.3486111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            504,
+            268,
+            666,
+            469
+          ],
+          "visibleFraction": 0.017197265625
+        }
+      }
+    },
+    {
+      "frame": 45,
+      "seconds": 1.875,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.390625,
+            0.375,
+            0.49375,
+            0.35
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            500,
+            270,
+            648,
+            468
+          ],
+          "visibleFraction": 0.017026909722222223
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.390625,
+            0.375,
+            0.49375,
+            0.35
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            500,
+            270,
+            648,
+            468
+          ],
+          "visibleFraction": 0.016629774305555556
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.39140625,
+            0.3763888888888889,
+            0.49453125,
+            0.35138888888888886
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            501,
+            271,
+            647,
+            467
+          ],
+          "visibleFraction": 0.016059027777777776
+        }
+      }
+    },
+    {
+      "frame": 46,
+      "seconds": 1.9166666666666667,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.38828125,
+            0.37916666666666665,
+            0.50078125,
+            0.35138888888888886
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            497,
+            273,
+            639,
+            467
+          ],
+          "visibleFraction": 0.01625434027777778
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3890625,
+            0.37916666666666665,
+            0.50078125,
+            0.3527777777777778
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            498,
+            273,
+            639,
+            466
+          ],
+          "visibleFraction": 0.01583767361111111
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3890625,
+            0.3819444444444444,
+            0.5015625,
+            0.3527777777777778
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            498,
+            275,
+            638,
+            466
+          ],
+          "visibleFraction": 0.015220269097222221
+        }
+      }
+    },
+    {
+      "frame": 47,
+      "seconds": 1.9583333333333333,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3875,
+            0.3875,
+            0.5046875,
+            0.3527777777777778
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            496,
+            279,
+            634,
+            466
+          ],
+          "visibleFraction": 0.015243055555555555
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3875,
+            0.3888888888888889,
+            0.50546875,
+            0.3527777777777778
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            496,
+            280,
+            633,
+            466
+          ],
+          "visibleFraction": 0.014842664930555555
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3875,
+            0.3888888888888889,
+            0.50703125,
+            0.3541666666666667
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            496,
+            280,
+            631,
+            465
+          ],
+          "visibleFraction": 0.014330512152777778
+        }
+      }
+    },
+    {
+      "frame": 48,
+      "seconds": 2.0,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3859375,
+            0.3972222222222222,
+            0.5171875,
+            0.35555555555555557
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            494,
+            286,
+            618,
+            464
+          ],
+          "visibleFraction": 0.013629557291666667
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3859375,
+            0.4111111111111111,
+            0.51875,
+            0.35555555555555557
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            494,
+            296,
+            616,
+            464
+          ],
+          "visibleFraction": 0.013307291666666667
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3859375,
+            0.41388888888888886,
+            0.51953125,
+            0.35555555555555557
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            494,
+            298,
+            615,
+            464
+          ],
+          "visibleFraction": 0.012872178819444444
+        }
+      }
+    },
+    {
+      "frame": 49,
+      "seconds": 2.0416666666666665,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3859375,
+            0.4125,
+            0.51796875,
+            0.35555555555555557
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            494,
+            297,
+            617,
+            464
+          ],
+          "visibleFraction": 0.013349609375
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3859375,
+            0.41388888888888886,
+            0.51796875,
+            0.35555555555555557
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            494,
+            298,
+            617,
+            464
+          ],
+          "visibleFraction": 0.013041449652777778
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.38671875,
+            0.4166666666666667,
+            0.51875,
+            0.35555555555555557
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            495,
+            300,
+            616,
+            464
+          ],
+          "visibleFraction": 0.012642144097222223
+        }
+      }
+    },
+    {
+      "frame": 50,
+      "seconds": 2.0833333333333335,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3875,
+            0.41805555555555557,
+            0.5171875,
+            0.35555555555555557
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            496,
+            301,
+            618,
+            464
+          ],
+          "visibleFraction": 0.013089192708333334
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3875,
+            0.41805555555555557,
+            0.51796875,
+            0.35555555555555557
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            496,
+            301,
+            617,
+            464
+          ],
+          "visibleFraction": 0.0127734375
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3875,
+            0.41944444444444445,
+            0.51875,
+            0.35694444444444445
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            496,
+            302,
+            616,
+            463
+          ],
+          "visibleFraction": 0.012311197916666667
+        }
+      }
+    },
+    {
+      "frame": 51,
+      "seconds": 2.125,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.38828125,
+            0.4222222222222222,
+            0.51796875,
+            0.35555555555555557
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            497,
+            304,
+            617,
+            464
+          ],
+          "visibleFraction": 0.012601996527777777
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3890625,
+            0.4222222222222222,
+            0.51875,
+            0.35694444444444445
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            498,
+            304,
+            616,
+            463
+          ],
+          "visibleFraction": 0.012330729166666667
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3890625,
+            0.425,
+            0.51875,
+            0.35833333333333334
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            498,
+            306,
+            616,
+            462
+          ],
+          "visibleFraction": 0.011936848958333333
+        }
+      }
+    },
+    {
+      "frame": 52,
+      "seconds": 2.1666666666666665,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.390625,
+            0.4263888888888889,
+            0.51875,
+            0.3597222222222222
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            500,
+            307,
+            616,
+            461
+          ],
+          "visibleFraction": 0.012054036458333334
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3921875,
+            0.42777777777777776,
+            0.51875,
+            0.3611111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            502,
+            308,
+            616,
+            460
+          ],
+          "visibleFraction": 0.01172634548611111
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3921875,
+            0.43194444444444446,
+            0.51953125,
+            0.3611111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            502,
+            311,
+            615,
+            460
+          ],
+          "visibleFraction": 0.011304253472222222
+        }
+      }
+    },
+    {
+      "frame": 53,
+      "seconds": 2.2083333333333335,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.39375,
+            0.43194444444444446,
+            0.5171875,
+            0.35555555555555557
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            504,
+            311,
+            618,
+            464
+          ],
+          "visibleFraction": 0.011372612847222222
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3953125,
+            0.43472222222222223,
+            0.51796875,
+            0.3638888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            506,
+            313,
+            617,
+            458
+          ],
+          "visibleFraction": 0.011076388888888889
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3953125,
+            0.4361111111111111,
+            0.51875,
+            0.3638888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            506,
+            314,
+            616,
+            458
+          ],
+          "visibleFraction": 0.010704210069444444
+        }
+      }
+    },
+    {
+      "frame": 54,
+      "seconds": 2.25,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3984375,
+            0.4361111111111111,
+            0.51484375,
+            0.3638888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            510,
+            314,
+            621,
+            458
+          ],
+          "visibleFraction": 0.010716145833333333
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3984375,
+            0.4361111111111111,
+            0.515625,
+            0.36666666666666664
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            510,
+            314,
+            620,
+            456
+          ],
+          "visibleFraction": 0.010430772569444444
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.3984375,
+            0.4388888888888889,
+            0.5171875,
+            0.36666666666666664
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            510,
+            316,
+            618,
+            456
+          ],
+          "visibleFraction": 0.010108506944444444
+        }
+      }
+    },
+    {
+      "frame": 55,
+      "seconds": 2.2916666666666665,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4015625,
+            0.44027777777777777,
+            0.5125,
+            0.36944444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            514,
+            317,
+            624,
+            454
+          ],
+          "visibleFraction": 0.010079210069444445
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.40234375,
+            0.44166666666666665,
+            0.51328125,
+            0.36944444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            515,
+            318,
+            623,
+            454
+          ],
+          "visibleFraction": 0.009866536458333333
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.403125,
+            0.44166666666666665,
+            0.5140625,
+            0.37083333333333335
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            516,
+            318,
+            622,
+            453
+          ],
+          "visibleFraction": 0.009564887152777778
+        }
+      }
+    },
+    {
+      "frame": 56,
+      "seconds": 2.3333333333333335,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.40703125,
+            0.44583333333333336,
+            0.50859375,
+            0.375
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            521,
+            321,
+            629,
+            450
+          ],
+          "visibleFraction": 0.009578993055555556
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.40703125,
+            0.44722222222222224,
+            0.5109375,
+            0.375
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            521,
+            322,
+            626,
+            450
+          ],
+          "visibleFraction": 0.009329427083333333
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4078125,
+            0.45,
+            0.5109375,
+            0.375
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            522,
+            324,
+            626,
+            450
+          ],
+          "visibleFraction": 0.009028862847222222
+        }
+      }
+    },
+    {
+      "frame": 57,
+      "seconds": 2.375,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.41171875,
+            0.4513888888888889,
+            0.5046875,
+            0.37916666666666665
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            527,
+            325,
+            634,
+            447
+          ],
+          "visibleFraction": 0.009087456597222222
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.41171875,
+            0.4527777777777778,
+            0.50546875,
+            0.37916666666666665
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            527,
+            326,
+            633,
+            447
+          ],
+          "visibleFraction": 0.008851996527777777
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4125,
+            0.45416666666666666,
+            0.5078125,
+            0.38055555555555554
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            528,
+            327,
+            630,
+            446
+          ],
+          "visibleFraction": 0.008555772569444444
+        }
+      }
+    },
+    {
+      "frame": 58,
+      "seconds": 2.4166666666666665,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.415625,
+            0.4527777777777778,
+            0.50234375,
+            0.38472222222222224
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            532,
+            326,
+            637,
+            443
+          ],
+          "visibleFraction": 0.008559027777777778
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4171875,
+            0.4527777777777778,
+            0.50390625,
+            0.38472222222222224
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            534,
+            326,
+            635,
+            443
+          ],
+          "visibleFraction": 0.00828342013888889
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.41796875,
+            0.45416666666666666,
+            0.50390625,
+            0.38472222222222224
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            535,
+            327,
+            635,
+            443
+          ],
+          "visibleFraction": 0.00797634548611111
+        }
+      }
+    },
+    {
+      "frame": 59,
+      "seconds": 2.4583333333333335,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.42421875,
+            0.4527777777777778,
+            0.49921875,
+            0.3902777777777778
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            543,
+            326,
+            641,
+            439
+          ],
+          "visibleFraction": 0.007938368055555556
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.42421875,
+            0.45416666666666666,
+            0.49921875,
+            0.3902777777777778
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            543,
+            327,
+            641,
+            439
+          ],
+          "visibleFraction": 0.007717013888888889
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.425,
+            0.45416666666666666,
+            0.49921875,
+            0.3902777777777778
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            544,
+            327,
+            641,
+            439
+          ],
+          "visibleFraction": 0.0074555121527777775
+        }
+      }
+    },
+    {
+      "frame": 60,
+      "seconds": 2.5,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.428125,
+            0.4527777777777778,
+            0.4921875,
+            0.39444444444444443
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            548,
+            326,
+            650,
+            436
+          ],
+          "visibleFraction": 0.007400173611111111
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.428125,
+            0.45416666666666666,
+            0.49453125,
+            0.3972222222222222
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            548,
+            327,
+            647,
+            434
+          ],
+          "visibleFraction": 0.007202690972222222
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.42890625,
+            0.45416666666666666,
+            0.4953125,
+            0.3972222222222222
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            549,
+            327,
+            646,
+            434
+          ],
+          "visibleFraction": 0.006949869791666666
+        }
+      }
+    },
+    {
+      "frame": 61,
+      "seconds": 2.5416666666666665,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.43203125,
+            0.4527777777777778,
+            0.49140625,
+            0.4013888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            553,
+            326,
+            651,
+            431
+          ],
+          "visibleFraction": 0.00697265625
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4328125,
+            0.45416666666666666,
+            0.49140625,
+            0.4027777777777778
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            554,
+            327,
+            651,
+            430
+          ],
+          "visibleFraction": 0.0067708333333333336
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.43515625,
+            0.45416666666666666,
+            0.49140625,
+            0.4027777777777778
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            557,
+            327,
+            651,
+            430
+          ],
+          "visibleFraction": 0.006508246527777778
+        }
+      }
+    },
+    {
+      "frame": 62,
+      "seconds": 2.5833333333333335,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.43984375,
+            0.4527777777777778,
+            0.4875,
+            0.40694444444444444
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            563,
+            326,
+            656,
+            427
+          ],
+          "visibleFraction": 0.006456163194444444
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.440625,
+            0.45416666666666666,
+            0.4875,
+            0.40694444444444444
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            564,
+            327,
+            656,
+            427
+          ],
+          "visibleFraction": 0.006242404513888889
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.44140625,
+            0.45416666666666666,
+            0.4875,
+            0.4083333333333333
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            565,
+            327,
+            656,
+            426
+          ],
+          "visibleFraction": 0.006037326388888889
+        }
+      }
+    },
+    {
+      "frame": 63,
+      "seconds": 2.625,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.446875,
+            0.4527777777777778,
+            0.4828125,
+            0.41388888888888886
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            572,
+            326,
+            662,
+            422
+          ],
+          "visibleFraction": 0.0059331597222222225
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.44765625,
+            0.45555555555555555,
+            0.4828125,
+            0.41388888888888886
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            573,
+            328,
+            662,
+            422
+          ],
+          "visibleFraction": 0.005741102430555555
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4484375,
+            0.45555555555555555,
+            0.4828125,
+            0.41388888888888886
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            574,
+            328,
+            662,
+            422
+          ],
+          "visibleFraction": 0.005534939236111111
+        }
+      }
+    },
+    {
+      "frame": 64,
+      "seconds": 2.6666666666666665,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.453125,
+            0.4527777777777778,
+            0.47890625,
+            0.41944444444444445
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            580,
+            326,
+            667,
+            418
+          ],
+          "visibleFraction": 0.005438368055555556
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.45390625,
+            0.45555555555555555,
+            0.47890625,
+            0.42083333333333334
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            581,
+            328,
+            667,
+            417
+          ],
+          "visibleFraction": 0.005275607638888889
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4546875,
+            0.45555555555555555,
+            0.47890625,
+            0.42083333333333334
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            582,
+            328,
+            667,
+            417
+          ],
+          "visibleFraction": 0.005083550347222222
+        }
+      }
+    },
+    {
+      "frame": 65,
+      "seconds": 2.7083333333333335,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4578125,
+            0.4527777777777778,
+            0.475,
+            0.425
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            586,
+            326,
+            672,
+            414
+          ],
+          "visibleFraction": 0.005067274305555556
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.459375,
+            0.45555555555555555,
+            0.475,
+            0.425
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            588,
+            328,
+            672,
+            414
+          ],
+          "visibleFraction": 0.004912109375
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.46015625,
+            0.45555555555555555,
+            0.475,
+            0.4263888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            589,
+            328,
+            672,
+            413
+          ],
+          "visibleFraction": 0.004737413194444444
+        }
+      }
+    },
+    {
+      "frame": 66,
+      "seconds": 2.75,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.46484375,
+            0.45555555555555555,
+            0.47109375,
+            0.4305555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            595,
+            328,
+            677,
+            410
+          ],
+          "visibleFraction": 0.004606119791666667
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.465625,
+            0.45555555555555555,
+            0.47109375,
+            0.4305555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            596,
+            328,
+            677,
+            410
+          ],
+          "visibleFraction": 0.004476996527777778
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4671875,
+            0.45555555555555555,
+            0.47109375,
+            0.4305555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            598,
+            328,
+            677,
+            410
+          ],
+          "visibleFraction": 0.004326171875
+        }
+      }
+    },
+    {
+      "frame": 67,
+      "seconds": 2.7916666666666665,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4703125,
+            0.4527777777777778,
+            0.4671875,
+            0.43472222222222223
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            602,
+            326,
+            682,
+            407
+          ],
+          "visibleFraction": 0.004313151041666667
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.47109375,
+            0.45416666666666666,
+            0.4671875,
+            0.4375
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            603,
+            327,
+            682,
+            405
+          ],
+          "visibleFraction": 0.004180772569444445
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.47265625,
+            0.45416666666666666,
+            0.4671875,
+            0.4375
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            605,
+            327,
+            682,
+            405
+          ],
+          "visibleFraction": 0.0040190972222222225
+        }
+      }
+    },
+    {
+      "frame": 68,
+      "seconds": 2.8333333333333335,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4765625,
+            0.4527777777777778,
+            0.46328125,
+            0.44027777777777777
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            610,
+            326,
+            687,
+            403
+          ],
+          "visibleFraction": 0.003973524305555556
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4765625,
+            0.45416666666666666,
+            0.46328125,
+            0.44166666666666665
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            610,
+            327,
+            687,
+            402
+          ],
+          "visibleFraction": 0.003859592013888889
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.478125,
+            0.45416666666666666,
+            0.46328125,
+            0.44166666666666665
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            612,
+            327,
+            687,
+            402
+          ],
+          "visibleFraction": 0.0037109375
+        }
+      }
+    },
+    {
+      "frame": 69,
+      "seconds": 2.875,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.48125,
+            0.4527777777777778,
+            0.459375,
+            0.44583333333333336
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            616,
+            326,
+            692,
+            399
+          ],
+          "visibleFraction": 0.0037109375
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.48203125,
+            0.45416666666666666,
+            0.46015625,
+            0.44583333333333336
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            617,
+            327,
+            691,
+            399
+          ],
+          "visibleFraction": 0.0035926649305555555
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4828125,
+            0.45416666666666666,
+            0.46015625,
+            0.44583333333333336
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            618,
+            327,
+            691,
+            399
+          ],
+          "visibleFraction": 0.0034505208333333332
+        }
+      }
+    },
+    {
+      "frame": 70,
+      "seconds": 2.9166666666666665,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.48828125,
+            0.4527777777777778,
+            0.4546875,
+            0.4486111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            625,
+            326,
+            698,
+            397
+          ],
+          "visibleFraction": 0.003366970486111111
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.48828125,
+            0.4527777777777778,
+            0.45625,
+            0.4513888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            625,
+            326,
+            696,
+            395
+          ],
+          "visibleFraction": 0.003266059027777778
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4890625,
+            0.45416666666666666,
+            0.45625,
+            0.4513888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            626,
+            327,
+            696,
+            395
+          ],
+          "visibleFraction": 0.0031163194444444446
+        }
+      }
+    },
+    {
+      "frame": 71,
+      "seconds": 2.9583333333333335,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.49375,
+            0.4527777777777778,
+            0.45234375,
+            0.4527777777777778
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            632,
+            326,
+            701,
+            394
+          ],
+          "visibleFraction": 0.0030577256944444445
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.49375,
+            0.4527777777777778,
+            0.45234375,
+            0.45555555555555555
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            632,
+            326,
+            701,
+            392
+          ],
+          "visibleFraction": 0.0029698350694444446
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.4953125,
+            0.4527777777777778,
+            0.45234375,
+            0.45555555555555555
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            634,
+            326,
+            701,
+            392
+          ],
+          "visibleFraction": 0.0028515625
+        }
+      }
+    },
+    {
+      "frame": 72,
+      "seconds": 3.0,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.50078125,
+            0.4527777777777778,
+            0.45,
+            0.4583333333333333
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            641,
+            326,
+            704,
+            390
+          ],
+          "visibleFraction": 0.0028070746527777777
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5015625,
+            0.4527777777777778,
+            0.45,
+            0.4583333333333333
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            642,
+            326,
+            704,
+            390
+          ],
+          "visibleFraction": 0.002731119791666667
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5015625,
+            0.4527777777777778,
+            0.45,
+            0.4597222222222222
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            642,
+            326,
+            704,
+            389
+          ],
+          "visibleFraction": 0.0026258680555555558
+        }
+      }
+    },
+    {
+      "frame": 73,
+      "seconds": 3.0416666666666665,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5046875,
+            0.4527777777777778,
+            0.44609375,
+            0.4597222222222222
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            646,
+            326,
+            709,
+            389
+          ],
+          "visibleFraction": 0.0026030815972222223
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.50546875,
+            0.4527777777777778,
+            0.44609375,
+            0.4625
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            647,
+            326,
+            709,
+            387
+          ],
+          "visibleFraction": 0.002534722222222222
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.50625,
+            0.4527777777777778,
+            0.44609375,
+            0.4625
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            648,
+            326,
+            709,
+            387
+          ],
+          "visibleFraction": 0.0024381510416666666
+        }
+      }
+    },
+    {
+      "frame": 74,
+      "seconds": 3.0833333333333335,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5125,
+            0.4527777777777778,
+            0.4421875,
+            0.4666666666666667
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            656,
+            326,
+            714,
+            384
+          ],
+          "visibleFraction": 0.0023719618055555555
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5125,
+            0.4527777777777778,
+            0.44296875,
+            0.4666666666666667
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            656,
+            326,
+            713,
+            384
+          ],
+          "visibleFraction": 0.002316623263888889
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5125,
+            0.4527777777777778,
+            0.44296875,
+            0.4666666666666667
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            656,
+            326,
+            713,
+            384
+          ],
+          "visibleFraction": 0.002216796875
+        }
+      }
+    },
+    {
+      "frame": 75,
+      "seconds": 3.125,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.515625,
+            0.4527777777777778,
+            0.43984375,
+            0.46805555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            660,
+            326,
+            717,
+            383
+          ],
+          "visibleFraction": 0.0022211371527777776
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.51640625,
+            0.4527777777777778,
+            0.440625,
+            0.46944444444444444
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            661,
+            326,
+            716,
+            382
+          ],
+          "visibleFraction": 0.0021397569444444446
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5171875,
+            0.4527777777777778,
+            0.440625,
+            0.46944444444444444
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            662,
+            326,
+            716,
+            382
+          ],
+          "visibleFraction": 0.0020301649305555555
+        }
+      }
+    },
+    {
+      "frame": 76,
+      "seconds": 3.1666666666666665,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.52109375,
+            0.4527777777777778,
+            0.4375,
+            0.46805555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            667,
+            326,
+            720,
+            383
+          ],
+          "visibleFraction": 0.0020290798611111113
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.52109375,
+            0.4527777777777778,
+            0.4375,
+            0.4722222222222222
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            667,
+            326,
+            720,
+            380
+          ],
+          "visibleFraction": 0.0019509548611111112
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.52265625,
+            0.4527777777777778,
+            0.4375,
+            0.4722222222222222
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            669,
+            326,
+            720,
+            380
+          ],
+          "visibleFraction": 0.0018641493055555555
+        }
+      }
+    },
+    {
+      "frame": 77,
+      "seconds": 3.2083333333333335,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.525,
+            0.45,
+            0.43515625,
+            0.4736111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            672,
+            324,
+            723,
+            379
+          ],
+          "visibleFraction": 0.0019184027777777778
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.52578125,
+            0.4527777777777778,
+            0.43515625,
+            0.4736111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            673,
+            326,
+            723,
+            379
+          ],
+          "visibleFraction": 0.0018467881944444445
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.52578125,
+            0.4527777777777778,
+            0.43515625,
+            0.4736111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            673,
+            326,
+            723,
+            379
+          ],
+          "visibleFraction": 0.001748046875
+        }
+      }
+    },
+    {
+      "frame": 78,
+      "seconds": 3.25,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5296875,
+            0.4527777777777778,
+            0.43203125,
+            0.475
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            678,
+            326,
+            727,
+            378
+          ],
+          "visibleFraction": 0.0017100694444444444
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.53046875,
+            0.4527777777777778,
+            0.4328125,
+            0.47638888888888886
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            679,
+            326,
+            726,
+            377
+          ],
+          "visibleFraction": 0.0016482204861111112
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.53046875,
+            0.45416666666666666,
+            0.4328125,
+            0.47638888888888886
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            679,
+            327,
+            726,
+            377
+          ],
+          "visibleFraction": 0.0015625
+        }
+      }
+    },
+    {
+      "frame": 79,
+      "seconds": 3.2916666666666665,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.53359375,
+            0.4527777777777778,
+            0.4296875,
+            0.4777777777777778
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            683,
+            326,
+            730,
+            376
+          ],
+          "visibleFraction": 0.0016026475694444445
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.53359375,
+            0.45416666666666666,
+            0.4296875,
+            0.4777777777777778
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            683,
+            327,
+            730,
+            376
+          ],
+          "visibleFraction": 0.0015277777777777779
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.534375,
+            0.45416666666666666,
+            0.43046875,
+            0.4791666666666667
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            684,
+            327,
+            729,
+            375
+          ],
+          "visibleFraction": 0.001447482638888889
+        }
+      }
+    },
+    {
+      "frame": 80,
+      "seconds": 3.3333333333333335,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.53671875,
+            0.4527777777777778,
+            0.428125,
+            0.4777777777777778
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            687,
+            326,
+            732,
+            376
+          ],
+          "visibleFraction": 0.0014756944444444444
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5375,
+            0.45416666666666666,
+            0.428125,
+            0.4791666666666667
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            688,
+            327,
+            732,
+            375
+          ],
+          "visibleFraction": 0.001398654513888889
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.53828125,
+            0.45416666666666666,
+            0.428125,
+            0.48055555555555557
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            689,
+            327,
+            732,
+            374
+          ],
+          "visibleFraction": 0.0013129340277777779
+        }
+      }
+    },
+    {
+      "frame": 81,
+      "seconds": 3.375,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.540625,
+            0.4527777777777778,
+            0.42578125,
+            0.48055555555555557
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            692,
+            326,
+            735,
+            374
+          ],
+          "visibleFraction": 0.0013747829861111111
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.540625,
+            0.45416666666666666,
+            0.42578125,
+            0.48194444444444445
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            692,
+            327,
+            735,
+            373
+          ],
+          "visibleFraction": 0.0013020833333333333
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5421875,
+            0.45416666666666666,
+            0.42578125,
+            0.48333333333333334
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            694,
+            327,
+            735,
+            372
+          ],
+          "visibleFraction": 0.0012152777777777778
+        }
+      }
+    },
+    {
+      "frame": 82,
+      "seconds": 3.4166666666666665,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.54609375,
+            0.45416666666666666,
+            0.4234375,
+            0.48333333333333334
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            699,
+            327,
+            738,
+            372
+          ],
+          "visibleFraction": 0.0011946614583333334
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.54609375,
+            0.45555555555555555,
+            0.4234375,
+            0.48333333333333334
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            699,
+            328,
+            738,
+            372
+          ],
+          "visibleFraction": 0.0011555989583333333
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.54609375,
+            0.45555555555555555,
+            0.42421875,
+            0.4847222222222222
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            699,
+            328,
+            737,
+            371
+          ],
+          "visibleFraction": 0.0010894097222222223
+        }
+      }
+    },
+    {
+      "frame": 83,
+      "seconds": 3.4583333333333335,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.54765625,
+            0.4527777777777778,
+            0.421875,
+            0.4861111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            701,
+            326,
+            740,
+            370
+          ],
+          "visibleFraction": 0.0011089409722222223
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.54765625,
+            0.45555555555555555,
+            0.421875,
+            0.4861111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            701,
+            328,
+            740,
+            370
+          ],
+          "visibleFraction": 0.0010481770833333333
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.54921875,
+            0.45555555555555555,
+            0.42265625,
+            0.4875
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            703,
+            328,
+            739,
+            369
+          ],
+          "visibleFraction": 0.0009895833333333334
+        }
+      }
+    },
+    {
+      "frame": 84,
+      "seconds": 3.5,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5515625,
+            0.45416666666666666,
+            0.41953125,
+            0.4888888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            706,
+            327,
+            743,
+            368
+          ],
+          "visibleFraction": 0.0009884982638888888
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5515625,
+            0.45555555555555555,
+            0.4203125,
+            0.4888888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            706,
+            328,
+            742,
+            368
+          ],
+          "visibleFraction": 0.0009494357638888889
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.553125,
+            0.45555555555555555,
+            0.42109375,
+            0.4888888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            708,
+            328,
+            741,
+            368
+          ],
+          "visibleFraction": 0.0009060329861111111
+        }
+      }
+    },
+    {
+      "frame": 85,
+      "seconds": 3.5416666666666665,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.55390625,
+            0.45416666666666666,
+            0.41796875,
+            0.4888888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            709,
+            327,
+            745,
+            368
+          ],
+          "visibleFraction": 0.0009483506944444445
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.55546875,
+            0.45555555555555555,
+            0.41875,
+            0.4888888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            711,
+            328,
+            744,
+            368
+          ],
+          "visibleFraction": 0.0008995225694444444
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.55625,
+            0.45694444444444443,
+            0.41953125,
+            0.49027777777777776
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            712,
+            329,
+            743,
+            367
+          ],
+          "visibleFraction": 0.0008355034722222222
+        }
+      }
+    },
+    {
+      "frame": 86,
+      "seconds": 3.5833333333333335,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.559375,
+            0.45555555555555555,
+            0.4171875,
+            0.4888888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            716,
+            328,
+            746,
+            368
+          ],
+          "visibleFraction": 0.0008235677083333334
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.559375,
+            0.45694444444444443,
+            0.41796875,
+            0.49166666666666664
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            716,
+            329,
+            745,
+            366
+          ],
+          "visibleFraction": 0.0007866753472222222
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.559375,
+            0.45694444444444443,
+            0.41796875,
+            0.49166666666666664
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            716,
+            329,
+            745,
+            366
+          ],
+          "visibleFraction": 0.0007541232638888889
+        }
+      }
+    },
+    {
+      "frame": 87,
+      "seconds": 3.625,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.56171875,
+            0.45555555555555555,
+            0.41640625,
+            0.49027777777777776
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            719,
+            328,
+            747,
+            367
+          ],
+          "visibleFraction": 0.0007996961805555556
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.56171875,
+            0.45694444444444443,
+            0.41640625,
+            0.49166666666666664
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            719,
+            329,
+            747,
+            366
+          ],
+          "visibleFraction": 0.0007552083333333333
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5625,
+            0.45694444444444443,
+            0.41640625,
+            0.4930555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            720,
+            329,
+            747,
+            365
+          ],
+          "visibleFraction": 0.0007085503472222222
+        }
+      }
+    },
+    {
+      "frame": 88,
+      "seconds": 3.6666666666666665,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5625,
+            0.45555555555555555,
+            0.415625,
+            0.49166666666666664
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            720,
+            328,
+            748,
+            366
+          ],
+          "visibleFraction": 0.0007454427083333333
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.56328125,
+            0.45694444444444443,
+            0.415625,
+            0.49444444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            721,
+            329,
+            748,
+            364
+          ],
+          "visibleFraction": 0.0006868489583333334
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5640625,
+            0.45694444444444443,
+            0.415625,
+            0.49444444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            722,
+            329,
+            748,
+            364
+          ],
+          "visibleFraction": 0.0006488715277777777
+        }
+      }
+    },
+    {
+      "frame": 89,
+      "seconds": 3.7083333333333335,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.56484375,
+            0.45555555555555555,
+            0.41328125,
+            0.49166666666666664
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            723,
+            328,
+            751,
+            366
+          ],
+          "visibleFraction": 0.0007096354166666667
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.565625,
+            0.45694444444444443,
+            0.41328125,
+            0.4930555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            724,
+            329,
+            751,
+            365
+          ],
+          "visibleFraction": 0.0006597222222222222
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.565625,
+            0.4583333333333333,
+            0.4140625,
+            0.49583333333333335
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            724,
+            330,
+            750,
+            363
+          ],
+          "visibleFraction": 0.000595703125
+        }
+      }
+    },
+    {
+      "frame": 90,
+      "seconds": 3.75,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5671875,
+            0.45555555555555555,
+            0.41328125,
+            0.49444444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            726,
+            328,
+            751,
+            364
+          ],
+          "visibleFraction": 0.0006336805555555555
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5671875,
+            0.4583333333333333,
+            0.41328125,
+            0.49444444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            726,
+            330,
+            751,
+            364
+          ],
+          "visibleFraction": 0.0006000434027777778
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5671875,
+            0.4583333333333333,
+            0.41328125,
+            0.49583333333333335
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            726,
+            330,
+            751,
+            363
+          ],
+          "visibleFraction": 0.0005479600694444444
+        }
+      }
+    },
+    {
+      "frame": 91,
+      "seconds": 3.7916666666666665,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5671875,
+            0.45555555555555555,
+            0.4125,
+            0.49444444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            726,
+            328,
+            752,
+            364
+          ],
+          "visibleFraction": 0.0006184895833333333
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.56875,
+            0.45555555555555555,
+            0.4125,
+            0.49444444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            728,
+            328,
+            752,
+            364
+          ],
+          "visibleFraction": 0.0005740017361111111
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5703125,
+            0.4583333333333333,
+            0.4125,
+            0.49722222222222223
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            730,
+            330,
+            752,
+            362
+          ],
+          "visibleFraction": 0.0005121527777777778
+        }
+      }
+    },
+    {
+      "frame": 92,
+      "seconds": 3.8333333333333335,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5703125,
+            0.45694444444444443,
+            0.41171875,
+            0.49444444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            730,
+            329,
+            753,
+            364
+          ],
+          "visibleFraction": 0.0005523003472222223
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5703125,
+            0.4583333333333333,
+            0.41171875,
+            0.49583333333333335
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            730,
+            330,
+            753,
+            363
+          ],
+          "visibleFraction": 0.0005208333333333333
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.57109375,
+            0.4583333333333333,
+            0.4125,
+            0.49722222222222223
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            731,
+            330,
+            752,
+            362
+          ],
+          "visibleFraction": 0.00048177083333333335
+        }
+      }
+    },
+    {
+      "frame": 93,
+      "seconds": 3.875,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.571875,
+            0.45555555555555555,
+            0.4109375,
+            0.49583333333333335
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            732,
+            328,
+            754,
+            363
+          ],
+          "visibleFraction": 0.0005544704861111112
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.571875,
+            0.4583333333333333,
+            0.4109375,
+            0.49583333333333335
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            732,
+            330,
+            754,
+            363
+          ],
+          "visibleFraction": 0.0005110677083333333
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.57265625,
+            0.4583333333333333,
+            0.41171875,
+            0.4986111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            733,
+            330,
+            753,
+            361
+          ],
+          "visibleFraction": 0.0004568142361111111
+        }
+      }
+    },
+    {
+      "frame": 94,
+      "seconds": 3.9166666666666665,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5734375,
+            0.45555555555555555,
+            0.409375,
+            0.49722222222222223
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            734,
+            328,
+            756,
+            362
+          ],
+          "visibleFraction": 0.0005164930555555555
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.57421875,
+            0.45555555555555555,
+            0.409375,
+            0.49722222222222223
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            735,
+            328,
+            756,
+            362
+          ],
+          "visibleFraction": 0.0004893663194444444
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.575,
+            0.4583333333333333,
+            0.4109375,
+            0.49722222222222223
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            736,
+            330,
+            754,
+            362
+          ],
+          "visibleFraction": 0.0004416232638888889
+        }
+      }
+    },
+    {
+      "frame": 95,
+      "seconds": 3.9583333333333335,
+      "maximumDecodedRGB": 255,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.575,
+            0.45555555555555555,
+            0.40859375,
+            0.49722222222222223
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            736,
+            328,
+            757,
+            362
+          ],
+          "visibleFraction": 0.0005251736111111111
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.575,
+            0.45555555555555555,
+            0.40859375,
+            0.49722222222222223
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            736,
+            328,
+            757,
+            362
+          ],
+          "visibleFraction": 0.0004861111111111111
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.575,
+            0.4583333333333333,
+            0.40859375,
+            0.5
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            736,
+            330,
+            757,
+            360
+          ],
+          "visibleFraction": 0.0004416232638888889
+        }
+      }
+    },
+    {
+      "frame": 96,
+      "seconds": 4.0,
+      "maximumDecodedRGB": 251,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.575,
+            0.45416666666666666,
+            0.40546875,
+            0.49722222222222223
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            736,
+            327,
+            761,
+            362
+          ],
+          "visibleFraction": 0.0006325954861111111
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.575,
+            0.45694444444444443,
+            0.40546875,
+            0.49722222222222223
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            736,
+            329,
+            761,
+            362
+          ],
+          "visibleFraction": 0.0005870225694444445
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.575,
+            0.4583333333333333,
+            0.40546875,
+            0.5
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            736,
+            330,
+            761,
+            360
+          ],
+          "visibleFraction": 0.000537109375
+        }
+      }
+    },
+    {
+      "frame": 97,
+      "seconds": 4.041666666666667,
+      "maximumDecodedRGB": 247,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.575,
+            0.45416666666666666,
+            0.403125,
+            0.49722222222222223
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            736,
+            327,
+            764,
+            362
+          ],
+          "visibleFraction": 0.0007769097222222222
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.575,
+            0.45694444444444443,
+            0.40390625,
+            0.5
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            736,
+            329,
+            763,
+            360
+          ],
+          "visibleFraction": 0.0007150607638888889
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.575,
+            0.4583333333333333,
+            0.40390625,
+            0.5
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            736,
+            330,
+            763,
+            360
+          ],
+          "visibleFraction": 0.0006651475694444444
+        }
+      }
+    },
+    {
+      "frame": 98,
+      "seconds": 4.083333333333333,
+      "maximumDecodedRGB": 235,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.575,
+            0.45416666666666666,
+            0.4015625,
+            0.49444444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            736,
+            327,
+            766,
+            364
+          ],
+          "visibleFraction": 0.000869140625
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.575,
+            0.45555555555555555,
+            0.4015625,
+            0.49444444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            736,
+            328,
+            766,
+            364
+          ],
+          "visibleFraction": 0.0008257378472222222
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.575,
+            0.45694444444444443,
+            0.40234375,
+            0.4986111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            736,
+            329,
+            765,
+            361
+          ],
+          "visibleFraction": 0.0007834201388888888
+        }
+      }
+    },
+    {
+      "frame": 99,
+      "seconds": 4.125,
+      "maximumDecodedRGB": 226,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.57421875,
+            0.4527777777777778,
+            0.4,
+            0.49444444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            735,
+            326,
+            768,
+            364
+          ],
+          "visibleFraction": 0.00099609375
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.575,
+            0.45416666666666666,
+            0.40078125,
+            0.49583333333333335
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            736,
+            327,
+            767,
+            363
+          ],
+          "visibleFraction": 0.0009418402777777778
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.575,
+            0.45555555555555555,
+            0.40078125,
+            0.49722222222222223
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            736,
+            328,
+            767,
+            362
+          ],
+          "visibleFraction": 0.0008843315972222222
+        }
+      }
+    },
+    {
+      "frame": 100,
+      "seconds": 4.166666666666667,
+      "maximumDecodedRGB": 222,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5734375,
+            0.45,
+            0.4,
+            0.49444444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            734,
+            324,
+            768,
+            364
+          ],
+          "visibleFraction": 0.0010655381944444445
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.57421875,
+            0.4513888888888889,
+            0.4,
+            0.49583333333333335
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            735,
+            325,
+            768,
+            363
+          ],
+          "visibleFraction": 0.001013454861111111
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.57421875,
+            0.45416666666666666,
+            0.4,
+            0.49583333333333335
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            735,
+            327,
+            768,
+            363
+          ],
+          "visibleFraction": 0.0009613715277777778
+        }
+      }
+    },
+    {
+      "frame": 101,
+      "seconds": 4.208333333333333,
+      "maximumDecodedRGB": 217,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5734375,
+            0.4486111111111111,
+            0.3984375,
+            0.4930555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            734,
+            323,
+            770,
+            365
+          ],
+          "visibleFraction": 0.0011805555555555556
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.57421875,
+            0.45,
+            0.3984375,
+            0.49444444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            735,
+            324,
+            770,
+            364
+          ],
+          "visibleFraction": 0.0011197916666666667
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.57421875,
+            0.45416666666666666,
+            0.3984375,
+            0.49444444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            735,
+            327,
+            770,
+            364
+          ],
+          "visibleFraction": 0.0010677083333333333
+        }
+      }
+    },
+    {
+      "frame": 102,
+      "seconds": 4.25,
+      "maximumDecodedRGB": 215,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5734375,
+            0.4486111111111111,
+            0.396875,
+            0.4930555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            734,
+            323,
+            772,
+            365
+          ],
+          "visibleFraction": 0.0012282986111111112
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5734375,
+            0.4486111111111111,
+            0.39765625,
+            0.49444444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            734,
+            323,
+            771,
+            364
+          ],
+          "visibleFraction": 0.0011783854166666668
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.57421875,
+            0.4527777777777778,
+            0.39765625,
+            0.49444444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            735,
+            326,
+            771,
+            364
+          ],
+          "visibleFraction": 0.0011436631944444445
+        }
+      }
+    },
+    {
+      "frame": 103,
+      "seconds": 4.291666666666667,
+      "maximumDecodedRGB": 212,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5734375,
+            0.44722222222222224,
+            0.396875,
+            0.49166666666666664
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            734,
+            322,
+            772,
+            366
+          ],
+          "visibleFraction": 0.0013009982638888889
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5734375,
+            0.4486111111111111,
+            0.396875,
+            0.4930555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            734,
+            323,
+            772,
+            365
+          ],
+          "visibleFraction": 0.0012467447916666666
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5734375,
+            0.4527777777777778,
+            0.396875,
+            0.49444444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            734,
+            326,
+            772,
+            364
+          ],
+          "visibleFraction": 0.0011979166666666666
+        }
+      }
+    },
+    {
+      "frame": 104,
+      "seconds": 4.333333333333333,
+      "maximumDecodedRGB": 190,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5734375,
+            0.44722222222222224,
+            0.3953125,
+            0.4930555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            734,
+            322,
+            774,
+            365
+          ],
+          "visibleFraction": 0.0013704427083333333
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5734375,
+            0.44722222222222224,
+            0.3953125,
+            0.4930555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            734,
+            322,
+            774,
+            365
+          ],
+          "visibleFraction": 0.0013172743055555555
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5734375,
+            0.4513888888888889,
+            0.3953125,
+            0.4930555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            734,
+            325,
+            774,
+            365
+          ],
+          "visibleFraction": 0.0012521701388888888
+        }
+      }
+    },
+    {
+      "frame": 105,
+      "seconds": 4.375,
+      "maximumDecodedRGB": 179,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5734375,
+            0.44722222222222224,
+            0.39453125,
+            0.4930555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            734,
+            322,
+            775,
+            365
+          ],
+          "visibleFraction": 0.0013932291666666667
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5734375,
+            0.44722222222222224,
+            0.39453125,
+            0.4930555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            734,
+            322,
+            775,
+            365
+          ],
+          "visibleFraction": 0.0013368055555555555
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5734375,
+            0.4513888888888889,
+            0.3953125,
+            0.4930555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            734,
+            325,
+            774,
+            365
+          ],
+          "visibleFraction": 0.0012684461805555556
+        }
+      }
+    },
+    {
+      "frame": 106,
+      "seconds": 4.416666666666667,
+      "maximumDecodedRGB": 165,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5734375,
+            0.44722222222222224,
+            0.39453125,
+            0.4930555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            734,
+            322,
+            775,
+            365
+          ],
+          "visibleFraction": 0.0013541666666666667
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5734375,
+            0.45,
+            0.39453125,
+            0.4930555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            734,
+            324,
+            775,
+            365
+          ],
+          "visibleFraction": 0.0013107638888888889
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5734375,
+            0.45,
+            0.39453125,
+            0.4930555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            734,
+            324,
+            775,
+            365
+          ],
+          "visibleFraction": 0.0012521701388888888
+        }
+      }
+    },
+    {
+      "frame": 107,
+      "seconds": 4.458333333333333,
+      "maximumDecodedRGB": 146,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5734375,
+            0.44722222222222224,
+            0.39453125,
+            0.4930555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            734,
+            322,
+            775,
+            365
+          ],
+          "visibleFraction": 0.0013509114583333333
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5734375,
+            0.45,
+            0.39453125,
+            0.4930555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            734,
+            324,
+            775,
+            365
+          ],
+          "visibleFraction": 0.0013020833333333333
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.57578125,
+            0.4513888888888889,
+            0.3953125,
+            0.4930555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            737,
+            325,
+            774,
+            365
+          ],
+          "visibleFraction": 0.0012098524305555556
+        }
+      }
+    },
+    {
+      "frame": 108,
+      "seconds": 4.5,
+      "maximumDecodedRGB": 129,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.575,
+            0.45,
+            0.39453125,
+            0.4930555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            736,
+            324,
+            775,
+            365
+          ],
+          "visibleFraction": 0.0012684461805555556
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.57578125,
+            0.45,
+            0.3953125,
+            0.4930555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            737,
+            324,
+            774,
+            365
+          ],
+          "visibleFraction": 0.0012163628472222222
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5765625,
+            0.4513888888888889,
+            0.3953125,
+            0.49444444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            738,
+            325,
+            774,
+            364
+          ],
+          "visibleFraction": 0.0011317274305555555
+        }
+      }
+    },
+    {
+      "frame": 109,
+      "seconds": 4.541666666666667,
+      "maximumDecodedRGB": 115,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.57578125,
+            0.45,
+            0.39453125,
+            0.4930555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            737,
+            324,
+            775,
+            365
+          ],
+          "visibleFraction": 0.0012391493055555556
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5765625,
+            0.45,
+            0.39453125,
+            0.49444444444444446
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            738,
+            324,
+            775,
+            364
+          ],
+          "visibleFraction": 0.0011794704861111112
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.57734375,
+            0.4527777777777778,
+            0.3953125,
+            0.49583333333333335
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            739,
+            326,
+            774,
+            363
+          ],
+          "visibleFraction": 0.0010763888888888889
+        }
+      }
+    },
+    {
+      "frame": 110,
+      "seconds": 4.583333333333333,
+      "maximumDecodedRGB": 102,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5765625,
+            0.45,
+            0.39453125,
+            0.49583333333333335
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            738,
+            324,
+            775,
+            363
+          ],
+          "visibleFraction": 0.0011382378472222221
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.57734375,
+            0.45,
+            0.39453125,
+            0.49583333333333335
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            739,
+            324,
+            775,
+            363
+          ],
+          "visibleFraction": 0.001091579861111111
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.578125,
+            0.45,
+            0.3953125,
+            0.49722222222222223
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            740,
+            324,
+            774,
+            362
+          ],
+          "visibleFraction": 0.0010004340277777778
+        }
+      }
+    },
+    {
+      "frame": 111,
+      "seconds": 4.625,
+      "maximumDecodedRGB": 90,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5765625,
+            0.45,
+            0.39375,
+            0.49583333333333335
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            738,
+            324,
+            776,
+            363
+          ],
+          "visibleFraction": 0.001103515625
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.578125,
+            0.45,
+            0.39453125,
+            0.49722222222222223
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            740,
+            324,
+            775,
+            362
+          ],
+          "visibleFraction": 0.0010384114583333332
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.57890625,
+            0.45416666666666666,
+            0.3953125,
+            0.5
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            741,
+            327,
+            774,
+            360
+          ],
+          "visibleFraction": 0.0009049479166666666
+        }
+      }
+    },
+    {
+      "frame": 112,
+      "seconds": 4.666666666666667,
+      "maximumDecodedRGB": 77,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.578125,
+            0.4513888888888889,
+            0.39375,
+            0.49722222222222223
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            740,
+            325,
+            776,
+            362
+          ],
+          "visibleFraction": 0.0009776475694444444
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5796875,
+            0.45416666666666666,
+            0.39453125,
+            0.4986111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            742,
+            327,
+            775,
+            361
+          ],
+          "visibleFraction": 0.0008995225694444444
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.58046875,
+            0.45694444444444443,
+            0.3953125,
+            0.5013888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            743,
+            329,
+            774,
+            359
+          ],
+          "visibleFraction": 0.00076171875
+        }
+      }
+    },
+    {
+      "frame": 113,
+      "seconds": 4.708333333333333,
+      "maximumDecodedRGB": 66,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5796875,
+            0.45416666666666666,
+            0.39375,
+            0.4986111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            742,
+            327,
+            776,
+            361
+          ],
+          "visibleFraction": 0.0009147135416666666
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.58046875,
+            0.45555555555555555,
+            0.39453125,
+            0.5
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            743,
+            328,
+            775,
+            360
+          ],
+          "visibleFraction": 0.0008289930555555556
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.58125,
+            0.45694444444444443,
+            0.3953125,
+            0.5027777777777778
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            744,
+            329,
+            774,
+            358
+          ],
+          "visibleFraction": 0.0006618923611111111
+        }
+      }
+    },
+    {
+      "frame": 114,
+      "seconds": 4.75,
+      "maximumDecodedRGB": 55,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.58125,
+            0.45416666666666666,
+            0.39375,
+            0.5
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            744,
+            327,
+            776,
+            360
+          ],
+          "visibleFraction": 0.000791015625
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.58125,
+            0.45555555555555555,
+            0.39453125,
+            0.5013888888888889
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            744,
+            328,
+            775,
+            359
+          ],
+          "visibleFraction": 0.00072265625
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5828125,
+            0.4638888888888889,
+            0.3953125,
+            0.5041666666666667
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            746,
+            334,
+            774,
+            357
+          ],
+          "visibleFraction": 0.0004915364583333333
+        }
+      }
+    },
+    {
+      "frame": 115,
+      "seconds": 4.791666666666667,
+      "maximumDecodedRGB": 47,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.58203125,
+            0.45555555555555555,
+            0.39453125,
+            0.5027777777777778
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            745,
+            328,
+            775,
+            358
+          ],
+          "visibleFraction": 0.0007096354166666667
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5828125,
+            0.4597222222222222,
+            0.39453125,
+            0.5041666666666667
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            746,
+            331,
+            775,
+            357
+          ],
+          "visibleFraction": 0.000615234375
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.584375,
+            0.4638888888888889,
+            0.396875,
+            0.5069444444444444
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            748,
+            334,
+            772,
+            355
+          ],
+          "visibleFraction": 0.00040364583333333333
+        }
+      }
+    },
+    {
+      "frame": 116,
+      "seconds": 4.833333333333333,
+      "maximumDecodedRGB": 39,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.584375,
+            0.4597222222222222,
+            0.39453125,
+            0.5041666666666667
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            748,
+            331,
+            775,
+            357
+          ],
+          "visibleFraction": 0.000546875
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.584375,
+            0.4625,
+            0.39453125,
+            0.5055555555555555
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            748,
+            333,
+            775,
+            356
+          ],
+          "visibleFraction": 0.00046875
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5875,
+            0.4666666666666667,
+            0.39765625,
+            0.5097222222222222
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            752,
+            336,
+            771,
+            353
+          ],
+          "visibleFraction": 0.00024522569444444445
+        }
+      }
+    },
+    {
+      "frame": 117,
+      "seconds": 4.875,
+      "maximumDecodedRGB": 33,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5859375,
+            0.46111111111111114,
+            0.39453125,
+            0.5055555555555555
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            750,
+            332,
+            775,
+            356
+          ],
+          "visibleFraction": 0.0004730902777777778
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5859375,
+            0.4625,
+            0.3953125,
+            0.5069444444444444
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            750,
+            333,
+            774,
+            355
+          ],
+          "visibleFraction": 0.0003938802083333333
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.590625,
+            0.4666666666666667,
+            0.3984375,
+            0.5125
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            756,
+            336,
+            770,
+            351
+          ],
+          "visibleFraction": 0.00018663194444444445
+        }
+      }
+    },
+    {
+      "frame": 118,
+      "seconds": 4.916666666666667,
+      "maximumDecodedRGB": 26,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5859375,
+            0.4625,
+            0.3953125,
+            0.5069444444444444
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            750,
+            333,
+            774,
+            355
+          ],
+          "visibleFraction": 0.00037109375
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.58671875,
+            0.4652777777777778,
+            0.396875,
+            0.5097222222222222
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            751,
+            335,
+            772,
+            353
+          ],
+          "visibleFraction": 0.00023980034722222222
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.59296875,
+            0.46944444444444444,
+            0.4,
+            0.5125
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            759,
+            338,
+            768,
+            351
+          ],
+          "visibleFraction": 9.98263888888889e-05
+        }
+      }
+    },
+    {
+      "frame": 119,
+      "seconds": 4.958333333333333,
+      "maximumDecodedRGB": 19,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5875,
+            0.4652777777777778,
+            0.39609375,
+            0.5083333333333333
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            752,
+            335,
+            773,
+            354
+          ],
+          "visibleFraction": 0.000283203125
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.59140625,
+            0.4666666666666667,
+            0.39765625,
+            0.5111111111111111
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            757,
+            336,
+            771,
+            352
+          ],
+          "visibleFraction": 0.00017469618055555554
+        },
+        "16": {
+          "empty": false,
+          "marginsLTRB": [
+            0.59453125,
+            0.4722222222222222,
+            0.40078125,
+            0.5152777777777777
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            761,
+            340,
+            767,
+            349
+          ],
+          "visibleFraction": 3.472222222222222e-05
+        }
+      }
+    },
+    {
+      "frame": 120,
+      "seconds": 5.0,
+      "maximumDecodedRGB": 13,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5921875,
+            0.46805555555555556,
+            0.396875,
+            0.5097222222222222
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            758,
+            337,
+            772,
+            353
+          ],
+          "visibleFraction": 0.00015190972222222222
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.59375,
+            0.4708333333333333,
+            0.39921875,
+            0.5138888888888888
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            760,
+            339,
+            769,
+            350
+          ],
+          "visibleFraction": 7.378472222222222e-05
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    },
+    {
+      "frame": 121,
+      "seconds": 5.041666666666667,
+      "maximumDecodedRGB": 10,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.59375,
+            0.46944444444444444,
+            0.3984375,
+            0.5125
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            760,
+            338,
+            770,
+            351
+          ],
+          "visibleFraction": 9.657118055555555e-05
+        },
+        "8": {
+          "empty": false,
+          "marginsLTRB": [
+            0.5953125,
+            0.4736111111111111,
+            0.40078125,
+            0.5180555555555556
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            762,
+            341,
+            767,
+            347
+          ],
+          "visibleFraction": 1.8446180555555556e-05
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    },
+    {
+      "frame": 122,
+      "seconds": 5.083333333333333,
+      "maximumDecodedRGB": 6,
+      "envelopes": {
+        "4": {
+          "empty": false,
+          "marginsLTRB": [
+            0.59609375,
+            0.4722222222222222,
+            0.3984375,
+            0.5152777777777777
+          ],
+          "reservePass": true,
+          "boundsXYXY": [
+            763,
+            340,
+            770,
+            349
+          ],
+          "visibleFraction": 2.8211805555555554e-05
+        },
+        "8": {
+          "empty": true
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    },
+    {
+      "frame": 123,
+      "seconds": 5.125,
+      "maximumDecodedRGB": 2,
+      "envelopes": {
+        "4": {
+          "empty": true
+        },
+        "8": {
+          "empty": true
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    },
+    {
+      "frame": 124,
+      "seconds": 5.166666666666667,
+      "maximumDecodedRGB": 0,
+      "envelopes": {
+        "4": {
+          "empty": true
+        },
+        "8": {
+          "empty": true
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    },
+    {
+      "frame": 125,
+      "seconds": 5.208333333333333,
+      "maximumDecodedRGB": 0,
+      "envelopes": {
+        "4": {
+          "empty": true
+        },
+        "8": {
+          "empty": true
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    },
+    {
+      "frame": 126,
+      "seconds": 5.25,
+      "maximumDecodedRGB": 0,
+      "envelopes": {
+        "4": {
+          "empty": true
+        },
+        "8": {
+          "empty": true
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    },
+    {
+      "frame": 127,
+      "seconds": 5.291666666666667,
+      "maximumDecodedRGB": 0,
+      "envelopes": {
+        "4": {
+          "empty": true
+        },
+        "8": {
+          "empty": true
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    },
+    {
+      "frame": 128,
+      "seconds": 5.333333333333333,
+      "maximumDecodedRGB": 0,
+      "envelopes": {
+        "4": {
+          "empty": true
+        },
+        "8": {
+          "empty": true
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    },
+    {
+      "frame": 129,
+      "seconds": 5.375,
+      "maximumDecodedRGB": 0,
+      "envelopes": {
+        "4": {
+          "empty": true
+        },
+        "8": {
+          "empty": true
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    },
+    {
+      "frame": 130,
+      "seconds": 5.416666666666667,
+      "maximumDecodedRGB": 0,
+      "envelopes": {
+        "4": {
+          "empty": true
+        },
+        "8": {
+          "empty": true
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    },
+    {
+      "frame": 131,
+      "seconds": 5.458333333333333,
+      "maximumDecodedRGB": 0,
+      "envelopes": {
+        "4": {
+          "empty": true
+        },
+        "8": {
+          "empty": true
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    },
+    {
+      "frame": 132,
+      "seconds": 5.5,
+      "maximumDecodedRGB": 0,
+      "envelopes": {
+        "4": {
+          "empty": true
+        },
+        "8": {
+          "empty": true
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    },
+    {
+      "frame": 133,
+      "seconds": 5.541666666666667,
+      "maximumDecodedRGB": 0,
+      "envelopes": {
+        "4": {
+          "empty": true
+        },
+        "8": {
+          "empty": true
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    },
+    {
+      "frame": 134,
+      "seconds": 5.583333333333333,
+      "maximumDecodedRGB": 0,
+      "envelopes": {
+        "4": {
+          "empty": true
+        },
+        "8": {
+          "empty": true
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    },
+    {
+      "frame": 135,
+      "seconds": 5.625,
+      "maximumDecodedRGB": 0,
+      "envelopes": {
+        "4": {
+          "empty": true
+        },
+        "8": {
+          "empty": true
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    },
+    {
+      "frame": 136,
+      "seconds": 5.666666666666667,
+      "maximumDecodedRGB": 0,
+      "envelopes": {
+        "4": {
+          "empty": true
+        },
+        "8": {
+          "empty": true
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    },
+    {
+      "frame": 137,
+      "seconds": 5.708333333333333,
+      "maximumDecodedRGB": 0,
+      "envelopes": {
+        "4": {
+          "empty": true
+        },
+        "8": {
+          "empty": true
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    },
+    {
+      "frame": 138,
+      "seconds": 5.75,
+      "maximumDecodedRGB": 0,
+      "envelopes": {
+        "4": {
+          "empty": true
+        },
+        "8": {
+          "empty": true
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    },
+    {
+      "frame": 139,
+      "seconds": 5.791666666666667,
+      "maximumDecodedRGB": 0,
+      "envelopes": {
+        "4": {
+          "empty": true
+        },
+        "8": {
+          "empty": true
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    },
+    {
+      "frame": 140,
+      "seconds": 5.833333333333333,
+      "maximumDecodedRGB": 0,
+      "envelopes": {
+        "4": {
+          "empty": true
+        },
+        "8": {
+          "empty": true
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    },
+    {
+      "frame": 141,
+      "seconds": 5.875,
+      "maximumDecodedRGB": 0,
+      "envelopes": {
+        "4": {
+          "empty": true
+        },
+        "8": {
+          "empty": true
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    },
+    {
+      "frame": 142,
+      "seconds": 5.916666666666667,
+      "maximumDecodedRGB": 0,
+      "envelopes": {
+        "4": {
+          "empty": true
+        },
+        "8": {
+          "empty": true
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    },
+    {
+      "frame": 143,
+      "seconds": 5.958333333333333,
+      "maximumDecodedRGB": 0,
+      "envelopes": {
+        "4": {
+          "empty": true
+        },
+        "8": {
+          "empty": true
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    },
+    {
+      "frame": 144,
+      "seconds": 6.0,
+      "maximumDecodedRGB": 0,
+      "envelopes": {
+        "4": {
+          "empty": true
+        },
+        "8": {
+          "empty": true
+        },
+        "16": {
+          "empty": true
+        }
+      }
+    }
+  ]
+}

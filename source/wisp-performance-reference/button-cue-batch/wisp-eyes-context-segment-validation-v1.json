@@ -1,0 +1,69 @@
+{
+  "master": "wisp-eyes-context-review-v1.mp4",
+  "masterSha256": "de832a10253bb872ec0b522d408383df2555eac43098ebf38c83d5451f5a5eca",
+  "passed": true,
+  "decodedFrames": 848,
+  "segments": [
+    {
+      "id": "friendly-drift-A",
+      "firstFrame": 0,
+      "frameCount": 122,
+      "decodedFrames": 122,
+      "allPixelsIdenticalToMaster": true,
+      "firstDisplayTimestamp": 0.0,
+      "maximumTimestampErrorSeconds": 3.33333333379926e-07,
+      "extractedVideoSha256": "96a482ec917db09815f0fda21e6ba24ff154ca9d37dfad1f4f21bd1023f6a7e0"
+    },
+    {
+      "id": "cute-to-evil",
+      "firstFrame": 122,
+      "frameCount": 121,
+      "decodedFrames": 121,
+      "allPixelsIdenticalToMaster": true,
+      "firstDisplayTimestamp": 0.0,
+      "maximumTimestampErrorSeconds": 3.33333333379926e-07,
+      "extractedVideoSha256": "a12cddcf5c24ae2f1385afafa5c7e7d80c7326a4cfb10b4eec05e6fd132eea3f"
+    },
+    {
+      "id": "scary-eyes",
+      "firstFrame": 243,
+      "frameCount": 241,
+      "decodedFrames": 241,
+      "allPixelsIdenticalToMaster": true,
+      "firstDisplayTimestamp": 0.0,
+      "maximumTimestampErrorSeconds": 3.333333342681044e-07,
+      "extractedVideoSha256": "2eeaf7b2a2f8ccd7ef098d4c1d638efd0b2726a20c7267a7441880157a96c14e"
+    },
+    {
+      "id": "scary-drift",
+      "firstFrame": 484,
+      "frameCount": 121,
+      "decodedFrames": 121,
+      "allPixelsIdenticalToMaster": true,
+      "firstDisplayTimestamp": 0.0,
+      "maximumTimestampErrorSeconds": 3.33333333379926e-07,
+      "extractedVideoSha256": "57e53e7d1ba7557e1f270479c2f1426e61dae7982cfacbd7731383ca59b0355d"
+    },
+    {
+      "id": "evil-to-cute",
+      "firstFrame": 605,
+      "frameCount": 121,
+      "decodedFrames": 121,
+      "allPixelsIdenticalToMaster": true,
+      "firstDisplayTimestamp": 0.0,
+      "maximumTimestampErrorSeconds": 3.33333333379926e-07,
+      "extractedVideoSha256": "27d110c213d748996e37058926a44071d2bca70f2edf0105f111a9880eca7f5d"
+    },
+    {
+      "id": "friendly-drift-B",
+      "firstFrame": 726,
+      "frameCount": 122,
+      "decodedFrames": 122,
+      "allPixelsIdenticalToMaster": true,
+      "firstDisplayTimestamp": 0.0,
+      "maximumTimestampErrorSeconds": 3.33333333379926e-07,
+      "extractedVideoSha256": "b04ade9f779d596c8f0f283137f5b126839fdf3f6bfe1ee767c42507971821e9"
+    }
+  ],
+  "scope": "Independent compressed-video extracts preserve every decoded master pixel, start at display time zero and retain24fps at all6authored windows. Temporary outputs removed. No audio slicing, human seam/voice/motion approval, runtime publication or physical projection validation."
+}

@@ -1,0 +1,37 @@
+{
+  "frames": 1257,
+  "boundsFailures": {
+    "4": [],
+    "8": [],
+    "16": []
+  },
+  "joins": [
+    {
+      "frame": 145,
+      "visibleMeanDifference": 4.947949667973295
+    },
+    {
+      "frame": 387,
+      "visibleMeanDifference": 3.1522211032785052
+    },
+    {
+      "frame": 677,
+      "visibleMeanDifference": 3.278814405282961
+    },
+    {
+      "frame": 822,
+      "visibleMeanDifference": 4.365872249606179
+    },
+    {
+      "frame": 919,
+      "visibleMeanDifference": 2.642055025266704
+    },
+    {
+      "frame": 1052,
+      "visibleMeanDifference": 4.259358047016275
+    }
+  ],
+  "blackAndSilentTail": true,
+  "constantMasterFit": 0.74,
+  "limitations": "Pixel diagnostic and decoded PCM only; no human voice or physical projection acceptance."
+}

@@ -1,0 +1,12 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),pw=require(process.env.HAUNT_PLAYWRIGHT||'playwright');
+(async()=>{const fixture=await require('./tonight_fixture.cjs').start(),engine=process.env.HAUNT_BROWSER||'chromium',browser=await pw[engine].launch(engine==='chromium'?{args:['--mute-audio']}:{});try{
+ const page=await browser.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));let pending,requested=0;
+ await page.route('**/eye-lifecycle.html',r=>r.fulfill({contentType:'text/html',body:'<!doctype html><title>Eye load lifecycle test</title>'}));
+ await page.route('**/eye-rig.json',r=>{requested++;pending=r;});await page.goto(fixture.base+'/eye-lifecycle.html');
+ await page.evaluate(async()=>{const {PaintedEyeRig}=await import('/assets/wisp-eye-rig.js');window.EyeRig=PaintedEyeRig;window.eye=new EyeRig();window.finished=false;eye.load('/delayed/').then(()=>finished=true);});
+ await expectRequest();await page.evaluate(()=>window.dispatchEvent(new Event('pagehide')));await page.waitForFunction(()=>finished,null,{timeout:3000});assert(await page.evaluate(()=>!eye.ready&&eye.error===null));await pending.abort().catch(()=>{});
+ pending=null;await page.evaluate(()=>{window.second=new EyeRig();window.secondDone=false;second.load('/delayed/').then(()=>secondDone=true);});await expectRequest();await page.evaluate(()=>second.destroy());await page.waitForFunction(()=>secondDone,null,{timeout:3000});assert(await page.evaluate(()=>!second.ready&&second.disposed));await pending.abort().catch(()=>{});
+ const before=requested;await page.evaluate(()=>second.load('/delayed/'));await page.waitForTimeout(100);assert.equal(requested,before,'Destroyed eye rig cannot restart a late asset request');assert.deepEqual(errors,[]);
+ fs.mkdirSync('test-results',{recursive:true});fs.writeFileSync('test-results/eye-load-lifecycle-'+engine+'.json',JSON.stringify({passed:true,scope:'Real browser fetch cancellation with deliberately delayed manifest; pagehide and explicit destroy settle load without late requests or unhandled errors. No human eye-animation acceptance.'},null,2));console.log('PASS '+engine+' pending eye-load cancellation on pagehide/destroy and no restart after disposal.');
+ async function expectRequest(){for(let i=0;i<100&&!pending;i++)await new Promise(r=>setTimeout(r,10));assert(pending,'Expected delayed manifest request');}
+ }finally{await browser.close();await fixture.close();}})().catch(e=>{console.error(e);process.exitCode=1});

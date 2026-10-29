@@ -4,13 +4,106 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+    inputs:
+      native_media_only:
+        description: Run only the Linux native-media diagnostic (not release acceptance)
+        type: boolean
+        default: false
+      native_atlas_pilot:
+        description: Test source-only single-movie seeks instead of the normal native-media cases
+        type: boolean
+        default: false
+      native_finite_pilot:
+        description: Test source-only finite-cue MediaSource playback (overrides the seek pilot)
+        type: boolean
+        default: false
+      native_single_pipeline:
+        description: Test single-pipeline app transport, saved shows and composed output
+        type: boolean
+        default: false
+      native_director_pilot:
+        description: Run only the owned-picture director within the single-pipeline diagnostic
+        type: boolean
+        default: false
+      native_status_xhr:
+        description: Isolate status-only XHR requests with unchanged native playback
+        type: boolean
+        default: false
+      native_cpu_pixels:
+        description: Test detached native-byte CPU staging for the two pinned Wisp films
+        type: boolean
+        default: false
+      native_authored_face:
+        description: Test the explicit authored-face director preview and its preparation cancellation
+        type: boolean
+        default: false
+      native_container_pilot:
+        description: Compare original and lossless faststart scary-container decoding only
+        type: boolean
+        default: false
+      native_director_visibility:
+        description: Select foreground window in the director diagnostic only
+        type: choice
+        options: [projector-front, owner-front]
+        default: projector-front
+      native_director_retirement:
+        description: Isolate graphics path or retirement in the director diagnostic only
+        type: choice
+        options: [normal, no-context-loss, software-video-sink]
+        default: normal
+      native_disable_disk_cache:
+        description: Disable native on-disk media buffering for the isolated diagnostic
+        type: boolean
+        default: false
+      native_route_audio:
+        description: Isolate Web Audio media routing in the soundtrack diagnostic fixture
+        type: boolean
+        default: false
+      native_audio_sink:
+        description: Linux diagnostic audio-device selection
+        type: choice
+        options: [pulse, auto]
+        default: pulse
 concurrency:
   group: regressions-${{ github.ref }}
   cancel-in-progress: true
 permissions:
   contents: read
 jobs:
+  cue-bank-soak:
+    if: github.event_name != 'workflow_dispatch' || !inputs.native_media_only
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps chromium webkit
+      - name: Build the explicit rehearsal workspace before media fixtures run
+        run: node tests/public_build.cjs
+      - name: Play every eligible film twice in the recorded order
+        run: |
+          failed=0
+          node tests/cue_console_layout.cjs || failed=1
+          HAUNT_BROWSER=webkit node tests/cue_console_layout.cjs || failed=1
+          node tests/cue_board_soak.cjs || failed=1
+          HAUNT_BROWSER=webkit node tests/cue_board_soak.cjs || failed=1
+          exit "$failed"
+      - name: Keep whole-bank playback evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cue-bank-soak-evidence
+          path: |
+            test-results/cue-board-soak-*.json
+            test-results/cue-console-layout-*.json
+            work/cue-console/*.png
+          if-no-files-found: ignore
   regression:
+    if: github.event_name != 'workflow_dispatch' || !inputs.native_media_only
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
@@ -28,7 +121,12 @@ jobs:
         run: |
           python3 server.py > /tmp/wisp-server.log 2>&1 &
           python3 scripts/wait-for-server.py
-      - run: npm test
+      - name: Core service, projection and cloud regressions
+        run: |
+          node tests/browser_test_shards.cjs
+          npm run test:python
+          npm run test:projection
+          npm run test:cloud
       - name: Keep test evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -36,9 +134,46 @@ jobs:
           name: regression-evidence
           path: test-results/
           if-no-files-found: ignore
-  webkit:
+  browser-regression:
+    if: github.event_name != 'workflow_dispatch' || !inputs.native_media_only
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 18
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: ['1/3', '2/3', '3/3']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps chromium
+      - name: Build public fixtures for this isolated worker
+        run: npm run build
+      - name: Start isolated rehearsal server
+        run: |
+          python3 server.py > /tmp/wisp-server.log 2>&1 &
+          python3 scripts/wait-for-server.py
+      - name: Run every assigned browser regression
+        env:
+          HAUNT_BROWSER_SHARD: ${{ matrix.shard }}
+        run: npm run test:browser
+      - name: Keep shard evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-regression-${{ strategy.job-index }}
+          path: test-results/
+          if-no-files-found: ignore
+  webkit:
+    if: github.event_name != 'workflow_dispatch' || !inputs.native_media_only
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -64,6 +199,8 @@ jobs:
           HAUNT_BROWSER=webkit node tests/puppeteer_voice.cjs
       - name: Check painted eyes and apparitions in WebKit
         run: |
+          HAUNT_BROWSER=webkit node tests/eye_load_lifecycle.cjs
+          HAUNT_BROWSER=webkit node tests/rig_direction_lifecycle.cjs
           HAUNT_BROWSER=webkit node tests/painted_speech_pilot.cjs
           HAUNT_BROWSER=webkit node tests/wisp_living_skin.cjs
           HAUNT_BROWSER=webkit node tests/wisp_performance_graphics.cjs
@@ -90,6 +227,7 @@ jobs:
           path: test-results/
           if-no-files-found: ignore
   native-avatar-offline:
+    if: github.event_name != 'workflow_dispatch' || !inputs.native_media_only
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
@@ -123,6 +261,183 @@ jobs:
           if-no-files-found: ignore
 
   showdesk:
+    if: github.event_name != 'workflow_dispatch' || !inputs.native_media_only
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps chromium webkit
+      # Clocked null sink: https://wiki.freedesktop.org/www/Software/PulseAudio/Documentation/User/Modules/#module-null-sink
+      - name: Provide a clocked silent audio device for Linux media
+        run: |
+          sudo apt-get install -y pulseaudio gstreamer1.0-pulseaudio gstreamer1.0-gl libasound2-plugins
+          pulseaudio --check || pulseaudio --start --exit-idle-time=-1
+          pactl load-module module-null-sink sink_name=wisp_ci rate=48000
+          pactl set-default-sink wisp_ci
+          echo "PULSE_SINK=wisp_ci" >> "$GITHUB_ENV"
+          echo "HAUNT_CI_SILENT_AUDIO=1" >> "$GITHUB_ENV"
+      - name: Build explicit public show desk and check privacy
+        id: public_showdesk
+        run: node tests/public_build.cjs
+      # Independent checks keep collecting evidence after failures; native acceptance remains mandatory.
+      # https://docs.github.com/en/actions/reference/workflows-and-actions/expressions#status-check-functions
+      - name: Check native film sound and complete bridge playback
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
+        id: native_film
+        run: |
+          failed=0
+          HAUNT_BROWSER=webkit node tests/film_single_clock.cjs || failed=1
+          HAUNT_TONIGHT_ROOT=dist node tests/showdesk_film_audio.cjs || failed=1
+          HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/showdesk_film_audio.cjs || failed=1
+          node tests/catalog_bridge_browser.cjs || failed=1
+          HAUNT_BROWSER=webkit node tests/catalog_bridge_browser.cjs || failed=1
+          exit "$failed"
+      - name: Rehearse the capture-free candidate review reel
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
+        run: |
+          node tests/cue_review.cjs
+          HAUNT_BROWSER=webkit node tests/cue_review.cjs
+      - name: Rehearse one-file eyes context and native repeat boundary
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
+        run: |
+          node tests/eyes_context_review.cjs
+          HAUNT_BROWSER=webkit node tests/eyes_context_review.cjs
+      - name: Wait for complete authored exits before queued cues
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
+        run: |
+          HAUNT_TONIGHT_ROOT=dist node tests/film_complete_exit.cjs
+          HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/film_complete_exit.cjs
+          HAUNT_TONIGHT_ROOT=dist HAUNT_DEPARTURE_CUE=1 node tests/film_complete_exit.cjs
+          HAUNT_TONIGHT_ROOT=dist HAUNT_DEPARTURE_CUE=1 HAUNT_BROWSER=webkit node tests/film_complete_exit.cjs
+      - name: Rehearse catalog cuts and natural loop exit with real films
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
+        run: HAUNT_TONIGHT_ROOT=dist HAUNT_CATALOG_DIRECTOR=1 node tests/film_complete_exit.cjs
+      - name: Rehearse eyes-only candidate complete exits
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
+        run: |
+          HAUNT_TONIGHT_ROOT=dist HAUNT_EYES_CUE=1 node tests/film_complete_exit.cjs
+          HAUNT_TONIGHT_ROOT=dist HAUNT_EYES_CUE=1 HAUNT_BROWSER=webkit node tests/film_complete_exit.cjs
+      - name: Check animation-first entry and separate live workspace
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
+        run: |
+          HAUNT_WORKSPACE_BUILT_ONLY=1 node tests/workspace_entry.cjs
+          HAUNT_WORKSPACE_BUILT_ONLY=1 HAUNT_BROWSER=webkit node tests/workspace_entry.cjs
+      - name: Check existing operator login on real local HTTPS
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
+        run: |
+          node tests/film_operator_access.mjs
+          HAUNT_BROWSER=webkit node tests/film_operator_access.mjs
+      - name: Check queue and editorial contracts
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
+        run: |
+          node tests/cue_director.cjs
+          node tests/catalog_director.cjs
+          node tests/runtime_library.cjs
+          node tests/catalog_remote.cjs
+          node tests/film_transport_readiness.cjs
+          node tests/ambient_show_plan.cjs
+          node tests/wisp_library_publication.cjs
+          node tests/stage_compositor.cjs
+          node tests/stage_geometry.cjs
+      - name: Rehearse actual films and composed output on both browser engines
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
+        run: |
+          mkdir -p work
+          HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
+          DEBUG=pw:browser HAUNT_BROWSER=webkit HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
+      - name: Rehearse the cue keyboard and recorded playlists
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
+        run: |
+          node tests/rehearsal_program.cjs
+          node tests/cue_board.cjs
+          HAUNT_BROWSER=webkit node tests/cue_board.cjs
+          HAUNT_REHEARSAL_MOSTLY=1 node tests/rehearsal_autoplay.cjs
+          HAUNT_BROWSER=webkit node tests/rehearsal_autoplay.cjs
+      - name: Rehearse approved-catalog controls with synthetic approvals
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
+        run: |
+          node tests/catalog_desk.cjs
+          HAUNT_BROWSER=webkit node tests/catalog_desk.cjs
+      - name: Repeat saved playlist closing boundaries in real time
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
+        run: HAUNT_PLAYLIST_ONLY=1 HAUNT_PLAYLIST_STALL=1 HAUNT_PLAYLIST_SOAK_CYCLES=4 HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
+      - name: Check cancellable laptop-only effects
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
+        run: |
+          node tests/owner_sound_cancel.cjs
+          node tests/owner_sound_render.cjs
+          HAUNT_BROWSER=webkit node tests/owner_sound_render.cjs
+          node tests/owner_sound.cjs
+          HAUNT_BROWSER=webkit HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_sound.cjs
+          HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_sound.cjs
+      - name: Check paired film controls with actual local cloud service
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
+        run: |
+          node tests/film_phone_cloud_browser.mjs
+          HAUNT_BROWSER=webkit node tests/phone_saved_playlist.cjs
+      - name: Rehearse tonight story and newest painted face study
+        if: ${{ !cancelled() && steps.public_showdesk.outcome == 'success' }}
+        run: |
+          HAUNT_TONIGHT_ROOT=dist node tests/film_output_handoff.cjs
+          HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/film_output_handoff.cjs
+          python -m pip install --disable-pip-version-check aiohttp==3.11.18
+          python tests/voice_companion_protocol_test.py
+          node tests/neural_voice_client.cjs
+          node tests/neural_worklet.cjs
+          node tests/neural_voice_browser.cjs
+          HAUNT_BROWSER=webkit node tests/neural_voice_browser.cjs
+          node tests/friendly_live_pose.cjs
+          node tests/friendly_live_hands.cjs
+          node tests/friendly_live_voice.cjs
+          HAUNT_TONIGHT_ROOT=dist node tests/friendly_live_browser.cjs
+          HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/friendly_live_browser.cjs
+          HAUNT_TONIGHT_ROOT=dist HAUNT_CHARACTER=scary node tests/friendly_live_browser.cjs
+          HAUNT_TONIGHT_ROOT=dist HAUNT_CHARACTER=scary HAUNT_BROWSER=webkit node tests/friendly_live_browser.cjs
+          HAUNT_TONIGHT_ROOT=dist node tests/tonight_readiness.cjs
+          HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/tonight_readiness.cjs
+          HAUNT_TONIGHT_ROOT=dist node tests/tonight_single_movie.cjs
+          HAUNT_TONIGHT_ROOT=dist node tests/tonight_demo.cjs
+          HAUNT_TONIGHT_ROOT=dist node tests/tonight_puppet.cjs
+          HAUNT_TONIGHT_ROOT=dist node tests/tonight_puppet_capture.cjs
+          HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/tonight_demo.cjs
+          HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/tonight_puppet.cjs
+          HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/tonight_puppet_capture.cjs
+      - name: Require native film acceptance
+        if: always()
+        run: test "${{ steps.native_film.outcome }}" = success
+      - name: Keep show desk evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: showdesk-evidence
+          path: |
+            test-results/showdesk-*.json
+            test-results/film-single-clock-*.json
+            test-results/owner-sound-*.json
+            test-results/cue-review-*.json
+            test-results/eyes-context-*.json
+            test-results/catalog-*.json
+            test-results/film-phone-cloud*
+            test-results/phone-saved-playlist*
+            test-results/rehearsal-autoplay-*
+            test-results/stage-geometry*
+            test-results/workspace-entry*
+            test-results/film-operator-access*
+            test-results/tonight-*.json
+            test-results/film-output-handoff-*.json
+            test-results/film-complete-exit-*.json
+            work/showdesk-rehearsal-*.png
+          if-no-files-found: ignore
+
+
+  native-media-diagnostic:
+    if: github.event_name == 'workflow_dispatch' && inputs.native_media_only
+    name: Native media diagnostic (not release acceptance)
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
@@ -132,56 +447,147 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci --ignore-scripts
-      - run: npx playwright install --with-deps chromium webkit
-      - name: Build explicit public show desk and check privacy
+      - run: npx playwright install --with-deps webkit
+      - name: Set up a clocked silent audio device
+        env:
+          DIAGNOSTIC_AUDIO_SINK: ${{ inputs.native_audio_sink }}
+          DIAGNOSTIC_DISABLE_DISK_CACHE: ${{ inputs.native_disable_disk_cache }}
+        run: |
+          sudo apt-get install -y pulseaudio gstreamer1.0-pulseaudio gstreamer1.0-gl gstreamer1.0-tools libasound2-plugins
+          pulseaudio --check || pulseaudio --start --exit-idle-time=-1
+          pactl load-module module-null-sink sink_name=wisp_ci rate=48000
+          pactl set-default-sink wisp_ci
+          pactl list short sinks
+          gst-inspect-1.0 pulsesink > /tmp/wisp-pulse-plugin.txt
+          sed -n '1,24p' /tmp/wisp-pulse-plugin.txt
+          gst-inspect-1.0 glupload > /tmp/wisp-gl-plugin.txt
+          sed -n '1,20p' /tmp/wisp-gl-plugin.txt
+          if [ "$DIAGNOSTIC_AUDIO_SINK" = pulse ]; then
+            echo "GST_PLUGIN_FEATURE_RANK=pulsesink:MAX,pipewiresink:NONE,alsasink:NONE,oss4sink:NONE,osssink:NONE" >> "$GITHUB_ENV"
+          elif [ "$DIAGNOSTIC_AUDIO_SINK" != auto ]; then
+            exit 1
+          fi
+          if [ "$DIAGNOSTIC_DISABLE_DISK_CACHE" = true ]; then
+            echo "WPE_SHELL_DISABLE_MEDIA_DISK_CACHE=1" >> "$GITHUB_ENV"
+          fi
+          echo "PULSE_SINK=wisp_ci" >> "$GITHUB_ENV"
+          echo "HAUNT_CI_SILENT_AUDIO=1" >> "$GITHUB_ENV"
+      - name: Build exact public fixtures
         run: node tests/public_build.cjs
-      - name: Check animation-first entry and separate live workspace
+      - name: Check actual native soundtrack and complete bridge
+        if: ${{ !inputs.native_atlas_pilot && !inputs.native_finite_pilot && !inputs.native_single_pipeline }}
+        env:
+          DEBUG: pw:browser
+          GST_DEBUG: autoaudiosink:5,pulsesink:4,webkitmediaplayer:3
+          HAUNT_DIAGNOSTIC_WEBAUDIO_ROUTE: ${{ inputs.native_route_audio && '1' || '0' }}
         run: |
-          HAUNT_WORKSPACE_BUILT_ONLY=1 node tests/workspace_entry.cjs
-          HAUNT_WORKSPACE_BUILT_ONLY=1 HAUNT_BROWSER=webkit node tests/workspace_entry.cjs
-      - name: Check existing operator login on real local HTTPS
+          failed=0
+          HAUNT_BROWSER=webkit node tests/film_single_clock.cjs || failed=1
+          HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/showdesk_film_audio.cjs || failed=1
+          HAUNT_BROWSER=webkit node tests/catalog_bridge_browser.cjs || failed=1
+          exit "$failed"
+      - name: Check one-decoder source study (not release acceptance)
+        if: ${{ inputs.native_atlas_pilot && !inputs.native_finite_pilot && !inputs.native_single_pipeline }}
         run: |
-          node tests/film_operator_access.mjs
-          HAUNT_BROWSER=webkit node tests/film_operator_access.mjs
-      - name: Check queue and editorial contracts
+          failed=0
+          HAUNT_BROWSER=webkit node tests/atlas_seek_study.cjs || failed=1
+          HAUNT_BROWSER=webkit node tests/canonical_picture_registration.cjs || failed=1
+          exit "$failed"
+      - name: Check finite-cue source study (not release acceptance)
+        if: ${{ inputs.native_finite_pilot && !inputs.native_single_pipeline }}
+        run: HAUNT_BROWSER=webkit node tests/finite_cue_study.cjs
+      - name: Check single-pipeline app integration (not release acceptance)
+        if: ${{ inputs.native_single_pipeline }}
+        env:
+          HAUNT_BROWSER: webkit
+          HAUNT_SINGLE_PIPELINE: '1'
+          HAUNT_CPU_PIXELS: ${{ inputs.native_cpu_pixels && '1' || '0' }}
+          HAUNT_STATUS_XHR: ${{ inputs.native_status_xhr && '1' || '0' }}
+          HAUNT_DIAGNOSTIC_NO_CONTEXT_LOSS: ${{ inputs.native_director_retirement == 'no-context-loss' && '1' || '0' }}
+          HAUNT_DIAGNOSTIC_OWNER_FRONT: ${{ inputs.native_director_visibility == 'owner-front' && '1' || '0' }}
+          WEBKIT_GST_DISABLE_GL_SINK: ${{ inputs.native_director_retirement == 'software-video-sink' && '1' || '0' }}
+          GST_DEBUG: "*:2,webkitmediaplayer:4"
+          GST_DEBUG_FILE: ${{ github.workspace }}/work/native-media-gstreamer.log
+          GST_DEBUG_NO_COLOR: '1'
         run: |
-          node tests/cue_director.cjs
-          node tests/film_transport_readiness.cjs
-          node tests/ambient_show_plan.cjs
-          node tests/stage_compositor.cjs
-          node tests/stage_geometry.cjs
-      - name: Rehearse actual films and composed output on both browser engines
-        run: |
-          mkdir -p work
-          HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
-          DEBUG=pw:browser HAUNT_BROWSER=webkit HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs
-      - name: Check cancellable laptop-only effects
-        run: |
-          node tests/owner_sound.cjs
-          HAUNT_BROWSER=webkit HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_sound.cjs
-          HAUNT_DESK_ROOT="$PWD/dist" HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_sound.cjs
-      - name: Check paired film controls with actual local cloud service
-        run: node tests/film_phone_cloud_browser.mjs
-      - name: Rehearse tonight story and newest painted face study
-        run: |
-          HAUNT_TONIGHT_ROOT=dist node tests/film_output_handoff.cjs
-          HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/film_output_handoff.cjs
-          HAUNT_TONIGHT_ROOT=dist node tests/tonight_demo.cjs
-          HAUNT_TONIGHT_ROOT=dist node tests/tonight_puppet.cjs
-          HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/tonight_demo.cjs
-          HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/tonight_puppet.cjs
-      - name: Keep show desk evidence
+          node scripts/inspect-native-video-switch.cjs
+          if [ "${{ inputs.native_container_pilot }}" = "true" ]; then
+            node tests/native_scary_container.cjs
+            exit $?
+          fi
+          if [ "${{ inputs.native_director_pilot }}" = "true" ]; then
+            if [ "${{ inputs.native_authored_face }}" = "true" ]; then
+              failed=0
+              if [ "${{ inputs.native_status_xhr }}" = "true" ]; then
+                node tests/director_status_request.cjs || failed=1
+              fi
+              if [ "${{ inputs.native_cpu_pixels }}" = "true" ]; then
+                GST_DEBUG_FILE="${GST_DEBUG_FILE%.log}-cpu-source.log" node tests/owned_cpu_video_frame_source.cjs || failed=1
+              fi
+              GST_DEBUG_FILE="${GST_DEBUG_FILE%.log}-shared-graphics.log" node tests/painted_shared_graphics.cjs || failed=1
+              node tests/authored_phone_director.cjs || failed=1
+              GST_DEBUG_FILE="${GST_DEBUG_FILE%.log}-authored-preparation.log" node tests/authored_director_preparation_cancel.cjs || failed=1
+              exit "$failed"
+            fi
+            node tests/owned_native_director.cjs
+            exit $?
+          fi
+          failed=0
+          node tests/speech_start_probe_test.cjs || failed=1
+          node tests/pcm_voice.cjs || failed=1
+          node tests/pcm_voice_browser.cjs || failed=1
+          node tests/native_lip_surface_study.cjs || failed=1
+          node tests/native_lip_frame_release.cjs || failed=1
+          node tests/owned_video_frame_source.cjs || failed=1
+          node tests/owned_native_lip_player.cjs || failed=1
+          node tests/native_picture_registration.cjs || failed=1
+          node tests/native_picture_preparation.cjs || failed=1
+          node tests/owned_native_director.cjs || failed=1
+          node tests/owned_director_preparation_cancel.cjs || failed=1
+          node tests/canonical_native_lip_player.cjs || failed=1
+          node tests/mouth_preparation_cancel.cjs || failed=1
+          node tests/native_lip_phone.cjs || failed=1
+          node tests/single_pipeline_transport.cjs || failed=1
+          node tests/effect_import_cancel.cjs || failed=1
+          node tests/catalog_bridge_browser.cjs || failed=1
+          node tests/phone_saved_playlist.cjs || failed=1
+          HAUNT_PHONE_HTTP_FIXTURE=1 HAUNT_TEST_NATIVE_MOUTH=0 node tests/phone_director_player.cjs || failed=1
+          HAUNT_PHONE_HTTP_FIXTURE=1 node tests/phone_director_player.cjs || failed=1
+          HAUNT_TEST_NATIVE_MOUTH=0 node tests/phone_director_player.cjs || failed=1
+          node tests/phone_director_player.cjs || failed=1
+          HAUNT_DESK_ROOT=dist HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs || failed=1
+          exit "$failed"
+      - name: Keep diagnostic evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: showdesk-evidence
+          name: native-media-diagnostic
           path: |
-            test-results/showdesk-*.json
-            test-results/film-phone-cloud*
-            test-results/stage-geometry*
-            test-results/workspace-entry*
-            test-results/film-operator-access*
-            test-results/tonight-*.json
-            test-results/film-output-handoff-*.json
-            work/showdesk-rehearsal-*.png
-          if-no-files-found: ignore
+            test-results/showdesk-film-audio-webkit*.json
+            test-results/film-single-clock-*.json
+            test-results/catalog-bridge-webkit*.json
+            test-results/atlas-seek-*.json
+            test-results/finite-cue-study-*.json
+            test-results/finite-cue-study-ui.png
+            test-results/single-pipeline-*.json
+            test-results/effect-import-cancel-*.json
+            test-results/catalog-bridge-single-*.json
+            test-results/phone-saved-playlist-single-*.json
+            test-results/phone-director-player-single-*.json
+            test-results/showdesk-single-*.json
+            test-results/owned-native-player-*.json
+            test-results/owned-director-preparation-*.json
+            work/canonical-picture-registration/*.json
+            work/owned-frame-source/*.json
+            work/owned-cpu-source/*.json
+            work/native-picture-preparation/*.json
+            work/owned-speaking-player/*.json
+            work/owned-native-director-*.json
+            work/painted-shared-graphics/*.json
+            work/authored-painted-director-*.json
+            work/authored-director-preparation/*.json
+            test-results/authored-director-preparation-*.json
+            work/scary-container/*.json
+            work/native-video-switch/*.json
+            work/native-media-gstreamer*.log
+            work/owned-director-preparation/*.json

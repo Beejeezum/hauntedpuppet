@@ -1,0 +1,30 @@
+{
+  "scope": "Native output frames; cropped contact sheet for pose inspection only, never an export crop. Pixel differences cannot establish velocity, anatomy or human acceptance.",
+  "joins": [
+    {
+      "cutFrame": 122,
+      "seconds": 5.083333333333333,
+      "visibleRGBDifference": 2.1990725630983463
+    },
+    {
+      "cutFrame": 243,
+      "seconds": 10.125,
+      "visibleRGBDifference": 2.845084867844169
+    },
+    {
+      "cutFrame": 364,
+      "seconds": 15.166666666666666,
+      "visibleRGBDifference": 4.3421833422598555
+    },
+    {
+      "cutFrame": 461,
+      "seconds": 19.208333333333332,
+      "visibleRGBDifference": 3.7033916700583367
+    },
+    {
+      "cutFrame": 654,
+      "seconds": 27.25,
+      "visibleRGBDifference": 3.7532931165122108
+    }
+  ]
+}

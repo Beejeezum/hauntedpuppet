@@ -1,0 +1,16 @@
+{
+  "runtimeCommit": "e5d6d72b3b1030ed0c4f63b3d1564f6232f9e922",
+  "netlifyDeploy": "6ae25bb1cf652715d2c102de",
+  "url": "https://deploy-preview-12--hauntedpuppet.netlify.app/assets/wisp-cue-review/?review=eyes",
+  "publishedBytesVerified": [
+    "review.mjs",
+    "scary-eyes-runtime-candidate-v1.mp4"
+  ],
+  "htmlNote": "Netlify rewrites a local link and injects its preview toolbar; HTML is not byte-identical to dist. Hosted functional test passes.",
+  "hostedChromium": {
+    "passed": true,
+    "scope": "Actual rehearsal, departure,15.125second idle-to-departure and607frame25.29second morph roundtrip files decoded through one player, full morph and eyes-only playback to EOS, deep-linked eyes review and real playback across the handoff, paused/muted film selection, zero-volume audition sink, manual sound enable, chapter seek/pause, no capture, narrow layout and pagehide cleanup. No human sound/motion or physical projection acceptance."
+  },
+  "candidateSha256": "8d30ec2f4d781fd8b663a04e855949d454e1d09948c1d913e8393437a3a4e1f3",
+  "limits": "Manual sound request tested through zero-volume sink. No human listening, artistic join, physical projection or ready-catalog approval. FullCI40764095140 still running at checkpoint."
+}

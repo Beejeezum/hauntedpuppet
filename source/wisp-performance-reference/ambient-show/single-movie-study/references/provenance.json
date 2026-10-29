@@ -1,0 +1,42 @@
+{
+  "masterSha256": "de832a10253bb872ec0b522d408383df2555eac43098ebf38c83d5451f5a5eca",
+  "purpose": "Decoded-frame golden images for native paused-seek tests; not new art or runtime assets",
+  "frames": [
+    {
+      "id": "friendly-drift-A",
+      "frame": 0,
+      "file": "friendly-drift-A.png",
+      "sha256": "694dd6497be8f963335b53bd2ef5a80c6b7a93aa38153dd08375beb334a5fa4d"
+    },
+    {
+      "id": "cute-to-evil",
+      "frame": 122,
+      "file": "cute-to-evil.png",
+      "sha256": "a849aa51ba1ab2c64c8d613c09451c15cf681424290791e5401faa1dc537e829"
+    },
+    {
+      "id": "scary-eyes",
+      "frame": 243,
+      "file": "scary-eyes.png",
+      "sha256": "ae0156b95a8191379cdd51c360d252ca04a9756643ecc1b45a2bf6f890870ed9"
+    },
+    {
+      "id": "scary-drift",
+      "frame": 484,
+      "file": "scary-drift.png",
+      "sha256": "9f08fd3b24a31e43d0e0d5b3baee249e69b452615c6824c6c5154290022431bb"
+    },
+    {
+      "id": "evil-to-cute",
+      "frame": 605,
+      "file": "evil-to-cute.png",
+      "sha256": "5daac30b1b3e78595714c4d84a81702c79933bf4d36cfb6f4df25b8c19c6e11b"
+    },
+    {
+      "id": "friendly-drift-B",
+      "frame": 726,
+      "file": "friendly-drift-B.png",
+      "sha256": "d9b35a2e4d97fd2ab17227eabd829fa8673d016cfb3755636a4f17aa7d1382d4"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "status": "rejected",
+  "scope": "Keyframe preview only, no full-video edit submitted",
+  "reason": "Preview adds huge flat HAPPY HALLOWEEN header and still has clipped/large bats. Do not use as motion edit anchor.",
+  "next": "Use originalsource5.0sframe for a focused imagegen reframe/scale edit; askhumanaboutcorrectedkeyframebeforefullvideoedit."
+}

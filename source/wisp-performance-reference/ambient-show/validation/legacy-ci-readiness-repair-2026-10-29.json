@@ -1,0 +1,20 @@
+{
+  "status": "local-qualified-full-CI-rerun-required",
+  "sourceFailureRun": "40952866599",
+  "rehearsalHelper": {
+    "file": "wisp-film-output.js",
+    "oldPinnedSha256": "617a94cddd9ba3e443913e0c6275542cd6e258046ee3c56da1c66197e92801fc",
+    "newSha256": "e3d26dbb113cf15ba2c41f7b9452b8947452495030b6e5bc914b32502098cbd2",
+    "bytes": 4638,
+    "implementationCommit": "a00c84cd582676dc6c8bca3a8e51b1074e8d4384",
+    "review": "Only optional black-only canvas releasePicture/releasePictures support changed since previous helper revision. Existing callers do not invoke it. No character pixels, source video, generated dialogue or recordings changed. All other rehearsal hashes match.",
+    "qualification": "Full tests/wisp_film_speech.cjs passed after this one pin update: actual source footage/timed prerecorded audio, idle/absence/restart/farewell-like recovery, urgent friendly takeover, blackout, late-enable cancellation, silent output, owner close/stall/disposal. Muted browser fixtures, not a genuine provider/acoustic or character-art acceptance."
+  },
+  "startupReadiness": {
+    "implementation": "Showdesk HTML begins with disabled Start and Loading cue desk. Start enables only after the verified library and controls finish; invalid library keeps it disabled.",
+    "testRepair": "Three synthetic-catalog reload waits used a bare global before asynchronous module initialization. Guard with window.WispDesk optional chaining, without removing any route/saved-show/Stop assertions.",
+    "forcedCase": "Hold actual catalog response behind a test gate, assert Start disabled and control surface absent, release then assert enabled/ready. Later loads delayed250ms. Chrome and MacWebKit full phone-saved-playlist tests pass.",
+    "scope": "Bounded direct remote-controller calls, actual study-film playback and synthetic approval metadata for rejection gates; no physical phone/provider/camera/voice quality claim."
+  },
+  "artisticOrProductionAdmission": false
+}

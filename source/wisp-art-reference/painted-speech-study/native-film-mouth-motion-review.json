@@ -1,0 +1,17 @@
+{
+  "scope": "Silent synthetic shape cycle over original decoded native movie. No provider audio or actual lip sync.",
+  "file": "work/phone-mouth-anchor/native-painted-mouth-v2.mp4",
+  "sha256": "e399ac8870009ebd950c947fb7d03f55b20f91a17cdc013d488200037142ed32",
+  "frames": 122,
+  "fps": 24.0,
+  "humanApproval": false,
+  "runtimeIntegration": false,
+  "visualReview": "Contact sheets reviewed: tracked local patch remains with face through sampled motion/blinks. V1 retained original-smile residue during OO. V2 widens opaque replacement and eases onset; faint OO marks remain and need further review. No finished-art claim.",
+  "nextGates": [
+    "full-motion review",
+    "OO residual marks and skin/color matching",
+    "rotation/scale jitter smoothing",
+    "speech-clock integration",
+    "friendly/scary user voice approval"
+  ]
+}

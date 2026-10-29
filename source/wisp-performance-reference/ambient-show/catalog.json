@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "purpose": "Authored ambient show production board; thirty-two planned assets, not finished animations",
+  "purpose": "Sixteen-cue painted Wisp production inventory; planned assets are not finished animations",
   "humanDirection": "Animation direction endorsed; retain fuller whole-body motion and soft painted fog. Presets do not speak. Sound effects are welcome. All joins must be planned.",
   "policy": {
     "speech": "live interaction only; no generated dialogue, spoken boo, lyrics or canned narration in ambient films",
@@ -11,7 +11,8 @@
     "generationTargetReserve": 0.2,
     "text": "Happy Halloween is designed and composited lettering with a tracked hand/stroke reveal; not generated illegible lettering",
     "completion": "planned slots and approved direction do not establish finished clips or join acceptance",
-    "productionStudies": "Source-only candidate evidence. These entries never make a planned card ready or authorize playback/joins."
+    "productionStudies": "Source-only candidate evidence. These entries never make a planned card ready or authorize playback/joins.",
+    "productionBudget": "Reuse suitable existing assets first. No bulk generation or automatic credit purchases. Generate one targeted draft at a time only where reuse cannot meet the brief; review before retries."
   },
   "ports": {
     "friendly-rest": {
@@ -46,21 +47,8 @@
       "dialogue": false,
       "audioIntent": "soft air only",
       "manualOnly": false,
-      "media": null
-    },
-    {
-      "id": "friendly-notice",
-      "title": "Did someone pass?",
-      "form": "friendly",
-      "targetSeconds": 6,
-      "status": "planned",
-      "entryPort": "friendly-rest",
-      "exitPort": "friendly-rest",
-      "acting": "Eyes lead a head turn; shoulders follow late. A tiny surprised lift settles into recognition.",
-      "dialogue": false,
-      "audioIntent": "tiny glass glint at recognition",
-      "manualOnly": false,
-      "media": null
+      "media": null,
+      "bridgeEligible": false
     },
     {
       "id": "friendly-wave",
@@ -68,55 +56,16 @@
       "form": "friendly",
       "targetSeconds": 7,
       "status": "planned",
-      "entryPort": "friendly-rest",
-      "exitPort": "friendly-rest",
+      "entryPort": "empty",
+      "exitPort": "empty",
       "acting": "A hesitant finger wave grows into a whole-arm greeting, then the arm relaxes with follow-through.",
       "dialogue": false,
       "audioIntent": "warm airy brush following the hand",
       "manualOnly": false,
-      "media": null
-    },
-    {
-      "id": "friendly-peek",
-      "title": "Behind an invisible corner",
-      "form": "friendly",
-      "targetSeconds": 8,
-      "status": "planned",
-      "entryPort": "friendly-rest",
-      "exitPort": "friendly-rest",
-      "acting": "Wisp turns in perspective, slips sideways into fog, peeks from the same side and eases back.",
-      "dialogue": false,
-      "audioIntent": "soft fog swish",
-      "manualOnly": false,
-      "media": null
-    },
-    {
-      "id": "friendly-candy",
-      "title": "The imaginary candy",
-      "form": "friendly",
-      "targetSeconds": 8,
-      "status": "planned",
-      "entryPort": "friendly-rest",
-      "exitPort": "friendly-rest",
-      "acting": "Wisp spots an imaginary sweet, cups it, watches it float away and gives an amused silent shrug.",
-      "dialogue": false,
-      "audioIntent": "two delicate candy-like pings",
-      "manualOnly": false,
-      "media": null
-    },
-    {
-      "id": "friendly-twirl",
-      "title": "One happy twirl",
-      "form": "friendly",
-      "targetSeconds": 8,
-      "status": "planned",
-      "entryPort": "friendly-rest",
-      "exitPort": "friendly-rest",
-      "acting": "A hand winds the torso into a full turn, showing a painted back before the core unwinds.",
-      "dialogue": false,
-      "audioIntent": "rising breeze with a soft landing",
-      "manualOnly": false,
-      "media": null
+      "media": null,
+      "productionBrief": "../button-cue-batch/production-brief.txt",
+      "transitionRequirement": "At least 0.5 seconds exact black and finished sound tails at each end; no visible-body crossfade; complete one-shot performance.",
+      "bridgeEligible": false
     },
     {
       "id": "friendly-boo-fail",
@@ -124,41 +73,16 @@
       "form": "friendly",
       "targetSeconds": 7,
       "status": "planned",
-      "entryPort": "friendly-rest",
-      "exitPort": "friendly-rest",
+      "entryPort": "empty",
+      "exitPort": "empty",
       "acting": "Wisp rehearses a scary pose, startles at its own little spark and sheepishly smooths its crest.",
       "dialogue": false,
       "audioIntent": "tiny pop; no spoken boo or laugh",
       "manualOnly": false,
-      "media": null
-    },
-    {
-      "id": "friendly-writing",
-      "title": "Happy Halloween",
-      "form": "friendly",
-      "targetSeconds": 14,
-      "status": "planned",
-      "entryPort": "friendly-rest",
-      "exitPort": "friendly-rest",
-      "acting": "Wisp draws two airy lines with a fingertip. Designed Happy Halloween lettering follows the stroke, lingers, then dissolves as Wisp bows.",
-      "dialogue": false,
-      "audioIntent": "chalky shimmer during strokes; gentle sparkle on final dot",
-      "manualOnly": false,
-      "media": null
-    },
-    {
-      "id": "friendly-bow",
-      "title": "Thank you for visiting",
-      "form": "friendly",
-      "targetSeconds": 6,
-      "status": "planned",
-      "entryPort": "friendly-rest",
-      "exitPort": "friendly-rest",
-      "acting": "A modest bow folds shoulders and hands; the lower core trails and catches up.",
-      "dialogue": false,
-      "audioIntent": "a soft warm bell",
-      "manualOnly": false,
-      "media": null
+      "media": null,
+      "productionBrief": "../button-cue-batch/production-brief.txt",
+      "transitionRequirement": "At least 0.5 seconds exact black and finished sound tails at each end; no visible-body crossfade; complete one-shot performance.",
+      "bridgeEligible": false
     },
     {
       "id": "friendly-depart",
@@ -172,245 +96,8 @@
       "dialogue": false,
       "audioIntent": "receding airy trail",
       "manualOnly": false,
-      "media": null
-    },
-    {
-      "id": "scary-drift",
-      "title": "The house is watching",
-      "form": "scary",
-      "targetSeconds": 9,
-      "status": "planned",
-      "entryPort": "scary-rest",
-      "exitPort": "scary-rest",
-      "acting": "An asymmetrical hover with shoulder weight, searching eyes and slow finger unfurling; never a frozen hold.",
-      "dialogue": false,
-      "audioIntent": "very low breathing wind; no voice",
-      "manualOnly": false,
-      "media": null
-    },
-    {
-      "id": "scary-notice",
-      "title": "I noticed you",
-      "form": "scary",
-      "targetSeconds": 6,
-      "status": "planned",
-      "entryPort": "scary-rest",
-      "exitPort": "scary-rest",
-      "acting": "The eyes lock first, chin lowers and the torso turns a beat later toward the approach.",
-      "dialogue": false,
-      "audioIntent": "subtle tension swell",
-      "manualOnly": false,
-      "media": null
-    },
-    {
-      "id": "scary-pace",
-      "title": "Guarding the doorway",
-      "form": "scary",
-      "targetSeconds": 10,
-      "status": "planned",
-      "entryPort": "scary-rest",
-      "exitPort": "scary-rest",
-      "acting": "Wisp paces on a shallow curved path, turns with the travel and shows changing side silhouettes.",
-      "dialogue": false,
-      "audioIntent": "two drifting air passes",
-      "manualOnly": false,
-      "media": null
-    },
-    {
-      "id": "scary-reach",
-      "title": "A hand from the mist",
-      "form": "scary",
-      "targetSeconds": 8,
-      "status": "planned",
-      "entryPort": "scary-rest",
-      "exitPort": "scary-rest",
-      "acting": "A shoulder-led hand reaches into perspective, fingers fan, then wrist and elbow recover naturally.",
-      "dialogue": false,
-      "audioIntent": "finger-linked rising whisper of air, no words",
-      "manualOnly": false,
-      "media": null
-    },
-    {
-      "id": "scary-orbit",
-      "title": "The far side of the room",
-      "form": "scary",
-      "targetSeconds": 10,
-      "status": "planned",
-      "entryPort": "scary-rest",
-      "exitPort": "scary-rest",
-      "acting": "Wisp turns its back and circles through depth, then notices the viewer over its shoulder.",
-      "dialogue": false,
-      "audioIntent": "panning wind tied to travel; mono-compatible",
-      "manualOnly": false,
-      "media": null
-    },
-    {
-      "id": "scary-inspect",
-      "title": "What are you doing here?",
-      "form": "scary",
-      "targetSeconds": 7,
-      "status": "planned",
-      "entryPort": "scary-rest",
-      "exitPort": "scary-rest",
-      "acting": "A suspicious head tilt, narrowed lids and deliberate lean; the hands continue a restrained simmer.",
-      "dialogue": false,
-      "audioIntent": "a small creak",
-      "manualOnly": false,
-      "media": null
-    },
-    {
-      "id": "scary-eyes",
-      "title": "Only the eyes remain",
-      "form": "scary",
-      "targetSeconds": 10,
-      "status": "planned",
-      "entryPort": "scary-rest",
-      "exitPort": "scary-rest",
-      "acting": "Body vapor disperses deliberately until only floating eyes remain; they glance down, blink, then summon the body back.",
-      "dialogue": false,
-      "audioIntent": "body exhale; restrained reform swell",
-      "manualOnly": false,
-      "media": null
-    },
-    {
-      "id": "scary-hands",
-      "title": "Counting the visitors",
-      "form": "scary",
-      "targetSeconds": 8,
-      "status": "planned",
-      "entryPort": "scary-rest",
-      "exitPort": "scary-rest",
-      "acting": "Individual fingers curl as the eyes scan three imaginary positions, then the palm opens in invitation.",
-      "dialogue": false,
-      "audioIntent": "soft spectral ticks; no speech",
-      "manualOnly": false,
-      "media": null
-    },
-    {
-      "id": "scary-distant",
-      "title": "Something far away",
-      "form": "scary",
-      "targetSeconds": 9,
-      "status": "planned",
-      "entryPort": "empty",
-      "exitPort": "scary-rest",
-      "acting": "A tiny distant Wisp forms, turns toward us and follows a curved depth approach, stopping inside the framing reserve.",
-      "dialogue": false,
-      "audioIntent": "distant-to-near wind",
-      "manualOnly": false,
-      "media": null
-    },
-    {
-      "id": "scary-poof",
-      "title": "Wrong place, right ghost",
-      "form": "scary",
-      "targetSeconds": 7,
-      "status": "planned",
-      "entryPort": "empty",
-      "exitPort": "scary-rest",
-      "acting": "From an empty stage, a localized vapor poof forms the whole spirit; hands and core settle with overlap.",
-      "dialogue": false,
-      "audioIntent": "one cushioned vapor impact",
-      "manualOnly": false,
-      "media": null
-    },
-    {
-      "id": "scary-dissolve",
-      "title": "Gone before you blink",
-      "form": "scary",
-      "targetSeconds": 8,
-      "status": "planned",
-      "entryPort": "scary-rest",
-      "exitPort": "empty",
-      "acting": "A backward glance, turn away and unravel into wisps until the stage is genuinely empty.",
-      "dialogue": false,
-      "audioIntent": "evaporating hiss with bounded tail",
-      "manualOnly": false,
-      "media": null
-    },
-    {
-      "id": "scary-magic",
-      "title": "A little forbidden magic",
-      "form": "scary",
-      "targetSeconds": 9,
-      "status": "planned",
-      "entryPort": "scary-rest",
-      "exitPort": "scary-rest",
-      "acting": "Hands gather a modest blue ember, orbit it around the core and snuff it between two fingers.",
-      "dialogue": false,
-      "audioIntent": "small crackle and snuff",
-      "manualOnly": false,
-      "media": null
-    },
-    {
-      "id": "scary-fakeout",
-      "title": "Almost a scare",
-      "form": "scary",
-      "targetSeconds": 8,
-      "status": "planned",
-      "entryPort": "scary-rest",
-      "exitPort": "scary-rest",
-      "acting": "Wisp winds up for a lunge, pauses with living motion, then drifts aside with a wicked grin.",
-      "dialogue": false,
-      "audioIntent": "restrained rise that deliberately releases",
-      "manualOnly": false,
-      "media": null
-    },
-    {
-      "id": "scary-reveal",
-      "title": "The operator chooses the scare",
-      "form": "scary",
-      "targetSeconds": 6,
-      "status": "planned",
-      "entryPort": "scary-rest",
-      "exitPort": "scary-rest",
-      "acting": "A short controlled forward feint and immediate recoil; only an armed operator cue, never automatic.",
-      "dialogue": false,
-      "audioIntent": "bounded stinger; no sudden full-scale blast",
-      "manualOnly": true,
-      "media": null
-    },
-    {
-      "id": "scary-retreat",
-      "title": "Back into the house",
-      "form": "scary",
-      "targetSeconds": 9,
-      "status": "planned",
-      "entryPort": "scary-rest",
-      "exitPort": "empty",
-      "acting": "A complete turn reveals the back; Wisp leaves along a curved route and disappears into distance.",
-      "dialogue": false,
-      "audioIntent": "receding wind",
-      "manualOnly": false,
-      "media": null
-    },
-    {
-      "id": "cute-to-evil",
-      "title": "The same spirit darkens",
-      "form": "transition",
-      "targetSeconds": 7,
-      "status": "planned",
-      "entryPort": "friendly-rest",
-      "exitPort": "scary-rest",
-      "acting": "Whole-body vapor reshapes; rounded hands lengthen, brows compress and the grin becomes wicked in coordinated order.",
-      "dialogue": false,
-      "audioIntent": "low transformation bloom; no voice",
-      "manualOnly": false,
-      "media": null
-    },
-    {
-      "id": "evil-to-cute",
-      "title": "Welcome, little visitors",
-      "form": "transition",
-      "targetSeconds": 7,
-      "status": "planned",
-      "entryPort": "scary-rest",
-      "exitPort": "friendly-rest",
-      "acting": "Claws round and teeth soften before eyes widen; shoulder weight lifts into familiar friendly Wisp.",
-      "dialogue": false,
-      "audioIntent": "tension releases into a warm airy chime",
-      "manualOnly": false,
-      "media": null
+      "media": null,
+      "bridgeEligible": true
     },
     {
       "id": "friendly-reform",
@@ -424,7 +111,100 @@
       "dialogue": false,
       "audioIntent": "warm localized fog poof",
       "manualOnly": false,
-      "media": null
+      "media": null,
+      "bridgeEligible": true
+    },
+    {
+      "id": "scary-drift",
+      "title": "The house is watching",
+      "form": "scary",
+      "targetSeconds": 9,
+      "status": "planned",
+      "entryPort": "scary-rest",
+      "exitPort": "scary-rest",
+      "acting": "An asymmetrical hover with shoulder weight, searching eyes and slow finger unfurling; never a frozen hold.",
+      "dialogue": false,
+      "audioIntent": "very low breathing wind; no voice",
+      "manualOnly": false,
+      "media": null,
+      "bridgeEligible": false
+    },
+    {
+      "id": "scary-pace",
+      "title": "Guarding the doorway",
+      "form": "scary",
+      "targetSeconds": 10,
+      "status": "planned",
+      "entryPort": "scary-rest",
+      "exitPort": "scary-rest",
+      "acting": "Wisp paces on a shallow curved path, turns with the travel and shows changing side silhouettes.",
+      "dialogue": false,
+      "audioIntent": "two drifting air passes",
+      "manualOnly": false,
+      "media": null,
+      "bridgeEligible": false
+    },
+    {
+      "id": "scary-reach",
+      "title": "A hand from the mist",
+      "form": "scary",
+      "targetSeconds": 8,
+      "status": "planned",
+      "entryPort": "empty",
+      "exitPort": "empty",
+      "acting": "A shoulder-led hand reaches into perspective, fingers fan, then wrist and elbow recover naturally.",
+      "dialogue": false,
+      "audioIntent": "finger-linked rising whisper of air, no words",
+      "manualOnly": true,
+      "media": null,
+      "productionBrief": "../button-cue-batch/production-brief.txt",
+      "transitionRequirement": "At least 0.5 seconds exact black and finished sound tails at each end; no visible-body crossfade; complete one-shot performance.",
+      "bridgeEligible": false
+    },
+    {
+      "id": "scary-eyes",
+      "title": "Only the eyes remain",
+      "form": "scary",
+      "targetSeconds": 10,
+      "status": "planned",
+      "entryPort": "scary-rest",
+      "exitPort": "scary-rest",
+      "acting": "Body vapor disperses deliberately until only floating eyes remain; they glance down, blink, then summon the body back.",
+      "dialogue": false,
+      "audioIntent": "body exhale; restrained reform swell",
+      "manualOnly": false,
+      "media": null,
+      "bridgeEligible": false
+    },
+    {
+      "id": "scary-retreat",
+      "title": "Back into the house",
+      "form": "scary",
+      "targetSeconds": 9,
+      "status": "planned",
+      "entryPort": "scary-rest",
+      "exitPort": "empty",
+      "acting": "A complete turn reveals the back; Wisp leaves along a curved route and disappears into distance.",
+      "dialogue": false,
+      "audioIntent": "receding wind",
+      "manualOnly": false,
+      "media": null,
+      "bridgeEligible": true
+    },
+    {
+      "id": "scary-fakeout",
+      "title": "Almost a scare",
+      "form": "scary",
+      "targetSeconds": 8,
+      "status": "planned",
+      "entryPort": "scary-rest",
+      "exitPort": "scary-rest",
+      "acting": "Wisp winds up for a lunge, pauses with living motion, then drifts aside with a wicked grin.",
+      "dialogue": false,
+      "audioIntent": "restrained rise that deliberately releases",
+      "manualOnly": false,
+      "media": null,
+      "bridgeEligible": false
     },
     {
       "id": "scary-reform",
@@ -438,21 +218,38 @@
       "dialogue": false,
       "audioIntent": "low fog poof",
       "manualOnly": false,
-      "media": null
+      "media": null,
+      "bridgeEligible": true
     },
     {
-      "id": "shared-empty",
-      "title": "The house waits",
-      "form": "empty",
-      "targetSeconds": 6,
+      "id": "cute-to-evil",
+      "title": "The same spirit darkens",
+      "form": "transition",
+      "targetSeconds": 7,
       "status": "planned",
-      "entryPort": "empty",
-      "exitPort": "empty",
-      "acting": "Intentionally empty black between finished departure and arrival. No stray smoke or orphan eyes.",
+      "entryPort": "friendly-rest",
+      "exitPort": "scary-rest",
+      "acting": "Whole-body vapor reshapes; rounded hands lengthen, brows compress and the grin becomes wicked in coordinated order.",
       "dialogue": false,
-      "audioIntent": "silence; preceding tails end deliberately",
+      "audioIntent": "low transformation bloom; no voice",
       "manualOnly": false,
-      "media": null
+      "media": null,
+      "bridgeEligible": true
+    },
+    {
+      "id": "evil-to-cute",
+      "title": "Welcome, little visitors",
+      "form": "transition",
+      "targetSeconds": 7,
+      "status": "planned",
+      "entryPort": "scary-rest",
+      "exitPort": "friendly-rest",
+      "acting": "Claws round and teeth soften before eyes widen; shoulder weight lifts into familiar friendly Wisp.",
+      "dialogue": false,
+      "audioIntent": "tension releases into a warm airy chime",
+      "manualOnly": false,
+      "media": null,
+      "bridgeEligible": true
     },
     {
       "id": "fog-lettering",
@@ -467,7 +264,8 @@
       "audioIntent": "airy letter formation with delicate ghostly shimmer; no voice",
       "manualOnly": false,
       "media": null,
-      "productionChoreography": "atmosphere-scenes.json#fog-lettering"
+      "productionChoreography": "atmosphere-scenes.json#fog-lettering",
+      "bridgeEligible": false
     },
     {
       "id": "bats-through-letters",
@@ -482,7 +280,8 @@
       "audioIntent": "restrained wing flutters, a wide airy pass and soft dissipating shimmer",
       "manualOnly": false,
       "media": null,
-      "productionChoreography": "atmosphere-scenes.json#bats-through-letters"
+      "productionChoreography": "atmosphere-scenes.json#bats-through-letters",
+      "bridgeEligible": false
     }
   ],
   "reviewedJoins": [],
@@ -490,29 +289,41 @@
     {
       "id": "doorstep-ambient-01",
       "title": "The house is watching \u2014 a friendly secret",
-      "status": "planned, blocked from playback until media and every join pass",
+      "status": "planned, blocked until exact media and every join pass",
       "clipIds": [
         "scary-reform",
         "scary-drift",
-        "scary-notice",
         "scary-pace",
-        "scary-reach",
-        "scary-orbit",
-        "scary-inspect",
         "scary-eyes",
-        "scary-magic",
-        "scary-dissolve",
-        "shared-empty",
+        "scary-retreat",
         "friendly-reform",
-        "friendly-notice",
-        "friendly-wave",
-        "friendly-writing",
-        "friendly-bow",
+        "friendly-drift",
         "friendly-depart",
-        "shared-empty"
+        "friendly-wave",
+        "friendly-boo-fail",
+        "fog-lettering",
+        "bats-through-letters"
       ],
       "targetSecondsWithoutBridges": 145,
-      "notes": "Mostly spooky; a short friendly writing interlude; no automatic lunge; return from empty to scary-reform only after reviewed entry. Bridge durations can extend the edit; trim the final authored master to 120\u2013180 seconds without speed-changing acting."
+      "notes": "Planned 120\u2013180-second ambient edit. Empty stage is a runtime hold, not a paid video cue. No manual-only reach in automatic playback. Port compatibility is a plan, not an approved join."
+    },
+    {
+      "id": "doorstep-morph-01",
+      "title": "One spirit, two sides",
+      "status": "planned, blocked until exact media and every join pass",
+      "clipIds": [
+        "friendly-reform",
+        "friendly-drift",
+        "cute-to-evil",
+        "scary-drift",
+        "scary-fakeout",
+        "evil-to-cute",
+        "friendly-depart",
+        "fog-lettering",
+        "bats-through-letters"
+      ],
+      "targetSecondsWithoutBridges": 150,
+      "notes": "Use the two existing morph studies only if exact visual/transition review passes; otherwise revise selectively. No spoken dialogue in ambient clips."
     }
   ],
   "productionStudies": [
@@ -561,6 +372,367 @@
       "sha256": "955635d3b7ed8353c0a514fbf4d18c557e02131b6a443866b94a57fdfabb7345",
       "status": "review-pending",
       "scope": "Distant glimmer and friendly arrival; editorial black lead has41exact-black frames, all20percent reserve. New motion/anatomy and actual arrival-to-idle join pending human review; not a finished cue."
+    },
+    {
+      "plannedClipIds": [
+        "friendly-wave"
+      ],
+      "media": "../button-cue-batch/friendly-wave-runtime-candidate-v3.mp4",
+      "sha256": "32177fb6e3f49de6e8f4bf761575fa1709358ac56ee4c3464f029ffbb9a6300a",
+      "status": "human-review-pending",
+      "scope": "Human endorsed painted motion direction but rejected choir/music in the first wave. v3 retains identical compressed video and adds dry nonmusical fog/hand effects. New sound and exact file approval pending; not a ready cue.",
+      "evidence": "../button-cue-batch/friendly-wave-runtime-candidate-v3.json"
+    },
+    {
+      "plannedClipIds": [
+        "friendly-drift"
+      ],
+      "media": "../button-cue-batch/friendly-drift-candidate-v2.mp4",
+      "sha256": "85827639be160901b274eab40493f0229273b3a7d675b18317c11bb6beb3b649",
+      "status": "original-motion-endorsed;pcm-repeat-repaired;new-audio-review-pending",
+      "scope": "Original v28 compressed pictures preserved exactly. Replaced packet-looped MP3 with once-decoded PCM repeats and40ms crossfades, removing two measured25ms timestamp gaps. No new animation credits. New encoded sound and exact-file closing loop still need human review. Not a ready catalog slot.",
+      "reviewMetadata": "../button-cue-batch/friendly-drift-candidate-v2.json",
+      "technicalAudit": "../button-cue-batch/candidate-media-validation-v1.json"
+    },
+    {
+      "plannedClipIds": [
+        "friendly-boo-fail"
+      ],
+      "media": "../button-cue-batch/friendly-boo-fail-runtime-candidate-v1.mp4",
+      "sha256": "4d35f8db6b482ca469acb3e1e17f07efa089a4b676dc428da3c0e6fcbad27b45",
+      "status": "human-review-pending",
+      "evidence": "../button-cue-batch/friendly-boo-fail-runtime-candidate-v1.json",
+      "scope": "Generated full-body performance, fixed framing and verified black endpoints. Human motion/sound and exact joins pending; not a ready cue."
+    },
+    {
+      "plannedClipIds": [
+        "scary-reach"
+      ],
+      "media": "../button-cue-batch/scary-reach-runtime-candidate-v1.mp4",
+      "sha256": "2a003d4f575262ba20651eebf24d6e9d56c32a936533541c3e081453d4e48ecf",
+      "status": "human-review-pending",
+      "evidence": "../button-cue-batch/scary-reach-runtime-candidate-v1.json",
+      "scope": "Generated full-body performance, fixed framing and verified black endpoints. Human motion/sound and exact joins pending; not a ready cue. Original outer vapor clipped; 32px perimeter feather is a review treatment, not reconstruction. Manual-only scare."
+    },
+    {
+      "plannedClipIds": [
+        "friendly-depart"
+      ],
+      "media": "../button-cue-batch/friendly-depart-runtime-candidate-v1.mp4",
+      "sha256": "58d6bd30ab6540e3d7d8eb1f086fe18c2986fa85a04dc45e6cd7301c6e89c59d",
+      "status": "human-review-pending",
+      "evidence": "../button-cue-batch/friendly-depart-runtime-candidate-v1.json",
+      "scope": "Single targeted240credit departure draft. No animated resize/crop; complete side/back turn and native fog vapor ending, all-frame15percent reserve. Rest-pose entry needs a reviewed incoming join; no claim of arbitrary seamless start. Actual motion/sound review remains pending."
+    },
+    {
+      "plannedClipIds": [
+        "cute-to-evil"
+      ],
+      "media": "../button-cue-batch/cute-to-evil-runtime-candidate-v2.mp4",
+      "sha256": "33eb4ca1b2b11bd94b2e480e9f015fe87361039babc3d4a511d96ba2818aa931",
+      "status": "human-review-pending",
+      "evidence": "../button-cue-batch/cute-to-evil-runtime-candidate-v2.json",
+      "scope": "Original authored transformation with fixed canonical framing calibration. Cropped matte peakRGB1 only; all121frames retain15percent reserve. No animated resize, body crossfade, reversal or retiming. OriginalAAC packets copied unchanged. Full motion/sound and four exact incoming/outgoing joins need human review; see wisp-morph-roundtrip-review-v6.mp4. Not an approved cue. Human approved identity, motion and four joins in the contextualV5reel, but rejected its soundtrack. V6preserves exact compressed picture and replaces all sound with sparse dry swishes. Revised mix, individual cue acceptance and closing loop still pending.",
+      "humanDirectionEvidence": "../button-cue-batch/human-morph-review-2026-10-28.json"
+    },
+    {
+      "plannedClipIds": [
+        "evil-to-cute"
+      ],
+      "media": "../button-cue-batch/evil-to-cute-runtime-candidate-v2.mp4",
+      "sha256": "1a769bddfb65ed21cbc236a0b58f6d9191eeabb0ad4e1606785007029ebcd649",
+      "status": "human-review-pending",
+      "evidence": "../button-cue-batch/evil-to-cute-runtime-candidate-v2.json",
+      "scope": "Original authored transformation with fixed canonical framing calibration. Cropped matte peakRGB1 only; all121frames retain15percent reserve. No animated resize, body crossfade, reversal or retiming. OriginalAAC packets copied unchanged. Full motion/sound and four exact incoming/outgoing joins need human review; see wisp-morph-roundtrip-review-v6.mp4. Not an approved cue. Human approved identity, motion and four joins in the contextualV5reel, but rejected its soundtrack. V6preserves exact compressed picture and replaces all sound with sparse dry swishes. Revised mix, individual cue acceptance and closing loop still pending.",
+      "humanDirectionEvidence": "../button-cue-batch/human-morph-review-2026-10-28.json"
+    },
+    {
+      "plannedClipIds": [
+        "cute-to-evil"
+      ],
+      "media": "../button-cue-batch/cute-to-evil-runtime-candidate-v3.mp4",
+      "sha256": "ec9b8a65b525f43991c07b57197b8108ee46d0c0e9c7d83cdb3b2b5f610b0dec",
+      "status": "dry-level-and-standalone-review-pending",
+      "evidence": "../button-cue-batch/cute-to-evil-runtime-candidate-v3.json",
+      "humanDirectionEvidence": "../button-cue-batch/human-morph-review-2026-10-28.json",
+      "scope": "Same compressed video and all121decoded pixels as the v2 motion source. Exact V7 dry-swish PCM window replaces its musical audio; encoded first/last half-second are silent. No generation, resize, reversal or retiming. Contextual visual approval retained as direction only; standalone cue, exact level, new joins and loop approval remain pending. Not a ready cue."
+    },
+    {
+      "plannedClipIds": [
+        "evil-to-cute"
+      ],
+      "media": "../button-cue-batch/evil-to-cute-runtime-candidate-v3.mp4",
+      "sha256": "c3ccb74d44a44e658c723405b51fcd9e3b57a81749f89f8903dd66e455d70463",
+      "status": "dry-level-and-standalone-review-pending",
+      "evidence": "../button-cue-batch/evil-to-cute-runtime-candidate-v3.json",
+      "humanDirectionEvidence": "../button-cue-batch/human-morph-review-2026-10-28.json",
+      "scope": "Same compressed video and all121decoded pixels as the v2 motion source. Exact V7 dry-swish PCM window replaces its musical audio; encoded first/last half-second are silent. No generation, resize, reversal or retiming. Contextual visual approval retained as direction only; standalone cue, exact level, new joins and loop approval remain pending. Not a ready cue."
+    },
+    {
+      "plannedClipIds": [
+        "scary-eyes"
+      ],
+      "media": "../button-cue-batch/scary-eyes-runtime-candidate-v1.mp4",
+      "sha256": "8d30ec2f4d781fd8b663a04e855949d454e1d09948c1d913e8393437a3a4e1f3",
+      "status": "human-review-pending",
+      "evidence": "../button-cue-batch/scary-eyes-runtime-candidate-v1.json",
+      "scope": "One240credit native eyes-only/reformation draft, then fixed0.9 whole-frame buffering and original dry nonverbal air score.241frames24fps,15percent export reserve passes. No crop, animated resize, body crossfade or retiming. Human full motion/material/sound and exact visible rest-pose joins remain pending; no ready cue."
+    },
+    {
+      "plannedClipIds": [
+        "scary-drift"
+      ],
+      "media": "../runway-pilots/scary-idle-loop-study/wisp-scary-idle-loop-pilot-v1.mp4",
+      "sha256": "05dc6b026876f3be364f6174a51a96075b51df98748fba0d1320389cd28f07e2",
+      "status": "revision-required",
+      "scope": "Existing170credit native-loop draft rejected for solid rubbery middle-motion arms/core and nearly held closing bookends.20percent generation reserve failed86frames. No further retry authorized for that pilot; matching endpoint pictures do not establish a living seam. Recorded to prevent accidental reuse or repeat spending."
+    },
+    {
+      "plannedClipIds": [
+        "friendly-drift",
+        "cute-to-evil",
+        "scary-eyes",
+        "scary-drift",
+        "evil-to-cute"
+      ],
+      "media": "../button-cue-batch/wisp-eyes-context-review-v1.mp4",
+      "sha256": "de832a10253bb872ec0b522d408383df2555eac43098ebf38c83d5451f5a5eca",
+      "status": "contextual-join-review-pending",
+      "reviewMetadata": "../button-cue-batch/wisp-eyes-context-review-v1.json",
+      "scope": "One848frame35.33second source review with the eyes cue between the forward morph and native scary hover. One fixed compact staging profile, continuous original dry score, all15percent reserve.6authored windows extract to pixel-identical independently decodable videos. New size calibration, both new visible cuts, sound and closing loop still need human review. This is not5finished library cues or any arbitrary-route approval."
     }
-  ]
+  ],
+  "deferredClips": [
+    {
+      "id": "friendly-notice",
+      "title": "Did someone pass?",
+      "form": "friendly",
+      "targetSeconds": 6,
+      "status": "deferred-by-user-scope-reduction",
+      "entryPort": "friendly-rest",
+      "exitPort": "friendly-rest",
+      "acting": "Eyes lead a head turn; shoulders follow late. A tiny surprised lift settles into recognition.",
+      "dialogue": false,
+      "audioIntent": "tiny glass glint at recognition",
+      "manualOnly": false,
+      "media": null
+    },
+    {
+      "id": "friendly-peek",
+      "title": "Behind an invisible corner",
+      "form": "friendly",
+      "targetSeconds": 8,
+      "status": "deferred-by-user-scope-reduction",
+      "entryPort": "friendly-rest",
+      "exitPort": "friendly-rest",
+      "acting": "Wisp turns in perspective, slips sideways into fog, peeks from the same side and eases back.",
+      "dialogue": false,
+      "audioIntent": "soft fog swish",
+      "manualOnly": false,
+      "media": null
+    },
+    {
+      "id": "friendly-candy",
+      "title": "The imaginary candy",
+      "form": "friendly",
+      "targetSeconds": 8,
+      "status": "deferred-by-user-scope-reduction",
+      "entryPort": "friendly-rest",
+      "exitPort": "friendly-rest",
+      "acting": "Wisp spots an imaginary sweet, cups it, watches it float away and gives an amused silent shrug.",
+      "dialogue": false,
+      "audioIntent": "two delicate candy-like pings",
+      "manualOnly": false,
+      "media": null
+    },
+    {
+      "id": "friendly-twirl",
+      "title": "One happy twirl",
+      "form": "friendly",
+      "targetSeconds": 8,
+      "status": "deferred-by-user-scope-reduction",
+      "entryPort": "friendly-rest",
+      "exitPort": "friendly-rest",
+      "acting": "A hand winds the torso into a full turn, showing a painted back before the core unwinds.",
+      "dialogue": false,
+      "audioIntent": "rising breeze with a soft landing",
+      "manualOnly": false,
+      "media": null
+    },
+    {
+      "id": "friendly-writing",
+      "title": "Happy Halloween",
+      "form": "friendly",
+      "targetSeconds": 14,
+      "status": "deferred-by-user-scope-reduction",
+      "entryPort": "friendly-rest",
+      "exitPort": "friendly-rest",
+      "acting": "Wisp draws two airy lines with a fingertip. Designed Happy Halloween lettering follows the stroke, lingers, then dissolves as Wisp bows.",
+      "dialogue": false,
+      "audioIntent": "chalky shimmer during strokes; gentle sparkle on final dot",
+      "manualOnly": false,
+      "media": null
+    },
+    {
+      "id": "friendly-bow",
+      "title": "Thank you for visiting",
+      "form": "friendly",
+      "targetSeconds": 6,
+      "status": "deferred-by-user-scope-reduction",
+      "entryPort": "friendly-rest",
+      "exitPort": "friendly-rest",
+      "acting": "A modest bow folds shoulders and hands; the lower core trails and catches up.",
+      "dialogue": false,
+      "audioIntent": "a soft warm bell",
+      "manualOnly": false,
+      "media": null
+    },
+    {
+      "id": "scary-notice",
+      "title": "I noticed you",
+      "form": "scary",
+      "targetSeconds": 6,
+      "status": "deferred-by-user-scope-reduction",
+      "entryPort": "scary-rest",
+      "exitPort": "scary-rest",
+      "acting": "The eyes lock first, chin lowers and the torso turns a beat later toward the approach.",
+      "dialogue": false,
+      "audioIntent": "subtle tension swell",
+      "manualOnly": false,
+      "media": null
+    },
+    {
+      "id": "scary-orbit",
+      "title": "The far side of the room",
+      "form": "scary",
+      "targetSeconds": 10,
+      "status": "deferred-by-user-scope-reduction",
+      "entryPort": "scary-rest",
+      "exitPort": "scary-rest",
+      "acting": "Wisp turns its back and circles through depth, then notices the viewer over its shoulder.",
+      "dialogue": false,
+      "audioIntent": "panning wind tied to travel; mono-compatible",
+      "manualOnly": false,
+      "media": null
+    },
+    {
+      "id": "scary-inspect",
+      "title": "What are you doing here?",
+      "form": "scary",
+      "targetSeconds": 7,
+      "status": "deferred-by-user-scope-reduction",
+      "entryPort": "scary-rest",
+      "exitPort": "scary-rest",
+      "acting": "A suspicious head tilt, narrowed lids and deliberate lean; the hands continue a restrained simmer.",
+      "dialogue": false,
+      "audioIntent": "a small creak",
+      "manualOnly": false,
+      "media": null
+    },
+    {
+      "id": "scary-hands",
+      "title": "Counting the visitors",
+      "form": "scary",
+      "targetSeconds": 8,
+      "status": "deferred-by-user-scope-reduction",
+      "entryPort": "scary-rest",
+      "exitPort": "scary-rest",
+      "acting": "Individual fingers curl as the eyes scan three imaginary positions, then the palm opens in invitation.",
+      "dialogue": false,
+      "audioIntent": "soft spectral ticks; no speech",
+      "manualOnly": false,
+      "media": null
+    },
+    {
+      "id": "scary-distant",
+      "title": "Something far away",
+      "form": "scary",
+      "targetSeconds": 9,
+      "status": "deferred-by-user-scope-reduction",
+      "entryPort": "empty",
+      "exitPort": "scary-rest",
+      "acting": "A tiny distant Wisp forms, turns toward us and follows a curved depth approach, stopping inside the framing reserve.",
+      "dialogue": false,
+      "audioIntent": "distant-to-near wind",
+      "manualOnly": false,
+      "media": null
+    },
+    {
+      "id": "scary-poof",
+      "title": "Wrong place, right ghost",
+      "form": "scary",
+      "targetSeconds": 7,
+      "status": "deferred-by-user-scope-reduction",
+      "entryPort": "empty",
+      "exitPort": "scary-rest",
+      "acting": "From an empty stage, a localized vapor poof forms the whole spirit; hands and core settle with overlap.",
+      "dialogue": false,
+      "audioIntent": "one cushioned vapor impact",
+      "manualOnly": false,
+      "media": null
+    },
+    {
+      "id": "scary-dissolve",
+      "title": "Gone before you blink",
+      "form": "scary",
+      "targetSeconds": 8,
+      "status": "deferred-by-user-scope-reduction",
+      "entryPort": "scary-rest",
+      "exitPort": "empty",
+      "acting": "A backward glance, turn away and unravel into wisps until the stage is genuinely empty.",
+      "dialogue": false,
+      "audioIntent": "evaporating hiss with bounded tail",
+      "manualOnly": false,
+      "media": null
+    },
+    {
+      "id": "scary-magic",
+      "title": "A little forbidden magic",
+      "form": "scary",
+      "targetSeconds": 9,
+      "status": "deferred-by-user-scope-reduction",
+      "entryPort": "scary-rest",
+      "exitPort": "scary-rest",
+      "acting": "Hands gather a modest blue ember, orbit it around the core and snuff it between two fingers.",
+      "dialogue": false,
+      "audioIntent": "small crackle and snuff",
+      "manualOnly": false,
+      "media": null
+    },
+    {
+      "id": "scary-reveal",
+      "title": "The operator chooses the scare",
+      "form": "scary",
+      "targetSeconds": 6,
+      "status": "deferred-by-user-scope-reduction",
+      "entryPort": "scary-rest",
+      "exitPort": "scary-rest",
+      "acting": "A short controlled forward feint and immediate recoil; only an armed operator cue, never automatic.",
+      "dialogue": false,
+      "audioIntent": "bounded stinger; no sudden full-scale blast",
+      "manualOnly": true,
+      "media": null
+    },
+    {
+      "id": "shared-empty",
+      "title": "The house waits",
+      "form": "empty",
+      "targetSeconds": 6,
+      "status": "deferred-by-user-scope-reduction",
+      "entryPort": "empty",
+      "exitPort": "empty",
+      "acting": "Intentionally empty black between finished departure and arrival. No stray smoke or orphan eyes.",
+      "dialogue": false,
+      "audioIntent": "silence; preceding tails end deliberately",
+      "manualOnly": false,
+      "media": null
+    }
+  ],
+  "scopeDecision": {
+    "date": "2026-10-28",
+    "userText": "maybe lets reduce to 16 cues and try to limit credits a bit",
+    "activeCueCount": 16,
+    "deferredCueCount": 16,
+    "unchanged": "Video cue library, seamless transitions, playlists/autoplay, silent phone/projector and acceptance requirements remain in scope. The human later replaced primary webcam/voice-conversion delivery with phone-directed text/prompt performances; see docs/wisp-phone-director-amendment.txt. Legacy webcam paths remain preserved."
+  }
 }

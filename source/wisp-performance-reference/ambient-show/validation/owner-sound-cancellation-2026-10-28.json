@@ -1,0 +1,94 @@
+{
+  "status": "local cancellation checks passed; Linux verification pending",
+  "sourceHashes": {
+    "source/wisp-performance-reference/ambient-show/owner-sound.mjs": "17a1eee840fcb2bf58c3dd1bec08fec30266bc991a9d44993b48b79218fdc0e2",
+    "tests/owner_sound_cancel.cjs": "b89540a246bb7aebda3cec1030a24878c828b3394915c7dcb9e740bb5792ea0f",
+    "tests/owner_sound_render.cjs": "ace831a5320186eee5956ce4bd5c669f5babe65f14058de7fc263145ff08c4e4",
+    "tests/owner_sound.cjs": "634afe34f7946ec89de007dcd7f8d94c212b73d9c9be37c706646e3746f81698",
+    "scripts/public-showdesk.json": "9b4b18f916ee95483bb86cb83d99d8c09a832d5bf0605d81433fa8810a64590b"
+  },
+  "changes": [
+    "Future effects stop at zero, mute and detach synchronously instead of waiting for native ended.",
+    "Already-playing effects retain12ms fade/15ms stop, with nominal40ms cleanup timer independent of native ended. Browser timer scheduling is not a hard wall-time guarantee.",
+    "Repeated cancellation preserves the short fade; disposal immediately releases remaining nodes/timers/master.",
+    "Start failure and synchronous/late completion cannot retain voices."
+  ],
+  "syntheticGraph": {
+    "passed": true,
+    "futureStopAtZero": true,
+    "futureGraphDetachedSynchronously": true,
+    "frozenAudioClockCleanup": true,
+    "repeatedCancelRetainsFade": true,
+    "disposeClearsTimersAndMaster": true,
+    "synchronousEndedAndStartFailureCleanup": true,
+    "scope": "Synthetic audio graph with a frozen clock and normal Node timers. Does not establish hidden-browser/OS-sleep timer bounds, native audio samples or acoustic acceptance."
+  },
+  "nativeRealtime": {
+    "passed": true,
+    "before": 2,
+    "cancelled": 0,
+    "futureReleasedImmediately": true,
+    "stoppedBeforeDue": true,
+    "invalid": true,
+    "invalidLevel": true,
+    "late": false,
+    "afterDispose": true,
+    "state": {
+      "enabled": false,
+      "contextState": "not-created",
+      "voices": 0,
+      "retiring": 0,
+      "buffers": 0,
+      "level": 0,
+      "disposed": true
+    },
+    "scope": "Native AudioContext/WAV decode, hardware-muted and zero effect level. Immediate future graph release, actual native ended before due, stale decode and disposal. Not acoustic listening, provider or physical projection."
+  },
+  "nativeOffline": {
+    "chromium": {
+      "passed": true,
+      "baseline": {
+        "samples": 48000,
+        "peak": 0.14000000059604645,
+        "rms": 0.031304951239894754,
+        "releasedBeforeRender": false,
+        "voices": 0,
+        "retiring": 0
+      },
+      "cancelled": {
+        "samples": 48000,
+        "peak": 0,
+        "rms": 0,
+        "releasedBeforeRender": true,
+        "voices": 0,
+        "retiring": 0
+      },
+      "scope": "Native OfflineAudioContext graph/samples through actual owner play/cancel methods with an explicit pre-render state adapter. Nonzero control versus exact-zero cancelled output. Not live hardware timing, acoustic listening, provider or physical projection acceptance."
+    },
+    "webkit": {
+      "passed": true,
+      "baseline": {
+        "samples": 48000,
+        "peak": 0.14000000059604645,
+        "rms": 0.031304951239894754,
+        "releasedBeforeRender": false,
+        "voices": 0,
+        "retiring": 0
+      },
+      "cancelled": {
+        "samples": 48000,
+        "peak": 0,
+        "rms": 0,
+        "releasedBeforeRender": true,
+        "voices": 0,
+        "retiring": 0
+      },
+      "scope": "Native OfflineAudioContext graph/samples through actual owner play/cancel methods with an explicit pre-render state adapter. Nonzero control versus exact-zero cancelled output. Not live hardware timing, acoustic listening, provider or physical projection acceptance."
+    }
+  },
+  "integratedLocal": [
+    "Chrome and MacWebKit built showdesk_sound.cjs: import, empty-stage rejection, manual effect, real pause recovery, cue change, Blackout and silent output passed.",
+    "Public build85modules/privacy checks;104suite shard coverage passed."
+  ],
+  "limits": "No acoustic listening, physical projector or provider/voice approval. Offline tests use a documented pre-render state adapter; graph/samples are native. Existing native ended-within1second check remains unchanged as a requirement."
+}

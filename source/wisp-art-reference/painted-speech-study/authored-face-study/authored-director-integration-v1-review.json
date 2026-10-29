@@ -1,0 +1,120 @@
+{
+  "status": "explicit-in-app-preview-human-review-pending",
+  "route": "/assets/wisp-showdesk/director.html?pipeline=single&mouth=authored-native",
+  "defaultRendererChanged": false,
+  "localFullDirector": [
+    "Chromium: pass",
+    "Mac WebKit: pass"
+  ],
+  "preparationCancellation": [
+    "Chromium: Stop/uncheck/pagehide/capture-failure pass",
+    "Mac WebKit: Stop/uncheck/pagehide/capture-failure pass"
+  ],
+  "audition": {
+    "file": "work/authored-director-proof-v1/authored-director-speaking.mp4",
+    "voice": "Existing human-approved apology source, offline response fixture; no new provider call",
+    "seconds": 8.064,
+    "mouthDraws": 311,
+    "registration": {
+      "calls": 487,
+      "matches": 197,
+      "rejected": 0,
+      "cached": 290,
+      "frame": null,
+      "disposed": false
+    },
+    "body": {
+      "created": 548,
+      "closed": 548,
+      "held": 0,
+      "maxHeld": 1,
+      "published": 220,
+      "duplicates": 328,
+      "unavailable": 0,
+      "discarded": 0,
+      "failures": 0,
+      "rgbaCopies": 0,
+      "canvasCopies": 220,
+      "lastFailure": null,
+      "pending": false,
+      "ready": false,
+      "disposed": true,
+      "time": null,
+      "failed": false
+    },
+    "mux": "Video-only stage capture with original voice master muxed afterward at measured start offset; not acoustic capture or latency validation"
+  },
+  "visualReview": "Viewed eight sampled in-app frames. Native painted identity/body/fog retained; mouth is part of the face in those views. Full moving naturalness and perceived attachment remain a human decision. Review contact crops are inspection only, not projection exports.",
+  "humanReview": {
+    "status": "pending",
+    "question": "In the new in-app audition, does the mouth feel painted into his face as he moves and speaks?"
+  },
+  "linuxAppAcceptance": {
+    "run": 40826225341,
+    "result": "failed full director at scary-film activation;4preparation cancellation cases passed",
+    "error": {
+      "cue": "scary-drift",
+      "errorName": "NotSupportedError",
+      "mediaError": 4,
+      "readyState": 0,
+      "networkState": 3
+    },
+    "bodyCapture": {
+      "published": 671,
+      "created": 693,
+      "closed": 693,
+      "failures": 0
+    },
+    "scope": "Friendly authored face/canonical preparation succeeded; no Linux full-app release approval."
+  },
+  "runtimeProductionApproved": false,
+  "physicalProjection": false,
+  "paidCreditsSpent": 0,
+  "pairedPhoneBrowserProof": {
+    "performances": 4,
+    "phoneAudioContexts": 0,
+    "typedFriendlyFace": true,
+    "scaryCharacterVoiceRouting": true,
+    "scaryMouthAcceptance": false,
+    "ambienceSelection": true,
+    "appliedAcknowledgements": true,
+    "remoteStop": true,
+    "stopBody": {
+      "created": 1366,
+      "closed": 1366,
+      "held": 0,
+      "maxHeld": 1,
+      "published": 507,
+      "duplicates": 859,
+      "unavailable": 0,
+      "discarded": 0,
+      "failures": 0,
+      "rgbaCopies": 0,
+      "canvasCopies": 507,
+      "lastFailure": null,
+      "pending": false,
+      "ready": false,
+      "disposed": false,
+      "time": null,
+      "failed": false
+    },
+    "physicalPhone": false,
+    "provider": "mocked synthetic silent PCM and explicit viseme control",
+    "services": "Two isolated loopback servers; no Keychain/provider credentials or existing voice-service status calls"
+  },
+  "linuxContextRetirementDiagnostic": {
+    "run": 40827163677,
+    "head": "be243abbd96186ae230912261f162926a607db58",
+    "result": "pass with no forced context loss diagnostic; not default disposal acceptance",
+    "speechStarts": 6,
+    "canonicalPreparations": 2,
+    "preventedContextLoss": 2,
+    "pageErrors": [],
+    "stopBodyCreated": 2451,
+    "stopBodyClosed": 2451,
+    "stopBodyPublished": 1012,
+    "stopBodyMaxHeld": 1,
+    "preparationCancellationCases": 4,
+    "causation": "Supports investigating context lifetime; single pass does not establish reliability. Do not ship the global prototype interception as a production fix."
+  }
+}

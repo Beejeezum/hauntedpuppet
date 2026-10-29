@@ -1,0 +1,216 @@
+{
+  "purpose": "Review candidate evidence only; no cue or artistic join approval",
+  "candidateSha256": "8d30ec2f4d781fd8b663a04e855949d454e1d09948c1d913e8393437a3a4e1f3",
+  "results": {
+    "cue-review-chromium": {
+      "passed": true,
+      "scope": "Actual rehearsal, departure,15.125second idle-to-departure and607frame25.29second morph roundtrip files decoded through one player, full morph and eyes-only playback to EOS, deep-linked eyes review and real playback across the handoff, paused/muted film selection, zero-volume audition sink, manual sound enable, chapter seek/pause, no capture, narrow layout and pagehide cleanup. No human sound/motion or physical projection acceptance."
+    },
+    "cue-review-webkit": {
+      "passed": true,
+      "scope": "Actual rehearsal, departure,15.125second idle-to-departure and607frame25.29second morph roundtrip files decoded through one player, full morph and eyes-only playback to EOS, deep-linked eyes review and real playback across the handoff, paused/muted film selection, zero-volume audition sink, manual sound enable, chapter seek/pause, no capture, narrow layout and pagehide cleanup. No human sound/motion or physical projection acceptance."
+    },
+    "film-complete-exit-chromium-eyes": {
+      "passed": true,
+      "catalogMode": false,
+      "cycles": 1,
+      "fixedFixtureMediaElements": 2,
+      "elapsedMs": 33753,
+      "repeated": [
+        {
+          "cue": "a",
+          "time": 10.041667
+        },
+        {
+          "cue": "b",
+          "time": 10.041667
+        },
+        {
+          "cue": "c",
+          "time": 10.292
+        }
+      ],
+      "seamStages": [
+        {
+          "live": true,
+          "keepPicture": false,
+          "black": true,
+          "level": 0
+        },
+        {
+          "live": true,
+          "keepPicture": false,
+          "black": true,
+          "level": 0
+        },
+        {
+          "live": true,
+          "keepPicture": false,
+          "black": true,
+          "level": 0
+        },
+        {
+          "live": true,
+          "keepPicture": false,
+          "black": true,
+          "level": 0
+        }
+      ],
+      "candidates": [
+        "friendly-wave-runtime-candidate-v3.mp4",
+        "scary-eyes-runtime-candidate-v1.mp4",
+        "scary-reach-runtime-candidate-v1.mp4"
+      ],
+      "exit": {
+        "events": [
+          {
+            "cue": "a",
+            "at": 11043.300000011921,
+            "time": 10.041667
+          }
+        ],
+        "waitMs": 8747.800000011921
+      },
+      "responses": [
+        {
+          "status": 206,
+          "range": "bytes=0-"
+        },
+        {
+          "status": 206,
+          "range": "bytes=0-"
+        },
+        {
+          "status": 206,
+          "range": "bytes=0-"
+        },
+        {
+          "status": 206,
+          "range": "bytes=0-"
+        },
+        {
+          "status": 206,
+          "range": "bytes=0-"
+        }
+      ],
+      "rangeAwareHttp": true,
+      "scope": "Actual generated candidate media decoded in muted browser; complete performances and repeated last-to-first closing boundaries reach EOS before next activation, fixed two-media fixture, preloading and immediate Blackout cancellation. Catalog route approvals, when enabled, are synthetic fixtures. Not human motion/audio or physical projection acceptance."
+    },
+    "film-complete-exit-webkit-eyes": {
+      "passed": true,
+      "catalogMode": false,
+      "cycles": 1,
+      "fixedFixtureMediaElements": 2,
+      "elapsedMs": 33713,
+      "repeated": [
+        {
+          "cue": "a",
+          "time": 10.042
+        },
+        {
+          "cue": "b",
+          "time": 10.042
+        },
+        {
+          "cue": "c",
+          "time": 10.292
+        }
+      ],
+      "seamStages": [
+        {
+          "live": true,
+          "keepPicture": false,
+          "black": true,
+          "level": 0
+        },
+        {
+          "live": true,
+          "keepPicture": false,
+          "black": true,
+          "level": 0
+        },
+        {
+          "live": true,
+          "keepPicture": false,
+          "black": true,
+          "level": 0
+        },
+        {
+          "live": true,
+          "keepPicture": false,
+          "black": true,
+          "level": 0
+        }
+      ],
+      "candidates": [
+        "friendly-wave-runtime-candidate-v3.mp4",
+        "scary-eyes-runtime-candidate-v1.mp4",
+        "scary-reach-runtime-candidate-v1.mp4"
+      ],
+      "exit": {
+        "events": [
+          {
+            "cue": "a",
+            "at": 10871,
+            "time": 10.042
+          }
+        ],
+        "waitMs": 8681
+      },
+      "responses": [
+        {
+          "status": 206,
+          "range": "bytes=0-1"
+        },
+        {
+          "status": 206,
+          "range": "bytes=0-476266"
+        },
+        {
+          "status": 206,
+          "range": "bytes=0-1"
+        },
+        {
+          "status": 206,
+          "range": "bytes=0-793365"
+        },
+        {
+          "status": 206,
+          "range": "bytes=0-1"
+        },
+        {
+          "status": 206,
+          "range": "bytes=0-960620"
+        },
+        {
+          "status": 206,
+          "range": "bytes=0-1"
+        },
+        {
+          "status": 206,
+          "range": "bytes=0-476266"
+        },
+        {
+          "status": 206,
+          "range": "bytes=0-1"
+        },
+        {
+          "status": 206,
+          "range": "bytes=0-793365"
+        }
+      ],
+      "rangeAwareHttp": true,
+      "scope": "Actual generated candidate media decoded in muted browser; complete performances and repeated last-to-first closing boundaries reach EOS before next activation, fixed two-media fixture, preloading and immediate Blackout cancellation. Catalog route approvals, when enabled, are synthetic fixtures. Not human motion/audio or physical projection acceptance."
+    }
+  },
+  "testSha256": {
+    "cue_review.cjs": "088a9310191dc0792e95d955c1ec72a5b4d290dd95666d826c3c6b4c4f62c886",
+    "film_complete_exit.cjs": "068b56a37fa80d36129886f88db5b203dd6715c677d6f46751b41761ebaaffc5"
+  },
+  "limits": [
+    "Cue queue tests use a fixture compositor, real generated films and muted decoders; they prove EOS scheduling and cancellation, not visual seam quality",
+    "Review page uses actual films with zero-volume sink; no human audio judgement",
+    "No provider, webcam, phone hardware or physical projection acceptance",
+    "Exact visible-pose joins remain pending; runtime approved catalog stays0"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "taskId": "7510115b-1a44-4893-add9-b1d95f3f5e9c",
+  "cueId": "friendly-depart",
+  "status": "completed; one runtime candidate prepared, human review pending",
+  "workspaceId": 1709631,
+  "authorization": "User authorized Bruce for Wisp; current active inventory reduced to16 with conservative spending",
+  "reference": "source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-fuller-loop-anchor-v1.png",
+  "endReference": "source/wisp-performance-reference/ambient-show/fog-lettering-study/empty-stage-v1.png",
+  "model": "seedance-2-fast",
+  "durationSeconds": 10,
+  "resolution": "720p",
+  "nativeAudio": true,
+  "observedDebit": 240,
+  "acceptedSubmissions": 1,
+  "maximumFurtherRetries": 0,
+  "promptFile": "friendly-depart-pilot-v1.prompt.txt",
+  "entryPort": "friendly-rest",
+  "exitPort": "empty",
+  "note": "Single targeted reusable departure. Exact start-pose join, soft fog identity, whole-body rear turn, depth/vapor, framing and sound all need review. No signed asset URLs stored.",
+  "rawSha256": "ca55efee892010b3c9fe281f0304f95b6fcc83d4ab83e663c1eaeed6aa1a62c8",
+  "runtimeCandidate": "friendly-depart-runtime-candidate-v1.mp4",
+  "runtimeSha256": "58d6bd30ab6540e3d7d8eb1f086fe18c2986fa85a04dc45e6cd7301c6e89c59d"
+}

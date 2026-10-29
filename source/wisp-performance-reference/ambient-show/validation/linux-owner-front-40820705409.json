@@ -1,0 +1,39 @@
+{
+  "run": 40820705409,
+  "head": "5aff562f44f3f1822b5b0ef5763e3ceed2ed5300",
+  "conclusion": "failure",
+  "scope": "Test-only owner-front selection, normal GL retirement, actual LinuxWebKit movies and zero-PCM mock HTTP speech. Not projection/background acceptance.",
+  "speechStarts": 1,
+  "failure": "page.check(#mouthStudy) timeout after click; checkbox was visible/enabled/stable. Owner and output JS snapshots both unavailable within bounded diagnostics.",
+  "diagnosticOwnerFront": true,
+  "ownerStateAvailable": false,
+  "outputVisibility": {
+    "unavailable": true
+  },
+  "lastNetwork": [
+    {
+      "id": 5,
+      "event": "request",
+      "path": "/api/performance",
+      "ms": 1753
+    },
+    {
+      "id": 5,
+      "event": "headers",
+      "path": "/api/performance",
+      "ms": 1755,
+      "status": 200
+    },
+    {
+      "id": 5,
+      "event": "finished",
+      "path": "/api/performance",
+      "ms": 1755,
+      "requestStart": 0.525,
+      "responseStart": 2.775,
+      "responseEnd": 3.785
+    }
+  ],
+  "interpretation": "Moving owner forward did not make this scenario pass and stalled earlier than prior projector-front run. Actual visibility/focus trace was unavailable after the stall, so this does not fully rule out visibility involvement or establish the same stall cause.",
+  "action": "No promotion or blind retry. Upstream graphics/video sample-lock path merits targeted backend investigation."
+}

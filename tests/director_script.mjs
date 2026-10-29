@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {directorLine} from '../netlify/lib/director-script.mjs';
+const good={text:'Welcome the pirate',mode:'exact',character:'friendly'};
+assert.deepEqual(await directorLine(good,{fetchImpl:()=>assert.fail('No paid call for exact words')}),good);
+let sent;
+const options={key:'fixture-only',fetchImpl:async(url,init)=>{assert.equal(url,'https://api.openai.com/v1/responses');sent=JSON.parse(init.body);return Response.json({status:'completed',output:[{type:'reasoning'},{type:'message',role:'assistant',content:[{type:'output_text',text:'Ahoy, candy captain!'}]}]})}};
+assert.equal((await directorLine({...good,mode:'prompt',character:'scary'},options)).text,'Ahoy, candy captain!');assert.equal(sent.store,false);assert(sent.instructions.includes('same playful being'));assert.equal(sent.input,good.text);
+for(const patch of [{text:'x'.repeat(401)},{text:'\0'},{mode:'bad'},{character:'bad'},{model:'untrusted'}])await assert.rejects(directorLine({...good,...patch},options),e=>e.status===400);
+for(const result of [{status:'incomplete',output:[]},{status:'completed',output:[]},{status:'completed',output:[{type:'message',role:'assistant',content:[{type:'output_text',text:'word '.repeat(30)}]}]}])await assert.rejects(directorLine({...good,mode:'prompt'},{...options,fetchImpl:async()=>Response.json(result)}),e=>e.status===502);
+console.log('PASS operator script exact bypass, bounded character improvisation, complete-response extraction and invalid-output rejection (mock provider)');

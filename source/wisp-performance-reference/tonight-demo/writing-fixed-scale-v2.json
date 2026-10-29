@@ -1,0 +1,15 @@
+{
+  "source": "source/wisp-performance-reference/tonight-demo/writing-story-proof-v1.mp4",
+  "sourceSha256": "4fded496aaab828901b7b6d6328ead57bcb3a317eac03af2fdf6224e3703cf74",
+  "output": "source/wisp-performance-reference/tonight-demo/writing-fixed-scale-v2.mp4",
+  "sha256": "f79e45b3b078640db571275945d1bbb8b51e6aea2b53f326a5bef24b2e9ff2e5",
+  "sourceSize": [
+    1280,
+    720
+  ],
+  "frames": 145,
+  "fps": 24,
+  "stageFit": 0.85,
+  "blackMatte": "same smoothstep12..24 maxRGB as approved scare/apology; maxRGB<=3 becomes black",
+  "scope": "Constant whole-frame fit preserves source framing/timing. Does not restore source-clipped wings or fix rejected body motion. Raw and staged video both need review."
+}

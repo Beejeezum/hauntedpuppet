@@ -1,0 +1,22 @@
+{
+  "status": "encoded_media_checks_pass_human_review_pending",
+  "file": "friendly-wave-runtime-candidate-v3.mp4",
+  "sha256": "32177fb6e3f49de6e8f4bf761575fa1709358ac56ee4c3464f029ffbb9a6300a",
+  "compressedVideoIdentity": "SHA256=cc6d080aa23ee2cd4dd3c8e59230d0a6b4634aec637aa21ac407a5eff709f4fa",
+  "decodedFrameAndTimingIdentity": true,
+  "frameCount": 241,
+  "exactBlackHeadFrames": 20,
+  "exactBlackTailFrames": 44,
+  "reserve": 0.15,
+  "boundsEvidence": "friendly-wave-runtime-candidate-v2-review.json",
+  "sampleRate": 48000,
+  "expectedAudioSamples": 482000,
+  "decodedAudioSamples": 482304,
+  "dryMasterCorrelation": 0.9996251752262912,
+  "peak": 0.17930838465690613,
+  "rmsDbFS": -37.422979831911235,
+  "lastHalfSecondPeak": 0.0,
+  "maximumAudioTimestampErrorSeconds": 3.333333342681044e-07,
+  "audioBlocks": 471,
+  "scope": "Exact compressed picture and decoded frame/timestamp identity to independently bounded v2; v3AAC tracks the dry replacement master with quiet tail and contiguous clock. Does not establish perceived nonmusical quality, action sync, human listening/visual approval, actual browser playlist seam or physical projection."
+}

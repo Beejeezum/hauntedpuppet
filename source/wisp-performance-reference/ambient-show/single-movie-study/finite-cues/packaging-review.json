@@ -1,0 +1,35 @@
+{
+  "status": "private edit-list packaging candidate; browser/human acceptance separate",
+  "source": "source/wisp-performance-reference/button-cue-batch/wisp-eyes-context-review-v1.mp4",
+  "sourceSha256": "de832a10253bb872ec0b522d408383df2555eac43098ebf38c83d5451f5a5eca",
+  "video": "Copied original H264 packets; decoded RGB pixel identity verified over every frame.",
+  "audio": "AAC from pinned original PCM; single edit lists express AAC priming. Native browser timing still requires validation.",
+  "cues": [
+    {
+      "id": "friendly-drift",
+      "startFrame": 0,
+      "frames": 122,
+      "fps": 24,
+      "compressedAssetSha256": "143643936bb454a81dbb1e6c7384667dccd04af1a4f0682729982f9f0948dfa2",
+      "decoded": {
+        "sha256": "fc2466648569729e17aa6e2b8f0379ba31ff685d45de3eafbaefa20076975a7f",
+        "bytes": 337305600,
+        "frames": 122
+      }
+    },
+    {
+      "id": "cute-to-evil",
+      "startFrame": 122,
+      "frames": 121,
+      "fps": 24,
+      "compressedAssetSha256": "5464494d7d2662cf9e4db2f570575cfc795565e3a87b063c3d1666f020dc5264",
+      "decoded": {
+        "sha256": "d4869cfa504dbd54b9456aad7c0e79e6822e756be8565823922645cbec9ebbb5",
+        "bytes": 334540800,
+        "frames": 121
+      }
+    }
+  ],
+  "flags": "+frag_keyframe+delay_moov+default_base_moof; use_editlist=1; avoid_negative_ts=disabled",
+  "pcmSamplesSha256": "86754e2687af3ff6ed5ca076f60b05b9fa86f6d5a0ea95badf4c825b0c4c858c"
+}

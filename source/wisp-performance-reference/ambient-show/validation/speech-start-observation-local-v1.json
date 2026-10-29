@@ -1,0 +1,26 @@
+{
+  "status": "test-observation correction; runtime unchanged",
+  "change": "Observe actual successful AudioBufferSourceNode.start through test binding and retain monotonic start records. Assert director phase=playing and native buffer duration at start.",
+  "motivation": "Linuxc046207 native-phone failure showed a0.2sec start+ended and idle before the playing poll, before mouth load.",
+  "checksRetained": [
+    "30sec missing-start deadline",
+    "all six actual starts",
+    "full one-shot EOS before return",
+    "Stop in acting tail",
+    "Stop while voice is still active",
+    "mouth draws and observer cleanup",
+    "late provider isolation",
+    "selected ambience return/repeat",
+    "projector/film silence",
+    "resource/navigation cleanup"
+  ],
+  "local": {
+    "probeUnit": "pass including >200ms late reader, wrong phase, missing start, repeated count and deadline cleanup",
+    "nativeLipPhoneChromium": "pass",
+    "nativeLipPhoneWebkit": "pass",
+    "legacyInterceptedChromium": "pass",
+    "originalFilmHttpWebkit": "pass",
+    "browserRegistry": "112 suites preserved"
+  },
+  "limits": "No runtime bug fix, actual provider, physical phone, acoustic latency or projection acceptance. Linux comparison pending."
+}

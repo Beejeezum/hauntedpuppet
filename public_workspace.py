@@ -10,6 +10,17 @@ WORKSPACES = {
     '/assets/wisp-showdesk/': 'public-showdesk.json',
     '/assets/wisp-film-preview/': 'public-film-preview.json',
     '/assets/wisp-tonight/': 'public-tonight-demo.json',
+    '/assets/wisp-mouth-study/': 'public-mouth-study.json',
+    '/assets/wisp-cue-review/': 'public-cue-review.json',
+}
+
+
+SOURCE_ROOTS = {
+    'public-showdesk.json': ('source/wisp-performance-reference/ambient-show/', 'source/wisp-performance-reference/runway-pilots/', 'source/wisp-performance-reference/button-cue-batch/'),
+    'public-film-preview.json': ('source/wisp-performance-reference/runway-pilots/',),
+    'public-tonight-demo.json': ('source/wisp-performance-reference/tonight-demo/',),
+    'public-mouth-study.json': ('source/wisp-art-reference/painted-speech-study/',),
+    'public-cue-review.json': ('source/wisp-performance-reference/button-cue-batch/',),
 }
 
 
@@ -33,7 +44,34 @@ def byte_range(header, size):
     return start, end
 
 
+def approved_asset(name):
+    """Use the compiler's checksummed export; no Node process or private source route."""
+    descriptor, _ = asset('/assets/wisp-showdesk/approved-publication.json')
+    publication = json.loads(descriptor)
+    catalog = ROOT / 'source/wisp-performance-reference/ambient-show/catalog.json'
+    if (publication.get('schema') != 1 or
+            hashlib.sha256(catalog.read_bytes()).hexdigest() != publication.get('catalogSha256')):
+        raise ValueError('Approved catalog export is stale')
+    if name == 'playback-library.json':
+        return (json.dumps(publication['runtime'], ensure_ascii=False, indent=2) + '\n').encode(), 'application/json'
+    item = next((f for f in publication['files'] if f['destination'] == name), None)
+    if item is None:
+        raise FileNotFoundError('Unknown approved film')
+    source = (ROOT / item['source']).resolve()
+    folder = (ROOT / 'source/wisp-performance-reference').resolve()
+    if folder not in source.parents or source.suffix != '.mp4':
+        raise FileNotFoundError('Invalid approved film source')
+    data = source.read_bytes()
+    if hashlib.sha256(data).hexdigest() != item['sha256']:
+        raise ValueError('Approved film checksum mismatch')
+    return data, 'video/mp4'
+
+
 def asset(path):
+    if path.startswith('/assets/wisp-showdesk/'):
+        name = path[len('/assets/wisp-showdesk/'):]
+        if name == 'playback-library.json' or re.fullmatch(r'[a-z0-9][a-z0-9-]*-[a-f0-9]{12}\.mp4', name):
+            return approved_asset(name)
     for prefix, manifest_name in WORKSPACES.items():
         if not path.startswith(prefix):
             continue
@@ -44,16 +82,11 @@ def asset(path):
         item = next((f for f in manifest['files'] if f['destination'] == name), None)
         if item is None:
             raise FileNotFoundError('Unknown workspace asset')
-        allowed = (r'^source/wisp-performance-reference/tonight-demo/'
-                   if manifest_name == 'public-tonight-demo.json' else
-                   r'^source/wisp-performance-reference/(ambient-show|runway-pilots)/'
-                   if manifest_name == 'public-showdesk.json' else
-                   r'^source/wisp-performance-reference/runway-pilots/')
-        if not re.match(allowed, item['source']):
+        folders = SOURCE_ROOTS[manifest_name]
+        if not item['source'].startswith(folders):
             raise FileNotFoundError('Invalid workspace source')
         source = (ROOT / item['source']).resolve()
-        folders = ('tonight-demo',) if manifest_name == 'public-tonight-demo.json' else ('ambient-show', 'runway-pilots') if manifest_name == 'public-showdesk.json' else ('runway-pilots',)
-        roots = [ROOT / 'source' / 'wisp-performance-reference' / folder for folder in folders]
+        roots = [ROOT / folder for folder in folders]
         if not any(folder.resolve() in source.parents for folder in roots):
             raise FileNotFoundError('Invalid workspace asset')
         data = source.read_bytes()

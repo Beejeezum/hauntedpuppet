@@ -1,0 +1,18 @@
+{
+  "taskId": "eb221f09-256e-4c2f-93f5-c93562ccd136",
+  "cueId": "scary-reach",
+  "status": "generation complete; postprocessed runtime candidate pending human acting, sound and exact-join review",
+  "workspaceId": 1709631,
+  "reference": "source/wisp-performance-reference/runway-pilots/scary-identity-study/wisp-scary-wide-v2.png",
+  "referenceSha256": "bc049a22ac9850f4d314555c424cd516beb04712a6cfa0c2440c9429513d5e8b",
+  "model": "seedance-2-fast",
+  "durationSeconds": 10,
+  "resolution": "720p",
+  "nativeAudio": true,
+  "manualOnly": true,
+  "observedDebit": 240,
+  "acceptedSubmissions": 1,
+  "maximumFurtherRetries": 0,
+  "promptFile": "scary-reach-pilot-v1.prompt.txt",
+  "authorization": "User authorized Bruce and endorsed the painted look/acting; original first-batch brief. No raw signed asset URLs retained."
+}

@@ -1,0 +1,2643 @@
+{
+  "status": "private_same_browser_picture_registration_verified_locally",
+  "sourceSha256": "52d54d03c0f0406a9724c7c04b9e2fa0557a675486edfaa40fd0ca2e24a682bd",
+  "method": "Generate122 centered-seek head-sample references from the exact same native body film/browser; match detached body pixels to those references and select corresponding native lip contour. Clock estimate is not used for registration. Reject sample MSE>1 or second-best margin<1; cache only identical samples.",
+  "evidence": {
+    "chromium": {
+      "calibration": {
+        "paused": [
+          {
+            "requested": 0,
+            "offset": 0,
+            "time": 0,
+            "nearest": 0,
+            "floor": 0,
+            "best": 0,
+            "mse": 0,
+            "secondMse": 4.46939393939394,
+            "matchingMs": 3.7000000178813934
+          },
+          {
+            "requested": 0,
+            "offset": 0.5,
+            "time": 0,
+            "nearest": 0,
+            "floor": 0,
+            "best": 0,
+            "mse": 0,
+            "secondMse": 4.46939393939394,
+            "matchingMs": 0.800000011920929
+          },
+          {
+            "requested": 1,
+            "offset": 0,
+            "time": 0,
+            "nearest": 0,
+            "floor": 0,
+            "best": 0,
+            "mse": 0,
+            "secondMse": 4.46939393939394,
+            "matchingMs": 0.9000000059604645
+          },
+          {
+            "requested": 1,
+            "offset": 0.5,
+            "time": 0.041667,
+            "nearest": 1,
+            "floor": 1,
+            "best": 1,
+            "mse": 0,
+            "secondMse": 4.46939393939394,
+            "matchingMs": 0.699999988079071
+          },
+          {
+            "requested": 2,
+            "offset": 0,
+            "time": 0.083333,
+            "nearest": 2,
+            "floor": 1,
+            "best": 2,
+            "mse": 0,
+            "secondMse": 25.995151515151516,
+            "matchingMs": 0.699999988079071
+          },
+          {
+            "requested": 2,
+            "offset": 0.5,
+            "time": 0.083333,
+            "nearest": 2,
+            "floor": 1,
+            "best": 2,
+            "mse": 0,
+            "secondMse": 25.995151515151516,
+            "matchingMs": 0.699999988079071
+          },
+          {
+            "requested": 24,
+            "offset": 0,
+            "time": 1,
+            "nearest": 24,
+            "floor": 24,
+            "best": 24,
+            "mse": 0,
+            "secondMse": 612.2889898989899,
+            "matchingMs": 0.8999999761581421
+          },
+          {
+            "requested": 24,
+            "offset": 0.5,
+            "time": 1,
+            "nearest": 24,
+            "floor": 24,
+            "best": 24,
+            "mse": 0,
+            "secondMse": 612.2889898989899,
+            "matchingMs": 3.4000000059604645
+          },
+          {
+            "requested": 50,
+            "offset": 0,
+            "time": 2.083333,
+            "nearest": 50,
+            "floor": 49,
+            "best": 50,
+            "mse": 0,
+            "secondMse": 317.95737373737376,
+            "matchingMs": 0.8999999761581421
+          },
+          {
+            "requested": 50,
+            "offset": 0.5,
+            "time": 2.083333,
+            "nearest": 50,
+            "floor": 49,
+            "best": 50,
+            "mse": 0,
+            "secondMse": 317.95737373737376,
+            "matchingMs": 0.7000000178813934
+          },
+          {
+            "requested": 77,
+            "offset": 0,
+            "time": 3.208333,
+            "nearest": 77,
+            "floor": 76,
+            "best": 77,
+            "mse": 0,
+            "secondMse": 541.4918181818182,
+            "matchingMs": 0.800000011920929
+          },
+          {
+            "requested": 77,
+            "offset": 0.5,
+            "time": 3.208333,
+            "nearest": 77,
+            "floor": 76,
+            "best": 77,
+            "mse": 0,
+            "secondMse": 541.4918181818182,
+            "matchingMs": 0.8999999761581421
+          },
+          {
+            "requested": 121,
+            "offset": 0,
+            "time": 5,
+            "nearest": 120,
+            "floor": 120,
+            "best": 120,
+            "mse": 0,
+            "secondMse": 5.028181818181818,
+            "matchingMs": 0.800000011920929
+          },
+          {
+            "requested": 121,
+            "offset": 0.5,
+            "time": 5.041667,
+            "nearest": 121,
+            "floor": 121,
+            "best": 121,
+            "mse": 0,
+            "secondMse": 5.041515151515152,
+            "matchingMs": 0.7000000178813934
+          }
+        ],
+        "moving": [
+          {
+            "time": 0,
+            "nearest": 0,
+            "floor": 0,
+            "best": 0,
+            "mse": 0,
+            "secondMse": 4.46939393939394,
+            "matchingMs": 1.0999999940395355
+          },
+          {
+            "time": 0.083333,
+            "nearest": 2,
+            "floor": 1,
+            "best": 2,
+            "mse": 0,
+            "secondMse": 25.995151515151516,
+            "matchingMs": 1.2000000178813934
+          },
+          {
+            "time": 0.208333,
+            "nearest": 5,
+            "floor": 4,
+            "best": 5,
+            "mse": 0,
+            "secondMse": 33.403535353535354,
+            "matchingMs": 1.5999999940395355
+          },
+          {
+            "time": 0.333333,
+            "nearest": 8,
+            "floor": 7,
+            "best": 8,
+            "mse": 0,
+            "secondMse": 149.15535353535353,
+            "matchingMs": 2.699999988079071
+          },
+          {
+            "time": 0.416667,
+            "nearest": 10,
+            "floor": 10,
+            "best": 10,
+            "mse": 0,
+            "secondMse": 45.174646464646464,
+            "matchingMs": 3
+          },
+          {
+            "time": 0.541667,
+            "nearest": 13,
+            "floor": 13,
+            "best": 13,
+            "mse": 0,
+            "secondMse": 228.97424242424242,
+            "matchingMs": 2.4000000059604645
+          },
+          {
+            "time": 0.666667,
+            "nearest": 16,
+            "floor": 16,
+            "best": 16,
+            "mse": 0,
+            "secondMse": 24.09010101010101,
+            "matchingMs": 2.5999999940395355
+          },
+          {
+            "time": 0.791667,
+            "nearest": 19,
+            "floor": 19,
+            "best": 19,
+            "mse": 0,
+            "secondMse": 44.04909090909091,
+            "matchingMs": 2.5
+          },
+          {
+            "time": 0.916667,
+            "nearest": 22,
+            "floor": 22,
+            "best": 22,
+            "mse": 0,
+            "secondMse": 203.6449494949495,
+            "matchingMs": 2.699999988079071
+          },
+          {
+            "time": 1,
+            "nearest": 24,
+            "floor": 24,
+            "best": 24,
+            "mse": 0,
+            "secondMse": 612.2889898989899,
+            "matchingMs": 2.699999988079071
+          },
+          {
+            "time": 1.125,
+            "nearest": 27,
+            "floor": 27,
+            "best": 27,
+            "mse": 0,
+            "secondMse": 395.84444444444443,
+            "matchingMs": 2.699999988079071
+          },
+          {
+            "time": 1.25,
+            "nearest": 30,
+            "floor": 30,
+            "best": 30,
+            "mse": 0,
+            "secondMse": 559.1329292929292,
+            "matchingMs": 2.199999988079071
+          },
+          {
+            "time": 1.333333,
+            "nearest": 32,
+            "floor": 31,
+            "best": 32,
+            "mse": 0,
+            "secondMse": 699.6867676767677,
+            "matchingMs": 2.2999999821186066
+          },
+          {
+            "time": 1.458333,
+            "nearest": 35,
+            "floor": 34,
+            "best": 35,
+            "mse": 0,
+            "secondMse": 677.4712121212121,
+            "matchingMs": 2.699999988079071
+          },
+          {
+            "time": 1.583333,
+            "nearest": 38,
+            "floor": 37,
+            "best": 38,
+            "mse": 0,
+            "secondMse": 504.7659595959596,
+            "matchingMs": 2.4000000059604645
+          },
+          {
+            "time": 1.666667,
+            "nearest": 40,
+            "floor": 40,
+            "best": 40,
+            "mse": 0,
+            "secondMse": 387.2647474747475,
+            "matchingMs": 2.7000000178813934
+          },
+          {
+            "time": 1.791667,
+            "nearest": 43,
+            "floor": 43,
+            "best": 43,
+            "mse": 0,
+            "secondMse": 201.7312121212121,
+            "matchingMs": 2.2999999821186066
+          },
+          {
+            "time": 1.916667,
+            "nearest": 46,
+            "floor": 46,
+            "best": 46,
+            "mse": 0,
+            "secondMse": 194.76545454545453,
+            "matchingMs": 2.9000000059604645
+          },
+          {
+            "time": 2.041667,
+            "nearest": 49,
+            "floor": 49,
+            "best": 49,
+            "mse": 0,
+            "secondMse": 267.44969696969696,
+            "matchingMs": 2.9000000059604645
+          },
+          {
+            "time": 2.125,
+            "nearest": 51,
+            "floor": 51,
+            "best": 51,
+            "mse": 0,
+            "secondMse": 265.04868686868684,
+            "matchingMs": 2.7999999821186066
+          },
+          {
+            "time": 2.25,
+            "nearest": 54,
+            "floor": 54,
+            "best": 54,
+            "mse": 0,
+            "secondMse": 217.58464646464645,
+            "matchingMs": 2.699999988079071
+          },
+          {
+            "time": 2.375,
+            "nearest": 57,
+            "floor": 57,
+            "best": 57,
+            "mse": 0,
+            "secondMse": 130.6479797979798,
+            "matchingMs": 3.100000023841858
+          },
+          {
+            "time": 2.5,
+            "nearest": 60,
+            "floor": 60,
+            "best": 60,
+            "mse": 0,
+            "secondMse": 47.526464646464646,
+            "matchingMs": 3
+          },
+          {
+            "time": 2.583333,
+            "nearest": 62,
+            "floor": 61,
+            "best": 62,
+            "mse": 0,
+            "secondMse": 29.472121212121213,
+            "matchingMs": 2.5999999940395355
+          },
+          {
+            "time": 2.708333,
+            "nearest": 65,
+            "floor": 64,
+            "best": 65,
+            "mse": 0,
+            "secondMse": 12.99929292929293,
+            "matchingMs": 2.5
+          },
+          {
+            "time": 2.833333,
+            "nearest": 68,
+            "floor": 67,
+            "best": 68,
+            "mse": 0,
+            "secondMse": 8.076464646464647,
+            "matchingMs": 3
+          },
+          {
+            "time": 2.916667,
+            "nearest": 70,
+            "floor": 70,
+            "best": 70,
+            "mse": 0,
+            "secondMse": 20.02090909090909,
+            "matchingMs": 3
+          },
+          {
+            "time": 3.041667,
+            "nearest": 73,
+            "floor": 73,
+            "best": 73,
+            "mse": 0,
+            "secondMse": 66.91848484848485,
+            "matchingMs": 2
+          },
+          {
+            "time": 3.166667,
+            "nearest": 76,
+            "floor": 76,
+            "best": 76,
+            "mse": 0,
+            "secondMse": 474.24363636363637,
+            "matchingMs": 1.7000000178813934
+          },
+          {
+            "time": 3.291667,
+            "nearest": 79,
+            "floor": 79,
+            "best": 79,
+            "mse": 0,
+            "secondMse": 284.7709090909091,
+            "matchingMs": 2.7999999821186066
+          },
+          {
+            "time": 3.416667,
+            "nearest": 82,
+            "floor": 82,
+            "best": 82,
+            "mse": 0,
+            "secondMse": 276.90909090909093,
+            "matchingMs": 2
+          },
+          {
+            "time": 3.5,
+            "nearest": 84,
+            "floor": 84,
+            "best": 84,
+            "mse": 0,
+            "secondMse": 253.21212121212122,
+            "matchingMs": 2.0999999940395355
+          },
+          {
+            "time": 3.625,
+            "nearest": 87,
+            "floor": 87,
+            "best": 87,
+            "mse": 0,
+            "secondMse": 165.07484848484847,
+            "matchingMs": 2.300000011920929
+          },
+          {
+            "time": 3.75,
+            "nearest": 90,
+            "floor": 90,
+            "best": 90,
+            "mse": 0,
+            "secondMse": 299.1439393939394,
+            "matchingMs": 2.4000000059604645
+          },
+          {
+            "time": 3.833333,
+            "nearest": 92,
+            "floor": 91,
+            "best": 92,
+            "mse": 0,
+            "secondMse": 380.82919191919194,
+            "matchingMs": 2.0999999940395355
+          },
+          {
+            "time": 3.958333,
+            "nearest": 95,
+            "floor": 94,
+            "best": 95,
+            "mse": 0,
+            "secondMse": 498.9160606060606,
+            "matchingMs": 2.5
+          },
+          {
+            "time": 4.083333,
+            "nearest": 98,
+            "floor": 97,
+            "best": 98,
+            "mse": 0,
+            "secondMse": 243.89636363636365,
+            "matchingMs": 2.5999999940395355
+          },
+          {
+            "time": 4.166667,
+            "nearest": 100,
+            "floor": 100,
+            "best": 100,
+            "mse": 0,
+            "secondMse": 234.9449494949495,
+            "matchingMs": 2.399999976158142
+          },
+          {
+            "time": 4.291667,
+            "nearest": 103,
+            "floor": 103,
+            "best": 103,
+            "mse": 0,
+            "secondMse": 157.58080808080808,
+            "matchingMs": 2.199999988079071
+          },
+          {
+            "time": 4.416667,
+            "nearest": 106,
+            "floor": 106,
+            "best": 106,
+            "mse": 0,
+            "secondMse": 92.22070707070706,
+            "matchingMs": 2.199999988079071
+          },
+          {
+            "time": 4.5,
+            "nearest": 108,
+            "floor": 108,
+            "best": 108,
+            "mse": 0,
+            "secondMse": 47.96181818181818,
+            "matchingMs": 2.5999999940395355
+          },
+          {
+            "time": 4.625,
+            "nearest": 111,
+            "floor": 111,
+            "best": 111,
+            "mse": 0,
+            "secondMse": 23.48030303030303,
+            "matchingMs": 2.800000011920929
+          },
+          {
+            "time": 4.75,
+            "nearest": 114,
+            "floor": 114,
+            "best": 114,
+            "mse": 0,
+            "secondMse": 22.988282828282827,
+            "matchingMs": 2.5999999940395355
+          },
+          {
+            "time": 4.875,
+            "nearest": 117,
+            "floor": 117,
+            "best": 117,
+            "mse": 0,
+            "secondMse": 10.769595959595959,
+            "matchingMs": 2.0999999940395355
+          },
+          {
+            "time": 5,
+            "nearest": 120,
+            "floor": 120,
+            "best": 120,
+            "mse": 0,
+            "secondMse": 5.028181818181818,
+            "matchingMs": 2.5
+          },
+          {
+            "time": 0,
+            "nearest": 0,
+            "floor": 0,
+            "best": 0,
+            "mse": 0,
+            "secondMse": 4.46939393939394,
+            "matchingMs": 1.7999999821186066
+          },
+          {
+            "time": 0.083333,
+            "nearest": 2,
+            "floor": 1,
+            "best": 2,
+            "mse": 0,
+            "secondMse": 25.995151515151516,
+            "matchingMs": 2.5
+          },
+          {
+            "time": 0.208333,
+            "nearest": 5,
+            "floor": 4,
+            "best": 5,
+            "mse": 0,
+            "secondMse": 33.403535353535354,
+            "matchingMs": 2.5
+          },
+          {
+            "time": 0.333333,
+            "nearest": 8,
+            "floor": 7,
+            "best": 8,
+            "mse": 0,
+            "secondMse": 149.15535353535353,
+            "matchingMs": 2.5
+          },
+          {
+            "time": 0.458333,
+            "nearest": 11,
+            "floor": 10,
+            "best": 11,
+            "mse": 0,
+            "secondMse": 45.174646464646464,
+            "matchingMs": 2.199999988079071
+          },
+          {
+            "time": 0.541667,
+            "nearest": 13,
+            "floor": 13,
+            "best": 13,
+            "mse": 0,
+            "secondMse": 228.97424242424242,
+            "matchingMs": 2.5
+          },
+          {
+            "time": 0.666667,
+            "nearest": 16,
+            "floor": 16,
+            "best": 16,
+            "mse": 0,
+            "secondMse": 24.09010101010101,
+            "matchingMs": 2.699999988079071
+          }
+        ],
+        "nearestMismatches": 0,
+        "floorMismatches": 16,
+        "maxMse": 0,
+        "maxMatchingMs": 3.100000023841858,
+        "ownership": {
+          "created": 189,
+          "closed": 189,
+          "held": 0,
+          "maxHeld": 1,
+          "published": 188,
+          "duplicates": 1,
+          "unavailable": 0,
+          "discarded": 0,
+          "failures": 0,
+          "rgbaCopies": 188,
+          "canvasCopies": 0,
+          "pending": false,
+          "ready": false,
+          "disposed": true,
+          "time": null
+        },
+        "scope": "Same browser references at centers of122 source-frame intervals. Sparse native-head color matching; not ground-truth lip annotations, full app performance, provider or physical acceptance."
+      },
+      "profileSha256": "61b7753bd02f32ac7511dd6056d25ad8863f3a60b7f2d96c4a464da6e6706539",
+      "registeredPlayer": {
+        "result": {
+          "idle": {
+            "ready": true,
+            "active": false,
+            "opening": 0,
+            "draws": 0,
+            "disposed": false,
+            "sourceKind": "owned-rgba",
+            "snapshots": 11,
+            "watching": false,
+            "frameReady": true,
+            "mediaTime": 0.583333,
+            "captureFailure": false,
+            "registration": "picture-match-study",
+            "registeredFrame": null,
+            "registrationMetrics": {
+              "calls": 0,
+              "matches": 0,
+              "rejected": 0,
+              "cached": 0,
+              "frame": null,
+              "disposed": false
+            },
+            "owned": {
+              "created": 69,
+              "closed": 69,
+              "held": 0,
+              "maxHeld": 1,
+              "published": 11,
+              "duplicates": 58,
+              "unavailable": 0,
+              "discarded": 0,
+              "failures": 0,
+              "rgbaCopies": 11,
+              "canvasCopies": 0,
+              "pending": false,
+              "ready": true,
+              "disposed": false,
+              "time": 0.583333
+            }
+          },
+          "lines": [
+            {
+              "duration": 0.2,
+              "draws": 23,
+              "state": {
+                "ready": true,
+                "active": true,
+                "opening": 0.8333445395538913,
+                "draws": 23,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 17,
+                "watching": false,
+                "frameReady": true,
+                "mediaTime": 0.791667,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": 19,
+                "registrationMetrics": {
+                  "calls": 23,
+                  "matches": 6,
+                  "rejected": 0,
+                  "cached": 17,
+                  "frame": 19,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 93,
+                  "closed": 93,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 17,
+                  "duplicates": 76,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 17,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": true,
+                  "disposed": false,
+                  "time": 0.791667
+                }
+              },
+              "stopped": {
+                "ready": true,
+                "active": false,
+                "opening": 0,
+                "draws": 23,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 17,
+                "watching": false,
+                "frameReady": false,
+                "mediaTime": null,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": null,
+                "registrationMetrics": {
+                  "calls": 23,
+                  "matches": 6,
+                  "rejected": 0,
+                  "cached": 17,
+                  "frame": null,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 93,
+                  "closed": 93,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 17,
+                  "duplicates": 76,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 17,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": false,
+                  "time": null
+                }
+              }
+            },
+            {
+              "duration": 0.2,
+              "draws": 23,
+              "state": {
+                "ready": true,
+                "active": true,
+                "opening": 0.8316431597597836,
+                "draws": 46,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 26,
+                "watching": false,
+                "frameReady": true,
+                "mediaTime": 1.083333,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": 26,
+                "registrationMetrics": {
+                  "calls": 46,
+                  "matches": 12,
+                  "rejected": 0,
+                  "cached": 34,
+                  "frame": 26,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 129,
+                  "closed": 129,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 26,
+                  "duplicates": 103,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 26,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": true,
+                  "disposed": false,
+                  "time": 1.083333
+                }
+              },
+              "stopped": {
+                "ready": true,
+                "active": false,
+                "opening": 0,
+                "draws": 46,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 26,
+                "watching": false,
+                "frameReady": false,
+                "mediaTime": null,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": null,
+                "registrationMetrics": {
+                  "calls": 46,
+                  "matches": 12,
+                  "rejected": 0,
+                  "cached": 34,
+                  "frame": null,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 129,
+                  "closed": 129,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 26,
+                  "duplicates": 103,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 26,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": false,
+                  "time": null
+                }
+              }
+            },
+            {
+              "duration": 0.5,
+              "draws": 59,
+              "state": {
+                "ready": true,
+                "active": true,
+                "opening": 0.8499279645068933,
+                "draws": 105,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 41,
+                "watching": false,
+                "frameReady": true,
+                "mediaTime": 1.666667,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": 40,
+                "registrationMetrics": {
+                  "calls": 105,
+                  "matches": 24,
+                  "rejected": 0,
+                  "cached": 81,
+                  "frame": 40,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 201,
+                  "closed": 201,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 41,
+                  "duplicates": 160,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 41,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": true,
+                  "disposed": false,
+                  "time": 1.666667
+                }
+              },
+              "stopped": {
+                "ready": true,
+                "active": false,
+                "opening": 0,
+                "draws": 105,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 41,
+                "watching": false,
+                "frameReady": false,
+                "mediaTime": null,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": null,
+                "registrationMetrics": {
+                  "calls": 105,
+                  "matches": 24,
+                  "rejected": 0,
+                  "cached": 81,
+                  "frame": null,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 201,
+                  "closed": 201,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 41,
+                  "duplicates": 160,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 41,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": false,
+                  "time": null
+                }
+              }
+            },
+            {
+              "duration": 0.2,
+              "draws": 23,
+              "state": {
+                "ready": true,
+                "active": true,
+                "opening": 0.8333795891904637,
+                "draws": 128,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 50,
+                "watching": false,
+                "frameReady": true,
+                "mediaTime": 2,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": 48,
+                "registrationMetrics": {
+                  "calls": 128,
+                  "matches": 30,
+                  "rejected": 0,
+                  "cached": 98,
+                  "frame": 48,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 238,
+                  "closed": 238,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 50,
+                  "duplicates": 188,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 50,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": true,
+                  "disposed": false,
+                  "time": 2
+                }
+              },
+              "stopped": {
+                "ready": true,
+                "active": false,
+                "opening": 0,
+                "draws": 128,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 50,
+                "watching": false,
+                "frameReady": false,
+                "mediaTime": null,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": null,
+                "registrationMetrics": {
+                  "calls": 128,
+                  "matches": 30,
+                  "rejected": 0,
+                  "cached": 98,
+                  "frame": null,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 238,
+                  "closed": 238,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 50,
+                  "duplicates": 188,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 50,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": false,
+                  "time": null
+                }
+              }
+            },
+            {
+              "duration": 1,
+              "draws": 119,
+              "state": {
+                "ready": true,
+                "active": true,
+                "opening": 0.8499999949514749,
+                "draws": 247,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 78,
+                "watching": false,
+                "frameReady": true,
+                "mediaTime": 3.083333,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": 74,
+                "registrationMetrics": {
+                  "calls": 247,
+                  "matches": 54,
+                  "rejected": 0,
+                  "cached": 193,
+                  "frame": 74,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 371,
+                  "closed": 371,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 78,
+                  "duplicates": 293,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 78,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": true,
+                  "disposed": false,
+                  "time": 3.083333
+                }
+              },
+              "stopped": {
+                "ready": true,
+                "active": false,
+                "opening": 0,
+                "draws": 247,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 78,
+                "watching": false,
+                "frameReady": false,
+                "mediaTime": null,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": null,
+                "registrationMetrics": {
+                  "calls": 247,
+                  "matches": 54,
+                  "rejected": 0,
+                  "cached": 193,
+                  "frame": null,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 371,
+                  "closed": 371,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 78,
+                  "duplicates": 293,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 78,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": false,
+                  "time": null
+                }
+              }
+            },
+            {
+              "duration": 0.2,
+              "draws": 23,
+              "state": {
+                "ready": true,
+                "active": true,
+                "opening": 0.8297018723516738,
+                "draws": 270,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 86,
+                "watching": false,
+                "frameReady": true,
+                "mediaTime": 3.375,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": 81,
+                "registrationMetrics": {
+                  "calls": 270,
+                  "matches": 59,
+                  "rejected": 0,
+                  "cached": 211,
+                  "frame": 81,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 407,
+                  "closed": 407,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 87,
+                  "duplicates": 320,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 87,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": true,
+                  "disposed": false,
+                  "time": 3.416667
+                }
+              },
+              "stopped": {
+                "ready": true,
+                "active": false,
+                "opening": 0,
+                "draws": 270,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 86,
+                "watching": false,
+                "frameReady": false,
+                "mediaTime": null,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": null,
+                "registrationMetrics": {
+                  "calls": 270,
+                  "matches": 59,
+                  "rejected": 0,
+                  "cached": 211,
+                  "frame": null,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 407,
+                  "closed": 407,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 87,
+                  "duplicates": 320,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 87,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": false,
+                  "time": null
+                }
+              }
+            }
+          ],
+          "final": {
+            "ready": true,
+            "active": false,
+            "opening": 0,
+            "draws": 270,
+            "disposed": false,
+            "sourceKind": "owned-rgba",
+            "snapshots": 90,
+            "watching": false,
+            "frameReady": true,
+            "mediaTime": 3.5,
+            "captureFailure": false,
+            "registration": "picture-match-study",
+            "registeredFrame": null,
+            "registrationMetrics": {
+              "calls": 270,
+              "matches": 59,
+              "rejected": 0,
+              "cached": 211,
+              "frame": null,
+              "disposed": false
+            },
+            "owned": {
+              "created": 420,
+              "closed": 420,
+              "held": 0,
+              "maxHeld": 1,
+              "published": 90,
+              "duplicates": 330,
+              "unavailable": 0,
+              "discarded": 0,
+              "failures": 0,
+              "rgbaCopies": 90,
+              "canvasCopies": 0,
+              "pending": false,
+              "ready": true,
+              "disposed": false,
+              "time": 3.5
+            }
+          },
+          "stage": {
+            "black": false,
+            "suspended": false,
+            "level": 1,
+            "draws": 420,
+            "layers": [
+              {
+                "id": "character",
+                "opacity": 1,
+                "blend": "source-over",
+                "visible": true,
+                "kind": "character",
+                "scale": 1,
+                "x": 0,
+                "y": 0
+              }
+            ]
+          },
+          "disposed": {
+            "ready": false,
+            "active": false,
+            "opening": 0,
+            "draws": 270,
+            "disposed": true,
+            "sourceKind": "owned-rgba",
+            "snapshots": 90,
+            "watching": false,
+            "frameReady": false,
+            "mediaTime": null,
+            "captureFailure": false,
+            "registration": "picture-match-study",
+            "registeredFrame": null,
+            "registrationMetrics": {
+              "calls": 270,
+              "matches": 59,
+              "rejected": 0,
+              "cached": 211,
+              "frame": null,
+              "disposed": true
+            },
+            "owned": {
+              "created": 420,
+              "closed": 420,
+              "held": 0,
+              "maxHeld": 1,
+              "published": 90,
+              "duplicates": 330,
+              "unavailable": 0,
+              "discarded": 0,
+              "failures": 0,
+              "rgbaCopies": 90,
+              "canvasCopies": 0,
+              "pending": false,
+              "ready": false,
+              "disposed": true,
+              "time": null
+            }
+          },
+          "scope": "Actual movie + native WebAudio short zero-sample lines and authored synthetic AH weights, shared detached frame source and actual silent output. No provider/visual/phoneme/physical acceptance."
+        },
+        "remote": {
+          "media": 0,
+          "state": {
+            "silent": true,
+            "stopped": true,
+            "stale": false,
+            "stalls": 0,
+            "width": 1280,
+            "height": 720,
+            "owner": false
+          }
+        }
+      }
+    },
+    "webkit": {
+      "calibration": {
+        "paused": [
+          {
+            "requested": 0,
+            "offset": 0,
+            "time": 0,
+            "nearest": 0,
+            "floor": 0,
+            "best": 0,
+            "mse": 0,
+            "secondMse": 4.650505050505051,
+            "matchingMs": 4
+          },
+          {
+            "requested": 0,
+            "offset": 0.5,
+            "time": 0.020833,
+            "nearest": 0,
+            "floor": 0,
+            "best": 0,
+            "mse": 0,
+            "secondMse": 4.650505050505051,
+            "matchingMs": 4
+          },
+          {
+            "requested": 1,
+            "offset": 0,
+            "time": 0.041666,
+            "nearest": 1,
+            "floor": 0,
+            "best": 0,
+            "mse": 0,
+            "secondMse": 4.650505050505051,
+            "matchingMs": 5
+          },
+          {
+            "requested": 1,
+            "offset": 0.5,
+            "time": 0.0625,
+            "nearest": 2,
+            "floor": 1,
+            "best": 1,
+            "mse": 0,
+            "secondMse": 4.650505050505051,
+            "matchingMs": 5
+          },
+          {
+            "requested": 2,
+            "offset": 0,
+            "time": 0.083333,
+            "nearest": 2,
+            "floor": 1,
+            "best": 1,
+            "mse": 0,
+            "secondMse": 4.650505050505051,
+            "matchingMs": 4
+          },
+          {
+            "requested": 2,
+            "offset": 0.5,
+            "time": 0.104166,
+            "nearest": 2,
+            "floor": 2,
+            "best": 2,
+            "mse": 0,
+            "secondMse": 25.66010101010101,
+            "matchingMs": 4
+          },
+          {
+            "requested": 24,
+            "offset": 0,
+            "time": 1,
+            "nearest": 24,
+            "floor": 24,
+            "best": 24,
+            "mse": 0,
+            "secondMse": 570.1307070707071,
+            "matchingMs": 2
+          },
+          {
+            "requested": 24,
+            "offset": 0.5,
+            "time": 1.020833,
+            "nearest": 24,
+            "floor": 24,
+            "best": 24,
+            "mse": 0,
+            "secondMse": 570.1307070707071,
+            "matchingMs": 2
+          },
+          {
+            "requested": 50,
+            "offset": 0,
+            "time": 2.083333,
+            "nearest": 50,
+            "floor": 49,
+            "best": 49,
+            "mse": 0,
+            "secondMse": 266.3358585858586,
+            "matchingMs": 2
+          },
+          {
+            "requested": 50,
+            "offset": 0.5,
+            "time": 2.104166,
+            "nearest": 50,
+            "floor": 50,
+            "best": 50,
+            "mse": 0,
+            "secondMse": 314.9521212121212,
+            "matchingMs": 2
+          },
+          {
+            "requested": 77,
+            "offset": 0,
+            "time": 3.208333,
+            "nearest": 77,
+            "floor": 76,
+            "best": 76,
+            "mse": 0,
+            "secondMse": 462.1653535353535,
+            "matchingMs": 2
+          },
+          {
+            "requested": 77,
+            "offset": 0.5,
+            "time": 3.229166,
+            "nearest": 77,
+            "floor": 77,
+            "best": 77,
+            "mse": 0,
+            "secondMse": 500.10848484848486,
+            "matchingMs": 2
+          },
+          {
+            "requested": 121,
+            "offset": 0,
+            "time": 5.041666,
+            "nearest": 121,
+            "floor": 120,
+            "best": 120,
+            "mse": 0,
+            "secondMse": 5.225252525252525,
+            "matchingMs": 2
+          },
+          {
+            "requested": 121,
+            "offset": 0.5,
+            "time": 5.0625,
+            "nearest": 0,
+            "floor": 121,
+            "best": 121,
+            "mse": 0,
+            "secondMse": 4.847979797979798,
+            "matchingMs": 2
+          }
+        ],
+        "moving": [
+          {
+            "time": 0.010002,
+            "nearest": 0,
+            "floor": 0,
+            "best": 0,
+            "mse": 0,
+            "secondMse": 4.650505050505051,
+            "matchingMs": 1
+          },
+          {
+            "time": 0.116881,
+            "nearest": 3,
+            "floor": 2,
+            "best": 2,
+            "mse": 0,
+            "secondMse": 25.66010101010101,
+            "matchingMs": 2
+          },
+          {
+            "time": 0.23213,
+            "nearest": 6,
+            "floor": 5,
+            "best": 4,
+            "mse": 0,
+            "secondMse": 22.948383838383837,
+            "matchingMs": 3
+          },
+          {
+            "time": 0.352473,
+            "nearest": 8,
+            "floor": 8,
+            "best": 8,
+            "mse": 0,
+            "secondMse": 131.1349494949495,
+            "matchingMs": 3
+          },
+          {
+            "time": 0.479737,
+            "nearest": 12,
+            "floor": 11,
+            "best": 11,
+            "mse": 0,
+            "secondMse": 41.36909090909091,
+            "matchingMs": 4
+          },
+          {
+            "time": 0.607827,
+            "nearest": 15,
+            "floor": 14,
+            "best": 14,
+            "mse": 0,
+            "secondMse": 96.2090909090909,
+            "matchingMs": 3
+          },
+          {
+            "time": 0.733852,
+            "nearest": 18,
+            "floor": 17,
+            "best": 17,
+            "mse": 0,
+            "secondMse": 23.51191919191919,
+            "matchingMs": 4
+          },
+          {
+            "time": 0.861712,
+            "nearest": 21,
+            "floor": 20,
+            "best": 20,
+            "mse": 0,
+            "secondMse": 42.79272727272727,
+            "matchingMs": 3
+          },
+          {
+            "time": 0.988708,
+            "nearest": 24,
+            "floor": 23,
+            "best": 23,
+            "mse": 0,
+            "secondMse": 391.37757575757576,
+            "matchingMs": 3
+          },
+          {
+            "time": 1.113408,
+            "nearest": 27,
+            "floor": 26,
+            "best": 26,
+            "mse": 0,
+            "secondMse": 372.6020202020202,
+            "matchingMs": 3
+          },
+          {
+            "time": 1.239432,
+            "nearest": 30,
+            "floor": 29,
+            "best": 29,
+            "mse": 0,
+            "secondMse": 545.6128282828283,
+            "matchingMs": 2
+          },
+          {
+            "time": 1.354718,
+            "nearest": 33,
+            "floor": 32,
+            "best": 32,
+            "mse": 0,
+            "secondMse": 676.7326262626262,
+            "matchingMs": 2
+          },
+          {
+            "time": 1.470797,
+            "nearest": 35,
+            "floor": 35,
+            "best": 35,
+            "mse": 0,
+            "secondMse": 656.9387878787879,
+            "matchingMs": 3
+          },
+          {
+            "time": 1.600456,
+            "nearest": 38,
+            "floor": 38,
+            "best": 37,
+            "mse": 0,
+            "secondMse": 586.6239393939394,
+            "matchingMs": 3
+          },
+          {
+            "time": 1.727431,
+            "nearest": 41,
+            "floor": 41,
+            "best": 40,
+            "mse": 0,
+            "secondMse": 379.14575757575756,
+            "matchingMs": 3
+          },
+          {
+            "time": 1.856635,
+            "nearest": 45,
+            "floor": 44,
+            "best": 44,
+            "mse": 0,
+            "secondMse": 196.6860606060606,
+            "matchingMs": 3
+          },
+          {
+            "time": 1.988625,
+            "nearest": 48,
+            "floor": 47,
+            "best": 47,
+            "mse": 0,
+            "secondMse": 193.89555555555555,
+            "matchingMs": 4
+          },
+          {
+            "time": 2.116587,
+            "nearest": 51,
+            "floor": 50,
+            "best": 50,
+            "mse": 0,
+            "secondMse": 314.9521212121212,
+            "matchingMs": 2
+          },
+          {
+            "time": 2.242961,
+            "nearest": 54,
+            "floor": 53,
+            "best": 53,
+            "mse": 0,
+            "secondMse": 231.24757575757576,
+            "matchingMs": 3
+          },
+          {
+            "time": 2.372077,
+            "nearest": 57,
+            "floor": 56,
+            "best": 56,
+            "mse": 0,
+            "secondMse": 144.96060606060607,
+            "matchingMs": 3
+          },
+          {
+            "time": 2.502664,
+            "nearest": 60,
+            "floor": 60,
+            "best": 60,
+            "mse": 0,
+            "secondMse": 46.72959595959596,
+            "matchingMs": 3
+          },
+          {
+            "time": 2.6318,
+            "nearest": 63,
+            "floor": 63,
+            "best": 62,
+            "mse": 0,
+            "secondMse": 29.352323232323233,
+            "matchingMs": 4
+          },
+          {
+            "time": 2.759912,
+            "nearest": 66,
+            "floor": 66,
+            "best": 65,
+            "mse": 0,
+            "secondMse": 13.12959595959596,
+            "matchingMs": 3
+          },
+          {
+            "time": 2.888287,
+            "nearest": 69,
+            "floor": 69,
+            "best": 69,
+            "mse": 0,
+            "secondMse": 8.349191919191918,
+            "matchingMs": 4
+          },
+          {
+            "time": 3.015369,
+            "nearest": 72,
+            "floor": 72,
+            "best": 71,
+            "mse": 0,
+            "secondMse": 20.713535353535352,
+            "matchingMs": 4
+          },
+          {
+            "time": 3.14275,
+            "nearest": 75,
+            "floor": 75,
+            "best": 75,
+            "mse": 0,
+            "secondMse": 280.2936363636364,
+            "matchingMs": 4
+          },
+          {
+            "time": 3.272672,
+            "nearest": 79,
+            "floor": 78,
+            "best": 78,
+            "mse": 0,
+            "secondMse": 329.54656565656563,
+            "matchingMs": 3
+          },
+          {
+            "time": 3.400631,
+            "nearest": 82,
+            "floor": 81,
+            "best": 81,
+            "mse": 0,
+            "secondMse": 205.40626262626262,
+            "matchingMs": 4
+          },
+          {
+            "time": 3.532572,
+            "nearest": 85,
+            "floor": 84,
+            "best": 84,
+            "mse": 0,
+            "secondMse": 250.58141414141414,
+            "matchingMs": 3
+          },
+          {
+            "time": 3.659715,
+            "nearest": 88,
+            "floor": 87,
+            "best": 87,
+            "mse": 0,
+            "secondMse": 160.62707070707071,
+            "matchingMs": 4
+          },
+          {
+            "time": 3.786646,
+            "nearest": 91,
+            "floor": 90,
+            "best": 90,
+            "mse": 0,
+            "secondMse": 293.6850505050505,
+            "matchingMs": 4
+          },
+          {
+            "time": 3.915037,
+            "nearest": 94,
+            "floor": 93,
+            "best": 93,
+            "mse": 0,
+            "secondMse": 376.39787878787877,
+            "matchingMs": 3
+          },
+          {
+            "time": 4.04471,
+            "nearest": 97,
+            "floor": 97,
+            "best": 96,
+            "mse": 0,
+            "secondMse": 439.5514141414141,
+            "matchingMs": 4
+          },
+          {
+            "time": 4.172482,
+            "nearest": 100,
+            "floor": 100,
+            "best": 100,
+            "mse": 0,
+            "secondMse": 226.89888888888888,
+            "matchingMs": 3
+          },
+          {
+            "time": 4.300552,
+            "nearest": 103,
+            "floor": 103,
+            "best": 103,
+            "mse": 0,
+            "secondMse": 151.4540404040404,
+            "matchingMs": 3
+          },
+          {
+            "time": 4.426891,
+            "nearest": 106,
+            "floor": 106,
+            "best": 105,
+            "mse": 0,
+            "secondMse": 112.87262626262627,
+            "matchingMs": 3
+          },
+          {
+            "time": 4.555902,
+            "nearest": 109,
+            "floor": 109,
+            "best": 109,
+            "mse": 0,
+            "secondMse": 48.08585858585859,
+            "matchingMs": 3
+          },
+          {
+            "time": 4.684005,
+            "nearest": 112,
+            "floor": 112,
+            "best": 112,
+            "mse": 0,
+            "secondMse": 18.771313131313132,
+            "matchingMs": 3
+          },
+          {
+            "time": 4.810798,
+            "nearest": 115,
+            "floor": 115,
+            "best": 115,
+            "mse": 0,
+            "secondMse": 22.625959595959596,
+            "matchingMs": 3
+          },
+          {
+            "time": 4.93995,
+            "nearest": 119,
+            "floor": 118,
+            "best": 118,
+            "mse": 0,
+            "secondMse": 14.970404040404041,
+            "matchingMs": 1
+          },
+          {
+            "time": 5.064316,
+            "nearest": 0,
+            "floor": 121,
+            "best": 121,
+            "mse": 0,
+            "secondMse": 4.847979797979798,
+            "matchingMs": 3
+          },
+          {
+            "time": 0.095439,
+            "nearest": 2,
+            "floor": 2,
+            "best": 1,
+            "mse": 0,
+            "secondMse": 4.650505050505051,
+            "matchingMs": 4
+          },
+          {
+            "time": 0.22469,
+            "nearest": 5,
+            "floor": 5,
+            "best": 5,
+            "mse": 0,
+            "secondMse": 32.3820202020202,
+            "matchingMs": 4
+          },
+          {
+            "time": 0.352743,
+            "nearest": 8,
+            "floor": 8,
+            "best": 8,
+            "mse": 0,
+            "secondMse": 131.1349494949495,
+            "matchingMs": 3
+          },
+          {
+            "time": 0.48279,
+            "nearest": 12,
+            "floor": 11,
+            "best": 11,
+            "mse": 0,
+            "secondMse": 41.36909090909091,
+            "matchingMs": 3
+          },
+          {
+            "time": 0.61138,
+            "nearest": 15,
+            "floor": 14,
+            "best": 14,
+            "mse": 0,
+            "secondMse": 96.2090909090909,
+            "matchingMs": 3
+          },
+          {
+            "time": 0.734894,
+            "nearest": 18,
+            "floor": 17,
+            "best": 17,
+            "mse": 0,
+            "secondMse": 23.51191919191919,
+            "matchingMs": 4
+          },
+          {
+            "time": 0.864403,
+            "nearest": 21,
+            "floor": 20,
+            "best": 20,
+            "mse": 0,
+            "secondMse": 42.79272727272727,
+            "matchingMs": 4
+          },
+          {
+            "time": 0.992629,
+            "nearest": 24,
+            "floor": 23,
+            "best": 23,
+            "mse": 0,
+            "secondMse": 391.37757575757576,
+            "matchingMs": 4
+          },
+          {
+            "time": 1.11987,
+            "nearest": 27,
+            "floor": 26,
+            "best": 26,
+            "mse": 0,
+            "secondMse": 372.6020202020202,
+            "matchingMs": 3
+          },
+          {
+            "time": 1.247685,
+            "nearest": 30,
+            "floor": 29,
+            "best": 29,
+            "mse": 0,
+            "secondMse": 545.6128282828283,
+            "matchingMs": 3
+          },
+          {
+            "time": 1.375574,
+            "nearest": 33,
+            "floor": 33,
+            "best": 32,
+            "mse": 0,
+            "secondMse": 676.7326262626262,
+            "matchingMs": 3
+          }
+        ],
+        "nearestMismatches": 39,
+        "floorMismatches": 10,
+        "maxMse": 0,
+        "maxMatchingMs": 4,
+        "ownership": {
+          "created": 189,
+          "closed": 189,
+          "held": 0,
+          "maxHeld": 1,
+          "published": 189,
+          "duplicates": 0,
+          "unavailable": 0,
+          "discarded": 0,
+          "failures": 0,
+          "rgbaCopies": 0,
+          "canvasCopies": 189,
+          "pending": false,
+          "ready": false,
+          "disposed": true,
+          "time": null
+        },
+        "scope": "Same browser references at centers of122 source-frame intervals. Sparse native-head color matching; not ground-truth lip annotations, full app performance, provider or physical acceptance."
+      },
+      "profileSha256": "35c6a410eaa2b0dfbd5388cf2a9ce2ecd74ec85776d1fc8fc1d93cd2164bfa4a",
+      "registeredPlayer": {
+        "result": {
+          "idle": {
+            "ready": true,
+            "active": false,
+            "opening": 0,
+            "draws": 0,
+            "disposed": false,
+            "sourceKind": "owned-rgba",
+            "snapshots": 64,
+            "watching": false,
+            "frameReady": true,
+            "mediaTime": 0.690231,
+            "captureFailure": false,
+            "registration": "picture-match-study",
+            "registeredFrame": null,
+            "registrationMetrics": {
+              "calls": 0,
+              "matches": 0,
+              "rejected": 0,
+              "cached": 0,
+              "frame": null,
+              "disposed": false
+            },
+            "owned": {
+              "created": 65,
+              "closed": 65,
+              "held": 0,
+              "maxHeld": 1,
+              "published": 65,
+              "duplicates": 0,
+              "unavailable": 0,
+              "discarded": 0,
+              "failures": 0,
+              "rgbaCopies": 0,
+              "canvasCopies": 65,
+              "pending": false,
+              "ready": true,
+              "disposed": false,
+              "time": 0.69886
+            }
+          },
+          "lines": [
+            {
+              "duration": 0.2,
+              "draws": 14,
+              "state": {
+                "ready": true,
+                "active": true,
+                "opening": 0.8322861114754965,
+                "draws": 14,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 79,
+                "watching": false,
+                "frameReady": true,
+                "mediaTime": 0.891739,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": 20,
+                "registrationMetrics": {
+                  "calls": 14,
+                  "matches": 5,
+                  "rejected": 0,
+                  "cached": 9,
+                  "frame": 20,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 80,
+                  "closed": 80,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 80,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 80,
+                  "pending": false,
+                  "ready": true,
+                  "disposed": false,
+                  "time": 0.907932
+                }
+              },
+              "stopped": {
+                "ready": true,
+                "active": false,
+                "opening": 0,
+                "draws": 14,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 79,
+                "watching": false,
+                "frameReady": false,
+                "mediaTime": null,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": null,
+                "registrationMetrics": {
+                  "calls": 14,
+                  "matches": 5,
+                  "rejected": 0,
+                  "cached": 9,
+                  "frame": null,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 80,
+                  "closed": 80,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 80,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 80,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": false,
+                  "time": null
+                }
+              }
+            },
+            {
+              "duration": 0.2,
+              "draws": 16,
+              "state": {
+                "ready": true,
+                "active": true,
+                "opening": 0.832427523835688,
+                "draws": 30,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 107,
+                "watching": false,
+                "frameReady": true,
+                "mediaTime": 1.210183,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": 28,
+                "registrationMetrics": {
+                  "calls": 30,
+                  "matches": 10,
+                  "rejected": 0,
+                  "cached": 20,
+                  "frame": 28,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 108,
+                  "closed": 108,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 108,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 108,
+                  "pending": false,
+                  "ready": true,
+                  "disposed": false,
+                  "time": 1.219048
+                }
+              },
+              "stopped": {
+                "ready": true,
+                "active": false,
+                "opening": 0,
+                "draws": 30,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 107,
+                "watching": false,
+                "frameReady": false,
+                "mediaTime": null,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": null,
+                "registrationMetrics": {
+                  "calls": 30,
+                  "matches": 10,
+                  "rejected": 0,
+                  "cached": 20,
+                  "frame": null,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 108,
+                  "closed": 108,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 108,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 108,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": false,
+                  "time": null
+                }
+              }
+            },
+            {
+              "duration": 0.5,
+              "draws": 45,
+              "state": {
+                "ready": true,
+                "active": true,
+                "opening": 0.8499408348897828,
+                "draws": 75,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 163,
+                "watching": false,
+                "frameReady": true,
+                "mediaTime": 1.822533,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": 43,
+                "registrationMetrics": {
+                  "calls": 75,
+                  "matches": 23,
+                  "rejected": 0,
+                  "cached": 52,
+                  "frame": 43,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 164,
+                  "closed": 164,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 164,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 164,
+                  "pending": false,
+                  "ready": true,
+                  "disposed": false,
+                  "time": 1.83468
+                }
+              },
+              "stopped": {
+                "ready": true,
+                "active": false,
+                "opening": 0,
+                "draws": 75,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 163,
+                "watching": false,
+                "frameReady": false,
+                "mediaTime": null,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": null,
+                "registrationMetrics": {
+                  "calls": 75,
+                  "matches": 23,
+                  "rejected": 0,
+                  "cached": 52,
+                  "frame": null,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 164,
+                  "closed": 164,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 164,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 164,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": false,
+                  "time": null
+                }
+              }
+            },
+            {
+              "duration": 0.2,
+              "draws": 18,
+              "state": {
+                "ready": true,
+                "active": true,
+                "opening": 0.8324790823162841,
+                "draws": 93,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 193,
+                "watching": false,
+                "frameReady": true,
+                "mediaTime": 2.138286,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": 51,
+                "registrationMetrics": {
+                  "calls": 93,
+                  "matches": 29,
+                  "rejected": 0,
+                  "cached": 64,
+                  "frame": 51,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 194,
+                  "closed": 194,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 194,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 194,
+                  "pending": false,
+                  "ready": true,
+                  "disposed": false,
+                  "time": 2.150516
+                }
+              },
+              "stopped": {
+                "ready": true,
+                "active": false,
+                "opening": 0,
+                "draws": 93,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 193,
+                "watching": false,
+                "frameReady": false,
+                "mediaTime": null,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": null,
+                "registrationMetrics": {
+                  "calls": 93,
+                  "matches": 29,
+                  "rejected": 0,
+                  "cached": 64,
+                  "frame": null,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 194,
+                  "closed": 194,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 194,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 194,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": false,
+                  "time": null
+                }
+              }
+            },
+            {
+              "duration": 1,
+              "draws": 92,
+              "state": {
+                "ready": true,
+                "active": true,
+                "opening": 0.8499999946578045,
+                "draws": 185,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 297,
+                "watching": false,
+                "frameReady": true,
+                "mediaTime": 3.250409,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": 77,
+                "registrationMetrics": {
+                  "calls": 185,
+                  "matches": 53,
+                  "rejected": 0,
+                  "cached": 132,
+                  "frame": 77,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 298,
+                  "closed": 298,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 298,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 298,
+                  "pending": false,
+                  "ready": true,
+                  "disposed": false,
+                  "time": 3.259727
+                }
+              },
+              "stopped": {
+                "ready": true,
+                "active": false,
+                "opening": 0,
+                "draws": 185,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 297,
+                "watching": false,
+                "frameReady": false,
+                "mediaTime": null,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": null,
+                "registrationMetrics": {
+                  "calls": 185,
+                  "matches": 53,
+                  "rejected": 0,
+                  "cached": 132,
+                  "frame": null,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 298,
+                  "closed": 298,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 298,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 298,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": false,
+                  "time": null
+                }
+              }
+            },
+            {
+              "duration": 0.2,
+              "draws": 18,
+              "state": {
+                "ready": true,
+                "active": true,
+                "opening": 0.8333338121682413,
+                "draws": 203,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 327,
+                "watching": false,
+                "frameReady": true,
+                "mediaTime": 3.564043,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": 84,
+                "registrationMetrics": {
+                  "calls": 203,
+                  "matches": 58,
+                  "rejected": 0,
+                  "cached": 145,
+                  "frame": 84,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 328,
+                  "closed": 328,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 328,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 328,
+                  "pending": false,
+                  "ready": true,
+                  "disposed": false,
+                  "time": 3.572891
+                }
+              },
+              "stopped": {
+                "ready": true,
+                "active": false,
+                "opening": 0,
+                "draws": 203,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 327,
+                "watching": false,
+                "frameReady": false,
+                "mediaTime": null,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": null,
+                "registrationMetrics": {
+                  "calls": 203,
+                  "matches": 58,
+                  "rejected": 0,
+                  "cached": 145,
+                  "frame": null,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 328,
+                  "closed": 328,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 328,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 328,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": false,
+                  "time": null
+                }
+              }
+            }
+          ],
+          "final": {
+            "ready": true,
+            "active": false,
+            "opening": 0,
+            "draws": 203,
+            "disposed": false,
+            "sourceKind": "owned-rgba",
+            "snapshots": 337,
+            "watching": false,
+            "frameReady": true,
+            "mediaTime": 3.667165,
+            "captureFailure": false,
+            "registration": "picture-match-study",
+            "registeredFrame": null,
+            "registrationMetrics": {
+              "calls": 203,
+              "matches": 58,
+              "rejected": 0,
+              "cached": 145,
+              "frame": null,
+              "disposed": false
+            },
+            "owned": {
+              "created": 338,
+              "closed": 338,
+              "held": 0,
+              "maxHeld": 1,
+              "published": 338,
+              "duplicates": 0,
+              "unavailable": 0,
+              "discarded": 0,
+              "failures": 0,
+              "rgbaCopies": 0,
+              "canvasCopies": 338,
+              "pending": false,
+              "ready": true,
+              "disposed": false,
+              "time": 3.678112
+            }
+          },
+          "stage": {
+            "black": false,
+            "suspended": false,
+            "level": 1,
+            "draws": 338,
+            "layers": [
+              {
+                "id": "character",
+                "opacity": 1,
+                "blend": "source-over",
+                "visible": true,
+                "kind": "character",
+                "scale": 1,
+                "x": 0,
+                "y": 0
+              }
+            ]
+          },
+          "disposed": {
+            "ready": false,
+            "active": false,
+            "opening": 0,
+            "draws": 203,
+            "disposed": true,
+            "sourceKind": "owned-rgba",
+            "snapshots": 337,
+            "watching": false,
+            "frameReady": false,
+            "mediaTime": null,
+            "captureFailure": false,
+            "registration": "picture-match-study",
+            "registeredFrame": null,
+            "registrationMetrics": {
+              "calls": 203,
+              "matches": 58,
+              "rejected": 0,
+              "cached": 145,
+              "frame": null,
+              "disposed": true
+            },
+            "owned": {
+              "created": 338,
+              "closed": 338,
+              "held": 0,
+              "maxHeld": 1,
+              "published": 338,
+              "duplicates": 0,
+              "unavailable": 0,
+              "discarded": 0,
+              "failures": 0,
+              "rgbaCopies": 0,
+              "canvasCopies": 338,
+              "pending": false,
+              "ready": false,
+              "disposed": true,
+              "time": null
+            }
+          },
+          "scope": "Actual movie + native WebAudio short zero-sample lines and authored synthetic AH weights, shared detached frame source and actual silent output. No provider/visual/phoneme/physical acceptance."
+        },
+        "remote": {
+          "media": 0,
+          "state": {
+            "silent": true,
+            "stopped": true,
+            "stale": false,
+            "stalls": 0,
+            "width": 1280,
+            "height": 720,
+            "owner": false
+          }
+        }
+      }
+    }
+  },
+  "interpretation": "Actual moving samples matched same-engine references at MSE0. Nearest timestamp lookup in latest WebKit study mismatched39/52 (earlier sample42/52); floor also unreliable. Registered private player rendered six short synthetic speech lines on both engines with foreground silent output and no DOM callbacks. This resolves an observed registration mechanism only in tested local contexts.",
+  "limits": [
+    "Profiles are private work outputs, not automatically provisioned or portable production assets.",
+    "Same-engine references still require a bounded preparation strategy for the application; no live selector/public build integration.",
+    "Native lip artwork itself remains unapproved; no human visual improvement inferred from mechanical matching.",
+    "No Linux full-app acceptance, genuine provider/acoustic/physical test or deployment.",
+    "0 generation credits spent."
+  ]
+}

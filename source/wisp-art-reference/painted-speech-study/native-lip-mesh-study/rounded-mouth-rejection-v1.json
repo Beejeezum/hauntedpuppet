@@ -1,0 +1,22 @@
+{
+  "status": "internally_rejected_do_not_promote",
+  "artifacts": [
+    "work/native-round-lips-study-v1/shape-contact.png",
+    "work/native-round-lips-study-v2/shape-contact.png",
+    "work/native-round-lips-study-v3/shape-contact.png"
+  ],
+  "review": "Three fixed-pose contact studies reviewed. v1 still smile/point shaped. v2 inadvertently moved pixels outside oral influence because corner shift was nonzero outside profile; withdrawn. v3 bounds the shift but OO has a blocky cavity and loses the painted lip detail. Do not describe rounded geometry as an approved improvement. AH/EE/rest remain controls.",
+  "decision": "Keep previously anchored proof as best unapproved candidate; do not continue arbitrary rounded-hole warping as production solution. Need authored coordinated mouth poses with lip thickness and cavity material, or a demonstrated whole-character native speech renderer.",
+  "research_revalidation": {
+    "runwayCharacters": "Official documentation describes stylized realtime audio-conditioned avatar rendering, but existing docs/wisp-live-character-recovery-2026-10-28.txt records BOTH actual short auditions rejected (fixed grin / fixed closed mouth). Do not repeat automatically.",
+    "scriptToVideo": "Official guide accepts character image plus text or audio. Available MCP generation tools do not expose this specific avatar operation. No generation or workflow created.",
+    "sources": [
+      "https://runway.com/news/engineering/building-runway-characters",
+      "https://help.runwayml.com/hc/en-us/articles/51285026291219-Character-Script-to-Video",
+      "https://docs.dev.runwayml.com/api/"
+    ]
+  },
+  "spend": 0,
+  "runtimeChange": false,
+  "humanApproval": false
+}

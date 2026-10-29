@@ -1,0 +1,18 @@
+{
+  "status": "private_static_candidate_not_runtime_approved",
+  "method": "Hash-verified rest painting; dark eye component convex envelope, bounded eye ROIs and3px guard stroke. Generic ellipse replaced only in private renderer.",
+  "evidence": [
+    "work/authored-face-registration/eye-boundary-contact.png",
+    "work/authored-face-registration/curved-eye-guard-v3/mesh-painted-halfway.png",
+    "work/authored-face-registration/curved-eye-guard-v3/mesh-render-review.json"
+  ],
+  "visualReview": "Viewed source eye-envelope overlay and new halfway contact. Source envelopes follow visible painted eyes far more tightly than ellipse. EE corner cuts visible in prior contact are absent in this version. AH/EE cavities remain opaque; halfway OO still tapers and is not approved puckering.",
+  "checks": "Protected measured-mask pixels unchanged for3 halfway poses; renderer resources disposed. Not yet tested on original moving head or voiced animation.",
+  "limits": [
+    "Envelope may omit pale eyelid fringes; no artist mask approval.",
+    "Only exact static rest sheet cell; not a native video landmark map.",
+    "No finished mouth or full-character acceptance."
+  ],
+  "runtimePromoted": false,
+  "creditsSpent": 0
+}

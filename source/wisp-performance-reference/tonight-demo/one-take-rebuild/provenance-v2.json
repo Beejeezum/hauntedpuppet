@@ -1,0 +1,29 @@
+{
+  "taskId": "32d109b5-c62a-4e10-bb03-0c158ff891ef",
+  "status": "SUCCEEDED",
+  "model": "seedance-2.5",
+  "requestedDuration": 30,
+  "resolution": "1080p",
+  "nativeAudio": true,
+  "observedDebit": 2040,
+  "totalRebuildDebit": 4080,
+  "oldFootageUsed": false,
+  "referenceType": "two existing wide still-art frames, no video/audio reference",
+  "releaseApproved": false,
+  "reason": "V1 source lunge cropped head/taper and bats reached frame edge; smoke letters shattered into hard fragments. New full take uses wide composition references, same-scale scare, small contained bats and vapor breakup.",
+  "source": "wisp-one-take-v2-native.mp4",
+  "sourceSha256": "da50048f653ed17b72cc3f01b80aedb7f21497aa548a6e823b6ece06a165c96d",
+  "finishedMovie": "wisp-one-take-v2-projection-loop.mp4",
+  "finishedSha256": "ff3673f8a0742e3aceba8b73cee9f8c2b4ae074ccbaac987262e711705e22ddd",
+  "review": "Body stays intact through scare; source bat-edge overflow receives disclosed pre-boundary vapor finishing. All721finished frames pass20%reserve RGB4/8/16. Native audio decoded identical. Human voice/performance and physical projection acceptance pending.",
+  "referenceStills": [
+    {
+      "path": "source/wisp-performance-reference/tonight-demo/welcome-start-native.png",
+      "sha256": "14a6db5e85bc5c2e05b673bce096afade62252e8107601184128dbb97e9127c7"
+    },
+    {
+      "path": "source/wisp-performance-reference/runway-pilots/film-return-handoff-study/scary-end-decoded.png",
+      "sha256": "7ee1f5f01a1efbf430068e861fe8ec2d1c06620efb2b953043a95416118f8596"
+    }
+  ]
+}

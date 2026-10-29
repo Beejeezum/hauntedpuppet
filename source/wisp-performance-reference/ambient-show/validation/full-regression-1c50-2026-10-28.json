@@ -1,0 +1,28 @@
+{
+  "run": "https://github.com/Beejeezum/hauntedpuppet/actions/runs/40782451019",
+  "head": "1c50e55ec7707a8845e4bbf337f98d387912e3f6",
+  "conclusion": "failure",
+  "scope": "Linux CI; six other jobs passed, showdesk failed. Not release or physical projection acceptance.",
+  "passedEvidence": [
+    "Actual native single-clock WebKit readiness and frozen outgoing picture",
+    "OwnerSound synthetic future graph detachment and bounded retirement",
+    "Actual OfflineAudioContext cancellation zero samples in both engines",
+    "Catalog natural exits, authored exits, eyes context/repeat and workspace entry steps"
+  ],
+  "remainingFailures": [
+    "Showdesk WebKit standby load/bridge unavailable",
+    "Composed output recovery/alternating program",
+    "Old native AudioBufferSource ended-event deadline despite immediate graph detachment",
+    "Archived neural voice browser cancellation state assertion"
+  ],
+  "sourceEvidence": {
+    "film-single-clock-webkit.json": "c6bdf80383a81bd27bf157d12b43bd4070431909286012b656018c12bdc71b74",
+    "showdesk-film-audio-webkit-failure.json": "72182a4e235cafad612e00b63ce92c586119c5c40e7095b6321a3d855dacfb67",
+    "catalog-bridge-webkit-failure.json": "04ff9d613093ee4d9172296a2401b586dcd96144a39b9d1df05fa0eeb0bdc84e",
+    "showdesk-webkit-failure.json": "4c67f342ec4f137004ead4ef58970cbb385c18f8e773ef275e46b652151de7c8",
+    "owner-sound-cancel.json": "dffcfcea4d71ebbe33c9a4ed56e2986cf228aed897f1f1af11f9fbb52e4676e0",
+    "owner-sound-offline-chromium.json": "e4ae7c7e943456f05f2bd995c6d86de91da9b87e10c00d584193bf7b98c0bda3",
+    "owner-sound-offline-webkit.json": "e4ae7c7e943456f05f2bd995c6d86de91da9b87e10c00d584193bf7b98c0bda3"
+  },
+  "limits": "No causal proof that a single pipeline fixes every native failure. Finite-cue implementation is still private and requires its own Linux diagnostic and integration."
+}

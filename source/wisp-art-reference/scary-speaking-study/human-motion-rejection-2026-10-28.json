@@ -1,0 +1,10 @@
+{
+  "artifact": "work/phone-mouth-anchor/scary-painted-mouth-film-v6.mp4",
+  "sha256": "6f3d2d69502f580bb21206c9ac2f91c6e4e7abd426664ef4fe0b9edf915908c6",
+  "question": "In the scary Wisp motion proof above, does the new mouth stay convincingly part of the face through the head movement and blinks?",
+  "answer": "The mouth drifts",
+  "followup": "and looks pasted on a bit too much",
+  "questionId": "call_f8fa73e9eddc4adaa566ab808ad0ee9f",
+  "verdict": "rejected",
+  "scope": "Rejects V6 whole-body mouth attachment/blending; does not reject original native body movie or establish a verdict on isolated atlas artwork."
+}

@@ -1,5 +1,5 @@
 /** Mirror one composed picture. No second decoder, audio context or microphone. */
-export function mountFilmOutput(stage, inspect) {
+export function mountFilmOutput(stage, inspect, {beforePaint}={}) {
  const button=document.createElement('button');button.textContent='Open silent rehearsal output';button.type='button';
  stage.after(button);const outputs=new Map();let disposed=false;
  button.onclick=()=>{
@@ -23,6 +23,10 @@ export function mountFilmOutput(stage, inspect) {
   function paint(){
    if(stopped||detached)return;let state;try{state=!window.closed&&!disposed&&inspect();}catch{}
    if(!state||state.disposed){clear();stopped=true;return;}
+   // A live renderer can refresh its owner canvas while this output window is
+   // foreground and the operator's requestAnimationFrame is throttled.
+   if(beforePaint)try{beforePaint();state=inspect();}catch{clear();stopped=true;return;}
+   if(!state||state.disposed){clear();stopped=true;return;}
    const now=output.performance.now(),draws=state.metrics?.draws;if(draws!==lastDraw){lastDraw=draws;lastChange=now;}
    const nextStale=Number.isFinite(draws)&&!state.black&&now-lastChange>1200;if(nextStale&&!stale)stalls++;stale=nextStale;
    if(state.black||stale)clear();else context.drawImage(stage,0,0);frame=output.requestAnimationFrame(paint);
@@ -35,11 +39,12 @@ export function mountFilmOutput(stage, inspect) {
   const owned={
    inspect:()=>({silent:true,stopped,stale,stalls,width:canvas.width,height:canvas.height,owner:!detached&&!window.closed&&!disposed}),
    resume:()=>{let state;try{state=inspect();}catch{}if(detached||!state||state.disposed||state.black||state.paused){clear();return false;}stopped=false;stale=false;lastDraw=state.metrics?.draws;lastChange=output.performance.now();output.cancelAnimationFrame(frame);paint();return true;},
+   releasePicture:()=>{let state;try{state=inspect()}catch{}if(detached||!state?.black)return false;canvas.width=canvas.width;return true;},
    blackout:clear,stop:stopOutput,dispose:detach
   };
   output.WispFilmOutput=owned;outputs.set(output,owned);paint();
  };
  function dispose(){disposed=true;button.disabled=true;for(const [output,owned]of outputs){try{if(!output.closed&&output.WispFilmOutput===owned)owned.dispose();}catch{}}outputs.clear();window.removeEventListener('pagehide',dispose);}
  window.addEventListener('pagehide',dispose,{once:true});
- return{blackout(){for(const [output,owned]of outputs){try{if(!output.closed&&output.WispFilmOutput===owned)owned.blackout();}catch{}}},dispose};
+ return{releasePictures(){let released=0;for(const [output,owned]of outputs){try{if(!output.closed&&output.WispFilmOutput===owned&&owned.releasePicture())released++;}catch{}}return released;},blackout(){for(const [output,owned]of outputs){try{if(!output.closed&&output.WispFilmOutput===owned)owned.blackout();}catch{}}},dispose};
 }

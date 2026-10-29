@@ -1,0 +1,178 @@
+{
+  "status": "source-only authored topology proof; not a finished puppet or approved art",
+  "reference": "../neutral-reference/scary-neutral-mouth-v1.png",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "lipSeam": [
+    [
+      785,
+      433
+    ],
+    [
+      790,
+      434
+    ],
+    [
+      795,
+      441
+    ],
+    [
+      800,
+      445
+    ],
+    [
+      805,
+      448
+    ],
+    [
+      810,
+      451
+    ],
+    [
+      815,
+      453
+    ],
+    [
+      820,
+      456
+    ],
+    [
+      825,
+      458
+    ],
+    [
+      830,
+      459
+    ],
+    [
+      835,
+      460
+    ],
+    [
+      840,
+      460
+    ],
+    [
+      845,
+      461
+    ],
+    [
+      850,
+      461
+    ],
+    [
+      855,
+      460
+    ],
+    [
+      860,
+      458
+    ],
+    [
+      865,
+      459
+    ],
+    [
+      870,
+      462
+    ]
+  ],
+  "upperFixedY": 400,
+  "lowerFixedY": 510,
+  "mouthCorners": [
+    785,
+    870
+  ],
+  "limits": "Front-view connected-lip mechanics with optional painted hidden oral detail. No registered OO corrective, head turn, live tracking, voice, body/fog motion or human acceptance.",
+  "oralArt": {
+    "reference": "corrective-ah-v1/painted-ah-head-v1.png",
+    "dimensions": [
+      1382,
+      1138
+    ],
+    "sourceX": [
+      400,
+      810
+    ],
+    "upper": [
+      [
+        0,
+        567
+      ],
+      [
+        0.125,
+        585
+      ],
+      [
+        0.25,
+        609
+      ],
+      [
+        0.375,
+        637
+      ],
+      [
+        0.5,
+        660
+      ],
+      [
+        0.625,
+        684
+      ],
+      [
+        0.75,
+        704
+      ],
+      [
+        0.875,
+        718
+      ],
+      [
+        1,
+        725
+      ]
+    ],
+    "lower": [
+      [
+        0,
+        570
+      ],
+      [
+        0.125,
+        762
+      ],
+      [
+        0.25,
+        809
+      ],
+      [
+        0.375,
+        829
+      ],
+      [
+        0.5,
+        838
+      ],
+      [
+        0.625,
+        836
+      ],
+      [
+        0.75,
+        818
+      ],
+      [
+        0.875,
+        785
+      ],
+      [
+        1,
+        728
+      ]
+    ],
+    "note": "Only hidden inner-mouth paint is sampled under native split lips. No generated eyes/nose/outer face/fog is drawn. Source drawing remains unapproved as a whole head.",
+    "sha256": "ce1f8dc17926586bc53efc5b67f0511f965b116909bddb25a59bd438f9ca633a"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "run": 40817270721,
+  "head": "a0542b054d728768ab23986195cbb149476ef86a",
+  "conclusion": "failure",
+  "scope": "Normal GL cleanup and continuous owned body, LinuxWebKit native movies/mockHTTP/zeroPCM. No provider or listening test.",
+  "speechStarts": 3,
+  "phase": "preparing",
+  "speechStage": "status",
+  "body": {
+    "created": 1353,
+    "closed": 1353,
+    "held": 0,
+    "maxHeld": 1,
+    "published": 1017,
+    "duplicates": 336,
+    "unavailable": 0,
+    "discarded": 0,
+    "failures": 0,
+    "rgbaCopies": 0,
+    "canvasCopies": 1017,
+    "pending": false,
+    "ready": true,
+    "disposed": false,
+    "time": 0.25,
+    "failed": false
+  },
+  "ambient": {
+    "mode": "friendly",
+    "seconds": 15,
+    "character": "friendly",
+    "visibleSeconds": 12.048262826999999,
+    "suspended": false,
+    "transitioning": false,
+    "disposed": false,
+    "error": null
+  },
+  "lastStatusNetwork": [
+    {
+      "id": 12,
+      "event": "request",
+      "path": "/api/status",
+      "ms": 25611
+    },
+    {
+      "id": 12,
+      "event": "headers",
+      "path": "/api/status",
+      "ms": 25660,
+      "status": 200
+    },
+    {
+      "id": 12,
+      "event": "finished",
+      "path": "/api/status",
+      "ms": 25660,
+      "requestStart": 0.075,
+      "responseStart": 1.098,
+      "responseEnd": 1.796
+    }
+  ],
+  "interpretation": "Third scary line and return to friendly idle completed; next repeated scary request stalls awaiting status fetch continuation after network response finishes. Continuous body ownership improves the traversed scenario but does not prove a fix.",
+  "action": "No promotion or blind retry. Retain exact evidence; next playback investigation should distinguish owner-window visibility/task scheduling from media/GL resource retirement."
+}

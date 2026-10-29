@@ -1,0 +1,42 @@
+{
+  "scope": "Local actual rendered laptop/mobile layout with native film, same canvas on responsive moves and preserved output.1366x768 target is an explicit tested size, not every laptop or human usability approval.",
+  "results": {
+    "chromium": {
+      "passed": true,
+      "viewport": [
+        1366,
+        768
+      ],
+      "pads": 24,
+      "bankAboveFold": true,
+      "sameCanvasOnResize": true,
+      "nativeMotionContinues": true,
+      "phoneNoOverflow": true,
+      "silentProjector": true,
+      "blackoutAndDisposal": true,
+      "scope": "Real native-film browser layout/resizing and silent output. No human usability/physical-device/projector approval."
+    },
+    "webkit": {
+      "passed": true,
+      "viewport": [
+        1366,
+        768
+      ],
+      "pads": 24,
+      "bankAboveFold": true,
+      "sameCanvasOnResize": true,
+      "nativeMotionContinues": true,
+      "phoneNoOverflow": true,
+      "silentProjector": true,
+      "blackoutAndDisposal": true,
+      "scope": "Real native-film browser layout/resizing and silent output. No human usability/physical-device/projector approval."
+    }
+  },
+  "otherValidation": [
+    "Both cue_board.cjs actual record/save/reload/playlist/typing/Blackout regressions pass after layout.",
+    "Both output-clock saved-playlist tests pass after layout with ownerRAF deliberately disabled and visible silent output.",
+    "Legacy playlist4cycle/real stall test passes before layout; scheduling unchanged by layout.",
+    "Public build/privacy/import checks,9public-workspace units and workflow YAML parse pass."
+  ],
+  "fullCI": "Separate prior Linux media/effect failures remain unresolved; the new whole-bank job has its own scoped result."
+}

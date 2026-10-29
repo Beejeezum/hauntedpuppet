@@ -1,0 +1,18 @@
+WISP DETACHED CPU PICTURE EXPERIMENT — 2026-10-29
+
+Status: opt-in diagnostic, not a production reliability fix.
+Preview path: /assets/wisp-showdesk/director.html?pipeline=single&mouth=authored-native&pixels=cpu
+Default renderer, original painted films and existing operator routes remain unchanged.
+
+Hypothesis: copying native decoder bytes, closing that frame, then reconstructing a CPU-backed picture may avoid the direct native-frame Canvas conversion implicated by intermittent Linux native-media warnings. Earlier normal-backend Linux runs at the same shared-owner revision both passed and failed; context loss is not the sole cause. No claim of root cause or repair follows from local success.
+
+The experimental source copies native planes without requested conversion; validates bounds and strides; closes the decoder-backed frame before allocating the CPU VideoFrame; converts that independent frame to detached RGBA; closes it before publication; retains at most one frame. Late Stop/replacement/disposal copies cannot allocate CPU frames or publish. Held transition pictures also use detached packets, never a fresh read of decoder video.
+
+Color qualification matters: Mac WebKit NV12 reconstruction using reported full-range metadata changed black from 0 to 14 in the friendly film and produced maximum channel errors of 20/21. That variant is rejected. Explicit video-range interpretation for the two pinned H264 Wisp films produced maximum channel difference 0 against native rendering in both Chrome and Mac WebKit. Generic sources retain metadata interpretation by default. Do not extend this asset-specific setting to arbitrary uploaded media without pixel qualification.
+
+Local evidence: work/owned-cpu-source/{chromium,webkit}.json. Actual friendly and scary films: max pixel difference 0, 16 distinct timestamps each; injected delayed-copy Stop/replacement/disposal and CPU-constructor failures close all frames, retain no pending pool, and do not publish after cancellation. Rejected color receipt: work/owned-cpu-source/webkit-metadata-range-rejected-v1.json.
+Full-app and preparation-cancellation receipts use the cpu-pixels suffix. They use synthetic provider responses; they do not validate a real voice, physical phone, acoustic delay, human visual acceptance or a physical projection.
+
+Upstream implementation reference (not proof of the installed WebKit implementation): https://raw.githubusercontent.com/WebKit/WebKit/main/Source/WebCore/platform/graphics/cv/VideoFrameCV.mm . CoreVideo construction distinguishes video/full-range NV12 via the supplied color-space range. No upstream code copied.
+
+Release gate: full app, cancellation, advancing body motion, exact registered face preparation, silent remote output, zero leaked resources, then controlled normal-backend Linux qualification. A green isolated media unit is insufficient. The 16-cue library and human moving-face acceptance remain incomplete.

@@ -1,0 +1,9 @@
+{
+  "sampleRate": 24000,
+  "seconds": 10.08,
+  "peak": 0.007781982421875,
+  "rmsDbFS": -57.01489982652565,
+  "firstHalfSecondDbFS": -93.8091632627429,
+  "lastHalfSecondDbFS": -93.5405390299362,
+  "scope": "Numerical audio levels only; no human listening or proof of no speech/music."
+}

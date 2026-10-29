@@ -1,0 +1,76 @@
+{
+  "change": "Cancel optional painted direction-manifest and image loads on explicit destruction or pagehide; ignore cancelled optional task, block reload after disposal. Original front painting retained on pagehide.",
+  "sourceHashes": {
+    "assets/wisp-rig-runtime.js": "f3c532dc59aa1ee5335eab0bb314ef839d1b3f2812954446a72bd9f2a51a183e",
+    "tests/rig_direction_lifecycle.cjs": "14db8f72a8fb7c90b2e311c14205a3a40c3b2086c1c33865d51b13c86f2af30a"
+  },
+  "tests": {
+    "chromium": {
+      "passed": true,
+      "results": [
+        {
+          "delayed": "manifest",
+          "actualGpuRig": true,
+          "cancelled": true,
+          "noLateDirections": true,
+          "noRestart": true,
+          "noUnhandledErrors": true
+        },
+        {
+          "delayed": "image",
+          "actualGpuRig": true,
+          "cancelled": true,
+          "noLateDirections": true,
+          "noRestart": true,
+          "noUnhandledErrors": true
+        },
+        {
+          "delayed": "pagehide",
+          "actualGpuRig": true,
+          "cancelled": true,
+          "noLateDirections": true,
+          "noRestart": true,
+          "noUnhandledErrors": true
+        }
+      ],
+      "scope": "Actual Pixi/WebGL painting setup, deliberately delayed optional direction manifest/image, explicit destroy cancellation and no restart. Not visual motion/face acceptance or physical projection."
+    },
+    "webkit": {
+      "passed": true,
+      "results": [
+        {
+          "delayed": "manifest",
+          "actualGpuRig": true,
+          "cancelled": true,
+          "noLateDirections": true,
+          "noRestart": true,
+          "noUnhandledErrors": true
+        },
+        {
+          "delayed": "image",
+          "actualGpuRig": true,
+          "cancelled": true,
+          "noLateDirections": true,
+          "noRestart": true,
+          "noUnhandledErrors": true
+        },
+        {
+          "delayed": "pagehide",
+          "actualGpuRig": true,
+          "cancelled": true,
+          "noLateDirections": true,
+          "noRestart": true,
+          "noUnhandledErrors": true
+        }
+      ],
+      "scope": "Actual Pixi/WebGL painting setup, deliberately delayed optional direction manifest/image, explicit destroy cancellation and no restart. Not visual motion/face acceptance or physical projection."
+    }
+  },
+  "regressions": [
+    "Actual Chrome live_rig.cjs: independent arm/body motion, stage bounds, Stop and silent projector blackout passed.",
+    "Mac WebKit built workspace_entry.cjs: entry/return, legacy views, no capture or unhandled page errors passed.",
+    "Public build:85browser modules/privacy/import checks passed.",
+    "101browser suites registered exactly once across shards passed."
+  ],
+  "limits": "Local real browser/Pixi tests; does not prove every load/disposal phase, fix unrelated Linux native media stalls, change rejected face artwork or establish physical projection acceptance."
+}

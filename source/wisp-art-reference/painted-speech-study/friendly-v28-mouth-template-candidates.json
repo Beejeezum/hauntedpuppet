@@ -1,0 +1,1375 @@
+{
+  "source": "source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4",
+  "sourceSha256": "52d54d03c0f0406a9724c7c04b9e2fa0557a675486edfaa40fd0ca2e24a682bd",
+  "scope": "Independent-frame rotated/scaled smile-template candidates, manually registered reference. Not facial landmarks, not approved animation or phoneme sync.",
+  "runtimeIntegration": false,
+  "humanApproval": false,
+  "frames": [
+    {
+      "frame": 0,
+      "seconds": 0.0,
+      "center": [
+        942.0,
+        521.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 1.0
+    },
+    {
+      "frame": 1,
+      "seconds": 0.041666666666666664,
+      "center": [
+        942.0,
+        521.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.9818055629730225
+    },
+    {
+      "frame": 2,
+      "seconds": 0.08333333333333333,
+      "center": [
+        942.0,
+        522.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.9826176166534424
+    },
+    {
+      "frame": 3,
+      "seconds": 0.125,
+      "center": [
+        941.0,
+        523.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.9592434763908386
+    },
+    {
+      "frame": 4,
+      "seconds": 0.16666666666666666,
+      "center": [
+        941.0,
+        523.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.9774094223976135
+    },
+    {
+      "frame": 5,
+      "seconds": 0.20833333333333334,
+      "center": [
+        941.0,
+        524.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.9886061549186707
+    },
+    {
+      "frame": 6,
+      "seconds": 0.25,
+      "center": [
+        941.0,
+        525.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.9722954630851746
+    },
+    {
+      "frame": 7,
+      "seconds": 0.2916666666666667,
+      "center": [
+        940.0,
+        526.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.9725556373596191
+    },
+    {
+      "frame": 8,
+      "seconds": 0.3333333333333333,
+      "center": [
+        940.0,
+        526.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.9647919535636902
+    },
+    {
+      "frame": 9,
+      "seconds": 0.375,
+      "center": [
+        940.0,
+        527.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.9343398809432983
+    },
+    {
+      "frame": 10,
+      "seconds": 0.4166666666666667,
+      "center": [
+        940.0,
+        527.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 0,
+      "correlation": 0.9328632354736328
+    },
+    {
+      "frame": 11,
+      "seconds": 0.4583333333333333,
+      "center": [
+        940.0,
+        528.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 5,
+      "correlation": 0.9441618919372559
+    },
+    {
+      "frame": 12,
+      "seconds": 0.5,
+      "center": [
+        940.0,
+        529.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 5,
+      "correlation": 0.968475341796875
+    },
+    {
+      "frame": 13,
+      "seconds": 0.5416666666666666,
+      "center": [
+        940.0,
+        530.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 5,
+      "correlation": 0.9649664759635925
+    },
+    {
+      "frame": 14,
+      "seconds": 0.5833333333333334,
+      "center": [
+        940.0,
+        530.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 5,
+      "correlation": 0.9627548456192017
+    },
+    {
+      "frame": 15,
+      "seconds": 0.625,
+      "center": [
+        940.0,
+        531.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 5,
+      "correlation": 0.968245267868042
+    },
+    {
+      "frame": 16,
+      "seconds": 0.6666666666666666,
+      "center": [
+        940.0,
+        532.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 5,
+      "correlation": 0.960634708404541
+    },
+    {
+      "frame": 17,
+      "seconds": 0.7083333333333334,
+      "center": [
+        940.0,
+        533.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 5,
+      "correlation": 0.9434319734573364
+    },
+    {
+      "frame": 18,
+      "seconds": 0.75,
+      "center": [
+        939.0,
+        534.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 5,
+      "correlation": 0.9423884153366089
+    },
+    {
+      "frame": 19,
+      "seconds": 0.7916666666666666,
+      "center": [
+        939.0,
+        535.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 5,
+      "correlation": 0.9570271968841553
+    },
+    {
+      "frame": 20,
+      "seconds": 0.8333333333333334,
+      "center": [
+        939.0,
+        536.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 5,
+      "correlation": 0.9545356631278992
+    },
+    {
+      "frame": 21,
+      "seconds": 0.875,
+      "center": [
+        939.0,
+        537.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 5,
+      "correlation": 0.9338883757591248
+    },
+    {
+      "frame": 22,
+      "seconds": 0.9166666666666666,
+      "center": [
+        939.0,
+        539.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 5,
+      "correlation": 0.92030268907547
+    },
+    {
+      "frame": 23,
+      "seconds": 0.9583333333333334,
+      "center": [
+        940.0,
+        541.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 5,
+      "correlation": 0.9092740416526794
+    },
+    {
+      "frame": 24,
+      "seconds": 1.0,
+      "center": [
+        940.0,
+        543.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 5,
+      "correlation": 0.9100093841552734
+    },
+    {
+      "frame": 25,
+      "seconds": 1.0416666666666667,
+      "center": [
+        938.0,
+        546.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 0,
+      "correlation": 0.9080232381820679
+    },
+    {
+      "frame": 26,
+      "seconds": 1.0833333333333333,
+      "center": [
+        940.0,
+        548.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 5,
+      "correlation": 0.9132000803947449
+    },
+    {
+      "frame": 27,
+      "seconds": 1.125,
+      "center": [
+        939.0,
+        549.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 0,
+      "correlation": 0.9234801530838013
+    },
+    {
+      "frame": 28,
+      "seconds": 1.1666666666666667,
+      "center": [
+        940.0,
+        550.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 0,
+      "correlation": 0.9097268581390381
+    },
+    {
+      "frame": 29,
+      "seconds": 1.2083333333333333,
+      "center": [
+        942.0,
+        549.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 0,
+      "correlation": 0.917026162147522
+    },
+    {
+      "frame": 30,
+      "seconds": 1.25,
+      "center": [
+        942.0,
+        548.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": -5,
+      "correlation": 0.9153286814689636
+    },
+    {
+      "frame": 31,
+      "seconds": 1.2916666666666667,
+      "center": [
+        944.0,
+        546.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": -5,
+      "correlation": 0.9309909343719482
+    },
+    {
+      "frame": 32,
+      "seconds": 1.3333333333333333,
+      "center": [
+        946.0,
+        543.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": -5,
+      "correlation": 0.9378814697265625
+    },
+    {
+      "frame": 33,
+      "seconds": 1.375,
+      "center": [
+        948.0,
+        540.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": -5,
+      "correlation": 0.934755265712738
+    },
+    {
+      "frame": 34,
+      "seconds": 1.4166666666666667,
+      "center": [
+        951.0,
+        537.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": -5,
+      "correlation": 0.9276360869407654
+    },
+    {
+      "frame": 35,
+      "seconds": 1.4583333333333333,
+      "center": [
+        954.0,
+        534.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": -5,
+      "correlation": 0.9171687960624695
+    },
+    {
+      "frame": 36,
+      "seconds": 1.5,
+      "center": [
+        955.0,
+        531.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": -10,
+      "correlation": 0.9052731990814209
+    },
+    {
+      "frame": 37,
+      "seconds": 1.5416666666666667,
+      "center": [
+        958.0,
+        529.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": -10,
+      "correlation": 0.9183564186096191
+    },
+    {
+      "frame": 38,
+      "seconds": 1.5833333333333333,
+      "center": [
+        961.0,
+        527.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": -10,
+      "correlation": 0.9061486124992371
+    },
+    {
+      "frame": 39,
+      "seconds": 1.625,
+      "center": [
+        963.0,
+        525.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": -10,
+      "correlation": 0.9044346809387207
+    },
+    {
+      "frame": 40,
+      "seconds": 1.6666666666666667,
+      "center": [
+        966.0,
+        524.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": -10,
+      "correlation": 0.906805694103241
+    },
+    {
+      "frame": 41,
+      "seconds": 1.7083333333333333,
+      "center": [
+        968.0,
+        523.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": -10,
+      "correlation": 0.9107199907302856
+    },
+    {
+      "frame": 42,
+      "seconds": 1.75,
+      "center": [
+        969.0,
+        522.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": -10,
+      "correlation": 0.9131779074668884
+    },
+    {
+      "frame": 43,
+      "seconds": 1.7916666666666667,
+      "center": [
+        970.0,
+        522.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": -10,
+      "correlation": 0.9133728742599487
+    },
+    {
+      "frame": 44,
+      "seconds": 1.8333333333333333,
+      "center": [
+        971.0,
+        522.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": -10,
+      "correlation": 0.8978976011276245
+    },
+    {
+      "frame": 45,
+      "seconds": 1.875,
+      "center": [
+        972.0,
+        521.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": -5,
+      "correlation": 0.9193224906921387
+    },
+    {
+      "frame": 46,
+      "seconds": 1.9166666666666667,
+      "center": [
+        972.0,
+        520.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": -5,
+      "correlation": 0.9289482235908508
+    },
+    {
+      "frame": 47,
+      "seconds": 1.9583333333333333,
+      "center": [
+        974.0,
+        519.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 0,
+      "correlation": 0.9148893356323242
+    },
+    {
+      "frame": 48,
+      "seconds": 2.0,
+      "center": [
+        974.0,
+        519.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 0,
+      "correlation": 0.8724802732467651
+    },
+    {
+      "frame": 49,
+      "seconds": 2.0416666666666665,
+      "center": [
+        974.0,
+        518.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 0,
+      "correlation": 0.8097646236419678
+    },
+    {
+      "frame": 50,
+      "seconds": 2.0833333333333335,
+      "center": [
+        976.0,
+        519.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 5,
+      "correlation": 0.7667343616485596
+    },
+    {
+      "frame": 51,
+      "seconds": 2.125,
+      "center": [
+        977.0,
+        520.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 10,
+      "correlation": 0.7459844350814819
+    },
+    {
+      "frame": 52,
+      "seconds": 2.1666666666666665,
+      "center": [
+        977.0,
+        520.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 10,
+      "correlation": 0.7471988797187805
+    },
+    {
+      "frame": 53,
+      "seconds": 2.2083333333333335,
+      "center": [
+        979.0,
+        521.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 15,
+      "correlation": 0.9104723930358887
+    },
+    {
+      "frame": 54,
+      "seconds": 2.25,
+      "center": [
+        979.0,
+        522.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 15,
+      "correlation": 0.8325696587562561
+    },
+    {
+      "frame": 55,
+      "seconds": 2.2916666666666665,
+      "center": [
+        979.0,
+        523.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 15,
+      "correlation": 0.7682817578315735
+    },
+    {
+      "frame": 56,
+      "seconds": 2.3333333333333335,
+      "center": [
+        979.0,
+        524.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 15,
+      "correlation": 0.7760114669799805
+    },
+    {
+      "frame": 57,
+      "seconds": 2.375,
+      "center": [
+        979.0,
+        524.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 15,
+      "correlation": 0.8456522822380066
+    },
+    {
+      "frame": 58,
+      "seconds": 2.4166666666666665,
+      "center": [
+        979.0,
+        524.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 15,
+      "correlation": 0.9137075543403625
+    },
+    {
+      "frame": 59,
+      "seconds": 2.4583333333333335,
+      "center": [
+        979.0,
+        524.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 15,
+      "correlation": 0.9280161261558533
+    },
+    {
+      "frame": 60,
+      "seconds": 2.5,
+      "center": [
+        979.0,
+        524.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 15,
+      "correlation": 0.9201979637145996
+    },
+    {
+      "frame": 61,
+      "seconds": 2.5416666666666665,
+      "center": [
+        981.0,
+        524.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 20,
+      "correlation": 0.9182825684547424
+    },
+    {
+      "frame": 62,
+      "seconds": 2.5833333333333335,
+      "center": [
+        980.0,
+        525.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 15,
+      "correlation": 0.9124082326889038
+    },
+    {
+      "frame": 63,
+      "seconds": 2.625,
+      "center": [
+        982.0,
+        525.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 20,
+      "correlation": 0.917354941368103
+    },
+    {
+      "frame": 64,
+      "seconds": 2.6666666666666665,
+      "center": [
+        982.0,
+        525.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 20,
+      "correlation": 0.9210663437843323
+    },
+    {
+      "frame": 65,
+      "seconds": 2.7083333333333335,
+      "center": [
+        982.0,
+        525.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 20,
+      "correlation": 0.9248761534690857
+    },
+    {
+      "frame": 66,
+      "seconds": 2.75,
+      "center": [
+        981.0,
+        525.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 20,
+      "correlation": 0.918318510055542
+    },
+    {
+      "frame": 67,
+      "seconds": 2.7916666666666665,
+      "center": [
+        981.0,
+        526.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 20,
+      "correlation": 0.9212099313735962
+    },
+    {
+      "frame": 68,
+      "seconds": 2.8333333333333335,
+      "center": [
+        981.0,
+        526.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 20,
+      "correlation": 0.9206805229187012
+    },
+    {
+      "frame": 69,
+      "seconds": 2.875,
+      "center": [
+        981.0,
+        526.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 20,
+      "correlation": 0.9274565577507019
+    },
+    {
+      "frame": 70,
+      "seconds": 2.9166666666666665,
+      "center": [
+        981.0,
+        526.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 20,
+      "correlation": 0.9339759945869446
+    },
+    {
+      "frame": 71,
+      "seconds": 2.9583333333333335,
+      "center": [
+        979.0,
+        527.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 15,
+      "correlation": 0.9257276654243469
+    },
+    {
+      "frame": 72,
+      "seconds": 3.0,
+      "center": [
+        981.0,
+        526.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 20,
+      "correlation": 0.9287174940109253
+    },
+    {
+      "frame": 73,
+      "seconds": 3.0416666666666665,
+      "center": [
+        979.0,
+        527.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 15,
+      "correlation": 0.9319273829460144
+    },
+    {
+      "frame": 74,
+      "seconds": 3.0833333333333335,
+      "center": [
+        981.0,
+        527.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 20,
+      "correlation": 0.9218818545341492
+    },
+    {
+      "frame": 75,
+      "seconds": 3.125,
+      "center": [
+        981.0,
+        528.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 20,
+      "correlation": 0.9198751449584961
+    },
+    {
+      "frame": 76,
+      "seconds": 3.1666666666666665,
+      "center": [
+        981.0,
+        530.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 20,
+      "correlation": 0.9232894778251648
+    },
+    {
+      "frame": 77,
+      "seconds": 3.2083333333333335,
+      "center": [
+        982.0,
+        532.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 20,
+      "correlation": 0.93019700050354
+    },
+    {
+      "frame": 78,
+      "seconds": 3.25,
+      "center": [
+        983.0,
+        535.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 20,
+      "correlation": 0.9359621405601501
+    },
+    {
+      "frame": 79,
+      "seconds": 3.2916666666666665,
+      "center": [
+        982.0,
+        538.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 15,
+      "correlation": 0.9259296655654907
+    },
+    {
+      "frame": 80,
+      "seconds": 3.3333333333333335,
+      "center": [
+        983.0,
+        541.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 15,
+      "correlation": 0.9398102164268494
+    },
+    {
+      "frame": 81,
+      "seconds": 3.375,
+      "center": [
+        985.0,
+        543.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 15,
+      "correlation": 0.9457074403762817
+    },
+    {
+      "frame": 82,
+      "seconds": 3.4166666666666665,
+      "center": [
+        986.0,
+        545.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 15,
+      "correlation": 0.9314571619033813
+    },
+    {
+      "frame": 83,
+      "seconds": 3.4583333333333335,
+      "center": [
+        986.0,
+        547.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 15,
+      "correlation": 0.9233271479606628
+    },
+    {
+      "frame": 84,
+      "seconds": 3.5,
+      "center": [
+        985.0,
+        549.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 10,
+      "correlation": 0.9208928942680359
+    },
+    {
+      "frame": 85,
+      "seconds": 3.5416666666666665,
+      "center": [
+        986.0,
+        550.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 10,
+      "correlation": 0.930444061756134
+    },
+    {
+      "frame": 86,
+      "seconds": 3.5833333333333335,
+      "center": [
+        984.0,
+        550.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 5,
+      "correlation": 0.9095088243484497
+    },
+    {
+      "frame": 87,
+      "seconds": 3.625,
+      "center": [
+        984.0,
+        549.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 5,
+      "correlation": 0.8995457291603088
+    },
+    {
+      "frame": 88,
+      "seconds": 3.6666666666666665,
+      "center": [
+        981.0,
+        548.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.9092284440994263
+    },
+    {
+      "frame": 89,
+      "seconds": 3.7083333333333335,
+      "center": [
+        980.0,
+        547.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.9057055711746216
+    },
+    {
+      "frame": 90,
+      "seconds": 3.75,
+      "center": [
+        978.0,
+        545.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.9190042018890381
+    },
+    {
+      "frame": 91,
+      "seconds": 3.7916666666666665,
+      "center": [
+        976.0,
+        543.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.8958907127380371
+    },
+    {
+      "frame": 92,
+      "seconds": 3.8333333333333335,
+      "center": [
+        973.0,
+        540.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": -5,
+      "correlation": 0.8950971364974976
+    },
+    {
+      "frame": 93,
+      "seconds": 3.875,
+      "center": [
+        972.0,
+        538.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": -5,
+      "correlation": 0.8989824056625366
+    },
+    {
+      "frame": 94,
+      "seconds": 3.9166666666666665,
+      "center": [
+        970.0,
+        536.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.9180275797843933
+    },
+    {
+      "frame": 95,
+      "seconds": 3.9583333333333335,
+      "center": [
+        968.0,
+        534.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.9108560681343079
+    },
+    {
+      "frame": 96,
+      "seconds": 4.0,
+      "center": [
+        965.0,
+        531.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": -5,
+      "correlation": 0.9036281108856201
+    },
+    {
+      "frame": 97,
+      "seconds": 4.041666666666667,
+      "center": [
+        964.0,
+        529.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.9013255834579468
+    },
+    {
+      "frame": 98,
+      "seconds": 4.083333333333333,
+      "center": [
+        962.0,
+        527.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.8874775767326355
+    },
+    {
+      "frame": 99,
+      "seconds": 4.125,
+      "center": [
+        961.0,
+        525.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 0,
+      "correlation": 0.8632640838623047
+    },
+    {
+      "frame": 100,
+      "seconds": 4.166666666666667,
+      "center": [
+        959.0,
+        523.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 0,
+      "correlation": 0.8275229930877686
+    },
+    {
+      "frame": 101,
+      "seconds": 4.208333333333333,
+      "center": [
+        958.0,
+        522.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 0,
+      "correlation": 0.7958377003669739
+    },
+    {
+      "frame": 102,
+      "seconds": 4.25,
+      "center": [
+        956.0,
+        521.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 0,
+      "correlation": 0.7556827068328857
+    },
+    {
+      "frame": 103,
+      "seconds": 4.291666666666667,
+      "center": [
+        955.0,
+        520.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 0,
+      "correlation": 0.7360653281211853
+    },
+    {
+      "frame": 104,
+      "seconds": 4.333333333333333,
+      "center": [
+        954.0,
+        520.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 0,
+      "correlation": 0.7275444865226746
+    },
+    {
+      "frame": 105,
+      "seconds": 4.375,
+      "center": [
+        952.0,
+        519.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 0,
+      "correlation": 0.726121723651886
+    },
+    {
+      "frame": 106,
+      "seconds": 4.416666666666667,
+      "center": [
+        951.0,
+        519.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 0,
+      "correlation": 0.7394249439239502
+    },
+    {
+      "frame": 107,
+      "seconds": 4.458333333333333,
+      "center": [
+        949.0,
+        518.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 0,
+      "correlation": 0.7554119229316711
+    },
+    {
+      "frame": 108,
+      "seconds": 4.5,
+      "center": [
+        948.0,
+        518.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 0,
+      "correlation": 0.7789185643196106
+    },
+    {
+      "frame": 109,
+      "seconds": 4.541666666666667,
+      "center": [
+        947.0,
+        518.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 0,
+      "correlation": 0.8157408237457275
+    },
+    {
+      "frame": 110,
+      "seconds": 4.583333333333333,
+      "center": [
+        946.0,
+        518.5
+      ],
+      "scale": 1.1,
+      "rotationDegrees": 0,
+      "correlation": 0.8562995791435242
+    },
+    {
+      "frame": 111,
+      "seconds": 4.625,
+      "center": [
+        947.0,
+        519.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 5,
+      "correlation": 0.8733057379722595
+    },
+    {
+      "frame": 112,
+      "seconds": 4.666666666666667,
+      "center": [
+        946.0,
+        519.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 5,
+      "correlation": 0.9037073850631714
+    },
+    {
+      "frame": 113,
+      "seconds": 4.708333333333333,
+      "center": [
+        944.0,
+        519.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.9248813390731812
+    },
+    {
+      "frame": 114,
+      "seconds": 4.75,
+      "center": [
+        945.0,
+        519.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 5,
+      "correlation": 0.9280806183815002
+    },
+    {
+      "frame": 115,
+      "seconds": 4.791666666666667,
+      "center": [
+        943.0,
+        520.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.9338030815124512
+    },
+    {
+      "frame": 116,
+      "seconds": 4.833333333333333,
+      "center": [
+        943.0,
+        520.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.9708051085472107
+    },
+    {
+      "frame": 117,
+      "seconds": 4.875,
+      "center": [
+        943.0,
+        520.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.9751858711242676
+    },
+    {
+      "frame": 118,
+      "seconds": 4.916666666666667,
+      "center": [
+        942.0,
+        520.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.979074239730835
+    },
+    {
+      "frame": 119,
+      "seconds": 4.958333333333333,
+      "center": [
+        942.0,
+        521.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.9526868462562561
+    },
+    {
+      "frame": 120,
+      "seconds": 5.0,
+      "center": [
+        942.0,
+        521.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.9647929072380066
+    },
+    {
+      "frame": 121,
+      "seconds": 5.041666666666667,
+      "center": [
+        942.0,
+        521.5
+      ],
+      "scale": 1.0,
+      "rotationDegrees": 0,
+      "correlation": 0.9975857138633728
+    }
+  ],
+  "minimumCorrelation": 0.726121723651886,
+  "maximumAdjacentCenterJumpPixels": 4.242640687119285,
+  "status": "candidate-needs-full-motion-and-mouth-overlay-review",
+  "fps": 24,
+  "dimensions": [
+    1916,
+    1080
+  ],
+  "manuallyRegisteredReferenceRect": [
+    916,
+    508,
+    52,
+    27
+  ],
+  "searchRect": [
+    850,
+    450,
+    210,
+    160
+  ],
+  "review": {
+    "sampledFrames": "0,12,24,36,48,60,72,84,96,108,120,121 contact sheet visually inspected; boxes surround smile, including blinks",
+    "limitations": "Template center is not a lip contour or cheek replacement mask. Discrete rotation/scale estimates need smoothing/visual validation; confidence is correlation, not calibrated detection probability. No speech integration, human mouth review or physical projection acceptance."
+  }
+}

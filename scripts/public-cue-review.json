@@ -1,0 +1,53 @@
+{
+  "purpose": "Explicit human review only; these candidates are not approved show library clips.",
+  "files": [
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/review.html",
+      "destination": "index.html",
+      "bytes": 3704,
+      "sha256": "c5d3917089a4505d6cd9efd7851a160c52946f2add8a26efd0d29c3660261589"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/review.mjs",
+      "destination": "review.mjs",
+      "bytes": 7198,
+      "sha256": "5682280c01eba68bf44b7788e49b9cd87643853f1d9297228f92502b61ce79e8"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/first-batch-rehearsal-v2.mp4",
+      "destination": "first-batch-rehearsal-v2.mp4",
+      "bytes": 2161273,
+      "sha256": "93962f93bcfdfe5ee4d8e1ab61ee409b3fd56da15d07d8f97d63eeb1d9b4a70d"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/friendly-depart-runtime-candidate-v1.mp4",
+      "destination": "friendly-depart-runtime-candidate-v1.mp4",
+      "bytes": 575720,
+      "sha256": "58d6bd30ab6540e3d7d8eb1f086fe18c2986fa85a04dc45e6cd7301c6e89c59d"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/friendly-idle-departure-review-v1.mp4",
+      "destination": "friendly-idle-departure-review-v1.mp4",
+      "bytes": 905533,
+      "sha256": "8403320f59974e9e04a584e44209737d03f3712cdfe01d52d5eb9f2f3eb21c10"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/wisp-morph-roundtrip-review-v7.mp4",
+      "destination": "wisp-morph-roundtrip-review-v7.mp4",
+      "bytes": 1484215,
+      "sha256": "275acb319821ed88d9eda3220f6c9a61e59d484450537293588d601784de08dc"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/scary-eyes-runtime-candidate-v1.mp4",
+      "destination": "scary-eyes-runtime-candidate-v1.mp4",
+      "bytes": 793366,
+      "sha256": "8d30ec2f4d781fd8b663a04e855949d454e1d09948c1d913e8393437a3a4e1f3"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/wisp-eyes-context-review-v1.mp4",
+      "destination": "wisp-eyes-context-review-v1.mp4",
+      "bytes": 1824191,
+      "sha256": "de832a10253bb872ec0b522d408383df2555eac43098ebf38c83d5451f5a5eca"
+    }
+  ]
+}

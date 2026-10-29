@@ -1,0 +1,84 @@
+{
+  "file": "evil-to-cute-runtime-candidate-v2.mp4",
+  "cueId": "evil-to-cute",
+  "sha256": "1a769bddfb65ed21cbc236a0b58f6d9191eeabb0ad4e1606785007029ebcd649",
+  "status": "review candidate; not approved runtime library",
+  "humanReview": "pending",
+  "physicalProjection": "not tested",
+  "sourceVideo": "source/wisp-performance-reference/runway-pilots/film-return-handoff-study/wisp-return-film-morph-v40.mp4",
+  "sourceSha256": "d958fc38d9defd583feb871b673c73600f329fec7d26bc93e84b96bee0edb084",
+  "videoEssenceIdentical": false,
+  "compressedVideoEssence": null,
+  "fps": 24,
+  "frameCount": 121,
+  "entryPort": "scary-rest",
+  "exitPort": "friendly-rest",
+  "entryReview": "pending",
+  "exitReview": "pending",
+  "emptyStartFrames": 0,
+  "emptyEndFrames": 0,
+  "audioTailSilenceSeconds": 0.5,
+  "framing": {
+    "reserve": 0.15,
+    "reserveFailures": {
+      "4": 0,
+      "8": 0,
+      "16": 0
+    },
+    "minimumMarginsLTRB": {
+      "4": [
+        0.3625,
+        0.18888888888888888,
+        0.37890625,
+        0.19166666666666668
+      ],
+      "8": [
+        0.3625,
+        0.19027777777777777,
+        0.38046875,
+        0.19166666666666668
+      ],
+      "16": [
+        0.3640625,
+        0.19166666666666668,
+        0.38125,
+        0.19305555555555556
+      ]
+    }
+  },
+  "audio": {
+    "sampleRate": 48000,
+    "peak": 0.1429169476032257,
+    "rmsDbFS": -39.073974609375,
+    "lastHalfSecondPeak": 0.0,
+    "scope": "Decoded levels and sound timing only; human listening/no-speech/character acting approval not inferred.",
+    "channels": 2
+  },
+  "audioSources": [
+    {
+      "file": "source/wisp-performance-reference/ambient-show/sound-study/wisp-soft-apparition-v1.mp3",
+      "sha256": "12ee31d2a08bb8d581de4bdddd04e037dc2b37d902e1865c35f9d55f7cbe1206"
+    },
+    {
+      "file": "source/wisp-performance-reference/button-cue-batch/scary-reach-runtime-candidate-v1.mp4",
+      "sha256": "2a003d4f575262ba20651eebf24d6e9d56c32a936533541c3e081453d4e48ecf"
+    }
+  ],
+  "filter": "[1:a]aresample=48000,volume=0.3,afade=t=in:st=0:d=0.15,afade=t=out:st=1.98:d=0.5,adelay=1400:all=1[a];[2:a]atrim=start=2:end=5.3,asetpts=PTS-STARTPTS,aresample=48000,volume=0.12,afade=t=in:st=0:d=0.25,afade=t=out:st=2.6:d=0.7,adelay=0:all=1[b];[a][b]amix=inputs=2:normalize=0,apad,atrim=end_sample=242000,afade=t=out:st=4:d=0.5[mix]",
+  "generationCreditsSpent": 0,
+  "processing": "Static85percent source viewport calibration into canonical1280x720 staging. Only black matte is cropped; frame order, timing, anatomy and source painted performance retained. Video re-encoded once atCRF18; AAC audio packets copied unchanged. No animated resize, warping, crossfade, reversal or added frames.",
+  "remainingGates": [
+    "human full-motion and sound review",
+    "exact rest-pose join review",
+    "native browser full-play and cancellation",
+    "physical projection unavailable"
+  ],
+  "calibrationSource": "evil-to-cute-runtime-candidate-v1.mp4",
+  "calibrationSourceSha256": "d86fef796d20276942e703df2b06fdfe3362ea1296119feeac497e51babb1046",
+  "staticViewportCalibration": {
+    "filter": "format=rgb24,crop=1632:918:144:81:exact=1,scale=1280:720:flags=lanczos,format=yuv420p",
+    "removedBorderMaximumRGB": 1,
+    "removedBorderOnly": true
+  },
+  "audioPacketsIdenticalToV1": true
+}

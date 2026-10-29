@@ -1,0 +1,23 @@
+{
+  "status": "native_skin_mesh_binding_rejected_not_integrated",
+  "scope": "Offline actual122-source-frame lip-contour geometry, original movie SHA verified. No browser native-body render.",
+  "evidence": [
+    "work/authored-face-registration/native-binding-audit.json",
+    "work/authored-face-registration/native-skin-fit.json",
+    "work/authored-face-registration/native-skin-fit-frame0.json"
+  ],
+  "observations": [
+    "Direct similarity-plus-native-lip-control retarget folds skin triangles in all122frames, including frame0.",
+    "Rim/oral geometry appears positive in inspected0/49/121pose groups, but full skin charts fail.",
+    "Global and frame0-only shared-skin edge-flip fits failed; do not use stale successful static-sheet triangles as native-body charts.",
+    "All tested posed lip boundaries remain inside their outer skin cage, so merely increasing cage size is not a demonstrated repair."
+  ],
+  "staticCorrection": "Directed-edge and boundary/coverage checks added to static-sheet topology; no longer rely on triangle signs alone.",
+  "next": "Use original native skin pixels through a bounded piecewise monotone inverse warp, with separate painted oral/rim geometry. First audit target/source lip ordering and control bounds; then validate exact outside-mouth pixels and visible motion.",
+  "limits": [
+    "Existing native contours49\u201352 are still low-confidence.",
+    "Static painted-face quality is not moving-body attachment evidence."
+  ],
+  "runtimePromoted": false,
+  "creditsSpent": 0
+}

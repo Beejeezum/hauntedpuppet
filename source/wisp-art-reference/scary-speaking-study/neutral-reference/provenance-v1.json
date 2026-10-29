@@ -1,0 +1,24 @@
+{
+  "status": "source-only neutral speaking reference candidate; not approved or integrated",
+  "tool": "built-in imagegen edit",
+  "source": "source/wisp-performance-reference/runway-pilots/film-morph-handoff-study/scary-start-staged.png",
+  "artifactId": "exec-61298dd4-9d63-425a-9517-14c23a3b2f9b.png",
+  "output": "scary-neutral-mouth-v1.png",
+  "sha256": "1f1bc12a36644b3c0d372d86535d229987194862574fd3e545b4155703713888",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "intent": "Change open toothy grin to native closed lip contact, preserving fog face and full body. Whole-character reference, not a composited mouth layer.",
+  "review": "Initial visual inspection: coherent ivory-blue fog and attached hands retained; closed mouth follows cheek lighting. This is a generated variant, not a pixel-identical edit or human identity approval. No talking animation or latency acceptance.",
+  "humanApproval": false,
+  "runtimeIntegration": false,
+  "runwayCredits": 0,
+  "foregroundThreshold24Bounds": [
+    632,
+    214,
+    1011,
+    721
+  ],
+  "minimumThreshold24MarginFraction": 0.22741764080765142
+}

@@ -1,0 +1,42 @@
+Friendly painted Wisp live proof
+
+Entry: /assets/wisp-tonight/live-puppet.html (published), or source/wisp-performance-reference/tonight-demo/live-puppet.html (source fixture).
+
+This proof is separate from finished-film playback and the earlier microphone mouth study. It uses the approved painting as its body, iris and eyebrow texture. A built-in ImageGen skin plate is used only in the small facial regions behind the features. The generated body/exterior is ignored. Its exact prompt and asset hashes are in assets/wisp-live/.
+
+Runtime: existing pinned MediaPipe 1.1.1 in a local Worker; existing pinned PixiJS 8.22.0; one connected painted surface with 6,305 vertices. Continuous mouth opening/rounding, eyelid aperture/independent winks, bounded iris gaze, asymmetric brows, small head lean/roll, jaw/cheek response, shoulder/elbow/wrist deformation, trailing core and crest, and object-space fog advection. Joint motion is integrated in small steps to avoid folded cells at gesture extremes. This is a custom front-view GPU proof, not a Cubism/VTube Studio model or complete all-angle/finger rig.
+
+Operator check:
+1. Open in a current Chrome or Safari browser and choose Start webcam puppet.
+2. Allow the browser camera request, face it in reasonable light and choose Calibrate relaxed face.
+3. Test a closed mouth, ah, oo, smile, separate winks, down/side gaze and one raised brow. Body and mist should keep moving while you talk or pause.
+4. Start microphone separately if desired. Speaker output stays off until Hear my voice is selected. Use headphones during calibration. Mic-only mouth movement is an amplitude fallback, not phoneme inference.
+5. Try Wave/Curious/Delighted, open silent rehearsal output, and test camera Stop and Blackout. Phone controls cannot start camera or microphone.
+
+No camera/microphone input is recorded or uploaded. The camera preview stays private on the operator page. Output and paired previews use only the rendered Wisp. Blackout/pagehide stop inputs, pending grants are cancelled, and late-granted tracks are stopped. Face loss returns to a living idle. Graphics loss stops capture and blacks output; reload the proof to recover. Existing key-owning servers are not restarted.
+
+Automated evidence:
+- tests/friendly_live_pose.cjs: channel mapping, asymmetric brows/winks, stale-face idle and noninverted cells across extreme poses/body-energy settings.
+- tests/friendly_live_voice.cjs: silent default, explicit output, denial/resume failure, pending Stop and repeated audio-context/track cleanup.
+- tests/friendly_live_browser.cjs: actual GPU with synthetic worker/canvas camera and oscillator mic; permissions, no-face fallback, output pixels keep changing with operator RAF deliberately paused, Blackout and pagehide.
+- Existing film/output/Puppet capture tests protect earlier modes.
+- Actual local MediaPipe WASM inference was separately exercised with Google's public portrait fixture in work/test-friendly-real-model.cjs. This does not establish actual private webcam performance.
+- work/soak-friendly-proof.cjs exercises one minute of synthetic facial/body acting and projection foreground changes. This is not an evening soak or physical-projector test.
+
+Remaining acceptance: the operator's actual camera/microphone, mouth/eye likeness and timing, perceptual fluidity, real speaker monitoring and physical projector. No new Runway videos were generated for this proof.
+
+2026-10-26 follow-up: user confirms physical webcam tracking works, requests more expressive mouth/eyes, hand control and voice effects.
+- Mouth adds press/stretch and asymmetric smile response; eye travel is adjustable and has a wider socket-constrained range.
+- Optional local two-hand MediaPipe worker shares the existing webcam. It drives bounded arms/wrists and recognizes open palms/pointing. It does not invent a painted index finger or track each painted finger. Loss of a hand fades back into idle. Stop/Blackout stop both trackers. Model SHA and source are in vendor/mediapipe/NOTICE.md.
+- Local AudioWorklet adds Cute cartoon Wisp, Demonic Wisp and clean presets with pitch and character amount controls, filtered short ambience and compression. Speaker toggle is explicit and defaults off. The demon preset changes audio only in this friendly proof. No cloud voice conversion or credits. Headphones recommended for monitoring.
+- Tested genuine hand-model inference on Google's public pointing_up.jpg; synthetic browser inputs exercise both workers and voice-preset switching. This is distinct from user's actual two-hand camera acceptance and listening approval.
+
+2026-10-27 Voice Studio integration:
+- Added a neural engine choice, microphone device selection, companion connection check, custom short-WAV identity reference, processing/transport/queue metrics and adjustable mouth-only sync delay. Basic effects remain separately labelled.
+- Downloadable source toolkit: assets/wisp-voice-companion.zip, packaged by scripts/package-voice-companion.py. GPL3 Python adapter runs official pinned Seed-VC as a loopback-only companion. Browser owns capture and sound; companion does not open devices, record or use provider keys. One session, origin/token checks, bounded PCM, warm reference caches and discard-on-stop.
+- Python adapter and app transport were exercised over actual HTTP/WebSocket and AudioWorklet with a synthetic conversion engine in Chromium and WebKit. This tests the integration, not neural timbre. The earlier real model audition remains separate evidence.
+- Full neural integration is NOT installed/accepted on this laptop: setup refused when storage dropped below5GB. No model downloads were started by the installer. Physical loopback, model-loaded browser run and longer soak are still required. Do not describe the new selector as an installed working neural engine merely because the connection test fixture passes.
+
+Activation follow-up: cleared regenerable dependency/reference-model download caches and successfully installed/warmed the isolated toolkit in work/wisp-voice-runtime. Real model browser integration passed locally using prerecorded synthetic speech through actual AudioWorklet/WebSocket/Seed-VC: silent default, voice switch, memory-only reference swap, restart and Blackout. No physical microphone/loopback or human timbre approval established. The companion remains laptop-local and uses no provider key. Earlier storage refusal is historical; activation is now available on this laptop while its companion process runs.
+
+Hosted connection acceptance: an isolated Chromium test of the hosted page was denied access to the loopback address space by the browser. This is a browser permission boundary, not an engine outage. The app now offers a direct local Voice Studio link. Its frontend is also included in the downloadable toolkit, so a standalone installation can serve the same painted interface locally without a cross-origin bridge. Local studio does not expose nonfunctional phone-pairing controls; existing paired-phone paths remain in the hosted app. Local real-model test passes. Full hosted neural capture requires the browser to grant local-network access and has not been accepted by the operator.

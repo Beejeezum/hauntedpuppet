@@ -1,0 +1,44 @@
+{
+  "status": "authoring_measurements_not_motion_acceptance",
+  "sourceSha256": "53fb90cc32fd065ca64456f03261ab370e1a2263da8a49cb366754091e254c34",
+  "candidateSha256": "0c83f3416f1a381f5f9806f10a72b65b2bbbdf9c6c7556eebaa2e7fc0ae5610f",
+  "tools": {
+    "opencv": "4.13.0",
+    "numpy": "2.0.2",
+    "pillow": "11.3.0"
+  },
+  "findings": {
+    "rest": {
+      "widthOverEyeDistance": 0.43794227773330197,
+      "heightOverEyeDistance": 0.1579463952480761,
+      "medianInkThickness": 3.0
+    },
+    "AH": {
+      "widthOverEyeDistance": 0.4712184763968342,
+      "heightOverEyeDistance": 0.2855869553920207,
+      "medianInkThickness": 19.0
+    },
+    "OO": {
+      "widthOverEyeDistance": 0.18748271329266436,
+      "heightOverEyeDistance": 0.17306096611630556,
+      "medianInkThickness": 18.5
+    },
+    "EE": {
+      "widthOverEyeDistance": 0.6004905105971752,
+      "heightOverEyeDistance": 0.2543253927235095,
+      "medianInkThickness": 12.0
+    }
+  },
+  "interpretation": [
+    "Authored OO is much narrower than AH/EE and has a near-round dark cavity; do not derive it by compressing a smile and stretching one strip.",
+    "Rest bounding-box height describes the smile curve, while median dark column thickness is3pixels. Treating the entire box as an open cavity would create false jaw motion.",
+    "Bright teeth/lip rim are absent from the thresholded dark component; an alternative convex envelope captures more upper-mouth region but is still not a hand-authored lip boundary."
+  ],
+  "nextImplementation": "Retarget coordinated upper/lower lip controls in head-local space using the approved authored poses, preserve native body paint outside the face, and test a moving proof. Do not paste whole generated head cells or substitute raw masks for shaded lip material.",
+  "limits": [
+    "Eye anchors remain coarse candidates; generated cell translations require alignment.",
+    "No renderer consumes this measurement file yet.",
+    "No mouth animation, frame registration, all-angle rig, runtime release or physical approval claimed.",
+    "No image pixels modified, new generation, Runway credits or provider call."
+  ]
+}

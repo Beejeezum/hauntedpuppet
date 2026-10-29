@@ -1,0 +1,43 @@
+{
+  "taskId": "2fb402bc-4e87-47a2-b251-d0865e345371",
+  "cueId": "fog-lettering",
+  "status": "rejected as finished cue after actual frame review",
+  "workspaceId": 1709631,
+  "workspaceName": "Bruce",
+  "model": "kling-o3-pro",
+  "durationSeconds": 10,
+  "requestedResolution": "720p",
+  "generateAudio": false,
+  "acceptedSubmissions": 1,
+  "maximumAutomaticRetries": 0,
+  "creditsBefore": 14429,
+  "creditsAfter": 14259,
+  "observedDebit": 170,
+  "promptFile": "fog-lettering-pilot-v1.prompt.txt",
+  "startEndFrame": "source/wisp-performance-reference/ambient-show/fog-lettering-study/empty-stage-v1.png",
+  "referenceImage": "source/wisp-performance-reference/ambient-show/fog-lettering-study/happy-halloween-vapor-v5.png",
+  "referenceScope": "Existing static spelling/material study, not human-approved final typography; its own8.5percent margins fail framing. Empty start/end and requested central50percent production framing are explicit requirements, not an assumption of compliance.",
+  "runtimePublication": false,
+  "humanApproval": false,
+  "next": [
+    "Retrieve this exact task, never duplicate submission.",
+    "Inspect spelling/readability, actual local smoke dispersion rather than whole-phrase opacity fade, no resizing/zoom; verify all-frame15percent minimum/20percent target and genuine black entry/exit handles.",
+    "Only after visual QA add sparse dry effects and seek exact-clip human review."
+  ],
+  "file": "fog-lettering-pilot-v1.mp4",
+  "rawSha256": "b8483cde9c921ca0618d0d374a02a68a74b0e699efe976d1e581b143a3f7276f",
+  "actual": {
+    "width": 1920,
+    "height": 1080,
+    "frames": 241,
+    "fps": 24,
+    "durationSeconds": 10.041,
+    "hasAudio": false
+  },
+  "review": {
+    "technical": "223 of224 visible RGB4frames fail20percent buffer. Late smoke touches left/top bounds. Head/tail exact-black handles exist, but do not repair clipped smoke.",
+    "visual": "HAPPY HALLOWEEN spelling remains readable, but the held strokes look opaque creamy ribbons. Late smoke grows into a broad billowing mass and clips; this is not the approved thin porous ghost fog. No sound/runtime admission or automatic retry.",
+    "motionPositive": "Actual turbulent smoke formation and local letter breakup appear in the final third, rather than only fading an intact text layer.",
+    "next": "Use actual isolated smoke passes with controlled framing/typography for a future composite; do not enlarge/pad clipped source or pay for a blind retry."
+  }
+}

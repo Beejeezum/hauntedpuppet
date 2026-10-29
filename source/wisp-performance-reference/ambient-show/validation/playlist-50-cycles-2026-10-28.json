@@ -1,0 +1,476 @@
+{
+  "passed": true,
+  "elapsedMs": 882412,
+  "closingCycles": 50,
+  "soakSamples": [
+    {
+      "current": "scary",
+      "draws": 2025,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 3061,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 4097,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 5133,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 6169,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 7205,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 8241,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 9272,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 10308,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 11347,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 12380,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 13416,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 14452,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 15487,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 16523,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 17560,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 18596,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 19632,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 20668,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 21704,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 22741,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 23764,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 24799,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 25835,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 26871,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 27907,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 28943,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 29979,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 31016,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 32052,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 33088,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 34124,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 35160,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 36196,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 37232,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 38268,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 39304,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 40340,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 41377,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 42409,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 43446,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 44483,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 45519,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 46556,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 47591,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 48627,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 49664,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 50700,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 51737,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    },
+    {
+      "current": "scary",
+      "draws": 52774,
+      "media": 2,
+      "playing": 1,
+      "allMuted": true,
+      "audible": 0,
+      "projectorSilent": true
+    }
+  ],
+  "silentProjectorChecked": true,
+  "persistence": true,
+  "reordering": true,
+  "restart": true,
+  "stallTimerFrozen": true,
+  "blackoutCancelsPreload": true,
+  "scope": "Actual muted browser films and real elapsed time; study fade-through-black transitions only, not human seam approval or physical output",
+  "evidenceDate": "2026-10-28",
+  "testedCodeRevision": "61e3173bc4029456fd866824d843ed9bf885cb8a",
+  "fileSha256": {
+    "tests/showdesk_rehearsal.cjs": "7c472f1812509243ef34523f4903d3e3e454831804ab0b6a37933455b74d5147",
+    "source/wisp-performance-reference/ambient-show/film-transport.mjs": "ad74dea2ba95fcd7db938caea59cd5b4e70be0b0006df55bdceaf09aaf35ee6f",
+    "source/wisp-performance-reference/ambient-show/showdesk.mjs": "934d6d7c2af2e795b50268dc2e99916ab1d0fbcc667bb1b5f1c4fc1ce2c884ef",
+    "assets/stage-compositor.js": "d071f377f54a1f452c5b89815a7ef144717d3b64d2688a704f91ceb7f9417a70",
+    "source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4": "52d54d03c0f0406a9724c7c04b9e2fa0557a675486edfaa40fd0ca2e24a682bd",
+    "source/wisp-performance-reference/runway-pilots/motion-transfer-study/wisp-scary-motion-transfer-v35.mp4": "21e8efec67ec7e024fc954cc16af458cad8f8427553a998341ff9d37286ca35a"
+  },
+  "captureAndProvider": "No microphone/camera or genuine voice provider. Browser hardware muted; output contains no audio/video elements.",
+  "limitations": "Compatibility study films and planned fade-through-black routes; not approval of16cue publication, human motion/sound, live phone hardware or physical projection. No overnight-duration claim."
+}

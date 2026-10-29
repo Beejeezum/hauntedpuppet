@@ -1,0 +1,19 @@
+{
+  "frames": 194,
+  "fps": 24.0,
+  "videoSeconds": 8.083333333333334,
+  "sourceAudioSeconds": 8.064,
+  "outputAudioSeconds": 8.064,
+  "decodedAudioZeroLagCorrelation": 0.9999704268117011,
+  "validation": "decoded file timing/integrity, not listening or human sync approval",
+  "artifact": "work/native-lip-surface-voice-v4/native-lip-voice-proof.mp4",
+  "status": "unapproved source-only voiced proof",
+  "humanReview": "pending",
+  "visualReview": [
+    "Native outer-face paint preserved; no overlaid generated cheek patch.",
+    "Frames49\u201352 still reveal unstable/jagged native lip contour during opening.",
+    "Only acoustic aperture, no rounded or consonant shapes.",
+    "This does not prove the pasted-on problem solved."
+  ],
+  "newPaidCredits": 0
+}

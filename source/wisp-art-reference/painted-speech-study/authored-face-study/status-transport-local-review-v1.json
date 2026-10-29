@@ -1,0 +1,39 @@
+{
+  "status": "local-pass-Linux-inconsistent-not-production-qualified",
+  "route": "pipeline=single&mouth=authored-native&status=xhr",
+  "scope": "Real loopback HTTP, actual painted films, native PCM from synthetic speech fixtures; no real provider/voice/human/physical projection claim. Native non-CPU renderer unchanged; status-only XHR, no automatic retries.",
+  "unit": "tests/director_status_request.cjs",
+  "unitResults": "Chrome/Mac WebKit success,401,malformed,array,oversize,native timeout,pre/pending abort and recovery pass.",
+  "fullAppResults": [
+    {
+      "engine": "chromium",
+      "statusRequests": {
+        "sent": 7,
+        "loaded": 7
+      },
+      "speechStarts": 6,
+      "bodyFramesClosed": true,
+      "graphicsTerminallyDisposed": true,
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "statusRequests": {
+        "sent": 7,
+        "loaded": 7
+      },
+      "speechStarts": 6,
+      "bodyFramesClosed": true,
+      "graphicsTerminallyDisposed": true,
+      "errors": []
+    }
+  ],
+  "productionApproval": false,
+  "linux": {
+    "firstRun": "40856690421",
+    "firstResult": "pass seven status transactions/six speech starts/2781 frames closed/shared GL cleanup",
+    "repeatRun": "40949305253",
+    "repeatResult": "failed after three speech starts; speechStage ready, unlike previous status-fetch stall. Root cause not proven.",
+    "scope": "One pass then one failure at same13bc6f5. Status-only XHR is not a qualified complete app fix. No third blind rerun."
+  }
+}

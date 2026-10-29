@@ -1,0 +1,84 @@
+{
+  "clips": [
+    {
+      "id": "friendly-drift",
+      "title": "A small living drift",
+      "form": "friendly"
+    },
+    {
+      "id": "friendly-wave",
+      "title": "A wave for the sidewalk",
+      "form": "friendly"
+    },
+    {
+      "id": "friendly-boo-fail",
+      "title": "Trying to be frightening",
+      "form": "friendly"
+    },
+    {
+      "id": "friendly-depart",
+      "title": "Off to the next haunting",
+      "form": "friendly"
+    },
+    {
+      "id": "friendly-reform",
+      "title": "A friendly arrival",
+      "form": "transition"
+    },
+    {
+      "id": "scary-drift",
+      "title": "The house is watching",
+      "form": "scary"
+    },
+    {
+      "id": "scary-pace",
+      "title": "Guarding the doorway",
+      "form": "scary"
+    },
+    {
+      "id": "scary-reach",
+      "title": "A hand from the mist",
+      "form": "scary"
+    },
+    {
+      "id": "scary-eyes",
+      "title": "Only the eyes remain",
+      "form": "scary"
+    },
+    {
+      "id": "scary-retreat",
+      "title": "Back into the house",
+      "form": "scary"
+    },
+    {
+      "id": "scary-fakeout",
+      "title": "Almost a scare",
+      "form": "scary"
+    },
+    {
+      "id": "scary-reform",
+      "title": "A haunting arrival",
+      "form": "transition"
+    },
+    {
+      "id": "cute-to-evil",
+      "title": "The same spirit darkens",
+      "form": "transition"
+    },
+    {
+      "id": "evil-to-cute",
+      "title": "Welcome, little visitors",
+      "form": "transition"
+    },
+    {
+      "id": "fog-lettering",
+      "title": "A greeting in the mist",
+      "form": "atmosphere"
+    },
+    {
+      "id": "bats-through-letters",
+      "title": "Bats steal Halloween",
+      "form": "atmosphere"
+    }
+  ]
+}

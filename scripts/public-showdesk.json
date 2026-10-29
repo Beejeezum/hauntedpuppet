@@ -4,23 +4,23 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.html",
       "destination": "index.html",
-      "sha256": "1faec22e3b9265edf1e9b8ea9222468bb223dd228b8ed43537aea7ab281009ec",
-      "bytes": 3250,
-      "publishedSha256": "1faec22e3b9265edf1e9b8ea9222468bb223dd228b8ed43537aea7ab281009ec"
+      "sha256": "3ace6ad40496849709a7a08b14fdc905614cf70c57f7987305fa7a52dda4d1ee",
+      "bytes": 3993,
+      "publishedSha256": "3ace6ad40496849709a7a08b14fdc905614cf70c57f7987305fa7a52dda4d1ee"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.css",
       "destination": "showdesk.css",
-      "sha256": "60264afb62128679ea928d356cdbe405882a97b5225e676347f7e0aa987e9f89",
-      "bytes": 4593,
-      "publishedSha256": "60264afb62128679ea928d356cdbe405882a97b5225e676347f7e0aa987e9f89"
+      "sha256": "dd8b011910085075580f97f7f1d6cbba1313d57161815dad529db7fc38360c86",
+      "bytes": 8278,
+      "publishedSha256": "dd8b011910085075580f97f7f1d6cbba1313d57161815dad529db7fc38360c86"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.mjs",
       "destination": "showdesk.mjs",
-      "sha256": "9de6d987e11654dd80f49ad1c846562769adbd2ea61aa85723813ae0895904f6",
-      "bytes": 11629,
-      "publishedSha256": "fd9117cd910637daa94154b99fc1e4bae313fad92d97f4308ab07db9f325a440",
+      "sha256": "64c7914f9c5fb0df7504f88b2b6de751d78410b94d568be85bcf424c80fa9173",
+      "bytes": 23556,
+      "publishedSha256": "ae1b0a9d8024b16c34a2d9332b8e9adeb4920135dc51ffdd04299a765c0a9637",
       "rewrites": [
         {
           "from": "../runway-pilots/wisp-film-output.js",
@@ -39,16 +39,16 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/film-transport.mjs",
       "destination": "film-transport.mjs",
-      "sha256": "e5a9a77746547f66c5b0e81f078808d6f315a60a7c3253921e9e4416d6d9bcf6",
-      "bytes": 3101,
-      "publishedSha256": "e5a9a77746547f66c5b0e81f078808d6f315a60a7c3253921e9e4416d6d9bcf6"
+      "sha256": "b8fb031909dcb5f9b71f76d966d9cbd13716372c08c6ca3832cf8e8dc1eaf1a9",
+      "bytes": 14096,
+      "publishedSha256": "b8fb031909dcb5f9b71f76d966d9cbd13716372c08c6ca3832cf8e8dc1eaf1a9"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/cue-director.mjs",
       "destination": "cue-director.mjs",
-      "sha256": "be0ba34a53d7f9dc200c9e316da1924ecb02aa425a37f5bfe11cbbd3e4bc26c4",
-      "bytes": 2214,
-      "publishedSha256": "be0ba34a53d7f9dc200c9e316da1924ecb02aa425a37f5bfe11cbbd3e4bc26c4"
+      "sha256": "fc18284f2165fc007cbced36bfcc86ea87fb5b3aed7db1ccf95f6f03d38e9a64",
+      "bytes": 2801,
+      "publishedSha256": "fc18284f2165fc007cbced36bfcc86ea87fb5b3aed7db1ccf95f6f03d38e9a64"
     },
     {
       "source": "source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4",
@@ -67,16 +67,16 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/film-remote.mjs",
       "destination": "film-remote.mjs",
-      "bytes": 2624,
-      "sha256": "4fe740f7e1835cd0ede48b229cd4c068457f4aebed4b3ebcb473fa1982297e60",
-      "publishedSha256": "4fe740f7e1835cd0ede48b229cd4c068457f4aebed4b3ebcb473fa1982297e60"
+      "bytes": 4470,
+      "sha256": "c0788879e88f7ffe358b40b8aed551c32eef6e70559956898aa2c711881fc8b0",
+      "publishedSha256": "c0788879e88f7ffe358b40b8aed551c32eef6e70559956898aa2c711881fc8b0"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/owner-sound.mjs",
       "destination": "owner-sound.mjs",
-      "sha256": "63d38e81c169ef8c8314a032c8e260d38151423f0057fa42ff00ec211f4ccbb8",
-      "bytes": 2946,
-      "publishedSha256": "63d38e81c169ef8c8314a032c8e260d38151423f0057fa42ff00ec211f4ccbb8"
+      "sha256": "17a1eee840fcb2bf58c3dd1bec08fec30266bc991a9d44993b48b79218fdc0e2",
+      "bytes": 3827,
+      "publishedSha256": "17a1eee840fcb2bf58c3dd1bec08fec30266bc991a9d44993b48b79218fdc0e2"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/owner-sound-controls.mjs",
@@ -91,6 +91,222 @@
       "sha256": "b20ed362ef93ce4cb2be538883b05ff0bfc32c883357d1060dfc8dd0a742e067",
       "bytes": 5839,
       "publishedSha256": "b20ed362ef93ce4cb2be538883b05ff0bfc32c883357d1060dfc8dd0a742e067"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/saved-playlists.mjs",
+      "destination": "saved-playlists.mjs",
+      "sha256": "d4a41edc9752cffcd5d1f49ad1041dc3c8e7883b03820d91e4a55713f05f3534",
+      "bytes": 9135,
+      "publishedSha256": "d4a41edc9752cffcd5d1f49ad1041dc3c8e7883b03820d91e4a55713f05f3534"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/catalog-director.mjs",
+      "destination": "catalog-director.mjs",
+      "bytes": 5388,
+      "sha256": "38a96ec96d6377dd2b5c8dc25b5148d09cc7482c24cd621fa33234d2fef0596b",
+      "publishedSha256": "38a96ec96d6377dd2b5c8dc25b5148d09cc7482c24cd621fa33234d2fef0596b"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/runtime-library.mjs",
+      "destination": "runtime-library.mjs",
+      "bytes": 2946,
+      "sha256": "94761cac71a863dabd56229b62f8d2ea22f9b8b4cfa7c23734ccd62104abcea9",
+      "publishedSha256": "94761cac71a863dabd56229b62f8d2ea22f9b8b4cfa7c23734ccd62104abcea9"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/approved-publication.json",
+      "destination": "approved-publication.json",
+      "sha256": "72389461cfea447584dc91ce44ba29f8993088fdb4bedb09abd6b7d68cea68b9",
+      "bytes": 191,
+      "publishedSha256": "72389461cfea447584dc91ce44ba29f8993088fdb4bedb09abd6b7d68cea68b9"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/director.html",
+      "destination": "director.html",
+      "bytes": 2674,
+      "sha256": "8497f5cd4f2d7449757ac89c5201512fe908eb0ce55d9949aaf097716dcb66b0",
+      "publishedSha256": "8497f5cd4f2d7449757ac89c5201512fe908eb0ce55d9949aaf097716dcb66b0"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/director.mjs",
+      "destination": "director.mjs",
+      "bytes": 17858,
+      "sha256": "1edf1eb241130ca7566179a2a966e63f814a71b646d8f7a4e17b0698c5ffbb83",
+      "rewrites": [
+        {
+          "from": "../tonight-demo/paired-controls.mjs",
+          "to": "../wisp-tonight/paired-controls.mjs"
+        },
+        {
+          "from": "../runway-pilots/wisp-film-output.js",
+          "to": "../wisp-film-preview/wisp-film-output.js"
+        },
+        {
+          "from": "../../wisp-art-reference/painted-speech-study/phone-painted-mouth-layer.mjs",
+          "to": "../wisp-mouth-study/phone-painted-mouth-layer.mjs"
+        },
+        {
+          "from": "../../wisp-art-reference/painted-speech-study/phone-native-lip-layer.mjs",
+          "to": "../wisp-mouth-study/phone-native-lip-layer.mjs"
+        },
+        {
+          "from": "../../wisp-art-reference/painted-speech-study/phone-owned-native-lip-layer.mjs",
+          "to": "../wisp-mouth-study/phone-owned-native-lip-layer.mjs"
+        },
+        {
+          "from": "../../wisp-art-reference/painted-speech-study/prepare-native-picture-profile.mjs",
+          "to": "../wisp-mouth-study/prepare-native-picture-profile.mjs"
+        },
+        {
+          "from": "../../wisp-art-reference/painted-speech-study/native-lip-mesh-study/friendly-v28-canonical-head-samples-v1.json",
+          "to": "../wisp-mouth-study/friendly-v28-canonical-head-samples-v1.json"
+        },
+        {
+          "from": "../../wisp-art-reference/painted-speech-study/phone-authored-painted-layer.mjs",
+          "to": "../wisp-mouth-study/phone-authored-painted-layer.mjs"
+        }
+      ],
+      "publishedSha256": "c1fbaad41503eed6416ac3cea6b5cdfa76e9642955beab547400522cd1931a40"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/director.css",
+      "destination": "director.css",
+      "bytes": 937,
+      "sha256": "be34c626bf5a6e480b470c58df4e14be7c02649e7541ae3bdf0407ff640e5376",
+      "publishedSha256": "be34c626bf5a6e480b470c58df4e14be7c02649e7541ae3bdf0407ff640e5376"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/phone-performance-director.mjs",
+      "destination": "phone-performance-director.mjs",
+      "bytes": 3911,
+      "sha256": "96993d902f6482a65f269bd777bbfc8c2f1ed82a428f82139f663490930946ef",
+      "publishedSha256": "96993d902f6482a65f269bd777bbfc8c2f1ed82a428f82139f663490930946ef"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/director-ambient-program.mjs",
+      "destination": "director-ambient-program.mjs",
+      "bytes": 4519,
+      "sha256": "14a8b3c518fdbb98958f1cf89f798a818d9b9c88b2b8810cdf4fc9c5687ef09a",
+      "publishedSha256": "14a8b3c518fdbb98958f1cf89f798a818d9b9c88b2b8810cdf4fc9c5687ef09a"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/frame-clock.mjs",
+      "destination": "frame-clock.mjs",
+      "bytes": 1563,
+      "sha256": "070661e42a1fd2e4f18801b06b5f1638a2e6d59174ea68ce386fa5ba29f94eb6",
+      "publishedSha256": "070661e42a1fd2e4f18801b06b5f1638a2e6d59174ea68ce386fa5ba29f94eb6"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/single-film-transport.mjs",
+      "destination": "single-film-transport.mjs",
+      "sha256": "52a9b1333c707a05b96bc91d3bba3484c994322f02f7484d30449e55b82c4487",
+      "bytes": 6539,
+      "publishedSha256": "52a9b1333c707a05b96bc91d3bba3484c994322f02f7484d30449e55b82c4487"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/pcm-voice.mjs",
+      "destination": "pcm-voice.mjs",
+      "bytes": 2473,
+      "sha256": "a2274ee506c75ddd2fbef4dff70f97d0efed19baf90d1dd76e5c6b9b8b6a43a4",
+      "publishedSha256": "a2274ee506c75ddd2fbef4dff70f97d0efed19baf90d1dd76e5c6b9b8b6a43a4"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/owned-video-frame-source.mjs",
+      "destination": "owned-video-frame-source.mjs",
+      "bytes": 9046,
+      "sha256": "1f6b26b7e60e8aac257b10f0ae12d7b9b6caf268f75c20bd5432ae360d79d6f1",
+      "publishedSha256": "1f6b26b7e60e8aac257b10f0ae12d7b9b6caf268f75c20bd5432ae360d79d6f1"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/director-status-request.mjs",
+      "destination": "director-status-request.mjs",
+      "sha256": "174a88eb2731c66ea503328437bd71639a165070ebc02d4cd44f022837bcf993",
+      "bytes": 1896,
+      "publishedSha256": "174a88eb2731c66ea503328437bd71639a165070ebc02d4cd44f022837bcf993"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/friendly-wave-runtime-candidate-v3.mp4",
+      "destination": "rehearsal-friendly-wave.mp4",
+      "sha256": "32177fb6e3f49de6e8f4bf761575fa1709358ac56ee4c3464f029ffbb9a6300a",
+      "bytes": 476267,
+      "publishedSha256": "32177fb6e3f49de6e8f4bf761575fa1709358ac56ee4c3464f029ffbb9a6300a"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/friendly-boo-fail-runtime-candidate-v1.mp4",
+      "destination": "rehearsal-friendly-boo-fail.mp4",
+      "sha256": "4d35f8db6b482ca469acb3e1e17f07efa089a4b676dc428da3c0e6fcbad27b45",
+      "bytes": 627704,
+      "publishedSha256": "4d35f8db6b482ca469acb3e1e17f07efa089a4b676dc428da3c0e6fcbad27b45"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/scary-reach-runtime-candidate-v1.mp4",
+      "destination": "rehearsal-scary-reach.mp4",
+      "sha256": "2a003d4f575262ba20651eebf24d6e9d56c32a936533541c3e081453d4e48ecf",
+      "bytes": 960621,
+      "publishedSha256": "2a003d4f575262ba20651eebf24d6e9d56c32a936533541c3e081453d4e48ecf"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/friendly-depart-runtime-candidate-v1.mp4",
+      "destination": "rehearsal-friendly-depart.mp4",
+      "sha256": "58d6bd30ab6540e3d7d8eb1f086fe18c2986fa85a04dc45e6cd7301c6e89c59d",
+      "bytes": 575720,
+      "publishedSha256": "58d6bd30ab6540e3d7d8eb1f086fe18c2986fa85a04dc45e6cd7301c6e89c59d"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/scary-eyes-runtime-candidate-v1.mp4",
+      "destination": "rehearsal-scary-eyes.mp4",
+      "sha256": "8d30ec2f4d781fd8b663a04e855949d454e1d09948c1d913e8393437a3a4e1f3",
+      "bytes": 793366,
+      "publishedSha256": "8d30ec2f4d781fd8b663a04e855949d454e1d09948c1d913e8393437a3a4e1f3"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/cute-to-evil-runtime-candidate-v3.mp4",
+      "destination": "rehearsal-cute-to-evil.mp4",
+      "sha256": "ec9b8a65b525f43991c07b57197b8108ee46d0c0e9c7d83cdb3b2b5f610b0dec",
+      "bytes": 250660,
+      "publishedSha256": "ec9b8a65b525f43991c07b57197b8108ee46d0c0e9c7d83cdb3b2b5f610b0dec"
+    },
+    {
+      "source": "source/wisp-performance-reference/button-cue-batch/evil-to-cute-runtime-candidate-v3.mp4",
+      "destination": "rehearsal-evil-to-cute.mp4",
+      "sha256": "c3ccb74d44a44e658c723405b51fcd9e3b57a81749f89f8903dd66e455d70463",
+      "bytes": 193416,
+      "publishedSha256": "c3ccb74d44a44e658c723405b51fcd9e3b57a81749f89f8903dd66e455d70463"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/cue-board.mjs",
+      "destination": "cue-board.mjs",
+      "bytes": 3871,
+      "sha256": "01a03d295f1967b8e858e37ae1d3b0f100fcd140e2bc18cba9be157c9f6ccd6f",
+      "publishedSha256": "01a03d295f1967b8e858e37ae1d3b0f100fcd140e2bc18cba9be157c9f6ccd6f"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/cue-board-inventory.json",
+      "destination": "cue-board-inventory.json",
+      "bytes": 1723,
+      "sha256": "a1b05b3ebabee3ec1fe49823c8b7531615354d3b49c661c796671c191e466fae",
+      "publishedSha256": "a1b05b3ebabee3ec1fe49823c8b7531615354d3b49c661c796671c191e466fae"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/rehearsal-cues.json",
+      "destination": "rehearsal-cues.json",
+      "bytes": 2592,
+      "sha256": "0eec214e2df97011fb25045ed527fcd9d46c29575808f7c82e0a5a1bcc27f25e",
+      "publishedSha256": "0eec214e2df97011fb25045ed527fcd9d46c29575808f7c82e0a5a1bcc27f25e"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/rehearsal-program.mjs",
+      "destination": "rehearsal-program.mjs",
+      "bytes": 788,
+      "sha256": "cb8394ee007dc22549e0098cb18ae00f5f46ae49c9ec24accbcb83345dccb7ce",
+      "publishedSha256": "cb8394ee007dc22549e0098cb18ae00f5f46ae49c9ec24accbcb83345dccb7ce"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/cue-layout.mjs",
+      "destination": "cue-layout.mjs",
+      "bytes": 541,
+      "sha256": "40adb1f1e1b7295cba8404f337847211df6aff09fd4345e4c3a35be182ced7a1",
+      "publishedSha256": "40adb1f1e1b7295cba8404f337847211df6aff09fd4345e4c3a35be182ced7a1"
     }
   ]
 }

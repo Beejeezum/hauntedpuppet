@@ -1,0 +1,36 @@
+{
+  "status": "local-regression-pass-linux-app-still-fails",
+  "head": "97c9f49551cc8b2ca64987e7044beeb9da8ef58b",
+  "localDirector": "Chrome and Mac WebKit original full owned-native-director tests pass after format repair; synthetic provider/zero-PCM speech, actual films.",
+  "paintedFace": {
+    "rows": 122,
+    "outsideChanged": 0,
+    "protectedBlueChanged": 0,
+    "maxDrawMs": 5.800000011920929,
+    "scope": "Independent actual source-picture/canonical-match paint test; not phone app integration of new painted rig."
+  },
+  "linux": {
+    "run": 40823967879,
+    "result": "failure",
+    "capturePublished": 752,
+    "captureCreated": 2911,
+    "captureClosed": 2911,
+    "captureFailures": 0,
+    "canonicalPreparationCompleted": 3,
+    "canonicalPreparationTotal": 3,
+    "speechStarts": 2,
+    "nextFailure": "Third speech did not start; scary film load reports operation not supported; GStreamer blob-media-player-2 ERROR code1. Root cause not proven."
+  },
+  "humanReview": "pending",
+  "runtimePublication": false,
+  "physicalProjection": false,
+  "paidCreditsSpent": 0,
+  "laterLinuxComparisons": {
+    "head": "80033a97302164d271b02b8229f7cd6047bfa5f2",
+    "softwareRun": 40824982164,
+    "softwareResult": "pass:6speechStarts/2canonicalPreparations/zeroPageErrors/closedCleanly",
+    "normalRun": 40825262219,
+    "normalResult": "failure:3speechStarts;4thpreparation voice request stalled;853published/0captureFailures;owner responsive",
+    "limits": "One software pass does not establish reliability. Native normal-backend glcolorconvertelement1 reports inability to transform I4201280x720 GLMemory around transition; causal link to stalled request unproven. No production switch or release approval."
+  }
+}

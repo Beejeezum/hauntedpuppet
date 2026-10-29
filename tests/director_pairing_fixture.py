@@ -1,0 +1,25 @@
+"""Own loopback-only integration services; never load Keychain/provider credentials."""
+import json,os,signal
+os.environ.pop('OPENAI_API_KEY',None)
+import server,phone_bridge
+from http.server import ThreadingHTTPServer
+remote=phone_bridge.create_server('127.0.0.1',0)
+phone_bridge.create_server=lambda *_args:remote
+class FixtureHandler(server.Handler):
+ def do_GET(self):
+  if server.urlsplit(self.path).path=='/api/status':
+   return self.reply(200,{'mode':'local','token':server.TOKEN,'configured':False,'authenticated':True,'conversation':False})
+  return super().do_GET()
+ def do_POST(self):
+  if server.urlsplit(self.path).path in ('/api/performance','/api/director/line'):
+   return self.reply(503,{'error':'This isolated test requires an explicit browser speech fixture'})
+  return super().do_POST()
+http=ThreadingHTTPServer(('127.0.0.1',0),FixtureHandler)
+server.PORT=http.server_port
+print(json.dumps({'base':'http://127.0.0.1:'+str(http.server_port),'phoneBase':'http://127.0.0.1:'+str(remote.server_port)}),flush=True)
+def stop(*_args):raise KeyboardInterrupt
+signal.signal(signal.SIGTERM,stop)
+try:http.serve_forever()
+except KeyboardInterrupt:pass
+finally:
+ phone_bridge.disable();remote.server_close();http.server_close()

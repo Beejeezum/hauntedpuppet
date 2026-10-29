@@ -1,0 +1,31 @@
+{
+  "status": "friendly front-view live proof; human visual/camera/projection acceptance pending",
+  "bodyReference": {
+    "path": "source/wisp-art-reference/approved-friendly-fog.png",
+    "sha256": "42c2a586c05b69d596d136dae7f0500e5a567619b699d6e02bad0a4c765082f4",
+    "use": "Original approved painting remains body, crest, hands, taper, iris and brow texture; shared connected deforming surface."
+  },
+  "skinPlate": {
+    "path": "assets/wisp-live/friendly-skin-plate-v1.png",
+    "sha256": "53fc07fbc3eb5782834ea9ebe4e49267d1efc30142946033aa06123183809b56",
+    "createdWith": "Built-in image_gen edit tool, identity-preserve mode",
+    "prompt": "friendly-skin-plate-v1.prompt.txt",
+    "use": "Only local skin beneath eye/brow/mouth masks. Generated body/exterior/halo is NOT used."
+  },
+  "faceAssets": "Existing Tonight painted mouth atlas and blank eye whites; no generated videos or cloud avatar session",
+  "runtime": {
+    "faceTracker": "MediaPipe1.1.1 local Worker",
+    "graphics": "PixiJS8.22.0 connected painted GPU mesh",
+    "controls": "webcam jaw/rounding/gaze/blink/brow/small head lean; autonomous shoulder/elbow/wrist/core/crest/fog",
+    "live2DModel": false,
+    "fingerTracking": false,
+    "allAngleRig": false
+  },
+  "privacy": "No input recording/upload; webcam/microphone explicitly started on laptop; phone/projector receive rendered Wisp/control state only",
+  "limits": [
+    "Front view and restrained head angles only; not a volumetric character",
+    "Microphone fallback is amplitude, not phonemes",
+    "Graphics context loss blackens output and stops capture; reload needed",
+    "Real human webcam/voice and physical projector rehearsal still required"
+  ]
+}

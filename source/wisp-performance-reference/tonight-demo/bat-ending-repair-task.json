@@ -1,0 +1,16 @@
+{
+  "taskId": "a09a3ac1-8a33-40ef-97ba-526a55016839",
+  "status": "SUCCEEDED",
+  "creditsBefore": 17002,
+  "creditsAfter": 16778,
+  "observedDebit": 224,
+  "source": "bat-ending-story-proof-v1.mp4",
+  "approvedKeyframe": "bat-ending-corrected-keyframe-v2.png",
+  "keyframeTimestampSeconds": 5,
+  "humanApproval": "Yes\u2014use this size and framing",
+  "releaseApproved": false,
+  "scope": "Targeted repair; full motion/bounds/word preservation/native ending/audio review required before runtime use.",
+  "artifact": "bat-ending-repaired-v1.mp4",
+  "sha256": "ef9e318ee8d1819f261572fd9268f23d6d1a3389a33072e7f0a4c72c6becbfdc",
+  "review": "REJECTED: despite approved contained keyframe, output retains oversized frame-crossing bats and smoke. Not a source-safe correction; padding cannot restore clipped anatomy."
+}

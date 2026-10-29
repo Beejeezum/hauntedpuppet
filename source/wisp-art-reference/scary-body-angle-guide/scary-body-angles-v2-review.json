@@ -1,0 +1,91 @@
+{
+  "file": "scary-body-angles-v2.png",
+  "sha256": "d1d9f4510ec048d32eea7f09643af0927a0a8c2b38f84a6b200174d27f47d748",
+  "size": [
+    1672,
+    941
+  ],
+  "mode": "RGB",
+  "cells": [
+    {
+      "view": "side-facing candidate",
+      "cellBoundsXYWH": [
+        0,
+        0,
+        836,
+        941
+      ],
+      "marginsLTRB": {
+        "4": [
+          0.38636363636363635,
+          0.25292242295430395,
+          0.23923444976076555,
+          0.25717321997874604
+        ],
+        "8": [
+          0.388755980861244,
+          0.25398512221041447,
+          0.24162679425837322,
+          0.25717321997874604
+        ],
+        "16": [
+          0.3911483253588517,
+          0.25398512221041447,
+          0.24282296650717702,
+          0.25717321997874604
+        ]
+      },
+      "minimumMargin": 0.23923444976076555,
+      "pass15Percent": true,
+      "pass20Percent": true,
+      "pass22Percent": true,
+      "pass25Percent": false
+    },
+    {
+      "view": "faceless rear candidate",
+      "cellBoundsXYWH": [
+        836,
+        0,
+        836,
+        941
+      ],
+      "marginsLTRB": {
+        "4": [
+          0.24401913875598086,
+          0.2561105207226355,
+          0.35167464114832536,
+          0.2454835281615303
+        ],
+        "8": [
+          0.24641148325358853,
+          0.25717321997874604,
+          0.35526315789473684,
+          0.2454835281615303
+        ],
+        "16": [
+          0.24641148325358853,
+          0.25823591923485656,
+          0.3576555023923445,
+          0.24654622741764082
+        ]
+      },
+      "minimumMargin": 0.24401913875598086,
+      "pass15Percent": true,
+      "pass20Percent": true,
+      "pass22Percent": true,
+      "pass25Percent": false
+    }
+  ],
+  "status": "selected reference candidate; human design review pending",
+  "tool": "built-in imagegen edit",
+  "runwayCreditsSpent": 0,
+  "generationCall": 2,
+  "runtimeIntegration": false,
+  "humanApproval": false,
+  "agentVisualReview": [
+    "Both poses retain the ivory-blue cloud body and attached smoky claws. No spine/shoulder-blade anatomy, visible rear face or long smooth cylinder arms.",
+    "Profile-facing view shows one blue eye, but the exact90degree camera orientation is not established. Rear view reads mostly from behind; exact135degree angle is not established.",
+    "These are separate painted interpretations, not registered same-topology views, a rotating rig or completed motion. Static material cohesion does not prove it survives video generation.",
+    "V2 reduces the view size; imagegen may redraw details, so this is not a deterministic pixel-preserving resize. Check shape/identity with the human before another paid motion submission."
+  ]
+}

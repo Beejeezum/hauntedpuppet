@@ -1,0 +1,15 @@
+{
+  "source": "source/wisp-performance-reference/tonight-demo/spoken-goodbye-native-v1.mp4",
+  "sourceSha256": "4b338b3345d73603f5049d48ddb171bb9b161bb53eeb9b33b5f9478ce2d1c12b",
+  "output": "source/wisp-performance-reference/tonight-demo/spoken-goodbye-staged-v1.mp4",
+  "sha256": "43d58174f2d792495cce48e9d3efeac0daad286232d958765321d6c50779b76e",
+  "sourceSize": [
+    1280,
+    720
+  ],
+  "frames": 97,
+  "fps": 24,
+  "stageFit": 0.85,
+  "blackMatte": "same smoothstep12..24 maxRGB as approved scare/apology; maxRGB<=3 becomes black",
+  "scope": "Constant whole-frame fit preserves source framing/timing. Does not restore source-clipped wings or fix rejected body motion. Raw and staged video both need review."
+}

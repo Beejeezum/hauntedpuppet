@@ -1,0 +1,41 @@
+WISP SINGLE NATIVE PLAYER — EXPERIMENTAL APP PATH
+
+Scope: the existing show desk and phone text director accept ?pipeline=single.
+Default remains the older transport until the integrated Linux checks pass.
+No new operator menus or remote protocol. The painted video frames, catalog
+approval gates, saved-show data and compositor layers remain unchanged.
+
+SingleFilmTransport prefetches a bounded complete MP4 as bytes instead of
+creating a second paused decoder. It reads the MP4 movie-header duration
+without opening another video, so the phone director can still reject a
+spoken line that exceeds a one-shot's duration before playing it. Native
+activation uses the existing six-second presented-frame guard. Downloads
+have a separate30second limit and200MB cap. Existing film paths are MP4;
+unbounded or missing movie metadata is rejected rather than guessed.
+
+One character HTMLVideoElement is reused. At an authored/planned change it
+holds the outgoing painted pixels while closing the old source and opening
+the new one. Image/video effects still use the existing compositor. Effect
+videos, phone and projector stay silent; only the active laptop film can be
+explicitly enabled. Stop/disposal abort stale downloads/activations, revoke
+owned blob URLs, clear held pictures and retain no native source.
+
+This compatibility path is NOT the separate gapless MediaSource packet
+player. A held rest-pose cut can still visibly pause during native decoding;
+that needs human review. The finite packet study now passes Linux at
+https://github.com/Beejeezum/hauntedpuppet/actions/runs/40786031527
+with365presented frames in the three-cue append test. Continuous packet
+playlists still need production catalog/transport integration and approval.
+Do not equate either result with a finished16cue library.
+
+Current local checks: actual native transport and saved-phone-show launch
+passed Chromium and Mac WebKit. Full actual-film showdesk rehearsal passed
+both, including layer compositing/mirroring, video-effect removal, five real
+stall/recovery cycles, Blackout, automatic/manual takeover and narrow-screen
+Stop access. Typed speech/ambient player uses generated WAV and mock provider;
+its browser tests do not establish real character voice or lip-sync quality.
+New integration diagnostic keeps the existing release gates intact.
+
+No human microphone, genuine provider voice, physical phone/projector,
+long-duration new-backend soak or human seam acceptance is inferred. The
+pasted-mouth scary study remains rejected. No production default changed.

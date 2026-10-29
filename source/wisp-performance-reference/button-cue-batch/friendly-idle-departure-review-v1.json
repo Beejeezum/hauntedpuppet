@@ -1,0 +1,56 @@
+{
+  "status": "review only; not approved",
+  "file": "friendly-idle-departure-review-v1.mp4",
+  "sha256": "8403320f59974e9e04a584e44209737d03f3712cdfe01d52d5eb9f2f3eb21c10",
+  "fps": 24,
+  "size": [
+    1280,
+    720
+  ],
+  "segments": [
+    {
+      "label": "friendly-drift-candidate-v1.mp4",
+      "source": "source/wisp-performance-reference/button-cue-batch/friendly-drift-candidate-v1.mp4",
+      "sha256": "a2a183ad8f433e74dc14328dd8019beedeb8e04f4519bad4d312a3a5a554a064",
+      "frames": 122,
+      "scale": 1
+    },
+    {
+      "label": "friendly-depart-runtime-candidate-v1.mp4",
+      "source": "source/wisp-performance-reference/button-cue-batch/friendly-depart-runtime-candidate-v1.mp4",
+      "sha256": "58d6bd30ab6540e3d7d8eb1f086fe18c2986fa85a04dc45e6cd7301c6e89c59d",
+      "frames": 241,
+      "scale": 1
+    }
+  ],
+  "joins": [
+    {
+      "from": "friendly-drift-candidate-v1.mp4",
+      "to": "friendly-depart-runtime-candidate-v1.mp4",
+      "visibleRGBDifference": 5.686538853763002,
+      "silhouetteIoU": 0.9857842137466857
+    }
+  ],
+  "scope": "Original frame order and count; constant whole-frame fit, one export encode. Integer bilinear staging may differ slightly from browser subpixel rasterization. Pixel/silhouette diagnostics do not prove velocity continuity, anatomy, human seam acceptance or physical projection. All joins require normal-speed playback review.",
+  "joinFrame": 122,
+  "joinSeconds": 5.083333333333333,
+  "frameCount": 363,
+  "durationSeconds": 15.125,
+  "audioProcessing": "Decoded original candidate audio, resampled48k, padded/trimmed to exact integer frame-aligned sample counts244000and482000 then concatenated. No added dialogue, synthesized SFX, overlap, soundtrack source swap, variable retiming, extra gap or visual crossfade.",
+  "humanReview": "pending",
+  "physicalProjection": "not tested",
+  "audioMeasurements": {
+    "sampleRate": 48000,
+    "peak": 0.40741968154907227,
+    "rmsDbFS": -29.015121459960938,
+    "preJoin250msDbFS": -53.738101959228516,
+    "postJoin250msDbFS": -35.81140899658203,
+    "lastHalfSecondPeak": 0.0,
+    "scope": "Decoded AAC levels; not sound-quality, no-speech or human seamlessness acceptance."
+  },
+  "decodeEvidence": {
+    "frames": 363,
+    "lastFrameMaxRGB": 0,
+    "scope": "Every frame decoded locally; browser playback across the join is checked separately."
+  }
+}

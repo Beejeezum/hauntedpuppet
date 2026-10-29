@@ -1,0 +1,80 @@
+{
+  "status": "native_painted_speaking_candidate_human_review_pending",
+  "scope": "Private study; not app integration, completed character rig, voice conversion or cue acceptance.",
+  "implementation": [
+    "scripts/native-mouth-inverse-warp.mjs",
+    "scripts/native-painted-face-study.mjs"
+  ],
+  "sourceMovieSha256": "52d54d03c0f0406a9724c7c04b9e2fa0557a675486edfaa40fd0ca2e24a682bd",
+  "geometry": {
+    "frames": 122,
+    "weightSamples": 35,
+    "checkedPoints": 1234030,
+    "minimumSampledJacobian": 0.016685544420647527,
+    "maxBoundaryDelta": 1.1368683772161603e-13,
+    "maxNearBoundaryDelta": 0.00017902663501760788,
+    "failures": []
+  },
+  "pixels": {
+    "frames": 122,
+    "mixedWeights": [
+      0.1,
+      0.45,
+      0.25,
+      0.2
+    ],
+    "outsideChanged": 0,
+    "protectedBlueChanged": 0,
+    "restExact": "asserted each frame",
+    "maximumMeasuredDrawMs": 6
+  },
+  "voiceProof": {
+    "file": "work/authored-face-registration/native-speaking-v1/native-painted-speaking.mp4",
+    "recordedVoiceSeconds": 8.064,
+    "voice": "Previously human-approved apology source master, hash pinned; no new provider generation.",
+    "audioMode": "Silent real-time browser render; source audio master muxed at measured wall-clock offset afterward, not captured speaker audio.",
+    "paintCount": 554,
+    "oralDraws": 310,
+    "unmatchedBodyFrames": 0,
+    "distinctNativeFrames": 122,
+    "audioWallClockDifferenceMaxMs": 4.13333331545207,
+    "errors": [],
+    "bodyOwnership": {
+      "created": 554,
+      "closed": 554,
+      "held": 0,
+      "maxHeld": 1,
+      "published": 222,
+      "duplicates": 332,
+      "unavailable": 0,
+      "discarded": 0,
+      "failures": 0,
+      "rgbaCopies": 222,
+      "canvasCopies": 0,
+      "pending": false,
+      "ready": false,
+      "disposed": true,
+      "time": null
+    }
+  },
+  "visualReview": "Viewed native static12-pose contact and8extracted motion frames from recorded proof. Painted mouth follows changed head position and roll in those frames; no detached cheek patch. OO remains pinched and coarse acoustic signals often close on fricatives; user must judge moving naturalness/drift/pasted appearance.",
+  "humanReview": {
+    "status": "pending",
+    "question": "Does the mouth stay part of Wisp\u2019s face while his head moves?",
+    "options": [
+      "Better\u2014the face moves together",
+      "The mouth still drifts",
+      "The mouth still looks pasted on"
+    ]
+  },
+  "limits": [
+    "Numerical grids are finite checks, not proof over all continuous control inputs.",
+    "Blue chroma guard is not a complete eyelid/eye tracker or operator eye control.",
+    "Native contours49\u201352 remain uncertain; geometry passing does not make their art registration ground truth.",
+    "CPU skin warp and bounded GPU readback are prototype implementation; no production soak or representative laptop/phone/projector validation.",
+    "No scary mouth rig,16approved cues,genuine live-provider speech or physical projection acceptance.",
+    "Linux repeated-line stall remains unresolved in prior app candidate."
+  ],
+  "runtimePromoted": false,
+  "paidCreditsSpent": 0
+}

@@ -1,0 +1,86 @@
+{
+  "passed": true,
+  "movie": "wisp-eyes-context-review-v1.mp4",
+  "sha256": "de832a10253bb872ec0b522d408383df2555eac43098ebf38c83d5451f5a5eca",
+  "sampleRate": 48000,
+  "sourceSamples": 1696000,
+  "decodedSamplesIncludingAacPadding": 1696768,
+  "continuousAudioBlocks": 1657,
+  "maximumTimestampErrorSeconds": 3.3333333959717493e-07,
+  "peak": 0.20228837430477142,
+  "firstHalfSecondPeak": 0.0,
+  "lastHalfSecondPeak": 0.0,
+  "expectedEffects": [
+    {
+      "label": "original dry effect",
+      "start": 1.5,
+      "end": 2.05,
+      "decodedRms": 0.007418474667848708,
+      "decodedPeak": 0.041854627430438995
+    },
+    {
+      "label": "original dry effect",
+      "start": 6.45,
+      "end": 7.6,
+      "decodedRms": 0.029120240450829813,
+      "decodedPeak": 0.20228837430477142
+    },
+    {
+      "label": "original dry effect",
+      "start": 8.75,
+      "end": 9.45,
+      "decodedRms": 0.01573558506540508,
+      "decodedPeak": 0.09843035787343979
+    },
+    {
+      "label": "small hand lift",
+      "start": 10.775,
+      "end": 11.575,
+      "decodedRms": 0.008096586322226085,
+      "decodedPeak": 0.04467654600739479
+    },
+    {
+      "label": "body exhales into fog",
+      "start": 11.775,
+      "end": 13.425,
+      "decodedRms": 0.022000788084825612,
+      "decodedPeak": 0.1403995007276535
+    },
+    {
+      "label": "eyes blink",
+      "start": 15.025,
+      "end": 15.275,
+      "decodedRms": 0.004214136874875011,
+      "decodedPeak": 0.023710593581199646
+    },
+    {
+      "label": "body reforms around eyes",
+      "start": 16.175,
+      "end": 19.025,
+      "decodedRms": 0.024484662301785816,
+      "decodedPeak": 0.1598525494337082
+    },
+    {
+      "label": "original dry effect",
+      "start": 26.141666666666666,
+      "end": 27.191666666666666,
+      "decodedRms": 0.022473806911491912,
+      "decodedPeak": 0.1286396086215973
+    },
+    {
+      "label": "original dry effect",
+      "start": 28.491666666666667,
+      "end": 29.191666666666666,
+      "decodedRms": 0.009563449595858546,
+      "decodedPeak": 0.06477394700050354
+    },
+    {
+      "label": "original dry effect",
+      "start": 32.141666666666666,
+      "end": 32.59166666666667,
+      "decodedRms": 0.005670295059259667,
+      "decodedPeak": 0.03578971326351166
+    }
+  ],
+  "scope": "Actual encoded AAC decode and monotonic contiguous presentation clock, all10expected dry effect windows have nonzero energy, quiet handles preserved. Intentional gaps remain quiet; no human listening, perceived mix/sync/voice or physical projection acceptance."
+}

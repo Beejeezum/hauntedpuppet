@@ -1,0 +1,126 @@
+{
+  "file": "friendly-reform-runtime-candidate-v1.mp4",
+  "sha256": "988724884a899a5248715731fbafd40d00dcf994e91b2dcfc57e80ae73b3b103",
+  "status": "source-only complete original arrival plus dry-effects candidate; human review pending",
+  "humanReview": "pending",
+  "fps": 24,
+  "frameCount": 133,
+  "entryPort": "empty",
+  "exitPort": "friendly-rest",
+  "entryReview": "pending",
+  "exitReview": "pending",
+  "emptyStartFrames": 41,
+  "emptyEndFrames": 0,
+  "audioTailSilenceSeconds": 0.5,
+  "source": "source/wisp-performance-reference/runway-pilots/friendly-depth-arrival-study/wisp-friendly-depth-arrival-black-lead-v1.mp4",
+  "sourceSha256": "955635d3b7ed8353c0a514fbf4d18c557e02131b6a443866b94a57fdfabb7345",
+  "allDecodedFramesPixelIdentical": true,
+  "compressedVideoEssenceUnchanged": true,
+  "processing": "Every original source frame in original order. No picture encoding, resizing, retiming, reversal, interpolation, body crossfade or visual fade. Existing source has a12frame prepended black lead; this package does not change that edit. One new continuous embedded AAC soundtrack.",
+  "minimumMarginsLTRB": {
+    "4": [
+      0.41875,
+      0.2935185185185185,
+      0.43020833333333336,
+      0.26296296296296295
+    ],
+    "8": [
+      0.41875,
+      0.29444444444444445,
+      0.43020833333333336,
+      0.2638888888888889
+    ],
+    "16": [
+      0.4192708333333333,
+      0.2953703703703704,
+      0.43072916666666666,
+      0.26481481481481484
+    ]
+  },
+  "reserveFailureFrames": {
+    "4": [],
+    "8": [],
+    "16": []
+  },
+  "lastSecondAdjacentForegroundMeanDifferences": [
+    12.105768725262676,
+    11.284008989288736,
+    10.070513637973788,
+    10.968280627014037,
+    13.259926783029352,
+    12.719466394444655,
+    12.271383670873691,
+    10.085910219193067,
+    7.565027748718949,
+    17.30906165311653,
+    22.171733784690066,
+    15.987355268810525,
+    9.902051258623052,
+    6.886565805141136,
+    5.229202999221621,
+    5.119255491262079,
+    4.932271905082351,
+    4.43354065883437,
+    4.113648366921473,
+    3.9722768555068058,
+    4.254077361622285,
+    4.06130969886551,
+    3.398373339322122,
+    3.133022170361727
+  ],
+  "sound": "friendly-reform-dry-air-v1.wav",
+  "soundSha256": "4ba7ae99f12974c7a99867670d70ff6845a4f043448d917a66ea7e4784be6471",
+  "audio": {
+    "sampleRate": 48000,
+    "peak": 0.10968343168497086,
+    "firstHalfSecondPeak": 0.0,
+    "lastHalfSecondPeak": 0.0,
+    "scope": "Decoded measurements; not human listening or proof of perceived timing."
+  },
+  "audioRecipe": {
+    "seed": 68186,
+    "method": "Deterministic shaped broadband air, smooth stereo envelopes; no recorded voices, notes, choir or music.",
+    "events": [
+      {
+        "label": "distant glimmer gathers",
+        "start": 1.6,
+        "end": 2.9,
+        "targetPeak": 0.025,
+        "highpassHz": 650,
+        "lowpassHz": 3200
+      },
+      {
+        "label": "body and attached hands form",
+        "start": 2.8,
+        "end": 4.65,
+        "targetPeak": 0.11,
+        "highpassHz": 160,
+        "lowpassHz": 2300
+      },
+      {
+        "label": "small welcoming hand opening",
+        "start": 4.05,
+        "end": 4.95,
+        "targetPeak": 0.04,
+        "highpassHz": 450,
+        "lowpassHz": 3400
+      }
+    ]
+  },
+  "generationCreditsSpent": 0,
+  "humanApproval": false,
+  "runtimePublication": false,
+  "scope": "Technical video identity, all-frame clearance, exact empty arrival handle, non-identical ending frames and encoded sound checks. This does not establish convincing depth, no perceived pause, character anatomy, matching scale/pose to the current desk idle, human sound/acting approval or physical projection. Small distant glimmer and arrival pacing require human review.",
+  "cueId": "friendly-reform",
+  "briefAdaptation": "Existing footage forms in depth from a small glimmer, rather than a fog knot in place. This adaptation and the small early silhouette need human review before this can satisfy the finite reform slot.",
+  "joinQualification": {
+    "status": "technical playback passes; visual continuity not accepted",
+    "testedAgainst": "friendly v28 idle in actual showdesk at11820c2 using private candidate injection only",
+    "engines": [
+      "local Chromium",
+      "local MacWebKit"
+    ],
+    "observed": "The default fade-through-black route makes the arriving ghost disappear a second time before the native idle reappears in a different pose/framing. It is a deliberate editorial black transition, not a continuous settle from arrival into idle.",
+    "next": "After arrival art/size approval, author a short connected settle bridge from the exact native arrival ending to the idle entrance. Do not claim a generic fade is a seamless same-body arrival."
+  }
+}

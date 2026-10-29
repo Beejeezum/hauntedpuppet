@@ -1,0 +1,62 @@
+{
+  "scope": "Actual prerecorded native media at real speed on local Chrome and MacWebKit. Both transformations and all8eligible cues play in recorded order twice plus closing wrap; no repeated short one-shots to fill dwell. Saved/reloaded UI, silence, Blackout and disposal checked. Near-black entrance samples and zero-level empty-stage states are not human approval of visual seams or physical projection.",
+  "results": {
+    "chromium": {
+      "passed": true,
+      "cycles": 2,
+      "playingOrder": [
+        "cute",
+        "friendly-wave",
+        "friendly-boo-fail",
+        "friendly-depart",
+        "cute-to-evil",
+        "scary",
+        "scary-eyes",
+        "evil-to-cute",
+        "cute",
+        "friendly-wave",
+        "friendly-boo-fail",
+        "friendly-depart",
+        "cute-to-evil",
+        "scary",
+        "scary-eyes",
+        "evil-to-cute",
+        "cute"
+      ],
+      "elapsedSeconds": 134.83,
+      "emptyStageCount": 17,
+      "maximumSampledEntranceLevel": 0.001716003254645797,
+      "allFilmsMuted": true
+    },
+    "webkit": {
+      "passed": true,
+      "cycles": 2,
+      "playingOrder": [
+        "cute",
+        "friendly-wave",
+        "friendly-boo-fail",
+        "friendly-depart",
+        "cute-to-evil",
+        "scary",
+        "scary-eyes",
+        "evil-to-cute",
+        "cute",
+        "friendly-wave",
+        "friendly-boo-fail",
+        "friendly-depart",
+        "cute-to-evil",
+        "scary",
+        "scary-eyes",
+        "evil-to-cute",
+        "cute"
+      ],
+      "elapsedSeconds": 134.655,
+      "emptyStageCount": 17,
+      "maximumSampledEntranceLevel": 0.002455484224965706,
+      "allFilmsMuted": true
+    }
+  },
+  "separatePhoneSavedLaunch": "Chromium passes after scheduling change; synthetic phone commands, no physical phone",
+  "publicBuild": "85 browser modules complete, privacy/import checks pass",
+  "knownLinuxCI": "48f6135 full run40955899932 failed; separate receipt retains failures, not fixed or waived by this change."
+}

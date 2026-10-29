@@ -1,0 +1,28 @@
+{
+  "scope": "Source-only failed registration studies, not production mouth tracking. No artwork or approved film changed.",
+  "methods": [
+    {
+      "source": "source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4",
+      "sourceSha256": "52d54d03c0f0406a9724c7c04b9e2fa0557a675486edfaa40fd0ca2e24a682bd",
+      "region": "face",
+      "failure": null,
+      "maximumMedianResidualPixels": 21.191242218017578,
+      "status": "rejected-registration-study",
+      "trackedFrameCount": 122,
+      "totalSourceFrames": 122
+    },
+    {
+      "source": "source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4",
+      "sourceSha256": "52d54d03c0f0406a9724c7c04b9e2fa0557a675486edfaa40fd0ca2e24a682bd",
+      "region": "mouth",
+      "failure": "Tracking lost at frame 53; no automatic interpolation",
+      "maximumMedianResidualPixels": 0.7724108099937439,
+      "status": "rejected-registration-study",
+      "trackedFrameCount": 53,
+      "totalSourceFrames": 122
+    }
+  ],
+  "decision": "Do not attach painted speech surface using either automatic registration. Require validated local anchors with blink-independent tracking, per-frame correction and mouth/cheek occlusion review. Preserve native full-body movie. No runtime integration or human speech acceptance.",
+  "reproduction": "python3 scripts/study-wisp-face-tracking.py --video source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4 --output work/phone-mouth-anchor --region face (repeat with --region mouth)",
+  "creditsUsed": 0
+}

@@ -1,0 +1,30 @@
+{
+  "codeCommit": "8aefc32c400926696ffc267a414ff87d7623750b",
+  "netlifyDeploy": "6ae25f5fc26b4d35562dbf6b",
+  "url": "https://deploy-preview-12--hauntedpuppet.netlify.app/assets/wisp-cue-review/?review=eyes-context",
+  "publishedBytesVerified": [
+    "review.mjs",
+    "wisp-eyes-context-review-v1.mp4"
+  ],
+  "masterSha256": "de832a10253bb872ec0b522d408383df2555eac43098ebf38c83d5451f5a5eca",
+  "hostedChromium": {
+    "passed": true,
+    "fullFirstPlaySeconds": 35.333333333333336,
+    "completedClosingBoundaries": 1,
+    "continuedAfterLoopSeconds": 2,
+    "sampleCount": 374,
+    "quality": {},
+    "trace": [
+      {
+        "type": "emptied",
+        "time": 0
+      },
+      {
+        "type": "seeking",
+        "time": 0
+      }
+    ],
+    "scope": "Actual native35.33second audiovisual movie followed through one native last-to-first closure and continued playback. Explicit sound request through zero-volume sink, one player, no capture, repeat reset on selection and pagehide cleanup. No human sound/seam/motion or physical projection approval; not a sustained unattended soak."
+  },
+  "limits": "Actual full hosted audiovisual movie and one native closing boundary plus continuation; zero-volume audition only, no human listening/visual join/physical projection approval. FullCI40766398322 remained running at checkpoint, production main unmerged."
+}

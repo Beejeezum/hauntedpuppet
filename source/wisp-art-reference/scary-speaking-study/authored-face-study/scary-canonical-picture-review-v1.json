@@ -1,0 +1,66 @@
+{
+  "status": "source-only scary picture identity qualification; no mouth integration",
+  "sourceMovieSha256": "21e8efec67ec7e024fc954cc16af458cad8f8427553a998341ff9d37286ca35a",
+  "profile": "scary-v35-canonical-head-samples-v1.json",
+  "profileSha256": "84f694e32026e5e8870ed52ac169335010383a52f043c1e3c20473ad0698a34e",
+  "test": "tests/scary_canonical_picture_registration.cjs",
+  "testSha256": "9c781f0f2ca9a74653f9fd9b22697cd73e504031c0e4526e36304eb7c62e1ec7",
+  "results": [
+    {
+      "engine": "chromium",
+      "cpu": false,
+      "matchedFrames": 121,
+      "minCorrelation": 0.9998817882757237,
+      "minMargin": 0.0006346373205219358,
+      "maxMatchMs": 1.199999988079071,
+      "framesCreated": 121,
+      "framesClosed": 121,
+      "cpuCopies": 0,
+      "unknownAndAmbiguousRejected": true,
+      "wrongSourceRejected": true
+    },
+    {
+      "engine": "chromium",
+      "cpu": true,
+      "matchedFrames": 121,
+      "minCorrelation": 0.9998817882757237,
+      "minMargin": 0.0006346373205219358,
+      "maxMatchMs": 1.199999988079071,
+      "framesCreated": 242,
+      "framesClosed": 242,
+      "cpuCopies": 121,
+      "unknownAndAmbiguousRejected": true,
+      "wrongSourceRejected": true
+    },
+    {
+      "engine": "webkit",
+      "cpu": false,
+      "matchedFrames": 121,
+      "minCorrelation": 0.9985675952407137,
+      "minMargin": 0.0005189103071047141,
+      "maxMatchMs": 3,
+      "framesCreated": 121,
+      "framesClosed": 121,
+      "cpuCopies": 0,
+      "unknownAndAmbiguousRejected": true,
+      "wrongSourceRejected": true
+    },
+    {
+      "engine": "webkit",
+      "cpu": true,
+      "matchedFrames": 121,
+      "minCorrelation": 0.9985675952407137,
+      "minMargin": 0.0005189103071047141,
+      "maxMatchMs": 3,
+      "framesCreated": 242,
+      "framesClosed": 242,
+      "cpuCopies": 121,
+      "unknownAndAmbiguousRejected": true,
+      "wrongSourceRejected": true
+    }
+  ],
+  "scope": "Every actual decoded scary film frame independently sought at its center and identified against FFmpeg source samples, with wrong clock supplied. Original decoded path and owned CPU staging tested locally; blank/tied/bad-source rejected. Not continuous playback, native lip geometry, moving speech, human art, Linux app or physical projection validation.",
+  "runtimeIntegration": false,
+  "humanApproval": false,
+  "next": "Author scary-native jaw/lip contours and connected closed/AH/OO/EE deformation against identified pictures. Do not revive the rejected floating patch."
+}

@@ -1,0 +1,37 @@
+{
+  "taskId": "5490dfb8-8171-4217-bdfb-266cd517e4f7",
+  "cueId": "friendly-wave",
+  "status": "completed; runtime candidate passes numeric framing/empty ports and player EOS/cancellation tests; human motion/audio review pending",
+  "workspaceId": 1709631,
+  "authorization": "User2026-10-28: Use Bruce for Wisp",
+  "reference": "source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-fuller-loop-anchor-v1.png",
+  "model": "seedance-2-fast",
+  "durationSeconds": 10,
+  "resolution": "720p",
+  "nativeAudio": true,
+  "observedDebit": 240,
+  "acceptedSubmissions": 1,
+  "rejectedValidationBeforeSubmission": "Black start/end frames cannot be combined with identity refs; no task created for invalid combination. Final task uses wide identity/scale reference and verifies rendered endpoints.",
+  "promptFile": "friendly-wave-pilot-v2.prompt.txt",
+  "maximumFurtherRetries": 0,
+  "note": "No more submissions until this corrective result is reviewed. Signed upload URLs omitted.",
+  "rawSha256": "f43bb968309ff2d2ffbf17857bf1b5ff5c90af729fc09f35e209040a99c314eb",
+  "runtimeCandidate": "friendly-wave-runtime-candidate-v2.mp4",
+  "runtimeSha256": "6ce40f478e0aec3570266dcef7cfd6dae071f8476914fd583de402babeab7b55",
+  "reserveFailuresRgb4_8_16": 0,
+  "exactBlackHeadFrames": 20,
+  "exactBlackTailFrames": 44,
+  "exportProcessing": "Replace ONLY source decoded-empty frames0-19 and197-240 (maximum RGB<=4) with exact black. No body resize, new poses, retiming or crossfade. Gain24 on very quiet native SFX with200ms onset/550ms tail fade ending8.65s. H264CRF18/AAC192k. Original preserved.",
+  "exitPolicy": "finish",
+  "playerEvidence": [
+    "test-results/film-complete-exit-chromium.json",
+    "test-results/film-complete-exit-webkit.json"
+  ],
+  "audioEvidence": {
+    "samplePeak": 0.1868896484375,
+    "rmsDbFS": -29.405450831470915,
+    "firstHalfSecondDbFS": -70.22120553155591,
+    "lastHalfSecondDbFS": -240.0,
+    "scope": "Numerical levels, not human listening or proof of no speech/music."
+  }
+}

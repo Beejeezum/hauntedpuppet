@@ -1,0 +1,15 @@
+{
+  "source": "source/wisp-performance-reference/tonight-demo/spoken-welcome-native-v1.mp4",
+  "sourceSha256": "1c51da06e131341923ca38f0c95732fe5b7e4752377e70f8a0b480ce75c9ea33",
+  "output": "source/wisp-performance-reference/tonight-demo/spoken-welcome-staged-v1.mp4",
+  "sha256": "a881a9a895204878707934159de9108801ad1d0b7a39165861873fddaad632d5",
+  "sourceSize": [
+    1280,
+    720
+  ],
+  "frames": 145,
+  "fps": 24,
+  "stageFit": 0.85,
+  "blackMatte": "same smoothstep12..24 maxRGB as approved scare/apology; maxRGB<=3 becomes black",
+  "scope": "Constant whole-frame fit preserves source framing/timing. Does not restore source-clipped wings or fix rejected body motion. Raw and staged video both need review."
+}

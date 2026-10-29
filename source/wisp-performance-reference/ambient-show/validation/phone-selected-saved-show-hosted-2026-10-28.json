@@ -1,0 +1,40 @@
+{
+  "codeCommit": "4e5b57a67d35d49d1002844d3578971a13358ad8",
+  "previewDeploy": "6ae263b3d7517a4624c4f74c",
+  "hostedTest": {
+    "passed": true,
+    "savedNotDraft": true,
+    "freshStoredVersion": true,
+    "deletedCorruptFailClosed": true,
+    "closingRouteGate": true,
+    "manualOnlyExcluded": true,
+    "stopDuringLaunch": true,
+    "projectorMediaElements": 0,
+    "scope": "Actual study-film playback and silent output through direct bounded phone controller calls; no physical phone/provider. Synthetic approval metadata only for missing-route/manual-scare gates, never published or played."
+  },
+  "publishedBytesVerified": [
+    "showdesk.mjs",
+    "saved-playlists.mjs",
+    "film-remote.mjs",
+    "phone_remote/phone.js"
+  ],
+  "previewStatusReadOnly": {
+    "authenticated": false,
+    "operatorSetupRequired": true,
+    "sessionSigningConfigured": false,
+    "providerConfigured": true
+  },
+  "productionStatusReadOnly": {
+    "operatorSetupRequired": false,
+    "sessionSigningConfigured": true,
+    "providerConfigured": true
+  },
+  "localDesk": {
+    "url": "http://127.0.0.1:8770/assets/wisp-showdesk/index.html",
+    "httpStatus": 200,
+    "publishedModuleBytesMatch": true,
+    "processRestarted": false,
+    "livePhoneOwnershipChanged": false
+  },
+  "limits": "Hosted functional test used mocked operator endpoints and direct bounded controller calls, not genuine hosted pairing/login. Actual pairing was tested against the local fixture service with two isolated browser contexts. Preview lacks private operator/signing setup; production settings were not changed or copied to PR contexts. No provider credits or physical phone/projector acceptance. FullCI40769059462 still running at checkpoint."
+}

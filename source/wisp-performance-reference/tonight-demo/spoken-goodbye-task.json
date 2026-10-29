@@ -1,0 +1,19 @@
+{
+  "taskId": "907c9543-3da7-402c-a48c-969395ca41f6",
+  "status": "SUCCEEDED",
+  "model": "seedance-2",
+  "duration": 4,
+  "resolution": "720p",
+  "nativeAudio": true,
+  "startAnchor": "writing-last-decoded.png",
+  "endAnchor": "writing-last-decoded.png",
+  "dialogue": "Happy Halloween! Boo-bye!",
+  "creditsBefore": 16118,
+  "creditsAfter": 15998,
+  "observedDebit": 120,
+  "releaseApproved": false,
+  "scope": "User requested missing spoken beats; native mouth/voice, framing/scale stability, identity and exact joins require actual-film review. New voice matching to the approved apology is not guaranteed by prompt.",
+  "source": "spoken-goodbye-native-v1.mp4",
+  "sha256": "4b338b3345d73603f5049d48ddb171bb9b161bb53eeb9b33b5f9478ce2d1c12b",
+  "review": "Native video/audio candidate; human voice and acting acceptance pending"
+}

@@ -1,0 +1,358 @@
+{
+  "status": "source-only upper/lower oral projection; human close-up review pending",
+  "sha256": {
+    "source/wisp-art-reference/scary-speaking-study/neutral-face-rig-study/neutral-face-rig.mjs": "eb6093096ac2ee3d749e6849ac10520e349218a2e4e726139d522188d53aeecc",
+    "source/wisp-art-reference/scary-speaking-study/neutral-face-rig-study/index.html": "9a5f998c982898f8dd1a7dfc9d29066d18ca25e104f9ee1fcc091888cfeebe4c",
+    "scripts/render-neutral-face-study.cjs": "bab6cebb801d0113a26d7f748fbc425b97975b2bffd6fa3636abb952c79be93d",
+    "tests/neutral_oral_projection.cjs": "643d4185d5b3fd5d7810b398020c3bf1793bd02c01a895dc37935342f597902f",
+    "source/wisp-art-reference/scary-speaking-study/neutral-face-rig-study/oral-attachment-comparison-v3.mp4": "f19134445499869fa06757c9e16db6ddd50cab11b0ac482b334c3a5f7a1c59b9"
+  },
+  "render": {
+    "file": "oral-attachment-comparison-v3.mp4",
+    "frames": 144,
+    "fps": 24,
+    "audio": false,
+    "comparison": "V2 painted stretch left; V3 upper/lower projection right. Cropped/magnified synthetic controls on a still native painting."
+  },
+  "actualShaderCalibration": {
+    "chromium": {
+      "passed": true,
+      "samples": [
+        {
+          "open": 1,
+          "rigid": true,
+          "upper": {
+            "height": 8,
+            "first": 14,
+            "last": 21
+          },
+          "lower": {
+            "height": 8,
+            "first": 78,
+            "last": 85
+          }
+        },
+        {
+          "open": 0.75,
+          "rigid": true,
+          "upper": {
+            "height": 8,
+            "first": 14,
+            "last": 21
+          },
+          "lower": {
+            "height": 8,
+            "first": 58,
+            "last": 65
+          }
+        },
+        {
+          "open": 0.5,
+          "rigid": true,
+          "upper": {
+            "height": 8,
+            "first": 14,
+            "last": 21
+          },
+          "lower": {
+            "height": 8,
+            "first": 38,
+            "last": 45
+          }
+        },
+        {
+          "open": 0.5,
+          "rigid": false,
+          "upper": {
+            "height": 4,
+            "first": 12,
+            "last": 15
+          },
+          "lower": {
+            "height": 4,
+            "first": 44,
+            "last": 47
+          }
+        },
+        {
+          "open": 0.125,
+          "rigid": true,
+          "upper": {
+            "height": 1,
+            "first": 14,
+            "last": 14
+          },
+          "lower": {
+            "height": 1,
+            "first": 15,
+            "last": 15
+          }
+        }
+      ],
+      "gpuError": 0,
+      "scope": "Actual face WebGL shader with synthetic calibration stripes on a controlled quad. Proves attachment, constant oral feature thickness and occlusion, not beautiful teeth, phonemes, head/body tracking, voice or physical projection."
+    },
+    "webkit": {
+      "passed": true,
+      "samples": [
+        {
+          "open": 1,
+          "rigid": true,
+          "upper": {
+            "height": 8,
+            "first": 14,
+            "last": 21
+          },
+          "lower": {
+            "height": 8,
+            "first": 78,
+            "last": 85
+          }
+        },
+        {
+          "open": 0.75,
+          "rigid": true,
+          "upper": {
+            "height": 8,
+            "first": 14,
+            "last": 21
+          },
+          "lower": {
+            "height": 8,
+            "first": 58,
+            "last": 65
+          }
+        },
+        {
+          "open": 0.5,
+          "rigid": true,
+          "upper": {
+            "height": 8,
+            "first": 14,
+            "last": 21
+          },
+          "lower": {
+            "height": 8,
+            "first": 38,
+            "last": 45
+          }
+        },
+        {
+          "open": 0.5,
+          "rigid": false,
+          "upper": {
+            "height": 4,
+            "first": 12,
+            "last": 15
+          },
+          "lower": {
+            "height": 4,
+            "first": 44,
+            "last": 47
+          }
+        },
+        {
+          "open": 0.125,
+          "rigid": true,
+          "upper": {
+            "height": 1,
+            "first": 14,
+            "last": 14
+          },
+          "lower": {
+            "height": 1,
+            "first": 15,
+            "last": 15
+          }
+        }
+      ],
+      "gpuError": 0,
+      "scope": "Actual face WebGL shader with synthetic calibration stripes on a controlled quad. Proves attachment, constant oral feature thickness and occlusion, not beautiful teeth, phonemes, head/body tracking, voice or physical projection."
+    }
+  },
+  "nativeFaceRegressions": {
+    "chromium": {
+      "passed": true,
+      "states": [
+        {
+          "name": "rest",
+          "changed": 0,
+          "outside": 0,
+          "irisChanges": 0,
+          "ready": true,
+          "disposed": false,
+          "oralDetail": true,
+          "rigidOral": true,
+          "vertices": 34417,
+          "minimumTriangleAreaRatio": 1,
+          "maxLipGapError": 0,
+          "state": {
+            "open": 0,
+            "round": 0,
+            "wide": 0
+          }
+        },
+        {
+          "name": "AH",
+          "changed": 5226,
+          "outside": 0,
+          "irisChanges": 0,
+          "ready": true,
+          "disposed": false,
+          "oralDetail": true,
+          "rigidOral": true,
+          "vertices": 34417,
+          "minimumTriangleAreaRatio": 0.3193990099296529,
+          "maxLipGapError": 2.9945670824815807e-05,
+          "state": {
+            "open": 1,
+            "round": 0,
+            "wide": 0
+          }
+        },
+        {
+          "name": "OO",
+          "changed": 7440,
+          "outside": 0,
+          "irisChanges": 0,
+          "ready": true,
+          "disposed": false,
+          "oralDetail": true,
+          "rigidOral": true,
+          "vertices": 34417,
+          "minimumTriangleAreaRatio": 0.1870621656998992,
+          "maxLipGapError": 2.857252192112192e-05,
+          "state": {
+            "open": 0.7,
+            "round": 1,
+            "wide": 0
+          }
+        },
+        {
+          "name": "EE",
+          "changed": 7065,
+          "outside": 0,
+          "irisChanges": 0,
+          "ready": true,
+          "disposed": false,
+          "oralDetail": true,
+          "rigidOral": true,
+          "vertices": 34417,
+          "minimumTriangleAreaRatio": 0.5065775392577052,
+          "maxLipGapError": 2.2714597786688273e-05,
+          "state": {
+            "open": 0.35,
+            "round": 0,
+            "wide": 1
+          }
+        }
+      ],
+      "minRatio": 0.1870621656998992,
+      "exactReset": true,
+      "gpuError": 0,
+      "oralDetail": {
+        "restIdentical": true,
+        "changed": 1546,
+        "outside": 0,
+        "outsideCavity": 0
+      },
+      "scope": "Original still painting and authored split-lip topology only. Synthetic controls, no body film/provider/voice/camera/physical projection or human visual approval."
+    },
+    "webkit": {
+      "passed": true,
+      "states": [
+        {
+          "name": "rest",
+          "changed": 0,
+          "outside": 0,
+          "irisChanges": 0,
+          "ready": true,
+          "disposed": false,
+          "oralDetail": true,
+          "rigidOral": true,
+          "vertices": 34417,
+          "minimumTriangleAreaRatio": 1,
+          "maxLipGapError": 0,
+          "state": {
+            "open": 0,
+            "round": 0,
+            "wide": 0
+          }
+        },
+        {
+          "name": "AH",
+          "changed": 5236,
+          "outside": 0,
+          "irisChanges": 0,
+          "ready": true,
+          "disposed": false,
+          "oralDetail": true,
+          "rigidOral": true,
+          "vertices": 34417,
+          "minimumTriangleAreaRatio": 0.3193990099296529,
+          "maxLipGapError": 2.9945670824815807e-05,
+          "state": {
+            "open": 1,
+            "round": 0,
+            "wide": 0
+          }
+        },
+        {
+          "name": "OO",
+          "changed": 7437,
+          "outside": 0,
+          "irisChanges": 0,
+          "ready": true,
+          "disposed": false,
+          "oralDetail": true,
+          "rigidOral": true,
+          "vertices": 34417,
+          "minimumTriangleAreaRatio": 0.1870621656998992,
+          "maxLipGapError": 2.857252192112192e-05,
+          "state": {
+            "open": 0.7,
+            "round": 1,
+            "wide": 0
+          }
+        },
+        {
+          "name": "EE",
+          "changed": 7074,
+          "outside": 0,
+          "irisChanges": 0,
+          "ready": true,
+          "disposed": false,
+          "oralDetail": true,
+          "rigidOral": true,
+          "vertices": 34417,
+          "minimumTriangleAreaRatio": 0.5065775392577052,
+          "maxLipGapError": 2.2714597786688273e-05,
+          "state": {
+            "open": 0.35,
+            "round": 0,
+            "wide": 1
+          }
+        }
+      ],
+      "minRatio": 0.1870621656998992,
+      "exactReset": true,
+      "gpuError": 0,
+      "oralDetail": {
+        "restIdentical": true,
+        "changed": 1548,
+        "outside": 0,
+        "outsideCavity": 0
+      },
+      "scope": "Original still painting and authored split-lip topology only. Synthetic controls, no body film/provider/voice/camera/physical projection or human visual approval."
+    }
+  },
+  "visualReview": [
+    "Encoded half-open frame reviewed: upper/lower content occludes and keeps fuller feature height rather than collapsing the complete interior.",
+    "Central material blend is an approximation; enlarged low-resolution lip edge remains coarse.",
+    "No convincing OO corrective, horizontal rigid tooth-width guarantee, 3D oral depth ordering, head turn or body attachment demonstrated."
+  ],
+  "humanQuestion": "Does the right-hand mouth interior feel attached to the painted face? Close-up mechanics only. Pending; no approval inferred.",
+  "runtimeIntegration": false,
+  "newRunwayCredits": 0,
+  "newGenerations": 0
+}

@@ -1,0 +1,182 @@
+{
+  "run": "https://github.com/Beejeezum/hauntedpuppet/actions/runs/40785285968",
+  "head": "987724c4417d6f55f0399f8fe28c81f713d2f7e6",
+  "status": "failed; negative-CTS packaging rejected on Linux",
+  "evidence": {
+    "cases": [
+      {
+        "duration": 5.083333333333333,
+        "windows": [
+          {
+            "id": "friendly",
+            "start": 0,
+            "end": 5.083333333333333
+          }
+        ],
+        "sourceLoads": 1,
+        "sealed": true,
+        "ranges": [
+          [
+            0.083333,
+            5.077333
+          ]
+        ],
+        "first": 0.083333,
+        "last": 4.916666,
+        "count": 75,
+        "maxMediaGap": 0.08333400000000002,
+        "joinFrames": [
+          0.083333
+        ],
+        "playbackRate": 4,
+        "time": 5.077333,
+        "ended": true,
+        "mediaError": 0
+      },
+      {
+        "duration": 10.125,
+        "windows": [
+          {
+            "id": "friendly",
+            "start": 0,
+            "end": 5.083333333333333
+          },
+          {
+            "id": "morph",
+            "start": 5.083333333333333,
+            "end": 10.125
+          }
+        ],
+        "sourceLoads": 2,
+        "sealed": true,
+        "ranges": [
+          [
+            0.083333,
+            4.958332
+          ],
+          [
+            5.166666,
+            10.117999
+          ]
+        ],
+        "first": 0.083333,
+        "last": 9.958333,
+        "count": 233,
+        "maxMediaGap": 0.25,
+        "joinFrames": [
+          0.083333,
+          0.125,
+          5.166666,
+          5.208333
+        ],
+        "playbackRate": 1,
+        "time": 10.117999,
+        "ended": true,
+        "mediaError": 0
+      },
+      {
+        "duration": 10.125,
+        "windows": [
+          {
+            "id": "morph",
+            "start": 0,
+            "end": 5.041666666666667
+          },
+          {
+            "id": "friendly",
+            "start": 5.041666666666667,
+            "end": 10.125
+          }
+        ],
+        "sourceLoads": 3,
+        "sealed": true,
+        "ranges": [
+          [
+            0.083333,
+            4.916666
+          ],
+          [
+            5.125,
+            10.119
+          ]
+        ],
+        "first": 0.083333,
+        "last": 9.958333,
+        "count": 153,
+        "maxMediaGap": 0.25,
+        "joinFrames": [
+          0.083333,
+          0.083333,
+          0.125,
+          5.125,
+          5.166667
+        ],
+        "playbackRate": 4,
+        "time": 10.119,
+        "ended": true,
+        "mediaError": 0
+      }
+    ],
+    "continuous": {
+      "duration": 15.208333333333334,
+      "windows": [
+        {
+          "id": "friendly",
+          "start": 0,
+          "end": 5.083333333333333
+        },
+        {
+          "id": "morph",
+          "start": 5.083333333333333,
+          "end": 10.125
+        },
+        {
+          "id": "friendly",
+          "start": 10.125,
+          "end": 15.208333333333334
+        }
+      ],
+      "sourceLoads": 4,
+      "sealed": true,
+      "loads": 1,
+      "sameSource": true,
+      "last": 15.041666,
+      "frames": 350,
+      "maxMediaGap": 0.25,
+      "time": 15.202333,
+      "ended": true,
+      "appendDurations": [
+        10.125,
+        15.208333333333334
+      ]
+    },
+    "sealedRejected": true,
+    "stopped": {
+      "src": null,
+      "duration": 0,
+      "paused": true,
+      "objectURL": null
+    },
+    "stale": {
+      "oldResult": "AbortError",
+      "preserved": true,
+      "duration": 5.041666666666667
+    },
+    "appendCancellation": {
+      "results": [
+        "AbortError",
+        "AbortError"
+      ],
+      "preserved": true,
+      "windows": [
+        "morph"
+      ]
+    },
+    "fetchFailure": true,
+    "disposedReject": true,
+    "disposedSrc": null,
+    "sourceLoads": 9,
+    "scope": "Forward order at normal 1x rate; other cases accelerated 4x. Callback gaps are observations, not proof of presentation quality. Muted native MSE finite-media playback and cancellation only; no human smoothness, acoustic, provider, phone or physical projection acceptance."
+  },
+  "nextAction": "Use single edit lists to express H264 reorder and AAC priming; test corrected packaging without weakening end/final-frame gates."
+}
