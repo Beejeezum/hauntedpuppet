@@ -10,7 +10,7 @@ import {mountPairedControls} from '../tonight-demo/paired-controls.mjs';
 import {mountFilmOutput} from '../runway-pilots/wisp-film-output.js';
 const $=id=>document.getElementById(id),clips=[{id:'friendly-drift',character:'friendly',src:'./friendly.mp4',loop:true,exitPolicy:'finish'},{id:'scary-drift',character:'scary',src:'./scary.mp4',loop:false,exitPolicy:'finish'}];
 const ownedMouth=new URLSearchParams(location.search).get('mouth')==='owned-native';
-let mouthLayer=null,mouthCandidate=null,mouthPreparing=false,mouthEpoch=0,mouthPreparationAbort=null,isolatedReference=false;
+let mouthLayer=null,mouthCandidate=null,mouthPreparing=false,mouthEpoch=0,mouthPreparationAbort=null,isolatedReference=false,mouthReferenceState=null;
 const frameClock=new StageFrameClock();
 const compositor=new StageCompositor($('stage')),transport=new Transport(compositor,clips,{frameClock,mediaHost:$('mediaSources'),characterFilter:raw=>{try{const picture=mouthLayer?.render(raw);return picture||(ownedMouth&&mouthLayer&&raw?.tagName==='VIDEO'?mouthLayer.frameSource.canvas:null)}catch{const failed=mouthLayer;mouthLayer=null;failed?.dispose();$('mouthStudy').checked=false;$('mouthStatus').textContent='Mouth study unavailable; original film retained';return null}}});
 let context,source,enabled=false,disposed=false,frame,activeCharacter='friendly',speechStage='idle';
@@ -75,7 +75,7 @@ function cancelMouthPreparation(announce=true){
 }
 $('mouthStudy').onchange=async()=>{
  const requested=$('mouthStudy').checked;cancelMouthPreparation(false);const epoch=++mouthEpoch;mouthLayer?.dispose();mouthLayer=null;$('mouthStudy').checked=requested;
- if(!requested){$('mouthStatus').textContent='Original film view';return;}if(ownedMouth&&!['idle','stopped'].includes(director.inspect().phase)){$('mouthStudy').checked=false;$('mouthStatus').textContent='Stop the current line before preparing this face study';return;}mouthPreparing=true;$('mouthStatus').textContent='Preparing mouth study';
+ if(!requested){$('mouthStatus').textContent='Original film view';return;}if(ownedMouth&&!['idle','stopped'].includes(director.inspect().phase)){$('mouthStudy').checked=false;$('mouthStatus').textContent='Stop the current line before preparing this face study';return;}mouthPreparing=true;mouthReferenceState=null;$('mouthStatus').textContent='Preparing mouth study';
  try{
   if(ownedMouth){
    // Retire old movie-backed owner/output canvases while already black,
@@ -97,11 +97,12 @@ $('mouthStudy').onchange=async()=>{
      const film=await transport.prepare('friendly-drift');if(!live()){film.dispose();return;}
      await transport.activate(film,live);if(!live())return;
      const video=transport.active;isolatedReference=true;video.pause();compositor.blackout();transport.syncSound();
-     const {prepareNativePictureProfile}=await import('../../wisp-art-reference/painted-speech-study/prepare-native-picture-profile.mjs');
-     const {NativePictureRegistration}=await import('../../wisp-art-reference/painted-speech-study/native-picture-registration.mjs');
+     const {prepareNativePictureProfile,readCanonicalPictureProfile}=await import('../../wisp-art-reference/painted-speech-study/prepare-native-picture-profile.mjs');
      if(!live())return;
-     const prepared=await prepareNativePictureProfile(video,{signal:abort.signal,isStageIsolated:()=>live()&&compositor.black&&transport.active===video&&video.paused,onProgress:({completed,total})=>{if(live())$('mouthStatus').textContent='Preparing painted face '+completed+'/'+total;}});
-     if(!live())return;candidate.registration=new NativePictureRegistration(prepared.profile);
+     const referenceSignal=AbortSignal.any([abort.signal,AbortSignal.timeout(10000)]);
+     const canonicalProfile=await readCanonicalPictureProfile(new URL('../../wisp-art-reference/painted-speech-study/native-lip-mesh-study/friendly-v28-canonical-head-samples-v1.json',import.meta.url),referenceSignal);if(!live())return;
+     const prepared=await prepareNativePictureProfile(video,{canonicalProfile,signal:abort.signal,isStageIsolated:()=>live()&&compositor.black&&transport.active===video&&video.paused,onProgress:({completed,total})=>{if(live()){mouthReferenceState={completed,total};$('mouthStatus').textContent='Preparing painted face '+completed+'/'+total;}},onRelease:state=>{if(epoch===mouthEpoch)mouthReferenceState=state;}});
+     if(!live()){prepared.registration?.dispose();return;}candidate.registration=prepared.registration;
     }finally{abort.signal.removeEventListener('abort',cancelFilm);if(mouthPreparationAbort===abort)mouthPreparationAbort=null;}
    }
    if(disposed||epoch!==mouthEpoch){candidate.dispose();return;}mouthLayer=candidate;$('mouthStatus').textContent=(ownedMouth?'Picture-registered painted lips':native?'Native painted lips':'Friendly mouth study')+' ready for the next line · unapproved';}catch(error){candidate.dispose();throw error;}
@@ -117,4 +118,4 @@ $('ambientStart').onclick=()=>{if(!configureAmbient())return;if(['idle','stopped
 function paintDirector(){if(disposed)return;frameClock.pulse();ambient.tick();compositor.render();}
 function tick(){if(disposed)return;paintDirector();frame=requestAnimationFrame(tick);}tick();
 window.addEventListener('pagehide',()=>{disposed=true;cancelMouthPreparation(false);ambient.dispose();mouthEpoch++;mouthLayer?.dispose();mouthLayer=null;director.dispose();paired.dispose();output.dispose();transport.dispose();frameClock.dispose();compositor.dispose();cancelAnimationFrame(frame);context?.close();},{once:true});
-window.WispPhoneDirector={inspect:()=>({...director.inspect(),speechStage,mouthPreparation:{pending:mouthPreparing,allocated:!!mouthCandidate,isolatedReference},ambient:ambient.inspect(),frameClock:frameClock.inspect(),mouthStudy:mouthLayer?.inspect()||null}),stop};
+window.WispPhoneDirector={inspect:()=>({...director.inspect(),speechStage,mouthPreparation:{pending:mouthPreparing,allocated:!!mouthCandidate,isolatedReference,reference:mouthReferenceState},ambient:ambient.inspect(),frameClock:frameClock.inspect(),mouthStudy:mouthLayer?.inspect()||null}),stop};

@@ -117,11 +117,15 @@
         {
           "from": "../../wisp-performance-reference/ambient-show/owned-video-frame-source.mjs",
           "to": "../wisp-showdesk/owned-video-frame-source.mjs"
+        },
+        {
+          "from": "native-lip-mesh-study/friendly-v28-canonical-head-samples-v1.json",
+          "to": "friendly-v28-canonical-head-samples-v1.json"
         }
       ],
-      "bytes": 5500,
-      "sha256": "123865088675505ee08fa35bd4199ee5fa0a4ce377afff38564763ebc1e04743",
-      "publishedSha256": "683c390dbe879fc0fb72efdbf51e497a16c5e885e83582e3e0c172de5db69dba"
+      "bytes": 6274,
+      "sha256": "cb6f786c14ba37ebaa2c1e41855c26be30cf2a059cbcd5df7d61c4d5a3d9113b",
+      "publishedSha256": "088fc02fa76697616c2e20a4175a47b5a41a06b1590021d3e349cb54ced8dea8"
     },
     {
       "source": "source/wisp-art-reference/painted-speech-study/native-picture-registration.mjs",
@@ -129,6 +133,20 @@
       "bytes": 2430,
       "sha256": "344974b9666f81f63eb7a16a8d08120829d1b4afe5d579406e20bb36a4e3f1cc",
       "publishedSha256": "344974b9666f81f63eb7a16a8d08120829d1b4afe5d579406e20bb36a4e3f1cc"
+    },
+    {
+      "source": "source/wisp-art-reference/painted-speech-study/canonical-picture-registration.mjs",
+      "destination": "canonical-picture-registration.mjs",
+      "bytes": 2987,
+      "sha256": "cc2c644cb1b1ff764cec379890837b4540be75c2148dc1d2b09e3971a5831478",
+      "publishedSha256": "cc2c644cb1b1ff764cec379890837b4540be75c2148dc1d2b09e3971a5831478"
+    },
+    {
+      "source": "source/wisp-art-reference/painted-speech-study/native-lip-mesh-study/friendly-v28-canonical-head-samples-v1.json",
+      "destination": "friendly-v28-canonical-head-samples-v1.json",
+      "bytes": 323448,
+      "sha256": "da457307ec91b289600c60a7428e464399a1ebe6d7538eedb96e9431ca4d4163",
+      "publishedSha256": "da457307ec91b289600c60a7428e464399a1ebe6d7538eedb96e9431ca4d4163"
     }
   ]
 }

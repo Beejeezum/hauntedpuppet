@@ -1,0 +1,3313 @@
+{
+  "status": "canonical_linux_source_audit_passed_local_fast_app_passed_full_linux_app_pending",
+  "linuxSourceRun": 40811842572,
+  "linuxSourceHead": "317f42e7182ccab123900726130f1bc4cb91e102",
+  "linuxSourceAudit": {
+    "samples": [
+      {
+        "index": 0,
+        "frame": 0,
+        "correlation": 0.9997873139234317,
+        "margin": 0.00040949116681221476,
+        "ms": 29
+      },
+      {
+        "index": 1,
+        "frame": 1,
+        "correlation": 0.9997916400289255,
+        "margin": 0.0004331289384851278,
+        "ms": 15
+      },
+      {
+        "index": 2,
+        "frame": 2,
+        "correlation": 0.9998049269607833,
+        "margin": 0.00220066248109152,
+        "ms": 7
+      },
+      {
+        "index": 3,
+        "frame": 3,
+        "correlation": 0.9998021428205115,
+        "margin": 0.0019714134529978944,
+        "ms": 7
+      },
+      {
+        "index": 4,
+        "frame": 4,
+        "correlation": 0.9998128079619713,
+        "margin": 0.0020000188873277036,
+        "ms": 6
+      },
+      {
+        "index": 5,
+        "frame": 5,
+        "correlation": 0.9998122537277067,
+        "margin": 0.0031182814355433797,
+        "ms": 6
+      },
+      {
+        "index": 6,
+        "frame": 6,
+        "correlation": 0.9998217447749636,
+        "margin": 0.016460061318297026,
+        "ms": 6
+      },
+      {
+        "index": 7,
+        "frame": 7,
+        "correlation": 0.9998305284290806,
+        "margin": 0.03223565826804131,
+        "ms": 6
+      },
+      {
+        "index": 8,
+        "frame": 8,
+        "correlation": 0.9998630409699811,
+        "margin": 0.016051864216114597,
+        "ms": 6
+      },
+      {
+        "index": 9,
+        "frame": 9,
+        "correlation": 0.9998641845115441,
+        "margin": 0.005881206994800214,
+        "ms": 6
+      },
+      {
+        "index": 10,
+        "frame": 10,
+        "correlation": 0.9998754080897274,
+        "margin": 0.005684370461125687,
+        "ms": 5
+      },
+      {
+        "index": 11,
+        "frame": 11,
+        "correlation": 0.9998762238037934,
+        "margin": 0.005476775267673539,
+        "ms": 5
+      },
+      {
+        "index": 12,
+        "frame": 12,
+        "correlation": 0.9998228481897494,
+        "margin": 0.029106202438148765,
+        "ms": 5
+      },
+      {
+        "index": 13,
+        "frame": 13,
+        "correlation": 0.999815598011426,
+        "margin": 0.01988183349067396,
+        "ms": 7
+      },
+      {
+        "index": 14,
+        "frame": 14,
+        "correlation": 0.9998266603195093,
+        "margin": 0.00854574720474055,
+        "ms": 6
+      },
+      {
+        "index": 15,
+        "frame": 15,
+        "correlation": 0.9998348765524216,
+        "margin": 0.00506799746107256,
+        "ms": 6
+      },
+      {
+        "index": 16,
+        "frame": 16,
+        "correlation": 0.9998373636847144,
+        "margin": 0.0016004543060849086,
+        "ms": 6
+      },
+      {
+        "index": 17,
+        "frame": 17,
+        "correlation": 0.9998419068504681,
+        "margin": 0.001632277980171959,
+        "ms": 6
+      },
+      {
+        "index": 18,
+        "frame": 18,
+        "correlation": 0.9998428275909012,
+        "margin": 0.003978042154266226,
+        "ms": 6
+      },
+      {
+        "index": 19,
+        "frame": 19,
+        "correlation": 0.9998437349006868,
+        "margin": 0.004166540423196086,
+        "ms": 6
+      },
+      {
+        "index": 20,
+        "frame": 20,
+        "correlation": 0.9998435624534895,
+        "margin": 0.004223344487162328,
+        "ms": 6
+      },
+      {
+        "index": 21,
+        "frame": 21,
+        "correlation": 0.9998412926396698,
+        "margin": 0.005742468072431506,
+        "ms": 5
+      },
+      {
+        "index": 22,
+        "frame": 22,
+        "correlation": 0.999837202472958,
+        "margin": 0.01727961335173056,
+        "ms": 6
+      },
+      {
+        "index": 23,
+        "frame": 23,
+        "correlation": 0.9998347554409273,
+        "margin": 0.03397306681879164,
+        "ms": 6
+      },
+      {
+        "index": 24,
+        "frame": 24,
+        "correlation": 0.9998500783712545,
+        "margin": 0.05086357530251673,
+        "ms": 6
+      },
+      {
+        "index": 25,
+        "frame": 25,
+        "correlation": 0.9998735704350945,
+        "margin": 0.03440153951148517,
+        "ms": 5
+      },
+      {
+        "index": 26,
+        "frame": 26,
+        "correlation": 0.9998709310742512,
+        "margin": 0.03391786235254113,
+        "ms": 6
+      },
+      {
+        "index": 27,
+        "frame": 27,
+        "correlation": 0.999844309649322,
+        "margin": 0.03412413234286904,
+        "ms": 6
+      },
+      {
+        "index": 28,
+        "frame": 28,
+        "correlation": 0.9998201754426729,
+        "margin": 0.040637963296259794,
+        "ms": 6
+      },
+      {
+        "index": 29,
+        "frame": 29,
+        "correlation": 0.9998195542224615,
+        "margin": 0.043635091124883285,
+        "ms": 6
+      },
+      {
+        "index": 30,
+        "frame": 30,
+        "correlation": 0.9998187794608009,
+        "margin": 0.043502972705684595,
+        "ms": 6
+      },
+      {
+        "index": 31,
+        "frame": 31,
+        "correlation": 0.9998107725363843,
+        "margin": 0.045241785208733565,
+        "ms": 5
+      },
+      {
+        "index": 32,
+        "frame": 32,
+        "correlation": 0.9997843500132122,
+        "margin": 0.057270854445559016,
+        "ms": 7
+      },
+      {
+        "index": 33,
+        "frame": 33,
+        "correlation": 0.9998103092757942,
+        "margin": 0.06214053917581097,
+        "ms": 6
+      },
+      {
+        "index": 34,
+        "frame": 34,
+        "correlation": 0.999834937471743,
+        "margin": 0.054953633159460225,
+        "ms": 6
+      },
+      {
+        "index": 35,
+        "frame": 35,
+        "correlation": 0.9998140441505481,
+        "margin": 0.05052157571093785,
+        "ms": 5
+      },
+      {
+        "index": 36,
+        "frame": 36,
+        "correlation": 0.9998181023977994,
+        "margin": 0.03943300596183885,
+        "ms": 6
+      },
+      {
+        "index": 37,
+        "frame": 37,
+        "correlation": 0.9998276867281821,
+        "margin": 0.03938740329059376,
+        "ms": 6
+      },
+      {
+        "index": 38,
+        "frame": 38,
+        "correlation": 0.9998202840316555,
+        "margin": 0.03972941899223026,
+        "ms": 6
+      },
+      {
+        "index": 39,
+        "frame": 39,
+        "correlation": 0.9998347075946521,
+        "margin": 0.03318090657586503,
+        "ms": 6
+      },
+      {
+        "index": 40,
+        "frame": 40,
+        "correlation": 0.9998458046848603,
+        "margin": 0.029205481171649228,
+        "ms": 6
+      },
+      {
+        "index": 41,
+        "frame": 41,
+        "correlation": 0.9998562498592191,
+        "margin": 0.02164841420615471,
+        "ms": 6
+      },
+      {
+        "index": 42,
+        "frame": 42,
+        "correlation": 0.9998569814649735,
+        "margin": 0.018665907938850368,
+        "ms": 6
+      },
+      {
+        "index": 43,
+        "frame": 43,
+        "correlation": 0.9998614518468182,
+        "margin": 0.008948976214198434,
+        "ms": 6
+      },
+      {
+        "index": 44,
+        "frame": 44,
+        "correlation": 0.9998520083395529,
+        "margin": 0.008973202116149381,
+        "ms": 5
+      },
+      {
+        "index": 45,
+        "frame": 45,
+        "correlation": 0.9998462193025459,
+        "margin": 0.009170294098114096,
+        "ms": 6
+      },
+      {
+        "index": 46,
+        "frame": 46,
+        "correlation": 0.9998451581620331,
+        "margin": 0.00956557367730726,
+        "ms": 6
+      },
+      {
+        "index": 47,
+        "frame": 47,
+        "correlation": 0.9998458527498901,
+        "margin": 0.01213420895453754,
+        "ms": 6
+      },
+      {
+        "index": 48,
+        "frame": 48,
+        "correlation": 0.9998318999432372,
+        "margin": 0.017757666486754586,
+        "ms": 6
+      },
+      {
+        "index": 49,
+        "frame": 49,
+        "correlation": 0.9998264755608481,
+        "margin": 0.020928412490122117,
+        "ms": 6
+      },
+      {
+        "index": 50,
+        "frame": 50,
+        "correlation": 0.999825080803625,
+        "margin": 0.025358896557194033,
+        "ms": 5
+      },
+      {
+        "index": 51,
+        "frame": 51,
+        "correlation": 0.9998101142321788,
+        "margin": 0.023183317108582346,
+        "ms": 6
+      },
+      {
+        "index": 52,
+        "frame": 52,
+        "correlation": 0.9998195962016934,
+        "margin": 0.01832776036605266,
+        "ms": 6
+      },
+      {
+        "index": 53,
+        "frame": 53,
+        "correlation": 0.9998284074551586,
+        "margin": 0.018250271373002502,
+        "ms": 6
+      },
+      {
+        "index": 54,
+        "frame": 54,
+        "correlation": 0.9998213634213248,
+        "margin": 0.017996840914149992,
+        "ms": 6
+      },
+      {
+        "index": 55,
+        "frame": 55,
+        "correlation": 0.9998230401450161,
+        "margin": 0.014441100171849408,
+        "ms": 6
+      },
+      {
+        "index": 56,
+        "frame": 56,
+        "correlation": 0.9998255223038925,
+        "margin": 0.012850431717353228,
+        "ms": 6
+      },
+      {
+        "index": 57,
+        "frame": 57,
+        "correlation": 0.9998205001612659,
+        "margin": 0.011477454101263995,
+        "ms": 6
+      },
+      {
+        "index": 58,
+        "frame": 58,
+        "correlation": 0.9998232377702214,
+        "margin": 0.009433785716023046,
+        "ms": 6
+      },
+      {
+        "index": 59,
+        "frame": 59,
+        "correlation": 0.9998190973374368,
+        "margin": 0.006510880995643009,
+        "ms": 6
+      },
+      {
+        "index": 60,
+        "frame": 60,
+        "correlation": 0.9998270634241055,
+        "margin": 0.004249740445498973,
+        "ms": 6
+      },
+      {
+        "index": 61,
+        "frame": 61,
+        "correlation": 0.9998319241851736,
+        "margin": 0.003324710994308422,
+        "ms": 5
+      },
+      {
+        "index": 62,
+        "frame": 62,
+        "correlation": 0.9998273781408871,
+        "margin": 0.002004473334741408,
+        "ms": 5
+      },
+      {
+        "index": 63,
+        "frame": 63,
+        "correlation": 0.9998300789138015,
+        "margin": 0.0010796473762959558,
+        "ms": 6
+      },
+      {
+        "index": 64,
+        "frame": 64,
+        "correlation": 0.9998325710768935,
+        "margin": 0.0010817229813985252,
+        "ms": 6
+      },
+      {
+        "index": 65,
+        "frame": 65,
+        "correlation": 0.9998340666426179,
+        "margin": 0.0010374225186071673,
+        "ms": 6
+      },
+      {
+        "index": 66,
+        "frame": 66,
+        "correlation": 0.9998281970675917,
+        "margin": 0.0007176851217681746,
+        "ms": 5
+      },
+      {
+        "index": 67,
+        "frame": 67,
+        "correlation": 0.9998215516038738,
+        "margin": 0.000772189031512438,
+        "ms": 5
+      },
+      {
+        "index": 68,
+        "frame": 68,
+        "correlation": 0.9998145482818167,
+        "margin": 0.0006935538160675048,
+        "ms": 5
+      },
+      {
+        "index": 69,
+        "frame": 69,
+        "correlation": 0.9998145254429861,
+        "margin": 0.000754996643986594,
+        "ms": 5
+      },
+      {
+        "index": 70,
+        "frame": 70,
+        "correlation": 0.9998143326863372,
+        "margin": 0.0015717251010972655,
+        "ms": 6
+      },
+      {
+        "index": 71,
+        "frame": 71,
+        "correlation": 0.9998115533704385,
+        "margin": 0.001364178068170463,
+        "ms": 5
+      },
+      {
+        "index": 72,
+        "frame": 72,
+        "correlation": 0.9998188778364708,
+        "margin": 0.0014875661876158075,
+        "ms": 5
+      },
+      {
+        "index": 73,
+        "frame": 73,
+        "correlation": 0.9998239240705942,
+        "margin": 0.004420547109374451,
+        "ms": 6
+      },
+      {
+        "index": 74,
+        "frame": 74,
+        "correlation": 0.9998328179547535,
+        "margin": 0.01251915175628504,
+        "ms": 6
+      },
+      {
+        "index": 75,
+        "frame": 75,
+        "correlation": 0.9998426994264863,
+        "margin": 0.02146322830428382,
+        "ms": 6
+      },
+      {
+        "index": 76,
+        "frame": 76,
+        "correlation": 0.999856738015144,
+        "margin": 0.03307887935510356,
+        "ms": 6
+      },
+      {
+        "index": 77,
+        "frame": 77,
+        "correlation": 0.9998730129726349,
+        "margin": 0.0385877525706263,
+        "ms": 5
+      },
+      {
+        "index": 78,
+        "frame": 78,
+        "correlation": 0.9998793684540273,
+        "margin": 0.029001770382903413,
+        "ms": 6
+      },
+      {
+        "index": 79,
+        "frame": 79,
+        "correlation": 0.9998851213626059,
+        "margin": 0.023564766337236365,
+        "ms": 6
+      },
+      {
+        "index": 80,
+        "frame": 80,
+        "correlation": 0.9998930573525364,
+        "margin": 0.016847062964235437,
+        "ms": 6
+      },
+      {
+        "index": 81,
+        "frame": 81,
+        "correlation": 0.9998933900115788,
+        "margin": 0.016555058610226547,
+        "ms": 5
+      },
+      {
+        "index": 82,
+        "frame": 82,
+        "correlation": 0.999891342576927,
+        "margin": 0.017438248546625013,
+        "ms": 6
+      },
+      {
+        "index": 83,
+        "frame": 83,
+        "correlation": 0.9998587288406862,
+        "margin": 0.026286715809790362,
+        "ms": 6
+      },
+      {
+        "index": 84,
+        "frame": 84,
+        "correlation": 0.9998679386139128,
+        "margin": 0.014151164897376556,
+        "ms": 5
+      },
+      {
+        "index": 85,
+        "frame": 85,
+        "correlation": 0.9998632748437989,
+        "margin": 0.011769822176207145,
+        "ms": 5
+      },
+      {
+        "index": 86,
+        "frame": 86,
+        "correlation": 0.9998611648086067,
+        "margin": 0.011002168578878813,
+        "ms": 6
+      },
+      {
+        "index": 87,
+        "frame": 87,
+        "correlation": 0.9998724228711702,
+        "margin": 0.011045862514193816,
+        "ms": 6
+      },
+      {
+        "index": 88,
+        "frame": 88,
+        "correlation": 0.9998707875144492,
+        "margin": 0.019159571345010118,
+        "ms": 6
+      },
+      {
+        "index": 89,
+        "frame": 89,
+        "correlation": 0.999869495494416,
+        "margin": 0.018853762878560887,
+        "ms": 6
+      },
+      {
+        "index": 90,
+        "frame": 90,
+        "correlation": 0.9998669224295992,
+        "margin": 0.018795789086465953,
+        "ms": 5
+      },
+      {
+        "index": 91,
+        "frame": 91,
+        "correlation": 0.9998651367154999,
+        "margin": 0.021966643434263022,
+        "ms": 6
+      },
+      {
+        "index": 92,
+        "frame": 92,
+        "correlation": 0.9998465156710928,
+        "margin": 0.025119564071468536,
+        "ms": 6
+      },
+      {
+        "index": 93,
+        "frame": 93,
+        "correlation": 0.9998228414228604,
+        "margin": 0.024663716814251502,
+        "ms": 5
+      },
+      {
+        "index": 94,
+        "frame": 94,
+        "correlation": 0.9998202974959665,
+        "margin": 0.04208886031413828,
+        "ms": 6
+      },
+      {
+        "index": 95,
+        "frame": 95,
+        "correlation": 0.999818317703397,
+        "margin": 0.03401752195859731,
+        "ms": 6
+      },
+      {
+        "index": 96,
+        "frame": 96,
+        "correlation": 0.9998154903236057,
+        "margin": 0.03413962903492751,
+        "ms": 6
+      },
+      {
+        "index": 97,
+        "frame": 97,
+        "correlation": 0.9998109076272815,
+        "margin": 0.03467242935639758,
+        "ms": 6
+      },
+      {
+        "index": 98,
+        "frame": 98,
+        "correlation": 0.9998079545348586,
+        "margin": 0.02447809764789466,
+        "ms": 6
+      },
+      {
+        "index": 99,
+        "frame": 99,
+        "correlation": 0.9998067202027661,
+        "margin": 0.024381066953517827,
+        "ms": 6
+      },
+      {
+        "index": 100,
+        "frame": 100,
+        "correlation": 0.9998111881049918,
+        "margin": 0.022060979078213472,
+        "ms": 6
+      },
+      {
+        "index": 101,
+        "frame": 101,
+        "correlation": 0.9998129221322213,
+        "margin": 0.01812428438831626,
+        "ms": 6
+      },
+      {
+        "index": 102,
+        "frame": 102,
+        "correlation": 0.9997984349750093,
+        "margin": 0.012539607838579325,
+        "ms": 6
+      },
+      {
+        "index": 103,
+        "frame": 103,
+        "correlation": 0.9997845564406426,
+        "margin": 0.012432715099163105,
+        "ms": 5
+      },
+      {
+        "index": 104,
+        "frame": 104,
+        "correlation": 0.9997807581240575,
+        "margin": 0.012212063784179494,
+        "ms": 5
+      },
+      {
+        "index": 105,
+        "frame": 105,
+        "correlation": 0.9997704851776779,
+        "margin": 0.012455618743073105,
+        "ms": 6
+      },
+      {
+        "index": 106,
+        "frame": 106,
+        "correlation": 0.9997690217771323,
+        "margin": 0.012756400702206627,
+        "ms": 6
+      },
+      {
+        "index": 107,
+        "frame": 107,
+        "correlation": 0.999788206072248,
+        "margin": 0.007117751433626918,
+        "ms": 5
+      },
+      {
+        "index": 108,
+        "frame": 108,
+        "correlation": 0.9997957735913154,
+        "margin": 0.004044360167230421,
+        "ms": 6
+      },
+      {
+        "index": 109,
+        "frame": 109,
+        "correlation": 0.9998016228404774,
+        "margin": 0.004065437913618575,
+        "ms": 6
+      },
+      {
+        "index": 110,
+        "frame": 110,
+        "correlation": 0.9998080603244179,
+        "margin": 0.001972102492861394,
+        "ms": 6
+      },
+      {
+        "index": 111,
+        "frame": 111,
+        "correlation": 0.9998136615121427,
+        "margin": 0.0018828229198083468,
+        "ms": 6
+      },
+      {
+        "index": 112,
+        "frame": 112,
+        "correlation": 0.9998052406572218,
+        "margin": 0.001344081598570801,
+        "ms": 6
+      },
+      {
+        "index": 113,
+        "frame": 113,
+        "correlation": 0.9998122296874172,
+        "margin": 0.001400102778824741,
+        "ms": 5
+      },
+      {
+        "index": 114,
+        "frame": 114,
+        "correlation": 0.9998095859047523,
+        "margin": 0.0020317746635674094,
+        "ms": 6
+      },
+      {
+        "index": 115,
+        "frame": 115,
+        "correlation": 0.9998171447778986,
+        "margin": 0.0020969407323534472,
+        "ms": 5
+      },
+      {
+        "index": 116,
+        "frame": 116,
+        "correlation": 0.9998093603554213,
+        "margin": 0.0010972499652824874,
+        "ms": 6
+      },
+      {
+        "index": 117,
+        "frame": 117,
+        "correlation": 0.999802901859259,
+        "margin": 0.0010919124796456847,
+        "ms": 6
+      },
+      {
+        "index": 118,
+        "frame": 118,
+        "correlation": 0.9997973802081531,
+        "margin": 0.0015722810133030896,
+        "ms": 6
+      },
+      {
+        "index": 119,
+        "frame": 119,
+        "correlation": 0.9998084302336196,
+        "margin": 0.00039577083544040104,
+        "ms": 6
+      },
+      {
+        "index": 120,
+        "frame": 120,
+        "correlation": 0.9998101548367687,
+        "margin": 0.0004003856766415792,
+        "ms": 5
+      },
+      {
+        "index": 121,
+        "frame": 121,
+        "correlation": 0.9997897987425823,
+        "margin": 0.0004382997513151521,
+        "ms": 5
+      }
+    ],
+    "tie": null,
+    "blank": null,
+    "invalid": true,
+    "ownership": {
+      "created": 122,
+      "closed": 122,
+      "held": 0,
+      "maxHeld": 1,
+      "published": 122,
+      "duplicates": 0,
+      "unavailable": 0,
+      "discarded": 0,
+      "failures": 0,
+      "rgbaCopies": 0,
+      "canvasCopies": 122,
+      "pending": false,
+      "ready": false,
+      "disposed": true,
+      "time": null
+    },
+    "registration": {
+      "calls": 123,
+      "matches": 122,
+      "rejected": 1,
+      "cached": 0,
+      "frame": null,
+      "disposed": true
+    },
+    "scope": "Actual muted original film,122 independent centered seeks, canonical source RGB references with channel normalization; wrong clock deliberately supplied. Source-only, not moving speech/app/Linux/physical acceptance."
+  },
+  "change": "Replace production preflight browser-reference collection with a hash-verified canonical122-frame lookup and native checkpoint validation at frames0/50/121. Keep the20second overall and2second seek bounds,4MiB movie limit and add512KiB/hash checks for canonical data. No timestamp lookup or guessed frame on ambiguous samples.",
+  "local": {
+    "chromium": {
+      "preparation": {
+        "initial": 0.75,
+        "restored": 0.75,
+        "elapsedMs": 6026.800000011921,
+        "progressCount": 122,
+        "profileCount": 122,
+        "matched": {
+          "frame": 50,
+          "time": 2.0833333333333335,
+          "mse": 0,
+          "secondMse": 317.95737373737376,
+          "source": "same-browser-picture-study"
+        },
+        "releases": [
+          {
+            "success": true,
+            "completed": 122,
+            "elapsedMs": 6027.200000017881,
+            "ownership": {
+              "created": 122,
+              "closed": 122,
+              "held": 0,
+              "maxHeld": 1,
+              "published": 122,
+              "duplicates": 0,
+              "unavailable": 0,
+              "discarded": 0,
+              "failures": 0,
+              "rgbaCopies": 122,
+              "canvasCopies": 0,
+              "pending": false,
+              "ready": false,
+              "disposed": true,
+              "time": null
+            }
+          }
+        ],
+        "cases": [
+          {
+            "name": "visible-stage",
+            "rejected": true,
+            "before": 2.104166,
+            "after": 2.104166,
+            "active": false
+          },
+          {
+            "name": "abort",
+            "rejected": true,
+            "release": {
+              "success": false,
+              "completed": 3,
+              "elapsedMs": 35.900000005960464,
+              "ownership": {
+                "created": 3,
+                "closed": 3,
+                "held": 0,
+                "maxHeld": 1,
+                "published": 3,
+                "duplicates": 0,
+                "unavailable": 0,
+                "discarded": 0,
+                "failures": 0,
+                "rgbaCopies": 3,
+                "canvasCopies": 0,
+                "pending": false,
+                "ready": false,
+                "disposed": true,
+                "time": null
+              }
+            },
+            "atCancel": 0.104166,
+            "after": 0.104166,
+            "later": 0.104166,
+            "active": false
+          },
+          {
+            "name": "stage-lost",
+            "rejected": true,
+            "release": {
+              "success": false,
+              "completed": 3,
+              "elapsedMs": 41.20000001788139,
+              "ownership": {
+                "created": 3,
+                "closed": 3,
+                "held": 0,
+                "maxHeld": 1,
+                "published": 3,
+                "duplicates": 0,
+                "unavailable": 0,
+                "discarded": 0,
+                "failures": 0,
+                "rgbaCopies": 3,
+                "canvasCopies": 0,
+                "pending": false,
+                "ready": false,
+                "disposed": true,
+                "time": null
+              }
+            },
+            "atCancel": 0.104166,
+            "after": 0.104166,
+            "later": 0.104166,
+            "active": false
+          },
+          {
+            "name": "source-replaced",
+            "rejected": true,
+            "release": {
+              "success": false,
+              "completed": 3,
+              "elapsedMs": 46.099999994039536,
+              "ownership": {
+                "created": 3,
+                "closed": 3,
+                "held": 0,
+                "maxHeld": 1,
+                "published": 3,
+                "duplicates": 0,
+                "unavailable": 0,
+                "discarded": 0,
+                "failures": 0,
+                "rgbaCopies": 3,
+                "canvasCopies": 0,
+                "pending": false,
+                "ready": false,
+                "disposed": true,
+                "time": null
+              }
+            },
+            "atCancel": 0.104166,
+            "after": 0.14583333333333334,
+            "later": 0.145833,
+            "active": false
+          },
+          {
+            "name": "wrong-sha",
+            "rejected": true,
+            "before": 0,
+            "after": 0,
+            "active": false
+          },
+          {
+            "name": "oversize",
+            "rejected": true,
+            "before": 0,
+            "after": 0,
+            "active": false
+          },
+          {
+            "name": "concurrent",
+            "rejected": true,
+            "before": 0,
+            "after": 0,
+            "active": true
+          }
+        ],
+        "ended": {
+          "active": false,
+          "completed": 0,
+          "total": 122
+        },
+        "scope": "Actual approved muted movie, browser-derived reference preparation and picture match; explicit cancellation/source/isolation/hash fault tests. No active show, app/provider/physical acceptance."
+      },
+      "builtDirector": {
+        "scope": "Built app actual painted films/native parsed zero PCM with mock HTTP speech; no provider or human acceptance.",
+        "directorSha256": "9ebdc867f279360382f647e9cf034be2f4109c832678cf036743c495c1436618",
+        "preparations": [
+          {
+            "success": true,
+            "kind": "canonical",
+            "completed": 3,
+            "total": 3,
+            "elapsedMs": 175.69999998807907,
+            "ownership": {
+              "created": 3,
+              "closed": 3,
+              "held": 0,
+              "maxHeld": 1,
+              "published": 3,
+              "duplicates": 0,
+              "unavailable": 0,
+              "discarded": 0,
+              "failures": 0,
+              "rgbaCopies": 3,
+              "canvasCopies": 0,
+              "pending": false,
+              "ready": false,
+              "disposed": true,
+              "time": null
+            }
+          },
+          {
+            "success": true,
+            "kind": "canonical",
+            "completed": 3,
+            "total": 3,
+            "elapsedMs": 170.19999998807907,
+            "ownership": {
+              "created": 3,
+              "closed": 3,
+              "held": 0,
+              "maxHeld": 1,
+              "published": 3,
+              "duplicates": 0,
+              "unavailable": 0,
+              "discarded": 0,
+              "failures": 0,
+              "rgbaCopies": 3,
+              "canvasCopies": 0,
+              "pending": false,
+              "ready": false,
+              "disposed": true,
+              "time": null
+            }
+          }
+        ],
+        "starts": {
+          "closed": false,
+          "failure": null,
+          "pending": 0,
+          "events": [
+            {
+              "count": 1,
+              "phase": "playing",
+              "duration": 0.2,
+              "mouthActive": false
+            },
+            {
+              "count": 2,
+              "phase": "playing",
+              "duration": 0.2,
+              "mouthActive": true
+            },
+            {
+              "count": 3,
+              "phase": "playing",
+              "duration": 0.2,
+              "mouthActive": false
+            },
+            {
+              "count": 4,
+              "phase": "playing",
+              "duration": 0.2,
+              "mouthActive": false
+            },
+            {
+              "count": 5,
+              "phase": "playing",
+              "duration": 1,
+              "mouthActive": true
+            },
+            {
+              "count": 6,
+              "phase": "playing",
+              "duration": 0.2,
+              "mouthActive": false
+            }
+          ]
+        },
+        "final": {
+          "phase": "closed",
+          "queued": 0,
+          "character": null,
+          "animation": null,
+          "disposed": true,
+          "speechStage": "idle",
+          "mouthPreparation": {
+            "pending": false,
+            "allocated": false,
+            "isolatedReference": false,
+            "reference": null
+          },
+          "ambient": {
+            "mode": "alternate",
+            "seconds": 5,
+            "character": "friendly",
+            "visibleSeconds": 0,
+            "suspended": true,
+            "transitioning": false,
+            "disposed": true,
+            "error": null
+          },
+          "frameClock": {
+            "pending": 0,
+            "disposed": true
+          },
+          "mouthStudy": null
+        },
+        "errors": []
+      },
+      "cancellation": [
+        {
+          "mode": "stop",
+          "blockedLine": "Wait for face preparation or press Stop",
+          "isolated": {
+            "maxRgb": 0,
+            "paused": true,
+            "preparing": true
+          },
+          "frames": {
+            "created": 1,
+            "closed": 1
+          },
+          "glLive": 0,
+          "state": {
+            "phase": "stopped",
+            "queued": 0,
+            "character": null,
+            "animation": null,
+            "disposed": false,
+            "speechStage": "idle",
+            "mouthPreparation": {
+              "pending": false,
+              "allocated": false,
+              "isolatedReference": false,
+              "reference": {
+                "completed": 1,
+                "total": 3
+              }
+            },
+            "ambient": {
+              "mode": "friendly",
+              "seconds": 15,
+              "character": "friendly",
+              "visibleSeconds": 0,
+              "suspended": true,
+              "transitioning": false,
+              "disposed": false,
+              "error": null
+            },
+            "frameClock": {
+              "pending": 0,
+              "disposed": false
+            },
+            "mouthStudy": null
+          },
+          "videos": [
+            {
+              "paused": true,
+              "muted": true
+            }
+          ]
+        },
+        {
+          "mode": "uncheck",
+          "isolated": {
+            "maxRgb": 0,
+            "paused": true,
+            "preparing": true
+          },
+          "frames": {
+            "created": 1,
+            "closed": 1
+          },
+          "glLive": 0,
+          "state": {
+            "phase": "idle",
+            "queued": 0,
+            "character": null,
+            "animation": null,
+            "disposed": false,
+            "speechStage": "idle",
+            "mouthPreparation": {
+              "pending": false,
+              "allocated": false,
+              "isolatedReference": true,
+              "reference": {
+                "completed": 1,
+                "total": 3
+              }
+            },
+            "ambient": {
+              "mode": "friendly",
+              "seconds": 15,
+              "character": "friendly",
+              "visibleSeconds": 0,
+              "suspended": true,
+              "transitioning": false,
+              "disposed": false,
+              "error": null
+            },
+            "frameClock": {
+              "pending": 0,
+              "disposed": false
+            },
+            "mouthStudy": null
+          },
+          "videos": [
+            {
+              "paused": true,
+              "muted": true
+            }
+          ],
+          "resumedAmbienceAfterUncheck": true
+        },
+        {
+          "mode": "pagehide",
+          "isolated": {
+            "maxRgb": 0,
+            "paused": true,
+            "preparing": true
+          },
+          "frames": {
+            "created": 1,
+            "closed": 1
+          },
+          "glLive": 0,
+          "state": {
+            "phase": "closed",
+            "queued": 0,
+            "character": null,
+            "animation": null,
+            "disposed": true,
+            "speechStage": "idle",
+            "mouthPreparation": {
+              "pending": false,
+              "allocated": false,
+              "isolatedReference": false,
+              "reference": {
+                "completed": 1,
+                "total": 3
+              }
+            },
+            "ambient": {
+              "mode": "friendly",
+              "seconds": 15,
+              "character": "friendly",
+              "visibleSeconds": 0,
+              "suspended": true,
+              "transitioning": false,
+              "disposed": true,
+              "error": null
+            },
+            "frameClock": {
+              "pending": 0,
+              "disposed": true
+            },
+            "mouthStudy": null
+          },
+          "videos": []
+        },
+        {
+          "mode": "capture-failure",
+          "isolated": {
+            "maxRgb": 0,
+            "paused": true,
+            "preparing": false
+          },
+          "frames": {
+            "created": 3,
+            "closed": 3
+          },
+          "glLive": 0,
+          "state": {
+            "phase": "idle",
+            "queued": 0,
+            "character": null,
+            "animation": null,
+            "disposed": false,
+            "speechStage": "idle",
+            "mouthPreparation": {
+              "pending": false,
+              "allocated": false,
+              "isolatedReference": false,
+              "reference": {
+                "success": true,
+                "kind": "canonical",
+                "completed": 3,
+                "total": 3,
+                "elapsedMs": 215.19999998807907,
+                "ownership": {
+                  "created": 3,
+                  "closed": 3,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 3,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 3,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": true,
+                  "time": null
+                }
+              }
+            },
+            "ambient": {
+              "mode": "friendly",
+              "seconds": 15,
+              "character": "friendly",
+              "visibleSeconds": 0,
+              "suspended": false,
+              "transitioning": true,
+              "disposed": false,
+              "error": null
+            },
+            "frameClock": {
+              "pending": 1,
+              "disposed": false
+            },
+            "mouthStudy": null
+          },
+          "videos": [
+            {
+              "paused": false,
+              "muted": true
+            }
+          ]
+        }
+      ],
+      "providedProfilePlayer": {
+        "result": {
+          "preparation": {
+            "success": true,
+            "kind": "canonical",
+            "completed": 3,
+            "total": 3,
+            "elapsedMs": 183.69999998807907,
+            "ownership": {
+              "created": 3,
+              "closed": 3,
+              "held": 0,
+              "maxHeld": 1,
+              "published": 3,
+              "duplicates": 0,
+              "unavailable": 0,
+              "discarded": 0,
+              "failures": 0,
+              "rgbaCopies": 3,
+              "canvasCopies": 0,
+              "pending": false,
+              "ready": false,
+              "disposed": true,
+              "time": null
+            }
+          },
+          "idle": {
+            "ready": true,
+            "active": false,
+            "opening": 0,
+            "draws": 0,
+            "disposed": false,
+            "sourceKind": "owned-rgba",
+            "snapshots": 12,
+            "watching": false,
+            "frameReady": true,
+            "mediaTime": 0.625,
+            "captureFailure": false,
+            "registration": "picture-match-study",
+            "registeredFrame": null,
+            "registrationMetrics": {
+              "calls": 3,
+              "matches": 3,
+              "rejected": 0,
+              "cached": 0,
+              "frame": null,
+              "disposed": false
+            },
+            "owned": {
+              "created": 70,
+              "closed": 70,
+              "held": 0,
+              "maxHeld": 1,
+              "published": 12,
+              "duplicates": 58,
+              "unavailable": 0,
+              "discarded": 0,
+              "failures": 0,
+              "rgbaCopies": 12,
+              "canvasCopies": 0,
+              "pending": false,
+              "ready": true,
+              "disposed": false,
+              "time": 0.625
+            }
+          },
+          "lines": [
+            {
+              "duration": 0.2,
+              "draws": 23,
+              "state": {
+                "ready": true,
+                "active": true,
+                "opening": 0.8316587472280571,
+                "draws": 23,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 17,
+                "watching": false,
+                "frameReady": true,
+                "mediaTime": 0.791667,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": 19,
+                "registrationMetrics": {
+                  "calls": 26,
+                  "matches": 8,
+                  "rejected": 0,
+                  "cached": 18,
+                  "frame": 19,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 94,
+                  "closed": 94,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 18,
+                  "duplicates": 76,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 18,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": true,
+                  "disposed": false,
+                  "time": 0.833333
+                }
+              },
+              "stopped": {
+                "ready": true,
+                "active": false,
+                "opening": 0,
+                "draws": 23,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 17,
+                "watching": false,
+                "frameReady": false,
+                "mediaTime": null,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": null,
+                "registrationMetrics": {
+                  "calls": 26,
+                  "matches": 8,
+                  "rejected": 0,
+                  "cached": 18,
+                  "frame": null,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 94,
+                  "closed": 94,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 18,
+                  "duplicates": 76,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 18,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": false,
+                  "time": null
+                }
+              }
+            },
+            {
+              "duration": 0.2,
+              "draws": 23,
+              "state": {
+                "ready": true,
+                "active": true,
+                "opening": 0.8316775398339529,
+                "draws": 46,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 27,
+                "watching": false,
+                "frameReady": true,
+                "mediaTime": 1.125,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": 27,
+                "registrationMetrics": {
+                  "calls": 49,
+                  "matches": 14,
+                  "rejected": 0,
+                  "cached": 35,
+                  "frame": 27,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 130,
+                  "closed": 130,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 27,
+                  "duplicates": 103,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 27,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": true,
+                  "disposed": false,
+                  "time": 1.125
+                }
+              },
+              "stopped": {
+                "ready": true,
+                "active": false,
+                "opening": 0,
+                "draws": 46,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 27,
+                "watching": false,
+                "frameReady": false,
+                "mediaTime": null,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": null,
+                "registrationMetrics": {
+                  "calls": 49,
+                  "matches": 14,
+                  "rejected": 0,
+                  "cached": 35,
+                  "frame": null,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 130,
+                  "closed": 130,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 27,
+                  "duplicates": 103,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 27,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": false,
+                  "time": null
+                }
+              }
+            },
+            {
+              "duration": 0.5,
+              "draws": 60,
+              "state": {
+                "ready": true,
+                "active": true,
+                "opening": 0.6722243620259847,
+                "draws": 106,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 43,
+                "watching": false,
+                "frameReady": true,
+                "mediaTime": 1.708333,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": 41,
+                "registrationMetrics": {
+                  "calls": 109,
+                  "matches": 27,
+                  "rejected": 0,
+                  "cached": 82,
+                  "frame": 41,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 203,
+                  "closed": 203,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 43,
+                  "duplicates": 160,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 43,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": true,
+                  "disposed": false,
+                  "time": 1.708333
+                }
+              },
+              "stopped": {
+                "ready": true,
+                "active": false,
+                "opening": 0,
+                "draws": 106,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 43,
+                "watching": false,
+                "frameReady": false,
+                "mediaTime": null,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": null,
+                "registrationMetrics": {
+                  "calls": 109,
+                  "matches": 27,
+                  "rejected": 0,
+                  "cached": 82,
+                  "frame": null,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 203,
+                  "closed": 203,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 43,
+                  "duplicates": 160,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 43,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": false,
+                  "time": null
+                }
+              }
+            },
+            {
+              "duration": 0.2,
+              "draws": 23,
+              "state": {
+                "ready": true,
+                "active": true,
+                "opening": 0.831669121348927,
+                "draws": 129,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 51,
+                "watching": false,
+                "frameReady": true,
+                "mediaTime": 2,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": 48,
+                "registrationMetrics": {
+                  "calls": 132,
+                  "matches": 32,
+                  "rejected": 0,
+                  "cached": 100,
+                  "frame": 48,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 239,
+                  "closed": 239,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 52,
+                  "duplicates": 187,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 52,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": true,
+                  "disposed": false,
+                  "time": 2.041667
+                }
+              },
+              "stopped": {
+                "ready": true,
+                "active": false,
+                "opening": 0,
+                "draws": 129,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 51,
+                "watching": false,
+                "frameReady": false,
+                "mediaTime": null,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": null,
+                "registrationMetrics": {
+                  "calls": 132,
+                  "matches": 32,
+                  "rejected": 0,
+                  "cached": 100,
+                  "frame": null,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 239,
+                  "closed": 239,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 52,
+                  "duplicates": 187,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 52,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": false,
+                  "time": null
+                }
+              }
+            },
+            {
+              "duration": 1,
+              "draws": 119,
+              "state": {
+                "ready": true,
+                "active": true,
+                "opening": 0.8499999954371477,
+                "draws": 248,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 80,
+                "watching": false,
+                "frameReady": true,
+                "mediaTime": 3.125,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": 75,
+                "registrationMetrics": {
+                  "calls": 251,
+                  "matches": 57,
+                  "rejected": 0,
+                  "cached": 194,
+                  "frame": 75,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 372,
+                  "closed": 372,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 80,
+                  "duplicates": 292,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 80,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": true,
+                  "disposed": false,
+                  "time": 3.125
+                }
+              },
+              "stopped": {
+                "ready": true,
+                "active": false,
+                "opening": 0,
+                "draws": 248,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 80,
+                "watching": false,
+                "frameReady": false,
+                "mediaTime": null,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": null,
+                "registrationMetrics": {
+                  "calls": 251,
+                  "matches": 57,
+                  "rejected": 0,
+                  "cached": 194,
+                  "frame": null,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 372,
+                  "closed": 372,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 80,
+                  "duplicates": 292,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 80,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": false,
+                  "time": null
+                }
+              }
+            },
+            {
+              "duration": 0.2,
+              "draws": 23,
+              "state": {
+                "ready": true,
+                "active": true,
+                "opening": 0.8316635570364199,
+                "draws": 271,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 89,
+                "watching": false,
+                "frameReady": true,
+                "mediaTime": 3.416667,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": 82,
+                "registrationMetrics": {
+                  "calls": 274,
+                  "matches": 62,
+                  "rejected": 0,
+                  "cached": 212,
+                  "frame": 82,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 408,
+                  "closed": 408,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 89,
+                  "duplicates": 319,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 89,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": true,
+                  "disposed": false,
+                  "time": 3.416667
+                }
+              },
+              "stopped": {
+                "ready": true,
+                "active": false,
+                "opening": 0,
+                "draws": 271,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 89,
+                "watching": false,
+                "frameReady": false,
+                "mediaTime": null,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": null,
+                "registrationMetrics": {
+                  "calls": 274,
+                  "matches": 62,
+                  "rejected": 0,
+                  "cached": 212,
+                  "frame": null,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 408,
+                  "closed": 408,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 89,
+                  "duplicates": 319,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 89,
+                  "canvasCopies": 0,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": false,
+                  "time": null
+                }
+              }
+            }
+          ],
+          "final": {
+            "ready": true,
+            "active": false,
+            "opening": 0,
+            "draws": 271,
+            "disposed": false,
+            "sourceKind": "owned-rgba",
+            "snapshots": 92,
+            "watching": false,
+            "frameReady": true,
+            "mediaTime": 3.541667,
+            "captureFailure": false,
+            "registration": "picture-match-study",
+            "registeredFrame": null,
+            "registrationMetrics": {
+              "calls": 274,
+              "matches": 62,
+              "rejected": 0,
+              "cached": 212,
+              "frame": null,
+              "disposed": false
+            },
+            "owned": {
+              "created": 420,
+              "closed": 420,
+              "held": 0,
+              "maxHeld": 1,
+              "published": 92,
+              "duplicates": 328,
+              "unavailable": 0,
+              "discarded": 0,
+              "failures": 0,
+              "rgbaCopies": 92,
+              "canvasCopies": 0,
+              "pending": false,
+              "ready": true,
+              "disposed": false,
+              "time": 3.541667
+            }
+          },
+          "stage": {
+            "black": false,
+            "suspended": false,
+            "level": 1,
+            "draws": 420,
+            "layers": [
+              {
+                "id": "character",
+                "opacity": 1,
+                "blend": "source-over",
+                "visible": true,
+                "kind": "character",
+                "scale": 1,
+                "x": 0,
+                "y": 0
+              }
+            ]
+          },
+          "disposed": {
+            "ready": false,
+            "active": false,
+            "opening": 0,
+            "draws": 271,
+            "disposed": true,
+            "sourceKind": "owned-rgba",
+            "snapshots": 92,
+            "watching": false,
+            "frameReady": false,
+            "mediaTime": null,
+            "captureFailure": false,
+            "registration": "picture-match-study",
+            "registeredFrame": null,
+            "registrationMetrics": {
+              "calls": 274,
+              "matches": 62,
+              "rejected": 0,
+              "cached": 212,
+              "frame": null,
+              "disposed": true
+            },
+            "owned": {
+              "created": 420,
+              "closed": 420,
+              "held": 0,
+              "maxHeld": 1,
+              "published": 92,
+              "duplicates": 328,
+              "unavailable": 0,
+              "discarded": 0,
+              "failures": 0,
+              "rgbaCopies": 92,
+              "canvasCopies": 0,
+              "pending": false,
+              "ready": false,
+              "disposed": true,
+              "time": null
+            }
+          },
+          "scope": "Actual movie + native WebAudio short zero-sample lines and authored synthetic AH weights, shared detached frame source and actual silent output. No provider/visual/phoneme/physical acceptance."
+        },
+        "remote": {
+          "media": 0,
+          "state": {
+            "silent": true,
+            "stopped": true,
+            "stale": false,
+            "stalls": 0,
+            "width": 1280,
+            "height": 720,
+            "owner": false
+          }
+        }
+      }
+    },
+    "webkit": {
+      "preparation": {
+        "initial": 0.75,
+        "restored": 0.75,
+        "elapsedMs": 1597,
+        "progressCount": 122,
+        "profileCount": 122,
+        "matched": {
+          "frame": 50,
+          "time": 2.0833333333333335,
+          "mse": 0,
+          "secondMse": 314.9521212121212,
+          "source": "same-browser-picture-study"
+        },
+        "releases": [
+          {
+            "success": true,
+            "completed": 122,
+            "elapsedMs": 1597,
+            "ownership": {
+              "created": 122,
+              "closed": 122,
+              "held": 0,
+              "maxHeld": 1,
+              "published": 122,
+              "duplicates": 0,
+              "unavailable": 0,
+              "discarded": 0,
+              "failures": 0,
+              "rgbaCopies": 0,
+              "canvasCopies": 122,
+              "pending": false,
+              "ready": false,
+              "disposed": true,
+              "time": null
+            }
+          }
+        ],
+        "cases": [
+          {
+            "name": "visible-stage",
+            "rejected": true,
+            "before": 2.1041666666666665,
+            "after": 2.1041666666666665,
+            "active": false
+          },
+          {
+            "name": "abort",
+            "rejected": true,
+            "release": {
+              "success": false,
+              "completed": 3,
+              "elapsedMs": 40,
+              "ownership": {
+                "created": 3,
+                "closed": 3,
+                "held": 0,
+                "maxHeld": 1,
+                "published": 3,
+                "duplicates": 0,
+                "unavailable": 0,
+                "discarded": 0,
+                "failures": 0,
+                "rgbaCopies": 0,
+                "canvasCopies": 3,
+                "pending": false,
+                "ready": false,
+                "disposed": true,
+                "time": null
+              }
+            },
+            "atCancel": 0.10416666666666667,
+            "after": 0.10416666666666667,
+            "later": 0.10416666666666667,
+            "active": false
+          },
+          {
+            "name": "stage-lost",
+            "rejected": true,
+            "release": {
+              "success": false,
+              "completed": 3,
+              "elapsedMs": 43,
+              "ownership": {
+                "created": 3,
+                "closed": 3,
+                "held": 0,
+                "maxHeld": 1,
+                "published": 3,
+                "duplicates": 0,
+                "unavailable": 0,
+                "discarded": 0,
+                "failures": 0,
+                "rgbaCopies": 0,
+                "canvasCopies": 3,
+                "pending": false,
+                "ready": false,
+                "disposed": true,
+                "time": null
+              }
+            },
+            "atCancel": 0.10416666666666667,
+            "after": 0.10416666666666667,
+            "later": 0.10416666666666667,
+            "active": false
+          },
+          {
+            "name": "source-replaced",
+            "rejected": true,
+            "release": {
+              "success": false,
+              "completed": 3,
+              "elapsedMs": 45,
+              "ownership": {
+                "created": 3,
+                "closed": 3,
+                "held": 0,
+                "maxHeld": 1,
+                "published": 3,
+                "duplicates": 0,
+                "unavailable": 0,
+                "discarded": 0,
+                "failures": 0,
+                "rgbaCopies": 0,
+                "canvasCopies": 3,
+                "pending": false,
+                "ready": false,
+                "disposed": true,
+                "time": null
+              }
+            },
+            "atCancel": 0.10416666666666667,
+            "after": 0.14583333333333334,
+            "later": 0.14583333333333334,
+            "active": false
+          },
+          {
+            "name": "wrong-sha",
+            "rejected": true,
+            "before": 0,
+            "after": 0,
+            "active": false
+          },
+          {
+            "name": "oversize",
+            "rejected": true,
+            "before": 0,
+            "after": 0,
+            "active": false
+          },
+          {
+            "name": "concurrent",
+            "rejected": true,
+            "before": 0,
+            "after": 0,
+            "active": true
+          }
+        ],
+        "ended": {
+          "active": false,
+          "completed": 0,
+          "total": 122
+        },
+        "scope": "Actual approved muted movie, browser-derived reference preparation and picture match; explicit cancellation/source/isolation/hash fault tests. No active show, app/provider/physical acceptance."
+      },
+      "builtDirector": {
+        "scope": "Built app actual painted films/native parsed zero PCM with mock HTTP speech; no provider or human acceptance.",
+        "directorSha256": "9ebdc867f279360382f647e9cf034be2f4109c832678cf036743c495c1436618",
+        "preparations": [
+          {
+            "success": true,
+            "kind": "canonical",
+            "completed": 3,
+            "total": 3,
+            "elapsedMs": 130,
+            "ownership": {
+              "created": 3,
+              "closed": 3,
+              "held": 0,
+              "maxHeld": 1,
+              "published": 3,
+              "duplicates": 0,
+              "unavailable": 0,
+              "discarded": 0,
+              "failures": 0,
+              "rgbaCopies": 0,
+              "canvasCopies": 3,
+              "pending": false,
+              "ready": false,
+              "disposed": true,
+              "time": null
+            }
+          },
+          {
+            "success": true,
+            "kind": "canonical",
+            "completed": 3,
+            "total": 3,
+            "elapsedMs": 207,
+            "ownership": {
+              "created": 3,
+              "closed": 3,
+              "held": 0,
+              "maxHeld": 1,
+              "published": 3,
+              "duplicates": 0,
+              "unavailable": 0,
+              "discarded": 0,
+              "failures": 0,
+              "rgbaCopies": 0,
+              "canvasCopies": 3,
+              "pending": false,
+              "ready": false,
+              "disposed": true,
+              "time": null
+            }
+          }
+        ],
+        "starts": {
+          "closed": false,
+          "failure": null,
+          "pending": 0,
+          "events": [
+            {
+              "count": 1,
+              "phase": "playing",
+              "duration": 0.2,
+              "mouthActive": false
+            },
+            {
+              "count": 2,
+              "phase": "playing",
+              "duration": 0.2,
+              "mouthActive": true
+            },
+            {
+              "count": 3,
+              "phase": "playing",
+              "duration": 0.2,
+              "mouthActive": false
+            },
+            {
+              "count": 4,
+              "phase": "playing",
+              "duration": 0.2,
+              "mouthActive": false
+            },
+            {
+              "count": 5,
+              "phase": "playing",
+              "duration": 1,
+              "mouthActive": true
+            },
+            {
+              "count": 6,
+              "phase": "playing",
+              "duration": 0.2,
+              "mouthActive": false
+            }
+          ]
+        },
+        "final": {
+          "phase": "closed",
+          "queued": 0,
+          "character": null,
+          "animation": null,
+          "disposed": true,
+          "speechStage": "idle",
+          "mouthPreparation": {
+            "pending": false,
+            "allocated": false,
+            "isolatedReference": false,
+            "reference": null
+          },
+          "ambient": {
+            "mode": "alternate",
+            "seconds": 5,
+            "character": "friendly",
+            "visibleSeconds": 0,
+            "suspended": true,
+            "transitioning": false,
+            "disposed": true,
+            "error": null
+          },
+          "frameClock": {
+            "pending": 0,
+            "disposed": true
+          },
+          "mouthStudy": null
+        },
+        "errors": []
+      },
+      "cancellation": [
+        {
+          "mode": "stop",
+          "blockedLine": "Wait for face preparation or press Stop",
+          "isolated": {
+            "maxRgb": 0,
+            "paused": true,
+            "preparing": true
+          },
+          "frames": {
+            "created": 1,
+            "closed": 1
+          },
+          "glLive": 0,
+          "state": {
+            "phase": "stopped",
+            "queued": 0,
+            "character": null,
+            "animation": null,
+            "disposed": false,
+            "speechStage": "idle",
+            "mouthPreparation": {
+              "pending": false,
+              "allocated": false,
+              "isolatedReference": false,
+              "reference": {
+                "completed": 1,
+                "total": 3
+              }
+            },
+            "ambient": {
+              "mode": "friendly",
+              "seconds": 15,
+              "character": "friendly",
+              "visibleSeconds": 0,
+              "suspended": true,
+              "transitioning": false,
+              "disposed": false,
+              "error": null
+            },
+            "frameClock": {
+              "pending": 0,
+              "disposed": false
+            },
+            "mouthStudy": null
+          },
+          "videos": [
+            {
+              "paused": true,
+              "muted": true
+            }
+          ]
+        },
+        {
+          "mode": "uncheck",
+          "isolated": {
+            "maxRgb": 0,
+            "paused": true,
+            "preparing": true
+          },
+          "frames": {
+            "created": 1,
+            "closed": 1
+          },
+          "glLive": 0,
+          "state": {
+            "phase": "idle",
+            "queued": 0,
+            "character": null,
+            "animation": null,
+            "disposed": false,
+            "speechStage": "idle",
+            "mouthPreparation": {
+              "pending": false,
+              "allocated": false,
+              "isolatedReference": true,
+              "reference": {
+                "completed": 1,
+                "total": 3
+              }
+            },
+            "ambient": {
+              "mode": "friendly",
+              "seconds": 15,
+              "character": "friendly",
+              "visibleSeconds": 0,
+              "suspended": true,
+              "transitioning": false,
+              "disposed": false,
+              "error": null
+            },
+            "frameClock": {
+              "pending": 0,
+              "disposed": false
+            },
+            "mouthStudy": null
+          },
+          "videos": [
+            {
+              "paused": true,
+              "muted": true
+            }
+          ],
+          "resumedAmbienceAfterUncheck": true
+        },
+        {
+          "mode": "pagehide",
+          "isolated": {
+            "maxRgb": 0,
+            "paused": true,
+            "preparing": true
+          },
+          "frames": {
+            "created": 1,
+            "closed": 1
+          },
+          "glLive": 0,
+          "state": {
+            "phase": "closed",
+            "queued": 0,
+            "character": null,
+            "animation": null,
+            "disposed": true,
+            "speechStage": "idle",
+            "mouthPreparation": {
+              "pending": false,
+              "allocated": false,
+              "isolatedReference": false,
+              "reference": {
+                "completed": 1,
+                "total": 3
+              }
+            },
+            "ambient": {
+              "mode": "friendly",
+              "seconds": 15,
+              "character": "friendly",
+              "visibleSeconds": 0,
+              "suspended": true,
+              "transitioning": false,
+              "disposed": true,
+              "error": null
+            },
+            "frameClock": {
+              "pending": 0,
+              "disposed": true
+            },
+            "mouthStudy": null
+          },
+          "videos": []
+        },
+        {
+          "mode": "capture-failure",
+          "isolated": {
+            "maxRgb": 0,
+            "paused": true,
+            "preparing": false
+          },
+          "frames": {
+            "created": 3,
+            "closed": 3
+          },
+          "glLive": 0,
+          "state": {
+            "phase": "idle",
+            "queued": 0,
+            "character": null,
+            "animation": null,
+            "disposed": false,
+            "speechStage": "idle",
+            "mouthPreparation": {
+              "pending": false,
+              "allocated": false,
+              "isolatedReference": false,
+              "reference": {
+                "success": true,
+                "kind": "canonical",
+                "completed": 3,
+                "total": 3,
+                "elapsedMs": 147,
+                "ownership": {
+                  "created": 3,
+                  "closed": 3,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 3,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 3,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": true,
+                  "time": null
+                }
+              }
+            },
+            "ambient": {
+              "mode": "friendly",
+              "seconds": 15,
+              "character": "friendly",
+              "visibleSeconds": 0,
+              "suspended": false,
+              "transitioning": true,
+              "disposed": false,
+              "error": null
+            },
+            "frameClock": {
+              "pending": 1,
+              "disposed": false
+            },
+            "mouthStudy": null
+          },
+          "videos": [
+            {
+              "paused": false,
+              "muted": true
+            }
+          ]
+        }
+      ],
+      "providedProfilePlayer": {
+        "result": {
+          "preparation": {
+            "success": true,
+            "kind": "canonical",
+            "completed": 3,
+            "total": 3,
+            "elapsedMs": 113,
+            "ownership": {
+              "created": 3,
+              "closed": 3,
+              "held": 0,
+              "maxHeld": 1,
+              "published": 3,
+              "duplicates": 0,
+              "unavailable": 0,
+              "discarded": 0,
+              "failures": 0,
+              "rgbaCopies": 0,
+              "canvasCopies": 3,
+              "pending": false,
+              "ready": false,
+              "disposed": true,
+              "time": null
+            }
+          },
+          "idle": {
+            "ready": true,
+            "active": false,
+            "opening": 0,
+            "draws": 0,
+            "disposed": false,
+            "sourceKind": "owned-rgba",
+            "snapshots": 62,
+            "watching": false,
+            "frameReady": true,
+            "mediaTime": 0.707189,
+            "captureFailure": false,
+            "registration": "picture-match-study",
+            "registeredFrame": null,
+            "registrationMetrics": {
+              "calls": 3,
+              "matches": 3,
+              "rejected": 0,
+              "cached": 0,
+              "frame": null,
+              "disposed": false
+            },
+            "owned": {
+              "created": 63,
+              "closed": 63,
+              "held": 0,
+              "maxHeld": 1,
+              "published": 63,
+              "duplicates": 0,
+              "unavailable": 0,
+              "discarded": 0,
+              "failures": 0,
+              "rgbaCopies": 0,
+              "canvasCopies": 63,
+              "pending": false,
+              "ready": true,
+              "disposed": false,
+              "time": 0.719643
+            }
+          },
+          "lines": [
+            {
+              "duration": 0.2,
+              "draws": 16,
+              "state": {
+                "ready": true,
+                "active": true,
+                "opening": 0.8314680744787892,
+                "draws": 16,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 79,
+                "watching": false,
+                "frameReady": true,
+                "mediaTime": 0.912362,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": 21,
+                "registrationMetrics": {
+                  "calls": 19,
+                  "matches": 9,
+                  "rejected": 0,
+                  "cached": 10,
+                  "frame": 21,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 80,
+                  "closed": 80,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 80,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 80,
+                  "pending": false,
+                  "ready": true,
+                  "disposed": false,
+                  "time": 0.921862
+                }
+              },
+              "stopped": {
+                "ready": true,
+                "active": false,
+                "opening": 0,
+                "draws": 16,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 79,
+                "watching": false,
+                "frameReady": false,
+                "mediaTime": null,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": null,
+                "registrationMetrics": {
+                  "calls": 19,
+                  "matches": 9,
+                  "rejected": 0,
+                  "cached": 10,
+                  "frame": null,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 80,
+                  "closed": 80,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 80,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 80,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": false,
+                  "time": null
+                }
+              }
+            },
+            {
+              "duration": 0.2,
+              "draws": 18,
+              "state": {
+                "ready": true,
+                "active": true,
+                "opening": 0.8324667353622646,
+                "draws": 34,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 108,
+                "watching": false,
+                "frameReady": true,
+                "mediaTime": 1.228001,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": 29,
+                "registrationMetrics": {
+                  "calls": 37,
+                  "matches": 15,
+                  "rejected": 0,
+                  "cached": 22,
+                  "frame": 29,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 109,
+                  "closed": 109,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 109,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 109,
+                  "pending": false,
+                  "ready": true,
+                  "disposed": false,
+                  "time": 1.236984
+                }
+              },
+              "stopped": {
+                "ready": true,
+                "active": false,
+                "opening": 0,
+                "draws": 34,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 108,
+                "watching": false,
+                "frameReady": false,
+                "mediaTime": null,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": null,
+                "registrationMetrics": {
+                  "calls": 37,
+                  "matches": 15,
+                  "rejected": 0,
+                  "cached": 22,
+                  "frame": null,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 109,
+                  "closed": 109,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 109,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 109,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": false,
+                  "time": null
+                }
+              }
+            },
+            {
+              "duration": 0.5,
+              "draws": 45,
+              "state": {
+                "ready": true,
+                "active": true,
+                "opening": 0.8499408525387256,
+                "draws": 79,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 165,
+                "watching": false,
+                "frameReady": true,
+                "mediaTime": 1.843968,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": 43,
+                "registrationMetrics": {
+                  "calls": 82,
+                  "matches": 27,
+                  "rejected": 0,
+                  "cached": 55,
+                  "frame": 43,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 166,
+                  "closed": 166,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 166,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 166,
+                  "pending": false,
+                  "ready": true,
+                  "disposed": false,
+                  "time": 1.85348
+                }
+              },
+              "stopped": {
+                "ready": true,
+                "active": false,
+                "opening": 0,
+                "draws": 79,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 165,
+                "watching": false,
+                "frameReady": false,
+                "mediaTime": null,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": null,
+                "registrationMetrics": {
+                  "calls": 82,
+                  "matches": 27,
+                  "rejected": 0,
+                  "cached": 55,
+                  "frame": null,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 166,
+                  "closed": 166,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 166,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 166,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": false,
+                  "time": null
+                }
+              }
+            },
+            {
+              "duration": 0.2,
+              "draws": 18,
+              "state": {
+                "ready": true,
+                "active": true,
+                "opening": 0.8333419963124713,
+                "draws": 97,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 194,
+                "watching": false,
+                "frameReady": true,
+                "mediaTime": 2.154063,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": 51,
+                "registrationMetrics": {
+                  "calls": 100,
+                  "matches": 32,
+                  "rejected": 0,
+                  "cached": 68,
+                  "frame": 51,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 195,
+                  "closed": 195,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 195,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 195,
+                  "pending": false,
+                  "ready": true,
+                  "disposed": false,
+                  "time": 2.165454
+                }
+              },
+              "stopped": {
+                "ready": true,
+                "active": false,
+                "opening": 0,
+                "draws": 97,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 194,
+                "watching": false,
+                "frameReady": false,
+                "mediaTime": null,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": null,
+                "registrationMetrics": {
+                  "calls": 100,
+                  "matches": 32,
+                  "rejected": 0,
+                  "cached": 68,
+                  "frame": null,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 195,
+                  "closed": 195,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 195,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 195,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": false,
+                  "time": null
+                }
+              }
+            },
+            {
+              "duration": 1,
+              "draws": 91,
+              "state": {
+                "ready": true,
+                "active": true,
+                "opening": 0.8499999951724688,
+                "draws": 188,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 296,
+                "watching": false,
+                "frameReady": true,
+                "mediaTime": 3.259231,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": 77,
+                "registrationMetrics": {
+                  "calls": 191,
+                  "matches": 56,
+                  "rejected": 0,
+                  "cached": 135,
+                  "frame": 77,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 297,
+                  "closed": 297,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 297,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 297,
+                  "pending": false,
+                  "ready": true,
+                  "disposed": false,
+                  "time": 3.269549
+                }
+              },
+              "stopped": {
+                "ready": true,
+                "active": false,
+                "opening": 0,
+                "draws": 188,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 296,
+                "watching": false,
+                "frameReady": false,
+                "mediaTime": null,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": null,
+                "registrationMetrics": {
+                  "calls": 191,
+                  "matches": 56,
+                  "rejected": 0,
+                  "cached": 135,
+                  "frame": null,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 297,
+                  "closed": 297,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 297,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 297,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": false,
+                  "time": null
+                }
+              }
+            },
+            {
+              "duration": 0.2,
+              "draws": 17,
+              "state": {
+                "ready": true,
+                "active": true,
+                "opening": 0.8296151357718661,
+                "draws": 205,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 324,
+                "watching": false,
+                "frameReady": true,
+                "mediaTime": 3.563497,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": 84,
+                "registrationMetrics": {
+                  "calls": 208,
+                  "matches": 60,
+                  "rejected": 0,
+                  "cached": 148,
+                  "frame": 84,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 325,
+                  "closed": 325,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 325,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 325,
+                  "pending": false,
+                  "ready": true,
+                  "disposed": false,
+                  "time": 3.575993
+                }
+              },
+              "stopped": {
+                "ready": true,
+                "active": false,
+                "opening": 0,
+                "draws": 205,
+                "disposed": false,
+                "sourceKind": "owned-rgba",
+                "snapshots": 324,
+                "watching": false,
+                "frameReady": false,
+                "mediaTime": null,
+                "captureFailure": false,
+                "registration": "picture-match-study",
+                "registeredFrame": null,
+                "registrationMetrics": {
+                  "calls": 208,
+                  "matches": 60,
+                  "rejected": 0,
+                  "cached": 148,
+                  "frame": null,
+                  "disposed": false
+                },
+                "owned": {
+                  "created": 325,
+                  "closed": 325,
+                  "held": 0,
+                  "maxHeld": 1,
+                  "published": 325,
+                  "duplicates": 0,
+                  "unavailable": 0,
+                  "discarded": 0,
+                  "failures": 0,
+                  "rgbaCopies": 0,
+                  "canvasCopies": 325,
+                  "pending": false,
+                  "ready": false,
+                  "disposed": false,
+                  "time": null
+                }
+              }
+            }
+          ],
+          "final": {
+            "ready": true,
+            "active": false,
+            "opening": 0,
+            "draws": 205,
+            "disposed": false,
+            "sourceKind": "owned-rgba",
+            "snapshots": 334,
+            "watching": false,
+            "frameReady": true,
+            "mediaTime": 3.669378,
+            "captureFailure": false,
+            "registration": "picture-match-study",
+            "registeredFrame": null,
+            "registrationMetrics": {
+              "calls": 208,
+              "matches": 60,
+              "rejected": 0,
+              "cached": 148,
+              "frame": null,
+              "disposed": false
+            },
+            "owned": {
+              "created": 335,
+              "closed": 335,
+              "held": 0,
+              "maxHeld": 1,
+              "published": 335,
+              "duplicates": 0,
+              "unavailable": 0,
+              "discarded": 0,
+              "failures": 0,
+              "rgbaCopies": 0,
+              "canvasCopies": 335,
+              "pending": false,
+              "ready": true,
+              "disposed": false,
+              "time": 3.680788
+            }
+          },
+          "stage": {
+            "black": false,
+            "suspended": false,
+            "level": 1,
+            "draws": 336,
+            "layers": [
+              {
+                "id": "character",
+                "opacity": 1,
+                "blend": "source-over",
+                "visible": true,
+                "kind": "character",
+                "scale": 1,
+                "x": 0,
+                "y": 0
+              }
+            ]
+          },
+          "disposed": {
+            "ready": false,
+            "active": false,
+            "opening": 0,
+            "draws": 205,
+            "disposed": true,
+            "sourceKind": "owned-rgba",
+            "snapshots": 334,
+            "watching": false,
+            "frameReady": false,
+            "mediaTime": null,
+            "captureFailure": false,
+            "registration": "picture-match-study",
+            "registeredFrame": null,
+            "registrationMetrics": {
+              "calls": 208,
+              "matches": 60,
+              "rejected": 0,
+              "cached": 148,
+              "frame": null,
+              "disposed": true
+            },
+            "owned": {
+              "created": 335,
+              "closed": 335,
+              "held": 0,
+              "maxHeld": 1,
+              "published": 335,
+              "duplicates": 0,
+              "unavailable": 0,
+              "discarded": 0,
+              "failures": 0,
+              "rgbaCopies": 0,
+              "canvasCopies": 335,
+              "pending": false,
+              "ready": false,
+              "disposed": true,
+              "time": null
+            }
+          },
+          "scope": "Actual movie + native WebAudio short zero-sample lines and authored synthetic AH weights, shared detached frame source and actual silent output. No provider/visual/phoneme/physical acceptance."
+        },
+        "remote": {
+          "media": 0,
+          "state": {
+            "silent": true,
+            "stopped": true,
+            "stale": false,
+            "stalls": 0,
+            "width": 1280,
+            "height": 720,
+            "owner": false
+          }
+        }
+      }
+    }
+  },
+  "validation": [
+    "All122 actual source-frame IDs remain covered by the separate canonical browser audit, including Linux.",
+    "Nine preparation guard/fault cases pass locally; cancellation occurs at1of3 checkpoints, not after completion.",
+    "Six mock-provider/native-zero-PCM lines, actor reuse, EOS, Stop and ambience return pass in both built browser runs. Two actual successful canonical preparation records are retained outside browser cleanup and tied to compiled director SHA.",
+    "Public build credential/path/import checks and121 suite shard coverage pass."
+  ],
+  "remaining": [
+    "Full Linux app diagnostic for this exact integration.",
+    "Human approved painted face design is still not animated/integrated; moving-mouth review remains open.",
+    "Scary mouth,16 final cues/joins, genuine voice and physical projection acceptance remain unfinished."
+  ],
+  "spend": {
+    "runwayCredits": 0,
+    "providerSpeechCalls": 0
+  },
+  "deployment": "none"
+}

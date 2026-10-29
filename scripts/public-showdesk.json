@@ -130,8 +130,8 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/director.mjs",
       "destination": "director.mjs",
-      "bytes": 15359,
-      "sha256": "4e872eb5a7129320a9c873e7e320b04d9b99f65479dd78a7ee51918a4e7ee945",
+      "bytes": 15791,
+      "sha256": "4d248d1d5b6c1a816b6fd9fc399978724d72443655d452cf4929bda2d605880c",
       "rewrites": [
         {
           "from": "../tonight-demo/paired-controls.mjs",
@@ -158,11 +158,11 @@
           "to": "../wisp-mouth-study/prepare-native-picture-profile.mjs"
         },
         {
-          "from": "../../wisp-art-reference/painted-speech-study/native-picture-registration.mjs",
-          "to": "../wisp-mouth-study/native-picture-registration.mjs"
+          "from": "../../wisp-art-reference/painted-speech-study/native-lip-mesh-study/friendly-v28-canonical-head-samples-v1.json",
+          "to": "../wisp-mouth-study/friendly-v28-canonical-head-samples-v1.json"
         }
       ],
-      "publishedSha256": "fe7ab9784c41be99d0317e0405785c349badb49133e5db93229fdec22a3a9ca5"
+      "publishedSha256": "9ebdc867f279360382f647e9cf034be2f4109c832678cf036743c495c1436618"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/director.css",
