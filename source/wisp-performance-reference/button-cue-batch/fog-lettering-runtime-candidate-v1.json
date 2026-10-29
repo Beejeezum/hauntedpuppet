@@ -1,0 +1,61 @@
+{
+  "file": "fog-lettering-runtime-candidate-v1.mp4",
+  "sha256": "238c41a03bff96ce54957422f1d3fe99f679894b9e64749dc9865a1edccf4931",
+  "source": "fog-lettering-pilot-v2.mp4",
+  "sourceSha256": "af9d2e082ec764d9f81162fc89acb2114d4a19fdd15102b8dfba1f47d7e88b8b",
+  "status": "source-only review candidate; human visual/sound review pending",
+  "sourceFrames": 241,
+  "frameCount": 265,
+  "fps": 24,
+  "addedBlackFramesEachEnd": 12,
+  "processing": "Complete source frame order at native24fps; global RGB black point16 with linear expansion; whole un-cropped picture fixed60percent fit centered on1280x720 black. No animated scaling, retiming, reversal, interpolation, spatial smoke mask or body crossfade. Video encoded once, then copied into embedded-audio movie.",
+  "sourceOuterThreePixelMaximumRGB": 15,
+  "audio": {
+    "file": "fog-lettering-dry-air-v1.wav",
+    "sha256": "23cc17026deda94171619d118691694521ff901dfd1fa8844cdad83b57f5c058",
+    "sampleRate": 48000,
+    "samples": 530000,
+    "peak": 0.16,
+    "seed": 68192,
+    "events": [
+      {
+        "label": "vapor gathers",
+        "start": 1.15,
+        "end": 4.8,
+        "peak": 0.09,
+        "highpassHz": 350,
+        "lowpassHz": 3000
+      },
+      {
+        "label": "letters breathe",
+        "start": 4.3,
+        "end": 6.9,
+        "peak": 0.035,
+        "highpassHz": 500,
+        "lowpassHz": 2400
+      },
+      {
+        "label": "letter strokes disperse",
+        "start": 7.0,
+        "end": 10.0,
+        "peak": 0.16,
+        "highpassHz": 200,
+        "lowpassHz": 3500
+      }
+    ],
+    "recipe": "Deterministic shaped broadband dry air with stereo envelopes; no speech, notes, music or choir."
+  },
+  "humanApproval": false,
+  "runtimePublication": false,
+  "additionalGenerationCredits": 0,
+  "scope": "Static stage calibration and black-point grade require human review for smoke detail, size and projection brightness. Sound is synthesized, not an acoustic approval. Native film remains unchanged. No arbitrary cue-join or physical projection acceptance.",
+  "encodedAudio": {
+    "decodedSamples": 530432,
+    "sampleRate": 48000,
+    "peak": 0.160098135471344,
+    "clippedSamples": 0,
+    "firstHalfSecondPeak": 0.0,
+    "lastHalfSecondPeak": 0.0,
+    "scope": "Encoded audio waveform only; not human sound acceptance."
+  }
+}

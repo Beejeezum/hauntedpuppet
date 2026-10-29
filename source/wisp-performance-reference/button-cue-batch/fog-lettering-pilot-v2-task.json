@@ -1,6 +1,6 @@
 {
   "taskId": "a45c066b-5f98-4442-a368-d3e6aa25382e",
-  "status": "submitted",
+  "status": "SUCCEEDED",
   "workspace": {
     "id": 1709631,
     "name": "Bruce"
@@ -13,5 +13,8 @@
   "observedDebit": 150,
   "reason": "One targeted lower-cost text-only replacement for rejected opaque/clipped v1 lettering. Small50%x40% central vapor envelope, empty first/last second, static camera, no music.",
   "admitted": false,
-  "doNotDuplicate": true
+  "doNotDuplicate": true,
+  "rawFile": "fog-lettering-pilot-v2.mp4",
+  "rawSha256": "af9d2e082ec764d9f81162fc89acb2114d4a19fdd15102b8dfba1f47d7e88b8b",
+  "rawTechnicalStatus": "Rejected raw matte/framing; contained complete source staged and graded into separate review candidate; not admitted."
 }

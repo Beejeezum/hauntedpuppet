@@ -1,0 +1,39 @@
+{
+  "results": {
+    "chromium": {
+      "passed": true,
+      "result": {
+        "width": 1280,
+        "height": 720,
+        "duration": 11.041667,
+        "uniqueTimes": 265,
+        "lastTime": 11,
+        "peak": 219,
+        "headPeak": 0,
+        "tailPeak": 0,
+        "muted": true,
+        "audioTracks": null,
+        "remainingVideos": 0
+      },
+      "scope": "Complete11second native embedded-audio movie played muted; advancing pictures, visible center effect, black handles, retirement. Not acoustic listening, accepted typography/smoke, arbitrary cue joins or physical projection."
+    },
+    "webkit": {
+      "passed": true,
+      "result": {
+        "width": 1280,
+        "height": 720,
+        "duration": 11.042,
+        "uniqueTimes": 257,
+        "lastTime": 11,
+        "peak": 247,
+        "headPeak": 0,
+        "tailPeak": 0,
+        "muted": true,
+        "audioTracks": 1,
+        "remainingVideos": 0
+      },
+      "scope": "Complete11second native embedded-audio movie played muted; advancing pictures, visible center effect, black handles, retirement. Not acoustic listening, accepted typography/smoke, arbitrary cue joins or physical projection."
+    }
+  },
+  "scope": "Whole movie native browser playback only, hardware-muted; human typography/motion/sound and physical projection pending."
+}
