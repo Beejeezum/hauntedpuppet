@@ -1,0 +1,35 @@
+{
+  "run": 40795654931,
+  "head": "724977e833afbac34c1bc1d809a227642cb69add",
+  "status": "completed",
+  "conclusion": "failure",
+  "originalFilm": {
+    "mouthRequested": false,
+    "speechStage": "voice request",
+    "mediaTime": 0.687316898,
+    "phase": "preparing"
+  },
+  "mouthStudy": {
+    "speechStage": "status",
+    "phase": "preparing"
+  },
+  "effectImport": {
+    "pending": 1,
+    "lastFailure": null
+  },
+  "passed": [
+    "PCM parser/offline resampling",
+    "single transport core",
+    "effect cancellation lifecycle",
+    "authored bridge",
+    "saved playlist"
+  ],
+  "interpretation": [
+    "Original-film baseline also fails, so loading the old mouth WebGL study is not the sole cause.",
+    "Both network request progression and native video clocks stall while JS state remains inspectable.",
+    "Effect import remains pending without reaching bounded native readiness failure.",
+    "Next isolate real local HTTP mock responses from Playwright request interception while retaining the existing gate.",
+    "New native-face browser surface not included in this exact head; Linux evidence remains missing."
+  ],
+  "productionApproved": false
+}
