@@ -1,0 +1,21 @@
+{
+  "run": "https://github.com/Beejeezum/hauntedpuppet/actions/runs/40788446298",
+  "head": "a3d8f93fbec4dd1681fc6bf0e0ad4e4d30c318f8",
+  "status": "failed; default player not migrated",
+  "passed": [
+    "Complete authored multi-film bridge and visible arrival",
+    "Saved-show launch via bounded phone controller path"
+  ],
+  "failures": [
+    "Standalone core fixture first frame (no phase snapshot in this run)",
+    "Typed prompt-line playing phase wait",
+    "Video-effect import: readyState0/currentTime0, no native playing event"
+  ],
+  "evidence": {
+    "showdesk-single-webkit-failure.json": "538d0bae1779a0d48266b01696e6b82743d350ee6040f313e1bb915e884456ab",
+    "phone-saved-playlist-single-webkit.json": "90eebe716000a451eb865ce609b379caca7e956567d269d78f3025de2d23c1a8",
+    "catalog-bridge-single-webkit.json": "56faef93cca6fa76e3bad8868a3750f219ded0f9b0cb22409aef28d980380ae2"
+  },
+  "nextChanges": "Core fixture media is now on-screen and compositor actually renders. Effects explicitly initialize preload/load and yield before play. Added bounded phase/network/readiness/native speech-start/ended observations; deadlines and assertions unchanged. These are hypotheses until rerun.",
+  "scope": "Linux WebKit diagnostic. Not a complete release, human visual/voice or physical projection test."
+}

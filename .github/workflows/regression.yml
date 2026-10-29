@@ -429,6 +429,7 @@ jobs:
         run: |
           failed=0
           node tests/single_pipeline_transport.cjs || failed=1
+          node tests/effect_import_cancel.cjs || failed=1
           node tests/catalog_bridge_browser.cjs || failed=1
           node tests/phone_saved_playlist.cjs || failed=1
           node tests/phone_director_player.cjs || failed=1
@@ -447,6 +448,8 @@ jobs:
             test-results/finite-cue-study-*.json
             test-results/finite-cue-study-ui.png
             test-results/single-pipeline-*.json
+            test-results/effect-import-cancel-*.json
             test-results/catalog-bridge-single-*.json
             test-results/phone-saved-playlist-single-*.json
+            test-results/phone-director-player-single-*.json
             test-results/showdesk-single-*.json
