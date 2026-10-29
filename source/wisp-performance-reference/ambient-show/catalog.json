@@ -519,9 +519,9 @@
       ],
       "media": "../button-cue-batch/resident-wave-study/idle-wave-idle-review-v1.mp4",
       "sha256": "9034c2389242fadc596960249c026c348e290546c400101651408aeb1d017b5a",
-      "status": "resident-motion-review-pending",
+      "status": "resident-motion-revision-required",
       "reviewMetadata": "../button-cue-batch/resident-wave-study/idle-wave-idle-review-v1.json",
-      "scope": "Complete485frame20.21second no-fade idle-wave-idle picture proof. New241frame wave with exact existing idle boundary references. No blank/poof/fades/animatedresize/interpolation/bodycrossfade. Native wave20percentreserve, context15percent hardreserve/18.89minimum. FullChrome/MacWebKit native playback passes. Human acting/twojoins review pending; silent/noSFX yet; not a dynamicbuttonplayer, nativeidleloop or productionclip approval."
+      "scope": "Complete485frame20.21second no-fade idle-wave-idle picture proof. New241frame wave with exact existing idle boundary references. No blank/poof/fades/animatedresize/interpolation/bodycrossfade. Native wave20percentreserve, context15percent hardreserve/18.89minimum. FullChrome/MacWebKit native playback passes. Human acting/twojoins review pending; silent/noSFX yet; not a dynamicbuttonplayer, nativeidleloop or productionclip approval. Human review rejects pauses/stiffness. Native playback and matching silhouettes do not approve motion; keep this take out of resident delivery."
     }
   ],
   "deferredClips": [

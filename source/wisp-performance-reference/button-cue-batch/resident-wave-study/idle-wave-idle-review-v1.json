@@ -1,7 +1,7 @@
 {
   "file": "idle-wave-idle-review-v1.mp4",
   "sha256": "9034c2389242fadc596960249c026c348e290546c400101651408aeb1d017b5a",
-  "status": "private silent two-join review; not resident delivery approval",
+  "status": "human rejected perceived pauses/stiff motion; technical native continuity does not approve acting",
   "frames": 485,
   "fps": 24,
   "size": [
@@ -105,11 +105,16 @@
     "contextTargetEvidence": "idle-wave-idle-envelope-v1.json",
     "contextHardReserveEvidence": "idle-wave-idle-hard-buffer-v1.json"
   },
-  "humanReview": "pending",
+  "humanReview": "revision-required",
   "generation": {
     "taskId": "4f780408-2195-4ec3-a706-d6e1683bea9d",
     "workspaceId": 1709631,
     "observedDebit": 170,
     "scope": "New wave only; both full idles reused from existing painted review."
+  },
+  "humanFeedback": {
+    "quote": "It pauses or the motion feels stiff",
+    "scope": "20second idle-wave-idle motion review, no sound",
+    "next": "Keep continuous full-body/fog energy through handoff; remove long restrained settling/anticipation. Do not cover the pause with fades or reinterpret frame-difference tests as approval."
   }
 }

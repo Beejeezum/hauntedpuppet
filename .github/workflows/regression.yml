@@ -17,6 +17,10 @@ on:
         description: Compare the original painted film native looping and explicit replay only
         type: boolean
         default: false
+      native_resident_pilot:
+        description: Test the private rolling resident action clock only
+        type: boolean
+        default: false
       native_finite_pilot:
         description: Test source-only finite-cue MediaSource playback (overrides the seek pilot)
         type: boolean
@@ -479,7 +483,7 @@ jobs:
       - name: Build exact public fixtures
         run: node tests/public_build.cjs
       - name: Check actual native soundtrack and complete bridge
-        if: ${{ !inputs.native_loop_pilot && !inputs.native_atlas_pilot && !inputs.native_finite_pilot && !inputs.native_single_pipeline }}
+        if: ${{ !inputs.native_resident_pilot && !inputs.native_loop_pilot && !inputs.native_atlas_pilot && !inputs.native_finite_pilot && !inputs.native_single_pipeline }}
         env:
           DEBUG: pw:browser
           GST_DEBUG: autoaudiosink:5,pulsesink:4,webkitmediaplayer:3
@@ -497,6 +501,11 @@ jobs:
           HAUNT_BROWSER=webkit node tests/native_film_loop.cjs || failed=1
           HAUNT_BROWSER=webkit HAUNT_EXPLICIT_LOOP=1 node tests/native_film_loop.cjs || failed=1
           exit "$failed"
+      - name: Check rolling resident action clock (not release acceptance)
+        if: ${{ inputs.native_resident_pilot }}
+        run: |
+          node tests/rolling_resident_timeline.cjs
+          HAUNT_BROWSER=webkit node tests/resident_action_player.cjs
       - name: Check one-decoder source study (not release acceptance)
         if: ${{ inputs.native_atlas_pilot && !inputs.native_finite_pilot && !inputs.native_single_pipeline }}
         run: |
@@ -601,5 +610,6 @@ jobs:
             work/scary-container/*.json
             work/native-video-switch/*.json
             work/native-film-loop/*.json
+            work/resident-action-player/*.json
             work/native-media-gstreamer*.log
             work/owned-director-preparation/*.json

@@ -23,5 +23,6 @@
   ],
   "rawFrames": 241,
   "fps": 24,
-  "humanReview": "pending"
+  "humanReview": "revision-required",
+  "humanFeedback": "It pauses or the motion feels stiff"
 }
