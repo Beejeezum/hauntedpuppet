@@ -26,7 +26,7 @@ export class OwnedVideoFrameSource{
     job.stage="validate-frame";const width=frame.displayWidth,height=frame.displayHeight,time=frame.timestamp/1e6;
     if(!Number.isSafeInteger(width)||!Number.isSafeInteger(height)||width<1||height<1||width*height>this.maxPixels||!Number.isFinite(time)||time<0)throw Error('Invalid owned picture');
     if(this.packet?.time===time&&this.packet.width===width&&this.packet.height===height){this.stats.duplicates++;return this.packet;}
-    job.stage='select-copy';const options={format:'RGBA',layout:[{offset:0,stride:width*4}]};let packed=false;try{packed=frame.allocationSize(options)===width*height*4}catch{}
+    job.stage='select-copy';const options={format:'RGBA',layout:[{offset:0,stride:width*4}]};let packed=false;try{packed=['RGBA','RGBX'].includes(frame.format)&&frame.allocationSize(options)===width*height*4}catch{}
     let pixels,method;
     if(packed){
      const bytes=this.bytes?.length===width*height*4?this.bytes:new Uint8ClampedArray(width*height*4);this.bytes=bytes;
@@ -35,7 +35,9 @@ export class OwnedVideoFrameSource{
      job.stage='validate-layout';if(layout.length!==1||layout[0].offset!==0||layout[0].stride!==width*4)throw Error('Owned RGBA layout unavailable');
      job.stage='create-image-data';pixels=new ImageData(bytes,width,height);method='rgba';
     }else{
-     // Some engines ignore requested RGBA conversion for NV12. Let native
+     // Allocation size does not guarantee RGBA conversion: Linux WebKit
+     // BGRX can report packed size then reject copyTo. Only native RGBA/RGBX
+     // use the packed path. Let native
      // Canvas convert, read pixels, then clear the native-frame scratch target.
      job.stage='canvas-convert';this.scratch.width=width;this.scratch.height=height;
      try{this.scratchCtx.drawImage(frame,0,0,width,height);pixels=this.scratchCtx.getImageData(0,0,width,height);}finally{this.scratch.width=this.scratch.width;}
