@@ -1,0 +1,12 @@
+{
+  "status": "rejected_visual_attachment",
+  "feedback": "and looks pasted on a bit too much",
+  "context": "Latest moving speaking mouth proof; prior feedback also identifies drift. Do not infer approval of native painted surface proof.",
+  "requirements": [
+    "Mouth must belong to the moving painted face, with stable head-local registration.",
+    "Lip, cheek and jaw deformation must act together without a rectangular face replacement or separate sticker-like aperture.",
+    "Match painted texture, softness and shading through motion, blinks and closed-mouth recovery."
+  ],
+  "release_gate": "No promotion to approved/live default until a new moving speech proof passes human review.",
+  "scope": "Visual feedback only; not provider, acoustic or physical projection acceptance."
+}

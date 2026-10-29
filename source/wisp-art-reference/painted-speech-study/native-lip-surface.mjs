@@ -38,6 +38,10 @@ export class NativeLipSurface{
  if(this.canvas.width!==f.width||this.canvas.height!==f.height){this.canvas.width=this.crop.width=f.width;this.canvas.height=this.crop.height=f.height;}const c=this.crop.getContext('2d');c.clearRect(0,0,f.width,f.height);c.drawImage(snapshot,f.x,f.y,f.width,f.height,0,0,f.width,f.height);
  g.useProgram(this.program);g.viewport(0,0,f.width,f.height);g.activeTexture(g.TEXTURE0);g.bindTexture(g.TEXTURE_2D,this.textures[0]);g.texImage2D(g.TEXTURE_2D,0,g.RGBA,g.RGBA,g.UNSIGNED_BYTE,this.crop);g.activeTexture(g.TEXTURE1);g.bindTexture(g.TEXTURE_2D,this.textures[1]);g.texImage2D(g.TEXTURE_2D,0,g.RGBA,f.columns,1,0,g.RGBA,g.UNSIGNED_BYTE,f.packed);g.uniform2f(this.uniforms.size,f.width,f.height);for(const key of ['mouthLeft','mouthWidth','columns'])g.uniform1f(this.uniforms[key],f[key]);g.uniform1f(this.uniforms.opening,Math.min(1,opening));g.drawArrays(g.TRIANGLE_STRIP,0,4);ctx.drawImage(this.canvas,f.x,f.y);this.draws++;return true;
  }
+ releaseFramePixels(){
+  if(this.disposed)return;this.crop.width=this.crop.width;
+  const g=this.gl;if(g.isContextLost())return;g.activeTexture(g.TEXTURE0);g.bindTexture(g.TEXTURE_2D,this.textures[0]);g.texImage2D(g.TEXTURE_2D,0,g.RGBA,1,1,0,g.RGBA,g.UNSIGNED_BYTE,new Uint8Array([0,0,0,255]));
+ }
  inspect(){return{ready:this.ready,draws:this.draws,disposed:this.disposed,sourceOnly:true};}
  dispose(){if(this.disposed)return;this.disposed=true;this.ready=false;this.abort?.abort();const g=this.gl;if(g){for(const t of this.textures||[])g.deleteTexture(t);for(const s of this.shaders||[])g.deleteShader(s);if(this.buffer)g.deleteBuffer(this.buffer);if(this.program)g.deleteProgram(this.program);g.getExtension('WEBGL_lose_context')?.loseContext();}this.frames=null;this.canvas.width=this.canvas.height=this.crop.width=this.crop.height=1;}
 }

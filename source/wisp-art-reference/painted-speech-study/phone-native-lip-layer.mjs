@@ -21,6 +21,10 @@ export class PhoneNativeLipLayer extends PhonePaintedMouthLayer{
   const ctx=this.canvas.getContext('2d');ctx.drawImage(this.snapshot,0,0);if(!this.mouth.draw(ctx,this.snapshot,this.mediaTime,opening))return this.snapshot;this.draws++;return this.canvas;
  }
  inspect(){return{...super.inspect(),sourceKind:'native-pixels',snapshots:this.snapshots,watching:!!this.video,frameReady:this.frameReady,mediaTime:this.mediaTime,captureFailure:this.captureFailure};}
- stop(){this.unwatch();super.stop();}
+ stop(){this.unwatch();super.stop();
+  // Retire captured movie pixels, not just their timestamps/callbacks. Keep the
+  // reusable oral artwork/program ready for the next independently owned line.
+  if(this.snapshot)this.snapshot.width=this.snapshot.width;this.mouth.releaseFramePixels();
+ }
  dispose(){if(this.disposed)return;super.dispose();this.snapshot.width=this.snapshot.height=1;}
 }

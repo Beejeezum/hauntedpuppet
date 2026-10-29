@@ -20,6 +20,6 @@ export class PhonePaintedMouthLayer{
   const ctx=this.canvas.getContext('2d');ctx.drawImage(video,0,0);if(!this.mouth.draw(ctx,video,this.weights))return null;this.draws++;return this.canvas;
  }
  inspect(){return{ready:this.mouth.surface?.ready??this.mouth.ready,active:!!this.graph,opening:1-(this.weights.rest??1),draws:this.draws,disposed:this.disposed};}
- stop(){const g=this.graph;this.graph=null;if(g){try{g.source.disconnect(g.analyser)}catch{}g.analyser.disconnect();g.mute.disconnect();g.cues.dispose();}this.weights={rest:1};}
+ stop(){const g=this.graph;this.graph=null;if(g){try{g.source.disconnect(g.analyser)}catch{}g.analyser.disconnect();g.mute.disconnect();g.cues.dispose();}this.weights={rest:1};this.canvas.width=this.canvas.width;}
  dispose(){if(this.disposed)return;this.stop();this.disposed=true;this.mouth.dispose();this.canvas.width=this.canvas.height=1;}
 }

@@ -32,15 +32,15 @@
     {
       "source": "source/wisp-art-reference/painted-speech-study/phone-painted-mouth-layer.mjs",
       "destination": "phone-painted-mouth-layer.mjs",
-      "bytes": 2650,
-      "sha256": "5f97b24b313bd170b9daae376a9c3111edd31a2f68c026678d8a36a5a9f76650",
+      "bytes": 2686,
+      "sha256": "ba91ca4bf68c7873ed8579da62530e303a965a755530823e6a35ce0f0ed90bea",
       "rewrites": [
         {
           "from": "../../../assets/acoustic-mouth.js",
           "to": "/assets/acoustic-mouth.js"
         }
       ],
-      "publishedSha256": "32e4c6dd77062d3bf3524ac811ce54fce82b18fa6ec94d733ca87ce1309ba829"
+      "publishedSha256": "80c4869d7a11c83585beaf81d2091eb09882af993b56bf278e9f17209228ea22"
     },
     {
       "source": "source/wisp-art-reference/painted-speech-study/wisp-friendly-speaking-study-v2.png",
@@ -73,9 +73,9 @@
     {
       "source": "source/wisp-art-reference/painted-speech-study/phone-native-lip-layer.mjs",
       "destination": "phone-native-lip-layer.mjs",
-      "bytes": 2540,
-      "sha256": "42b377d90d8a81604ea78ef830c343197a600d10454327edc26683bb0dbc1eb6",
-      "publishedSha256": "42b377d90d8a81604ea78ef830c343197a600d10454327edc26683bb0dbc1eb6"
+      "bytes": 2795,
+      "sha256": "95613d4ae64d205a15ec11247d2a4f63d2e5ae73853d6d375019c17f46327fba",
+      "publishedSha256": "95613d4ae64d205a15ec11247d2a4f63d2e5ae73853d6d375019c17f46327fba"
     },
     {
       "source": "source/wisp-art-reference/painted-speech-study/native-lip-surface.mjs",
@@ -86,9 +86,9 @@
           "to": "friendly-native-lip-candidates-v1.json"
         }
       ],
-      "bytes": 8590,
-      "sha256": "058719240bbb22e7167666efedb0e71d030a17ceab8850e295d486a7f65c6aa9",
-      "publishedSha256": "218e17354703f223a219cb1621d510085a1e8d5554941ca31fbb8fb6b150ccf2"
+      "bytes": 8888,
+      "sha256": "54546ef5be2089381ecfbb90ac6b99554f3ad5a2e3f6d33bb2f4f2f714077d3c",
+      "publishedSha256": "69629b7ffbf36aebe85dd8ddac20f5f94b4e0d2081e88452f59d1ac92ca9c548"
     },
     {
       "source": "source/wisp-art-reference/painted-speech-study/native-lip-mesh-study/friendly-native-lip-candidates-v1.json",

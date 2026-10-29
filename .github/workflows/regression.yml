@@ -432,6 +432,7 @@ jobs:
           node tests/pcm_voice.cjs || failed=1
           node tests/pcm_voice_browser.cjs || failed=1
           node tests/native_lip_surface_study.cjs || failed=1
+          node tests/native_lip_frame_release.cjs || failed=1
           node tests/mouth_preparation_cancel.cjs || failed=1
           node tests/native_lip_phone.cjs || failed=1
           node tests/single_pipeline_transport.cjs || failed=1
