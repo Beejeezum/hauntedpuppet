@@ -1,0 +1,28 @@
+{
+  "status": "local-regression-pass-linux-app-still-fails",
+  "head": "97c9f49551cc8b2ca64987e7044beeb9da8ef58b",
+  "localDirector": "Chrome and Mac WebKit original full owned-native-director tests pass after format repair; synthetic provider/zero-PCM speech, actual films.",
+  "paintedFace": {
+    "rows": 122,
+    "outsideChanged": 0,
+    "protectedBlueChanged": 0,
+    "maxDrawMs": 5.800000011920929,
+    "scope": "Independent actual source-picture/canonical-match paint test; not phone app integration of new painted rig."
+  },
+  "linux": {
+    "run": 40823967879,
+    "result": "failure",
+    "capturePublished": 752,
+    "captureCreated": 2911,
+    "captureClosed": 2911,
+    "captureFailures": 0,
+    "canonicalPreparationCompleted": 3,
+    "canonicalPreparationTotal": 3,
+    "speechStarts": 2,
+    "nextFailure": "Third speech did not start; scary film load reports operation not supported; GStreamer blob-media-player-2 ERROR code1. Root cause not proven."
+  },
+  "humanReview": "pending",
+  "runtimePublication": false,
+  "physicalProjection": false,
+  "paidCreditsSpent": 0
+}
