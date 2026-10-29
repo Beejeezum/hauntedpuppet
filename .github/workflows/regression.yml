@@ -25,6 +25,10 @@ on:
         description: Run only the owned-picture director within the single-pipeline diagnostic
         type: boolean
         default: false
+      native_container_pilot:
+        description: Compare original and lossless faststart scary-container decoding only
+        type: boolean
+        default: false
       native_director_visibility:
         description: Select foreground window in the director diagnostic only
         type: choice
@@ -452,6 +456,10 @@ jobs:
           GST_DEBUG_NO_COLOR: '1'
         run: |
           node scripts/inspect-native-video-switch.cjs
+          if [ "${{ inputs.native_container_pilot }}" = "true" ]; then
+            node tests/native_scary_container.cjs
+            exit $?
+          fi
           if [ "${{ inputs.native_director_pilot }}" = "true" ]; then
             node tests/owned_native_director.cjs
             exit $?
@@ -506,6 +514,7 @@ jobs:
             work/native-picture-preparation/*.json
             work/owned-speaking-player/*.json
             work/owned-native-director-*.json
+            work/scary-container/*.json
             work/native-video-switch/*.json
             work/native-media-gstreamer*.log
             work/owned-director-preparation/*.json

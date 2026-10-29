@@ -1,0 +1,10 @@
+{
+  "status": "container-only-diagnostic-not-runtime-promotion",
+  "sourceSha256": "21e8efec67ec7e024fc954cc16af458cad8f8427553a998341ff9d37286ca35a",
+  "file": "scary-v35-faststart.mp4",
+  "sha256": "ef0760bd64518e0879cca46310defb37b8efe106fb47b9af9b8679c97fa40f8e",
+  "videoEssence": "SHA256=ba7939f96e93707737fcae6763a64988ae2370c76c70d5566e47674b864e3b7d",
+  "videoEssenceIdentical": true,
+  "scope": "Only MP4 container faststart remux. Same compressed picture stream; no new art/motion/sound approval. Linux original-vs-faststart decode comparison pending.",
+  "creditsSpent": 0
+}
