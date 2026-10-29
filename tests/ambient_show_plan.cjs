@@ -8,6 +8,15 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
  for(const show of catalog.shows)assert(show.clipIds.every(id=>catalog.clips.some(c=>c.id===id&&!c.manualOnly)),'Active show references only active non-manual cues');
  assert(catalog.clips.every(c=>c.dialogue===false&&(c.status==='planned'?c.media===null:c.status==='approved'&&c.media?.file&&/^[a-f0-9]{64}$/.test(c.media.sha256))));
  if(catalog.shows[0].clipIds.some(id=>catalog.clips.find(c=>c.id===id)?.status!=='approved'))assert.throws(()=>planShow(catalog,catalog.shows[0].id),/Unavailable/);
+ for(const study of catalog.productionStudies.filter(s=>s.technicalAudit)){
+  const audit=JSON.parse(fs.readFileSync(path.resolve(root,study.technicalAudit),'utf8'));
+  const row=audit.records.find(r=>r.sha256===study.sha256&&r.file===path.basename(study.media));
+  assert(row,'Technical audit must identify these exact candidate bytes');
+  assert.deepEqual(row.failures,[]);assert.equal(row.humanApproval,false);assert.equal(row.runtimeAdmission,false);
+  const metadata=JSON.parse(fs.readFileSync(path.resolve(root,study.reviewMetadata),'utf8'));
+  assert.equal(metadata.sha256,study.sha256);assert.equal(metadata.pcmRepair.videoEssenceVerified,true);
+  assert(catalog.clips.filter(c=>study.plannedClipIds.includes(c.id)).every(c=>c.status==='planned'&&c.media===null),'Technical checks alone must not publish a cue');
+ }
  for(const study of catalog.productionStudies.filter(s=>s.evidence)){
   const mediaPath=path.resolve(root,study.media),evidence=JSON.parse(fs.readFileSync(path.resolve(root,study.evidence),'utf8'));
   assert.equal(require('node:crypto').createHash('sha256').update(fs.readFileSync(mediaPath)).digest('hex'),study.sha256,'Candidate bytes must match the tracked record');

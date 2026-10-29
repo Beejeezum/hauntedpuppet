@@ -387,10 +387,12 @@
       "plannedClipIds": [
         "friendly-drift"
       ],
-      "media": "../button-cue-batch/friendly-drift-candidate-v1.mp4",
-      "sha256": "a2a183ad8f433e74dc14328dd8019beedeb8e04f4519bad4d312a3a5a554a064",
-      "status": "original-motion-endorsed;new-audio-review-pending",
-      "scope": "Original v28 compressed video stream preserved exactly, with soft-air candidate soundtrack. No new animation credits. Human-endorsed motion and loop retained; new audio/exact-file joins still need review. Not a ready catalog slot."
+      "media": "../button-cue-batch/friendly-drift-candidate-v2.mp4",
+      "sha256": "85827639be160901b274eab40493f0229273b3a7d675b18317c11bb6beb3b649",
+      "status": "original-motion-endorsed;pcm-repeat-repaired;new-audio-review-pending",
+      "scope": "Original v28 compressed pictures preserved exactly. Replaced packet-looped MP3 with once-decoded PCM repeats and40ms crossfades, removing two measured25ms timestamp gaps. No new animation credits. New encoded sound and exact-file closing loop still need human review. Not a ready catalog slot.",
+      "reviewMetadata": "../button-cue-batch/friendly-drift-candidate-v2.json",
+      "technicalAudit": "../button-cue-batch/candidate-media-validation-v1.json"
     },
     {
       "plannedClipIds": [
