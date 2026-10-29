@@ -11,12 +11,21 @@
   "audioTailSilenceSeconds": 0.5,
   "audio": {
     "sampleRate": 48000,
-    "peak": 0.24405492842197418,
-    "rmsDbFS": -34.41951370239258,
-    "lastHalfSecondPeak": 0,
-    "scope": "Dry nonmusical air and hand swishes. Choir/music rejected; replacement listening pending."
+    "peak": 0.17930838465690613,
+    "rmsDbFS": -37.422979831911235,
+    "lastHalfSecondPeak": 0.0,
+    "scope": "Actual decoded v3 AAC dry nonmusical fog/hand effects; listening acceptance remains pending."
   },
   "soundRevision": "first-wave-sound-revision-v1.json",
   "processing": "Original compressed video unchanged fromv2; replaces rejected musical soundtrack with deterministic dry fog and hand swishes. See sound revision recipe.",
-  "generationCreditsSpent": 0
+  "generationCreditsSpent": 0,
+  "audioMeasurementCorrection": {
+    "previous": {
+      "peak": 0.24405492842197418,
+      "rmsDbFS": -34.41951370239258,
+      "lastHalfSecondPeak": 0
+    },
+    "basis": "friendly-wave-runtime-candidate-v3-validation.json",
+    "mediaBytesChanged": false
+  }
 }
