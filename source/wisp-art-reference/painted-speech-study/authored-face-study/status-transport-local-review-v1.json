@@ -1,0 +1,32 @@
+{
+  "status": "local-qualification-only-Linux-pending",
+  "route": "pipeline=single&mouth=authored-native&status=xhr",
+  "scope": "Real loopback HTTP, actual painted films, native PCM from synthetic speech fixtures; no real provider/voice/human/physical projection claim. Native non-CPU renderer unchanged; status-only XHR, no automatic retries.",
+  "unit": "tests/director_status_request.cjs",
+  "unitResults": "Chrome/Mac WebKit success,401,malformed,array,oversize,native timeout,pre/pending abort and recovery pass.",
+  "fullAppResults": [
+    {
+      "engine": "chromium",
+      "statusRequests": {
+        "sent": 7,
+        "loaded": 7
+      },
+      "speechStarts": 6,
+      "bodyFramesClosed": true,
+      "graphicsTerminallyDisposed": true,
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "statusRequests": {
+        "sent": 7,
+        "loaded": 7
+      },
+      "speechStarts": 6,
+      "bodyFramesClosed": true,
+      "graphicsTerminallyDisposed": true,
+      "errors": []
+    }
+  ],
+  "productionApproval": false
+}

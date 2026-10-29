@@ -1,5 +1,5 @@
 {
-  "status": "closed-consonant painted material candidate; human review pending",
+  "status": "human-closed-consonant-art-direction-approved-not-runtime-asset",
   "file": "scary-closed-consonant-design-v1.png",
   "sha256": "9008e4d6bcfd780aa6b5a8c97b17297662e01805652829a0463e49bd9107fde6",
   "tool": "built-in image_gen edit",
@@ -38,7 +38,11 @@
     ]
   },
   "projectionReservePass": false,
-  "humanReview": "pending",
+  "humanReview": {
+    "answer": "Yes\u2014use this closed-mouth direction",
+    "questionItem": "call_fd8e18ed59534f39b8b9588c53d0d824:0",
+    "scope": "Static closed-mouth scary identity/material direction. Not native registration, topology, animated speech, reserve/framing or production acceptance."
+  },
   "runtimeIntegration": false,
   "productionApproval": false,
   "next": [

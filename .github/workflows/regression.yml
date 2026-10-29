@@ -25,6 +25,10 @@ on:
         description: Run only the owned-picture director within the single-pipeline diagnostic
         type: boolean
         default: false
+      native_status_xhr:
+        description: Isolate status-only XHR requests with unchanged native playback
+        type: boolean
+        default: false
       native_cpu_pixels:
         description: Test detached native-byte CPU staging for the two pinned Wisp films
         type: boolean
@@ -457,6 +461,7 @@ jobs:
           HAUNT_BROWSER: webkit
           HAUNT_SINGLE_PIPELINE: '1'
           HAUNT_CPU_PIXELS: ${{ inputs.native_cpu_pixels && '1' || '0' }}
+          HAUNT_STATUS_XHR: ${{ inputs.native_status_xhr && '1' || '0' }}
           HAUNT_DIAGNOSTIC_NO_CONTEXT_LOSS: ${{ inputs.native_director_retirement == 'no-context-loss' && '1' || '0' }}
           HAUNT_DIAGNOSTIC_OWNER_FRONT: ${{ inputs.native_director_visibility == 'owner-front' && '1' || '0' }}
           WEBKIT_GST_DISABLE_GL_SINK: ${{ inputs.native_director_retirement == 'software-video-sink' && '1' || '0' }}
@@ -472,6 +477,9 @@ jobs:
           if [ "${{ inputs.native_director_pilot }}" = "true" ]; then
             if [ "${{ inputs.native_authored_face }}" = "true" ]; then
               failed=0
+              if [ "${{ inputs.native_status_xhr }}" = "true" ]; then
+                node tests/director_status_request.cjs || failed=1
+              fi
               if [ "${{ inputs.native_cpu_pixels }}" = "true" ]; then
                 GST_DEBUG_FILE="${GST_DEBUG_FILE%.log}-cpu-source.log" node tests/owned_cpu_video_frame_source.cjs || failed=1
               fi

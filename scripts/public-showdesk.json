@@ -130,8 +130,8 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/director.mjs",
       "destination": "director.mjs",
-      "bytes": 17653,
-      "sha256": "bf6464aa638b1ac221d292370af04ccd7ff8e4f8337fc0c1efed07b40cf0675d",
+      "bytes": 17858,
+      "sha256": "1edf1eb241130ca7566179a2a966e63f814a71b646d8f7a4e17b0698c5ffbb83",
       "rewrites": [
         {
           "from": "../tonight-demo/paired-controls.mjs",
@@ -166,7 +166,7 @@
           "to": "../wisp-mouth-study/phone-authored-painted-layer.mjs"
         }
       ],
-      "publishedSha256": "7c117490104e7233ea1b3db01372452226eb10c4cd74c42580cde19772cadb00"
+      "publishedSha256": "c1fbaad41503eed6416ac3cea6b5cdfa76e9642955beab547400522cd1931a40"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/director.css",
@@ -216,6 +216,13 @@
       "bytes": 9046,
       "sha256": "1f6b26b7e60e8aac257b10f0ae12d7b9b6caf268f75c20bd5432ae360d79d6f1",
       "publishedSha256": "1f6b26b7e60e8aac257b10f0ae12d7b9b6caf268f75c20bd5432ae360d79d6f1"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/director-status-request.mjs",
+      "destination": "director-status-request.mjs",
+      "sha256": "174a88eb2731c66ea503328437bd71639a165070ebc02d4cd44f022837bcf993",
+      "bytes": 1896,
+      "publishedSha256": "174a88eb2731c66ea503328437bd71639a165070ebc02d4cd44f022837bcf993"
     }
   ]
 }

@@ -1,6 +1,7 @@
 import {StageCompositor} from '/assets/stage-compositor.js';
 import {FilmTransport} from './film-transport.mjs';
 import {SingleFilmTransport} from './single-film-transport.mjs';
+import {readDirectorStatus} from './director-status-request.mjs';
 import {decodePcmVoice} from './pcm-voice.mjs';
 import {OwnedVideoFrameSource} from './owned-video-frame-source.mjs';
 const Transport=new URLSearchParams(location.search).get('pipeline')==='single'?SingleFilmTransport:FilmTransport;
@@ -39,8 +40,10 @@ async function speech(value,{signal,live}){
  signal=AbortSignal.any([signal,AbortSignal.timeout(70000)]);
  if(!enabled||!context||context.state!=='running')throw Error('Enable laptop sound before sending a line');
  const stage=value=>{if(live())speechStage=value;};stage('status');
- const statusResponse=await fetch('/api/status',{signal,credentials:'same-origin'});stage('status body');
- const status=await statusResponse.json();stage('status parsed');
+ let status;
+ if(new URLSearchParams(location.search).get('status')==='xhr'){stage('status xhr');status=await readDirectorStatus(signal);}
+ else{const statusResponse=await fetch('/api/status',{signal,credentials:'same-origin'});stage('status body');status=await statusResponse.json();}
+ stage('status parsed');
  if(!status.token)throw Error('Sign in to the laptop voice service first');
  let words=value.text;
  if(value.mode==='prompt'){
