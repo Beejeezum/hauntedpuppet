@@ -41,5 +41,18 @@ const weights=this.studyWeights?.()||{},total=(weights.AH||0)+(weights.OO||0)+(w
 g.uniform1f(this.uniforms.roundness,total>0?(weights.OO||0)/total:0);
 g.uniform1f(this.uniforms.spread,total>0?(weights.EE||0)/total:0);`);
  }
+ // REJECTED visual experiment: round aperture loses lip detail / looks blocky.
+ // Kept solely to reproduce the review; never a runtime or release option.
+ if(process.env.HAUNT_NATIVE_FACE_ROUND==='1'){
+  if(process.env.HAUNT_NATIVE_FACE_SHAPES!=='1'||process.env.HAUNT_NATIVE_FACE_ANCHORED!=='1')throw Error('Rounded study requires shaped, anchored lips');
+  source=source.replace('float profile=pow(max(0.,sin(q*3.14159265)),.8);', 'float profile=mix(pow(max(0.,sin(q*3.14159265)),.8),sqrt(max(0.,1.-pow(2.*q-1.,2.))),roundness);');
+  source=source.replace('float top=u-.22*gap,bottom=l+.78*gap;', `vec2 leftLip=lips(mouthLeft),rightLip=lips(mouthLeft+mouthWidth),midLip=lips(mouthLeft+mouthWidth*.5);
+float axis=(midLip.x+midLip.y)*.5+((rightLip.x+rightLip.y)-(leftLip.x+leftLip.y))*.5*(q-.5);
+float halfInk=max(.5,(l-u)*.5);
+float rounded=roundness*profile;
+float roundingShift=.28*14.*opening*(1.+.60*roundness-.50*spread)*(1.-profile)*roundness*smoothstep(0.,.15,profile);
+float top=mix(u,axis-halfInk,rounded)-.22*gap+roundingShift,bottom=mix(l,axis+halfInk,rounded)+.78*gap+roundingShift;`);
+  source=source.replace('vec4 inside=texture2D(oralPaint,oralUV);', 'oralUV.y=mix(oralUV.y,.58+(oralUV.y-.5)*.2,roundness);vec4 inside=texture2D(oralPaint,oralUV);');
+ }
  return source;
 };
