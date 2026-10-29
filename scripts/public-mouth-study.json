@@ -123,9 +123,9 @@
           "to": "friendly-v28-canonical-head-samples-v1.json"
         }
       ],
-      "bytes": 6274,
-      "sha256": "cb6f786c14ba37ebaa2c1e41855c26be30cf2a059cbcd5df7d61c4d5a3d9113b",
-      "publishedSha256": "088fc02fa76697616c2e20a4175a47b5a41a06b1590021d3e349cb54ced8dea8"
+      "bytes": 6347,
+      "sha256": "5d68fcc51f3663d7ed8684e1b118b545bb8fd0ccd9da4b70abb95dc41b1a4bac",
+      "publishedSha256": "1188080aa37e2498d6133cb946ecc2fab9a8473289330fb1955c942a5a9cf493"
     },
     {
       "source": "source/wisp-art-reference/painted-speech-study/native-picture-registration.mjs",

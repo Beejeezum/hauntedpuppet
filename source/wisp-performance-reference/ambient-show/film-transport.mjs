@@ -48,7 +48,7 @@ export async function waitForFilmFrame(video,signal,frameClock){
 
 /** Laptop-only media; sound requires an explicit operator enable. The compositor is the sole picture sent to output. */
 export class FilmTransport {
- constructor(compositor,clips,{mediaHost,characterFilter,frameClock,pipelineCount=2}={}){if(![1,2].includes(pipelineCount))throw Error('Invalid film pipeline count');this.frameClock=frameClock;this.motionWaits=new Set();this.compositor=compositor;this.clips=clips;this.active=null;this.heldFrame=null;this.frameCanvas=null;this.videos=Array.from({length:pipelineCount},()=>document.createElement('video'));this.disposed=false;this.prepared=null;this.preparing=null;this.prepareEpoch=0;this.soundEnabled=false;this.soundLevel=.5;this.soundSuspended=false;for(const v of this.videos){v.muted=true;v.playsInline=true;v.preload='auto';v.setAttribute('aria-hidden','true');v.className='source-preview';v.title='Laptop film source';mediaHost?.append(v);}compositor.add({id:'character',source:()=>{const raw=this.heldFrame||this.active;return characterFilter?.(raw)||raw},kind:'character'});}
+ constructor(compositor,clips,{mediaHost,characterFilter,frameClock,pipelineCount=2,heldPictureSource=null}={}){if(![1,2].includes(pipelineCount))throw Error('Invalid film pipeline count');if(heldPictureSource!==null&&typeof heldPictureSource!=='function')throw Error('Invalid held picture source');this.heldPictureSource=heldPictureSource;this.detachedHoldCount=0;this.videoHoldCount=0;this.frameClock=frameClock;this.motionWaits=new Set();this.compositor=compositor;this.clips=clips;this.active=null;this.heldFrame=null;this.frameCanvas=null;this.videos=Array.from({length:pipelineCount},()=>document.createElement('video'));this.disposed=false;this.prepared=null;this.preparing=null;this.prepareEpoch=0;this.soundEnabled=false;this.soundLevel=.5;this.soundSuspended=false;for(const v of this.videos){v.muted=true;v.playsInline=true;v.preload='auto';v.setAttribute('aria-hidden','true');v.className='source-preview';v.title='Laptop film source';mediaHost?.append(v);}compositor.add({id:'character',source:()=>{const raw=this.heldFrame||this.active;return characterFilter?.(raw)||raw},kind:'character'});}
  frame(video,signal){return waitForFilmFrame(video,signal,this.frameClock);}
  requestFrame(callback){return this.frameClock?this.frameClock.request(callback):requestAnimationFrame(callback);}
  cancelFrame(id){if(this.frameClock)this.frameClock.cancel(id);else cancelAnimationFrame(id);}
@@ -92,9 +92,10 @@ export class FilmTransport {
  }
  holdPicture(video){
   if(video.readyState<2||!video.videoWidth||!video.videoHeight)return false;
+  const source=this.heldPictureSource?this.heldPictureSource(video):video;if(!source)return false;const width=source.videoWidth||source.width,height=source.videoHeight||source.height;if(!width||!height)return false;
   this.frameCanvas||=document.createElement('canvas');const canvas=this.frameCanvas;
-  if(canvas.width!==video.videoWidth||canvas.height!==video.videoHeight){canvas.width=video.videoWidth;canvas.height=video.videoHeight;}
-  const ctx=canvas.getContext('2d');ctx.drawImage(video,0,0);
+  if(canvas.width!==width||canvas.height!==height){canvas.width=width;canvas.height=height;}
+  const ctx=canvas.getContext('2d');ctx.drawImage(source,0,0);if(this.heldPictureSource)this.detachedHoldCount++;else this.videoHoldCount++;
   // Materialize independent pixels before releasing the decoder. A deferred
   // video-backed canvas draw can otherwise retain its native presentation buffer.
   ctx.putImageData(ctx.getImageData(0,0,canvas.width,canvas.height),0,0);

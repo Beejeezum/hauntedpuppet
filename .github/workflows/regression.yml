@@ -25,6 +25,10 @@ on:
         description: Run only the owned-picture director within the single-pipeline diagnostic
         type: boolean
         default: false
+      native_cpu_pixels:
+        description: Test detached native-byte CPU staging for the two pinned Wisp films
+        type: boolean
+        default: false
       native_authored_face:
         description: Test the explicit authored-face director preview and its preparation cancellation
         type: boolean
@@ -452,6 +456,7 @@ jobs:
         env:
           HAUNT_BROWSER: webkit
           HAUNT_SINGLE_PIPELINE: '1'
+          HAUNT_CPU_PIXELS: ${{ inputs.native_cpu_pixels && '1' || '0' }}
           HAUNT_DIAGNOSTIC_NO_CONTEXT_LOSS: ${{ inputs.native_director_retirement == 'no-context-loss' && '1' || '0' }}
           HAUNT_DIAGNOSTIC_OWNER_FRONT: ${{ inputs.native_director_visibility == 'owner-front' && '1' || '0' }}
           WEBKIT_GST_DISABLE_GL_SINK: ${{ inputs.native_director_retirement == 'software-video-sink' && '1' || '0' }}
@@ -467,6 +472,9 @@ jobs:
           if [ "${{ inputs.native_director_pilot }}" = "true" ]; then
             if [ "${{ inputs.native_authored_face }}" = "true" ]; then
               failed=0
+              if [ "${{ inputs.native_cpu_pixels }}" = "true" ]; then
+                GST_DEBUG_FILE="${GST_DEBUG_FILE%.log}-cpu-source.log" node tests/owned_cpu_video_frame_source.cjs || failed=1
+              fi
               GST_DEBUG_FILE="${GST_DEBUG_FILE%.log}-shared-graphics.log" node tests/painted_shared_graphics.cjs || failed=1
               node tests/authored_phone_director.cjs || failed=1
               GST_DEBUG_FILE="${GST_DEBUG_FILE%.log}-authored-preparation.log" node tests/authored_director_preparation_cancel.cjs || failed=1
@@ -522,6 +530,7 @@ jobs:
             test-results/owned-director-preparation-*.json
             work/canonical-picture-registration/*.json
             work/owned-frame-source/*.json
+            work/owned-cpu-source/*.json
             work/native-picture-preparation/*.json
             work/owned-speaking-player/*.json
             work/owned-native-director-*.json

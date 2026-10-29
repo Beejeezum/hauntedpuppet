@@ -39,9 +39,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/film-transport.mjs",
       "destination": "film-transport.mjs",
-      "sha256": "76809c936a3a06b006dd77b62a18fc02df07734da03177fb128c1e8e556713c3",
-      "bytes": 13356,
-      "publishedSha256": "76809c936a3a06b006dd77b62a18fc02df07734da03177fb128c1e8e556713c3"
+      "sha256": "0afa391b631400d12e3cec1fd2c3a9027b52478a672fc9c424aa5108f4ca9bc9",
+      "bytes": 13828,
+      "publishedSha256": "0afa391b631400d12e3cec1fd2c3a9027b52478a672fc9c424aa5108f4ca9bc9"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/cue-director.mjs",
@@ -130,8 +130,8 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/director.mjs",
       "destination": "director.mjs",
-      "bytes": 17203,
-      "sha256": "50fcfd9a8283d05ed0867db55905440fcea9eed514c8c4878139339ed7477d7e",
+      "bytes": 17653,
+      "sha256": "bf6464aa638b1ac221d292370af04ccd7ff8e4f8337fc0c1efed07b40cf0675d",
       "rewrites": [
         {
           "from": "../tonight-demo/paired-controls.mjs",
@@ -166,7 +166,7 @@
           "to": "../wisp-mouth-study/phone-authored-painted-layer.mjs"
         }
       ],
-      "publishedSha256": "7eb54106bad53ff65c4cdcd856e87f680b3dd6901b0641ef8ab0443e8bb29a88"
+      "publishedSha256": "7c117490104e7233ea1b3db01372452226eb10c4cd74c42580cde19772cadb00"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/director.css",
@@ -213,9 +213,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/owned-video-frame-source.mjs",
       "destination": "owned-video-frame-source.mjs",
-      "bytes": 5429,
-      "sha256": "6084797c1cad07ed8231baa6030756e58bf38e44a2fa2961cbdbc12bba7b1f2d",
-      "publishedSha256": "6084797c1cad07ed8231baa6030756e58bf38e44a2fa2961cbdbc12bba7b1f2d"
+      "bytes": 9046,
+      "sha256": "1f6b26b7e60e8aac257b10f0ae12d7b9b6caf268f75c20bd5432ae360d79d6f1",
+      "publishedSha256": "1f6b26b7e60e8aac257b10f0ae12d7b9b6caf268f75c20bd5432ae360d79d6f1"
     }
   ]
 }

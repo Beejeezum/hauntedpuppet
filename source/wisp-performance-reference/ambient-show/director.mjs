@@ -12,8 +12,9 @@ import {mountFilmOutput} from '../runway-pilots/wisp-film-output.js';
 const $=id=>document.getElementById(id),clips=[{id:'friendly-drift',character:'friendly',src:'./friendly.mp4',loop:true,exitPolicy:'finish'},{id:'scary-drift',character:'scary',src:'./scary.mp4',loop:false,exitPolicy:'finish'}];
 const authoredMouth=new URLSearchParams(location.search).get('mouth')==='authored-native';
 const ownedMouth=authoredMouth||new URLSearchParams(location.search).get('mouth')==='owned-native';
+const cpuPixels=ownedMouth&&new URLSearchParams(location.search).get('pixels')==='cpu';
 // Keep body capture independent of optional face-renderer disposal.
-const ownedBodySource=ownedMouth?new OwnedVideoFrameSource():null;
+const ownedBodySource=ownedMouth?new OwnedVideoFrameSource({cpuStaging:cpuPixels,cpuColorRange:cpuPixels?'video':'metadata'}):null;
 let ownedBodyPull=null,ownedBodyFailed=false;
 function bodyPicture(raw){
  if(!ownedBodySource||ownedBodyFailed||mouthPreparing||raw?.tagName!=='VIDEO')return null;
@@ -23,7 +24,7 @@ function bodyPicture(raw){
 let authoredGraphics=null;
 let mouthLayer=null,mouthCandidate=null,mouthPreparing=false,mouthEpoch=0,mouthPreparationAbort=null,isolatedReference=false,mouthReferenceState=null;
 const frameClock=new StageFrameClock();
-const compositor=new StageCompositor($('stage')),transport=new Transport(compositor,clips,{frameClock,mediaHost:$('mediaSources'),characterFilter:raw=>{const body=bodyPicture(raw);try{return mouthLayer?.render(raw)||body}catch{const failed=mouthLayer;mouthLayer=null;failed?.dispose();$('mouthStudy').checked=false;$('mouthStatus').textContent='Mouth study unavailable; original film retained';return body}}});
+const compositor=new StageCompositor($('stage')),transport=new Transport(compositor,clips,{heldPictureSource:cpuPixels?video=>ownedBodySource.video===video&&ownedBodySource.sourceURL===(video.currentSrc||video.src)?ownedBodySource.packet?.canvas||null:null:null,frameClock,mediaHost:$('mediaSources'),characterFilter:raw=>{const body=bodyPicture(raw);try{return mouthLayer?.render(raw)||body}catch{const failed=mouthLayer;mouthLayer=null;failed?.dispose();$('mouthStudy').checked=false;$('mouthStatus').textContent='Mouth study unavailable; original film retained';return body}}});
 let context,source,enabled=false,disposed=false,frame,activeCharacter='friendly',speechStage='idle';
 const ambient=new DirectorAmbientProgram(transport,clips,{onState:s=>{if(!s.suspended)activeCharacter=s.character;$('ambientStatus').textContent=s.error||((s.suspended?'Paused':'Between lines')+' · '+s.mode);}});
 function resumeAmbient(ctx){
@@ -114,7 +115,7 @@ $('mouthStudy').onchange=async()=>{
      if(!live())return;
      const referenceSignal=AbortSignal.any([abort.signal,AbortSignal.timeout(10000)]);
      const canonicalProfile=await readCanonicalPictureProfile(new URL('../../wisp-art-reference/painted-speech-study/native-lip-mesh-study/friendly-v28-canonical-head-samples-v1.json',import.meta.url),referenceSignal);if(!live())return;
-     const prepared=await prepareNativePictureProfile(video,{canonicalProfile,signal:abort.signal,isStageIsolated:()=>live()&&compositor.black&&transport.active===video&&video.paused,onProgress:({completed,total})=>{if(live()){mouthReferenceState={completed,total};$('mouthStatus').textContent='Preparing painted face '+completed+'/'+total;}},onRelease:state=>{if(epoch===mouthEpoch)mouthReferenceState=state;}});
+     const prepared=await prepareNativePictureProfile(video,{canonicalProfile,cpuStaging:cpuPixels,signal:abort.signal,isStageIsolated:()=>live()&&compositor.black&&transport.active===video&&video.paused,onProgress:({completed,total})=>{if(live()){mouthReferenceState={completed,total};$('mouthStatus').textContent='Preparing painted face '+completed+'/'+total;}},onRelease:state=>{if(epoch===mouthEpoch)mouthReferenceState=state;}});
      if(!live()){prepared.registration?.dispose();return;}candidate.registration=prepared.registration;
     }finally{abort.signal.removeEventListener('abort',cancelFilm);if(mouthPreparationAbort===abort)mouthPreparationAbort=null;}
    }
@@ -131,4 +132,4 @@ $('ambientStart').onclick=()=>{if(!configureAmbient())return;if(['idle','stopped
 function paintDirector(){if(disposed)return;frameClock.pulse();ambient.tick();compositor.render();}
 function tick(){if(disposed)return;paintDirector();frame=requestAnimationFrame(tick);}tick();
 window.addEventListener('pagehide',()=>{disposed=true;cancelMouthPreparation(false);ambient.dispose();mouthEpoch++;mouthLayer?.dispose();mouthLayer=null;ownedBodySource?.dispose();director.dispose();paired.dispose();output.dispose();transport.dispose();frameClock.dispose();compositor.dispose();authoredGraphics?.dispose();cancelAnimationFrame(frame);context?.close();},{once:true});
-window.WispPhoneDirector={inspect:()=>({...director.inspect(),speechStage,authoredGraphics:authoredGraphics?.inspect()??null,bodyPicture:ownedBodySource?{...ownedBodySource.inspect(),failed:ownedBodyFailed}:null,mouthPreparation:{pending:mouthPreparing,allocated:!!mouthCandidate,isolatedReference,reference:mouthReferenceState},ambient:ambient.inspect(),frameClock:frameClock.inspect(),mouthStudy:mouthLayer?.inspect()||null}),stop};
+window.WispPhoneDirector={inspect:()=>({...director.inspect(),speechStage,pixelPath:{cpu:cpuPixels,detachedHolds:transport.detachedHoldCount,nativeHolds:transport.videoHoldCount},authoredGraphics:authoredGraphics?.inspect()??null,bodyPicture:ownedBodySource?{...ownedBodySource.inspect(),failed:ownedBodyFailed}:null,mouthPreparation:{pending:mouthPreparing,allocated:!!mouthCandidate,isolatedReference,reference:mouthReferenceState},ambient:ambient.inspect(),frameClock:frameClock.inspect(),mouthStudy:mouthLayer?.inspect()||null}),stop};

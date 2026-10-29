@@ -23,10 +23,10 @@ export function inspectNativePicturePreparation(video){const job=active.get(vide
  * paused, existing decoder to preparation. Never create a second decoder or
  * silently resume/restore a video after cancellation/source replacement.
  */
-export async function prepareNativePictureProfile(video,{signal:external,isStageIsolated,onProgress=()=>{},onRelease=()=>{},canonicalProfile=null}={}){
+export async function prepareNativePictureProfile(video,{signal:external,isStageIsolated,onProgress=()=>{},onRelease=()=>{},canonicalProfile=null,cpuStaging=false}={}){
  if(active.has(video))throw Error('Native picture preparation already active');
  if(video?.tagName!=='VIDEO'||!video.paused||video.readyState<2||video.videoWidth!==1916||video.videoHeight!==1080||Math.abs(video.duration-122/24)>.01||typeof isStageIsolated!=='function'||!isStageIsolated())throw Error('Isolate and pause the approved movie before preparation');
- const url=video.currentSrc||video.src,position=video.currentTime,controller=new AbortController(),signal=external?AbortSignal.any([controller.signal,external]):controller.signal,source=new OwnedVideoFrameSource(),job={completed:0,total:3};active.set(video,job);const started=performance.now(),timer=setTimeout(()=>controller.abort(new DOMException('Native picture preparation timed out','TimeoutError')),20000);
+ const url=video.currentSrc||video.src,position=video.currentTime,controller=new AbortController(),signal=external?AbortSignal.any([controller.signal,external]):controller.signal,source=new OwnedVideoFrameSource({cpuStaging,cpuColorRange:cpuStaging?'video':'metadata'}),job={completed:0,total:3};active.set(video,job);const started=performance.now(),timer=setTimeout(()=>controller.abort(new DOMException('Native picture preparation timed out','TimeoutError')),20000);
  const retire=()=>source.dispose(),changed=()=>controller.abort(cancelled());signal.addEventListener('abort',retire,{once:true});video.addEventListener('play',changed);video.addEventListener('loadstart',changed);video.addEventListener('emptied',changed);
  const guard=()=>{if(signal.aborted)throw signal.reason||cancelled();if((video.currentSrc||video.src)!==url||!video.paused||!isStageIsolated())throw Error('Native preparation lost its isolated paused stage')};
  let success=false,canonical=null;
