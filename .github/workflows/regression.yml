@@ -31,9 +31,9 @@ on:
         options: [projector-front, owner-front]
         default: projector-front
       native_director_retirement:
-        description: Isolate forced GL context loss in the director diagnostic only
+        description: Isolate graphics path or retirement in the director diagnostic only
         type: choice
-        options: [normal, no-context-loss]
+        options: [normal, no-context-loss, software-video-sink]
         default: normal
       native_disable_disk_cache:
         description: Disable native on-disk media buffering for the isolated diagnostic
@@ -446,7 +446,12 @@ jobs:
           HAUNT_SINGLE_PIPELINE: '1'
           HAUNT_DIAGNOSTIC_NO_CONTEXT_LOSS: ${{ inputs.native_director_retirement == 'no-context-loss' && '1' || '0' }}
           HAUNT_DIAGNOSTIC_OWNER_FRONT: ${{ inputs.native_director_visibility == 'owner-front' && '1' || '0' }}
+          WEBKIT_GST_DISABLE_GL_SINK: ${{ inputs.native_director_retirement == 'software-video-sink' && '1' || '0' }}
+          GST_DEBUG: webkitmediaplayer:4
+          GST_DEBUG_FILE: ${{ github.workspace }}/work/native-media-gstreamer.log
+          GST_DEBUG_NO_COLOR: '1'
         run: |
+          node scripts/inspect-native-video-switch.cjs
           if [ "${{ inputs.native_director_pilot }}" = "true" ]; then
             node tests/owned_native_director.cjs
             exit $?
@@ -501,4 +506,6 @@ jobs:
             work/native-picture-preparation/*.json
             work/owned-speaking-player/*.json
             work/owned-native-director-*.json
+            work/native-video-switch/*.json
+            work/native-media-gstreamer*.log
             work/owned-director-preparation/*.json
