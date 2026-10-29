@@ -66,7 +66,7 @@ function disposeEffect(item){
  source.pause?.();source.removeAttribute('src');if(source.tagName==='VIDEO')source.load();source.remove();URL.revokeObjectURL(item.url);
 }
 function release(id){const item=overlays.get(id);if(!item)return;overlays.delete(id);compositor.remove(id);disposeEffect(item);}
-const pendingEffects=new Set();let effectEpoch=0,nextLayer=0;
+const pendingEffects=new Set();let effectEpoch=0,nextLayer=0,lastEffectFailure=null;
 function cancelPendingEffects(){effectEpoch++;for(const item of pendingEffects)disposeEffect(item);pendingEffects.clear();}
 $('addEffect').onclick=()=>$('effectFile').click();
 $('effectFile').onchange=async event=>{
@@ -82,7 +82,7 @@ $('effectFile').onchange=async event=>{
   else await decodeEffectImage(source,item.abort.signal);
   if(disposed||epoch!==effectEpoch||item.retired){disposeEffect(item);return;}
   pendingEffects.delete(item);overlays.set(id,item);compositor.add({id,source,opacity:.4,blend:'screen'});activity++;refreshLayers();
- }catch{const cancelled=item.retired||item.abort.signal.aborted||disposed||epoch!==effectEpoch;if(overlays.get(id)===item){overlays.delete(id);compositor.remove(id);}disposeEffect(item);if(!cancelled)$('status').textContent='Effect could not load';}
+ }catch(error){const cancelled=item.retired||item.abort.signal.aborted||disposed||epoch!==effectEpoch;if(!cancelled){const observed=source._wispFrameReadiness;lastEffectFailure={kind:error?.message==='Film did not deliver a frame'?'frame-timeout':source.error?'media-error':'import-error',video:isVideo,readyState:source.readyState??null,networkState:source.networkState??null,currentTime:source.currentTime??null,paused:source.paused??null,mediaErrorCode:source.error?.code??null,frameCallbacks:observed?.frameCallbacks??null,lastMetadataTime:observed?.lastMetadataTime??null,requestedTime:observed?.requestedTime??null,connected:source.isConnected,rect:{width:source.getBoundingClientRect().width,height:source.getBoundingClientRect().height}};}if(overlays.get(id)===item){overlays.delete(id);compositor.remove(id);}disposeEffect(item);if(!cancelled)$('status').textContent='Effect could not load';}
  finally{pendingEffects.delete(item);}
 };
 function stop(){cancelPendingEffects();playlist.stop();formPausedAt=null;mode='manual';$('mode').value=mode;timing();director.stop();for(const {source}of overlays.values())source.pause?.();output.blackout();lastForm=null;}
@@ -132,7 +132,7 @@ function paintDesk(now){
 function tick(now){if(disposed)return;paintDesk(now);raf=requestAnimationFrame(tick);}
 refreshLayers();tick(performance.now());
 soundControls=mountOwnerSound(document.querySelector('main>aside'),{canPlay:()=>!disposed&&!stale&&!compositor.black&&director.phase==='playing'});
-const inspectDesk=()=>({director:director.inspect(),composition:compositor.inspect(),frameClock:frameClock.inspect(),mode,library:{approved:useCatalog,count:clips.length,error:libraryError},program:{visibleMs:Math.max(0,(formPausedAt??performance.now())-formSince),paused:formPausedAt!==null},playlist:playlist.inspect(),filmSound:transport.inspectSound(),preparation:{ready:transport.prepared?.id||null,pending:transport.preparing?.id||null},media:transport.videos.map(v=>({muted:v.muted,paused:v.paused,cue:v.dataset.cue||null,currentTime:v.currentTime,loop:v.loop})),effects:overlays.size,pendingEffects:pendingEffects.size,sound:soundControls.inspect(),operator:operatorControls?.inspect()||null});
+const inspectDesk=()=>({director:director.inspect(),composition:compositor.inspect(),frameClock:frameClock.inspect(),mode,library:{approved:useCatalog,count:clips.length,error:libraryError},program:{visibleMs:Math.max(0,(formPausedAt??performance.now())-formSince),paused:formPausedAt!==null},playlist:playlist.inspect(),filmSound:transport.inspectSound(),preparation:{ready:transport.prepared?.id||null,pending:transport.preparing?.id||null},media:transport.videos.map(v=>({muted:v.muted,paused:v.paused,cue:v.dataset.cue||null,currentTime:v.currentTime,loop:v.loop})),effects:overlays.size,pendingEffects:pendingEffects.size,lastEffectFailure:lastEffectFailure?structuredClone(lastEffectFailure):null,sound:soundControls.inspect(),operator:operatorControls?.inspect()||null});
 const remote=createFilmRemote({chooseCue,startProgram,stop,inspect:inspectDesk,clips:useCatalog||libraryError?clips:undefined,programModes:libraryError?[]:[...$('mode').options].filter(o=>!o.disabled).map(o=>o.value),savedPlaylist:{selected:selectedSavedPlaylist,run:()=>playlists.run()}});
 window.WispDesk={inspect:inspectDesk,...remote};
 const phoneRemote={remoteState:remote.remoteState,remoteCommand:(...args)=>{const access=operatorControls?.inspect();if(access?.cloud&&(!access.authenticated||access.busy||access.disposed))return Promise.reject(Object.assign(Error('Operator sign-in required'),{cancelled:true}));return remote.remoteCommand(...args);}};
