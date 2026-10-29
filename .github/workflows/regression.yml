@@ -436,6 +436,8 @@ jobs:
           node tests/owned_video_frame_source.cjs || failed=1
           node tests/owned_native_lip_player.cjs || failed=1
           node tests/native_picture_registration.cjs || failed=1
+          node tests/native_picture_preparation.cjs || failed=1
+          HAUNT_PICTURE_PREPARATION=1 node tests/owned_native_lip_player.cjs || failed=1
           node tests/mouth_preparation_cancel.cjs || failed=1
           node tests/native_lip_phone.cjs || failed=1
           node tests/single_pipeline_transport.cjs || failed=1
