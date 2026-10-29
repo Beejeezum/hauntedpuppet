@@ -1,5 +1,5 @@
 {
-  "status": "shared-graphics-candidate-local-pass-linux-pending",
+  "status": "shared-graphics-local-pass-linux-inconsistent",
   "defaultRendererChanged": false,
   "ownership": "One explicit authored director graphics owner; exclusive per-renderer resource lease; standalone renderer retains its own terminal context disposal.",
   "local": {
@@ -324,7 +324,50 @@
   },
   "phonePairing": "Local real pairing/services,4synthetic performances, silent phone and remote Stop pass after ownership change. No physical phone/provider acceptance.",
   "humanVisualReview": "pending; no painted geometry/material change",
-  "linux": "pending controlled normal backend without interception",
+  "linux": {
+    "head": "0d0f0ca5ba0d4de715ec3d183cac799c6dd9bdd1",
+    "first": {
+      "run": 40828697023,
+      "result": "pass normal backend/no interception",
+      "starts": 6,
+      "preparations": 2,
+      "leaseAcquisitions": 2,
+      "leaseReleases": 2,
+      "terminalLossRequests": 1,
+      "terminalActualContextLost": true,
+      "terminalVideos": 0,
+      "framesCreated": 3116,
+      "framesClosed": 3116,
+      "sharedFourPoseMaxPixelDelta": 0,
+      "cancellationCases": 4,
+      "cancelGlLive": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "repeat": {
+      "run": 40829259060,
+      "result": "failure before fourth speech;status fetch awaiting delivery despite completed HTTP200",
+      "starts": 3,
+      "graphics": {
+        "contexts": 1,
+        "acquisitions": 1,
+        "releases": 1,
+        "forcedLossRequests": 0,
+        "contextLost": false
+      },
+      "body": {
+        "created": 878,
+        "closed": 878,
+        "published": 701,
+        "failures": 0
+      },
+      "nativeWarnings": "GL color conversion caps rejected I420 GLMemory for1916x1080 and1280x720. Causation unproven."
+    },
+    "conclusion": "Context ownership is bounded and locally verified; it is not a complete fix for intermittent Linux native media/fetch delivery stalls. No release acceptance."
+  },
   "productionApproved": false,
   "sourceSha256": {
     "source/wisp-art-reference/painted-speech-study/authored-face-study/native-painted-face-study.mjs": "912972b262e9b366d761f97eaea5de832a8a748ae02b142ae1724323709e8d47",
