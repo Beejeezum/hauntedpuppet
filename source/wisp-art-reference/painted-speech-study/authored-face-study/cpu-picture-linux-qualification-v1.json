@@ -1,0 +1,40 @@
+{
+  "status": "failed-not-production-qualified",
+  "run": "https://github.com/Beejeezum/hauntedpuppet/actions/runs/40833217524",
+  "head": "cc81752b7ef1e017ecfa7c7e7f3244f700791299",
+  "backend": "normal Linux WebKit native video, projector foreground, normal graphics retirement",
+  "localResults": "Chrome/Mac WebKit full app, source pixel and cancellation tests pass. Does not transfer to Linux.",
+  "linuxSourceComparison": {
+    "friendlyMaxDelta": 255,
+    "friendlyReferenceCorner": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "friendlyCpuCorner": [
+      0,
+      0,
+      0,
+      255
+    ],
+    "scaryMaxDelta": 29,
+    "interpretation": "Friendly native reference is transparent at the corner, which invalidates an exact opaque-film comparison. The baseline may be defective; do not infer CPU color fidelity. Scary comparison also exceeds the unchanged tolerance. No assertion relaxed."
+  },
+  "linuxFullApp": {
+    "speechStarts": 3,
+    "fourthStart": "not observed within30000ms",
+    "pendingRequest": "status HTTP200 received and network finished but caller await unresolved",
+    "cpuPublications": 925,
+    "createdAndClosed": 2237,
+    "captureFailures": 0,
+    "interpretation": "CPU byte staging did not repair the app stall. No source-capture error or leaked frame observed at failure; root cause remains unproven."
+  },
+  "passingSubsets": [
+    "Shared graphics exclusive lease/reuse/terminal cleanup unit",
+    "All four preparation cancellation lifecycles"
+  ],
+  "artifacts": "work/cpu-pictures-linux-40833217524",
+  "next": "Inspect status response consumption/cancellation and native event-loop behavior. Do not rerun the same code blindly or publish as a reliability fix.",
+  "runtimePromotion": false
+}
