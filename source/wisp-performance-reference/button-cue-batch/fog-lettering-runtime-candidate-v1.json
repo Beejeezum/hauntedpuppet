@@ -3,7 +3,7 @@
   "sha256": "238c41a03bff96ce54957422f1d3fe99f679894b9e64749dc9865a1edccf4931",
   "source": "fog-lettering-pilot-v2.mp4",
   "sourceSha256": "af9d2e082ec764d9f81162fc89acb2114d4a19fdd15102b8dfba1f47d7e88b8b",
-  "status": "source-only review candidate; human visual/sound review pending",
+  "status": "rejected current lettering material; technical playback passes do not approve art",
   "sourceFrames": 241,
   "frameCount": 265,
   "fps": 24,
@@ -59,7 +59,7 @@
     "lastHalfSecondPeak": 0.0,
     "scope": "Encoded audio waveform only; not human sound acceptance."
   },
-  "humanReview": "pending",
+  "humanReview": "revision-required",
   "emptyStartFrames": 13,
   "emptyEndFrames": 26,
   "audioTailSilenceSeconds": 0.5,
@@ -69,5 +69,10 @@
     "technical": "PASS Chrome and Mac WebKit: lettering to wave to lettering, full ending, both planned black holds and cleanup.",
     "evidence": "fog-lettering-runtime-candidate-v1-handoff.json",
     "visual": "pending; a planned empty stage is not an invisible pose-matched join"
+  },
+  "humanFeedback": {
+    "quote": "Smoke or letters still feel too solid",
+    "direction": "Letter strokes must be visibly porous moving vapor throughout formation, hold and breakup; no opaque or tubular typography. Preserve full-effect clearance and dry nonmusical effects.",
+    "runtimeAdmission": false
   }
 }

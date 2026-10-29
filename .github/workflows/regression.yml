@@ -13,6 +13,10 @@ on:
         description: Test source-only single-movie seeks instead of the normal native-media cases
         type: boolean
         default: false
+      native_loop_pilot:
+        description: Compare the original painted film native looping and explicit replay only
+        type: boolean
+        default: false
       native_finite_pilot:
         description: Test source-only finite-cue MediaSource playback (overrides the seek pilot)
         type: boolean
@@ -475,7 +479,7 @@ jobs:
       - name: Build exact public fixtures
         run: node tests/public_build.cjs
       - name: Check actual native soundtrack and complete bridge
-        if: ${{ !inputs.native_atlas_pilot && !inputs.native_finite_pilot && !inputs.native_single_pipeline }}
+        if: ${{ !inputs.native_loop_pilot && !inputs.native_atlas_pilot && !inputs.native_finite_pilot && !inputs.native_single_pipeline }}
         env:
           DEBUG: pw:browser
           GST_DEBUG: autoaudiosink:5,pulsesink:4,webkitmediaplayer:3
@@ -485,6 +489,13 @@ jobs:
           HAUNT_BROWSER=webkit node tests/film_single_clock.cjs || failed=1
           HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/showdesk_film_audio.cjs || failed=1
           HAUNT_BROWSER=webkit node tests/catalog_bridge_browser.cjs || failed=1
+          exit "$failed"
+      - name: Compare native movie loop restart (not release acceptance)
+        if: ${{ inputs.native_loop_pilot }}
+        run: |
+          failed=0
+          HAUNT_BROWSER=webkit node tests/native_film_loop.cjs || failed=1
+          HAUNT_BROWSER=webkit HAUNT_EXPLICIT_LOOP=1 node tests/native_film_loop.cjs || failed=1
           exit "$failed"
       - name: Check one-decoder source study (not release acceptance)
         if: ${{ inputs.native_atlas_pilot && !inputs.native_finite_pilot && !inputs.native_single_pipeline }}
@@ -589,5 +600,6 @@ jobs:
             test-results/authored-director-preparation-*.json
             work/scary-container/*.json
             work/native-video-switch/*.json
+            work/native-film-loop/*.json
             work/native-media-gstreamer*.log
             work/owned-director-preparation/*.json

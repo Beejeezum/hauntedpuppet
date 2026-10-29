@@ -507,9 +507,9 @@
       ],
       "media": "../button-cue-batch/fog-lettering-runtime-candidate-v1.mp4",
       "sha256": "238c41a03bff96ce54957422f1d3fe99f679894b9e64749dc9865a1edccf4931",
-      "status": "human-review-pending",
+      "status": "revision-required",
       "evidence": "../button-cue-batch/fog-lettering-runtime-candidate-v1.json",
-      "scope": "One complete265frame11.04second smoke-lettering performance with embedded dry effects. Global black-point16 grade plus fixed60percent whole-frame fit; all20percent reserve passes,13exact-black head/26tailframes and silent audio handles. Human typography, smoke detail, size, motion and dry mix review pending; no automatic cue admission or physical projection approval."
+      "scope": "One complete265frame11.04second smoke-lettering performance with embedded dry effects. Global black-point16 grade plus fixed60percent whole-frame fit; all20percent reserve passes,13exact-black head/26tailframes and silent audio handles. Human typography, smoke detail, size, motion and dry mix review pending; no automatic cue admission or physical projection approval. Human feedback rejects smoke/letters as too solid. Keep out of runtime; no new paid retry before a stronger porous-letter material solution."
     }
   ],
   "deferredClips": [
