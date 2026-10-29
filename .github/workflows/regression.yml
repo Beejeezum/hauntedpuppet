@@ -25,6 +25,11 @@ on:
         description: Run only the owned-picture director within the single-pipeline diagnostic
         type: boolean
         default: false
+      native_director_retirement:
+        description: Isolate forced GL context loss in the director diagnostic only
+        type: choice
+        options: [normal, no-context-loss]
+        default: normal
       native_disable_disk_cache:
         description: Disable native on-disk media buffering for the isolated diagnostic
         type: boolean
@@ -434,6 +439,7 @@ jobs:
         env:
           HAUNT_BROWSER: webkit
           HAUNT_SINGLE_PIPELINE: '1'
+          HAUNT_DIAGNOSTIC_NO_CONTEXT_LOSS: ${{ inputs.native_director_retirement == 'no-context-loss' && '1' || '0' }}
         run: |
           if [ "${{ inputs.native_director_pilot }}" = "true" ]; then
             node tests/owned_native_director.cjs

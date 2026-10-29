@@ -1,0 +1,58 @@
+{
+  "run": 40815669001,
+  "head": "ad605e671bcba6f5edc65f56d0912af7453d1712",
+  "conclusion": "failure",
+  "scope": "Focused Linux WebKit owned-native app, mock HTTP/zero PCM; no provider or acoustic test.",
+  "preflight": {
+    "success": true,
+    "kind": "canonical",
+    "completed": 3,
+    "total": 3,
+    "elapsedMs": 752,
+    "ownership": {
+      "created": 3,
+      "closed": 3,
+      "held": 0,
+      "maxHeld": 1,
+      "published": 3,
+      "duplicates": 0,
+      "unavailable": 0,
+      "discarded": 0,
+      "failures": 0,
+      "rgbaCopies": 0,
+      "canvasCopies": 3,
+      "pending": false,
+      "ready": false,
+      "disposed": true,
+      "time": null
+    }
+  },
+  "speechStarts": 2,
+  "failureStage": "status",
+  "lastStatusNetwork": [
+    {
+      "id": 9,
+      "event": "request",
+      "path": "/api/status",
+      "ms": 6855
+    },
+    {
+      "id": 9,
+      "event": "headers",
+      "path": "/api/status",
+      "ms": 6889,
+      "status": 200
+    },
+    {
+      "id": 9,
+      "event": "finished",
+      "path": "/api/status",
+      "ms": 6889,
+      "requestStart": 0.097,
+      "responseStart": 0.855,
+      "responseEnd": 1.444
+    }
+  ],
+  "interpretation": "Status HTTP response completed in network instrumentation, but speech remains awaiting fetch continuation. Server missing key is not demonstrated. Suspect graphics-context retirement after uncheck; hypothesis unproven.",
+  "next": "Test-only suppression of forced WebGL context loss; keep explicit buffer/program/texture deletion and all existing director assertions. A passing experiment is not normal resource-release acceptance."
+}
