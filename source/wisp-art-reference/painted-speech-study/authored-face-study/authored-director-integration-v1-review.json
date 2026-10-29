@@ -49,8 +49,57 @@
     "status": "pending",
     "question": "In the new in-app audition, does the mouth feel painted into his face as he moves and speaks?"
   },
-  "linuxAppAcceptance": "pending new authored route; old owned-native normal backend remains intermittently failing",
+  "linuxAppAcceptance": {
+    "run": 40826225341,
+    "result": "failed full director at scary-film activation;4preparation cancellation cases passed",
+    "error": {
+      "cue": "scary-drift",
+      "errorName": "NotSupportedError",
+      "mediaError": 4,
+      "readyState": 0,
+      "networkState": 3
+    },
+    "bodyCapture": {
+      "published": 671,
+      "created": 693,
+      "closed": 693,
+      "failures": 0
+    },
+    "scope": "Friendly authored face/canonical preparation succeeded; no Linux full-app release approval."
+  },
   "runtimeProductionApproved": false,
   "physicalProjection": false,
-  "paidCreditsSpent": 0
+  "paidCreditsSpent": 0,
+  "pairedPhoneBrowserProof": {
+    "performances": 4,
+    "phoneAudioContexts": 0,
+    "typedFriendlyFace": true,
+    "scaryCharacterVoiceRouting": true,
+    "scaryMouthAcceptance": false,
+    "ambienceSelection": true,
+    "appliedAcknowledgements": true,
+    "remoteStop": true,
+    "stopBody": {
+      "created": 1366,
+      "closed": 1366,
+      "held": 0,
+      "maxHeld": 1,
+      "published": 507,
+      "duplicates": 859,
+      "unavailable": 0,
+      "discarded": 0,
+      "failures": 0,
+      "rgbaCopies": 0,
+      "canvasCopies": 507,
+      "lastFailure": null,
+      "pending": false,
+      "ready": false,
+      "disposed": false,
+      "time": null,
+      "failed": false
+    },
+    "physicalPhone": false,
+    "provider": "mocked synthetic silent PCM and explicit viseme control",
+    "services": "Two isolated loopback servers; no Keychain/provider credentials or existing voice-service status calls"
+  }
 }

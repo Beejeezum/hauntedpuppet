@@ -468,7 +468,7 @@ jobs:
             if [ "${{ inputs.native_authored_face }}" = "true" ]; then
               failed=0
               node tests/authored_phone_director.cjs || failed=1
-              node tests/authored_director_preparation_cancel.cjs || failed=1
+              GST_DEBUG_FILE="${GST_DEBUG_FILE%.log}-authored-preparation.log" node tests/authored_director_preparation_cancel.cjs || failed=1
               exit "$failed"
             fi
             node tests/owned_native_director.cjs

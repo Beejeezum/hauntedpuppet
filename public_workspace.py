@@ -10,6 +10,17 @@ WORKSPACES = {
     '/assets/wisp-showdesk/': 'public-showdesk.json',
     '/assets/wisp-film-preview/': 'public-film-preview.json',
     '/assets/wisp-tonight/': 'public-tonight-demo.json',
+    '/assets/wisp-mouth-study/': 'public-mouth-study.json',
+    '/assets/wisp-cue-review/': 'public-cue-review.json',
+}
+
+
+SOURCE_ROOTS = {
+    'public-showdesk.json': ('source/wisp-performance-reference/ambient-show/', 'source/wisp-performance-reference/runway-pilots/'),
+    'public-film-preview.json': ('source/wisp-performance-reference/runway-pilots/',),
+    'public-tonight-demo.json': ('source/wisp-performance-reference/tonight-demo/',),
+    'public-mouth-study.json': ('source/wisp-art-reference/painted-speech-study/',),
+    'public-cue-review.json': ('source/wisp-performance-reference/button-cue-batch/',),
 }
 
 
@@ -71,16 +82,11 @@ def asset(path):
         item = next((f for f in manifest['files'] if f['destination'] == name), None)
         if item is None:
             raise FileNotFoundError('Unknown workspace asset')
-        allowed = (r'^source/wisp-performance-reference/tonight-demo/'
-                   if manifest_name == 'public-tonight-demo.json' else
-                   r'^source/wisp-performance-reference/(ambient-show|runway-pilots)/'
-                   if manifest_name == 'public-showdesk.json' else
-                   r'^source/wisp-performance-reference/runway-pilots/')
-        if not re.match(allowed, item['source']):
+        folders = SOURCE_ROOTS[manifest_name]
+        if not item['source'].startswith(folders):
             raise FileNotFoundError('Invalid workspace source')
         source = (ROOT / item['source']).resolve()
-        folders = ('tonight-demo',) if manifest_name == 'public-tonight-demo.json' else ('ambient-show', 'runway-pilots') if manifest_name == 'public-showdesk.json' else ('runway-pilots',)
-        roots = [ROOT / 'source' / 'wisp-performance-reference' / folder for folder in folders]
+        roots = [ROOT / folder for folder in folders]
         if not any(folder.resolve() in source.parents for folder in roots):
             raise FileNotFoundError('Invalid workspace asset')
         data = source.read_bytes()

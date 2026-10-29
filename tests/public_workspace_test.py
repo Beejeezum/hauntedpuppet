@@ -80,9 +80,10 @@ class PublicWorkspace(unittest.TestCase):
 
     def test_unknown_and_private_paths_are_not_exposed(self):
         self.assertIsNone(public_workspace.asset('/server.py'))
-        for name in ('../server.py', 'source/server.py', 'unknown.mp4'):
-            with self.assertRaises(FileNotFoundError):
-                public_workspace.asset('/assets/wisp-showdesk/' + name)
+        for prefix in public_workspace.WORKSPACES:
+            for name in ('../server.py', 'source/server.py', 'unknown.mp4'):
+                with self.subTest(prefix=prefix, name=name), self.assertRaises(FileNotFoundError):
+                    public_workspace.asset(prefix + name)
 
     def test_manifest_cannot_publish_private_source(self):
         for source in ('server.py', 'source/wisp-performance-reference/ambient-show/../../../server.py'):
@@ -90,6 +91,16 @@ class PublicWorkspace(unittest.TestCase):
                     'files': [{'source': source, 'destination': 'leak.js'}]}):
                 with self.assertRaises(FileNotFoundError):
                     public_workspace.asset('/assets/wisp-showdesk/leak.js')
+
+    def test_mouth_and_cue_previews_are_explicit_workspaces(self):
+        self.assertEqual(public_workspace.WORKSPACES['/assets/wisp-mouth-study/'], 'public-mouth-study.json')
+        self.assertEqual(public_workspace.WORKSPACES['/assets/wisp-cue-review/'], 'public-cue-review.json')
+        for prefix in public_workspace.WORKSPACES:
+            for source in ('server.py', 'source/wisp-art-reference/painted-speech-study/../../../server.py'):
+                with self.subTest(prefix=prefix, source=source), patch.object(public_workspace.json, 'loads', return_value={
+                        'files': [{'source': source, 'destination': 'leak.js'}]}):
+                    with self.assertRaises(FileNotFoundError):
+                        public_workspace.asset(prefix + 'leak.js')
 
     def test_changed_bytes_fail_closed(self):
         with patch.object(public_workspace.json, 'loads', return_value={
