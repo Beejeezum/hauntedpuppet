@@ -1,0 +1,30 @@
+{
+  "run": 40816427049,
+  "head": "63baf62a9784c86c65dbbd6b63575b9913118254",
+  "conclusion": "failure",
+  "scope": "Test-only forced-context-loss suppression; not normal resource-release acceptance. Linux WebKit, actual movies/mockHTTP/zeroPCM.",
+  "preventedContextLoss": 1,
+  "speechStarts": 3,
+  "phase": "returning",
+  "speechStage": "ready",
+  "ambient": {
+    "mode": "friendly",
+    "seconds": 15,
+    "character": "friendly",
+    "visibleSeconds": 2.050015821,
+    "suspended": false,
+    "transitioning": true,
+    "disposed": false,
+    "error": null
+  },
+  "media": [
+    {
+      "cue": "scary-drift",
+      "time": 5.042,
+      "paused": true,
+      "ready": 4
+    }
+  ],
+  "interpretation": "Third speech now observed, but return to friendly ambient stalls. No production fix proven; forced loss suppression alone is insufficient.",
+  "next": "Investigate continuous detached body-picture ownership across mouth checkbox changes and actor transitions; currently disabling the mouth reverts to direct native-video compositing. Preserve default/original paths and normal resource cleanup."
+}
