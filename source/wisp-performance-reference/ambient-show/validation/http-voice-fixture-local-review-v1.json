@@ -1,0 +1,21 @@
+{
+  "status": "local only; Linux comparison pending",
+  "httpFixture": {
+    "chromiumOriginalFilm": "pass",
+    "webkitOriginalFilm": "pass",
+    "chromiumMouthStudy": "pass",
+    "chromiumInterceptedMouthStudyRetained": "pass",
+    "speech": "generated silent PCM; no genuine provider",
+    "checks": "second prompt, uninterrupted film reuse, full one-shot EOS, Stop/late response/ambient return, silent output and cleanup"
+  },
+  "nativeLipSurface": {
+    "moduleSha256": "868f0f6064f23103b03c76d79dfa3c069ba73e4a229bd059e09d1bc0666f8ac2",
+    "warmup": "first shader readback moved into explicit load, four bytes, no native video texture",
+    "chromiumFirstMeasuredDrawMs": 0.9,
+    "webkitFirstMeasuredDrawMs": 3,
+    "loadingFailureCleanup": "pass in local Chromium/WebKit",
+    "capture": false,
+    "limits": "Local warmup/draw measurements are not production frame rate or human visual approval. Final shader bookkeeping/context-loss guard covered by next Linux run."
+  },
+  "notReleaseAcceptance": true
+}
