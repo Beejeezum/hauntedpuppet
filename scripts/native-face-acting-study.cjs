@@ -14,7 +14,12 @@ float below=1.-smoothstep(0.,64.,max(0.,p.y-center));
 float displacement=opening*cheek*(p.y<center?-3.1*above:10.9*below);
 sy=p.y-displacement;`;
  if(!source.includes(old))throw Error('Native face study source changed');
- source=source.replace(old,next);
+ const anchored=`// Inverse deformation must send the aperture boundaries exactly to the
+// original upper/lower ink. A free cheek field left that ink outside the hole.
+if(p.y<top){float influence=1.-smoothstep(0.,24.,top-p.y);sy=p.y+(u-top)*influence;}
+else if(p.y>bottom){float influence=1.-smoothstep(0.,64.,p.y-bottom);sy=p.y+(l-bottom)*influence;}
+else sy=mix(u,l,clamp((p.y-top)/max(.001,bottom-top),0.,1.));`;
+ source=source.replace(old,process.env.HAUNT_NATIVE_FACE_ANCHORED==='1'?anchored:next);
  // Include the whole influence domain; unchanged outer pixels match the film.
  const bounds='const x=Math.floor(xs[0])-3,y=Math.floor(Math.min(...upper))-20,width=Math.ceil(xs.at(-1))+4-x,height=Math.ceil(Math.max(...lower))+48-y;';
  if(!source.includes(bounds))throw Error('Native face study bounds changed');

@@ -1,6 +1,6 @@
 /** Private deterministic visual evidence, not a runtime acceptance test. */
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),pw=require('playwright');
-const root=path.resolve(__dirname,'..'),out=path.join(root,'work/native-face-shapes-study-v2');
+const root=path.resolve(__dirname,'..'),out=path.join(root,process.env.HAUNT_SHAPE_CONTACT_OUT||'work/native-face-shapes-study-v2');
 (async()=>{process.env.HAUNT_NATIVE_FACE_SHAPES='1';const shader=require('./native-face-acting-study.cjs').transform(fs.readFileSync(path.join(root,'source/wisp-art-reference/painted-speech-study/native-lip-surface.mjs'),'utf8'));const fixture=await require('../tests/tonight_fixture.cjs').start(),browser=await pw.chromium.launch({args:['--mute-audio']});try{const p=await browser.newPage();await p.route('**/shape-contact',r=>r.fulfill({contentType:'text/html',body:'<!doctype html>'}));await p.route('**/native-lip-surface.mjs',r=>r.fulfill({contentType:'text/javascript',body:shader}));await p.goto(fixture.base+'/shape-contact');const result=await p.evaluate(async()=>{
  const {NativeLipSurface}=await import('/source/wisp-art-reference/painted-speech-study/native-lip-surface.mjs');const mouth=new NativeLipSurface();await mouth.load();
  const v=document.createElement('video');v.muted=true;v.src='/source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4';await new Promise((a,b)=>{v.onloadeddata=a;v.onerror=b});v.currentTime=35/24;await new Promise(a=>v.onseeked=a);

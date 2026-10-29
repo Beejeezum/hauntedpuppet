@@ -1,0 +1,45 @@
+{
+  "status": "unapproved_visual_candidate",
+  "output": "work/native-face-anchor-speaking-v1/native-speaking-proof.mp4",
+  "videoSha256": "04c43a431c32f8502dbc27f0616e87f635358eeb77b5eec9e53326c08084a5ea",
+  "shaderSha256": "62e238a84b1e0d3f6752adf51fc445ab6c6bea91377d71adc0cf61646848d0cf",
+  "change": "Anchor inverse deformation to original upper and lower native ink at the new aperture boundary. The broad free field allowed original lip ink outside the new opening. This remains an opt-in local shader interception only.",
+  "review": "Compared fixed rest/AH/OO/EE frames against v5. Doubled dark edge visibly reduced in anchored comparison; reviewed eight new moving-proof frames. OO remains too smile/triangle shaped; cavity texture and speech timing still need human review. No claim pasted-on issue fully resolved.",
+  "checks": {
+    "fixedShapes": [
+      {
+        "shape": "rest",
+        "changed": 0,
+        "outside": 0,
+        "glError": 0
+      },
+      {
+        "shape": "AH",
+        "changed": 3124,
+        "outside": 0,
+        "glError": 0
+      },
+      {
+        "shape": "OO",
+        "changed": 5248,
+        "outside": 0,
+        "glError": 0
+      },
+      {
+        "shape": "EE",
+        "changed": 3959,
+        "outside": 0,
+        "glError": 0
+      }
+    ],
+    "renderPaints": 545,
+    "mouthDraws": 312,
+    "snapshots": 193,
+    "audioWallClockDriftMs": 2.8000000119217106
+  },
+  "limitations": [
+    "Coarse acoustic shape estimates, not phoneme-accurate.",
+    "Approved source voice muxed; no live provider/acoustic/physical projection validation.",
+    "No production change or paid generations."
+  ]
+}
