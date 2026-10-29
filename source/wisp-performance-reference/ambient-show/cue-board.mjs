@@ -9,13 +9,13 @@ export function mountCueBoard(host,{clips,inventory,playlists,chooseCue,stop,run
  record.onclick=()=>{recording=!recording;change();};bar.append(record,label);host.before(bar);
  const error=e=>{label.textContent=e.message;onError(e);};const attempt=fn=>{try{Promise.resolve(fn()).catch(error);}catch(e){error(e);}};
  const pads=[];
- const fire=clip=>attempt(()=>{if(!recording)return chooseCue(clip.id);playlists.append(clip.id);label.textContent='ADDED '+playlists.draft().steps.length+' · '+clip.title;});
+ const fire=clip=>attempt(()=>{if(!recording)return chooseCue(clip.id);if(clip.manualOnly)throw Error('Operator-only scare: play it live, outside unattended shows');playlists.append(clip.id);label.textContent='ADDED '+playlists.draft().steps.length+' · '+clip.title;});
  const aliases={'friendly-drift':'cute','scary-drift':'scary'};
  for(const [index,item] of inventory.entries()){
   const clip=clips.find(c=>c.id===item.id||c.id===aliases[item.id]);const button=document.createElement('button');button.className='cue-pad '+(item.form==='scary'?'scary':item.form==='friendly'?'friendly':'transition');button.innerHTML='<span class="pad-number"></span><strong></strong><small></small>';
   button.querySelector('.pad-number').textContent=String(index+1).padStart(2,'0')+' · '+(keys[index]||'');button.querySelector('strong').textContent=item.title;
   button.querySelector('small').textContent=clip?(clip.detail||'Ready'):'Film still in production';button.disabled=!clip;
-  if(clip){button.setAttribute('aria-label',clip.title===item.title?item.title:clip.title+' · '+item.title);button.dataset.cue=clip.id;button.onclick=()=>fire(clip);}else button.title='This film has not been finished. No placeholder will play.';
+  if(clip){if(clip.manualOnly)button.setAttribute('aria-description','Operator-only scare. Play live; unavailable for unattended shows.');button.setAttribute('aria-label',clip.title===item.title?item.title:clip.title+' · '+item.title);button.dataset.cue=clip.id;button.onclick=()=>fire(clip);}else button.title='This film has not been finished. No placeholder will play.';
   pads.push({button,clip});host.append(button);
  }
  const actions=[['▶ Play draft',()=>{recording=false;change();return playlists.runDraft();}],['■ Blackout',stop],['↶ Undo last step',()=>playlists.undo()],['Save playlist',()=>{playlists.save();label.textContent='Playlist saved on this laptop';}],['Run saved show',runSaved],['Clear draft',()=>{playlists.clear();label.textContent='Draft cleared · saved shows kept';}],['Laptop sound',toggleSound],['Projector output',openOutput]];

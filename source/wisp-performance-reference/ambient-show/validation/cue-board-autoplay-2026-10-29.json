@@ -1,0 +1,129 @@
+{
+  "status": "local-control-tests-pass-human-rehearsal-pending",
+  "programModuleSha256": "cb8394ee007dc22549e0098cb18ae00f5f46ae49c9ec24accbcb83345dccb7ce",
+  "bankSha256": "0eec214e2df97011fb25045ed527fcd9d46c29575808f7c82e0a5a1bcc27f25e",
+  "friendlyPool": [
+    "cute",
+    "friendly-wave",
+    "friendly-boo-fail",
+    "friendly-depart"
+  ],
+  "scaryPool": [
+    "scary",
+    "scary-eyes"
+  ],
+  "operatorOnly": [
+    "scary-reach"
+  ],
+  "sourceOnlyExplicitTransitions": [
+    "cute-to-evil",
+    "evil-to-cute"
+  ],
+  "tests": {
+    "roundRobinUnit": "pass including explicit invalid-form rejection, reset, current avoidance and manual-only exclusion",
+    "browser": {
+      "chromium": {
+        "trace": [
+          {
+            "id": "cute",
+            "mode": "cute"
+          },
+          {
+            "id": "friendly-wave",
+            "mode": "cute"
+          },
+          {
+            "id": "friendly-boo-fail",
+            "mode": "cute"
+          },
+          {
+            "id": "scary",
+            "mode": "scary"
+          },
+          {
+            "id": "scary-eyes",
+            "mode": "scary"
+          },
+          {
+            "id": "cute",
+            "mode": "alternate"
+          },
+          {
+            "id": "scary",
+            "mode": "alternate"
+          },
+          {
+            "id": "scary",
+            "mode": "mostly-scary"
+          },
+          {
+            "id": "scary-eyes",
+            "mode": "mostly-scary"
+          },
+          {
+            "id": "scary",
+            "mode": "mostly-scary"
+          },
+          {
+            "id": "scary-eyes",
+            "mode": "mostly-scary"
+          },
+          {
+            "id": "scary",
+            "mode": "mostly-scary"
+          },
+          {
+            "id": "scary-eyes",
+            "mode": "mostly-scary"
+          },
+          {
+            "id": "cute",
+            "mode": "mostly-scary"
+          }
+        ],
+        "errors": [],
+        "scope": "Actual nine-film rehearsal bank, operator-only reach rejection from playlists and explicit live use; friendly variety/scary variety/alternating real-time playback, silent native movies and Blackout. No human SFX/seam/physical projection acceptance."
+      },
+      "webkit": {
+        "trace": [
+          {
+            "id": "cute",
+            "mode": "cute"
+          },
+          {
+            "id": "friendly-wave",
+            "mode": "cute"
+          },
+          {
+            "id": "friendly-boo-fail",
+            "mode": "cute"
+          },
+          {
+            "id": "scary",
+            "mode": "scary"
+          },
+          {
+            "id": "scary-eyes",
+            "mode": "scary"
+          },
+          {
+            "id": "cute",
+            "mode": "alternate"
+          },
+          {
+            "id": "scary",
+            "mode": "alternate"
+          }
+        ],
+        "errors": [],
+        "scope": "Actual nine-film rehearsal bank, operator-only reach rejection from playlists and explicit live use; friendly variety/scary variety/alternating real-time playback, silent native movies and Blackout. No human SFX/seam/physical projection acceptance."
+      }
+    },
+    "chromeMostlySpooky": "Optional real-time case passed assertion of at least29000ms on the program visibility counter for a30000ms scary setting before friendly arrival. Counter qualification, not physical projection footage.",
+    "catalogDesk": "Serialized Chrome full actual-film test with synthetic approval metadata passed. Prior local failures had a concurrent dist rebuild deleting its temporary movies.",
+    "workspaceEntry": "Built-only root/live/legacy/projector navigation passed with24pads/2defaultfilms/14disabled slots; no key-owning local server restarted.",
+    "phoneSavedShow": "Existing stored-show launch/recovery/Stop/invalid-show rejection and silent output passed."
+  },
+  "scope": "Actual local original painted movies with muted browser output; no paid generation or genuine provider calls. Human sound/seam review, physical projection, completed16-cue production library and long unattended soak remain required.",
+  "productionApproval": false
+}

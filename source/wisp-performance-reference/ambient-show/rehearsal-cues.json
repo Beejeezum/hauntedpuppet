@@ -10,7 +10,8 @@
       "loop": false,
       "seconds": 10,
       "exitPolicy": "finish",
-      "exitPort": "empty"
+      "exitPort": "empty",
+      "manualOnly": false
     },
     {
       "id": "friendly-boo-fail",
@@ -21,18 +22,20 @@
       "loop": false,
       "seconds": 10,
       "exitPolicy": "finish",
-      "exitPort": "empty"
+      "exitPort": "empty",
+      "manualOnly": false
     },
     {
       "id": "scary-reach",
       "title": "A hand from the mist",
       "form": "scary",
-      "detail": "Rehearsal film \u00b7 final review pending",
+      "detail": "Operator-only scare \u00b7 tap live, not in automatic shows",
       "src": "./rehearsal-scary-reach.mp4",
       "loop": false,
       "seconds": 10,
       "exitPolicy": "finish",
-      "exitPort": "empty"
+      "exitPort": "empty",
+      "manualOnly": true
     },
     {
       "id": "friendly-depart",
@@ -43,7 +46,8 @@
       "loop": false,
       "seconds": 10,
       "exitPolicy": "finish",
-      "exitPort": "empty"
+      "exitPort": "empty",
+      "manualOnly": false
     },
     {
       "id": "scary-eyes",
@@ -54,7 +58,8 @@
       "loop": false,
       "seconds": 10,
       "exitPolicy": "finish",
-      "exitPort": "empty"
+      "exitPort": "empty",
+      "manualOnly": false
     },
     {
       "id": "cute-to-evil",
@@ -65,7 +70,8 @@
       "loop": false,
       "seconds": 5,
       "exitPolicy": "finish",
-      "exitPort": "scary-rest"
+      "exitPort": "scary-rest",
+      "manualOnly": false
     },
     {
       "id": "evil-to-cute",
@@ -76,7 +82,8 @@
       "loop": false,
       "seconds": 5,
       "exitPolicy": "finish",
-      "exitPort": "friendly-rest"
+      "exitPort": "friendly-rest",
+      "manualOnly": false
     }
   ]
 }

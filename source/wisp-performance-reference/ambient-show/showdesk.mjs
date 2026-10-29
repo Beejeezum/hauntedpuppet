@@ -1,3 +1,4 @@
+import {RehearsalProgram} from './rehearsal-program.mjs';
 import {mountCueBoard} from './cue-board.mjs';
 import {loadRuntime,ProgramPicker,cueForm} from './runtime-library.mjs';
 import {CatalogCueDirector} from './catalog-director.mjs';
@@ -23,8 +24,9 @@ const inventory=await fetch(new URL('./cue-board-inventory.json',import.meta.url
 let libraryError=null;
 const runtime=await loadRuntime(new URL('./playback-library.json',import.meta.url)).catch(error=>{libraryError=error.message;return null;});
 const useCatalog=!!runtime?.clips.length,clips=runtime?(useCatalog?runtime.clips.map(c=>({...c,detail:c.manualOnly?'Operator cue · complete performance':'Approved film · planned transitions'})):studies):[];
-if(expanded&&!useCatalog){$('stageInfo').textContent='Rehearsal board ·9 actual films, final reviews pending. Requests finish one-shot acting, fade through black, then enter the next clip. This is not an invisible body morph.';$('studyInfo').textContent='Record any available film buttons into a saved running order. Missing films are labeled, never replaced with placeholders.';}
 const picker=useCatalog?new ProgramPicker(runtime):null;
+const rehearsalProgram=expanded&&!useCatalog&&!libraryError?new RehearsalProgram(clips):null;
+if(rehearsalProgram){for(const [value,title]of [['cute','Friendly mix ·4 routines'],['scary','Spooky mix ·2 routines'],['alternate','Alternate forms'],['mostly-scary','Mostly spooky']])$('mode').querySelector('[value="'+value+'"]').textContent=title;$('stageInfo').textContent='Tap a film to play, or record your running order. Full performances use soft exits and entrances through black.';$('studyInfo').textContent='Nine rehearsal films are available. The reach scare is a live cue; unfinished films stay dimmed.';$('filmSoundInfo').textContent='Enable sound here for embedded effects. Phone and projector windows stay silent.';}
 const formOf=id=>cueForm(clips.find(c=>c.id===id));
 const showError=error=>{$('status').textContent=error.message;};
 if(libraryError){$('status').textContent='Cue library unavailable · stage black';$('start').disabled=true;}
@@ -94,7 +96,7 @@ function stop(){cancelPendingEffects();playlist.stop();formPausedAt=null;mode='m
 
 function chooseCue(id){if(useCatalog)director.resolve(director.current,id);playlist.stop();formPausedAt=null;mode='manual';$('mode').value=mode;timing();if(director.current===id&&director.phase==='playing')return Promise.resolve();return director.request(id);}
 function startProgram(selected){
- let id;if(useCatalog){if(selected!=='manual')picker.assertMode(selected);picker.reset();const form=['scary','mostly-scary'].includes(selected)?'scary':'friendly';id=picker.pick(form,director.current);director.resolve(director.current,id);}else{id=['scary','mostly-scary'].includes(selected)?'scary':'cute';if(!clips.length)throw Error('Cue library unavailable');}
+ let id;if(useCatalog){if(selected!=='manual')picker.assertMode(selected);picker.reset();const form=['scary','mostly-scary'].includes(selected)?'scary':'friendly';id=picker.pick(form,director.current);director.resolve(director.current,id);}else{rehearsalProgram?.reset();const form=['scary','mostly-scary'].includes(selected)?'scary':'friendly';id=rehearsalProgram?rehearsalProgram.pick(form,director.current):form==='scary'?'scary':'cute';if(!clips.length)throw Error('Cue library unavailable');}
  playlist.stop();mode=selected;$('mode').value=mode;timing();lastForm=null;formSince=performance.now();formPausedAt=null;
  if(director.current===id&&director.phase==='playing')return Promise.resolve();return director.request(id);
 }
@@ -115,7 +117,7 @@ $('start').onclick=()=>{try{if($('mode').value==='playlist')document.querySelect
 function timing(){const n=Number($('dwell').value),selected=$('mode').value;$('dwellValue').textContent=n+'s';$('programTiming').textContent=selected==='playlist'?'Repeating playlist · '+(playlist.inspect().name||'saved show'):selected==='manual'?'Manual cueing · no automatic form changes':selected==='mostly-scary'?`Scary ${n*3}s · cute ${n*.5}s`:selected==='alternate'?`Cute ${n}s · scary ${n}s`:`${selected==='cute'?'Friendly':'Scary'} only · no automatic form changes`;}
 $('dwell').oninput=timing;$('mode').onchange=timing;$('pace').onchange=()=>{director.fadeMs=Number($('pace').value);};
 $('blackout').onclick=stop;document.addEventListener('keydown',e=>{if(e.key==='Escape')stop();});$('puppet').onclick=stop;
-function nextForm(){if(mode==='playlist')return playlist.current().cue;if(useCatalog){const form=mode==='cute'?'friendly':mode==='scary'?'scary':formOf(director.current)==='friendly'?'scary':'friendly';return picker.pick(form,director.current);}if(mode==='cute')return'cute';if(mode==='scary')return'scary';return director.current==='cute'?'scary':'cute';}
+function nextForm(){if(mode==='playlist')return playlist.current().cue;if(useCatalog){const form=mode==='cute'?'friendly':mode==='scary'?'scary':formOf(director.current)==='friendly'?'scary':'friendly';return picker.pick(form,director.current);}if(rehearsalProgram){if(mode==='cute'||mode==='scary'){formSince=performance.now();formPausedAt=null;}const form=mode==='cute'?'friendly':mode==='scary'?'scary':formOf(director.current)==='friendly'?'scary':'friendly';return rehearsalProgram.pick(form,director.current);}if(mode==='cute')return'cute';if(mode==='scary')return'scary';return director.current==='cute'?'scary':'cute';}
 function idleReturn(){if(!useCatalog)return'cute';const preferred=clips.find(c=>c.id==='friendly-drift'&&!c.manualOnly&&picker.can(director.current,c.id));return preferred?.id||picker.pick('friendly',director.current);}
 function autoQueue(select){try{director.request(select()).catch(showError);}catch(error){stop();showError(Error('Program stopped · '+error.message));}}
 
@@ -128,10 +130,10 @@ function paintDesk(now){
  if(mode==='playlist')playlist.suspend(stale||director.phase!=='playing',now);
  if(mode==='playlist'&&!stale&&director.phase==='playing'){playlist.observe(director.current,now);if(playlist.due(now))autoQueue(()=>playlist.advance());}
  const seconds=Number($('dwell').value)*(mode==='mostly-scary'?(formOf(director.current)==='scary'?3:.5):1),due=now-formSince>=seconds*1000;
- if(v&&!v.loop&&v.ended&&director.phase==='playing'){if(!useCatalog)compositor.blackout();autoQueue(()=>mode==='manual'?idleReturn():mode==='playlist'?playlist.current().cue:useCatalog&&!due?picker.pick(formOf(director.current),director.current):nextForm());}
+ if(v&&!v.loop&&v.ended&&director.phase==='playing'){if(!useCatalog)compositor.blackout();autoQueue(()=>mode==='manual'?idleReturn():mode==='playlist'?playlist.current().cue:!due&&(useCatalog||rehearsalProgram)?(picker||rehearsalProgram).pick(formOf(director.current),director.current):nextForm());}
  else if(v&&!stale&&director.phase==='playing'){
   const exitDue=!v.loop&&Number.isFinite(v.duration)&&v.currentTime>=v.duration-director.fadeMs/1000-.65;
-  if(exitDue){autoQueue(()=>mode==='manual'?idleReturn():mode==='playlist'?playlist.current().cue:due?nextForm():useCatalog?picker.pick(formOf(director.current),director.current):director.current);}
+  if(exitDue){autoQueue(()=>mode==='manual'?idleReturn():mode==='playlist'?playlist.current().cue:due?nextForm():(useCatalog||rehearsalProgram)?(picker||rehearsalProgram).pick(formOf(director.current),director.current):director.current);}
   else if(mode!=='manual'&&mode!=='playlist'&&due){try{const next=nextForm();if(next===director.current&&v.loop)formSince=now;else director.request(next);}catch(error){stop();showError(error);}}
  }
  compositor.render();

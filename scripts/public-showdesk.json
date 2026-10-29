@@ -18,9 +18,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.mjs",
       "destination": "showdesk.mjs",
-      "sha256": "f99f7d419e8f803474347eca65e9fe3c97c99a8f601e0f032789762243c20a25",
-      "bytes": 21555,
-      "publishedSha256": "b49352836d85466672c010054c44f17bb070720d1a990a8b321bbc855dbc6709",
+      "sha256": "8c790314f8aab080ad292658718f4f1f4bd362dea558ffff786191671cc49612",
+      "bytes": 22444,
+      "publishedSha256": "3451793a52e09a0b05911d1952b1a01e2ce288138524114bbdae6c843f87fd37",
       "rewrites": [
         {
           "from": "../runway-pilots/wisp-film-output.js",
@@ -276,9 +276,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/cue-board.mjs",
       "destination": "cue-board.mjs",
-      "bytes": 3600,
-      "sha256": "b727182c06e4bc5b681ee509598dbdc5806354593f7a5e90f5456035327f51f8",
-      "publishedSha256": "b727182c06e4bc5b681ee509598dbdc5806354593f7a5e90f5456035327f51f8"
+      "bytes": 3821,
+      "sha256": "2236919ecd0aa4f8d3194ed49e396a4d150f332accb57c7017e4f9c3107237eb",
+      "publishedSha256": "2236919ecd0aa4f8d3194ed49e396a4d150f332accb57c7017e4f9c3107237eb"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/cue-board-inventory.json",
@@ -290,9 +290,16 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/rehearsal-cues.json",
       "destination": "rehearsal-cues.json",
-      "bytes": 2387,
-      "sha256": "b42e8a66299f122f121c9c0381649d5af139601f77f27185e30cf349b2b9cc13",
-      "publishedSha256": "b42e8a66299f122f121c9c0381649d5af139601f77f27185e30cf349b2b9cc13"
+      "bytes": 2592,
+      "sha256": "0eec214e2df97011fb25045ed527fcd9d46c29575808f7c82e0a5a1bcc27f25e",
+      "publishedSha256": "0eec214e2df97011fb25045ed527fcd9d46c29575808f7c82e0a5a1bcc27f25e"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/rehearsal-program.mjs",
+      "destination": "rehearsal-program.mjs",
+      "bytes": 788,
+      "sha256": "cb8394ee007dc22549e0098cb18ae00f5f46ae49c9ec24accbcb83345dccb7ce",
+      "publishedSha256": "cb8394ee007dc22549e0098cb18ae00f5f46ae49c9ec24accbcb83345dccb7ce"
     }
   ]
 }
