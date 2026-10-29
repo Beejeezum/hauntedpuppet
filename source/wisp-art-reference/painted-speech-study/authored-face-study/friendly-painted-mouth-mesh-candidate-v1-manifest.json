@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "status": "private-geometry-candidate-not-production-approved",
+  "mesh": "friendly-painted-mouth-mesh-candidate-v1.json",
+  "sha256": "c5a80ef9fe36ab5c33415c8537c12c079561a789e0d7889809b3d42b4cfc8e20",
+  "art": "wisp-friendly-speech-design-v1.png",
+  "artSha256": "53fb90cc32fd065ca64456f03261ab370e1a2263da8a49cb366754091e254c34",
+  "authoring": "scripts/study-curved-mouth-topology.mjs with HAUNT_ORAL_MATERIAL_MASK=1 and HAUNT_LIP_RIM=1; directed-edge corrected output",
+  "scope": "Persist the exact geometry already used in the native inverse painted proof so reproduction does not depend on ignored scratch files. Original painted art stays unchanged. Static topology only; rejected native skin-mesh retarget is not reinstated. Inverse source-paint warp remains separate.",
+  "runtimePromoted": false,
+  "humanMotionApproved": false
+}
