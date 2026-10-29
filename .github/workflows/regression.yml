@@ -467,6 +467,7 @@ jobs:
           if [ "${{ inputs.native_director_pilot }}" = "true" ]; then
             if [ "${{ inputs.native_authored_face }}" = "true" ]; then
               failed=0
+              GST_DEBUG_FILE="${GST_DEBUG_FILE%.log}-shared-graphics.log" node tests/painted_shared_graphics.cjs || failed=1
               node tests/authored_phone_director.cjs || failed=1
               GST_DEBUG_FILE="${GST_DEBUG_FILE%.log}-authored-preparation.log" node tests/authored_director_preparation_cancel.cjs || failed=1
               exit "$failed"
@@ -524,6 +525,7 @@ jobs:
             work/native-picture-preparation/*.json
             work/owned-speaking-player/*.json
             work/owned-native-director-*.json
+            work/painted-shared-graphics/*.json
             work/authored-painted-director-*.json
             work/authored-director-preparation/*.json
             test-results/authored-director-preparation-*.json

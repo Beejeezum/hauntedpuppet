@@ -151,9 +151,9 @@
     {
       "source": "source/wisp-art-reference/painted-speech-study/phone-authored-painted-layer.mjs",
       "destination": "phone-authored-painted-layer.mjs",
-      "bytes": 4725,
-      "sha256": "64bcaf08b394ff2dce974e428977caa5192e928f87ce958c96c42f6e10e58ea9",
-      "publishedSha256": "38e19b59bfbd34ce838fc570c75f11b6b9e59c0782f4f76f040a99862b332aed",
+      "bytes": 4864,
+      "sha256": "21bbf9131aa0699d746353de0d7e1e1fb7d6d3ce073ffe62387093472284d3ec",
+      "publishedSha256": "2ea75c6ef5a67ed553920b1c1aa075023a60f7b1eb708805cd035dc0021cfb6c",
       "rewrites": [
         {
           "from": "../../wisp-performance-reference/ambient-show/owned-video-frame-source.mjs",
@@ -184,9 +184,9 @@
     {
       "source": "source/wisp-art-reference/painted-speech-study/authored-face-study/native-painted-face-study.mjs",
       "destination": "native-painted-face-study.mjs",
-      "bytes": 7107,
-      "sha256": "cdd28b68387776e9db85f10f95ffd1e96fe1a4ab454241d660cbd15e52f825cd",
-      "publishedSha256": "cdd28b68387776e9db85f10f95ffd1e96fe1a4ab454241d660cbd15e52f825cd"
+      "bytes": 8724,
+      "sha256": "912972b262e9b366d761f97eaea5de832a8a748ae02b142ae1724323709e8d47",
+      "publishedSha256": "912972b262e9b366d761f97eaea5de832a8a748ae02b142ae1724323709e8d47"
     },
     {
       "source": "source/wisp-art-reference/painted-speech-study/authored-face-study/native-painted-mouth-binding.mjs",

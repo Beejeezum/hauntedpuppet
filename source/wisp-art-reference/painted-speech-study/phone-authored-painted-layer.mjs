@@ -1,6 +1,7 @@
 import {PhonePaintedMouthLayer} from './phone-painted-mouth-layer.mjs';
 import {OwnedVideoFrameSource} from '../../wisp-performance-reference/ambient-show/owned-video-frame-source.mjs';
-import {NativePaintedFaceStudy} from './authored-face-study/native-painted-face-study.mjs';
+import {NativePaintedFaceStudy,PaintedGraphicsOwner} from './authored-face-study/native-painted-face-study.mjs';
+export {PaintedGraphicsOwner};
 const assets=[
  ['./authored-face-study/friendly-painted-mouth-mesh-candidate-v1.json','c5a80ef9fe36ab5c33415c8537c12c079561a789e0d7889809b3d42b4cfc8e20'],
  ['./native-lip-mesh-study/friendly-native-lip-candidates-v1.json','89bf67ffb376604bc58a1ebc6d65df5f5f71d74475d6df8deefc02b6852b3ff0'],
@@ -19,8 +20,8 @@ async function readAsset([path,expected],signal){
  * No mouth is drawn without a matched picture ID; no timestamp-only fallback.
  */
 export class PhoneAuthoredPaintedLayer extends PhonePaintedMouthLayer{
- constructor({frameSource=null,registration=null}={}){
-  super({mouth:{ready:false,dispose(){}}});this.frameSource=frameSource||new OwnedVideoFrameSource();this.ownsFrameSource=!frameSource;this.registration=registration;this.registrationResult=null;this.abort=new AbortController();this.loading=null;this.pullPromise=null;this.captureFailure=false;this.pullEpoch=0;
+ constructor({frameSource=null,registration=null,graphicsOwner=null}={}){
+  super({mouth:{ready:false,dispose(){}}});this.graphicsOwner=graphicsOwner;this.frameSource=frameSource||new OwnedVideoFrameSource();this.ownsFrameSource=!frameSource;this.registration=registration;this.registrationResult=null;this.abort=new AbortController();this.loading=null;this.pullPromise=null;this.captureFailure=false;this.pullEpoch=0;
  }
  load(){
   if(this.disposed)return Promise.reject(Error('Painted face retired'));if(this.mouth.ready)return Promise.resolve(true);if(this.loading)return this.loading;
@@ -29,7 +30,7 @@ export class PhoneAuthoredPaintedLayer extends PhonePaintedMouthLayer{
    bitmap=await createImageBitmap(new Blob([bytes[3]],{type:'image/png'}));if(this.disposed||signal.aborted)throw Error('Painted face preparation cancelled');
    if(bitmap.width!==1024||bitmap.height!==1536)throw Error('Painted face artwork dimensions changed');
    const [mesh,contours,anchors]=bytes.slice(0,3).map(b=>JSON.parse(new TextDecoder().decode(b)));
-   const rig=new NativePaintedFaceStudy(mesh,contours,anchors,bitmap);rig.ready=true;this.mouth=rig;return true;
+   const rig=new NativePaintedFaceStudy(mesh,contours,anchors,bitmap,{graphicsOwner:this.graphicsOwner});rig.ready=true;this.mouth=rig;return true;
   }catch(error){this.dispose();throw error;}finally{bitmap?.close();}})();return this.loading;
  }
  begin(value){this.captureFailure=false;return super.begin(value);}

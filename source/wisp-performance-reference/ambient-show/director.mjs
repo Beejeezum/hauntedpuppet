@@ -20,6 +20,7 @@ function bodyPicture(raw){
  const pending=ownedBodySource.pull(raw);if(pending!==ownedBodyPull){ownedBodyPull=pending;pending.catch(()=>{ownedBodyFailed=true;ownedBodySource.stop();});}
  return ownedBodySource.canvas;
 }
+let authoredGraphics=null;
 let mouthLayer=null,mouthCandidate=null,mouthPreparing=false,mouthEpoch=0,mouthPreparationAbort=null,isolatedReference=false,mouthReferenceState=null;
 const frameClock=new StageFrameClock();
 const compositor=new StageCompositor($('stage')),transport=new Transport(compositor,clips,{frameClock,mediaHost:$('mediaSources'),characterFilter:raw=>{const body=bodyPicture(raw);try{return mouthLayer?.render(raw)||body}catch{const failed=mouthLayer;mouthLayer=null;failed?.dispose();$('mouthStudy').checked=false;$('mouthStatus').textContent='Mouth study unavailable; original film retained';return body}}});
@@ -94,9 +95,10 @@ $('mouthStudy').onchange=async()=>{
    ambient.suspend();compositor.blackout();ownedBodySource?.stop();ownedBodyPull=null;$('stage').width=$('stage').width;compositor.render();output.releasePictures();
    await new Promise(resolve=>setTimeout(resolve,0));if(disposed||epoch!==mouthEpoch)return;isolatedReference=false;transport.blackout();
   }
-  const native=ownedMouth||new URLSearchParams(location.search).get('mouth')==='native-surface';const Layer=authoredMouth?(await import('../../wisp-art-reference/painted-speech-study/phone-authored-painted-layer.mjs')).PhoneAuthoredPaintedLayer:ownedMouth?(await import('../../wisp-art-reference/painted-speech-study/phone-owned-native-lip-layer.mjs')).PhoneOwnedNativeLipLayer:native?(await import('../../wisp-art-reference/painted-speech-study/phone-native-lip-layer.mjs')).PhoneNativeLipLayer:(await import('../../wisp-art-reference/painted-speech-study/phone-painted-mouth-layer.mjs')).PhonePaintedMouthLayer;
+  const native=ownedMouth||new URLSearchParams(location.search).get('mouth')==='native-surface';const authoredModule=authoredMouth?await import('../../wisp-art-reference/painted-speech-study/phone-authored-painted-layer.mjs'):null;const Layer=authoredModule?authoredModule.PhoneAuthoredPaintedLayer:ownedMouth?(await import('../../wisp-art-reference/painted-speech-study/phone-owned-native-lip-layer.mjs')).PhoneOwnedNativeLipLayer:native?(await import('../../wisp-art-reference/painted-speech-study/phone-native-lip-layer.mjs')).PhoneNativeLipLayer:(await import('../../wisp-art-reference/painted-speech-study/phone-painted-mouth-layer.mjs')).PhonePaintedMouthLayer;
   if(disposed||epoch!==mouthEpoch)return;
-  const candidate=new Layer(ownedMouth?{frameSource:ownedBodySource}:undefined);mouthCandidate=candidate;
+  if(authoredModule&&!authoredGraphics)authoredGraphics=new authoredModule.PaintedGraphicsOwner();
+  const candidate=new Layer(ownedMouth?{frameSource:ownedBodySource,...(authoredMouth?{graphicsOwner:authoredGraphics}:{})}:undefined);mouthCandidate=candidate;
   try{await candidate.load();if(disposed||epoch!==mouthEpoch){candidate.dispose();return;}
    if(ownedMouth){
     if(!['idle','stopped'].includes(director.inspect().phase))throw Error('Stop the current line before preparing this face study');
@@ -128,5 +130,5 @@ $('ambientMode').onchange=configureAmbient;$('ambientSeconds').onchange=configur
 $('ambientStart').onclick=()=>{if(!configureAmbient())return;if(['idle','stopped'].includes(director.inspect().phase))resumeAmbient().catch(error=>$('detail').textContent=error.message);else $('ambientStatus').textContent='Mode saved for after this line';};
 function paintDirector(){if(disposed)return;frameClock.pulse();ambient.tick();compositor.render();}
 function tick(){if(disposed)return;paintDirector();frame=requestAnimationFrame(tick);}tick();
-window.addEventListener('pagehide',()=>{disposed=true;cancelMouthPreparation(false);ambient.dispose();mouthEpoch++;mouthLayer?.dispose();mouthLayer=null;ownedBodySource?.dispose();director.dispose();paired.dispose();output.dispose();transport.dispose();frameClock.dispose();compositor.dispose();cancelAnimationFrame(frame);context?.close();},{once:true});
-window.WispPhoneDirector={inspect:()=>({...director.inspect(),speechStage,bodyPicture:ownedBodySource?{...ownedBodySource.inspect(),failed:ownedBodyFailed}:null,mouthPreparation:{pending:mouthPreparing,allocated:!!mouthCandidate,isolatedReference,reference:mouthReferenceState},ambient:ambient.inspect(),frameClock:frameClock.inspect(),mouthStudy:mouthLayer?.inspect()||null}),stop};
+window.addEventListener('pagehide',()=>{disposed=true;cancelMouthPreparation(false);ambient.dispose();mouthEpoch++;mouthLayer?.dispose();mouthLayer=null;ownedBodySource?.dispose();director.dispose();paired.dispose();output.dispose();transport.dispose();frameClock.dispose();compositor.dispose();authoredGraphics?.dispose();cancelAnimationFrame(frame);context?.close();},{once:true});
+window.WispPhoneDirector={inspect:()=>({...director.inspect(),speechStage,authoredGraphics:authoredGraphics?.inspect()??null,bodyPicture:ownedBodySource?{...ownedBodySource.inspect(),failed:ownedBodyFailed}:null,mouthPreparation:{pending:mouthPreparing,allocated:!!mouthCandidate,isolatedReference,reference:mouthReferenceState},ambient:ambient.inspect(),frameClock:frameClock.inspect(),mouthStudy:mouthLayer?.inspect()||null}),stop};

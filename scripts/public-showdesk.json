@@ -130,8 +130,8 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/director.mjs",
       "destination": "director.mjs",
-      "bytes": 16889,
-      "sha256": "8b10b0f7093db11acd213ebb32c27198bdf51a03da963c8e907c0e32b4ebfe28",
+      "bytes": 17203,
+      "sha256": "50fcfd9a8283d05ed0867db55905440fcea9eed514c8c4878139339ed7477d7e",
       "rewrites": [
         {
           "from": "../tonight-demo/paired-controls.mjs",
@@ -166,7 +166,7 @@
           "to": "../wisp-mouth-study/phone-authored-painted-layer.mjs"
         }
       ],
-      "publishedSha256": "e714bccc32642ab83c449db33aaca364b552a9f8cfcabe86b315da7734570fd8"
+      "publishedSha256": "7eb54106bad53ff65c4cdcd856e87f680b3dd6901b0641ef8ab0443e8bb29a88"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/director.css",
