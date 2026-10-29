@@ -72,6 +72,7 @@ export class SingleFilmTransport extends FilmTransport{
    video.dataset.cue=prepared.id;this.prepared=null;prepared.blob=null;
    this.compositor.reveal();this.syncSound();
   }catch(error){
+   if(!error?.cancelled&&owns())video._wispLastLoadFailure={cue:prepared.id,errorName:['NotSupportedError','AbortError','InvalidStateError','Error','TypeError'].includes(error?.name)?error.name:'OtherError',mediaError:video.error?.code??null,readyState:video.readyState,networkState:video.networkState,width:video.videoWidth,height:video.videoHeight};
    if(video.getAttribute('src')===prepared.url){video.pause();video.muted=true;video.removeAttribute('src');video.load();this.releaseURL(prepared.url);}
    if(this.prepared===prepared)this.prepared=null;prepared.dispose();
    throw error;
