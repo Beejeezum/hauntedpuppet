@@ -1,0 +1,10 @@
+import fs from 'node:fs';import crypto from 'node:crypto';import assert from 'node:assert/strict';
+import{nativeBinding,triangleArea}from './native-painted-mouth-binding.mjs';
+const root=new URL('../',import.meta.url),mesh=JSON.parse(fs.readFileSync(new URL('work/authored-face-registration/curved-rim-material-topology-mesh.json',root))),contours=JSON.parse(fs.readFileSync(new URL('source/wisp-art-reference/painted-speech-study/native-lip-mesh-study/friendly-native-lip-candidates-v1.json',root)));
+const movie=fs.readFileSync(new URL(contours.source,root));assert.equal(crypto.createHash('sha256').update(movie).digest('hex'),contours.sourceSha256);assert.equal(contours.frames.length,122);
+const report={status:'native_binding_geometry_audit_not_visual_acceptance',sourceSha256:contours.sourceSha256,frames:[],limits:['Native lip contours49–52 remain low confidence.','Signed geometry alone does not prove pixel attachment, material quality, eye protection or animated performance.','No runtime integration or human approval.']};
+for(const frame of contours.frames){const binding=nativeBinding(mesh,frame),keys=Object.keys(binding.poses);let minimum=Infinity,folds=0;
+ for(const a of keys)for(const b of keys)for(let j=0;j<=10;j++){const t=j/10,v=binding.poses[a].map((p,i)=>p.map((x,k)=>x+(binding.poses[b][i][k]-x)*t));for(const triangle of mesh.triangles){const area=triangleArea(v,triangle);minimum=Math.min(minimum,area);if(area< -1e-6)folds++;}}
+ report.frames.push({frame:frame.frame,confidence:frame.confidence,minimumSignedDoubleArea:minimum,folds,clip:binding.clip});
+}
+report.failedFrames=report.frames.filter(f=>f.folds).map(f=>f.frame);if(report.failedFrames.length){report.status='rejected_native_binding_folded_skin';process.exitCode=2;}fs.writeFileSync(new URL('work/authored-face-registration/native-binding-audit.json',root),JSON.stringify(report,null,2)+'\n');console.log({frames:report.frames.length,failedFrames:report.failedFrames,minimum:Math.min(...report.frames.map(f=>f.minimumSignedDoubleArea))});

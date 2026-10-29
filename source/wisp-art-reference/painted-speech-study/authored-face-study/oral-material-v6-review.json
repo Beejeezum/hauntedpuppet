@@ -96,5 +96,6 @@
     "No runtime integration, scary mouth, new cue acceptance, acoustic/provider or physical projection verification."
   ],
   "runtimePromoted": false,
-  "paidCreditsSpent": 0
+  "paidCreditsSpent": 0,
+  "topologyCorrection": "An internal edge-direction audit found1same-direction edge in an earlier triangulation despite its signed-area checks. Edge flips now preserve directed quad boundaries; winner has0bad internal edges,0boundary mismatches and area coverage error4.44e-16 across501sampled blends. Earlier signed-area-only geometry assertions are insufficient for acceptance."
 }
