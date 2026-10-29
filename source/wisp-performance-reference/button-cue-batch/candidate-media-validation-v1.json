@@ -65,6 +65,71 @@
       "runtimeAdmission": false
     },
     {
+      "cueId": "friendly-reform",
+      "file": "friendly-reform-runtime-candidate-v1.mp4",
+      "sha256": "988724884a899a5248715731fbafd40d00dcf994e91b2dcfc57e80ae73b3b103",
+      "frames": 133,
+      "fps": 24.0,
+      "size": [
+        1920,
+        1080
+      ],
+      "exactBlackHeadFrames": 41,
+      "exactBlackTailFrames": 0,
+      "minimumMarginsLTRB": {
+        "4": [
+          0.41875,
+          0.2935185185185185,
+          0.43020833333333336,
+          0.26296296296296295
+        ],
+        "8": [
+          0.41875,
+          0.29444444444444445,
+          0.43020833333333336,
+          0.2638888888888889
+        ],
+        "16": [
+          0.4192708333333333,
+          0.2953703703703704,
+          0.43072916666666666,
+          0.26481481481481484
+        ]
+      },
+      "reserveFailureFrames": {
+        "4": [],
+        "8": [],
+        "16": []
+      },
+      "audioSamples": 266240,
+      "audioSeconds": 5.546666666666667,
+      "videoSeconds": 5.541666666666667,
+      "peak": 0.10968343168497086,
+      "rmsDbFS": -39.51423900583615,
+      "firstHalfSecondPeak": 0.0,
+      "lastHalfSecondPeak": 0.0,
+      "descriptorMeasurement": {
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.10968343168497086,
+        "rmsDbFS": -39.51423900583615
+      },
+      "encodedSampleRates": [
+        48000
+      ],
+      "encodedChannelCounts": [
+        2
+      ],
+      "descriptorDifferences": {
+        "peak": 0.0
+      },
+      "maximumAudioTimestampErrorSeconds": 3.333333475907807e-07,
+      "audioBlocks": 260,
+      "failures": [],
+      "humanApproval": false,
+      "runtimeAdmission": false
+    },
+    {
       "cueId": "friendly-wave",
       "file": "friendly-wave-runtime-candidate-v3.mp4",
       "sha256": "32177fb6e3f49de6e8f4bf761575fa1709358ac56ee4c3464f029ffbb9a6300a",

@@ -4,7 +4,7 @@ import hashlib,json,os,shutil,subprocess,re,sys
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[1];F=ROOT/'source/wisp-performance-reference/button-cue-batch';FF=os.environ.get('FFMPEG') or shutil.which('ffmpeg') or str(ROOT/'work/animation-tools/imageio_ffmpeg/binaries/ffmpeg-macos-aarch64-v7.1')
 CAT=json.loads((ROOT/'source/wisp-performance-reference/ambient-show/catalog.json').read_text());clips={c['id']:c for c in CAT['clips']};assert len(clips)==16
-ITEMS=[('friendly-drift','friendly-drift-candidate-v2'),('friendly-wave','friendly-wave-runtime-candidate-v3'),('friendly-boo-fail','friendly-boo-fail-runtime-candidate-v1'),('scary-reach','scary-reach-runtime-candidate-v1'),('friendly-depart','friendly-depart-runtime-candidate-v1'),('scary-eyes','scary-eyes-runtime-candidate-v1'),('cute-to-evil','cute-to-evil-runtime-candidate-v3'),('evil-to-cute','evil-to-cute-runtime-candidate-v3')]
+ITEMS=[('friendly-drift','friendly-drift-candidate-v2'),('friendly-reform','friendly-reform-runtime-candidate-v1'),('friendly-wave','friendly-wave-runtime-candidate-v3'),('friendly-boo-fail','friendly-boo-fail-runtime-candidate-v1'),('scary-reach','scary-reach-runtime-candidate-v1'),('friendly-depart','friendly-depart-runtime-candidate-v1'),('scary-eyes','scary-eyes-runtime-candidate-v1'),('cute-to-evil','cute-to-evil-runtime-candidate-v3'),('evil-to-cute','evil-to-cute-runtime-candidate-v3')]
 rows=[]
 for cue,name in ITEMS:
     d=json.loads((F/(name+'.json')).read_text());movie=F/d['file'];sha=hashlib.sha256(movie.read_bytes()).hexdigest();assert sha==d['sha256'];clip=clips[cue];fail=[]

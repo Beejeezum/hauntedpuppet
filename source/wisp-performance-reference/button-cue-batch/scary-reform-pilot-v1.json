@@ -1,0 +1,48 @@
+{
+  "taskId": "e092d514-c2e8-457b-90b8-095e5f468930",
+  "cueId": "scary-reform",
+  "status": "rejected as finished cue; motion/material diagnostic only",
+  "workspaceId": 1709631,
+  "workspaceName": "Bruce",
+  "authorization": "User authorized Bruce for Wisp, finite16cue goal and conservative one-at-a-time generation.",
+  "model": "kling-o3-pro",
+  "durationSeconds": 10,
+  "requestedResolution": "720p",
+  "generateAudio": false,
+  "acceptedSubmissions": 1,
+  "maximumAutomaticRetries": 0,
+  "creditsBefore": 14599,
+  "creditsAfter": 14429,
+  "promptFile": "scary-reform-pilot-v1.prompt.txt",
+  "startFrame": "source/wisp-performance-reference/ambient-show/fog-lettering-study/empty-stage-v1.png",
+  "endFrame": "source/wisp-performance-reference/runway-pilots/film-return-handoff-study/scary-end-staged.png",
+  "referenceCommit": "d07fea75fb322a10eb5d159bef4790872e2a55f8",
+  "runtimePublication": false,
+  "humanApproval": false,
+  "next": [
+    "Retrieve actual generated artifact for QA, not a new paid submission.",
+    "All-frame15percent reserve minimum/20percent target, exact-black initial handle, full connected core/arms, same painted fog identity, actual moving ending.",
+    "Author sparse dry body-attached condensation effects only after motion is inspected; no music, choir or speech.",
+    "Prepare a human motion/sound review before any production cue admission."
+  ],
+  "startFrameSha256": "2d4e99510ae460197d112bb1a33a11a21233e195389bd6e92fb876ba335d46f7",
+  "endFrameSha256": "95a81dfe1d1436cfc86c73b26e6c21e7809bf34b5ff53fa7a7f64e40512a0757",
+  "observedDebit": 170,
+  "file": "scary-reform-pilot-v1.mp4",
+  "rawSha256": "97fe8b2e24e32d79262129f47eb5888e34f1e151ef8f823e17ab94b9aac2e51d",
+  "actual": {
+    "width": 1920,
+    "height": 1080,
+    "durationSeconds": 10.041,
+    "hasAudio": false
+  },
+  "review": {
+    "technical": "All241frames pass20percentRGB4/8/16 reserve; minimum22.22percent.20exact-black head frames.",
+    "visualVerdict": "Rejected by agent visual QA, not offered for human production approval.",
+    "materialFailure": "Native crops at3.75s/frame90 and6.25s/frame150 show opaque smooth white forearms/elongated fingers and humanoid shoulder forms instead of porous attached vapor. Frame90 face is an obscuring horizontal band; full recognizable face arrives later than the requested3seconds. End returns closer to the reference but that does not repair the intervening body.",
+    "positiveMotion": "Independent head/arm poses and connected forming body are present; framing passes. These do not override material/identity failures.",
+    "runtimePublication": false,
+    "automaticRetries": 0,
+    "nextAction": "Design a stable multi-angle porous-fog body/limb reference before another paid scary motion attempt; retain this only as a rejected reference, not a replacement Wisp."
+  }
+}
