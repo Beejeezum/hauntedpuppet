@@ -5,7 +5,7 @@ import {OwnedVideoFrameSource} from '../../wisp-performance-reference/ambient-sh
  * packet's canvas + browser-reported timestamp (frame registration unverified); no native video is sampled by the mouth surface.
  */
 export class PhoneOwnedNativeLipLayer extends PhoneNativeLipLayer{
- constructor(){super();this.frameSource=new OwnedVideoFrameSource();this.pullPromise=null;this.pullEpoch=0;}
+ constructor({registration=null}={}){super();this.registration=registration;this.registrationResult=null;this.frameSource=new OwnedVideoFrameSource();this.pullPromise=null;this.pullEpoch=0;}
  render(video){
   if(this.disposed)return null;
   const epoch=this.pullEpoch,pull=this.frameSource.pull(video);
@@ -14,12 +14,13 @@ export class PhoneOwnedNativeLipLayer extends PhoneNativeLipLayer{
   const packet=this.frameSource.packet;if(!packet)return null;
   this.mediaTime=packet.time;this.frameReady=true;this.snapshots=this.frameSource.inspect().published;
   if(!this.advanceWeights(video))return packet.canvas;
+  const registered=this.registration?.match(packet);this.registrationResult=registered??null;if(this.registration&&!registered)return packet.canvas;const contourTime=registered?.time??packet.time;
   const opening=1-(this.weights.rest??1);if(opening<=.0001)return packet.canvas;
   const ctx=this.canvas.getContext('2d');ctx.drawImage(packet.canvas,0,0);
-  if(!this.mouth.draw(ctx,packet.canvas,packet.time,opening))return packet.canvas;
+  if(!this.mouth.draw(ctx,packet.canvas,contourTime,opening))return packet.canvas;
   this.draws++;return this.canvas;
  }
- inspect(){return{...super.inspect(),sourceKind:'owned-rgba',registration:'unverified-browser-timestamp',owned:this.frameSource?.inspect()??null};}
- stop(){this.pullEpoch=(this.pullEpoch||0)+1;this.frameSource?.stop();this.pullPromise=null;super.stop();}
- dispose(){if(this.disposed)return;super.dispose();this.frameSource?.dispose();}
+ inspect(){return{...super.inspect(),sourceKind:'owned-rgba',registration:this.registration?'picture-match-study':'unverified-browser-timestamp',registeredFrame:this.registrationResult?.frame??null,registrationMetrics:this.registration?.inspect()??null,owned:this.frameSource?.inspect()??null};}
+ stop(){this.pullEpoch=(this.pullEpoch||0)+1;this.frameSource?.stop();this.pullPromise=null;this.registrationResult=null;this.registration?.reset();super.stop();}
+ dispose(){if(this.disposed)return;super.dispose();this.frameSource?.dispose();this.registration?.dispose();}
 }
