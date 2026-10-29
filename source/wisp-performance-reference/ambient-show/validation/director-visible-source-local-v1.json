@@ -1,0 +1,12 @@
+{
+  "status": "local verified layout; Linux compatibility hypothesis unproven",
+  "change": "Move muted phone-director media host into sticky header and remove semantically hidden ancestry. Main projection composition unchanged.",
+  "tests": {
+    "publicBuild": "pass",
+    "nativePhoneChromium": "pass",
+    "nativePhoneWebkit": "pass",
+    "assertion": "mediaSources is a HEADER child with no hidden ancestor",
+    "visualReview": "Latest full-page Chromium screenshot inspected: muted thumbnail visible in header, main canvas and controls remain readable."
+  },
+  "limits": "This does not prove the source visibility change resolves Linux native playback or effect import. No provider, human voice or physical projection acceptance."
+}

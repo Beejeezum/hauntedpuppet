@@ -123,9 +123,9 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/director.html",
       "destination": "director.html",
-      "bytes": 2646,
-      "sha256": "4071c71a3a2acc9fde4d838105a6c397bb93e176fdf03e067bac4fa75d1ea079",
-      "publishedSha256": "4071c71a3a2acc9fde4d838105a6c397bb93e176fdf03e067bac4fa75d1ea079"
+      "bytes": 2674,
+      "sha256": "8497f5cd4f2d7449757ac89c5201512fe908eb0ce55d9949aaf097716dcb66b0",
+      "publishedSha256": "8497f5cd4f2d7449757ac89c5201512fe908eb0ce55d9949aaf097716dcb66b0"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/director.mjs",
