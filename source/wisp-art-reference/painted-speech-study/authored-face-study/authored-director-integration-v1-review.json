@@ -101,5 +101,20 @@
     "physicalPhone": false,
     "provider": "mocked synthetic silent PCM and explicit viseme control",
     "services": "Two isolated loopback servers; no Keychain/provider credentials or existing voice-service status calls"
+  },
+  "linuxContextRetirementDiagnostic": {
+    "run": 40827163677,
+    "head": "be243abbd96186ae230912261f162926a607db58",
+    "result": "pass with no forced context loss diagnostic; not default disposal acceptance",
+    "speechStarts": 6,
+    "canonicalPreparations": 2,
+    "preventedContextLoss": 2,
+    "pageErrors": [],
+    "stopBodyCreated": 2451,
+    "stopBodyClosed": 2451,
+    "stopBodyPublished": 1012,
+    "stopBodyMaxHeld": 1,
+    "preparationCancellationCases": 4,
+    "causation": "Supports investigating context lifetime; single pass does not establish reliability. Do not ship the global prototype interception as a production fix."
   }
 }
