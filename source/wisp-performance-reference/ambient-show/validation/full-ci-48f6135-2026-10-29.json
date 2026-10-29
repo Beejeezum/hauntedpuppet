@@ -1,0 +1,50 @@
+{
+  "runId": 40955899932,
+  "headRevision": "48f61353944e366018fb9ef628b0cc0cd9722166",
+  "status": "completed",
+  "conclusion": "failure",
+  "scope": "Full GitHub Linux runner; actual media muted or clocked null audio sink, synthetic provider paths. No physical projection or human listening.",
+  "passedJobs": [
+    "regression",
+    "webkit",
+    "browser-regression1",
+    "browser-regression2",
+    "browser-regression3",
+    "native-avatar-offline"
+  ],
+  "showdeskFailureGroups": [
+    {
+      "tests": [
+        "showdesk_film_audio.cjs WebKit",
+        "catalog_bridge_browser.cjs WebKit"
+      ],
+      "evidence": "Incoming standby frame preparation did not progress; bridge became Film exit unavailable. Chrome soundtrack/bridge and WebKit single-clock handoff pass."
+    },
+    {
+      "tests": [
+        "showdesk_rehearsal.cjs WebKit"
+      ],
+      "evidence": "Actual owner continues friendly film while requested effect remains pending; no provider key involved."
+    },
+    {
+      "tests": [
+        "catalog_desk.cjs WebKit"
+      ],
+      "evidence": "Synthetic-approved initial media became unavailable / Film did not deliver a frame; Chrome passes."
+    },
+    {
+      "tests": [
+        "owner_sound.cjs Chromium"
+      ],
+      "evidence": "Native future source ended notification did not arrive within1second after immediate graph detach. Independent native OfflineAudioContext cancellation and zero-signal render pass; do not equate that with this event-timing check passing."
+    },
+    {
+      "tests": [
+        "neural_voice_browser.cjs WebKit"
+      ],
+      "evidence": "Archived webcam/conversion page exceeds390px viewport width at final layout assertion; preceding synthetic worklet+WebSocket flow passed in Chromium. Phone-director amendment supersedes this as primary experience, but failure is retained."
+    }
+  ],
+  "notFixedByCueSchedulingChange": true,
+  "next": "Use isolated exact-failure diagnostics; no blind full-suite rerun or claim of production/native reliability. New playlist whole-bank test separately addresses replaying short authored one-shots."
+}

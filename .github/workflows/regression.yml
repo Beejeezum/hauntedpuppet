@@ -70,6 +70,33 @@ concurrency:
 permissions:
   contents: read
 jobs:
+  cue-bank-soak:
+    if: github.event_name != 'workflow_dispatch' || !inputs.native_media_only
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps chromium webkit
+      - name: Build the explicit rehearsal workspace before media fixtures run
+        run: node tests/public_build.cjs
+      - name: Play every eligible film twice in the recorded order
+        run: |
+          failed=0
+          node tests/cue_board_soak.cjs || failed=1
+          HAUNT_BROWSER=webkit node tests/cue_board_soak.cjs || failed=1
+          exit "$failed"
+      - name: Keep whole-bank playback evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cue-bank-soak-evidence
+          path: test-results/cue-board-soak-*.json
+          if-no-files-found: ignore
   regression:
     if: github.event_name != 'workflow_dispatch' || !inputs.native_media_only
     runs-on: ubuntu-latest

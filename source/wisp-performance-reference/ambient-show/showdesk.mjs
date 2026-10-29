@@ -128,10 +128,17 @@ function paintDesk(now){
  // Automatic pacing counts visible performance, excluding decode/transition/stall time.
  if(mode!=='manual'&&mode!=='playlist'){if(stale||director.phase!=='playing'){if(formPausedAt===null)formPausedAt=now;}else if(formPausedAt!==null){formSince+=Math.max(0,now-formPausedAt);formPausedAt=null;}}
  if(mode==='playlist')playlist.suspend(stale||director.phase!=='playing',now);
- if(mode==='playlist'&&!stale&&director.phase==='playing'){playlist.observe(director.current,now);if(playlist.due(now))autoQueue(()=>playlist.advance());}
+ if(mode==='playlist'&&!stale&&director.phase==='playing'){
+  playlist.observe(director.current,now);
+  // An authored one-shot plays once. Queue its exit over the moving tail;
+  // only looping ambience uses the operator's minimum hold duration.
+  const oneShot=clips.find(c=>c.id===director.current)?.loop===false;
+  const tail=oneShot&&v&&Number.isFinite(v.duration)&&v.duration-v.currentTime<=Math.max(.1,director.fadeMs/1000+.65);
+  if(!director.queued&&(oneShot?tail:playlist.due(now)))autoQueue(()=>playlist.advance());
+ }
  const seconds=Number($('dwell').value)*(mode==='mostly-scary'?(formOf(director.current)==='scary'?3:.5):1),due=now-formSince>=seconds*1000;
- if(v&&!v.loop&&v.ended&&director.phase==='playing'){if(!useCatalog)compositor.blackout();autoQueue(()=>mode==='manual'?idleReturn():mode==='playlist'?playlist.current().cue:!due&&(useCatalog||rehearsalProgram)?(picker||rehearsalProgram).pick(formOf(director.current),director.current):nextForm());}
- else if(v&&!stale&&director.phase==='playing'){
+ if(v&&!v.loop&&v.ended&&director.phase==='playing'&&!director.queued){if(!useCatalog)compositor.blackout();autoQueue(()=>mode==='manual'?idleReturn():mode==='playlist'?playlist.advance():!due&&(useCatalog||rehearsalProgram)?(picker||rehearsalProgram).pick(formOf(director.current),director.current):nextForm());}
+ else if(v&&!stale&&director.phase==='playing'&&mode!=='playlist'){
   const exitDue=!v.loop&&Number.isFinite(v.duration)&&v.currentTime>=v.duration-director.fadeMs/1000-.65;
   if(exitDue){autoQueue(()=>mode==='manual'?idleReturn():mode==='playlist'?playlist.current().cue:due?nextForm():(useCatalog||rehearsalProgram)?(picker||rehearsalProgram).pick(formOf(director.current),director.current):director.current);}
   else if(mode!=='manual'&&mode!=='playlist'&&due){try{const next=nextForm();if(next===director.current&&v.loop)formSince=now;else director.request(next);}catch(error){stop();showError(error);}}
