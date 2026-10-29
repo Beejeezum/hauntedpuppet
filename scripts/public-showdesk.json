@@ -11,16 +11,16 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.css",
       "destination": "showdesk.css",
-      "sha256": "d4c7afc5863813382c1a993e8513c020f9c7fa7d024e5de8985dd4608f2ef8c1",
-      "bytes": 7344,
-      "publishedSha256": "d4c7afc5863813382c1a993e8513c020f9c7fa7d024e5de8985dd4608f2ef8c1"
+      "sha256": "dd8b011910085075580f97f7f1d6cbba1313d57161815dad529db7fc38360c86",
+      "bytes": 8278,
+      "publishedSha256": "dd8b011910085075580f97f7f1d6cbba1313d57161815dad529db7fc38360c86"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/showdesk.mjs",
       "destination": "showdesk.mjs",
-      "sha256": "d63949a23fd804caa490563b805a50a21a8dd36c1ce61c3fe0e8336eaa8f82c5",
-      "bytes": 23285,
-      "publishedSha256": "7e9db902d9f501be23073c11b2aebcff928bf65938512613e00c9883e01bb852",
+      "sha256": "64c7914f9c5fb0df7504f88b2b6de751d78410b94d568be85bcf424c80fa9173",
+      "bytes": 23556,
+      "publishedSha256": "ae1b0a9d8024b16c34a2d9332b8e9adeb4920135dc51ffdd04299a765c0a9637",
       "rewrites": [
         {
           "from": "../runway-pilots/wisp-film-output.js",
@@ -300,6 +300,13 @@
       "bytes": 788,
       "sha256": "cb8394ee007dc22549e0098cb18ae00f5f46ae49c9ec24accbcb83345dccb7ce",
       "publishedSha256": "cb8394ee007dc22549e0098cb18ae00f5f46ae49c9ec24accbcb83345dccb7ce"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/cue-layout.mjs",
+      "destination": "cue-layout.mjs",
+      "bytes": 541,
+      "sha256": "40adb1f1e1b7295cba8404f337847211df6aff09fd4345e4c3a35be182ced7a1",
+      "publishedSha256": "40adb1f1e1b7295cba8404f337847211df6aff09fd4345e4c3a35be182ced7a1"
     }
   ]
 }

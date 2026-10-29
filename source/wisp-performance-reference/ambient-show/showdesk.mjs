@@ -1,5 +1,6 @@
 import {RehearsalProgram} from './rehearsal-program.mjs';
 import {mountCueBoard} from './cue-board.mjs';
+import {mountCueLayout} from './cue-layout.mjs';
 import {loadRuntime,ProgramPicker,cueForm} from './runtime-library.mjs';
 import {CatalogCueDirector} from './catalog-director.mjs';
 import {PlaylistRunner,mountPlaylists,playlistControls} from './saved-playlists.mjs';
@@ -155,4 +156,5 @@ if(!libraryError){$('start').disabled=false;if(director.phase==='stopped')$('sta
 const phoneRemote={remoteState:remote.remoteState,remoteCommand:(...args)=>{const access=operatorControls?.inspect();if(access?.cloud&&(!access.authenticated||access.busy||access.disposed))return Promise.reject(Object.assign(Error('Operator sign-in required'),{cancelled:true}));return remote.remoteCommand(...args);}};
 mountPhoneControls({controller:()=>phoneRemote,previewCanvas:()=>$('stage')});
 operatorControls=mountOperatorAccess(document.querySelector('main>aside'),{onSignedOut:stop,beforeSignOut:async()=>{if(window.HauntPhone?.inspect().enabled)await window.HauntPhone.disable();},onSignedIn:async()=>{try{await window.HauntPhone?.refresh();}catch(error){$('phoneStatus').textContent='Signed in. '+error.message;}}});
-window.addEventListener('pagehide',()=>{disposed=true;cueBoard.dispose();cancelPendingEffects();cancelAnimationFrame(raf);director.dispose();frameClock.dispose();operatorControls.dispose();soundControls.dispose();for(const id of [...overlays.keys()])release(id);compositor.dispose();output.dispose();},{once:true});
+const cueLayout=mountCueLayout({main:document.querySelector('main'),primary:document.querySelector('.primary'),aside:document.querySelector('main>aside'),stage:document.querySelector('.stage-panel')});
+window.addEventListener('pagehide',()=>{disposed=true;cueLayout.dispose();cueBoard.dispose();cancelPendingEffects();cancelAnimationFrame(raf);director.dispose();frameClock.dispose();operatorControls.dispose();soundControls.dispose();for(const id of [...overlays.keys()])release(id);compositor.dispose();output.dispose();},{once:true});

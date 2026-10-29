@@ -19,8 +19,11 @@ const root=path.resolve(process.env.HAUNT_DESK_ROOT||path.resolve(__dirname,'..'
   await page.locator('[data-name]').fill('Rehearsal playlist');
   await page.locator('[data-steps] input').fill('5');
   await page.locator('[data-add]').click();
-  await page.locator('[data-steps] select').nth(1).selectOption('scary');
   await page.locator('[data-steps] input').nth(1).fill('5');
+  await page.locator('[data-steps] select').nth(1).selectOption('scary');
+  assert(await page.locator('[data-steps] input').nth(1).isDisabled());
+  assert(await page.locator('[data-steps] input').nth(1).isHidden());
+  assert((await page.locator('.playlist-step').nth(1).textContent()).includes('Full performance · once'));
   await page.getByRole('button',{name:'Move earlier',exact:true}).nth(1).click();
   assert.equal(await page.locator('[data-steps] select').first().inputValue(),'scary');
   await page.getByRole('button',{name:'Move later',exact:true}).first().click();
