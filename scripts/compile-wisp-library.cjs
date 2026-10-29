@@ -1,5 +1,7 @@
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
 const {planJoin}=require('../source/wisp-performance-reference/ambient-show/transition-plan.mjs');
+const {validateResidentDelivery}=require('../source/wisp-performance-reference/ambient-show/resident-contract.mjs');
+const residentContract=require('../source/wisp-performance-reference/ambient-show/resident-contract.json');
 /** Compile explicit approvals only. Production studies never become runtime clips. */
 function compileLibrary(catalog,{root=path.resolve(__dirname,'..'),sourceUrls=false}={}){
  if(!Array.isArray(catalog.clips))throw Error('Missing cue inventory');
@@ -7,6 +9,7 @@ function compileLibrary(catalog,{root=path.resolve(__dirname,'..'),sourceUrls=fa
  for(const clip of catalog.clips){
   if(typeof clip.id!=='string'||!/^[a-z0-9][a-z0-9-]{0,63}$/.test(clip.id)||ids.has(clip.id))throw Error('Invalid or duplicate cue ID');ids.add(clip.id);
   if(clip.status!=='approved')continue;
+  validateResidentDelivery(clip,residentContract);
   const m=clip.media,evidence=value=>typeof value==='string'&&value.trim().length>0;
   if(typeof clip.title!=='string'||!clip.title.trim()||clip.title.length>120||!['empty','friendly-rest','scary-rest'].includes(clip.entryPort)||!['empty','friendly-rest','scary-rest'].includes(clip.exitPort)||clip.dialogue!==false||!['friendly','scary','transition','atmosphere'].includes(clip.form)||!evidence(m?.reviewEvidence)||!evidence(m?.audioReviewEvidence))throw Error('Incomplete character/audio approval: '+clip.id);
   if(!/^[a-f0-9]{64}$/.test(m.sha256||'')||typeof m.file!=='string'||!m.file.startsWith('source/wisp-performance-reference/')||path.extname(m.file)!=='.mp4')throw Error('Invalid approved media record: '+clip.id);

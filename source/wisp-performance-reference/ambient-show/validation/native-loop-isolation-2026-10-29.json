@@ -105,7 +105,58 @@
   },
   "linuxRun": 40970845383,
   "linuxCommit": "bc3b48a",
-  "linuxStateAtCheck": "in_progress",
+  "linuxStateAtCheck": "completed_failure",
   "syntheticLifecycle": "PASS queued replay cancelled before execution; finish-current detaches without pause; duplicate end blocked during pending Play; late rejected Play ignored after Stop; synchronous Play failure leaves pending0; disposal removes replay",
-  "remaining": "Linux comparison, actual desk integration, repeated show modes, output ownership/silence and visual seam acceptance. No change to default playback."
+  "remaining": "Linux comparison, actual desk integration, repeated show modes, output ownership/silence and visual seam acceptance. No change to default playback.",
+  "linuxResults": {
+    "native": {
+      "timedOut": true,
+      "wraps": 0,
+      "callbacks": 1,
+      "nativeState": {
+        "time": 0,
+        "paused": false,
+        "seeking": false,
+        "readyState": 4,
+        "loop": true
+      },
+      "events": [
+        {
+          "event": "playing",
+          "media": 0,
+          "wall": 244
+        },
+        {
+          "event": "ended",
+          "media": 0,
+          "wall": 24244
+        }
+      ]
+    },
+    "explicit": {
+      "timedOut": true,
+      "wraps": 0,
+      "callbacks": 1,
+      "nativeState": {
+        "time": 0,
+        "paused": false,
+        "seeking": false,
+        "readyState": 4,
+        "loop": false
+      },
+      "events": [
+        {
+          "event": "playing",
+          "media": 0,
+          "wall": 255
+        },
+        {
+          "event": "ended",
+          "media": 0,
+          "wall": 24254
+        }
+      ]
+    }
+  },
+  "linuxInterpretation": "Both isolated tests failed before continuous first playback, with one picture and clock0. They did not reach a loop restart. This does not prove explicit replay cures or causes the earlier real desk after-wrap stall. No default integration or release acceptance."
 }

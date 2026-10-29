@@ -12,7 +12,8 @@
     "text": "Happy Halloween is designed and composited lettering with a tracked hand/stroke reveal; not generated illegible lettering",
     "completion": "planned slots and approved direction do not establish finished clips or join acceptance",
     "productionStudies": "Source-only candidate evidence. These entries never make a planned card ready or authorize playback/joins.",
-    "productionBudget": "Reuse suitable existing assets first. No bulk generation or automatic credit purchases. Generate one targeted draft at a time only where reuse cannot meet the brief; review before retries."
+    "productionBudget": "Reuse suitable existing assets first. No bulk generation or automatic credit purchases. Generate one targeted draft at a time only where reuse cannot meet the brief; review before retries.",
+    "residentPerformance": "Ordinary actions return to canonical living idle without routine fades. Form changes use authored morph into the other idle. Empty stage only for explicit departure/arrival/vanish scenes; resident-contract.json is a required delivery gate."
   },
   "ports": {
     "friendly-rest": {
