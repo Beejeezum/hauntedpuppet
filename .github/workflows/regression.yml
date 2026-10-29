@@ -434,6 +434,7 @@ jobs:
           node tests/effect_import_cancel.cjs || failed=1
           node tests/catalog_bridge_browser.cjs || failed=1
           node tests/phone_saved_playlist.cjs || failed=1
+          HAUNT_TEST_NATIVE_MOUTH=0 node tests/phone_director_player.cjs || failed=1
           node tests/phone_director_player.cjs || failed=1
           HAUNT_DESK_ROOT=dist HAUNT_DESK_PAGE=/assets/wisp-showdesk/index.html node tests/showdesk_rehearsal.cjs || failed=1
           exit "$failed"

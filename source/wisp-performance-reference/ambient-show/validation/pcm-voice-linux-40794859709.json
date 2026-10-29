@@ -1,0 +1,31 @@
+{
+  "run": 40794859709,
+  "head": "0cc906263f5aeea5aedd1b7dcebc360e3b00b843",
+  "status": "completed",
+  "conclusion": "failure",
+  "passed": [
+    "PCM parsing and offline native resampling",
+    "single native transport core",
+    "pending effects lifecycle both transports",
+    "authored bridge",
+    "saved phone playlist"
+  ],
+  "failed": {
+    "phoneDirector": {
+      "phase": "preparing",
+      "speechStage": "status",
+      "mouthStudy": {
+        "ready": true,
+        "active": false,
+        "opening": 0,
+        "draws": 0,
+        "disposed": false
+      },
+      "scope": "Second prompt line after opt-in legacy mouth loading. No second speech started.",
+      "next": "Compare identical original-film path without loading mouth, keeping existing mouth test as required gate."
+    },
+    "effectImport": "Did not register layer; next diagnostic retains native failure state before disposal."
+  },
+  "inference": "Native audio file decoding is not the demonstrated cause of this stall: it is reached only after status/prompt/voice requests, while failure remains at status. PCM preparation is validated but does not fix Linux app playback.",
+  "notReleaseAcceptance": true
+}
