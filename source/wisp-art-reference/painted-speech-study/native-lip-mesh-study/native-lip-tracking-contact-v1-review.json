@@ -1,0 +1,18 @@
+{
+  "status": "visual_review_requires_contour_revision",
+  "reviewedImage": "native-lip-tracking-contact-v1.png",
+  "scope": "Visual inspection of the twelve illustrated source samples only; not all 122 frames or moving playback.",
+  "observations": [
+    "Frames 49\u201352: cyan line traverses bright skin below/left of the dark right smile corner; frame 52 also has a visibly jagged central contour. These are uncertain geometry, not approved lip landmarks.",
+    "Frames 22, 33 and 44 have a much thicker dark smile than frame 0. One centerline cannot describe both upper and lower painted boundaries consistently.",
+    "The eye and cheek paint must remain attached to the original moving head. Correct source-frame identification alone does not resolve surface geometry or pasted-on material."
+  ],
+  "requiredBeforeRuntime": [
+    "Review upper and lower mouth boundaries at native resolution for uncertain frames; preserve the dark corner and lip shading.",
+    "Retarget the human-approved rest/AH/OO/EE painted shapes into common head-local coordinates with protected eyes and coherent jaw/cheek deformation.",
+    "Inspect a moving speech proof for drift, doubled smile ink, patch edges and topology changes before app promotion."
+  ],
+  "humanPaintDirection": "../authored-face-study/wisp-friendly-speech-design-v1-review.json",
+  "runtimeChanged": false,
+  "paidGenerations": 0
+}
