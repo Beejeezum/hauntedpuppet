@@ -3,7 +3,10 @@
   "tests": {
     "builtChrome": "PASS",
     "builtMacWebKit": "PASS",
-    "publicBuild": "PASS"
+    "publicBuild": "PASS",
+    "hostedChrome": "PASS: expanded entry, live navigation, legacy queries, return, output disposal and mobile bounds",
+    "hostedEntryBytes": "Exact match to workspace-entry.js",
+    "hostedMacWebKit": "FAIL: collected page error for cute-mouths.json access-control checks while exercising legacy Live navigation; not waived. HTTP HEAD separately returned 200 application/json. Root cause unresolved."
   },
   "verified": [
     "24 pads with 9 actual films and 7 disabled unfinished films",
@@ -19,5 +22,12 @@
     "Local built-site tests, not physical projection or human sound approval",
     "Broader Linux failures remain unresolved"
   ],
-  "scope": "Entry/navigation only; no voice, renderer, film or transition behavior changed."
+  "scope": "Entry/navigation only; no voice, renderer, film or transition behavior changed.",
+  "deployment": {
+    "commit": "3da14eccab2a62df772e8a7e1d49281845d3db69",
+    "deployId": "6ae3cb498d77081841528a9f",
+    "state": "ready",
+    "url": "https://deploy-preview-12--hauntedpuppet.netlify.app/"
+  },
+  "hostedCanonicalRouting": "Netlify serves /live.html as /live. Test accepts only these two known equivalent live paths and still checks legacy query strings exactly."
 }
