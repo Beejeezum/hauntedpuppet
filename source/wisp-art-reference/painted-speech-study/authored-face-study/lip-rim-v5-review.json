@@ -1,0 +1,24 @@
+{
+  "status": "private_material_progress_not_runtime_accepted",
+  "scope": "Static approved painting, no original moving-body registration or voice alignment.",
+  "changes": [
+    "Native/rest skin and oral paint are separate triangle regions; target open-mouth cheek paint no longer appears at1% opening.",
+    "Added explicit narrow painted lip-rim strip with topology selected to avoid folded diagonals.",
+    "Rest render bypass preserves exact original pixels.",
+    "Premultiplied alpha and multisampling restore antialiasing without the earlier dark outer oval.",
+    "Rejected normal-offset rest UV chart after one folded triangle; constant upper/lower offsets pass signed-area guard."
+  ],
+  "evidence": [
+    "work/authored-face-registration/curved-lip-rim/mesh-painted-near-rest.png",
+    "work/authored-face-registration/curved-lip-rim/mesh-painted-motion.webm",
+    "work/authored-face-registration/curved-lip-rim/mesh-render-review.json"
+  ],
+  "visualReview": "Viewed 0/1/5/15/35/65/100% AH/OO/EE contact. Early opening pop substantially reduced and eye regions remain stable. Full AH/OO contours still feel clipped/faceted: automatic dark-component bounds omit some bright tongue/lip material; halfway OO remains smile-shaped. Not finished art.",
+  "checks": [
+    "501 sampled shared-pose combinations checked for skin/rim/oral orientation.",
+    "Rest and protected eye pixel tests pass in rendered study."
+  ],
+  "next": "Measure and visually review full oral material including warm tongue and bright teeth/rim, rather than treating dark-pixel envelope as final lip boundary. Then render on original moving body before human review.",
+  "runtimePromoted": false,
+  "creditsSpent": 0
+}
