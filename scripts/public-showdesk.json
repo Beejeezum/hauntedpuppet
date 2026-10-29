@@ -130,8 +130,8 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/director.mjs",
       "destination": "director.mjs",
-      "bytes": 10779,
-      "sha256": "890f348bb90590f538b07ae7031684ca9d20aee179d0bcede75839a35af2a089",
+      "bytes": 11577,
+      "sha256": "cb5fe39e17f9ae4991a2f1f74c7efa67e7dfd67fb87eaa5ad019f92a748b6b31",
       "rewrites": [
         {
           "from": "../tonight-demo/paired-controls.mjs",
@@ -150,7 +150,7 @@
           "to": "../wisp-mouth-study/phone-native-lip-layer.mjs"
         }
       ],
-      "publishedSha256": "4e9197b008308c9be6a2ee163d677f12e9c438506573dbfa31ea7da4280a50d1"
+      "publishedSha256": "7bc26e298965313ce51c374f8397a613b1e50ad8ccf4d77fa6d7d145de8dfb45"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/director.css",

@@ -1,0 +1,35 @@
+{
+  "status": "local browser lifecycle verified; not deployment or visual approval",
+  "tests": {
+    "mouth_preparation_cancel.cjs": {
+      "chromium": "8/8 pass",
+      "webkit": "8/8 pass",
+      "cases": [
+        "Stop before module finishes",
+        "Stop while assets load",
+        "Uncheck while loading",
+        "Pagehide while loading"
+      ],
+      "variants": [
+        "legacy mouth",
+        "native painted lips"
+      ],
+      "observations": [
+        "no late layer attachment",
+        "pending state clears immediately",
+        "owned GL textures/shaders/programs/buffers all released",
+        "late module cannot construct a new surface"
+      ]
+    },
+    "native_lip_phone.cjs": {
+      "chromium": "pass",
+      "webkit": "pass",
+      "provider": "synthetic PCM, actual painted films"
+    },
+    "public_build.cjs": "pass",
+    "browser_test_shards.cjs": "111 suites preserved"
+  },
+  "networkScope": "Native surface aborts its asset requests. Dynamic imports and legacy image decoding may finish, but epoch fencing prevents allocation/attachment afterward.",
+  "genuineProvider": false,
+  "physicalProjection": false
+}

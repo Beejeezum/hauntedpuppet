@@ -28,9 +28,9 @@ Current limitations: acoustic aperture only; proper rounded/consonant shapes,
 artistic lip contour correction and human full-motion/speech review remain.
 Four low-contrast source frames49–52 are still uncertain. The snapshot path can
 lag the direct native film by one presentation interval and needs visual review
-at activation/closure. Pending mouth preparation is still owned by the legacy
-checkbox handler; its immediate Stop/pagehide cancellation needs explicit
-coverage before production approval. Genuine provider and physical projection
+at activation/closure. Pending mouth preparation is explicitly owned by the checkbox handler: Stop,
+uncheck and pagehide retire the candidate, and stale module imports cannot
+construct a later surface. Gated import/asset tests cover both implementations. Genuine provider and physical projection
 checks are not replaced by synthetic PCM or browser tests.
 
 Tests: HAUNT_NATIVE_LIPS=1 HAUNT_PHONE_HTTP_FIXTURE=1
