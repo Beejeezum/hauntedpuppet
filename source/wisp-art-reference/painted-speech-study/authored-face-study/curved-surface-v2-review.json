@@ -1,0 +1,28 @@
+{
+  "status": "development_candidate_with_visible_corner_defects",
+  "geometry": "scripts/study-curved-mouth-topology.mjs",
+  "renderer": "scripts/authored-face-mesh-study.mjs",
+  "reproduce": [
+    "node scripts/study-curved-mouth-topology.mjs",
+    "HAUNT_CURVED_MOUTH=1 node scripts/render-authored-face-mesh-study.cjs"
+  ],
+  "evidence": [
+    "work/authored-face-registration/curved/mesh-painted-halfway.png",
+    "work/authored-face-registration/curved/mesh-painted-motion.webm"
+  ],
+  "changes": [
+    "Measured thin curved rest boundary replaces the convex filled smile.",
+    "Shared constrained skin triangulation uses existing Three/Earcut plus edge flips across pose samples.",
+    "Oral strip follows paired upper/lower lips; open material excludes rest-face colour from cavity blending."
+  ],
+  "observed": [
+    "OO-seeded and EE-seeded topology candidates have no materially negative skin triangles across336 pairwise plus165 four-weight lattice samples; near-zero collinear boundary triangles remain.",
+    "Oral strip has no materially negative triangles across same501 samples.",
+    "Viewed deterministic halfway contact: grey cavity blending is reduced, but wide smile has visible corner/cheek wedges and halfway OO is still tapered.",
+    "Protected ellipse interior pixels remain exact in3halfway poses; generic ellipse is too broad near mouth corners and is not an accepted eye contour."
+  ],
+  "next": "Replace generic eye guard with carefully reviewed painted-eye boundaries, soften material/skin retarget at corners, and inspect tiny opening transitions. Do not promote before moving-body registration and human visual review.",
+  "runtimePromoted": false,
+  "humanMotionApproval": false,
+  "creditsSpent": 0
+}
