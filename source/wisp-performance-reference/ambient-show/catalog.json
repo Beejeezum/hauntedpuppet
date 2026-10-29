@@ -511,6 +511,17 @@
       "status": "revision-required",
       "evidence": "../button-cue-batch/fog-lettering-runtime-candidate-v1.json",
       "scope": "One complete265frame11.04second smoke-lettering performance with embedded dry effects. Global black-point16 grade plus fixed60percent whole-frame fit; all20percent reserve passes,13exact-black head/26tailframes and silent audio handles. Human typography, smoke detail, size, motion and dry mix review pending; no automatic cue admission or physical projection approval. Human feedback rejects smoke/letters as too solid. Keep out of runtime; no new paid retry before a stronger porous-letter material solution."
+    },
+    {
+      "plannedClipIds": [
+        "friendly-drift",
+        "friendly-wave"
+      ],
+      "media": "../button-cue-batch/resident-wave-study/idle-wave-idle-review-v1.mp4",
+      "sha256": "9034c2389242fadc596960249c026c348e290546c400101651408aeb1d017b5a",
+      "status": "resident-motion-review-pending",
+      "reviewMetadata": "../button-cue-batch/resident-wave-study/idle-wave-idle-review-v1.json",
+      "scope": "Complete485frame20.21second no-fade idle-wave-idle picture proof. New241frame wave with exact existing idle boundary references. No blank/poof/fades/animatedresize/interpolation/bodycrossfade. Native wave20percentreserve, context15percent hardreserve/18.89minimum. FullChrome/MacWebKit native playback passes. Human acting/twojoins review pending; silent/noSFX yet; not a dynamicbuttonplayer, nativeidleloop or productionclip approval."
     }
   ],
   "deferredClips": [

@@ -1,0 +1,27 @@
+{
+  "taskId": "4f780408-2195-4ec3-a706-d6e1683bea9d",
+  "status": "SUCCEEDED",
+  "workspace": {
+    "id": 1709631,
+    "name": "Bruce"
+  },
+  "model": "kling-o3-pro",
+  "resolutionRequested": "720p",
+  "audioRequested": false,
+  "creditBalanceBefore": 14109,
+  "creditBalanceAfter": 13939,
+  "observedDebit": 170,
+  "scope": "One targeted replacement friendly-wave native action for resident idle-to-action-to-idle direction; no disappearance/fade. Exact new extracted V7frame121 entry andframe0return anchors uploaded once. No paid retry until actual motion, complete-effect clearance and both joins reviewed.",
+  "humanApproval": false,
+  "runtimePublication": false,
+  "doNotDuplicate": true,
+  "rawFile": "resident-wave-pilot-v1.mp4",
+  "rawSha256": "9d21a540a36670ac327d3c44aa3833e9cef4778e04106e9fbf87d52c8d690524",
+  "rawDimensions": [
+    1920,
+    1080
+  ],
+  "rawFrames": 241,
+  "fps": 24,
+  "humanReview": "pending"
+}
