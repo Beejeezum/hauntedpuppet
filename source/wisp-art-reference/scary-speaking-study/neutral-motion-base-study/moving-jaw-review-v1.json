@@ -1,0 +1,475 @@
+{
+  "status": "private connected-moving-jaw attachment audition; not production speech rig",
+  "movie": "work/scary-neutral-jaw-proof-v1/moving-jaw-voiced-attachment-v3.mp4",
+  "movieSha256": "2448c435c708d2d6f6f1b4ed01b6ba19a47ec786b89dd32fab7b624b86cc66d6",
+  "renderer": "neutral-moving-jaw.mjs",
+  "rendererSha256": "bb1a3804f17edf7c29853ff33dbb429ffb27f7476888a1ab5df1e5187b948ac6",
+  "bodyMaster": "scary-neutral-body-base-v1.mp4",
+  "bodyMasterSha256": "27ac763bbf5d6349737b751a22abae5adba410872a5fd2d08b4bd483157750eb",
+  "observations": "neutral-lip-observations-v2.json",
+  "observationsSha256": "91cf2e043f77b62dbf272d63c42816dff0e6f50d89db6fa807aa6925e4727ae3",
+  "paintOwnership": "Current known decoded picture supplies lips, surrounding skin, cheeks and jaw. Oral painting is visible only inside the connected opening. No generated outer face, head, body or fog replacement.",
+  "oralMaterial": "../neutral-face-rig-study/corrective-ah-v1/painted-ah-head-v1.png",
+  "oralMaterialSha256": "ce1f8dc17926586bc53efc5b67f0511f965b116909bddb25a59bd438f9ca633a",
+  "oralScope": "Existing generated corrective artwork; useful hidden oral material, not whole-head/human approval.",
+  "rejectedNativeOralDiagnostic": "Early original-attack tooth sampling looked coarse/sharp and mismatched against the softer neutral skin. Retained as an explicit diagnostic mapping, never defaulted or published.",
+  "browserChecks": {
+    "chromium": {
+      "passed": true,
+      "result": {
+        "minimumAreaRatio": 0.5125173430614502,
+        "samples": [
+          {
+            "frame": 0,
+            "open": 0,
+            "changed": 0,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 1
+          },
+          {
+            "frame": 0,
+            "open": 0.5,
+            "changed": 3702,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.7563195941126324
+          },
+          {
+            "frame": 0,
+            "open": 1,
+            "changed": 3989,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.5126391882252683
+          },
+          {
+            "frame": 24,
+            "open": 0,
+            "changed": 0,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 1
+          },
+          {
+            "frame": 24,
+            "open": 0.5,
+            "changed": 3918,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.7563509389475698
+          },
+          {
+            "frame": 24,
+            "open": 1,
+            "changed": 4207,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.5127018778951395
+          },
+          {
+            "frame": 48,
+            "open": 0,
+            "changed": 0,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 1
+          },
+          {
+            "frame": 48,
+            "open": 0.5,
+            "changed": 4086,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.7563010870471167
+          },
+          {
+            "frame": 48,
+            "open": 1,
+            "changed": 4348,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.512602174094237
+          },
+          {
+            "frame": 72,
+            "open": 0,
+            "changed": 0,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 1
+          },
+          {
+            "frame": 72,
+            "open": 0.5,
+            "changed": 3833,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.7562926228041711
+          },
+          {
+            "frame": 72,
+            "open": 1,
+            "changed": 4147,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.5125852456083457
+          },
+          {
+            "frame": 96,
+            "open": 0,
+            "changed": 0,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 1
+          },
+          {
+            "frame": 96,
+            "open": 0.5,
+            "changed": 3828,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.756596372690133
+          },
+          {
+            "frame": 96,
+            "open": 1,
+            "changed": 4149,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.5131927453802625
+          },
+          {
+            "frame": 111,
+            "open": 0,
+            "changed": 0,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 1
+          },
+          {
+            "frame": 111,
+            "open": 0.5,
+            "changed": 3966,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.7564162575938482
+          },
+          {
+            "frame": 111,
+            "open": 1,
+            "changed": 4287,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.5128325151876929
+          },
+          {
+            "frame": 145,
+            "open": 0,
+            "changed": 0,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 1
+          },
+          {
+            "frame": 145,
+            "open": 0.5,
+            "changed": 3805,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.7565818831017879
+          },
+          {
+            "frame": 145,
+            "open": 1,
+            "changed": 4101,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.5131637662035722
+          },
+          {
+            "frame": 192,
+            "open": 0,
+            "changed": 0,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 1
+          },
+          {
+            "frame": 192,
+            "open": 0.5,
+            "changed": 3783,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.756659279004392
+          },
+          {
+            "frame": 192,
+            "open": 1,
+            "changed": 4078,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.513318558008784
+          }
+        ],
+        "invalidOpeningRejected": true
+      },
+      "disposed": {
+        "disposed": true,
+        "draws": 16,
+        "resources": 0,
+        "liveObjects": 0,
+        "programBound": false,
+        "textureBound": false,
+        "bufferBound": false
+      },
+      "exportMovie": false,
+      "corrective": true,
+      "voice": false,
+      "scope": "Actual shaders and exact known decoded pictures.965neutral-frame/opening geometries;24pixel cases check rest identity, iris9x9regions and outside-face ownership. Optional193frame/24fps offline whole-body render; synthetic jaw control or prerecorded amplitude envelope and offline voice mux. The latter keeps complete8.064second audio, approximately22ms longer than picture sequence. No arbitrary-frame registration, phoneme timing, OO/EE, human voice/art or live phone/projection approval."
+    },
+    "webkit": {
+      "passed": true,
+      "result": {
+        "minimumAreaRatio": 0.5125173430614502,
+        "samples": [
+          {
+            "frame": 0,
+            "open": 0,
+            "changed": 0,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 1
+          },
+          {
+            "frame": 0,
+            "open": 0.5,
+            "changed": 3701,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.7563195941126324
+          },
+          {
+            "frame": 0,
+            "open": 1,
+            "changed": 4021,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.5126391882252683
+          },
+          {
+            "frame": 24,
+            "open": 0,
+            "changed": 0,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 1
+          },
+          {
+            "frame": 24,
+            "open": 0.5,
+            "changed": 3657,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.7563509389475698
+          },
+          {
+            "frame": 24,
+            "open": 1,
+            "changed": 3959,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.5127018778951395
+          },
+          {
+            "frame": 48,
+            "open": 0,
+            "changed": 0,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 1
+          },
+          {
+            "frame": 48,
+            "open": 0.5,
+            "changed": 3685,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.7563010870471167
+          },
+          {
+            "frame": 48,
+            "open": 1,
+            "changed": 4027,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.512602174094237
+          },
+          {
+            "frame": 72,
+            "open": 0,
+            "changed": 0,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 1
+          },
+          {
+            "frame": 72,
+            "open": 0.5,
+            "changed": 3722,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.7562926228041711
+          },
+          {
+            "frame": 72,
+            "open": 1,
+            "changed": 4019,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.5125852456083457
+          },
+          {
+            "frame": 96,
+            "open": 0,
+            "changed": 0,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 1
+          },
+          {
+            "frame": 96,
+            "open": 0.5,
+            "changed": 3739,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.756596372690133
+          },
+          {
+            "frame": 96,
+            "open": 1,
+            "changed": 4062,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.5131927453802625
+          },
+          {
+            "frame": 111,
+            "open": 0,
+            "changed": 0,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 1
+          },
+          {
+            "frame": 111,
+            "open": 0.5,
+            "changed": 3856,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.7564162575938482
+          },
+          {
+            "frame": 111,
+            "open": 1,
+            "changed": 4217,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.5128325151876929
+          },
+          {
+            "frame": 145,
+            "open": 0,
+            "changed": 0,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 1
+          },
+          {
+            "frame": 145,
+            "open": 0.5,
+            "changed": 3730,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.7565818831017879
+          },
+          {
+            "frame": 145,
+            "open": 1,
+            "changed": 4048,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.5131637662035722
+          },
+          {
+            "frame": 192,
+            "open": 0,
+            "changed": 0,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 1
+          },
+          {
+            "frame": 192,
+            "open": 0.5,
+            "changed": 3754,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.756659279004392
+          },
+          {
+            "frame": 192,
+            "open": 1,
+            "changed": 4075,
+            "outside": 0,
+            "eyeChanges": 0,
+            "minimumAreaRatio": 0.513318558008784
+          }
+        ],
+        "invalidOpeningRejected": true
+      },
+      "disposed": {
+        "disposed": true,
+        "draws": 16,
+        "resources": 0,
+        "liveObjects": 0,
+        "programBound": false,
+        "textureBound": false,
+        "bufferBound": false
+      },
+      "exportMovie": false,
+      "corrective": true,
+      "voice": false,
+      "scope": "Actual shaders and exact known decoded pictures.965neutral-frame/opening geometries;24pixel cases check rest identity, iris9x9regions and outside-face ownership. Optional193frame/24fps offline whole-body render; synthetic jaw control or prerecorded amplitude envelope and offline voice mux. The latter keeps complete8.064second audio, approximately22ms longer than picture sequence. No arbitrary-frame registration, phoneme timing, OO/EE, human voice/art or live phone/projection approval."
+    }
+  },
+  "fullExportPixels": {
+    "frames": 193,
+    "maximumOutsideFaceChangedPixels": 0,
+    "maximum9x9IrisChangedPixels": 0,
+    "allOutsideZero": true,
+    "allIrisZero": true,
+    "scope": "Exact pre-encode source/rendered PNGs across the full amplitude-driven export. Face rectangle includes2pixel raster guard; native9x9iris regions centered on rounded tracked coordinates. Not encoded-MP4 identity, human anatomy or arbitrary-frame live matching."
+  },
+  "audio": {
+    "source": "Existing human-approved generated apology at source/wisp-performance-reference/tonight-demo/apology-proof-v1.mp4",
+    "sourceSha256": "d4dfefcfb62bbff4f32ba7b047a28a4bda5ab7b4def711c368f08d23213e819d",
+    "pcmSha256": "2c0dca44096dfac9d7dfdf0e7594b010cd722cafec53d687f2b740aadb7988a5",
+    "decodedOutputSamples": 387072,
+    "peak": 0.16515758633613586,
+    "drive": "Coarse40msRMS windows with bounded attack/release; no phoneme timing or OO/EE.",
+    "scope": "The complete8.064second voice is muxed after the193picture/24fps offline render. Audio is approximately22ms longer than the picture sequence; final picture is held for that tail. This is the existing apology voice, not approval of a final demon voice or live acoustic latency."
+  },
+  "visualReview": "Viewed enlarged native-vs-deformed frames24/72/120/168 and nine encoded voiced face samples12..156. Jaw/lip closure now moves the native connected surface; painted oral detail reads softer than the native tooth diagnostic. No human motion acceptance yet; rounded/wide poses, side/yaw occlusion and any remaining pasted appearance still need review.",
+  "generationCreditsSpent": 0,
+  "runtimePublication": false,
+  "humanApproval": false,
+  "missing": [
+    "Authored OO/EE and other mouth poses",
+    "Verified native-picture identity adapter; this export uses known source frame ordinals only",
+    "Independent live eye/face acting and three-quarter validation",
+    "Final character voice audition and genuine provider latency",
+    "Seamless neutral loop/ambient return and phone integration/soak",
+    "Human visual/voice and physical projection validation"
+  ]
+}
