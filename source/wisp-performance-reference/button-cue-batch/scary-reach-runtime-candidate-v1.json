@@ -44,7 +44,10 @@
     "peak": 0.3403221666812897,
     "rmsDbFS": -25.08925948488928,
     "lastHalfSecondPeak": 0.0,
-    "scope": "Decoded generated soundtrack levels only. No human sound-quality or no-speech approval."
+    "scope": "Decoded generated soundtrack levels only. No human sound-quality or no-speech approval.",
+    "measurementChannels": 1,
+    "measurementSampleRate": 48000,
+    "measurementBasis": "Mono downmix at48000Hz; reproduced existing peak/RMS exactly, not encoded channel layout."
   },
   "humanReview": "pending",
   "physicalProjection": "not tested",

@@ -1,0 +1,31 @@
+{
+  "cueId": "friendly-drift",
+  "status": "candidate: PCM repeat timing repaired; human sound and exact-media loop review pending",
+  "file": "friendly-drift-candidate-v2.mp4",
+  "sha256": "85827639be160901b274eab40493f0229273b3a7d675b18317c11bb6beb3b649",
+  "videoSource": "source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4",
+  "videoEssenceIdentical": true,
+  "compressedVideoEssence": "SHA256=5625556550fbf58fb6306be2e52ae695ab50703a901e3474577d4da3a2254a9a",
+  "audioSource": "source/wisp-performance-reference/ambient-show/sound-study/wisp-soft-apparition-v1.mp3",
+  "audioSourceStatus": "generated nonverbal apparition candidate, listening unreviewed",
+  "processing": "Decode source once to stereo48000Hz PCM; repeat with40ms equal-power crossfades; trim244000 samples; gain0.8,250ms onset/500ms tail; AAC192k; copy original compressed video unchanged",
+  "generationCreditsSpent": 0,
+  "bodyMotionApproval": "Existing v28 pilot humanReview: Flows naturally\u2014keep this direction; scope remains body/loop only",
+  "reserveFailuresRgb4_8_16": 0,
+  "entryPort": "friendly-rest",
+  "exitPort": "friendly-rest",
+  "notApprovedFor": "arbitrary visible cuts to other characters; live speech; physical projection; new audio mix acceptance",
+  "supersedes": "friendly-drift-candidate-v1: two approximately25ms encoded-source repeat timestamp gaps",
+  "pcmRepair": {
+    "sampleRate": 48000,
+    "samples": 244000,
+    "sourceSamples": 119040,
+    "crossfadeSamples": 1920,
+    "joinStartSamples": [
+      117120,
+      234240
+    ],
+    "sourceSha256": "12ee31d2a08bb8d581de4bdddd04e037dc2b37d902e1865c35f9d55f7cbe1206",
+    "videoEssenceVerified": true
+  }
+}

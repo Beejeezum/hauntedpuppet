@@ -14,7 +14,10 @@
     "peak": 0.17930838465690613,
     "rmsDbFS": -37.422979831911235,
     "lastHalfSecondPeak": 0.0,
-    "scope": "Actual decoded v3 AAC dry nonmusical fog/hand effects; listening acceptance remains pending."
+    "scope": "Actual decoded v3 AAC dry nonmusical fog/hand effects; listening acceptance remains pending.",
+    "measurementChannels": 2,
+    "measurementSampleRate": 48000,
+    "measurementBasis": "Stereo decode at48000Hz."
   },
   "soundRevision": "first-wave-sound-revision-v1.json",
   "processing": "Original compressed video unchanged fromv2; replaces rejected musical soundtrack with deterministic dry fog and hand swishes. See sound revision recipe.",
@@ -26,6 +29,7 @@
       "lastHalfSecondPeak": 0
     },
     "basis": "friendly-wave-runtime-candidate-v3-validation.json",
-    "mediaBytesChanged": false
+    "mediaBytesChanged": false,
+    "clarification": "Previous numbers are valid mono-downmix measurements. This standardizes the descriptor to stereo; it does not repair a media defect."
   }
 }

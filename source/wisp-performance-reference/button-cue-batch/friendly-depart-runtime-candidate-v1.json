@@ -52,7 +52,10 @@
     "rmsDbFS": -33.065147399902344,
     "lastHalfSecondDbFS": -240.0,
     "scope": "Numerical native soundtrack measurements, not human listening or proof of absent speech.",
-    "lastHalfSecondPeak": 0
+    "lastHalfSecondPeak": 0,
+    "measurementChannels": 1,
+    "measurementSampleRate": 48000,
+    "measurementBasis": "Mono downmix at48000Hz; reproduced existing peak/RMS exactly, not encoded channel layout."
   },
   "assistantFrameReview": "Sampled frames show continuous side/back turn, connected arms, look-back wave and reduced body transitioning to a contained vapor puff. Every decoded frame passed15percent RGB envelope reserve. No exact join or human artistic approval inferred.",
   "remainingGates": [

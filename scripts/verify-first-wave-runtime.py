@@ -16,7 +16,7 @@ def audio(p):return np.frombuffer(ff(['-i',p,'-map','0:a:0','-ac','2','-ar','480
 expected=audio(master);actual=audio(movie);count=len(expected);assert count==sound['firstClipSamples'];assert count<=len(actual)<=count+2048
 assert np.isfinite(actual).all();correlation=float(np.corrcoef(expected.reshape(-1),actual[:count].reshape(-1))[0,1]);assert correlation>.99,'Encoded audio does not match intended dry master'
 rmsDbFS=float(20*np.log10(max(1e-12,float(np.sqrt(np.mean(actual.astype(np.float64)**2))))));peak=float(np.abs(actual).max());tail=float(np.abs(actual[count-24000:count]).max());assert peak<.8 and tail<.000001,'No quiet sound tail for handoff'
-assert abs(meta['audio']['peak']-peak)<1e-7 and abs(meta['audio']['rmsDbFS']-rmsDbFS)<.0001,'Stale v3 audio descriptor'
+assert abs(meta['audio']['peak']-peak)<1e-7 and abs(meta['audio']['rmsDbFS']-rmsDbFS)<.0001,'v3 audio differs from declared stereo48k measurement'
 log=subprocess.run([str(FF),'-hide_banner','-i',str(movie),'-vn','-af','ashowinfo','-f','null','-'],capture_output=True,text=True,check=True).stderr
 blocks=[(float(t),int(n))for t,n in re.findall(r'pts_time:\s*([-\d.]+).*?nb_samples:(\d+)',log)];assert blocks;position=0;maxerror=0
 for at,n in blocks:maxerror=max(maxerror,abs(at-position/48000));position+=n
