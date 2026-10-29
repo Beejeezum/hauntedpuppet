@@ -1,0 +1,29 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),pw=require('playwright');
+const watchdog=setTimeout(()=>{console.error('Owned picture test exceeded45seconds');process.exit(1)},45000);
+(async()=>{const fixture=await require('./tonight_fixture.cjs').start(),engine=process.env.HAUNT_BROWSER||'chromium',browser=await pw[engine].launch(engine==='chromium'?{args:['--mute-audio']}:{});try{
+ const p=await browser.newPage();await p.route('**/owned-picture-test',r=>r.fulfill({contentType:'text/html',body:'<!doctype html><body></body>'}));await p.goto(fixture.base+'/owned-picture-test');
+ const result=await p.evaluate(async()=>{
+  const {OwnedVideoFrameSource}=await import('/source/wisp-performance-reference/ambient-show/owned-video-frame-source.mjs');
+  navigator.mediaDevices.getUserMedia=()=>{throw Error('No capture')};const v=document.createElement('video');v.muted=true;v.loop=true;v.playsInline=true;document.body.append(v);v.src='/source/wisp-performance-reference/runway-pilots/continuous-loop-study/wisp-continuous-loop-v28.mp4';await new Promise((r,j)=>{v.onloadeddata=r;v.onerror=()=>j(Error('Actual film unavailable'))});v.currentTime=50/24;await new Promise(r=>v.onseeked=r);
+  const source=new OwnedVideoFrameSource(),packet=await source.pull(v),reference=document.createElement('canvas');reference.width=1916;reference.height=1080;const ctx=reference.getContext('2d',{willReadFrequently:true});ctx.drawImage(v,0,0);const before=ctx.getImageData(0,0,1916,1080).data,after=packet.canvas.getContext('2d').getImageData(0,0,1916,1080).data;let maxDelta=0;for(let i=0;i<before.length;i++)maxDelta=Math.max(maxDelta,Math.abs(before[i]-after[i]));
+  const first={time:packet.time,maxDelta};v.requestVideoFrameCallback=()=>{throw Error('DOM callbacks forbidden in study')};await v.play();const times=[];for(let i=0;i<20;i++){times.push((await source.pull(v)).time);await new Promise(r=>setTimeout(r,40));}v.pause();source.stop();const cleared=!source.inspect().ready&&source.canvas.width===1,normal=source.inspect();source.dispose();
+  // Fault injection only: materialize real frame pixels first, then hold the
+  // copy completion to exercise Stop/source/disposal races deterministically.
+  const races=[];
+  for(const mode of ['stop','replace','dispose']){
+   let release,entered;const started=new Promise(r=>entered=r),gate=new Promise(r=>release=r);let closes=0;
+   const delayed=new OwnedVideoFrameSource({createFrame:()=>{const frame=new VideoFrame(v);ctx.drawImage(frame,0,0);const bytes=ctx.getImageData(0,0,1916,1080).data;return{displayWidth:1916,displayHeight:1080,timestamp:frame.timestamp,allocationSize:()=>bytes.length,copyTo:async destination=>{entered();await gate;destination.set(bytes);return[{offset:0,stride:1916*4}]},close(){closes++;frame.close();}}}});
+   const pending=delayed.pull(v);await started;const duplicate=delayed.pull(v);if(duplicate!==pending)throw Error('Duplicate pull allocated a job');
+   if(mode==='dispose')delayed.dispose();else delayed.stop();
+   if(mode==='replace'){const next={readyState:4,videoWidth:1916,videoHeight:1080,currentSrc:'replacement'};if(await delayed.pull(next)!==null)throw Error('Replacement allocated behind pending copy');}
+   const retired=delayed.inspect();release();const late=await pending;const final=delayed.inspect();races.push({mode,retired,final,lateNull:late===null,closes,cleared:delayed.canvas.width===1});delayed.dispose();
+  }
+  const invalid=new OwnedVideoFrameSource({createFrame:()=>({displayWidth:99999,displayHeight:99999,timestamp:0,close(){}})});let rejected=false;try{await invalid.pull(v)}catch{rejected=true}const bad=invalid.inspect();invalid.dispose();
+  const reusable=new OwnedVideoFrameSource();await reusable.pull(v);reusable.stop();const restarted=await reusable.pull(v),reuse={time:restarted.time,...reusable.inspect()};reusable.dispose();
+  v.removeAttribute('src');v.load();v.remove();reference.width=1;return{first,uniqueTimes:new Set(times).size,cleared,normal,races,invalid:{rejected,...bad},reuse,scope:'Actual muted film color/timestamp/callback-free capture plus explicitly injected delayed-copy races. No app integration/provider/human/physical acceptance.'};
+ });
+ assert(result.first.maxDelta<=3);assert(Math.abs(result.first.time-50/24)<.00001);assert(result.uniqueTimes>=10);assert(result.cleared);assert.equal(result.normal.created,result.normal.closed);assert.equal(result.normal.held,0);assert.equal(result.normal.maxHeld,1);
+ for(const r of result.races){assert(r.lateNull&&r.cleared);assert.equal(r.closes,1);assert.equal(r.retired.held,0);assert(r.retired.pending);assert.equal(r.final.published,0);assert.equal(r.final.held,0);assert(!r.final.pending);assert.equal(r.final.discarded,1);}
+ assert(result.invalid.rejected&&result.invalid.failures===1&&result.invalid.closed===1);assert.equal(result.reuse.published,2);assert.equal(result.reuse.created,result.reuse.closed);
+ fs.mkdirSync('work/owned-frame-source',{recursive:true});fs.writeFileSync('work/owned-frame-source/'+engine+'.json',JSON.stringify(result,null,2));console.log('PASS '+engine+' detached actual movie pixels/timestamp, callback-free advance, bounded frame ownership, Stop/replace/dispose late-copy rejection and reuse. '+JSON.stringify({maxDelta:result.first.maxDelta,uniqueTimes:result.uniqueTimes,methods:{rgba:result.normal.rgbaCopies,canvas:result.normal.canvasCopies}}));
+ }finally{await browser.close();await fixture.close();clearTimeout(watchdog)}})().catch(e=>{console.error(e);process.exitCode=1});
