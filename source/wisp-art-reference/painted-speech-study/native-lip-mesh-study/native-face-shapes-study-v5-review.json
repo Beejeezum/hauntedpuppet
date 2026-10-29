@@ -1,0 +1,46 @@
+{
+  "status": "new_visual_candidate_unapproved",
+  "output": "work/native-face-shapes-study-v5/native-speaking-proof.mp4",
+  "videoSha256": "bdec69065d923df593b5dac3e304c3fadd6e507def597540e963e3047c76a3dd",
+  "shaderSha256": "b7831512cc8550f1eccdb21ebe5a7ad0c91f5e872bed5946694a2d291a7d15c4",
+  "method": "Private browser interception; preserve normalized AH/OO/EE rather than collapse to scalar. Rounded/wide native paint deformation with bounded lower-face field and protected upper face. No runtime surface change.",
+  "render": {
+    "paints": 546,
+    "voiceSeconds": 8.064,
+    "clockDriftMaxMs": 5.10000002384281,
+    "shapeActingStudy": true
+  },
+  "deterministicShapeChecks": [
+    {
+      "shape": "rest",
+      "changed": 0,
+      "outside": 0,
+      "glError": 0
+    },
+    {
+      "shape": "AH",
+      "changed": 4500,
+      "outside": 0,
+      "glError": 0
+    },
+    {
+      "shape": "OO",
+      "changed": 4863,
+      "outside": 0,
+      "glError": 0
+    },
+    {
+      "shape": "EE",
+      "changed": 4668,
+      "outside": 0,
+      "glError": 0
+    }
+  ],
+  "visualReview": "Reviewed three progressively constrained contact sheets and eight final moving-proof frames. First round variant distorted eyes and was rejected; final field limits horizontal motion to lips/lower face. Rounded versus wide shapes now visibly distinct. Cavity still smile-derived, painted edge doubled in static open shapes; no claim pasted-on issue solved. Need genuine multi-shape acting and human moving attachment review.",
+  "limitations": [
+    "Acoustic coarse shape estimates, not phoneme recognition.",
+    "Approved source audio master muxed, not live provider or speaker output.",
+    "Friendly only; scary remains rejected.",
+    "No production deploy, paid generation or physical projection."
+  ]
+}
