@@ -130,8 +130,8 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/director.mjs",
       "destination": "director.mjs",
-      "bytes": 15791,
-      "sha256": "4d248d1d5b6c1a816b6fd9fc399978724d72443655d452cf4929bda2d605880c",
+      "bytes": 15868,
+      "sha256": "23e7d5a9231a643c3191bf4a163b70f78ba01662cb8713257938fcada2a68521",
       "rewrites": [
         {
           "from": "../tonight-demo/paired-controls.mjs",
@@ -162,7 +162,7 @@
           "to": "../wisp-mouth-study/friendly-v28-canonical-head-samples-v1.json"
         }
       ],
-      "publishedSha256": "9ebdc867f279360382f647e9cf034be2f4109c832678cf036743c495c1436618"
+      "publishedSha256": "720dfba13dbeecf6683a6e2ea87f609c81bbfc2b9e6d56eddf3ce333f2707caa"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/director.css",

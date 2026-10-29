@@ -21,6 +21,10 @@ on:
         description: Test single-pipeline app transport, saved shows and composed output
         type: boolean
         default: false
+      native_director_pilot:
+        description: Run only the owned-picture director within the single-pipeline diagnostic
+        type: boolean
+        default: false
       native_disable_disk_cache:
         description: Disable native on-disk media buffering for the isolated diagnostic
         type: boolean
@@ -431,6 +435,10 @@ jobs:
           HAUNT_BROWSER: webkit
           HAUNT_SINGLE_PIPELINE: '1'
         run: |
+          if [ "${{ inputs.native_director_pilot }}" = "true" ]; then
+            node tests/owned_native_director.cjs
+            exit $?
+          fi
           failed=0
           node tests/speech_start_probe_test.cjs || failed=1
           node tests/pcm_voice.cjs || failed=1

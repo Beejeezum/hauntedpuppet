@@ -27,7 +27,8 @@ async function speech(value,{signal,live}){
  signal=AbortSignal.any([signal,AbortSignal.timeout(70000)]);
  if(!enabled||!context||context.state!=='running')throw Error('Enable laptop sound before sending a line');
  const stage=value=>{if(live())speechStage=value;};stage('status');
- const status=await fetch('/api/status',{signal,credentials:'same-origin'}).then(r=>r.json());
+ const statusResponse=await fetch('/api/status',{signal,credentials:'same-origin'});stage('status body');
+ const status=await statusResponse.json();stage('status parsed');
  if(!status.token)throw Error('Sign in to the laptop voice service first');
  let words=value.text;
  if(value.mode==='prompt'){

@@ -1,0 +1,28 @@
+{
+  "run": 40814360628,
+  "head": "4eacee7d2232a3ac354acdc454280f192939c739",
+  "conclusion": "failure",
+  "scope": "Linux WebKit actual native films and synthetic zero-PCM speech. Not provider, human voice or projection testing.",
+  "evidence": "work/single-app-linux-40814360628/native-media-diagnostic/test-results/phone-director-player-single-webkit-http-owned-native-failure.json",
+  "observed": {
+    "preflight": {
+      "success": true,
+      "kind": "canonical",
+      "checkpoints": 3,
+      "elapsedMs": 777,
+      "nativeFramesCreated": 3,
+      "nativeFramesClosed": 3
+    },
+    "speechStarts": 2,
+    "failureStage": "status",
+    "nextCharacter": "scary",
+    "mouthUnchecked": true,
+    "serverStatusResponse": "fixture recorded sent; browser response headers/body progression not yet instrumented"
+  },
+  "notProven": [
+    "Root cause of next status fetch stall.",
+    "Complete director regression acceptance.",
+    "Human moving-mouth approval."
+  ],
+  "action": "Add bounded test network timing without response bodies/tokens, split status header/body/parsed telemetry, run a focused owned-director diagnostic. No deployment."
+}
