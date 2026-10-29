@@ -19,6 +19,6 @@ export function nativeBinding(mesh,frame){
  for(let j=0;j<32;j++){base[64+j]=inner[j];const rim=delta(rest[32+j].map((x,k)=>x-rest[64+j][k]));base[32+j]=inner[j].map((x,k)=>x+rim[k]);}
  const poses=Object.fromEntries(Object.entries(mesh.poses).map(([key,points])=>[key,points.map((p,i)=>{const d=delta(p.map((x,k)=>x-rest[i][k]));return base[i].map((x,k)=>x+d[k]);})]));
  const left=frame.upperInk[0][0],right=frame.upperInk.at(-1)[0],top=Math.min(...up)-2,bottom=Math.max(...lo)+45;
- return{frame:frame.frame,confidence:frame.confidence,matrix:[a,b,-b,a,tx,ty],base,poses,clip:[left-8,top,right+8,bottom]};
+ return{referenceEyeAngle:mesh.referenceEyeAngle,frame:frame.frame,confidence:frame.confidence,matrix:[a,b,-b,a,tx,ty],base,poses,clip:[left-8,top,right+8,bottom]};
 }
 export function triangleArea(vertices,triangle){const[a,b,c]=triangle.map(i=>vertices[i]);return(b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0]);}
