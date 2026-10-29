@@ -4,7 +4,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 root=Path(__file__).resolve().parents[1]
-p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--ffmpeg',type=Path,required=True);p.add_argument('--approved-voice',action='store_true');a=p.parse_args();out=a.output.resolve()
+p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--ffmpeg',type=Path,required=True);p.add_argument('--approved-voice',action='store_true');p.add_argument('--soft-lips',action='store_true');a=p.parse_args();out=a.output.resolve()
 if root/'work' not in out.parents or out.exists():raise ValueError('Use a new work/ output directory')
 d=json.loads((root/'source/wisp-art-reference/painted-speech-study/native-lip-mesh-study/friendly-native-lip-candidates-v1.json').read_text());src=root/d['source'];assert hashlib.sha256(src.read_bytes()).hexdigest()==d['sourceSha256'];out.mkdir(parents=True)
 w,h=d['dimensions'];ff=str(a.ffmpeg.resolve());voice=root/'source/wisp-performance-reference/tonight-demo/apology-proof-v1.mp4'
@@ -20,12 +20,18 @@ if a.approved_voice:
 decoder=subprocess.Popen([ff,'-v','error','-threads','1','-stream_loop','-1','-i',str(src),'-frames:v',str(total),'-an','-f','rawvideo','-pix_fmt','bgr24','pipe:1'],stdout=subprocess.PIPE)
 encoder=subprocess.Popen([ff,'-v','error','-f','rawvideo','-pix_fmt','bgr24','-s',f'{w}x{h}','-r','24','-i','pipe:0','-an','-c:v','libx264','-crf','18','-pix_fmt','yuv420p','-movflags','+faststart',str(out/'native-lip-surface-proof.mp4')],stdin=subprocess.PIPE)
 atlas=cv2.imread(str(root/'source/wisp-art-reference/painted-speech-study/wisp-friendly-speaking-study-v2.png'));assert atlas is not None
-oral=atlas[479:517,711:785];changed=[];rest_exact=[]
+oral=atlas[479:517,711:785];changed=[];rest_exact=[];contour_metrics=[]
 for i in range(total):
  f=d['frames'][i%len(d['frames'])]
  raw=decoder.stdout.read(w*h*3);assert len(raw)==w*h*3
  original=np.frombuffer(raw,np.uint8).reshape(h,w,3);image=original.copy();opening=envelope[i] if envelope is not None else max(0,np.sin(i/24*np.pi*2*.8))**1.7
  xs=np.array(f['upperInk'])[:,0];upper=np.array(f['upperInk'])[:,1];lower=np.array(f['lowerInk'])[:,1]
+ if a.soft_lips:
+  raw_u=upper.copy();raw_l=lower.copy()
+  upper=cv2.GaussianBlur(upper.astype(np.float32)[None,:],(9,1),1.3,borderType=cv2.BORDER_REFLECT_101)[0]
+  lower=cv2.GaussianBlur(lower.astype(np.float32)[None,:],(9,1),1.3,borderType=cv2.BORDER_REFLECT_101)[0]
+  assert np.all(upper<=lower)
+  contour_metrics.append({'frame':i,'upperRoughnessBefore':float(np.mean(abs(np.diff(raw_u,n=2)))),'upperRoughnessAfter':float(np.mean(abs(np.diff(upper,n=2)))),'lowerRoughnessBefore':float(np.mean(abs(np.diff(raw_l,n=2)))),'lowerRoughnessAfter':float(np.mean(abs(np.diff(lower,n=2)))),'maxPixelCorrection':float(max(abs(upper-raw_u).max(),abs(lower-raw_l).max()))})
  x0=int(xs[0])-3;x1=int(xs[-1])+4;y0=int(min(upper))-20;y1=int(max(lower))+48
  yy,xx=np.mgrid[y0:y1,x0:x1].astype(np.float32);u=np.interp(xx,xs,upper);l=np.interp(xx,xs,lower)
  profile=np.sin(np.pi*np.clip((xx-xs[0])/(xs[-1]-xs[0]),0,1))**.8;gap=14*opening*profile;tu=u-.22*gap;tl=l+.78*gap
@@ -39,7 +45,8 @@ for i in range(total):
   # Oral-only paint, fixed texture scale. Lips occlude it; no new cheek/skin.
   ox=((xx-xs[0])/(xs[-1]-xs[0])*73).astype(np.float32);oy=(yy-(tu+tl)/2+18.5).astype(np.float32)
   cavity=cv2.remap(oral,ox,oy,cv2.INTER_LINEAR,borderMode=cv2.BORDER_REPLICATE)
-  mask=(inside*profile*np.clip(gap/3,0,1)).astype(np.float32)[...,None]
+  edge=np.clip(np.minimum(yy-tu,tl-yy)-.35,0,1) if a.soft_lips else inside
+  mask=(edge*profile*np.clip(gap/3,0,1)).astype(np.float32)[...,None]
   warped=np.rint(warped*(1-mask)+cavity*mask).astype(np.uint8)
   image[y0:y1,x0:x1]=warped
  else:rest_exact.append(bool(np.array_equal(image,original)))
@@ -51,4 +58,5 @@ assert not decoder.stdout.read(1);assert decoder.wait()==0;encoder.stdin.close()
 if a.approved_voice:
  subprocess.run([ff,'-v','error','-i',str(out/'native-lip-surface-proof.mp4'),'-i',str(voice),'-map','0:v:0','-map','1:a:0','-c:v','copy','-c:a','aac','-b:a','192k','-movflags','+faststart',str(out/'native-lip-voice-proof.mp4')],check=True)
  (out/'acoustic-envelope.json').write_text(json.dumps({'fps':24,'opening':envelope,'voiceSha256':voice_sha,'method':'bounded RMS with attack/release; not phoneme or viseme recognition'})+'\n')
+if contour_metrics:(out/'spatial-contour-review.json').write_text(json.dumps({'method':'per-frame spatial Gaussian sigma1.3px; no temporal interpolation or confidence promotion','frames':contour_metrics},indent=2)+'\n')
 (out/'review.json').write_text(json.dumps({'status':'unapproved acoustic-driven moving-face proof; not runtime integration' if a.approved_voice else 'unapproved silent geometry proof; not speech or runtime integration','frames':len(changed),'sourceSha256':d['sourceSha256'],'changedPixelsMax':max(changed),'unchangedOutsideFaceSupport':True,'restFramesExact':all(rest_exact),'uncertainContourFrames':d['lowContrastFrames'],'limitations':['amplitude-driven opening only, no phoneme recognition or rounded/consonant shapes' if a.approved_voice else 'synthetic opening cycle, no speech synchronization','oral crop and mesh need human visual review','friendly only; scary not implemented','four low-contrast contour frames remain uncertain']},indent=2)+'\n');print(out)

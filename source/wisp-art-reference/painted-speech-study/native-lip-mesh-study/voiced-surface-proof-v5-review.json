@@ -1,0 +1,33 @@
+{
+  "status": "unapproved acoustic-driven moving-face proof; not runtime integration",
+  "frames": 194,
+  "sourceSha256": "52d54d03c0f0406a9724c7c04b9e2fa0557a675486edfaa40fd0ca2e24a682bd",
+  "changedPixelsMax": 1917,
+  "unchangedOutsideFaceSupport": true,
+  "restFramesExact": true,
+  "uncertainContourFrames": [
+    49,
+    50,
+    51,
+    52
+  ],
+  "limitations": [
+    "amplitude-driven opening only, no phoneme recognition or rounded/consonant shapes",
+    "oral crop and mesh need human visual review",
+    "friendly only; scary not implemented",
+    "four low-contrast contour frames remain uncertain"
+  ],
+  "artifact": "work/native-lip-surface-voice-v5/native-lip-voice-proof.mp4",
+  "comparison": "work/native-lip-surface-voice-v5/lip-edge-comparison.mp4",
+  "humanReview": "pending",
+  "sourceOnly": true,
+  "contourRoughness": {
+    "upperRoughnessBefore": 0.5626671546098391,
+    "upperRoughnessAfter": 0.11689192087379928,
+    "lowerRoughnessBefore": 0.5227849727615335,
+    "lowerRoughnessAfter": 0.09287950703778218
+  },
+  "maxContourCorrectionPixels": 3.8031005859375,
+  "visualObservation": "Frame50 lip contour less jagged after spatial smoothing and subpixel aperture edge; moving naturalness, low-confidence frame attachment, dental material and speech shapes remain unapproved.",
+  "noNewPaidCredits": true
+}
