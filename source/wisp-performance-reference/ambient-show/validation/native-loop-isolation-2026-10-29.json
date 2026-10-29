@@ -1,0 +1,111 @@
+{
+  "status": "experiment not installed in app",
+  "film": "wisp-continuous-loop-v28.mp4",
+  "localMac": {
+    "chromium": {
+      "native": {
+        "wraps": 3,
+        "callbacks": 380,
+        "maxGapMs": 66.70000000000073,
+        "stopped": {
+          "paused": true,
+          "time": 0.5333,
+          "controller": {
+            "active": false,
+            "restarts": 0,
+            "pending": 0,
+            "timer": false,
+            "disposed": false
+          }
+        },
+        "disposed": {
+          "active": false,
+          "restarts": 0,
+          "pending": 0,
+          "timer": false,
+          "disposed": true
+        },
+        "scope": "Isolated original-film Canvas playback, not the two-pipeline desk or an artistic seam guarantee."
+      },
+      "explicit": {
+        "wraps": 3,
+        "callbacks": 380,
+        "maxGapMs": 66.70000000000073,
+        "stopped": {
+          "paused": true,
+          "time": 0.5301,
+          "controller": {
+            "active": false,
+            "restarts": 3,
+            "pending": 0,
+            "timer": false,
+            "disposed": false
+          }
+        },
+        "disposed": {
+          "active": false,
+          "restarts": 3,
+          "pending": 0,
+          "timer": false,
+          "disposed": true
+        },
+        "scope": "Isolated original-film Canvas playback, not the two-pipeline desk or an artistic seam guarantee."
+      }
+    },
+    "webkit": {
+      "native": {
+        "wraps": 3,
+        "callbacks": 380,
+        "maxGapMs": 67,
+        "stopped": {
+          "paused": true,
+          "time": 0.49440583370617464,
+          "controller": {
+            "active": false,
+            "restarts": 0,
+            "pending": 0,
+            "timer": false,
+            "disposed": false
+          }
+        },
+        "disposed": {
+          "active": false,
+          "restarts": 0,
+          "pending": 0,
+          "timer": false,
+          "disposed": true
+        },
+        "scope": "Isolated original-film Canvas playback, not the two-pipeline desk or an artistic seam guarantee."
+      },
+      "explicit": {
+        "wraps": 3,
+        "callbacks": 380,
+        "maxGapMs": 68,
+        "stopped": {
+          "paused": true,
+          "time": 0.5836666243281502,
+          "controller": {
+            "active": false,
+            "restarts": 3,
+            "pending": 0,
+            "timer": false,
+            "disposed": false
+          }
+        },
+        "disposed": {
+          "active": false,
+          "restarts": 3,
+          "pending": 0,
+          "timer": false,
+          "disposed": true
+        },
+        "scope": "Isolated original-film Canvas playback, not the two-pipeline desk or an artistic seam guarantee."
+      }
+    }
+  },
+  "linuxRun": 40970845383,
+  "linuxCommit": "bc3b48a",
+  "linuxStateAtCheck": "in_progress",
+  "syntheticLifecycle": "PASS queued replay cancelled before execution; finish-current detaches without pause; duplicate end blocked during pending Play; late rejected Play ignored after Stop; synchronous Play failure leaves pending0; disposal removes replay",
+  "remaining": "Linux comparison, actual desk integration, repeated show modes, output ownership/silence and visual seam acceptance. No change to default playback."
+}
