@@ -451,7 +451,7 @@ jobs:
           HAUNT_DIAGNOSTIC_NO_CONTEXT_LOSS: ${{ inputs.native_director_retirement == 'no-context-loss' && '1' || '0' }}
           HAUNT_DIAGNOSTIC_OWNER_FRONT: ${{ inputs.native_director_visibility == 'owner-front' && '1' || '0' }}
           WEBKIT_GST_DISABLE_GL_SINK: ${{ inputs.native_director_retirement == 'software-video-sink' && '1' || '0' }}
-          GST_DEBUG: webkitmediaplayer:4
+          GST_DEBUG: "*:2,webkitmediaplayer:4"
           GST_DEBUG_FILE: ${{ github.workspace }}/work/native-media-gstreamer.log
           GST_DEBUG_NO_COLOR: '1'
         run: |
