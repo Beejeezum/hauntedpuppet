@@ -96,6 +96,39 @@
       "bytes": 758319,
       "sha256": "89bf67ffb376604bc58a1ebc6d65df5f5f71d74475d6df8deefc02b6852b3ff0",
       "publishedSha256": "89bf67ffb376604bc58a1ebc6d65df5f5f71d74475d6df8deefc02b6852b3ff0"
+    },
+    {
+      "source": "source/wisp-art-reference/painted-speech-study/phone-owned-native-lip-layer.mjs",
+      "destination": "phone-owned-native-lip-layer.mjs",
+      "rewrites": [
+        {
+          "from": "../../wisp-performance-reference/ambient-show/owned-video-frame-source.mjs",
+          "to": "../wisp-showdesk/owned-video-frame-source.mjs"
+        }
+      ],
+      "bytes": 2326,
+      "sha256": "afecf136cd393a7251dfd35b9a0f270c43df00b17bbcecb95ce6960b26fcfba5",
+      "publishedSha256": "6e18cff550bdd6ab56c022ef6f7346cf01c38afb85e20a8e568b3d4a56c9ccbb"
+    },
+    {
+      "source": "source/wisp-art-reference/painted-speech-study/prepare-native-picture-profile.mjs",
+      "destination": "prepare-native-picture-profile.mjs",
+      "rewrites": [
+        {
+          "from": "../../wisp-performance-reference/ambient-show/owned-video-frame-source.mjs",
+          "to": "../wisp-showdesk/owned-video-frame-source.mjs"
+        }
+      ],
+      "bytes": 5500,
+      "sha256": "123865088675505ee08fa35bd4199ee5fa0a4ce377afff38564763ebc1e04743",
+      "publishedSha256": "683c390dbe879fc0fb72efdbf51e497a16c5e885e83582e3e0c172de5db69dba"
+    },
+    {
+      "source": "source/wisp-art-reference/painted-speech-study/native-picture-registration.mjs",
+      "destination": "native-picture-registration.mjs",
+      "bytes": 2430,
+      "sha256": "344974b9666f81f63eb7a16a8d08120829d1b4afe5d579406e20bb36a4e3f1cc",
+      "publishedSha256": "344974b9666f81f63eb7a16a8d08120829d1b4afe5d579406e20bb36a4e3f1cc"
     }
   ]
 }

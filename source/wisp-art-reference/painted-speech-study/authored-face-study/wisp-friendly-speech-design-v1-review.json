@@ -1,5 +1,5 @@
 {
-  "status": "candidate_human_review_pending_not_runtime_asset",
+  "status": "human_design_direction_approved_not_runtime_asset",
   "tool": "built-in image_gen",
   "generationCalls": 1,
   "runwayCreditsSpent": 0,
@@ -29,5 +29,9 @@
     "No runtime consumption or default asset replacement.",
     "No voice/provider/acoustic/physical projection validation."
   ],
-  "anchorAnalysis": "Automatic blue-iris component study estimates AH shifted31.1px left, OO17.8px up, EE31.5px left/19.5px up relative to rest within equal cells; eye-distance ratios0.996\u20131.016 and angle differences<=0.18degrees. These are candidate measurements, not ground-truth landmarks. Do not play sheet cells unaligned or treat it as a finished atlas."
+  "anchorAnalysis": "Automatic blue-iris component study estimates AH shifted31.1px left, OO17.8px up, EE31.5px left/19.5px up relative to rest within equal cells; eye-distance ratios0.996\u20131.016 and angle differences<=0.18degrees. These are candidate measurements, not ground-truth landmarks. Do not play sheet cells unaligned or treat it as a finished atlas.",
+  "humanReview": {
+    "answer": "Yes\u2014use this painted face direction",
+    "scope": "Static face/lower-face art direction, especially rounded OO. Not finished motion, identity registration, runtime rig or lip-sync approval."
+  }
 }

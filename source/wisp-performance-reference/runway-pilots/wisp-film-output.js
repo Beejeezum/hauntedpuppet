@@ -39,11 +39,12 @@ export function mountFilmOutput(stage, inspect, {beforePaint}={}) {
   const owned={
    inspect:()=>({silent:true,stopped,stale,stalls,width:canvas.width,height:canvas.height,owner:!detached&&!window.closed&&!disposed}),
    resume:()=>{let state;try{state=inspect();}catch{}if(detached||!state||state.disposed||state.black||state.paused){clear();return false;}stopped=false;stale=false;lastDraw=state.metrics?.draws;lastChange=output.performance.now();output.cancelAnimationFrame(frame);paint();return true;},
+   releasePicture:()=>{let state;try{state=inspect()}catch{}if(detached||!state?.black)return false;canvas.width=canvas.width;return true;},
    blackout:clear,stop:stopOutput,dispose:detach
   };
   output.WispFilmOutput=owned;outputs.set(output,owned);paint();
  };
  function dispose(){disposed=true;button.disabled=true;for(const [output,owned]of outputs){try{if(!output.closed&&output.WispFilmOutput===owned)owned.dispose();}catch{}}outputs.clear();window.removeEventListener('pagehide',dispose);}
  window.addEventListener('pagehide',dispose,{once:true});
- return{blackout(){for(const [output,owned]of outputs){try{if(!output.closed&&output.WispFilmOutput===owned)owned.blackout();}catch{}}},dispose};
+ return{releasePictures(){let released=0;for(const [output,owned]of outputs){try{if(!output.closed&&output.WispFilmOutput===owned&&owned.releasePicture())released++;}catch{}}return released;},blackout(){for(const [output,owned]of outputs){try{if(!output.closed&&output.WispFilmOutput===owned)owned.blackout();}catch{}}},dispose};
 }

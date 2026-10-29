@@ -1,6 +1,6 @@
 import {PhoneNativeLipLayer} from './phone-native-lip-layer.mjs';
 import {OwnedVideoFrameSource} from '../../wisp-performance-reference/ambient-show/owned-video-frame-source.mjs';
-/** Private detached-picture integration. No runtime selector/public build entry.
+/** Opt-in unapproved detached-picture director study. Default route is unchanged.
  * Source owns continuous body pixels, even outside speech. Mouth uses that same
  * packet's canvas + browser-reported timestamp (frame registration unverified); no native video is sampled by the mouth surface.
  */

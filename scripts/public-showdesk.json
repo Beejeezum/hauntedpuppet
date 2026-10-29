@@ -130,8 +130,8 @@
     {
       "source": "source/wisp-performance-reference/ambient-show/director.mjs",
       "destination": "director.mjs",
-      "bytes": 11577,
-      "sha256": "cb5fe39e17f9ae4991a2f1f74c7efa67e7dfd67fb87eaa5ad019f92a748b6b31",
+      "bytes": 15359,
+      "sha256": "4e872eb5a7129320a9c873e7e320b04d9b99f65479dd78a7ee51918a4e7ee945",
       "rewrites": [
         {
           "from": "../tonight-demo/paired-controls.mjs",
@@ -148,9 +148,21 @@
         {
           "from": "../../wisp-art-reference/painted-speech-study/phone-native-lip-layer.mjs",
           "to": "../wisp-mouth-study/phone-native-lip-layer.mjs"
+        },
+        {
+          "from": "../../wisp-art-reference/painted-speech-study/phone-owned-native-lip-layer.mjs",
+          "to": "../wisp-mouth-study/phone-owned-native-lip-layer.mjs"
+        },
+        {
+          "from": "../../wisp-art-reference/painted-speech-study/prepare-native-picture-profile.mjs",
+          "to": "../wisp-mouth-study/prepare-native-picture-profile.mjs"
+        },
+        {
+          "from": "../../wisp-art-reference/painted-speech-study/native-picture-registration.mjs",
+          "to": "../wisp-mouth-study/native-picture-registration.mjs"
         }
       ],
-      "publishedSha256": "7bc26e298965313ce51c374f8397a613b1e50ad8ccf4d77fa6d7d145de8dfb45"
+      "publishedSha256": "fe7ab9784c41be99d0317e0405785c349badb49133e5db93229fdec22a3a9ca5"
     },
     {
       "source": "source/wisp-performance-reference/ambient-show/director.css",
@@ -193,6 +205,13 @@
       "bytes": 2473,
       "sha256": "a2274ee506c75ddd2fbef4dff70f97d0efed19baf90d1dd76e5c6b9b8b6a43a4",
       "publishedSha256": "a2274ee506c75ddd2fbef4dff70f97d0efed19baf90d1dd76e5c6b9b8b6a43a4"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/owned-video-frame-source.mjs",
+      "destination": "owned-video-frame-source.mjs",
+      "bytes": 4637,
+      "sha256": "1cf342a04cc9381b7af2f7a63763f8581f733be77d7dc7bf591bc21feb8a176c",
+      "publishedSha256": "1cf342a04cc9381b7af2f7a63763f8581f733be77d7dc7bf591bc21feb8a176c"
     }
   ]
 }

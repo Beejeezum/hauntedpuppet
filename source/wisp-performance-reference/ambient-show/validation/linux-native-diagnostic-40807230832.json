@@ -1,0 +1,21 @@
+{
+  "run": 40807230832,
+  "head": "76cda48ade5182439db7fa6a2136e0396702d085",
+  "status": "completed_failure",
+  "logSha256": "46e3364f188e8c843079ab7ae9231cebc8cebb95dc5f567b27435214d346545d",
+  "passes": [
+    "Standalone native surface and frame-cache release.",
+    "Unprepared owned short-line player and picture-matcher synthetic guards.",
+    "Verified122-frame preparation with cancellation/hash/source guards.",
+    "Eight legacy/native pending preparation cancellation cases.",
+    "Single transport/effect cancellation/authored bridge.",
+    "One original-film intercepted provider app variant."
+  ],
+  "failures": [
+    "Owned frame source asserted requested seek time equals native frame timestamp; later calibrated evidence disproves that assumption. Test now compares to directly observed native timestamp and retains pixel parity/lifecycle guards.",
+    "Prepared owned player45second watchdog; phase diagnostics added without increasing work deadline.",
+    "Existing native/legacy director imports remained pending with actor time0; HTTP original-film could stall at status.",
+    "Saved playlist advancement and live effect import failed."
+  ],
+  "interpretation": "Diagnostic is not release acceptance and predates new opt-in director integration. No green release claim. No job live now."
+}

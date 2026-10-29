@@ -1,4 +1,4 @@
-/** Source-only fixed-film registration study. References are actual centered
+/** Fixed-film registration for the opt-in unapproved phone study. References are actual centered
  * source-frame samples decoded by the same browser. No clock-based fallback.
  * A different film/color path must fail closed, not pick a plausible face pose.
  */
