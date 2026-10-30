@@ -42,9 +42,9 @@
     {
       "source": "source/attraction-v2/console/haunt-loops.html",
       "destination": "haunt-loops.html",
-      "bytes": 4945,
-      "sha256": "37d3e0c8f9ecc5874aff364f738d70cd46e4fda943e11413c3bb410ae9828580",
-      "publishedSha256": "37d3e0c8f9ecc5874aff364f738d70cd46e4fda943e11413c3bb410ae9828580"
+      "bytes": 5297,
+      "sha256": "be6eb254e1f1ea148fcee722977ca832a2421b45d2c3e48f9524f7bec51f4180",
+      "publishedSha256": "be6eb254e1f1ea148fcee722977ca832a2421b45d2c3e48f9524f7bec51f4180"
     },
     {
       "source": "source/attraction-v2/console/haunt-loops.mjs",

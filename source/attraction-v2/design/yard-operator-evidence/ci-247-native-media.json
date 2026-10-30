@@ -1,0 +1,11 @@
+{
+  "run": 41067760621,
+  "previewCommit": "1c037a2f2b1ea614a777c48b0b196c8e34bf6d82",
+  "linuxYard": "Normal MSE failed as before; separate64px-visible-source diagnostic PASSED.",
+  "linuxMovie": "Native seek-assisted loop stalled around123s with79.338s callback gap; not fixed or waived.",
+  "macNativeMedia": "Job failed at yard popup wait and legacy layered effect first-frame timeout. Movie/decoder recovery/catalog bridge/film sound/autoplay/owner audio/neural tests passed. Local normal native yard tests still pass.",
+  "popupHarness": "Pending waiter and click now joined with Promise.all so an early timeout is caught and diagnostics can be saved. No larger timeout.",
+  "runtimeCandidate": "Keep ghost native source laid out under opaque stage canvas; no test-only visible source in normal app, no raw pixel leak. Linux acceptance pending nextCI.",
+  "evidenceSource": "https://github.com/WebKit/WebKit/commit/3a7a2fc7cfa015de245a11892a1f059ddc29e7e1",
+  "productionPromoted": false
+}

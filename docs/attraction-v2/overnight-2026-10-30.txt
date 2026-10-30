@@ -527,3 +527,27 @@ exactmuted-hidden-MSEstartupfailure. This is a root-causeHYPOTHESIS; addedsepara
 Linuxvisible-source diagnostic, originalgatesunchanged. Macdiagnosticharnesspasses.
 No runtimebrowserworkaround orcodecreencodeon speculation. Productionunchanged.
 Continue until16:53UTC; no paidcastinguntiluserdirection.
+
+
+HEARTBEAT14:01 — NARROWED NATIVE STARTUP FAILURE
+CI247 separates the Linux failures: normal hidden-source MSE still fails, while
+the explicit64px-visible-source diagnostic passes the complete yard flow. This
+supports the upstream WebKitGTK hidden/muted preroll explanation. The standalone
+movie's Linux seek test separately stalls with a79.3second callback gap; not fixed.
+MacCI movie/recovery/audio/catalog/autoplay/neural checks pass, but that job failed
+at the yard popup wait and a legacy layered effect frame timeout. Local Mac normal
+yard playback still passes. Do not claim all Mac/Linux CI green.
+
+Changed Afterdark source layout: native ghost film is sized beneath the presentation
+canvas, which now has an opaque black CSS background. The native element stays
+laid out for decoder startup; it does not own the displayed/projected picture.
+Chrome/MacWebKit actual decoded ghost frame255peak remains fully covered after
+clearingcanvas: screenshots0RGB at1200/390width. Initialscreenshottest capturedthe
+stickyheaderoverthestage; movedheaderoutofcaptureforthelayerisolationcheck. No
+sourcepixel leak was observed. NormalMacbuiltflow andChromefault/Stop/projector
+regressionspass;61models+11guards/publicbuildpass. LinuxconfirmationpendingnextCI.
+
+Also joinedpopupwait/clickpromises so futuretimeoutsretainfailureevidence instead
+ofescapingas an unhandledpromise. No widenedtimeout orwaivedgate. Added a concise
+tonight-operator-card and corrected stale six/eight casting count in storyplan.
+No newgenerations/providercalls or8902restart. Productionremainsunchanged.

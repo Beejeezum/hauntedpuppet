@@ -1,0 +1,59 @@
+WISP — TONIGHT'S OPERATOR CARD
+
+USE THE LAPTOP CONSOLE
+http://127.0.0.1:8902/source/attraction-v2/console/
+Leave its existing service running. The saved voice connection belongs to it.
+
+QUICKEST UNATTENDED SHOW
+1. Open After dark from Output.
+2. Open projector. Move that window onto the projector display and choose Full screen.
+3. Check the complete figure fits your projection surface, including smoke and legs.
+   Stagehand's Place ghosts & layers controls placement and corner adjustment.
+4. Select Night watch. Prepare Effects if you want sound, then press Start Night watch.
+5. Leave the laptop running and connected. Blackout stops both picture and sound.
+   After Blackout, enable Effects again when you want sound back.
+
+Night watch runs eyes, spider, then Wisp. The empty beats are deliberate; the next
+scene arrives on its own. Sound is sparse dry movement, with no music or speech.
+Tapping an individual scene takes manual control and repeats only that scene.
+If Wisp cannot play, a dark pause leads to the remaining available scenes.
+
+FOR LIVE HOSTING
+Use Stagehand. Friendly stays friendly; Evil stays evil. Only Mixed can change
+forms automatically. Host leaves the moments to you; Auto selects existing moments.
+The labeled buttons queue actions through the painted transitions. Blackout is
+always immediate. The current library is six native segments, not sixteen finished
+performances; movement buttons glide the complete painted character.
+
+TO CONTROL FROM YOUR PHONE
+In Output, choose Pair a phone controller, then Enable phone remote. Use the
+address and one-time code shown on a phone on the same trusted Wi-Fi. The laptop
+makes all sound. Phone and projector stay silent. Disable remote revokes access.
+Changing from Stagehand to After dark: close the old desk, wait five seconds,
+then enable the phone on the new desk. Your paired phone can use that handoff.
+
+TO MAKE WISP SAY A LINE
+Open Make Wisp say something. First audition and explicitly choose a voice. Type
+one short line and send it; Wisp says the exact words. Up to three lines can wait.
+This currently plays voiceover with the appropriate painted form; it is not live
+lip sync. Stop speech or Blackout clears the queue. The eight new voice auditions
+still need your listening choice; none was silently installed as the final cast.
+
+ONE-FILE BACKUP
+After dark has Save Night watch · 2:04 MP4. It is one movie with the effects inside,
+so you can play it offline and set your video player to Repeat. Its positions and
+sequence are fixed; use the live desk for adjustable placement and scene choices.
+This is the eyes/spider/Evil Wisp atmosphere loop, not the proposed spoken story.
+Stop the live desk before playing the file so two separate shows do not overlap.
+
+HOSTED REVIEW
+https://deploy-preview-13--hauntedpuppet.netlify.app/assets/wisp-yard/
+Pictures, saved voice auditions, effects and projector output work in this preview.
+New typed speech and phone pairing use the laptop console above. The existing main
+site remains the production fallback; the new yard desk is an opt-in preview.
+
+FIRST REAL YARD CHECK — STILL NEEDED
+Check the whole smoke outline against the actual surface, the spider's dark detail,
+black-level glow and loudness from the path. Test your real phone connection and
+Blackout. Browser testing cannot establish what the physical projection looks or
+sounds like. The agent has not seen physical projector footage.

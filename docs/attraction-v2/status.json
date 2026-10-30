@@ -252,7 +252,7 @@
     "soak": "PASS:7200.245seconds normal-speed native Wisp playback, silent projector, bounded buffer/cache. Harness includes Host actions; not pure Auto or physical projection.",
     "productionDeploy": false,
     "physicalProjection": "unavailable / not tested",
-    "latestCheckpointUTC": "2026-10-30T13:58:06.373787+00:00",
+    "latestCheckpointUTC": "2026-10-30T14:13:13.539678+00:00",
     "stabilityRefinements": [
       "Scene changes reverse opacity continuously when cancelled",
       "Missing eyes or ghost media disables only that program",
@@ -466,6 +466,13 @@
       "evidence": "../../source/attraction-v2/design/yard-operator-evidence/ci-246-native-media.json",
       "upstreamHiddenSourceHypothesis": "Separate visible-source diagnostic added; original gates unchanged."
     },
-    "effectsPreparation": "Explicit effects button can prepare silently before Start; Stop disarms. Chrome/MacWebKit cancel/resource/silent-output regressions passed."
+    "effectsPreparation": "Explicit effects button can prepare silently before Start; Stop disarms. Chrome/MacWebKit cancel/resource/silent-output regressions passed.",
+    "nativeCI247": {
+      "run": 41067760621,
+      "linuxVisibleSourceDiagnostic": "passed; normal hidden-source case failed",
+      "macFailures": "yard popup wait and legacy effect readiness; movie/recovery/audio paths passed",
+      "candidate": "Native decoder now laid out under opaque canvas. LocalChrome/MacWebKit decode, pixel containment,Stop/silent output pass; Linux confirmation pending.",
+      "evidence": "../../source/attraction-v2/design/yard-operator-evidence/ci-247-native-media.json"
+    }
   }
 }

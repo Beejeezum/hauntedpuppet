@@ -144,7 +144,7 @@ ADMISSION / ACCEPTANCE
 Already accepted in history: painted fog direction, fuller character motion,
 specific morph joins and earlier apology acting/mix. Do not generalize those to
 all new assets. Human approval of current resident wave/idle joins is still open.
-Today: generic live voices explicitly rejected. Six short auditions await human listening; two connect to typed speech by explicit choice.
+Today: generic live voices explicitly rejected. Eight short auditions await human listening; two connect to typed speech by explicit choice.
 Spider v1 failed metallic appearance/clipping. v2 retains organic look but is too
 still and does not fulfill the acting. Both excluded from runtime.
 Storyboard is a design illustration, not rendered footage or physical-yard proof.
@@ -171,3 +171,12 @@ laptop. No continuous music or dialogue. Native closure and deliberate empty hol
 remain quiet. This makes the small unattended sequence playable with sound; it is
 still separate from the proposed actor-led signature story and needs listening
 review in the yard. No new generation credits were spent.
+
+
+14:00 DELIVERY — OFFLINE NIGHT WATCH
+The atmosphere sequence also exists as one124.1second H264/AAC MP4 with all12dry
+effects embedded, fixed framing and black/silent loop boundaries. After dark has
+a Save Night watch link. Three normal-speed Chrome cycles and native MacWebKit
+loop joins were checked. This is the smaller atmosphere show; the voiced160second
+Just Practicing story above remains a proposal. No new generation credits were
+spent on the recording. See tonight-operator-card.txt for the practical setup.
