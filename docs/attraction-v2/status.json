@@ -130,7 +130,7 @@
   },
   "currentDirection": {
     "brief": "yard-apparitions-scope.txt",
-    "status": "Three local unattended modes including new articulated spider preview; typed phone control and stable Wisp modes working. Voice casting/human visual review remain pending.",
+    "status": "Local yard modes and phone controls implemented; picture-only hosted PR13 preview now available. Voice casting, physical review and broader Linux CI remain pending.",
     "nextDeliverable": "12-hour run: new character voice casting, independent roaming eyes/spider/quiet apparition screensavers, cohesive scripts/storyboards, regression and visual review",
     "preserve": "approved painted identity, useful tested playback, sound ownership, manual/auto operation and projector popup",
     "outOfScope": [
@@ -144,7 +144,7 @@
       "status": "rejected as out of scope; do not implement"
     },
     "productionPlan": "product-blueprint.txt",
-    "signatureShow": "Proposed 2–3minute mixed story delivered as one local picture/audio file; Friendly and Spooky variants need only their permitted beats.",
+    "signatureShow": "Proposed 2\u20133minute mixed story delivered as one local picture/audio file; Friendly and Spooky variants need only their permitted beats.",
     "deliveryPlan": [
       {
         "id": "stage-proof",
@@ -252,7 +252,7 @@
     "soak": "PASS:7200.245seconds normal-speed native Wisp playback, silent projector, bounded buffer/cache. Harness includes Host actions; not pure Auto or physical projection.",
     "productionDeploy": false,
     "physicalProjection": "unavailable / not tested",
-    "latestCheckpointUTC": "2026-10-30T12:09:39.917491+00:00",
+    "latestCheckpointUTC": "2026-10-30T12:51:56.961981+00:00",
     "stabilityRefinements": [
       "Scene changes reverse opacity continuously when cancelled",
       "Missing eyes or ghost media disables only that program",
@@ -419,16 +419,23 @@
       "serverRestarted": false
     },
     "publicPreviewPackage": {
-      "status": "implemented and locally verified built dist; not pushed or deployed yet",
+      "status": "Netlify draft PR13 deployed; actual hosted Chromium/Mac WebKit verified; broader Linux CI not yet green; not production",
       "path": "/assets/wisp-yard/",
       "files": 67,
       "bytes": 3670344,
       "releaseApproved": false,
       "capabilities": "native Wisp, spatial motion, lettering, mapping, three afterdark programs, Nightwatch, dry effects, saved auditions and silent popup",
       "excludedCapabilities": "new speech, private connect and phone pairing disabled; local8902 keeps these features",
-      "tests": "11 publication guards,60 model checks, actual built Chromium/MacWebKit playback/Stop/popup/audio/mobiles; zero API requests",
+      "tests": "11 publication guards,60 models; actual built and hosted Chromium/MacWebKit native films/effects/saved voices/Stop/popup/mobile/axe; zero API calls",
       "existingProductionEntry": "index/live/app copied byte-identically; no root UI change",
-      "legacyHelper": "existing optional windowName change validated via both browser output ownership tests; stale public hash refreshed"
+      "legacyHelper": "existing optional windowName change validated via both browser output ownership tests; stale public hash refreshed",
+      "url": "https://deploy-preview-13--hauntedpuppet.netlify.app/assets/wisp-yard/",
+      "pr": "https://github.com/Beejeezum/hauntedpuppet/pull/13",
+      "verifiedCommit": "47e8aaeeee81ccb271995896abb1a85e18887637",
+      "deployId": "6ae48a35e1fa39eecb2c02dc",
+      "hostedBytes": "63 non-HTML files exact SHA; four HTML exact normalized DOM allowing only Netlify preview drawer and pretty-URL href changes",
+      "legacySourceManifest": "Old shared projector helper checksum refreshed; actual whole-character timed speech regression passes; source and public manifests now agree",
+      "ci": "Initial Linux CI finished: seven jobs passed, source-manifest shard failure repaired locally; yard WebKit startup and legacy native-film failures remain under investigation. Added clocked Linux yard sink, operation tracing and an additional Mac native-media job; no gates removed. Narrow legacy voice panel containment fixed; new run pending."
     }
   }
 }

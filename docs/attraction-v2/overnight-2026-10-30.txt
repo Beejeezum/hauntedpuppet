@@ -404,3 +404,69 @@ wasstale; fetchbeforecreatingit. Gittrackedclosurecheck: allmedia/sharedsources
 tracked; newenvironmentmodule mustbestagedwiththischeckpoint. Newpublicpreview
 hasnotyetbeenshippedatthisentry. Existingproductionfallbackmustremainunchanged.
 No newcredits/providercalls/serverrestart. Continueuntil16:53UTC.
+
+
+HEARTBEAT12:00 HOSTED FOLLOW-THROUGH — DRAFT PR13
+PR12 had been squash-merged; origin/main773c38a matches the old remote source tree.
+Created preview branch wisp-yard-night-watch with the exact committed fc6d963 tree
+and parent main, preserving current checkout/unrelated changes. Draft PR13:
+https://github.com/Beejeezum/hauntedpuppet/pull/13
+Preview commit47e8aa; deploy6ae48a35e1fa39eecb2c02dc READY:
+https://deploy-preview-13--hauntedpuppet.netlify.app/assets/wisp-yard/
+Production was not merged/replaced. Saved audio/effects/pictures/projector run
+hosted; new spoken lines and phone pairing explicitly remain laptop-only.
+
+Actual hosted Chromium and Mac WebKit passed native Wisp, all three programs,
+dry-effect decode, Stop/Night-watch cancellation, savedD audio and feedback,
+silent same-window projector and ownership disposal,320/390layout and axeAA.
+Zero service requests/404s/pageerrors. Hosted spider frame viewed: full contained
+painted body/legs, black field and silk, no smoke substitute; not physical footage.
+67 hosted files verified:63 byte-exact;4 HTML exact parsed DOM after only known
+Netlify preview-drawer removal and same-origin pretty-link normalization.
+Raw HTML hashes differ legitimately from CDN postprocessing; recorded honestly.
+
+Broader Linux CI found another stale source-pilot output-helper checksum, now
+refreshed. Actual legacy whole-character timed-speech regression passed locally.
+Linux yard Chromium passed; Linux WebKit apparition failed at MediaSource startup
+after effects (operation unsupported; no page/network error). Added the existing
+showdesk clocked silent sink setup and test-only MSE diagnostics; rerun pending.
+Mac built and hosted WebKit pass. Legacy showdesk native step also failed; logs
+not yet downloadable while its other checks continue. Do not claim all CI green
+or promote production. Next heartbeat must review remaining CI and fix evidence.
+
+Hosted screenshot harness now restarts spider before capturing its watch beat;
+previous wait began after that beat and expired. No app behavior changed there.
+Saved hosted reports/hash evidence in design/yard-operator-evidence. No provider
+calls, generation spending or8902 restart. Continue scoped work until16:53UTC.
+
+
+HEARTBEAT12:46 — PRESERVE CI EVIDENCE AND ADD TARGET-PLATFORM CHECKS
+CI41053888331 completed. Downloaded showdesk artifacts into ignored work/yard-public/
+ci-41053888331-showdesk. Seven jobs passed; source-hash shard already repaired.
+Remaining Linux failures include native WebKit clocks stalling during bridge,
+autoplay/film-audio and layered video; future-audio ended callback did not arrive
+within1second; legacy voice panel exceeded mobile width. Do not call these fixed.
+Native Mac Chromium owner-cancel and Mac WebKit synthetic neural-bridge both pass.
+
+Fixed actual layout containment in the old live puppet voice panel: grid children
+can shrink, long text wraps, reference-file input stays inside the panel. Explicit
+320/390px checks pass with built package and native synthetic bridge;320px screenshot
+reviewed. Regenerated deterministic downloadable toolkit so it has the same fix.
+Public build passes. No real microphone/provider input used. Two initial local
+neural test attempts needed the existing Python3.12 dependency directory rather
+than systemPython3.9; final invocation uses bundled3.12 plus existing test wheels.
+
+Added Mac native-media CI job beside unchanged Linux gates to measure the actual
+laptop platform. Official Playwright docs explicitly distinguish OS media codecs
+and recommend Mac WebKit for Safari-like video playback:
+https://playwright.dev/docs/browsers#webkit
+This is additional evidence, not a waived Linux failure or a claim about iPhones.
+Future-audio graph/sample cancellation remains passing in native offline tests;
+kept the strict ended-event test pending more evidence rather than hiding failure.
+Related primary implementation reference for disconnected sources:
+https://chromium.googlesource.com/chromium/src/+/refs/heads/main/third_party/blink/renderer/modules/webaudio/base_audio_context.h
+All six yard fragment AVC headers agree with declared High3.1codec (64001f), AAC
+LC stereo48k; no evidence for changing picture assets/codecs on speculation.
+
+Next: push verified tree snapshot to PR13, inspect new Linux MSE diagnostics and
+Mac results. No production merge, new generation, paid calls or8902restart.

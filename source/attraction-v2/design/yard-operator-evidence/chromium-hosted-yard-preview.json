@@ -1,0 +1,19 @@
+{
+  "engine": "chromium",
+  "scope": "Actual hosted deploy preview; real media/audio decode, hardware muted; no provider or physical projection test",
+  "errors": [],
+  "bad": [],
+  "api": [],
+  "pictureOnly": true,
+  "nativeGhost": true,
+  "threeScenes": true,
+  "actualDryEffects": true,
+  "savedAudition": true,
+  "noLiveCastInstalled": true,
+  "silentPopup": true,
+  "sameOutputWindow": true,
+  "blackout": true,
+  "nightWatchCancellation": true,
+  "mobileLayout": true,
+  "accessibility": []
+}

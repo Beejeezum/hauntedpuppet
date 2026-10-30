@@ -1,0 +1,412 @@
+{
+  "commit": "47e8aaeeee81ccb271995896abb1a85e18887637",
+  "checkedFiles": 67,
+  "exactByteMatches": 63,
+  "htmlDOMMatches": 4,
+  "files": [
+    {
+      "file": "after-dark-remote.mjs",
+      "servedBytes": 1681,
+      "method": "exact sha256",
+      "servedSha256": "96a7b3670e84a6d4acd128196edec8767b60c1d0d0b7c9759ea37a4a83ae31f3"
+    },
+    {
+      "file": "after-dark-sound.mjs",
+      "servedBytes": 6366,
+      "method": "exact sha256",
+      "servedSha256": "4fb6cf8e019c92a549d9db9b7cbb3cfd45df15d0c07f5992605185cecb485e77"
+    },
+    {
+      "file": "apparition-motion.mjs",
+      "servedBytes": 1958,
+      "method": "exact sha256",
+      "servedSha256": "76f2a2d9cfca77c7c2b918b6e3ba9c38aa7a5d0b8176501d6e449a7cbbe26405"
+    },
+    {
+      "file": "eye-film.mjs",
+      "servedBytes": 4430,
+      "method": "exact sha256",
+      "servedSha256": "efbe83fc936fa28b3c1a80d1b154fcdea38795b994d35e1d4af903523be399e9"
+    },
+    {
+      "file": "ghost-lettering.mjs",
+      "servedBytes": 2620,
+      "method": "exact sha256",
+      "servedSha256": "3f33410784d0122cd2b73beb6b503a80c574d73b22a24dd9e16872c1ee44d9e4"
+    },
+    {
+      "file": "haunt-loops.html",
+      "servedBytes": 4714,
+      "method": "exact DOM after known preview drawer removal and same-origin pretty href normalization",
+      "servedSha256": "8380d1dbe06ff049b7512cca604de7a312a6a7b0ec1f4f5f051d303f3eae8c83"
+    },
+    {
+      "file": "haunt-loops.mjs",
+      "servedBytes": 11275,
+      "method": "exact sha256",
+      "servedSha256": "80cdb219ad90a90276a2adcc88abfe93e52564deb1052f822beb76cf2071d8a9"
+    },
+    {
+      "file": "index.html",
+      "servedBytes": 14914,
+      "method": "exact DOM after known preview drawer removal and same-origin pretty href normalization",
+      "servedSha256": "3f58d10a080ce2c63902c2d54cd96a4a35c7b333889184821ddeb18f0828bfe5"
+    },
+    {
+      "file": "media/dry-air-palette.json",
+      "servedBytes": 1125,
+      "method": "exact sha256",
+      "servedSha256": "9cb3b7a6e703b793294c1027e4a2f1514e97d5cc55008af096282ee3c0a9989d"
+    },
+    {
+      "file": "media/dry-air-palette.mp4",
+      "servedBytes": 60771,
+      "method": "exact sha256",
+      "servedSha256": "1433680e8c700df7b480a2b27764ced954811db3f8e497e60c029aaf58298664"
+    },
+    {
+      "file": "media/eyes-watch.mp4",
+      "servedBytes": 27807,
+      "method": "exact sha256",
+      "servedSha256": "e39333a48c6b5d0a7571bcc7f589cf2424f85c9b075a4fe11539d25b8d06ac18"
+    },
+    {
+      "file": "media/friendly.mp4",
+      "servedBytes": 298014,
+      "method": "exact sha256",
+      "servedSha256": "c4a28b24ce2b2269ceff1529362c6f3092f792c2a318445deb73f8bf78e7a1eb"
+    },
+    {
+      "file": "media/manifest.json",
+      "servedBytes": 4028,
+      "method": "exact sha256",
+      "servedSha256": "687955553179dfabfdfd0f17231d1bf86c61a767a04afbb4598fefaa4285f44c"
+    },
+    {
+      "file": "media/poster.png",
+      "servedBytes": 98765,
+      "method": "exact sha256",
+      "servedSha256": "0ca717150dfd06ba8bdfae03acbe29bb616b966bcea54acba3599e392101a399"
+    },
+    {
+      "file": "media/return.mp4",
+      "servedBytes": 296597,
+      "method": "exact sha256",
+      "servedSha256": "7a50cea05c88dc2b33c0484f115f370408af0905766cd7014fcb1b05391cbb79"
+    },
+    {
+      "file": "media/scary.mp4",
+      "servedBytes": 520708,
+      "method": "exact sha256",
+      "servedSha256": "d2540436a52ff36e08c06538cbdafdbbd3a840f101e9280a2f16c1d47fd2089e"
+    },
+    {
+      "file": "media/scene-assets.json",
+      "servedBytes": 1636,
+      "method": "exact sha256",
+      "servedSha256": "d65490cc2c7e59510694c696c1521f04f4d819f732fef877e287567f49cb0a63"
+    },
+    {
+      "file": "media/spider-rig-sheet-v1.png",
+      "servedBytes": 1368064,
+      "method": "exact sha256",
+      "servedSha256": "942f2d56172308bd47be007f8405e064b2caeb6c374dc979c53cce6a95e41c93"
+    },
+    {
+      "file": "media/to-cute.mp4",
+      "servedBytes": 240075,
+      "method": "exact sha256",
+      "servedSha256": "3161e91d21ceb3276e124bc1739890f1fd319f00444b311bed64dfe34e38574a"
+    },
+    {
+      "file": "media/to-scary.mp4",
+      "servedBytes": 304790,
+      "method": "exact sha256",
+      "servedSha256": "6eec0d4139ed0a30d6dd3c052335c800512b5c804c17fe70aea3c301ccfe5a21"
+    },
+    {
+      "file": "media/wave.mp4",
+      "servedBytes": 232132,
+      "method": "exact sha256",
+      "servedSha256": "cb29ce6fb303f976022eb809cea6f3400ff2cdcae6a90528bcfe50f1638a5b8f"
+    },
+    {
+      "file": "night-watch.mjs",
+      "servedBytes": 2071,
+      "method": "exact sha256",
+      "servedSha256": "af71ff43b154b3ba0968976cfb58a074b7316e5e71666a5efccc9f1a54b8b82b"
+    },
+    {
+      "file": "rehearsal-plan.mjs",
+      "servedBytes": 4075,
+      "method": "exact sha256",
+      "servedSha256": "32a661c431471e5577691eeb36517622934f31583210b85706f140b2ccf527cc"
+    },
+    {
+      "file": "rehearsal-player.mjs",
+      "servedBytes": 4973,
+      "method": "exact sha256",
+      "servedSha256": "a3eb66be087b65f89f2193f61f40c8f58fb50ee4754a6977f5bd1a30e4bd44cd"
+    },
+    {
+      "file": "scene-controls.mjs",
+      "servedBytes": 4175,
+      "method": "exact sha256",
+      "servedSha256": "e09ddf003595f2b805571bcc5bcf8711c0265e67ee0a69c8d36e4ed19213bb77"
+    },
+    {
+      "file": "scene-fade.mjs",
+      "servedBytes": 808,
+      "method": "exact sha256",
+      "servedSha256": "1eeb37e62e3488b05cd43e329c91cc227fe102820f9765551bb079fe36096dbd"
+    },
+    {
+      "file": "scene-settings.mjs",
+      "servedBytes": 2320,
+      "method": "exact sha256",
+      "servedSha256": "97ba4229bdfccf2a80e7b4f813589e6e9a9d570b348608807e0bb6ac29c693a0"
+    },
+    {
+      "file": "silk-spider.mjs",
+      "servedBytes": 9546,
+      "method": "exact sha256",
+      "servedSha256": "93bcbe92f5726b76783684718a85c9a0c9f75fabe20d546c944a43a739dfd1a6"
+    },
+    {
+      "file": "spider-study.html",
+      "servedBytes": 2887,
+      "method": "exact DOM after known preview drawer removal and same-origin pretty href normalization",
+      "servedSha256": "0f567003760dfcf2b42959746bbaa4d36021ff163927a22a4bf95009655400c9"
+    },
+    {
+      "file": "stagehand.css",
+      "servedBytes": 12818,
+      "method": "exact sha256",
+      "servedSha256": "6b4752e536fb9eab6ee37a8fa5e37095510ebe3117973a527745240ab91dee7c"
+    },
+    {
+      "file": "stagehand.mjs",
+      "servedBytes": 16511,
+      "method": "exact sha256",
+      "servedSha256": "d6babeb65c829a568978fff80d5fdeb6bb78ae572cc2cb97ba99618a8f2b4be1"
+    },
+    {
+      "file": "vendor/nunito/LICENSE",
+      "servedBytes": 4526,
+      "method": "exact sha256",
+      "servedSha256": "6632e6c45fcc18cc03909a0a53d84e9775185e06203ff80d6367cf93959b91a8"
+    },
+    {
+      "file": "vendor/nunito/nunito-sans-latin-400-normal.woff2",
+      "servedBytes": 13892,
+      "method": "exact sha256",
+      "servedSha256": "d9976dd1dc9c0d65046b52810e7cc69cfc229ee9939628ffe637e17efe4ef1ed"
+    },
+    {
+      "file": "vendor/nunito/nunito-sans-latin-600-normal.woff2",
+      "servedBytes": 14008,
+      "method": "exact sha256",
+      "servedSha256": "e03e312b8b7abd8b69ecef4060ded626f80e45723becd13676ad8273cf568a6e"
+    },
+    {
+      "file": "vendor/nunito/nunito-sans-latin-700-normal.woff2",
+      "servedBytes": 13836,
+      "method": "exact sha256",
+      "servedSha256": "cb84238e7b852f2d22b91a598289f13b31cbc7a2d618fd2c0628ecb69459fbeb"
+    },
+    {
+      "file": "vendor/phosphor/LICENSE",
+      "servedBytes": 1071,
+      "method": "exact sha256",
+      "servedSha256": "b5b1f1da112d18ea2147decfd48ddc1bf2b5aeb6c265381579340e95b15a2bb2"
+    },
+    {
+      "file": "vendor/phosphor/arrow-left-bold.svg",
+      "servedBytes": 239,
+      "method": "exact sha256",
+      "servedSha256": "7588792d7824e7c5337bca7b5de96ad0685ddea0a5732dfb62701d163a076563"
+    },
+    {
+      "file": "vendor/phosphor/caret-down-bold.svg",
+      "servedBytes": 202,
+      "method": "exact sha256",
+      "servedSha256": "76a97545e1b923bc13bcc15d7bcbb7f5530105e6eaa98a18c1e30d23e3622843"
+    },
+    {
+      "file": "vendor/phosphor/chat-circle-dots-bold.svg",
+      "servedBytes": 429,
+      "method": "exact sha256",
+      "servedSha256": "2b6c5597288b442f267ef418c4a29dea8b1a9fba7a386e02ab380ce058a1d6e0"
+    },
+    {
+      "file": "vendor/phosphor/check-bold.svg",
+      "servedBytes": 203,
+      "method": "exact sha256",
+      "servedSha256": "d0ca4e324ff5bb3a1a3bacb9f7580359b8e03cc6862a614d5ed14458db64bedf"
+    },
+    {
+      "file": "vendor/phosphor/eye-bold.svg",
+      "servedBytes": 743,
+      "method": "exact sha256",
+      "servedSha256": "766b10b6ed7d8a899a76ba28f3f066ca49e8ce0a75ae68b65bfec0e615d8130d"
+    },
+    {
+      "file": "vendor/phosphor/gear-six-bold.svg",
+      "servedBytes": 1526,
+      "method": "exact sha256",
+      "servedSha256": "78046b12e51bcbb83a744bf49cb2b6f6830e102374a58d9e08702cb995f9f95f"
+    },
+    {
+      "file": "vendor/phosphor/ghost-bold.svg",
+      "servedBytes": 528,
+      "method": "exact sha256",
+      "servedSha256": "d0d5f81bc41cb53c4d097ff7c55868600659f335388d6355288a975027c863f7"
+    },
+    {
+      "file": "vendor/phosphor/list-numbers-bold.svg",
+      "servedBytes": 671,
+      "method": "exact sha256",
+      "servedSha256": "b85c90f81d3d2f81b54e4af1732847c4b860761c2e4aa4f174dbe9cfe4e24500"
+    },
+    {
+      "file": "vendor/phosphor/monitor-bold.svg",
+      "servedBytes": 337,
+      "method": "exact sha256",
+      "servedSha256": "321df16741f8848f6af13dc3c0ec2328028364fd67f941c31fe8669760efff7a"
+    },
+    {
+      "file": "vendor/phosphor/paper-plane-tilt-bold.svg",
+      "servedBytes": 417,
+      "method": "exact sha256",
+      "servedSha256": "e7e5b9e91760b351b75cb43e120eb5cbceafd2a902fd2ed250625cfa62927656"
+    },
+    {
+      "file": "vendor/phosphor/play-bold.svg",
+      "servedBytes": 246,
+      "method": "exact sha256",
+      "servedSha256": "f54e774d80d2b4d134a4babd3c03ee2a217aa4856566ed0a288e48e1a2f29d16"
+    },
+    {
+      "file": "vendor/phosphor/plus-bold.svg",
+      "servedBytes": 224,
+      "method": "exact sha256",
+      "servedSha256": "3d20a4b2e00657baeb922bed94f13fbfa288968b738991d047dd252cb64005d8"
+    },
+    {
+      "file": "vendor/phosphor/sparkle-bold.svg",
+      "servedBytes": 723,
+      "method": "exact sha256",
+      "servedSha256": "d61e5264b0866af931617635cbda2cd23f7b76d2d0f6daad1560dff8f3cf4980"
+    },
+    {
+      "file": "vendor/phosphor/speaker-high-bold.svg",
+      "servedBytes": 543,
+      "method": "exact sha256",
+      "servedSha256": "f0fc825cb96958238882b98aea55afdb63da92c4c5c8b499c0e1068e9abb299e"
+    },
+    {
+      "file": "vendor/phosphor/speaker-slash-bold.svg",
+      "servedBytes": 702,
+      "method": "exact sha256",
+      "servedSha256": "19f3d5a5a4b3012c43dbc712b9a48a81fb458ec4ba3f3a9a9565a0c6526ff315"
+    },
+    {
+      "file": "vendor/phosphor/stop-bold.svg",
+      "servedBytes": 213,
+      "method": "exact sha256",
+      "servedSha256": "27afd1f52290a911e580737ec1bb947a18d1ea50d41ab3caf7723ba1dd329d0c"
+    },
+    {
+      "file": "vendor/phosphor/trash-bold.svg",
+      "servedBytes": 407,
+      "method": "exact sha256",
+      "servedSha256": "14f3fa7bf3588b279a104e6a19b16809fa54f1c2185e2811d3c47cab559f79d5"
+    },
+    {
+      "file": "vendor/phosphor/users-three-bold.svg",
+      "servedBytes": 707,
+      "method": "exact sha256",
+      "servedSha256": "5246b7d9cc7e2011823f127b65278a3d9434bb0b008e9dedacd9f10ff33697c5"
+    },
+    {
+      "file": "vendor/phosphor/wind-bold.svg",
+      "servedBytes": 517,
+      "method": "exact sha256",
+      "servedSha256": "8bd3ffd2f26688090752f4f1d685c0fdbe1927d76dcc80a2042bcb65f4c84a56"
+    },
+    {
+      "file": "vendor/phosphor/x-bold.svg",
+      "servedBytes": 256,
+      "method": "exact sha256",
+      "servedSha256": "d540487912a267d83c495954b24ca07981002fda05ee2ea0b492d8fc188d1c3e"
+    },
+    {
+      "file": "vendor/provenance.json",
+      "servedBytes": 1245,
+      "method": "exact sha256",
+      "servedSha256": "5718002fc9494050f2c20848ed7c183a196038b191e1241110cc82d2c4b3b495"
+    },
+    {
+      "file": "voice-casting.html",
+      "servedBytes": 9788,
+      "method": "exact DOM after known preview drawer removal and same-origin pretty href normalization",
+      "servedSha256": "a2aa009263c1693decda47d87c633ac47c26d685b43114cb043bde8d89a422c8"
+    },
+    {
+      "file": "watchful-eyes.mjs",
+      "servedBytes": 2323,
+      "method": "exact sha256",
+      "servedSha256": "dd8c8d39df6a549d1f94598b6a33c62f0b352efc15a9112b6904e3fd5af33068"
+    },
+    {
+      "file": "yard-cast.mjs",
+      "servedBytes": 2618,
+      "method": "exact sha256",
+      "servedSha256": "703c363f89a49724aed418331ddfcdf1bb8128973de0330c5c86e50956d6a352"
+    },
+    {
+      "file": "yard-environment.mjs",
+      "servedBytes": 661,
+      "method": "exact sha256",
+      "servedSha256": "1f395f336c9a5c79b1b4a669574eac4df0055bf51f49fd19a92e357957746a5f"
+    },
+    {
+      "file": "yard-remote.mjs",
+      "servedBytes": 6007,
+      "method": "exact sha256",
+      "servedSha256": "78c75d7af2f4071deef08d5c9980d68b62a25ccc8427a43d403a468fbf86bbeb"
+    },
+    {
+      "file": "yard-scene.mjs",
+      "servedBytes": 4227,
+      "method": "exact sha256",
+      "servedSha256": "a7bfebdba5567d9390b500117b271fb4caf9319625b43ebe7f35b9ce4f7c03c0"
+    },
+    {
+      "file": "yard-speech.mjs",
+      "servedBytes": 8610,
+      "method": "exact sha256",
+      "servedSha256": "7bce99de4a0400f7a342c9f4655f38eb239456ef79deb1fd2f2faa9bf9c99516"
+    },
+    {
+      "file": "shared/wisp-film-output.js",
+      "servedBytes": 4661,
+      "method": "exact sha256",
+      "servedSha256": "3c047ea298c133942163df71059aae86769b53662052e11d948d8d7a7966afaf"
+    },
+    {
+      "file": "shared/pcm-voice.mjs",
+      "servedBytes": 2473,
+      "method": "exact sha256",
+      "servedSha256": "a2274ee506c75ddd2fbef4dff70f97d0efed19baf90d1dd76e5c6b9b8b6a43a4"
+    },
+    {
+      "file": "shared/finite-player.mjs",
+      "servedBytes": 8607,
+      "method": "exact sha256",
+      "servedSha256": "13246c70549df0c9bbbba682cdeb65e8a0010076ffff413bd1d767800fa5d4a0"
+    }
+  ],
+  "providerCalls": 0,
+  "context": "actual hosted deploy preview; Netlify rewrites pretty-link attributes and inserts its own preview drawer; no production switch"
+}
