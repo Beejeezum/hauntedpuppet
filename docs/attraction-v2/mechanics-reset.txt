@@ -1,0 +1,191 @@
+MECHANICS RESET — 2026-10-29
+Status: REJECTED AS OUT OF SCOPE by the human on 2026-10-29. Historical proposal
+only. Do not execute its guest games, sensing or lighting roadmap. Read
+yard-apparitions-scope.txt for the active direction.
+
+WHY THIS SUPERSEDES THE PREVIOUS ROADMAP
+The human rejected Stagehand as a new interface to the same old idea. They want
+new play mechanics and a substantial technology-driven change in the attraction.
+The previous plan deferred lighting, sensing and interactivity until after a large
+film library. That sequencing was wrong for this request. Preserve useful playback,
+art, voice and stop/ownership work, but stop polishing the console as the product.
+Freeze additional bulk cue generation until a meaningful interaction is convincing.
+
+RECOMMENDED PREMISE: THE TREE STOLE HALLOWEEN
+Wisp is the keeper of an old lantern beneath the mango tree. Mischievous spirit-light
+has escaped into the tree. Visitors help gather it. Wisp steals a little too much
+courage, discovers his scary side, and needs their help to settle down again.
+
+The physical installation consists of one bounded ghost/effects projection plane,
+one practical glowing lantern, a few controllable tree lights, nearby sound, and an
+interaction zone on the existing guest path. Guests need no phone or instructions
+longer than one short invitation. No assumption of free-air volumetric projection.
+
+THE PLAY LOOP, ABOUT 45–75 SECONDS PER GROUP
+1. Discovery. A quiet tree, breathing lantern and occasional ghostly habit. An arrival
+   produces a restrained response. Wisp offers one invitation: "Help me catch that."
+2. Connection. A slow hand motion bends a cloud of spirit-light on the projection
+   plane. Light begins responding immediately, before any reward animation. This
+   cause-and-effect connection is the first crucial proof.
+3. Cooperation. One guest can guide the cloud into the lantern-aligned target;
+   two guests can gather it faster. Slower, steady movement holds the cloud together.
+   Fast movement scatters it playfully, with an easy return and no punishment.
+   The physical lantern brightens continuously as light is gathered, and a branch
+   responds. No numeric arcade score or ever-growing HUD on the apparition.
+4. Temptation. Gentle mode produces a silly brave pose. Mischievous/Haunted can
+   offer a visible invitation to try a "monster pose" or dare Wisp. A sustained,
+   deliberate response unlocks the scary branch; random movement cannot trigger it.
+   The operator can always hold the friendly route or deliberately add a stronger
+   reveal. Never infer a guest's age or tolerance from camera appearance.
+5. Recovery. Bringing hands down slows the live field, warms the lantern and brings
+   Wisp back. If nobody responds, he recovers himself after a short fixed maximum.
+   Optional short embarrassed line. Guests caused a different ending than another
+   group, rather than merely advancing the same playlist.
+6. Release. A small reward of mothlike spirit lights, warm tree glow and a goodbye.
+   Wisp returns to his own habits. People can join halfway, watch only, or walk away;
+   no one is trapped in a long dialogue or a failed minigame.
+
+WHAT THE CONTINUOUS MECHANIC ACTUALLY IS
+The guest's current hand/zone position drives a force field in real time. Simulated
+particles have position, velocity, lifetime and attraction to a moving target.
+Cloud cohesion, lantern charge and gust strength evolve continuously with input.
+SFX intensity/position and the physical light level follow those same state values.
+Story events happen at explicit thresholds and completed animation boundaries.
+It must still respond if every character reward movie is temporarily disabled.
+Merely detecting a wave and then playing a prerecorded effect fails this brief.
+
+THE PHONE BECOMES A SECRET MAGIC CONTROL
+Two modes: conductor and unattended.
+Conductor has a touch area to guide the spirit field, a bounded intensity control,
+an invitation/hold/release choice, a guest note or exact short line, and Stop.
+Example: notice a guest dressed as a witch, type "The witch has stolen my sparks,"
+and guide the live field toward that part of the stage while Wisp responds.
+No promise of automatic costume identification or arbitrary speech-ready film.
+The operator may assist an interaction invisibly if sensing is uncertain. Such a
+run is honestly operator-assisted, not reported as autonomous tracking success.
+
+Unattended uses observed presence and coarse movement after night testing. It
+invites one interaction at a time, has bounded challenge/recovery times, remembers
+recent encounters only as anonymous session state, and varies its own quiet habits
+when nobody participates. With no reliable sensor it runs an ambient show, not a
+fictional conversation with imaginary guests. Network loss leaves local effects,
+story logic and cached fallback operational. Phone and projector remain silent.
+
+OTHER DISTINCT MECHANICS TO TRY AFTER THE FIRST PROOF
+- Scare School: visitors teach an insecure ghost a monster pose; he overachieves;
+  they calm him again. Coarse pose/energy, anticipation and comic timing matter.
+- Ghost Keep-away: moving left/right changes where escaped light travels; Wisp
+  tries to steal it, then gives it back. No running or chasing into the yard needed.
+- Haunted Lantern: a large physical touch/control point gathers light. This is
+  the simpler sensing fallback if camera tracking is unreliable in the installation.
+These are variations of a tested reactive world, not a commitment to three extra
+products, dozens of paid films or three more operator interfaces.
+
+TECHNOLOGY DIRECTION — CANDIDATES, NOT AN INSTALLED STACK
+TouchDesigner is the lead native prototype candidate for the reactive environment,
+compositing, mapped output and coordinated lighting. Its GPU Point Operators can
+simulate/modify live geometry; the official example networks provide a practical
+starting point. Use Mac-compatible POPs and shaders. Avoid Nvidia Flex/Flow,
+Nvidia-only Optical Flow TOP, Windows-only tracking plugins and hardware ray tracing
+on this Mac. Benchmark the actual network before naming it the production engine.
+Non-Commercial is restricted to personal/noncommercial work and1280x1280 images;
+a full1920px-wide final output requires an appropriate other license. Nothing bought.
+Sources: https://derivative.ca/UserGuide/POP
+https://docs.derivative.ca/MacOS
+https://docs.derivative.ca/Optical_Flow_TOP
+https://derivative.ca/UserGuide/TouchDesigner_Non-Commercial
+https://darienbrito.com/work/pops-guide/
+
+Input adapter first accepts mouse/phone coordinates for a truthful no-hardware
+mechanics test. Next prove coarse presence/hand/upper-body zones on the actual dark
+path. MediaPipe provides hand landmarks/tracking; it does not guarantee performance
+with masks, costumes, crowd occlusion or night lighting. An OAK-D Pro is a hardware
+candidate for low-light depth and monochrome IR sensing. Its RGB camera cannot see
+that IR illumination, and a model trained on RGB is not automatically proven on IR.
+Do not buy a camera before the path, distances and sensing test are defined.
+Sources: https://developers.google.com/edge/mediapipe/solutions/vision/hand_landmarker/python
+https://github.com/google-ai-edge/mediapipe
+https://docs.luxonis.com/hardware/products/OAK-D%20Pro
+https://github.com/luxonis/depthai-core
+https://github.com/luxonis/oak-examples
+
+WLED is an open-source option for ESP32/addressable LEDs in the lantern and tree;
+DMX/Art-Net/sACN provide an alternative for compatible fixtures. The light controller
+follows the same normalized charge/gust/phase as the projection, with a low-brightness
+rest state after lost updates. No fixture currently identified or connected.
+Sources: https://github.com/wled/WLED
+https://kno.wled.ge/interfaces/json-api/
+https://kno.wled.ge/interfaces/udp-realtime/
+https://derivative.ca/UserGuide/DMX_Out_CHOP
+
+A small local encounter director owns state, timers, intent/cancellation and output
+ownership. The browser is the remote, not the only rendering tool. QLab may remain
+an optional finished-film player if it wins the earlier benchmark; do not require
+QLab+OBS+TouchDesigner simultaneously just to run one small attraction.
+
+AI'S USEFUL ROLE
+Short contextual character lines, a guest note from the operator, and bounded
+intent interpretation. It does not drive the particle loop, decide emergency stop,
+or invent arbitrary lighting/renderer commands. Use selected character voices and
+prepare their speaking performance before playback. Ambient play costs no AI credits.
+
+THE CHARACTER LIMIT WE MUST NOT HIDE
+Our beautiful films cannot become arbitrary live body/face/eye animation by loading
+them into TouchDesigner. Reuse the best footage for deliberate acted reactions and
+payoffs. Live field movement and physical lighting must work independently. Full
+free-form Wisp acting requires a separately authored coherent rig/material/face
+system and has its own art gate. Do not resume pasted-on mouth/hand patches, warp
+the whole image to pretend he turned, or let particle spectacle mask a weak puppet.
+Speech can initially be a short theatrical line during an appropriate authored
+performance, but that is not accepted live lip sync for both characters.
+
+Runway Characters/LiveKit is a documented whole-video conversation option, but
+our prior two bounded Wisp auditions failed speech articulation (fixed grin or
+closed mouth) and cost4credits total. The current docs do not overturn that local
+evidence. Do not buy another audition automatically or advertise it as our working
+puppet. Vendor24fps and1.75second server-side response claims are not our benchmark;
+the documented5minute session cap and ongoing billing also matter for a yard show.
+Evidence: ../wisp-live-character-recovery-2026-10-28.txt
+Sources: https://runway.com/news/engineering/building-runway-characters
+https://docs.dev.runwayml.com/characters/concepts/
+https://runway.com/product/characters
+
+NEXT DELIVERABLES REPLACE UI-FIRST WORK
+A. One guest-view storyboard (concept only) plus this testable mechanic brief.
+B. A30-second live field proof: move an input, gather/scatter light, charge a target,
+   release it, and reset. Keep Wisp's painted identity visible without pretending
+   to have rebuilt his live rig. Use no new paid character clips for this proof.
+C. One physical lighting response synchronized to the same state, then dusk/night
+   sensing trials. The first proof can use operator input; sensing remains separate.
+D. One complete short guest encounter with at least two genuinely different paths,
+   graceful nonparticipation, bounded recovery and a meaningful operator override.
+E. Finish the character reactions/speech the encounter actually requires, then build
+   the small phone controls around observed operation. Expand only after the play
+   feels magical, comprehensible and reliable on the real installation.
+
+GATES FOR THE NEXT PROOF
+- Guests understand the cause/effect in five seconds without reading a tutorial.
+- Provisional target: input-to-visible response p95 below150ms, measured on the
+  actual target setup. This is a design target, not a benchmark already achieved.
+- A motion reversal changes the field before a movie boundary; a still hand has
+  a visibly different effect from frantic motion. Inspect actual recordings.
+- Run the same initial state with different inputs: outcomes must differ; disabling
+  reward movies must not remove the core interaction.
+- Preserve the coherent body and complete20%effect border on the scrim. Branch
+  lights provide spatial extension; projection does not leave its real surface.
+- No input/noise/confidence drop cannot produce repeated scary reveals. Stop blacks
+  projection, ends sound and returns practical light to a defined calm state.
+- Frame/render, physical input, audio, and human-play evidence are reported separately.
+
+CURRENT SESSION SCOPE
+Researched primary sources and prepared the mechanics-first concept. No software
+installation, device access, recording, hardware purchase, new Runway generation,
+or production deployment. Existing console remains recoverable as a rehearsal tool.
+
+Storyboard: ../../source/attraction-v2/design/guest-play-concept-v1.png
+One generated concept image using the approved friendly and scary references.
+It illustrates the desired encounter, not an engineering rendering or evidence of
+a working installation. The drawn apparent touch is guest-view alignment with
+effects on the scrim; it does not establish holograms around a visitor's real hand.
+The painted core is retained; real-world projection brightness, visibility of mesh,
+tree-light spill, sensor quality and sound behavior all require physical rehearsal.

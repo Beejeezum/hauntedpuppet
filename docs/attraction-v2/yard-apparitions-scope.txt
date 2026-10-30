@@ -1,0 +1,40 @@
+YARD APPARITIONS — CURRENT SCOPE, 2026-10-29
+Human correction: "its just about the ability to projection map onto the lawn some floating ghosts, maybe spooky floating eyes etc".
+This takes priority over both the Stagehand-only direction and the rejected Tree Stole Halloween proposal. The latter is explicitly out of scope, not waiting for implementation or approval.
+
+PRODUCT
+Beautiful floating apparitions staged in the front yard, using the existing projector and projection surface. Preserve the approved painted ghosts. Concentrate technology on convincing placement, layered imagery, smooth playback and easy control.
+
+The current full story, content, operating modes, technology scope and delivery
+gates are in product-blueprint.txt, rewritten after this boundary correction. It
+proposes small nonverbal scenes and a single-file signature show within this scope.
+
+WHAT THE GUEST SEES
+- Friendly or sinister ghosts that linger, drift, look around and act naturally.
+- Floating eyes that blink, glance toward different parts of the viewing area, and disappear into darkness; authored/operator-directed, not a claim of camera tracking.
+- Planned appearances, departures and transformations, with quiet intervals where appropriate.
+- Optional fog and small atmospheric accents attached to or surrounding the apparitions, contained in the usable projection area.
+- Restrained sound effects supporting the action; no compulsory music or dialogue.
+
+WHAT THE OPERATOR DOES
+- Set up the projection on the laptop: placement, size, boundary/mask, layers and opacity, with a clean separate projector window.
+- Run a varied unattended haunting: friendly, scary or mixed, with pacing and quiet intervals.
+- Use a simple phone control to call an apparition/action, change the mood, or clear the output. Keep actual phone pairing status honest.
+- Keep previously requested short typed character speech as a separate secondary capability, not a prerequisite for the visual show.
+
+QUALITY BAR
+Resident ghosts can stay visible between actions; no compulsory fade-out after every clip. Intentional appearances/disappearances have authored motion. Admit only compatible transitions; do not promise arbitrary film blends are seamless. Keep fog clear of frame edges, preserve the complete body, and stage depth through authored turning and travel rather than abrupt resizing. Layers and travel stay within the measured projection area.
+
+SCOPE EXCLUSIONS
+Remove the lantern game, hand-sensing challenges, guest participation tasks, lighting installation and haunted-tree storyline from the active roadmap. Do not buy hardware, install a new renderer or generate a paid media batch to pursue those ideas. Their research can remain archived.
+
+NEXT BUILD TARGET
+One projection scene combining an existing approved ghost performance with an independently placed floating-eyes layer; prove placement/masking/opacity, controlled appearance and disappearance, automatic variation, Stop and silent projector output. Treat any new eyes art as a candidate requiring visual review. Use the working playback/output modules where suitable; do not rebuild the whole interface first.
+
+STATUS
+The first layered local scene is now implemented and browser-tested. It reuses the
+hero films, a native silent eyes passage and painted vapor. Saved placement, masks,
+corner fit and the separate silent projector work in the local rehearsal. Phone
+pairing, full resident art/joins, the signature master and physical installation
+remain unfinished. See status.json for scoped evidence. No generation credits or
+production deployment were used for the layered proof.

@@ -1,0 +1,25 @@
+{
+  "run": 41070042722,
+  "previewCommit": "faf9511dce9d17d9ade9f20f617befa654977ffd",
+  "Linux": {
+    "normalYardFlow": "PASS at14:19:48UTC; no visible-source diagnostic override",
+    "faultRecovery": "PASS at14:20:23UTC",
+    "movieAnalysisTap": "Native seek stalled until job timeout; no passing result.",
+    "job": "Cancelled by12minute budget; subsequent diagnostic passed."
+  },
+  "Mac": {
+    "normalYardFlow": "PASS",
+    "faultRecovery": "PASS",
+    "movieAnalysisTap": "PASS",
+    "coveredSourceDesktopMobile": "PASS",
+    "legacyEffectImport": "Repeated first-frame timeout after projector took focus."
+  },
+  "nextTests": [
+    "Real file chooser gesture with owner foreground, then require both media clocks advance with projector foreground.",
+    "30second silent PCM for controller-lifetime test; old5.2second demo could finish before second cold projector page loaded.",
+    "Node process deadline retains timeout evidence even if native media blocks browser clock.",
+    "Separate direct native movie playback and independently decoded embedded audio; old analysis-tap test retained."
+  ],
+  "appChange": "No further runtime changes at this checkpoint.",
+  "physicalProjection": false
+}

@@ -156,9 +156,9 @@
     {
       "source": "source/wisp-performance-reference/tonight-demo/live-puppet.html",
       "destination": "live-puppet.html",
-      "bytes": 7060,
-      "sha256": "9da03b762a0abeb873851cfab84295e3ff56d3214dc631925fd88e0ffde76b49",
-      "publishedSha256": "9da03b762a0abeb873851cfab84295e3ff56d3214dc631925fd88e0ffde76b49"
+      "bytes": 7231,
+      "sha256": "1acaca9c731ea67bb6e54059fc541377ac7c8fd63d09505d2183f791e316e92e",
+      "publishedSha256": "1acaca9c731ea67bb6e54059fc541377ac7c8fd63d09505d2183f791e316e92e"
     },
     {
       "source": "source/wisp-performance-reference/tonight-demo/live-puppet.mjs",

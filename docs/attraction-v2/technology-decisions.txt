@@ -1,0 +1,78 @@
+TECHNOLOGY DECISIONS — researched 2026-10-29
+
+SCOPE CORRECTION: yard-apparitions-scope.txt takes priority. Engine candidates below
+are optional ways to improve projection/playback, not required installs. Guest
+tracking, lantern games and practical-light integration are outside the current
+requested product. Evaluate any extra software against a specific visible need.
+
+Architecture: a local show appliance owns playback. The phone sends intentions.
+The Netlify site distributes the control app/show metadata and supports authenticated
+online services; it is not required for a cached unattended film to keep playing.
+The production decoder/backend choice is provisional until a real-media comparison.
+
+PREFERRED NATIVE CANDIDATE: QLab5 on the Mac.
+It already supports timed video/audio cues, output stages, effects, cue control and
+OSC. Use it as a playback engine under a narrow local controller, not as another
+complex interface the outdoor operator has to learn. A QLab proof is required
+before adopting it. Free supports one single-output video stage; layered mapping
+and other advanced functions may need paid video/audio licenses. No license bought.
+Sources: https://qlab.app/docs/v5/video/video-cues/
+https://qlab.app/docs/v5/general/features/
+https://qlab.app/docs/v5/networking/using-osc/
+
+MEDIA: local mezzanine exports for native playback, compressed previews separately.
+QLab recommends ProRes422 Proxy or Hap for ordinary video and ProRes4444/Hap Alpha
+for transparency. QLab expects premultiplied alpha. Existing black-background films
+do not magically contain transparency; additive blending is suitable only where
+its actual appearance passes inspection. Keep audio at consistent48kHz with separate
+dialogue/effect/ambient stems during authoring and a complete embedded final mix.
+No speed-changing or runtime scaling to disguise bad pose/velocity joins.
+Source: https://qlab.app/docs/v5/video/video-cues/
+
+CONTROL: small local service with a renderer-neutral show director. The phone pairs
+to it, sends authenticated commands with IDs and receives state acknowledgements.
+No raw shell/OSC commands accepted from the phone. Playback receives only validated
+cue IDs. Local connection/recovery is mandatory; optional cloud relay later reuses
+existing paired-command protections. Local service is the only credential holder.
+
+BITFOCUS COMPANION: optional physical Stream Deck/web-button adapter, not mandatory
+hardware. Its built-in web buttons, feedback and OSC/HTTP/WebSocket support make it
+a useful existing operator surface and integration layer. GPL-2.0 repository;
+prefer controlling it externally rather than copying an unexplained module bundle.
+Sources: https://bitfocus.io/companion
+https://github.com/bitfocus/companion
+
+OBS: useful optional compositor, rehearsal recorder and output alternative. It has
+built-in authenticated WebSocket control. Do not require OBS plus QLab plus another
+compositor for one yard projection surface unless a demonstrated effect needs them. OBS control
+alone cannot make unmatched character movies morph continuously.
+Source: https://obsproject.com/kb/remote-control-guide
+
+TOUCHDESIGNER: a later candidate for tracked body-attached fog, spatial distortion
+or sensors. Do not migrate everything just for particles. Non-Commercial has a
+1280x1280 image limit and non-commercial use restriction; account for licensing
+and extra operational complexity before choosing it for full-resolution output.
+Source: https://derivative.ca/UserGuide/TouchDesigner_Non-Commercial
+
+UNREAL: defer. It helps when there is a production-quality rig, materials, animation
+and lighting to drive. A new engine does not create the missing painted character
+or authored performance. Current successful film assets remain the faster path to
+the agreed look. Reconsider only against a convincing complete rendered benchmark.
+
+REUSE: painted identities and accepted films/voices; tests for phone/sound ownership;
+projection framing; asset provenance; exact-media join admission; cloud auth. Audit
+modules individually, not a wholesale transplant of the old dashboard and controls.
+
+DEFER: webcam control, real-time voice conversion, automatic age recognition, broad
+LLM improvisation in unattended mode, multiple competing renderers, more characters.
+Phone text performance remains in scope. Unattended beats are deterministic authored
+content, with controlled variation; no API credits required while running them.
+
+OPEN INSTALLATION FACTS
+Confirmed by human: front yard beneath a large mango tree, floating-free illusion.
+Original pasted user notes identify an existing ViewSonic, believed PJD7820HD;
+reuse this as the planning baseline, with the model still to be confirmed physically.
+Projection mesh ownership/dimensions, throw/viewing distance, speaker location/output device,
+phone OS/local Wi-Fi reliability, any existing light hardware. These must be
+confirmed during setup; no simulated test proves the real-world illusion or volume.
+See mango-tree-installation.txt for physical staging and revised content constraints.

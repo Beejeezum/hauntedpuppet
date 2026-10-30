@@ -1,0 +1,24 @@
+{
+  "engine": "webkit",
+  "fullNormalSpeedThreeCycles": false,
+  "directNativeAudio": true,
+  "errors": [],
+  "scope": "Muted native HTML video, with embedded AAC decoded independently before playback; no MediaElementSource routing. No physical projector or human mix approval.",
+  "decode": {
+    "wraps": 3,
+    "frames": 111,
+    "peak": 0.2209034562110901,
+    "decodedTimes": [
+      123.6,
+      123.46666666666667,
+      123.36666666666666
+    ],
+    "stopped": false,
+    "maxFrameGap": 0.067,
+    "audioSeconds": 124.11733333333333,
+    "audioChannels": 2,
+    "duration": 124.1,
+    "error": null
+  },
+  "result": "passed"
+}

@@ -1,0 +1,47 @@
+{
+  "engine": "chromium",
+  "playback": {
+    "source": "blob:http://127.0.0.1:54904/21666c69-fa2d-4ece-bce3-8c6eccc574c5",
+    "frames": 838,
+    "previous": 35.416666,
+    "backwards": 0,
+    "minimumPeak": 243,
+    "sameSource": true,
+    "time": 35.422159,
+    "muted": true
+  },
+  "output": {
+    "state": {
+      "silent": true,
+      "stopped": false,
+      "stale": false,
+      "stalls": 0,
+      "width": 1280,
+      "height": 720,
+      "owner": true
+    },
+    "videos": 0
+  },
+  "outputWhileOwnerRAFStopped": {
+    "silent": true,
+    "stopped": false,
+    "stale": false,
+    "stalls": 0,
+    "width": 1280,
+    "height": 720,
+    "owner": true
+  },
+  "stopped": {
+    "src": null,
+    "paused": true,
+    "peak": 0
+  },
+  "saved": [
+    "Welcome",
+    "Spook"
+  ],
+  "mobileOverflow": false,
+  "changedPackageBlocked": true,
+  "stoppedLoadingStayedBlack": true,
+  "errors": []
+}

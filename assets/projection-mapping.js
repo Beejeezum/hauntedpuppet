@@ -38,8 +38,10 @@ export class ProjectionMapper {
     this.gl=this.canvas.getContext('webgl',{alpha:false,antialias:false,preserveDrawingBuffer:true});
     this.ready=false;this.error=null;this.frames=0;this.cache='';this.h=null;
     if(!this.gl) return;
-    this.canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();this.ready=false;this.error='GPU context lost; safe canvas fallback active';});
-    this.canvas.addEventListener('webglcontextrestored',()=>{try{this.init()}catch(e){this.error=e.message;this.ready=false}});
+    this.onLost=e=>{e.preventDefault();this.ready=false;this.error='Projection graphics interrupted';};
+    this.onRestored=()=>{if(this.disposed)return;try{this.init()}catch(e){this.error=e.message;this.ready=false}};
+    this.canvas.addEventListener('webglcontextlost',this.onLost);
+    this.canvas.addEventListener('webglcontextrestored',this.onRestored);
     try{this.init()}catch(e){this.error=e.message}
   }
   init() {
@@ -79,6 +81,13 @@ export class ProjectionMapper {
     return this.canvas;
   }
   inspect(){return{renderer:this.ready?'perspective-webgl':'canvas-fallback',frames:this.frames,error:this.error};}
+  dispose(){
+    this.disposed=true;this.ready=false;
+    this.canvas.removeEventListener('webglcontextlost',this.onLost);
+    this.canvas.removeEventListener('webglcontextrestored',this.onRestored);
+    if(this.gl){this.gl.deleteTexture(this.texture);this.gl.deleteBuffer(this.buffer);this.gl.deleteProgram(this.program);}
+    this.texture=this.buffer=this.program=null;
+  }
 }
 
 export function drawCalibration(ctx) {

@@ -1,0 +1,37 @@
+{
+  "status": "padded review proxy only; use native silent master for rig authoring",
+  "file": "scary-neutral-body-review-v1.mp4",
+  "sha256": "a83d4656a50cd85ddf6d1edb2bd587f918a5b9471e3d73c34e8bb81a90ca8051",
+  "source": "source/wisp-performance-reference/runway-pilots/whole-character-talking-study/neutral-mouth-audio-pilot-v2.mp4",
+  "sourceSha256": "86c71acf6b44eee413afc6b756e32511d9a145f7d967431bd175ee72ca79ffae",
+  "frames": 193,
+  "fps": 24,
+  "dimensions": [
+    1920,
+    1080
+  ],
+  "nativePictureRect": [
+    416,
+    188,
+    1088,
+    704
+  ],
+  "processing": "Constant black padding only, no picture scaling, retiming, reversal, interpolation or body/face replacement. H264 re-encode is not pixel-identical. Original baked audition sound removed; future voice belongs to laptop speech playback.",
+  "reencodeVisiblePixelDifference": {
+    "meanAbsoluteRGB": 2.1637920508553474,
+    "maximumRGB": 38,
+    "threshold": 16
+  },
+  "origin": "Earlier2credit whole-character speech audition, rejected for closed mouth through dialogue. Reuse is only for its moving closed-mouth body/fog, not a reversal of that speech rejection.",
+  "generationCreditsSpent": 0,
+  "humanApproval": false,
+  "runtimePublication": false,
+  "remaining": [
+    "Human character/material review",
+    "Connected jaw/cheek/teeth/OO mechanics",
+    "Verified picture-to-track registration before live use",
+    "Spoken motion/voice review",
+    "Authored loop and entrance/exit qualification",
+    "Browser/phone/projector integration and soak"
+  ]
+}

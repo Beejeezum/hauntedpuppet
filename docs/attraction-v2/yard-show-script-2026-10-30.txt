@@ -1,0 +1,182 @@
+WISP — “JUST PRACTICING”
+Production script v1 · 2026-10-30 · planned, not a finished show file
+
+THE EXPERIENCE
+A ghost has claimed a little patch of the front yard. He is trying very hard to be
+frightening. His disguise works a little too well, embarrasses him, and he goes back
+to welcoming visitors. A spider above him gets the last scare. Guests do not have
+to stop, play a game, hear an explanation or see the whole sequence to enjoy it.
+
+Under the mango tree: darkness is the stage, not a background picture of a tree.
+Everything luminous belongs to the apparition, eyes, silk or lettering. Show no
+ground plane, rendered landscape, full-screen fog, illuminated rectangle or UI.
+
+TARGET LENGTH: 2:40 /160seconds, followed immediately by the next cycle.
+This is an edit plan. Final duration follows the approved acting, never arbitrary
+speed changes. One continuous picture/audio master is the signature-show deliverable;
+the same chapters also have clean state contracts for interactive cue operation.
+Do not call a browser playlist with independent audio files that final master.
+
+00:00–00:12  WATCHFUL DARK
+One pair of eyes opens off-center. It glances toward passing guests, hears a tiny
+rustle elsewhere and looks down. A second pair appears lower and farther away;
+the first blinks shut. Never travel the eye layer while it is visible. Leave enough
+negative space for guests to wonder whether they saw anything.
+Sound: one close dry rustle, tiny air movement. No musical pad or choir.
+Dialogue: none. End: eyes go dark; an intentional one-second empty beat.
+
+00:12–00:32  OH, HELLO
+Friendly Wisp emerges from his own fog near center, then notices the path. The
+body keeps moving while the head looks, the eyes settle, and one hand waves.
+Proposed line, quietly delighted: “Oh! Hello. I’m practicing my haunting.”
+Hold enough friendly idle afterward for the line to land. Do not jump to another
+pose on the last word or make a mouth patch chase the head.
+Sound: soft breath-like arrival, dry hand-swish only where the arm actually moves.
+End: friendly idle, same scale/location, native body/fog motion still running.
+
+00:32–00:55  THE REHEARSAL
+Wisp drifts a little sideways, listens, tries to look dignified and loses his
+nerve. He gathers himself, looks left/right for witnesses, then toward guests.
+Proposed line: “All right. Watch this.”
+Sound: sparse cloth-like air and one tiny inhale. No constant effects wallpaper.
+End: friendly morph-entry pose; velocity and silhouette match the transformation.
+
+00:55–01:08  TOO GOOD AT IT
+The same Wisp turns genuinely sinister through the approved painted morph.
+He holds the threat for a beat, looms just a little, then gives ONE short creature
+roar. No enormous volume jump, strobing, sudden crop or screen-filling face.
+The maximum threat lasts roughly2seconds, then he realizes he overdid it.
+Sound: a short dry rising breath during change, one synchronized roar with a
+rounded transient, quick release. No sustained demonic dialogue or music sting.
+End: scary return-morph entry. Do not cut directly to a cute film.
+
+01:08–01:29  SORRY ABOUT THAT
+The reverse morph reveals sheepish Wisp. Hands drop a little; eyes glance toward
+the visitors before an embarrassed smile. Keep the character physically continuous.
+Approved performance reference: the earlier apology video, not today's rejected
+Fable/Onyx test voices.
+Line: “Oops! Hope I didn’t scare you. I’m just trying to be tough.”
+Sound: the growl drains into a small exhale; leave room for the actor's laugh.
+End: friendly idle; optional short wave or listening beat after speech.
+
+01:29–01:50  SOMETHING ABOVE
+A tiny silk creak draws Wisp's eyes upward. He withdraws into his own fog.
+After he has completely cleared, a spider descends from the overhead anchor,
+balances on the thread, reaches with two forelegs, then actively climbs away.
+Do not play the currently rejected spider studies as final footage. Both generated video studies remain rejected. The new articulated painted
+spider preview supplies descent/reach/climb now; final human art approval is pending.
+Sound: faint dry silk tension and small leg scritches; no comedy boing or large
+impact. End: silk and spider vanish into darkness before crossing a picture edge.
+
+01:50–02:10  MY LITTLE SECRET
+Friendly Wisp cautiously reappears, checks that the spider is gone, then gives a
+small pleased flourish. Body remains translucent and legible, lower core intact.
+Proposed line, conspiratorial: “You didn’t see that.”
+Optional variation, not in the same performance: “He’s the scary one.”
+Sound: tiny breath and one airy flourish. End: native friendly settling pose.
+
+02:10–02:31  SEE YOU AROUND
+Lettering forms from narrow moving threads of vapor: HAPPY HALLOWEEN. It must
+retain porous edges and moving interior smoke. Wisp looks toward it, then guests.
+Line: “Happy Halloween!”
+He turns away, travels into depth while still recognizable, then loses cohesion
+into fog. Stop recession while roughly1/10 original size, never a vanishing dot.
+Neither lettering nor ghost may resize abruptly. Typography disperses as smoke
+advects apart; an opacity fade alone does not meet the requested material.
+Current runtime lettering is a functional text proof, not the approved smoke film.
+
+02:31–02:40  LEAVE THEM WONDERING
+Small quick bats rush outward from behind the remaining letters, break up the
+smoke and pass. Use the reviewed smaller framing; never clip the source smoke.
+Dry wings pass with motion, a restrained squeak and a fading air tail. Finish
+fully black with a short quiet gap. The next cycle begins with eyes elsewhere.
+No hard musical ending or repeated loud “finale” for the neighbors every160seconds.
+
+THREE RUN MODES — SAME OPERATOR SURFACE
+Friendly: holds the cute resident ghost. Replace the scare/morph passage with
+friendly curiosity and a wave. Omit sinister eyes and spider unless explicitly
+enabled separately. No unexpected evil reveal while the user chose Friendly.
+Evil: stays scary. Longer watches, restrained roaming, reaching/looming, sinister
+eyes and dark pauses. Minimal voice; no accidental apology/cute source leakage.
+Mixed: this story, including the deliberate transformations and recovery. Start
+the morph only at its compatible authored entry, queue requests during a morph.
+
+AFTER-DARK MODES ARE SEPARATE SMALL SHOWS
+Watching eyes: staggered native performances, new positions in darkness, varied
+spacing/dwell. Already implemented as a local silent rehearsal.
+Quiet apparitions: a resident ghost with slow travel, a planned disappearance,
+two dark beats, return. Already implemented using existing native Wisp footage.
+Thread lurker: new painted eight-legged spider with jointed descent/reach/climb
+and a dark dwell is now a local preview. Human appearance approval remains open.
+
+HOST MOMENTS (SHORT, OPTIONAL, EXACT TEXT)
+“Excellent costume. Mine’s permanent.”
+“Come closer. I promise I’m mostly friendly.”
+“I was terrifying a minute ago. You missed it.”
+“Tell the skeletons I’m on my break.”
+“Happy Halloween. Watch out for my upstairs neighbor.”
+Use one line, then let the performance breathe. No AI monologues, generic greetings
+on every loop, unsolicited improvisation or mandatory microphones/cameras.
+
+VOICE DIRECTION / NEXT CASTING PASS
+Friendly: a small warm original spirit, impulsive curiosity, audible thought and
+comic hesitation; clear vowels without squeaky chipmunk pitch. Different intentions
+within one short line, not one cheery narrator tone. The apology is the benchmark.
+Evil: the same intelligence turns dry, close and dangerous. A creature texture
+supported by clear consonants; do not cover poor acting with heavy echo or bass.
+The brief menace must be able to fall away into the friendly character immediately.
+First approve one short A/B audition per form; then test the same voice in welcome,
+apology and threat. Do not buy a full script before identity and consistency pass.
+
+ASSET AND HANDOFF CONTRACT
+Each asset specifies: character form, neutral/acting entry and exit, world-space
+placement, full subject/fog bounds, native frame rate, source hash, audio ownership,
+approved material, and maximum allowed hold. A movie ending in darkness is an
+empty-stage cue, not a universal bridge between ordinary actions.
+Seamless resident joins require compatible drawings AND motion at both boundaries.
+Crossfade cannot repair different face shape, doubled limbs or mismatched velocity.
+The show master embeds one mixed audio stream. Voice sits above dry effects; tails
+cross chapter boundaries in the actual mix. No browser-timer soundtrack stitching.
+For a phone line: synthesize first, hold appropriate resident form, then play once
+from the laptop. Cancel/blackout stops it everywhere. Projector and phone are silent.
+
+ADMISSION / ACCEPTANCE
+Already accepted in history: painted fog direction, fuller character motion,
+specific morph joins and earlier apology acting/mix. Do not generalize those to
+all new assets. Human approval of current resident wave/idle joins is still open.
+Today: generic live voices explicitly rejected. Eight short auditions await human listening; two connect to typed speech by explicit choice.
+Spider v1 failed metallic appearance/clipping. v2 retains organic look but is too
+still and does not fulfill the acting. Both excluded from runtime.
+Storyboard is a design illustration, not rendered footage or physical-yard proof.
+No claim of final production quality until visual/voice review and a real projector
+rehearsal in the actual night lighting. Native browser tests are separate evidence.
+
+
+IMPLEMENTED SMALL SHOW: NIGHT WATCH (ABOUT2:04)
+A separate silent unattended sequence now exists in After dark. Eyes look out for
+roughly32seconds, finish their native closure and leave a5second quiet hold. The
+spider lowers, watches, reaches and climbs back up;8seconds of empty stage let it
+feel gone. Wisp emerges, dwells, travels left/in depth, returns home and vanishes;
+5seconds after the stage clears, eyes begin elsewhere. Actual observed whole cycle
+about124seconds, depending on when the last eyes finish. No spoken story, new paid
+art or music. This implements the atmosphere/pacing part of the proposal without
+claiming the unfinished actor-led signature show is done.
+
+
+11:20 ADDITION — SPARSE EFFECTS OPTION
+Night watch now optionally accents the actual moving performances with three
+reused dry air textures: eyes forming, spider lowering/reaching/climbing and Wisp
+moving/disappearing. It remains silent until the operator enables effects on the
+laptop. No continuous music or dialogue. Native closure and deliberate empty holds
+remain quiet. This makes the small unattended sequence playable with sound; it is
+still separate from the proposed actor-led signature story and needs listening
+review in the yard. No new generation credits were spent.
+
+
+14:00 DELIVERY — OFFLINE NIGHT WATCH
+The atmosphere sequence also exists as one124.1second H264/AAC MP4 with all12dry
+effects embedded, fixed framing and black/silent loop boundaries. After dark has
+a Save Night watch link. Three normal-speed Chrome cycles and native MacWebKit
+loop joins were checked. This is the smaller atmosphere show; the voiced160second
+Just Practicing story above remains a proposal. No new generation credits were
+spent on the recording. See tonight-operator-card.txt for the practical setup.

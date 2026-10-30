@@ -1,0 +1,10 @@
+{
+  "engine": "webkit",
+  "sameWindow": true,
+  "staleOwnerDetached": true,
+  "blackBetweenPages": true,
+  "roundTrip": true,
+  "silent": true,
+  "errors": [],
+  "scope": "same named browser popup; no physical projector or fullscreen hardware check"
+}

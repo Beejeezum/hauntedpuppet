@@ -1,0 +1,19 @@
+{
+  "taskId": "bfc84037-dd5c-4d17-93ef-73a927e85556",
+  "prompt": "A single continuous locked-camera Halloween projection performance on pure pitch black, no environment, no floor, no camera movement. One elegant frightening spectral orb-weaver spider, anatomically eight slender articulated jointed legs, charcoal body with subtle pale moonlit silver edges and tiny cold blue eyes; richly textured, cinematic creature animation, not a cartoon icon or stiff sticker. A fine nearly invisible vertical silk thread descends from the top center. First half-second is empty black. The COMPLETE spider softly emerges below the top quarter, then lowers itself slowly on silk to the center, all eight legs making asynchronous searching and balancing movements, body weighted naturally beneath its anchor, tiny pendulum settling. It pauses and turns slightly toward the viewer; two front legs lift into a creepy curious reach while the other six adjust with believable joint articulation. Then it actively climbs back UP its thread with alternating leg grips, recedes into darkness above, and completely disappears. Final one second is EMPTY PURE BLACK, no leftover ghost shape. Throughout its visible performance the entire spider and every leg tip stay inside the central sixty percent of frame width and central seventy percent of height with generous clear margins; it fades into darkness BEFORE reaching an image edge. Only the delicate thread may reach the top border. No jump toward camera, no abrupt resizing, no duplicated body, no extra legs, no smoke blanket, no words or logos. Polished fluid motion, clear beginning, acting beat, and completed departure.",
+  "status": "rejected for runtime: metallic angular material; visible body crosses top edge during entry/exit",
+  "credits": 120,
+  "totalRunwaySpendThisRun": 178,
+  "source": "../../source/attraction-v2/design/overnight-2026-10-30/spider-pilot-v1.mp4",
+  "sha256": "0e6347a51891095aa51cde404bb4dad32992c681b001495d4d32bd0e6b880745",
+  "revision": {
+    "taskId": "1ec012a6-a460-40e6-80d7-03ac2f77e49d",
+    "credits": 50,
+    "source": "../../source/attraction-v2/design/overnight-2026-10-30/spider-pilot-v2.mp4",
+    "sha256": "7668d86e499cb50691494c1a44cc5f0231182ad917e58b2db6ead0b56d92b814",
+    "status": "look improved; motion too subtle, no convincing descent/retraction. Not installed.",
+    "reference": "../../source/attraction-v2/design/overnight-2026-10-30/spider-reference-v2.png"
+  },
+  "remainingRunwayEnvelope": 22,
+  "next": "Keep original organic reference. No more generation this checkpoint; develop a stronger short motion brief and only retry when justified."
+}

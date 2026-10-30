@@ -1,0 +1,41 @@
+{
+  "model": "mlx-community/whisper-tiny-asr-fp16",
+  "revision": "77fa3f52b482ec80d086df55f893065a9baab172",
+  "expectedTextProvidedToModel": false,
+  "paidCalls": 0,
+  "limits": "Small-model automatic transcription is a coarse intelligibility screen, not a listening, acting, identity, word-accurate timing or quality verdict.",
+  "rows": [
+    {
+      "id": "friendly-c",
+      "text": " Oh, hi. I was trying to be terrifying. Was it working?",
+      "seconds": 0.544,
+      "sha256": "4add3a9f67bd7efee7386c70f4dbfaf7bbacf443b2f7f3903fb0e23d0223c8c9",
+      "firstAboveMinus40dBFSSeconds": 0.01,
+      "lastAboveMinus40dBFSSeconds": 4.08
+    },
+    {
+      "id": "friendly-d",
+      "text": " Oh, hi! Oh, was trying to be terrifying. Was it working?",
+      "seconds": 0.071,
+      "sha256": "09371b1741ea4d003e15bd1dc655e55d70420746d27624cac202cb2e51256296",
+      "firstAboveMinus40dBFSSeconds": 0.02,
+      "lastAboveMinus40dBFSSeconds": 5.51
+    },
+    {
+      "id": "evil-c",
+      "text": " Come a little closer. Eyes been waiting. Happy Halloween.",
+      "seconds": 0.062,
+      "sha256": "1f667e1e29ec7deea0fbd973c1e6013bea2624ef51f5ec42fc17a97b5aa4c4cd",
+      "firstAboveMinus40dBFSSeconds": 0.01,
+      "lastAboveMinus40dBFSSeconds": 4.84
+    },
+    {
+      "id": "evil-d",
+      "text": " Come a little closer. I've been waiting. Happy Halloween.",
+      "seconds": 0.063,
+      "sha256": "90aa7dfbff32293dfcb2e1a09fb8d69bd10aa6ddaeb0a3150339c35d47cdbbbe",
+      "firstAboveMinus40dBFSSeconds": 0.01,
+      "lastAboveMinus40dBFSSeconds": 8.08
+    }
+  ]
+}

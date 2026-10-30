@@ -9,12 +9,16 @@ TTL=90
 COMMANDS={'gesture':{'wave','laugh','shy','surprise'},'gaze':{'left','right','center'},'audience':{'little','family','big'},'loop':{'on','off'},'move':{'phantom','enter', 'laugh', 'surprise', 'twirl', 'dance', 'bounce', 'orbit', 'exit', 'celebrate', 'peekaboo', 'shy', 'wave'},'form':{'friendly','haunting'},'welcome':{None},'reveal':{'arm','fire','cancel'},'stop':{None},'blackout':{'on','off'}}
 def valid_performance(value, state, cues):
     """Phone sends bounded direction only; the laptop owns provider/audio work."""
-    return (state.get('workspace') == 'director' and isinstance(value, dict)
+    yard = state.get('workspace') == 'yard'
+    limit = 240 if yard else 400
+    return (state.get('workspace') in ('director', 'yard') and isinstance(value, dict)
         and set(value) == {'text', 'mode', 'character', 'animation'}
-        and isinstance(value['text'], str) and 0 < len(value['text'].strip()) <= 400
-        and len(value['text']) <= 400 and not any(ord(c) < 32 and c not in '\n\t' for c in value['text'])
-        and value['mode'] in ('exact', 'prompt') and value['character'] in ('friendly', 'scary')
-        and isinstance(value['animation'], str) and value['animation'] in cues)
+        and isinstance(value['text'], str) and 0 < len(value['text'].strip()) <= limit
+        and len(value['text']) <= limit and not any(ord(c) < 32 and c not in '\n\t' for c in value['text'])
+        and value['mode'] in (('exact', 'lettering') if yard else ('exact', 'prompt')) and value['character'] in ('friendly', 'scary')
+        and isinstance(value['animation'], str) and value['animation'] in cues
+        and (not yard or value['animation'].startswith(value['character'] + '-') and '\x7f' not in value['text'])
+        and (not yard or value['mode'] != 'exact' or state.get('speechReady') is True))
 
 class Remote:
     def __init__(self, clock=time.monotonic):
@@ -128,8 +132,8 @@ class Handler(BaseHTTPRequestHandler):
                             if len(raw)>100000 or not raw.startswith(b'\xff\xd8\xff'): raise ValueError('Invalid JPEG preview')
                         if not isinstance(state,dict) or not isinstance(cues,list) or len(cues)>40 or any(not isinstance(c,str) or len(c)>64 for c in cues): raise ValueError('Invalid state')
                         # Only projection state. Never forward credentials, transcripts, or arbitrary server data.
-                        r.state={k:v for k,v in state.items() if k in ('mood','audience','loop','blackout','volume','status','gesture','gaze','form','scaryReady','revealArmed','revealRunning','workspace') and isinstance(v,(str,bool,int,float))}
-                        if r.state.get('workspace') not in ('films','live','director'): r.state.pop('workspace',None)
+                        r.state={k:v for k,v in state.items() if k in ('mood','audience','loop','blackout','volume','status','gesture','gaze','form','scaryReady','revealArmed','revealRunning','workspace','speechReady') and isinstance(v,(str,bool,int,float)) and (k != 'speechReady' or isinstance(v,bool))}
+                        if r.state.get('workspace') not in ('films','live','director','yard'): r.state.pop('workspace',None)
                         r.cues=cues; r.preview=preview; r.state_at=r.clock(); r.bridge_at=r.clock()
                         return self.send_json(200,{'ok':True})
                     if path=='/bridge/ack' and post:

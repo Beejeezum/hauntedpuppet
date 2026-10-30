@@ -1,5 +1,5 @@
 /** Mirror one composed picture. No second decoder, audio context or microphone. */
-export function mountFilmOutput(stage, inspect, {beforePaint}={}) {
+export function mountFilmOutput(stage, inspect, {beforePaint, windowName='hauntedpuppet-film-output'}={}) {
  const button=document.createElement('button');button.textContent='Open silent rehearsal output';button.type='button';
  stage.after(button);const outputs=new Map();let disposed=false;
  button.onclick=()=>{
@@ -8,7 +8,7 @@ export function mountFilmOutput(stage, inspect, {beforePaint}={}) {
    try{if(!existing.closed&&existing.WispFilmOutput===owned&&owned.inspect().owner){if(owned.inspect().stopped)owned.resume();existing.focus();return;}}catch{}
    outputs.delete(existing);
   }
-  const output=window.open('','hauntedpuppet-film-output','popup,width=960,height=540');
+  const output=window.open('',windowName,'popup,width=960,height=540');
   if(!output){button.textContent='Popup blocked · allow and retry';return;}
   let d;try{d=output.document;output.WispFilmOutput?.dispose?.();}catch{button.textContent='Output window unavailable · close it and retry';return;}
   d.body.replaceChildren();d.title='Wisp · silent rehearsal output';d.body.style.cssText='margin:0;background:black;overflow:hidden';

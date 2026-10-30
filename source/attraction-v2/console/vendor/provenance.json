@@ -1,0 +1,43 @@
+[
+  {
+    "package": "@phosphor-icons/core",
+    "version": "2.1.1",
+    "source": "https://registry.npmjs.org/@phosphor-icons/core/-/core-2.1.1.tgz",
+    "archiveSha256": "313332be6190b724da24107addd781799b48bf76b13963f24501112ffe1baadd",
+    "files": [
+      "LICENSE",
+      "arrow-left-bold.svg",
+      "caret-down-bold.svg",
+      "chat-circle-dots-bold.svg",
+      "check-bold.svg",
+      "eye-bold.svg",
+      "gear-six-bold.svg",
+      "ghost-bold.svg",
+      "list-numbers-bold.svg",
+      "monitor-bold.svg",
+      "paper-plane-tilt-bold.svg",
+      "play-bold.svg",
+      "plus-bold.svg",
+      "sparkle-bold.svg",
+      "speaker-high-bold.svg",
+      "speaker-slash-bold.svg",
+      "stop-bold.svg",
+      "trash-bold.svg",
+      "users-three-bold.svg",
+      "wind-bold.svg",
+      "x-bold.svg"
+    ]
+  },
+  {
+    "package": "@fontsource/nunito-sans",
+    "version": "5.3.0",
+    "source": "https://registry.npmjs.org/@fontsource/nunito-sans/-/nunito-sans-5.3.0.tgz",
+    "archiveSha256": "0aa04d2335e74af3ee250c4ad96425873d53ef7a58287e9c460ff2ad710644c7",
+    "files": [
+      "LICENSE",
+      "nunito-sans-latin-400-normal.woff2",
+      "nunito-sans-latin-600-normal.woff2",
+      "nunito-sans-latin-700-normal.woff2"
+    ]
+  }
+]

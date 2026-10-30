@@ -1,0 +1,34 @@
+{
+  "layout": {
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "controls": [
+      {
+        "id": "stop",
+        "top": 21,
+        "bottom": 65,
+        "height": 44
+      },
+      {
+        "id": "let-run",
+        "top": 732.625,
+        "bottom": 782.625,
+        "height": 50
+      },
+      {
+        "id": "sequence-open",
+        "top": 790.625,
+        "bottom": 834.625,
+        "height": 44
+      },
+      {
+        "id": "settings-open",
+        "top": 790.625,
+        "bottom": 834.625,
+        "height": 44
+      }
+    ]
+  },
+  "accessibility": []
+}

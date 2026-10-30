@@ -1,0 +1,10 @@
+{
+  "url": "http://127.0.0.1:8902/source/attraction-v2/console/",
+  "keychainRestored": true,
+  "phoneCapability": true,
+  "phoneNotAutoEnabled": true,
+  "actualNativePlayback": true,
+  "providerCalls": 0,
+  "errors": [],
+  "scope": "isolated muted browser on real local server; no LAN pairing or physical projector"
+}

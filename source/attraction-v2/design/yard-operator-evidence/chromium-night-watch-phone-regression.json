@@ -1,0 +1,216 @@
+{
+  "engine": "chromium",
+  "scope": "normal-speed silent browser cycle, not physical projection or human art acceptance",
+  "status": "passed",
+  "samples": [
+    {
+      "wallMs": 255,
+      "program": "eyes",
+      "night": {
+        "running": true,
+        "pending": false,
+        "program": "eyes",
+        "next": "spider",
+        "elapsed": 0.31209999999962745,
+        "emptyHold": false,
+        "changes": 0
+      }
+    },
+    {
+      "wallMs": 38961,
+      "program": "spider",
+      "night": {
+        "running": true,
+        "pending": false,
+        "program": "spider",
+        "next": "apparitions",
+        "elapsed": 0.06739999999990687,
+        "emptyHold": false,
+        "changes": 1
+      }
+    },
+    {
+      "wallMs": 73004,
+      "program": "apparitions",
+      "night": {
+        "running": true,
+        "pending": true,
+        "program": "apparitions",
+        "next": "eyes",
+        "elapsed": 34.04900000000001,
+        "emptyHold": true,
+        "changes": 2
+      }
+    },
+    {
+      "wallMs": 124230,
+      "program": "eyes",
+      "night": {
+        "running": true,
+        "pending": false,
+        "program": "eyes",
+        "next": "spider",
+        "elapsed": 0.14940000000036946,
+        "emptyHold": false,
+        "changes": 3
+      }
+    }
+  ],
+  "transitions": [
+    {
+      "from": "eyes",
+      "to": "spider",
+      "prior": [
+        {
+          "at": 37926.700000000186,
+          "program": "eyes",
+          "peak": 0
+        },
+        {
+          "at": 38080.30000000028,
+          "program": "eyes",
+          "peak": 0
+        },
+        {
+          "at": 38234.30000000028,
+          "program": "eyes",
+          "peak": 0
+        },
+        {
+          "at": 38388.60000000009,
+          "program": "eyes",
+          "peak": 0
+        },
+        {
+          "at": 38541.60000000009,
+          "program": "eyes",
+          "peak": 0
+        },
+        {
+          "at": 38695.200000000186,
+          "program": "eyes",
+          "peak": 0
+        },
+        {
+          "at": 38848.89999999991,
+          "program": "eyes",
+          "peak": 0
+        },
+        {
+          "at": 39003.89999999991,
+          "program": "eyes",
+          "peak": 0
+        }
+      ],
+      "at": 39156.89999999991,
+      "firstPeak": 0
+    },
+    {
+      "from": "spider",
+      "to": "apparitions",
+      "prior": [
+        {
+          "at": 72058.5,
+          "program": "spider",
+          "peak": 0
+        },
+        {
+          "at": 72210.70000000019,
+          "program": "spider",
+          "peak": 0
+        },
+        {
+          "at": 72363.8999999999,
+          "program": "spider",
+          "peak": 0
+        },
+        {
+          "at": 72518.1000000001,
+          "program": "spider",
+          "peak": 0
+        },
+        {
+          "at": 72676.3999999999,
+          "program": "spider",
+          "peak": 0
+        },
+        {
+          "at": 72829.3999999999,
+          "program": "spider",
+          "peak": 0
+        },
+        {
+          "at": 72982.3999999999,
+          "program": "spider",
+          "peak": 0
+        },
+        {
+          "at": 73136.1000000001,
+          "program": "spider",
+          "peak": 0
+        }
+      ],
+      "at": 73288.5,
+      "firstPeak": 0
+    },
+    {
+      "from": "apparitions",
+      "to": "eyes",
+      "prior": [
+        {
+          "at": 123150.20000000019,
+          "program": "apparitions",
+          "peak": 0
+        },
+        {
+          "at": 123309.3999999999,
+          "program": "apparitions",
+          "peak": 0
+        },
+        {
+          "at": 123463.30000000028,
+          "program": "apparitions",
+          "peak": 0
+        },
+        {
+          "at": 123617.6000000001,
+          "program": "apparitions",
+          "peak": 0
+        },
+        {
+          "at": 123770.3999999999,
+          "program": "apparitions",
+          "peak": 0
+        },
+        {
+          "at": 123923.1000000001,
+          "program": "apparitions",
+          "peak": 0
+        },
+        {
+          "at": 124076.1000000001,
+          "program": "apparitions",
+          "peak": 0
+        },
+        {
+          "at": 124229.20000000019,
+          "program": "apparitions",
+          "peak": 0
+        }
+      ],
+      "at": 124382.8999999999,
+      "firstPeak": 0
+    }
+  ],
+  "errors": [],
+  "spiderFrame": true,
+  "loadingSamples": 1,
+  "ghostFrame": true,
+  "ghostForm": "scary",
+  "elapsedSeconds": 124.232,
+  "silentOutput": true,
+  "manualTakeover": true,
+  "blackout": true,
+  "noProviderCalls": true,
+  "violations": []
+}

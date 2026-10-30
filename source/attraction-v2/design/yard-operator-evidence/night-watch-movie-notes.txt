@@ -1,0 +1,39 @@
+NIGHT WATCH — ONE-FILE REVIEW, 30 OCTOBER 2026
+
+Deliverable:124.1seconds,1280x720,H264/AAC,3,476,727bytes.
+One continuous encoded picture/audio file using the current browser-composed
+Watching eyes -> painted spider -> Evil Wisp sequence. Twelve existing dry effects;
+no dialogue, choir or music. No new generated animation and zero new provider cost.
+This is an offline atmosphere loop, not the proposed actor-led signature story.
+
+Capture used actual canvas/native media and a real Web Audio effects bus, with
+hardware output muted. A separate silent projector window drove foreground frames.
+No microphone or webcam was accessed. No physical projector was available.
+A lower-cadence capture was rejected before export; no interpolation was applied.
+The retained capture has3422frames; the encoded file is30fps with repeated frames
+where needed. Mean captured visible-phase cadence:eyes29.98,spider28.92,Wisp25.82fps.
+Visible-phase maximum capture gaps were49/80/79ms; do not claim60fps or flawless
+motion. Human motion and sound approval remains pending.
+
+The first0.8seconds and last3seconds are literal black inside already-empty
+recorded holds. This removes low-level VP9/encode residue, without cutting any
+performance. Full-to-limited range conversion is explicit before painting black;
+merely changing metadata was insufficient. Source:FFmpeg scaler documentation,
+https://ffmpeg.org/ffmpeg-scaler.html and scale filter in/out range controls,
+https://ffmpeg.org/ffmpeg-filters.html#scale-1 .
+Sparse MediaRecorder audio packets are expanded using original timestamps, not
+concatenated as if the silent gaps did not exist. All12embedded gestures match the
+sampled native effect counter within91ms (100ms counter /10ms amplitude windows).
+Full decode:3723video frames,124.117seconds PCM,peak0.2209,zero clipped samples.
+Both boundaries decode to pure RGBblack; opening0.75s/final3s audio remains quiet.
+
+Reproduction requires the existing FFmpeg7.1 binary, numpy/Pillow and Playwright.
+HAUNT_CAPTURE_NIGHT_WATCH=1 node scripts/capture-yard-night-watch.cjs
+python3 scripts/export-yard-night-watch.py
+The capture writes only ignored work/ files; the exporter writes the versionedMP4.
+--audit-only rechecks the existing movie without re-encoding it.
+
+Native loop browser checks use a same-origin isolated test document. An initial
+about:blank harness incorrectly introduced cross-origin media blocking and failed;
+that harness issue was corrected. It was not a production movie defect.
+No browser playback result substitutes for a human art/mix or physical-yard review.

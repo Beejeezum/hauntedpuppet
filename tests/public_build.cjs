@@ -4,6 +4,11 @@ const build=spawnSync(process.execPath,[path.join(root,'scripts/build-public.cjs
 for(const name of ['server.py','credential_store.py','realtime_voice.py','.env','package.json','netlify/functions/api.mts','phone_remote/phone_server.py','vendor/qrcodegen.py','director_script.py','director-script-config.json'])assert(!fs.existsSync(path.join(out,name)),name+' must stay off the CDN');
 for(const name of ['index.html','speaking.mp4','idle.mp4','wisp-whole-film-player.js','wisp-whole-film-output.js','wisp-film-output.js'])assert(fs.existsSync(path.join(out,'assets/wisp-film-preview',name)),name+' preview asset missing');
 assert(!fs.existsSync(path.join(out,'source')),'Entire source tree must remain private to the repo');
+const yardManifest=JSON.parse(fs.readFileSync(path.join(root,'scripts/public-yard-preview.json'),'utf8'));
+assert.equal(yardManifest.releaseApproved,false);
+for(const item of yardManifest.files){const file=path.join(out,'assets/wisp-yard',item.destination);assert(fs.existsSync(file),'Yard preview asset missing: '+item.destination);assert.equal(require('node:crypto').createHash('sha256').update(fs.readFileSync(file)).digest('hex'),item.publishedSha256);}
+assert(fs.readFileSync(path.join(out,'assets/wisp-yard/yard-environment.mjs'),'utf8').includes('export const PICTURE_ONLY = true;'));
+for(const file of ['index.html','live.html','app.js'])assert(fs.readFileSync(path.join(root,file)).equals(fs.readFileSync(path.join(out,file))),'Existing production entry changed during packaging');
 for(const name of ['index.html','tonight.mjs','puppet.html','puppet.mjs','live-puppet.html','live-puppet.mjs','friendly-fog-neutral-v1.png','friendly-fog-reference.png','friendly-mouths-v1.png','tonight-picture-review-v1.mp4','tonight-sound-review-v1.m4a','show.json'])assert(fs.existsSync(path.join(out,'assets/wisp-tonight',name)),name+' tonight asset missing');
 const tonightShow=JSON.parse(fs.readFileSync(path.join(out,'assets/wisp-tonight/show.json'),'utf8'));
 assert(tonightShow.movie?.embeddedAudio&&tonightShow.movie.singleClock,'Tonight must publish one complete embedded-audio movie');

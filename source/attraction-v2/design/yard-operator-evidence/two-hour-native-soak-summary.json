@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "startedAt": "2026-10-30T05:09:42.172Z",
+  "finishedAt": "2026-10-30T07:09:42.832Z",
+  "elapsedSeconds": 7200.245,
+  "samples": 480,
+  "scope": "normal-speed local browser rendering; no physical projection or voice calls",
+  "loadedCheckpoint": "e613b55",
+  "notPureAuto": "Harness actions select Host; this is a native-media resource retention run across three forms, not two hours of uninterrupted Auto.",
+  "sourceFrameAudit": {
+    "count": 172783,
+    "lastTime": 7200.166666,
+    "backwards": 0,
+    "minimumPeak": 244
+  },
+  "maximumBufferedSeconds": 31.54166599999985,
+  "lastTimeline": {
+    "duration": 7203,
+    "windows": [
+      {
+        "id": "scary",
+        "start": 7172.75,
+        "end": 7177.791666666667
+      },
+      {
+        "id": "scary",
+        "start": 7177.791666666667,
+        "end": 7182.833333333333
+      },
+      {
+        "id": "scary",
+        "start": 7182.833333333333,
+        "end": 7187.875
+      },
+      {
+        "id": "scary",
+        "start": 7187.875,
+        "end": 7192.916666666667
+      },
+      {
+        "id": "scary",
+        "start": 7192.916666666667,
+        "end": 7197.958333333333
+      },
+      {
+        "id": "scary",
+        "start": 7197.958333333333,
+        "end": 7203
+      }
+    ],
+    "sourceLoads": 1,
+    "sealed": false,
+    "evictions": 1393,
+    "cachedBytes": 1355644,
+    "cacheEntries": 4
+  },
+  "silentOutput": true,
+  "providerCalls": 0,
+  "errors": [],
+  "memoryCaveat": "performance.memory returned a quantized constant10MB, not reliable heap-growth evidence. Buffer and media-cache bounds are measured.",
+  "reportSHA256": "6b1e2330b982c7cb1709c87018eb320b2af265b70913a27613687eb2b00814e2",
+  "rawLocalReport": "work/yard-operator/soak-two-hour/report.json",
+  "physicalProjection": false,
+  "phoneOrVoiceTest": false,
+  "humanMotionAcceptance": false
+}

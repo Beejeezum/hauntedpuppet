@@ -1,0 +1,237 @@
+{
+  "status": "new human delivery direction; media work remains incomplete",
+  "direction": "docs/wisp-resident-performance-amendment.txt",
+  "automaticFadesAreDefault": false,
+  "scope": "Inventory and delivery audit, not an implemented runtime performance or new asset approval. Existing rehearsal player remains unchanged.",
+  "cueRequirements": [
+    {
+      "id": "friendly-drift",
+      "kind": "idle",
+      "entry": "friendly-rest",
+      "exit": "friendly-rest",
+      "currentCatalogStatus": "planned",
+      "currentPlannedPorts": [
+        "friendly-rest",
+        "friendly-rest"
+      ],
+      "legacyPortsMatchNewRequirement": true,
+      "residentDeliveryAccepted": false,
+      "next": "Author and review living loop"
+    },
+    {
+      "id": "friendly-wave",
+      "kind": "action",
+      "entry": "friendly-rest",
+      "exit": "friendly-rest",
+      "currentCatalogStatus": "planned",
+      "currentPlannedPorts": [
+        "empty",
+        "empty"
+      ],
+      "legacyPortsMatchNewRequirement": false,
+      "residentDeliveryAccepted": false,
+      "next": "Author/review idle departure, full performance and return as one connected animation"
+    },
+    {
+      "id": "friendly-boo-fail",
+      "kind": "action",
+      "entry": "friendly-rest",
+      "exit": "friendly-rest",
+      "currentCatalogStatus": "planned",
+      "currentPlannedPorts": [
+        "empty",
+        "empty"
+      ],
+      "legacyPortsMatchNewRequirement": false,
+      "residentDeliveryAccepted": false,
+      "next": "Author/review idle departure, full performance and return as one connected animation"
+    },
+    {
+      "id": "friendly-depart",
+      "kind": "departure",
+      "entry": "friendly-rest",
+      "exit": "empty",
+      "currentCatalogStatus": "planned",
+      "currentPlannedPorts": [
+        "friendly-rest",
+        "empty"
+      ],
+      "legacyPortsMatchNewRequirement": true,
+      "residentDeliveryAccepted": false,
+      "next": "Review exact native ports and all adjoining cuts; empty stage only when this scene calls for it"
+    },
+    {
+      "id": "friendly-reform",
+      "kind": "arrival",
+      "entry": "empty",
+      "exit": "friendly-rest",
+      "currentCatalogStatus": "planned",
+      "currentPlannedPorts": [
+        "empty",
+        "friendly-rest"
+      ],
+      "legacyPortsMatchNewRequirement": true,
+      "residentDeliveryAccepted": false,
+      "next": "Review exact native ports and all adjoining cuts; empty stage only when this scene calls for it"
+    },
+    {
+      "id": "scary-drift",
+      "kind": "idle",
+      "entry": "scary-rest",
+      "exit": "scary-rest",
+      "currentCatalogStatus": "planned",
+      "currentPlannedPorts": [
+        "scary-rest",
+        "scary-rest"
+      ],
+      "legacyPortsMatchNewRequirement": true,
+      "residentDeliveryAccepted": false,
+      "next": "Author and review living loop"
+    },
+    {
+      "id": "scary-pace",
+      "kind": "action",
+      "entry": "scary-rest",
+      "exit": "scary-rest",
+      "currentCatalogStatus": "planned",
+      "currentPlannedPorts": [
+        "scary-rest",
+        "scary-rest"
+      ],
+      "legacyPortsMatchNewRequirement": true,
+      "residentDeliveryAccepted": false,
+      "next": "Author/review idle departure, full performance and return as one connected animation"
+    },
+    {
+      "id": "scary-reach",
+      "kind": "action",
+      "entry": "scary-rest",
+      "exit": "scary-rest",
+      "currentCatalogStatus": "planned",
+      "currentPlannedPorts": [
+        "empty",
+        "empty"
+      ],
+      "legacyPortsMatchNewRequirement": false,
+      "residentDeliveryAccepted": false,
+      "next": "Author/review idle departure, full performance and return as one connected animation"
+    },
+    {
+      "id": "scary-eyes",
+      "kind": "action",
+      "entry": "scary-rest",
+      "exit": "scary-rest",
+      "currentCatalogStatus": "planned",
+      "currentPlannedPorts": [
+        "scary-rest",
+        "scary-rest"
+      ],
+      "legacyPortsMatchNewRequirement": true,
+      "residentDeliveryAccepted": false,
+      "next": "Author/review idle departure, full performance and return as one connected animation"
+    },
+    {
+      "id": "scary-retreat",
+      "kind": "departure",
+      "entry": "scary-rest",
+      "exit": "empty",
+      "currentCatalogStatus": "planned",
+      "currentPlannedPorts": [
+        "scary-rest",
+        "empty"
+      ],
+      "legacyPortsMatchNewRequirement": true,
+      "residentDeliveryAccepted": false,
+      "next": "Review exact native ports and all adjoining cuts; empty stage only when this scene calls for it"
+    },
+    {
+      "id": "scary-fakeout",
+      "kind": "action",
+      "entry": "scary-rest",
+      "exit": "scary-rest",
+      "currentCatalogStatus": "planned",
+      "currentPlannedPorts": [
+        "scary-rest",
+        "scary-rest"
+      ],
+      "legacyPortsMatchNewRequirement": true,
+      "residentDeliveryAccepted": false,
+      "next": "Author/review idle departure, full performance and return as one connected animation"
+    },
+    {
+      "id": "scary-reform",
+      "kind": "arrival",
+      "entry": "empty",
+      "exit": "scary-rest",
+      "currentCatalogStatus": "planned",
+      "currentPlannedPorts": [
+        "empty",
+        "scary-rest"
+      ],
+      "legacyPortsMatchNewRequirement": true,
+      "residentDeliveryAccepted": false,
+      "next": "Review exact native ports and all adjoining cuts; empty stage only when this scene calls for it"
+    },
+    {
+      "id": "cute-to-evil",
+      "kind": "morph",
+      "entry": "friendly-rest",
+      "exit": "scary-rest",
+      "currentCatalogStatus": "planned",
+      "currentPlannedPorts": [
+        "friendly-rest",
+        "scary-rest"
+      ],
+      "legacyPortsMatchNewRequirement": true,
+      "residentDeliveryAccepted": false,
+      "next": "Review exact native ports and all adjoining cuts; empty stage only when this scene calls for it"
+    },
+    {
+      "id": "evil-to-cute",
+      "kind": "morph",
+      "entry": "scary-rest",
+      "exit": "friendly-rest",
+      "currentCatalogStatus": "planned",
+      "currentPlannedPorts": [
+        "scary-rest",
+        "friendly-rest"
+      ],
+      "legacyPortsMatchNewRequirement": true,
+      "residentDeliveryAccepted": false,
+      "next": "Review exact native ports and all adjoining cuts; empty stage only when this scene calls for it"
+    },
+    {
+      "id": "fog-lettering",
+      "kind": "empty-stage-scene",
+      "entry": "empty",
+      "exit": "empty",
+      "currentCatalogStatus": "planned",
+      "currentPlannedPorts": [
+        "empty",
+        "empty"
+      ],
+      "legacyPortsMatchNewRequirement": true,
+      "residentDeliveryAccepted": false,
+      "next": "Review exact native ports and all adjoining cuts; empty stage only when this scene calls for it"
+    },
+    {
+      "id": "bats-through-letters",
+      "kind": "empty-stage-scene",
+      "entry": "empty",
+      "exit": "empty",
+      "currentCatalogStatus": "planned",
+      "currentPlannedPorts": [
+        "empty",
+        "empty"
+      ],
+      "legacyPortsMatchNewRequirement": true,
+      "residentDeliveryAccepted": false,
+      "next": "Review exact native ports and all adjoining cuts; empty stage only when this scene calls for it"
+    }
+  ],
+  "existingUsefulEvidence": {
+    "file": "source/wisp-performance-reference/button-cue-batch/wisp-morph-roundtrip-review-v7.mp4",
+    "sha256": "275acb319821ed88d9eda3220f6c9a61e59d484450537293588d601784de08dc",
+    "scope": "Four visible joins carry exact compressed-picture visual approval; no arbitrary action or idle closing-loop approval."
+  }
+}

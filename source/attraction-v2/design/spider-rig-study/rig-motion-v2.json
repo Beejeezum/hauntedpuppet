@@ -1,0 +1,178 @@
+{
+  "utc": "2026-10-30T06:26:10.502Z",
+  "seconds": 36.5,
+  "scope": "actual after-dark browser canvas after limb-envelope and occlusion fixes; silent; not physical projection",
+  "state": {
+    "running": true,
+    "loading": false,
+    "program": "spider",
+    "opacity": 0.9999999999999998,
+    "available": {
+      "eyes": true,
+      "apparitions": true,
+      "spider": true
+    },
+    "failures": {},
+    "eyes": {
+      "ready": true,
+      "started": false,
+      "error": null,
+      "slots": [
+        {
+          "x": 340,
+          "y": 260,
+          "width": 340,
+          "ready": true,
+          "active": false,
+          "pending": false,
+          "visibility": 0,
+          "time": 0,
+          "plays": 0,
+          "muted": true,
+          "error": null,
+          "disposed": false
+        },
+        {
+          "x": 890,
+          "y": 260,
+          "width": 340,
+          "ready": true,
+          "active": false,
+          "pending": false,
+          "visibility": 0,
+          "time": 0,
+          "plays": 0,
+          "muted": true,
+          "error": null,
+          "disposed": false
+        }
+      ]
+    },
+    "spider": {
+      "ready": true,
+      "running": true,
+      "disposed": false,
+      "error": null,
+      "frames": 510,
+      "phase": "empty",
+      "cycle": 1,
+      "bounds": null,
+      "legs": 8,
+      "source": "original painted body and four mirrored articulated raster legs",
+      "audio": false
+    },
+    "scene": {
+      "running": true,
+      "frames": 817,
+      "error": null,
+      "movement": {
+        "action": null,
+        "value": {
+          "scale": 1,
+          "x": 0,
+          "y": 0,
+          "alpha": 1
+        },
+        "target": {
+          "scale": 1,
+          "x": 0,
+          "y": 0,
+          "alpha": 1
+        }
+      },
+      "lettering": false,
+      "eyes": {
+        "ready": true,
+        "active": false,
+        "pending": false,
+        "visibility": 0,
+        "time": 0,
+        "plays": 0,
+        "muted": true,
+        "error": null,
+        "disposed": false
+      },
+      "vapor": {
+        "ready": true,
+        "error": null,
+        "particles": 0,
+        "maxParticles": 48,
+        "bounds": null,
+        "source": "painted-raster-vapor",
+        "emission": "body-local origins, world-space wake",
+        "motion": "inherited velocity, drag and settling",
+        "frames": 0
+      },
+      "mapping": {
+        "renderer": "perspective-webgl",
+        "frames": 817,
+        "error": null
+      },
+      "settings": {
+        "schema": 1,
+        "ghost": {
+          "x": 43,
+          "y": 50,
+          "size": 82,
+          "opacity": 100,
+          "visible": false
+        },
+        "eyes": {
+          "x": 77,
+          "y": 35,
+          "size": 30,
+          "opacity": 90,
+          "visible": false
+        },
+        "fog": 18,
+        "mirror": false,
+        "brightness": 100,
+        "feather": 0,
+        "mask": "none",
+        "corners": [
+          [
+            0,
+            0
+          ],
+          [
+            100,
+            0
+          ],
+          [
+            100,
+            100
+          ],
+          [
+            0,
+            100
+          ]
+        ]
+      },
+      "disposed": false
+    },
+    "player": {
+      "running": false,
+      "loading": false,
+      "disposed": false,
+      "busy": false,
+      "error": null,
+      "black": true,
+      "time": 0,
+      "current": null,
+      "form": "friendly",
+      "targetForm": "scary",
+      "next": [],
+      "pending": null,
+      "mode": "host",
+      "timeline": {
+        "duration": 0,
+        "windows": [],
+        "sourceLoads": 0,
+        "sealed": false,
+        "evictions": 0,
+        "cachedBytes": 0,
+        "cacheEntries": 0
+      }
+    }
+  }
+}

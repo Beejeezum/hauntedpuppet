@@ -1,0 +1,266 @@
+[
+  {
+    "file": "return.mp4",
+    "sha256": "7a50cea05c88dc2b33c0484f115f370408af0905766cd7014fcb1b05391cbb79",
+    "frameCount": 122,
+    "size": [
+      1280,
+      720
+    ],
+    "fps": 24.0,
+    "reserve": 0.2,
+    "thresholdSummaries": {
+      "4": {
+        "emptyFrames": 0,
+        "reserveFailures": 0,
+        "minimumMarginsLTRB": [
+          0.4109375,
+          0.28055555555555556,
+          0.40546875,
+          0.23333333333333334
+        ]
+      },
+      "8": {
+        "emptyFrames": 0,
+        "reserveFailures": 0,
+        "minimumMarginsLTRB": [
+          0.41171875,
+          0.28194444444444444,
+          0.40625,
+          0.23472222222222222
+        ]
+      },
+      "16": {
+        "emptyFrames": 0,
+        "reserveFailures": 0,
+        "minimumMarginsLTRB": [
+          0.4125,
+          0.2833333333333333,
+          0.40625,
+          0.2361111111111111
+        ]
+      }
+    },
+    "scope": "All native OpenCV decoded pictures. Complete effect envelope and empty handles only; no typography, smoke material, sound, motion, transition or physical projection approval."
+  },
+  {
+    "file": "to-scary.mp4",
+    "sha256": "6eec0d4139ed0a30d6dd3c052335c800512b5c804c17fe70aea3c301ccfe5a21",
+    "frameCount": 121,
+    "size": [
+      1280,
+      720
+    ],
+    "fps": 24.0,
+    "reserve": 0.2,
+    "thresholdSummaries": {
+      "4": {
+        "emptyFrames": 0,
+        "reserveFailures": 0,
+        "minimumMarginsLTRB": [
+          0.3765625,
+          0.22777777777777777,
+          0.39375,
+          0.23055555555555557
+        ]
+      },
+      "8": {
+        "emptyFrames": 0,
+        "reserveFailures": 0,
+        "minimumMarginsLTRB": [
+          0.378125,
+          0.22777777777777777,
+          0.39375,
+          0.23194444444444445
+        ]
+      },
+      "16": {
+        "emptyFrames": 0,
+        "reserveFailures": 0,
+        "minimumMarginsLTRB": [
+          0.37890625,
+          0.22916666666666666,
+          0.3953125,
+          0.23194444444444445
+        ]
+      }
+    },
+    "scope": "All native OpenCV decoded pictures. Complete effect envelope and empty handles only; no typography, smoke material, sound, motion, transition or physical projection approval."
+  },
+  {
+    "file": "wave.mp4",
+    "sha256": "cb29ce6fb303f976022eb809cea6f3400ff2cdcae6a90528bcfe50f1638a5b8f",
+    "frameCount": 121,
+    "size": [
+      1280,
+      720
+    ],
+    "fps": 24.0,
+    "reserve": 0.2,
+    "thresholdSummaries": {
+      "4": {
+        "emptyFrames": 0,
+        "reserveFailures": 0,
+        "minimumMarginsLTRB": [
+          0.41640625,
+          0.2847222222222222,
+          0.3703125,
+          0.2611111111111111
+        ]
+      },
+      "8": {
+        "emptyFrames": 0,
+        "reserveFailures": 0,
+        "minimumMarginsLTRB": [
+          0.4171875,
+          0.2847222222222222,
+          0.3703125,
+          0.2611111111111111
+        ]
+      },
+      "16": {
+        "emptyFrames": 0,
+        "reserveFailures": 0,
+        "minimumMarginsLTRB": [
+          0.41796875,
+          0.2861111111111111,
+          0.37109375,
+          0.2625
+        ]
+      }
+    },
+    "scope": "All native OpenCV decoded pictures. Complete effect envelope and empty handles only; no typography, smoke material, sound, motion, transition or physical projection approval."
+  },
+  {
+    "file": "friendly.mp4",
+    "sha256": "c4a28b24ce2b2269ceff1529362c6f3092f792c2a318445deb73f8bf78e7a1eb",
+    "frameCount": 122,
+    "size": [
+      1280,
+      720
+    ],
+    "fps": 24.0,
+    "reserve": 0.2,
+    "thresholdSummaries": {
+      "4": {
+        "emptyFrames": 0,
+        "reserveFailures": 0,
+        "minimumMarginsLTRB": [
+          0.4109375,
+          0.28055555555555556,
+          0.40625,
+          0.23472222222222222
+        ]
+      },
+      "8": {
+        "emptyFrames": 0,
+        "reserveFailures": 0,
+        "minimumMarginsLTRB": [
+          0.41171875,
+          0.28055555555555556,
+          0.40625,
+          0.23472222222222222
+        ]
+      },
+      "16": {
+        "emptyFrames": 0,
+        "reserveFailures": 0,
+        "minimumMarginsLTRB": [
+          0.4125,
+          0.2833333333333333,
+          0.40625,
+          0.2361111111111111
+        ]
+      }
+    },
+    "scope": "All native OpenCV decoded pictures. Complete effect envelope and empty handles only; no typography, smoke material, sound, motion, transition or physical projection approval."
+  },
+  {
+    "file": "to-cute.mp4",
+    "sha256": "3161e91d21ceb3276e124bc1739890f1fd319f00444b311bed64dfe34e38574a",
+    "frameCount": 121,
+    "size": [
+      1280,
+      720
+    ],
+    "fps": 24.0,
+    "reserve": 0.2,
+    "thresholdSummaries": {
+      "4": {
+        "emptyFrames": 0,
+        "reserveFailures": 0,
+        "minimumMarginsLTRB": [
+          0.3828125,
+          0.2361111111111111,
+          0.3984375,
+          0.2375
+        ]
+      },
+      "8": {
+        "emptyFrames": 0,
+        "reserveFailures": 0,
+        "minimumMarginsLTRB": [
+          0.38359375,
+          0.2375,
+          0.39921875,
+          0.2388888888888889
+        ]
+      },
+      "16": {
+        "emptyFrames": 0,
+        "reserveFailures": 0,
+        "minimumMarginsLTRB": [
+          0.384375,
+          0.2375,
+          0.4,
+          0.2388888888888889
+        ]
+      }
+    },
+    "scope": "All native OpenCV decoded pictures. Complete effect envelope and empty handles only; no typography, smoke material, sound, motion, transition or physical projection approval."
+  },
+  {
+    "file": "scary.mp4",
+    "sha256": "d2540436a52ff36e08c06538cbdafdbbd3a840f101e9280a2f16c1d47fd2089e",
+    "frameCount": 121,
+    "size": [
+      1280,
+      720
+    ],
+    "fps": 24.0,
+    "reserve": 0.2,
+    "thresholdSummaries": {
+      "4": {
+        "emptyFrames": 0,
+        "reserveFailures": 0,
+        "minimumMarginsLTRB": [
+          0.365625,
+          0.2222222222222222,
+          0.35,
+          0.20555555555555555
+        ]
+      },
+      "8": {
+        "emptyFrames": 0,
+        "reserveFailures": 0,
+        "minimumMarginsLTRB": [
+          0.365625,
+          0.225,
+          0.3515625,
+          0.20694444444444443
+        ]
+      },
+      "16": {
+        "emptyFrames": 0,
+        "reserveFailures": 0,
+        "minimumMarginsLTRB": [
+          0.3671875,
+          0.225,
+          0.35234375,
+          0.20833333333333334
+        ]
+      }
+    },
+    "scope": "All native OpenCV decoded pictures. Complete effect envelope and empty handles only; no typography, smoke material, sound, motion, transition or physical projection approval."
+  }
+]

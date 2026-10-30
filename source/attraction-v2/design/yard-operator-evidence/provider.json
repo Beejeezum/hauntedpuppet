@@ -1,0 +1,28 @@
+{
+  "evidence": [
+    {
+      "form": "friendly",
+      "duration": 3.75,
+      "voice": "fable",
+      "bytes": 180044,
+      "cacheHit": false,
+      "syncMode": "amplitude-fallback",
+      "scope": "real TTS PCM decoded and played by muted browser; voiceover, no mouth sync",
+      "clickToSpeechMs": 1429
+    },
+    {
+      "form": "evil",
+      "duration": 5.205333333333333,
+      "voice": "onyx",
+      "bytes": 249900,
+      "cacheHit": false,
+      "syncMode": "amplitude-fallback",
+      "scope": "real TTS PCM decoded and played by muted browser; voiceover, no mouth sync",
+      "clickToSpeechMs": 2277
+    }
+  ],
+  "errors": [],
+  "calls": 2,
+  "audibleHumanReview": false,
+  "physicalProjection": false
+}

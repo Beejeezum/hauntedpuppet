@@ -1,0 +1,79 @@
+THE MANGO TREE SPIRIT — CONFIRMED SITE DIRECTION, 2026-10-29
+
+Human: "front yard, like under a big mango tree so floating free in the yard ideally".
+This supersedes the earlier window/door framing assumption. The show premise is a
+resident spirit under the tree, facing the approach path. Product name remains a
+working title. Existing painted identity and six operator intentions still apply.
+
+PHYSICAL ILLUSION
+Baseline: a taut, fine projection mesh/scrim in the dark space under the canopy,
+oriented toward the main sidewalk/approach. It catches the ghost's light while
+the unlit fabric and edges blend into darkness. This is an image on a real plane;
+depth/turning are animated cues, not a360-degree volume or projection into clean air.
+Do not promise visibility from every direction. Choose a main viewing zone first.
+
+The human indicates the existing mesh/material should work; reuse it for the
+first nighttime proof. Exact fabric, dimensions and contrast remain unmeasured.
+Use the existing projector before specifying a new purchase. Prior user-supplied
+conversation says an existing ViewSonic, thought to be PJD7820HD. Official model
+sheet lists1920x1080,3000lumens,1.15–1.5 throw ratio. That is a planning baseline,
+not a measurement of current lamp brightness or confirmation of the user's model.
+For a9ft-wide16:9 image: lens-to-surface distance10.35–13.5ft; image height5.0625ft.
+With20% reserve on top and bottom, the complete animated effect is at most3.0375ft
+high. The physical fabric must contain the full image; this example is not a
+purchase specification or a promise of adequate contrast. Smaller image tests first.
+Source: https://www.viewsonic.com/global/products/sheet/PJD7820HD
+
+AtmosFX describes its gray5.5x9ft Hollusion mesh as nearly invisible in low light
+and usable indoors/outdoors. It is a possible starter material, not evidence that
+it will disappear in this yard's lighting or that it is already owned.
+Source: https://atmosfx.com/products/hollusion-projection-material
+https://atmosfx.com/blogs/community/great-ways-to-use-phantasms
+
+LAYOUT TO PROVE
+1. Mark the guest approach and the strongest viewing area. Keep the screen plane
+   and any supports outside the walking route. Measure usable width/height.
+2. Temporarily position mesh under the canopy, with dark space behind it. Compare
+   front and rear projection on the actual material. Rear placement is an option
+   only if space, focus, transmitted-beam glare and guest sightlines permit it.
+3. Check light passing through the mesh: a second ghost on the tree/house ruins the
+   effect. Change angle, placement or a concealed beam catch rather than assuming
+   black pixels extinguish the projector's physical light output.
+4. Put the sound near Wisp's apparent position. Keep any tree accent light off the
+   mesh and avoid light/fog that exposes the screen or projection beam. Full canopy
+   illumination during every cue is unnecessary. A brief motivated glow can help.
+5. Use a stable support/tension arrangement so breeze does not wobble the character.
+   The tree canopy is not weather protection for the projector: keep it dry with
+   the ventilation required by its manual. Final outdoor setup needs on-site checks.
+Source for outdoor contrast/weather/ventilation constraints:
+https://support.atmosfx.com/article/279-how-do-i-set-up-my-decorations-outside
+
+STAGING CHANGES
+- Living idle: float at a stable apparent height above the grass, occasionally
+  inspect the canopy, look toward approaching visitors, sway with a motivated beat.
+- Play: react to a small falling spark/imaginary mango, investigate it, then make a
+  sheepish glance toward guests. This is a variant brief, not an extra paid cue yet.
+- Scary: darkness builds within the same form; a forward lean/reach is readable
+  from the sidewalk. Do not enlarge beyond the measured safe effect envelope.
+- Travel: turn the head, shoulders and whole body into the path before moving in
+  depth; stop at a readable small scale and vaporize. No shrink-to-dot departure.
+- Finale: letters hang in the tree's open dark space, disperse locally into vapor,
+  small quick bats come from behind them. All light is contained by the usable
+  scrim, including smoke trails and glow; no bright rectangle or scenery backdrop.
+- Real trunk hiding/reappearing is optional and site-dependent. Where that geometry
+  cannot work, stage disappearances within the open space rather than fake an
+  occlusion that breaks when a guest shifts position.
+
+SOFTWARE DELIVERABLES ADDED TO SETUP
+Yard stage preset: aspect/orientation, mirror for rear projection, safe travel area,
+maximum effect size, hero position, preview from the main guest view, black-level
+check and optional occlusion mask. Calibration aids must leave the public output
+before show start. Persist setup independently of show/phone state. Intent buttons
+must target available stage-safe variants; they cannot trigger off-surface travel.
+
+FIRST HARDWARE PROOF
+At night display a black field, then one accepted friendly moving film, then a
+scary sample. Inspect screen visibility, edge spill, transmitted duplicate, motion
+in breeze, contrast, face/hand readability and sound location from the approach.
+Only then lock character size, travel paths, fabric size and projector placement.
+There is no physical-site test evidence yet. No equipment purchased or installed.

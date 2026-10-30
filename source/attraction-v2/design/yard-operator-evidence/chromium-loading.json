@@ -1,0 +1,9 @@
+{
+  "engine": "chromium",
+  "scope": "simulated network stall; virtual clock for timeout, real native media for recovery",
+  "boundedPreparation": true,
+  "blackWhileFailed": true,
+  "retry": true,
+  "stopCancelsLatePreparation": true,
+  "errors": []
+}

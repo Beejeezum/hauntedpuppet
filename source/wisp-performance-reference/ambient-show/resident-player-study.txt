@@ -1,0 +1,13 @@
+RESIDENT PLAYER CLOCK PROTOTYPE — NOT THE DEFAULT SHOW DESK
+
+resident-action-player.mjs queues a one-form action at an idle boundary and appends its return idle into one native MediaSource timeline. No video.loop, currentTime reset, fades, body crossfade or second decoder. Later uncommitted button requests replace earlier ones. Stop cancels the timer, fetches, pending appends, native source and byte cache; late work cannot stop a replacement performance.
+
+The existing finite player gains optional rolling retention. Its default finite mode and selected-cue/Stop tests remain unchanged. The resident mode retains about20seconds behind playback and a bounded16MiB source-byte cache, discards old timeline records/media ranges and limits prebuffering. It uses absolute integer frame totals rather than restarting the video clock. This is not a completed endless/show-soak claim.
+
+Production descriptors must have explicit resident motion/loop review and both source-hash-linked action joins. Matching port labels alone do not permit a cut. Explicit revision-required/rejected media cannot be enabled even in the source-only study option. The new friendly wave was rejected by the human for pauses/stiffness; it is NOT installed or admitted.
+
+tests/resident_action_player.cjs uses SYNTHETIC logical actions containing the same existing idle pictures. It tests scheduling, not new acting: first action/return at1x, then4x accelerated clock beyond70media seconds, one source URL, native visible frames, bounded back-buffer/cache, replaced queued command, cancelled delayed append/restart, Stop/disposal. Chrome and Mac WebKit pass. This does not approve native wave motion, arbitrary joins, audio, long realtime endurance, phone/projector output, multiple forms or physical projection.
+
+tests/rolling_resident_timeline.cjs exercises1000 appends and cache eviction with a simulated SourceBuffer/control clock beyond5000media seconds. It is NOT an hour-long native soak. tests/resident_player_gate.cjs uses synthetic approval records to enforce the cut/loop/media-hash rules.
+
+Remaining: real accepted action and loop footage, form-morph/second-idle integration, native1x endurance and platform coverage, paired phone/playlist/projector wiring, sound ownership, human motion/mix and physical projection checks. Existing rehearsal and live voice paths are unchanged.

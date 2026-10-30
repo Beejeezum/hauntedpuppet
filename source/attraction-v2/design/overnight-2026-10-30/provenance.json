@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-30",
+  "scope": "original assets for yard show development",
+  "files": [
+    {
+      "file": "yard-show-storyboard-v1.png",
+      "bytes": 2012229,
+      "sha256": "fc4a662789065115661d99553fb9a2d56d0712483796f207d6c185818d7ed800",
+      "role": "Six-panel creative storyboard; illustration only, not runtime/physical evidence"
+    },
+    {
+      "file": "spider-reference-v2.png",
+      "bytes": 603959,
+      "sha256": "05ab61e2342440b590e7f07b38fc80cf5430725a9cdc00603c64c25d5e86d817",
+      "role": "Original organic eight-legged spider design; illustration only"
+    },
+    {
+      "file": "spider-pilot-v1.mp4",
+      "bytes": 666594,
+      "sha256": "0e6347a51891095aa51cde404bb4dad32992c681b001495d4d32bd0e6b880745",
+      "role": "REJECTED: metallic angular look and clipped entry/exit"
+    },
+    {
+      "file": "spider-pilot-v2.mp4",
+      "bytes": 1633982,
+      "sha256": "7668d86e499cb50691494c1a44cc5f0231182ad917e58b2db6ead0b56d92b814",
+      "role": "REJECTED: organic look preserved, movement too slight and missing descent/retraction"
+    }
+  ],
+  "imageGeneration": "Built-in imagegen; two images, no Runway credits; prompts saved alongside",
+  "runwayVideoTasks": [
+    {
+      "taskId": "bfc84037-dd5c-4d17-93ef-73a927e85556",
+      "credits": 120,
+      "file": "spider-pilot-v1.mp4"
+    },
+    {
+      "taskId": "1ec012a6-a460-40e6-80d7-03ac2f77e49d",
+      "credits": 50,
+      "file": "spider-pilot-v2.mp4"
+    }
+  ],
+  "runwaySpeechCredits": 8,
+  "totalRunwayCredits": 178,
+  "humanAcceptance": "not yet reviewed",
+  "runtimeAdmission": "Neither spider film installed"
+}

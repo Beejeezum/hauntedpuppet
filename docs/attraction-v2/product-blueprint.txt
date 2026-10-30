@@ -1,0 +1,200 @@
+YARD APPARITIONS — SHOW AND PRODUCT SCOPE
+Revised 2026-10-29 after the human narrowed the project to projected floating ghosts
+and spooky eyes in the yard. Proposed production plan within the confirmed boundary
+in yard-apparitions-scope.txt. This replaces earlier product blueprints.
+
+THE EXPERIENCE
+A beautiful little haunting appears to live in the yard. Wisp is a friendly spirit
+who takes his haunting duties a little too seriously. He watches, drifts, tries to
+look frightening, occasionally succeeds spectacularly, then returns to his softer
+self. His spooky form is the same being. Floating eyes suggest he is still there
+even when his body is gone. The story is readable through acting, without dialogue.
+
+A passerby watching for ten seconds gets a good visual moment. Someone staying for
+two or three minutes sees a small arc. Neither must participate, hear a long script
+or start at the beginning. The mango tree is the setting, not a game or character.
+No lantern, sensing challenge, guest quest or lighting installation.
+
+VISUAL LANGUAGE
+Preserve approved painted soft-fog Wisp. Body overlap, hands, eyes and silhouette
+changes carry acting; moving a static picture around does not qualify. Scary Wisp
+holds a menacing presence before a stronger reveal. Use a few deliberate positions
+and one main focal subject at a time. Optional secondary eyes peek elsewhere in the
+same projection area. Their pupils/lids act; they do not bob as a rigid pair.
+Do not fill the screen with smoke or duplicate Wisp into a busy collage.
+Depth comes from authored turns, foreshortening and travel. Departure retains a
+readable small body before vaporizing; no shrink-to-dot or abrupt resizing.
+
+THREE SHORT SCENES
+1. Somebody is there, roughly 20–40 seconds. Wisp materializes, inspects the yard,
+   notices the viewing direction, leans or gives a small wave, then resumes living
+   idle. An eyes-only watch is an alternative atmospheric scene.
+2. Practicing his haunting, roughly 30–50 seconds. Friendly Wisp tries a little boo,
+   is unimpressed with himself, gathers courage and transforms. A sinister held
+   glance or slow reach supplies the payoff. He relaxes back into cute form with a
+   sheepish look. A stronger short scare is an explicit operator option.
+3. Still here, roughly 20–40 seconds. His body disperses but the eyes remain, glance
+   sideways and blink. He reforms, or the eyes disappear before an intentional
+   empty beat and another authored arrival. These alternatives need reviewed routes;
+   do not cut the current movie at an arbitrary blink.
+
+Scenes are reusable story units, not mandatory back-to-back loops. Ambient idle or
+eyes can continue between them. Happy Halloween smoke lettering and a bat rush are
+an optional later finale, not a dependency for the basic haunting.
+
+SIGNATURE SHOW — ABOUT TWO AND A HALF MINUTES
+This is the Mixed edition. Friendly uses playful beats without a scary morph;
+Spooky can remain ominous and resolve to eyes/retreat instead of cute recovery.
+Editorial timing targets, not locked generation lengths or permission to pad footage.
+00–20: An authored friendly arrival and small look around establish life.
+20–50: Quiet floating business and a wave; let the face and body breathe.
+50–75: A failed boo, anticipation and change into sinister Wisp.
+75–100: Scary presence, slow approach/reach, then body dispersing into floating eyes.
+100–125: Look/blink, body reforming, then cute recovery and embarrassed acting.
+125–145: A little goodbye and a properly turned departure into vapor.
+145–150: Deliberate empty space before the next arrival.
+Provide enough actual moving performance; do not tile a five-second idle to fill
+thirty seconds. Shorten the show if good footage cannot sustain the proposed length.
+Optional finale edition adds a separately authored lettering/bats ending and may
+run closer to three minutes. It is not required for the first release.
+
+Deliver the fixed signature show as ONE seekable local video with ONE embedded,
+continuous audio track. It plays as one file inside and outside the app. Review its
+repeat boundary. Keep separate source performances and sound stems for editing.
+The interactive version uses admitted performances and joins; it is a separate
+deliverable, not a playlist passed off as the finished master.
+
+OPERATING MODES
+AUTO HAUNT: Friendly, Spooky or Mixed; pacing, sound level and quiet intervals.
+Friendly favors cute residency/play. Spooky favors sinister residency/eyes. Mixed
+dwells in each form and uses an authored morph before changing. Initial editorial
+targets: 20–45 seconds of residency between major actions, 90–180 second form dwell in
+Mixed, no immediate story repeat. Tune by viewing, not by padding weak loops.
+The strongest reveal is manual by default. No sensors or cloud calls are required.
+
+DIRECT: a small phone performance surface: Show ghost, Eyes, Hello, Spook, Change
+form, Vanish, Resume auto and persistent Blackout. A library drawer exposes the
+individual available performances. Clearly show Playing, Queued and unavailable
+routes. A tap replaces the uncommitted next action instead of stacking stale sends.
+Normal requests wait for a reviewed handoff; Stop acts immediately. Reconnection
+must not replay earlier commands. The phone remains silent.
+
+PLAYLIST / FIXED SHOW: choose a saved ordered performance sequence or the single
+signature video. Insert only reviewed connectors. Flag unavailable routes before
+playback. Support repeat and intentional quiet holds. Never promise arbitrary
+movies blend simply because they are both selectable.
+Initially the fixed master is atomic: interrupt it by controlled fade or Blackout,
+then use a deliberate restart/arrival. Seamless mid-film branching waits until
+authored chapter exits exist. Do not jump to arbitrary timecodes.
+
+SAY SOMETHING: retain short phone-typed speech as a separate second-stage feature.
+Prepare voice and coherent mouth performance before starting. Bounded text, visible
+preparing/ready/playing state and cancellation. Nonverbal auto playback keeps working
+without speech services. Both voices and lip sync have their own acceptance gates.
+Webcam and manual voice conversion remain archived.
+
+PROJECTION AND SOUND
+Laptop owns one clean secondary-screen projector window. Setup includes placement,
+size, permitted travel area, optional mirror, basic corner mapping and masking,
+layer opacity and saved calibration. Fit the actual existing projection surface;
+ground effects and floating apparitions are distinct looks. No free-air promise.
+
+Layer order: black base; optional localized fog behind; hero ghost; optional eyes
+or foreground accent. Initially one hero, one eyes layer and one restrained fog
+layer. Each allowed layer has placement, opacity and show/hide. Keep calibration
+separate from live control. Prevent live dragging from breaking a validated route's
+framing. No unlimited editor/plugin system or multi-projector edge blending.
+
+Use true alpha where present. Test black-backed films in the chosen compositor so
+they do not cover other layers with rectangles or wash out black. Black pixels do
+not automatically mean transparency. Protect hands, glow and smoke with the 20 percent
+reserve target. Remove grid, cursor and controls from the public output.
+
+Sound stays sparse and dry: air movement, dissolve/reform, restrained growl/reveal,
+occasional wings. No choir or compulsory musical bed. Preserve tails through joins;
+intentional quiet is allowed, dropout or chopped sound is not. Nonverbal show is
+default; a voiced story edition is separate. Laptop is the only audible owner.
+Projector and phone never add duplicate audio.
+
+TRANSITIONS — THE MAIN PRODUCTION WORK
+Friendly idle -> friendly action -> friendly idle.
+Friendly idle -> authored morph -> scary idle.
+Scary idle -> scary action or body/eyes performance -> scary idle.
+Scary idle -> authored recovery -> friendly idle.
+Explicit departure -> intentional empty/eyes interval -> authored arrival.
+
+Compatibility includes full pose, movement velocity, framing, lighting and audio
+tails. Matching names or one similar frame is insufficient. An autonomous eyes
+overlay is separate; it is not permission to splice the body/eyes movie.
+Author compatible motion, preload, preserve picture/sound clock, then inspect joins
+at normal speed. Dissolves can soften fog or empty space; doubled faces cannot hide
+a mismatched character cut. No compulsory fade after each ordinary action.
+
+CONTENT BUDGET
+Keep the existing 16 performance families as a maximum first library, not a quota
+for 16 new paid generations. Existing resident-contract IDs remain unchanged:
+friendly-drift, friendly-wave, friendly-boo-fail, friendly-depart, friendly-reform;
+scary-drift, scary-pace, scary-reach, scary-eyes, scary-retreat, scary-fakeout,
+scary-reform; cute-to-evil, evil-to-cute; fog-lettering, bats-through-letters.
+Prioritize both resident looks, both morphs, wave, friendly arrival/departure and
+the eyes effect. Distinct prowl/fakeout and final lettering/bats follow that proof.
+Do not relabel duplicates to fill slots. Bridges and loop repairs count toward
+cost; 16 family names do not mean 16 files or 16 generations will suffice.
+
+Audit/reuse standalone eyes and layer-ready fog first. The current scary-eyes movie
+includes whole-body dissolve/reform; it is not already an independent looping eyes
+layer. A compatible eyes-only hold and clean compositing must be proved.
+Each paid revision targets a named defect, uses the authorized workspace, records
+actual debit and is reviewed before further spend. No batch generation this pass.
+
+IMPLEMENTATION PARTS
+1. Local package: source, playback versions, hashes, frame/duration data, bounds,
+   alpha/black mode, sound stems/mix and exact join reviews.
+2. Scene compositor: calibration, bounded layers and independent placement.
+3. Show director: resident states, compatible routes, profiles, variation and Stop.
+4. Phone bridge: private pairing, acknowledgment, anti-replay and disconnect recovery.
+5. Separate speech service once its coherent character proof passes.
+Reuse tested modules where useful. Choose one playback/compositing owner. Adopt a
+native renderer only if exact-media testing proves visible or reliability benefit;
+do not require QLab+OBS+TouchDesigner together. Cached local shows need no cloud
+session or generation spend. Secrets stay in the trusted service.
+
+DELIVERY ORDER AND EXIT CHECKS
+A. Stage proof: existing Wisp and separately placed eyes; calibration, boundary,
+   compositing, opacity, persistent output and immediate Blackout. Label candidates
+   honestly. Inspect rectangles, identity, contrast and full fog bounds.
+B. Resident mini-show: friendly action, both morphs and compatible eyes path, with
+   actual loop/join sound review. No frozen settle or unplanned black. A missing
+   arrival bridge is a named gap, not a generic fade disguised as completion.
+C. Auto/manual operation: phone pairing, safe takeover/return, profiles and saved
+   sequence, visible queue, sound ownership and connection-loss recovery.
+D. Short story: coherent picture/audio master exported as one file; inspect the
+   whole story and three repeats. Use approved routes rather than hardening the
+   timeline around whatever clips happen to exist.
+E. Expand admitted content up to 16 families; optional lettering/bats. Speaking
+   remains a separately tested follow-on, not a reason to withhold a useful visual
+   show or claim the full speaking-character objective is complete.
+F. Night rehearsal: actual projector/material/viewing angle, spill, readability,
+   sound and real phone. Two-hour 1× unattended run, ten takeover/return cycles,
+   network loss, minimized laptop, closed/reopened output. Separate simulated,
+   decoded-media, human art/audio and actual installation evidence.
+
+CURRENT EVIDENCE AND GAPS
+Local Stagehand packages six film segments: friendly, wave, to-scary, scary, to-cute,
+return. Its manifest marks private rehearsal, not production admission. Existing
+records report Chromium/Mac WebKit playback/Stop/silent-output checks. The first layered scene now has its own Chromium/Mac WebKit pixel, mapping,
+persistence, Stop and silent-output evidence in status.json. Actual phone transport
+and physical projection remain unverified.
+Current text is a notebook, not live speech. The morph source has human support for
+its internal transitions; new loop closures, wave routes and new joins still need
+their own review.
+
+scary-eyes-runtime-candidate-v1 and wisp-eyes-context-review-v1 are useful sources;
+their records say human approval pending. The direct older-idle-to-eyes cut failed.
+Respect that route rejection. Smoke lettering remains art-rejected for solid
+material; some departures/reforms also remain rejected. None become complete by
+appearing in this plan. See ../wisp-remaining-cue-production.txt.
+
+The scope was drafted without new generation spend. Subsequent layered-scene
+implementation and test evidence are recorded in status.json. No physical acceptance
+is implied. The rejected guest-game storyboard remains archived, not active.

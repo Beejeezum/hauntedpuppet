@@ -1,0 +1,11 @@
+{
+  "scope": "real private local server; isolated muted browser; saved audition playback only",
+  "status": {
+    "configured": true,
+    "savedCredential": true,
+    "yardPhone": true
+  },
+  "candidateCount": 6,
+  "paidRequests": 0,
+  "errors": []
+}

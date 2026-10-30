@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-30",
+  "tool": "built-in image_gen, transparent_background=true; imagegen skill",
+  "file": "../../console/media/spider-rig-sheet-v1.png",
+  "sha256": "942f2d56172308bd47be007f8405e064b2caeb6c374dc979c53cce6a95e41c93",
+  "bytes": 1368064,
+  "dimensions": [
+    1672,
+    941
+  ],
+  "originalGeneratedFile": "/Users/beeje/.codex/generated_images/01a13c94-06f1-7553-b857-c39374b179b9/exec-07006b3d-bf25-493a-af30-1d1411d861d5.png",
+  "reference": "../overnight-2026-10-30/spider-reference-v2.png",
+  "prompt": "prompt-v1.txt",
+  "newRunwayCredits": 0,
+  "imageCount": 1,
+  "exactImageGenerationCost": "not measured; not called free",
+  "rig": "One painted body, four raster leg strips mirrored into eight jointed legs. Original RGBA preserved; software skinning at runtime. Silk and suspended motion are procedural. Not a new native Runway movie or 3D model.",
+  "routine": "36seconds: dark, appear in upper canopy shadow, descend on silk, watch, feel the air, recoil, climb, fade into canopy shadow, long dark hold. Relocate only during darkness. No actual body/leg cutoff at the top.",
+  "runtimeAdmission": "Local preview only, explicitly labeled; visual user and physical projector acceptance pending. Prior two Runway spider films remain rejected.",
+  "checks": {
+    "unitTests": 3,
+    "engines": [
+      "Chromium",
+      "Mac WebKit"
+    ],
+    "boundaryScan": "144seconds accelerated;720 samples,456visible; zero body/leg reserve failures; silk attachment intentionally approaches top",
+    "resource": "bitmap closed/buffer released; pending-load disposal; changed hash rejected; no provider calls/audio",
+    "renderCapture": "work/yard-spider/rig-motion-v2.webm (36.5s actual after-dark canvas, not physical projection)",
+    "humanAcceptance": false
+  }
+}

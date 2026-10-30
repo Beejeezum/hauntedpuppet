@@ -1,0 +1,40 @@
+{
+  "status": "source-only neutral full-body motion candidate; not a finished speech rig or loop",
+  "file": "scary-neutral-body-base-v1.mp4",
+  "sha256": "27ac763bbf5d6349737b751a22abae5adba410872a5fd2d08b4bd483157750eb",
+  "source": "source/wisp-performance-reference/runway-pilots/whole-character-talking-study/neutral-mouth-audio-pilot-v2.mp4",
+  "sourceSha256": "86c71acf6b44eee413afc6b756e32511d9a145f7d967431bd175ee72ca79ffae",
+  "frames": 193,
+  "fps": 24,
+  "dimensions": [
+    1088,
+    704
+  ],
+  "nativePictureRect": [
+    0,
+    0,
+    1088,
+    704
+  ],
+  "compressedVideoEssenceSha256": "8666d99c912332de7785d687e2b6c66789cc694c3665618a36021eb9e2c28484",
+  "processing": "Video stream copied exactly; all193decoded native RGB pictures identical. No scaling, re-encoding, retiming, reversal, interpolation or body/face replacement. Baked audition sound removed; future voice belongs to laptop speech playback.",
+  "nativeDecodedPictureDifference": {
+    "meanAbsoluteRGB": 0.0,
+    "maximumRGB": 0,
+    "threshold": 16
+  },
+  "paddedReview": "scary-neutral-body-review-v1.mp4",
+  "paddedReviewScope": "Constant black-padding/re-encoded viewing proxy only; separate from exact native master.",
+  "origin": "Earlier2credit whole-character speech audition, rejected for closed mouth through dialogue. Reuse is only for its moving closed-mouth body/fog, not a reversal of that speech rejection.",
+  "generationCreditsSpent": 0,
+  "humanApproval": false,
+  "runtimePublication": false,
+  "remaining": [
+    "Human character/material review",
+    "Connected jaw/cheek/teeth/OO mechanics",
+    "Verified picture-to-track registration before live use",
+    "Spoken motion/voice review",
+    "Authored loop and entrance/exit qualification",
+    "Browser/phone/projector integration and soak"
+  ]
+}

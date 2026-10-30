@@ -1,0 +1,27 @@
+{
+  "engine": "chromium",
+  "rows": [
+    {
+      "width": 1200,
+      "rawFramePeak": 255,
+      "muted": true,
+      "sourceOpacity": "1",
+      "sourceWidth": 990,
+      "canvasBackground": "rgb(0, 0, 0)",
+      "sourceBeforeCanvas": true,
+      "coveredInteriorPeak": 0
+    },
+    {
+      "width": 390,
+      "rawFramePeak": 255,
+      "muted": true,
+      "sourceOpacity": "1",
+      "sourceWidth": 352,
+      "canvasBackground": "rgb(0, 0, 0)",
+      "sourceBeforeCanvas": true,
+      "coveredInteriorPeak": 0
+    }
+  ],
+  "errors": [],
+  "scope": "Native decoded painted frame retained behind a cleared opaque canvas; actual browser screenshots with the sticky operator header moved out of the capture. No physical projection."
+}

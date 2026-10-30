@@ -1,0 +1,92 @@
+{
+  "status": "source-only rolling resident-clock prototype; not app delivery",
+  "artFeedback": {
+    "file": "resident-wave-study/idle-wave-idle-review-v1.mp4",
+    "quote": "It pauses or the motion feels stiff",
+    "disposition": "revision-required; not installed/admitted"
+  },
+  "nativeLocal": {
+    "chromium": {
+      "oneSource": true,
+      "sourceLoads": 1,
+      "mediaTime": 70.106465,
+      "bufferedRange": [
+        50.833333,
+        76.249998
+      ],
+      "retainedWindows": 6,
+      "evictions": 10,
+      "cachedBytes": 405736,
+      "minimumSampledPeak": 242,
+      "backwardsFrames": 0,
+      "queuedActionReturn": [
+        {
+          "id": "test-idle",
+          "start": 0,
+          "end": 5.083333333333333
+        },
+        {
+          "id": "test-action-b",
+          "start": 5.083333333333333,
+          "end": 10.166666666666666
+        },
+        {
+          "id": "test-idle",
+          "start": 10.166666666666666,
+          "end": 15.25
+        }
+      ],
+      "cancelledReplacementRunning": true,
+      "disposed": true,
+      "requests": {
+        "/source/wisp-performance-reference/ambient-show/single-movie-study/finite-cues/friendly-drift.mp4": 3,
+        "/source/wisp-performance-reference/ambient-show/single-movie-study/finite-cues/friendly-drift.mp4?action=b": 1,
+        "/source/wisp-performance-reference/ambient-show/single-movie-study/finite-cues/friendly-drift.mp4?slow=1": 1
+      },
+      "fixture": "Logical action IDs reuse original idle movie; no new performance claimed."
+    },
+    "webkit": {
+      "oneSource": true,
+      "sourceLoads": 1,
+      "mediaTime": 70.025239127,
+      "bufferedRange": [
+        50.833333333333336,
+        76.25
+      ],
+      "retainedWindows": 6,
+      "evictions": 10,
+      "cachedBytes": 405736,
+      "minimumSampledPeak": 246,
+      "backwardsFrames": 0,
+      "queuedActionReturn": [
+        {
+          "id": "test-idle",
+          "start": 0,
+          "end": 5.083333333333333
+        },
+        {
+          "id": "test-action-b",
+          "start": 5.083333333333333,
+          "end": 10.166666666666666
+        },
+        {
+          "id": "test-idle",
+          "start": 10.166666666666666,
+          "end": 15.25
+        }
+      ],
+      "cancelledReplacementRunning": true,
+      "disposed": true,
+      "requests": {
+        "/source/wisp-performance-reference/ambient-show/single-movie-study/finite-cues/friendly-drift.mp4": 3,
+        "/source/wisp-performance-reference/ambient-show/single-movie-study/finite-cues/friendly-drift.mp4?action=b": 1,
+        "/source/wisp-performance-reference/ambient-show/single-movie-study/finite-cues/friendly-drift.mp4?slow=1": 1
+      },
+      "fixture": "Logical action IDs reuse original idle movie; no new performance claimed."
+    }
+  },
+  "simulatedClock": "1000 append operations beyond5000media seconds pass bounded windows/range/cache and Stop. Not native/time endurance.",
+  "finiteRegression": "Existing native finite cue end/order/Stop/stale replacement/disposal tests pass Chrome and Mac WebKit.",
+  "productionGate": "Hash-linked reviewed idle loop and both action cuts required; changed/rejected media refused; tests use synthetic approval records.",
+  "scope": "No public binding, phone/projector, real action artistic approval, multi-form, audio or physical projection acceptance. Zero new generation credits."
+}

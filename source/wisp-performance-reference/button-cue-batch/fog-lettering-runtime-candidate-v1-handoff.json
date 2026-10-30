@@ -1,0 +1,352 @@
+{
+  "results": {
+    "chromium": {
+      "passed": true,
+      "result": {
+        "finished": [
+          10.953796,
+          10.992943,
+          11.033862,
+          11.041667,
+          11.041667,
+          11.041667,
+          11.041667,
+          11.041667,
+          11.041667,
+          11.041667,
+          11.041667,
+          11.041667,
+          11.041667,
+          11.041667,
+          11.041667,
+          11.041667
+        ],
+        "trace": [
+          {
+            "id": null,
+            "phase": "preparing",
+            "level": 1,
+            "wall": 208.29999995231628,
+            "mediaTime": null
+          },
+          {
+            "id": null,
+            "phase": "exiting",
+            "level": 0.9998442719478738,
+            "wall": 321.7999999523163,
+            "mediaTime": null
+          },
+          {
+            "id": null,
+            "phase": "empty-stage",
+            "level": 0,
+            "wall": 1240.199999988079,
+            "mediaTime": null
+          },
+          {
+            "id": "fog-lettering",
+            "phase": "entering",
+            "level": 0.0009485877022584414,
+            "wall": 1840.3999999761581,
+            "mediaTime": 0.073912
+          },
+          {
+            "id": "fog-lettering",
+            "phase": "playing",
+            "level": 1,
+            "wall": 2760.099999964237,
+            "mediaTime": 0.99449
+          },
+          {
+            "id": "fog-lettering",
+            "phase": "exiting",
+            "level": 1,
+            "wall": 11280.299999952316,
+            "mediaTime": 9.513334
+          },
+          {
+            "id": "fog-lettering",
+            "phase": "empty-stage",
+            "level": 0,
+            "wall": 12881.599999964237,
+            "mediaTime": 11.041667
+          },
+          {
+            "id": "friendly-wave",
+            "phase": "entering",
+            "level": 0.003324014743326249,
+            "wall": 13479.899999976158,
+            "mediaTime": 0.076017
+          },
+          {
+            "id": "friendly-wave",
+            "phase": "playing",
+            "level": 1,
+            "wall": 14360.299999952316,
+            "mediaTime": 0.957663
+          },
+          {
+            "id": "friendly-wave",
+            "phase": "exiting",
+            "level": 1,
+            "wall": 21920.69999998808,
+            "mediaTime": 8.516019
+          },
+          {
+            "id": "friendly-wave",
+            "phase": "empty-stage",
+            "level": 0,
+            "wall": 23480.19999998808,
+            "mediaTime": 10.041667
+          },
+          {
+            "id": "fog-lettering",
+            "phase": "entering",
+            "level": 0,
+            "wall": 24081.69999998808,
+            "mediaTime": 0.046929
+          },
+          {
+            "id": "fog-lettering",
+            "phase": "playing",
+            "level": 1,
+            "wall": 25000.099999964237,
+            "mediaTime": 0.964629
+          }
+        ],
+        "emptyPixels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "recordStartWall": 159.19999998807907,
+        "muted": true,
+        "holds": [
+          {
+            "from": "fog-lettering",
+            "to": "friendly-wave",
+            "milliseconds": 598.3000000119209
+          },
+          {
+            "from": "friendly-wave",
+            "to": "fog-lettering",
+            "milliseconds": 601.5
+          }
+        ]
+      },
+      "scope": "Private candidate injection into actual desk/playlist. Complete native lettering-to-wave-to-lettering with actual composed black samples, real-time playback, default silence and cleanup. Optional generated-canvas recording only; no microphone, provider, human art/sound acceptance or physical projection. No public candidate admission."
+    },
+    "webkit": {
+      "passed": true,
+      "result": {
+        "finished": [
+          10.9784635423629,
+          11.023406916667835,
+          11.042,
+          11.042,
+          11.042,
+          11.042,
+          11.042,
+          11.042,
+          11.042,
+          11.042,
+          11.042,
+          11.042,
+          11.042,
+          11.042
+        ],
+        "trace": [
+          {
+            "id": null,
+            "phase": "preparing",
+            "level": 1,
+            "wall": 231,
+            "mediaTime": null
+          },
+          {
+            "id": null,
+            "phase": "exiting",
+            "level": 1,
+            "wall": 314,
+            "mediaTime": null
+          },
+          {
+            "id": null,
+            "phase": "empty-stage",
+            "level": 0,
+            "wall": 1227,
+            "mediaTime": null
+          },
+          {
+            "id": "fog-lettering",
+            "phase": "entering",
+            "level": 0.0009369108367626887,
+            "wall": 1800,
+            "mediaTime": 0.06679608334469796
+          },
+          {
+            "id": "fog-lettering",
+            "phase": "playing",
+            "level": 1,
+            "wall": 2679,
+            "mediaTime": 0.9456560003381154
+          },
+          {
+            "id": "fog-lettering",
+            "phase": "exiting",
+            "level": 1,
+            "wall": 11260,
+            "mediaTime": 9.526039583698747
+          },
+          {
+            "id": "fog-lettering",
+            "phase": "empty-stage",
+            "level": 0,
+            "wall": 12800,
+            "mediaTime": 11.042
+          },
+          {
+            "id": "friendly-wave",
+            "phase": "entering",
+            "level": 0.0009369108367626887,
+            "wall": 13371,
+            "mediaTime": 0.06684691702470985
+          },
+          {
+            "id": "friendly-wave",
+            "phase": "playing",
+            "level": 1,
+            "wall": 14251,
+            "mediaTime": 0.9468412503276809
+          },
+          {
+            "id": "friendly-wave",
+            "phase": "exiting",
+            "level": 1,
+            "wall": 21820,
+            "mediaTime": 8.515693291332726
+          },
+          {
+            "id": "friendly-wave",
+            "phase": "empty-stage",
+            "level": 0,
+            "wall": 23404,
+            "mediaTime": 10.042
+          },
+          {
+            "id": "fog-lettering",
+            "phase": "entering",
+            "level": 0,
+            "wall": 23931,
+            "mediaTime": 0.04361562568153554
+          },
+          {
+            "id": "fog-lettering",
+            "phase": "playing",
+            "level": 1,
+            "wall": 24855,
+            "mediaTime": 0.9678116673159425
+          }
+        ],
+        "emptyPixels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "recordStartWall": 191,
+        "muted": true,
+        "holds": [
+          {
+            "from": "fog-lettering",
+            "to": "friendly-wave",
+            "milliseconds": 571
+          },
+          {
+            "from": "friendly-wave",
+            "to": "fog-lettering",
+            "milliseconds": 527
+          }
+        ]
+      },
+      "scope": "Private candidate injection into actual desk/playlist. Complete native lettering-to-wave-to-lettering with actual composed black samples, real-time playback, default silence and cleanup. Optional generated-canvas recording only; no microphone, provider, human art/sound acceptance or physical projection. No public candidate admission."
+    }
+  },
+  "scope": "Private injection into real desk, native full lettering to wave to lettering, complete film ending, actual black composed pixels, two measured holds, no extra replay, mute, Blackout and decoder retirement. No catalog admission, acoustic/human artistic or physical projection approval."
+}

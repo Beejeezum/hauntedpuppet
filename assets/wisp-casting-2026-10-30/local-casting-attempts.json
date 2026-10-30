@@ -1,0 +1,299 @@
+{
+  "model": "mlx-community/Qwen3-TTS-12Hz-1.7B-VoiceDesign-4bit",
+  "revision": "5c390979e4b93af5f2932f90742ca99c7dd04687",
+  "approval": "Unapproved original synthetic casting; not installed live",
+  "paidCalls": 0,
+  "hardwarePlayback": false,
+  "versions": {
+    "mlx-audio": "0.6.3",
+    "mlx": "0.32.4",
+    "transformers": "5.22.1",
+    "numpy": "2.5.4"
+  },
+  "takes": [
+    {
+      "id": "friendly-d",
+      "text": "Oh! Hi! I was trying to be terrifying. Was it working?",
+      "instructions": "An original tiny male ghost with a youthful, light, airy voice, warm husky texture and bright clear consonants. A nimble mischievous little character with a smile in his breath, not a baby or announcer. Surprise on Oh, delighted Hi, then sheepish comic pride and a quick hopeful question. Intimate conversational English, varied natural timing. Dry voice, no music, no echo, no imitation of a real actor or known character.",
+      "seed": 431,
+      "chunks": [
+        {
+          "arrivalSeconds": 2.6195,
+          "samples": 7680,
+          "peak": 0.3882153630256653
+        },
+        {
+          "arrivalSeconds": 2.7061,
+          "samples": 7680,
+          "peak": 0.6393006443977356
+        },
+        {
+          "arrivalSeconds": 2.7899,
+          "samples": 7680,
+          "peak": 0.6676180958747864
+        },
+        {
+          "arrivalSeconds": 2.8755,
+          "samples": 7680,
+          "peak": 0.027295328676700592
+        },
+        {
+          "arrivalSeconds": 2.9638,
+          "samples": 7680,
+          "peak": 0.3547986149787903
+        },
+        {
+          "arrivalSeconds": 3.0494,
+          "samples": 7680,
+          "peak": 0.2219020575284958
+        },
+        {
+          "arrivalSeconds": 3.1328,
+          "samples": 7680,
+          "peak": 0.42975175380706787
+        },
+        {
+          "arrivalSeconds": 3.2156,
+          "samples": 7680,
+          "peak": 0.4183008074760437
+        },
+        {
+          "arrivalSeconds": 3.2986,
+          "samples": 7680,
+          "peak": 0.18638291954994202
+        },
+        {
+          "arrivalSeconds": 3.3821,
+          "samples": 7680,
+          "peak": 0.1716545969247818
+        },
+        {
+          "arrivalSeconds": 3.4653,
+          "samples": 7680,
+          "peak": 0.390979140996933
+        },
+        {
+          "arrivalSeconds": 3.5488,
+          "samples": 7680,
+          "peak": 0.23500488698482513
+        },
+        {
+          "arrivalSeconds": 3.6323,
+          "samples": 7680,
+          "peak": 0.014601080678403378
+        },
+        {
+          "arrivalSeconds": 3.7155,
+          "samples": 7680,
+          "peak": 0.001569323125295341
+        },
+        {
+          "arrivalSeconds": 3.7988,
+          "samples": 7680,
+          "peak": 0.317587286233902
+        },
+        {
+          "arrivalSeconds": 3.8816,
+          "samples": 7680,
+          "peak": 0.008172305300831795
+        },
+        {
+          "arrivalSeconds": 3.9644,
+          "samples": 7680,
+          "peak": 0.2704201340675354
+        },
+        {
+          "arrivalSeconds": 4.046,
+          "samples": 5760,
+          "peak": 0.09251373261213303
+        }
+      ],
+      "status": "generated, human review pending",
+      "file": "friendly-d.wav",
+      "durationSeconds": 5.68,
+      "totalSeconds": 4.0478,
+      "firstChunkSeconds": 2.6195,
+      "minimumObservedGaplessStartSeconds": 2.6195,
+      "peak": 0.6676180958747864,
+      "clippedSamples": 0,
+      "rmsDBFS": -24.18,
+      "sha256": "09371b1741ea4d003e15bd1dc655e55d70420746d27624cac202cb2e51256296",
+      "peakMLXMemoryBytes": 2905304305
+    },
+    {
+      "id": "evil-d",
+      "text": "Come a little closer. I've been waiting. Happy Halloween.",
+      "instructions": "An original male ghost creature speaking English. Deep smoky chest resonance with rough gravel at the edges, living breath and crisp consonants. Quiet conspiratorial invitation grows into a controlled sinister rumble, then releases into a sly amused smile. Deliberate pauses and changing intent, not a flat narrator or yelling. A theatrical mischievous spirit enjoying being frightening. Dry intimate voice, no music, no echo, no imitation of a real actor or known character.",
+      "seed": 839,
+      "chunks": [
+        {
+          "arrivalSeconds": 0.1606,
+          "samples": 7680,
+          "peak": 0.5841575860977173
+        },
+        {
+          "arrivalSeconds": 0.2424,
+          "samples": 7680,
+          "peak": 0.09119223803281784
+        },
+        {
+          "arrivalSeconds": 0.3227,
+          "samples": 7680,
+          "peak": 0.4644075036048889
+        },
+        {
+          "arrivalSeconds": 0.4045,
+          "samples": 7680,
+          "peak": 0.39190322160720825
+        },
+        {
+          "arrivalSeconds": 0.4865,
+          "samples": 7680,
+          "peak": 0.35311073064804077
+        },
+        {
+          "arrivalSeconds": 0.569,
+          "samples": 7680,
+          "peak": 0.3197534382343292
+        },
+        {
+          "arrivalSeconds": 0.6519,
+          "samples": 7680,
+          "peak": 0.24774089455604553
+        },
+        {
+          "arrivalSeconds": 0.7348,
+          "samples": 7680,
+          "peak": 0.15846648812294006
+        },
+        {
+          "arrivalSeconds": 0.8176,
+          "samples": 7680,
+          "peak": 0.014823522418737411
+        },
+        {
+          "arrivalSeconds": 0.8994,
+          "samples": 7680,
+          "peak": 0.005081661511212587
+        },
+        {
+          "arrivalSeconds": 0.9811,
+          "samples": 7680,
+          "peak": 0.04658300802111626
+        },
+        {
+          "arrivalSeconds": 1.0636,
+          "samples": 7680,
+          "peak": 0.2338353991508484
+        },
+        {
+          "arrivalSeconds": 1.1464,
+          "samples": 7680,
+          "peak": 0.20340968668460846
+        },
+        {
+          "arrivalSeconds": 1.2287,
+          "samples": 7680,
+          "peak": 0.14784114062786102
+        },
+        {
+          "arrivalSeconds": 1.3117,
+          "samples": 7680,
+          "peak": 0.12665078043937683
+        },
+        {
+          "arrivalSeconds": 1.395,
+          "samples": 7680,
+          "peak": 0.17306703329086304
+        },
+        {
+          "arrivalSeconds": 1.4784,
+          "samples": 7680,
+          "peak": 0.15307652950286865
+        },
+        {
+          "arrivalSeconds": 1.5621,
+          "samples": 7680,
+          "peak": 0.005775038618594408
+        },
+        {
+          "arrivalSeconds": 1.6458,
+          "samples": 7680,
+          "peak": 0.0023672604002058506
+        },
+        {
+          "arrivalSeconds": 1.7293,
+          "samples": 7680,
+          "peak": 0.0017246241914108396
+        },
+        {
+          "arrivalSeconds": 1.8133,
+          "samples": 7680,
+          "peak": 0.36301389336586
+        },
+        {
+          "arrivalSeconds": 1.8971,
+          "samples": 7680,
+          "peak": 0.25747182965278625
+        },
+        {
+          "arrivalSeconds": 1.9801,
+          "samples": 7680,
+          "peak": 0.255721777677536
+        },
+        {
+          "arrivalSeconds": 2.0639,
+          "samples": 7680,
+          "peak": 0.18062368035316467
+        },
+        {
+          "arrivalSeconds": 2.1486,
+          "samples": 7680,
+          "peak": 0.19700060784816742
+        },
+        {
+          "arrivalSeconds": 2.2307,
+          "samples": 7680,
+          "peak": 0.09333100914955139
+        }
+      ],
+      "status": "generated, human review pending",
+      "file": "evil-d.wav",
+      "durationSeconds": 8.32,
+      "totalSeconds": 2.2484,
+      "firstChunkSeconds": 0.1606,
+      "minimumObservedGaplessStartSeconds": 0.1606,
+      "peak": 0.5841575860977173,
+      "clippedSamples": 0,
+      "rmsDBFS": -25.94,
+      "sha256": "90aa7dfbff32293dfcb2e1a09fb8d69bd10aa6ddaeb0a3150339c35d47cdbbbe",
+      "peakMLXMemoryBytes": 2905670533
+    }
+  ],
+  "settings": {
+    "language": "English",
+    "temperature": 0.8,
+    "top_k": 50,
+    "top_p": 1,
+    "repetition_penalty": 1.05,
+    "max_tokens": 180,
+    "stream": true,
+    "streaming_interval": 0.32,
+    "verbose": false
+  },
+  "loadSeconds": 11.9958,
+  "finishedUTC": "2026-10-30T11:52:54Z",
+  "measurementLimits": "Two takes only: first includes cold inference/compilation, second benefits from warm model. File-only local generation, not browser click-to-speaker or a live concurrency test. VoiceDesign identity may vary between texts; no installed live adapter or quality approval.",
+  "hardware": "Apple M4 Pro, 24 GiB unified memory",
+  "diskGiB": 2.815,
+  "modelLicense": "Apache-2.0 (upstream and converted model cards)",
+  "libraryLicense": "MIT (mlx-audio)",
+  "primarySources": [
+    "https://github.com/QwenLM/Qwen3-TTS",
+    "https://huggingface.co/mlx-community/Qwen3-TTS-12Hz-1.7B-VoiceDesign-4bit",
+    "https://github.com/Blaizzy/mlx-audio/blob/main/mlx_audio/tts/models/qwen3_tts/README.md",
+    "https://blaizzy.github.io/mlx-audio/guides/streaming/"
+  ],
+  "coarseTranscriptionCheck": "local-casting-transcription-check.json; tiny ASR recovered evil D verbatim. Friendly D transcribed I as Oh; listening required to distinguish pronunciation from recognizer error.",
+  "generationOnlyTiming": "No browser transport, speaker or simultaneous animation load in these inference measurements."
+}

@@ -1,0 +1,130 @@
+{
+  "kind": "recorded-night-watch-review",
+  "file": "source/attraction-v2/console/media/night-watch-loop-v1.mp4",
+  "sha256": "a09cfbb06034c8fe4a673aab913ec05a1b86bd459f6444b568bd610b5159dd69",
+  "bytes": 3476727,
+  "sourceCaptureSha256": "180c4955db6a93da68ff09b675868a24cbf334663ecce78512cb0ae1603fbbfa",
+  "durationSeconds": 124.1,
+  "frames": 3723,
+  "fps": 30,
+  "dimensions": [
+    1280,
+    720
+  ],
+  "embeddedAudio": "stereo AAC48k; native dry effects, no music or dialogue",
+  "audioSeconds": 124.11733333333333,
+  "audioPeak": 0.2209034562110901,
+  "clippedSamples": 0,
+  "blackBoundaries": [
+    {
+      "at": 0.1,
+      "rgbPeak": 0
+    },
+    {
+      "at": 0.5,
+      "rgbPeak": 0
+    },
+    {
+      "at": 123.35,
+      "rgbPeak": 0
+    },
+    {
+      "at": 124.0,
+      "rgbPeak": 0
+    }
+  ],
+  "maximumCaptureFrameGapSeconds": 1.04,
+  "sourceCapturedFrames": 3422,
+  "cadence": {
+    "eyes": {
+      "capturedFrames": 1010,
+      "meanCapturedFPS": 29.976552993203338,
+      "p95FrameGap": 0.04699999999999971,
+      "maximumFrameGap": 0.04899999999999949
+    },
+    "spider": {
+      "capturedFrames": 749,
+      "meanCapturedFPS": 28.91925389097255,
+      "p95FrameGap": 0.047000000000011255,
+      "maximumFrameGap": 0.0799999999999983
+    },
+    "apparitions": {
+      "capturedFrames": 1185,
+      "meanCapturedFPS": 25.81665599142411,
+      "p95FrameGap": 0.046999999999997044,
+      "maximumFrameGap": 0.07900000000000773
+    }
+  },
+  "audioEventAlignment": {
+    "scope": "Decoded AAC vs100ms sampled native effect counter;10ms onset windows. Not human mix approval.",
+    "regions": [
+      {
+        "start": 1.21,
+        "end": 1.71,
+        "peak": 0.0864587351679802
+      },
+      {
+        "start": 2.85,
+        "end": 3.34,
+        "peak": 0.08837424963712692
+      },
+      {
+        "start": 14.12,
+        "end": 14.72,
+        "peak": 0.09942106902599335
+      },
+      {
+        "start": 20.16,
+        "end": 20.67,
+        "peak": 0.0694471225142479
+      },
+      {
+        "start": 43.94,
+        "end": 45.09,
+        "peak": 0.15390628576278687
+      },
+      {
+        "start": 55.71,
+        "end": 56.32,
+        "peak": 0.09090165793895721
+      },
+      {
+        "start": 60.04,
+        "end": 61.19,
+        "peak": 0.15822964906692505
+      },
+      {
+        "start": 74.67,
+        "end": 75.28,
+        "peak": 0.12166005373001099
+      },
+      {
+        "start": 84.07,
+        "end": 85.16,
+        "peak": 0.12608888745307922
+      },
+      {
+        "start": 93.99,
+        "end": 95.17,
+        "peak": 0.11923778802156448
+      },
+      {
+        "start": 104.08,
+        "end": 105.17,
+        "peak": 0.10872264951467514
+      },
+      {
+        "start": 112.08,
+        "end": 113.09,
+        "peak": 0.2209034562110901
+      }
+    ],
+    "maximumOnsetOffsetSeconds": 0.09089999999850562,
+    "gestures": 12
+  },
+  "generationCredits": 0,
+  "humanArtAndMixApproval": false,
+  "physicalProjection": false,
+  "loopBoundaryTreatment": "Literal black for initial0.8s and final3s inside recorded empty holds removes low-level codec residue (RGBpeak9initial/2final). No performance is trimmed.",
+  "scope": "One encoded continuous movie of the native browser scene with embedded audio. Reuses current painted footage/raster spider. Not the proposed actor-led signature story; not a new Runway performance."
+}

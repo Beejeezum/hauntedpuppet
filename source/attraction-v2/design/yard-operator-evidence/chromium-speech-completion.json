@@ -1,0 +1,48 @@
+{
+  "engine": "chromium",
+  "scope": "native AudioContext, mocked provider, no paid calls",
+  "completionEvents": [
+    {
+      "id": 1,
+      "error": false,
+      "cancelled": false
+    },
+    {
+      "id": 2,
+      "error": true,
+      "cancelled": true
+    },
+    {
+      "id": 3,
+      "error": true,
+      "cancelled": true
+    },
+    {
+      "id": 4,
+      "error": true,
+      "cancelled": true
+    },
+    {
+      "id": 5,
+      "error": true,
+      "cancelled": false
+    },
+    {
+      "id": 6,
+      "error": true,
+      "cancelled": false
+    },
+    {
+      "id": 7,
+      "error": false,
+      "cancelled": false
+    },
+    {
+      "id": 8,
+      "error": true,
+      "cancelled": true
+    }
+  ],
+  "mockRequests": 5,
+  "errors": []
+}
