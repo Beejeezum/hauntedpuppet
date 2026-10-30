@@ -9,6 +9,7 @@ process.env.HAUNT_TONIGHT_ROOT='dist';
   window.__mediaDiagnostics=[];
   function wrap(prototype,name){const original=prototype?.[name];if(typeof original!=='function')return;prototype[name]=function(...args){try{const result=original.apply(this,args);window.__mediaDiagnostics.push({operation:name,ok:true});return result;}catch(error){window.__mediaDiagnostics.push({operation:name,error:error.name+': '+error.message});throw error;}};}
   wrap(window.MediaSource?.prototype,'addSourceBuffer');wrap(window.SourceBuffer?.prototype,'appendBuffer');
+  const play=HTMLMediaElement.prototype.play;HTMLMediaElement.prototype.play=function(...args){return play.apply(this,args).catch(error=>{window.__mediaDiagnostics.push({operation:'play-rejected',id:this.id,readyState:this.readyState,networkState:this.networkState,mediaError:this.error?{code:this.error.code,message:this.error.message}:null,error:error.name+': '+error.message});throw error;});};
   document.addEventListener('error',event=>{if(event.target instanceof HTMLMediaElement)window.__mediaDiagnostics.push({operation:'media-error',code:event.target.error?.code,message:event.target.error?.message});},true);
  });
  page.on('pageerror',e=>errors.push(e.message));context.on('request',r=>{if(new URL(r.url()).pathname.startsWith('/api/'))api.push(r.url());});page.on('response',r=>{if(r.status()>=400)bad.push(r.url()+' '+r.status());});

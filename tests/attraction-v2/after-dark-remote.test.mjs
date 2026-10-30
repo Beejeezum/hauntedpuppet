@@ -48,3 +48,10 @@ test('failed preparation cannot be acknowledged as a running scene',async()=>{
  const r=rig();r.remote.start=async()=>false;await assert.rejects(r.remote.remoteCommand('cue','Quiet-Apparitions'),e=>e.cancelled===true);
  assert(!r.state.running);
 });
+
+test('recovery is visible to the silent phone and omits the failed scene',()=>{
+ const r=rig();r.state.recovering=true;r.state.available.apparitions=false;
+ assert.match(r.remote.remoteState().state.status,/dark pause/);
+ assert(!r.remote.remoteState().cues.includes('Quiet-Apparitions'));
+ assert.equal(r.remote.remoteState().state.volume,0);
+});

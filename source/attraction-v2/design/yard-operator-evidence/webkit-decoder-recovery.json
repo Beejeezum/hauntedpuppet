@@ -1,0 +1,13 @@
+{
+  "engine": "webkit",
+  "scope": "Native films/eyes/spider with synthetic play rejection and test-only first-scene ordering; not a repair of the Linux decoder",
+  "ghostDisabled": true,
+  "nativeStallIsolation": true,
+  "blackHold": true,
+  "remainingNightWatch": true,
+  "manualTakeover": true,
+  "stopCancelsRecovery": true,
+  "allUnavailableStops": true,
+  "silentProjector": true,
+  "errors": []
+}

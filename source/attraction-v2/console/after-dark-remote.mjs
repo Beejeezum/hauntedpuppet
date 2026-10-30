@@ -8,7 +8,7 @@ export class AfterDarkRemote {
   remoteState(){
     const s=this.inspect(),cues=Object.entries(programs).filter(([,p])=>s.available[p]).map(([cue])=>cue);
     if(cues.length)cues.push('Night-Watch');
-    return {state:{workspace:'films',loop:'after-dark',blackout:!s.running,status:s.loading?'Preparing the next scene':s.nightWatch.running?'Night watch is running':s.running?({'eyes':'Watching eyes','spider':'Spider on silk','apparitions':'Quiet apparitions'}[s.program]):'After dark is stopped',volume:0},cues};
+    return {state:{workspace:'films',loop:'after-dark',blackout:!s.running,status:s.recovering?'A dark pause before the remaining scenes':s.loading?'Preparing the next scene':s.nightWatch.running?'Night watch is running':s.running?({'eyes':'Watching eyes','spider':'Spider on silk','apparitions':'Quiet apparitions'}[s.program]):'After dark is stopped',volume:0},cues};
   }
   async remoteCommand(command,value){
     if(this.disposed)throw cancelled();

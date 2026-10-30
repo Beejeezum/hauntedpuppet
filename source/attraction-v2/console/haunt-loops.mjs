@@ -12,6 +12,7 @@ import {mountFilmOutput} from '../../wisp-performance-reference/runway-pilots/wi
 import {PICTURE_ONLY, mountPreviewNotice} from './yard-environment.mjs';
 mountPreviewNotice();
 const $=id=>document.getElementById(id),canvas=$('stage'),film=$('film'),scene=new YardScene(canvas),eyes=new WatchfulEyes(),spider=new SilkSpider();
+let recovery=null;
 let player,output,remote,phoneMounted=false,phoneMounting=false,program='eyes',running=false,loading=false,disposed=false,epoch=0,frame,started=0,lastBeat=-1,switchSerial=0;
 const sound=new AfterDarkSound({onChange:syncSound});
 function syncSound(){const s=sound.inspect();$('sound').textContent=s.loading?'Preparing effects…':s.enabled?'Effects on':'Effects off';$('sound').setAttribute('aria-pressed',String(s.enabled));$('sound').disabled=!running||s.loading;$('sound-level').disabled=!s.enabled;$('sound-status').textContent=s.error||'';}
@@ -20,16 +21,27 @@ let placement=scene.settings;try{placement=validateScene(JSON.parse(localStorage
 function status(text){if($('loop-status').textContent!==text)$('loop-status').textContent=text;}
 function playingStatus(){return program==='eyes'?'Pairs of eyes look out, disappear, then return somewhere else.':program==='spider'?'A spider lowers on silk, tests the air, then climbs into the dark.':'Wisp drifts through the yard, slips away, then returns.';}
 function selectProgram(next){program=next;document.querySelectorAll('[data-program]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.program===next));$('start').disabled=!available[program];}
-function stop({preserveSequence=false,preserveEffects=false}={}){sound.clear({disable:!preserveEffects});if(!preserveSequence){night.stop();$('night-status').textContent='Night watch is stopped. Start to begin again with the eyes.';}$('cycle').disabled=false;epoch++;switchSerial++;fade.reset(0,performance.now()/1000);running=loading=false;player?.stop();eyes.stop();spider.stop();scene.stop();output?.blackout();output?.releasePictures();$('start').disabled=!available[program];$('start').textContent=$('cycle').checked?'Start Night watch':'Start loop';status('Blackout. Both output windows are clear.');syncSound();}
+function stop({preserveSequence=false,preserveEffects=false}={}){recovery=null;sound.clear({disable:!preserveEffects});if(!preserveSequence){night.stop();$('night-status').textContent='Night watch is stopped. Start to begin again with the eyes.';}$('cycle').disabled=false;epoch++;switchSerial++;fade.reset(0,performance.now()/1000);running=loading=false;player?.stop();eyes.stop();spider.stop();scene.stop();output?.blackout();output?.releasePictures();$('start').disabled=!available[program];$('start').textContent=$('cycle').checked?'Start Night watch':'Start loop';status('Blackout. Both output windows are clear.');syncSound();}
+// A failed film must not keep retrying or take the independent painted scenes down.
+// Recovery advances only from black, and shares Stop's epoch with projector callbacks.
+function quarantineGhost(detail){
+ const resume=night.running;stop({preserveEffects:true});available.apparitions=false;
+ failures.apparitions=detail||'Ghost playback stopped';
+ const button=document.querySelector('[data-program=apparitions]');button.disabled=true;button.title='Ghost playback stopped. Reload this page to retry Wisp.';
+ const next=Object.keys(available).find(name=>available[name]);
+ if(next)selectProgram(next);else{$('start').disabled=true;$('cycle').checked=false;$('cycle').disabled=true;}
+ if(resume&&next){recovery={at:performance.now()/1000+5,epoch};$('cycle').checked=true;$('cycle').disabled=true;$('start').textContent='Restart remaining scenes';$('night-status').hidden=false;$('night-status').textContent='A dark pause before the remaining scenes.';}
+ status(resume&&next?'Ghost playback stopped. Night watch will continue with the other scenes after a dark pause. Reload this page to retry Wisp.':next?'Ghost playback stopped. The other scenes are ready. Reload this page to retry Wisp.':'No scene is available. Reload this page to retry the artwork.');
+}
 async function start({sequenceHop=false}={}){stop({preserveSequence:sequenceHop,preserveEffects:true});if($('cycle').checked&&!sequenceHop){try{selectProgram(night.start(available));}catch(error){status(error.message);return;}}const own=epoch;loading=true;$('cycle').disabled=true;$('start').disabled=true;status('Preparing the loop…');
  try{if(!available[program])throw Error('This loop is unavailable. Choose another program.');scene.set({...placement,ghost:{...placement.ghost,visible:program==='apparitions'},eyes:{...placement.eyes,visible:false}});
   if(program==='apparitions'){if(!await player.start())throw Error(player.error||'Ghost film could not start');player.plan.setMode('host');}
   if(own!==epoch)return false;started=performance.now()/1000;lastBeat=-1;if(night.running)night.enter(started);fade.reset(0,started);fade.to(1,started);if(program==='eyes')eyes.start(started);if(program==='spider')spider.start(started);running=true;loading=false;$('start').disabled=false;$('start').textContent=night.running?'Restart Night watch':'Restart loop';status(playingStatus());syncSound();return true;
- }catch(e){if(own===epoch){stop();status(e.message);}return false;}
+ }catch(e){if(own===epoch){if(program==='apparitions')quarantineGhost(e.message);else{stop();status(e.message);}}return false;}
 }
-function paint(){if(!running||disposed)return;const t=performance.now()/1000;
+function paint(){if(disposed)return;const t=performance.now()/1000;if(recovery&&t>=recovery.at){const pending=recovery;recovery=null;if(pending.epoch===epoch)void start();}if(!running)return;
  if(program==='apparitions'){
-  if(!player.running){stop();status(player.error||'Playback stopped');return;}
+  if(!player.running){quarantineGhost(player.error||'Playback stopped');return;}
   const beat=night.running?nightGhostAction(t-started):Math.floor((t-started)/7)%8;
   if(beat!==lastBeat){lastBeat=beat;const action=night.running?beat:['home','left','far','vanish',null,'appear','right','home'][beat];if(action)scene.motion.request(action,t);}
  }
@@ -88,7 +100,7 @@ try{
   selectProgram(Object.keys(available).find(name=>available[name])||'eyes');
   output=mountFilmOutput(canvas,()=>({running,black:!running,disposed,metrics:{draws:scene.frames}}),{beforePaint:paint,windowName:'wisp-stagehand-rehearsal-output'});
   const button=canvas.nextElementSibling;button.id='projector';button.textContent='Open projector';$('output-tools').append(button);
-  const inspect=()=>({running,loading,program,sound:sound.inspect(),nightWatch:night.inspect(),opacity:fade.value,available:{...available},failures:{...failures},eyes:eyes.inspect(),spider:spider.inspect(),scene:scene.inspect(),player:player?.inspect()||null});
+  const inspect=()=>({running,loading,program,recovering:!!recovery,sound:sound.inspect(),nightWatch:night.inspect(),opacity:fade.value,available:{...available},failures:{...failures},eyes:eyes.inspect(),spider:spider.inspect(),scene:scene.inspect(),player:player?.inspect()||null});
   remote=new AfterDarkRemote({inspect,select:chooseProgram,start,stop,nightWatch:runNightWatch});
   $('phone-open').disabled=PICTURE_ONLY;$('phone-open').hidden=PICTURE_ONLY;
   window.WispAfterDark=Object.freeze({inspect});

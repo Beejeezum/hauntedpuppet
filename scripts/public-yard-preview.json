@@ -7,9 +7,9 @@
     {
       "source": "source/attraction-v2/console/after-dark-remote.mjs",
       "destination": "after-dark-remote.mjs",
-      "bytes": 1681,
-      "sha256": "96a7b3670e84a6d4acd128196edec8767b60c1d0d0b7c9759ea37a4a83ae31f3",
-      "publishedSha256": "96a7b3670e84a6d4acd128196edec8767b60c1d0d0b7c9759ea37a4a83ae31f3"
+      "bytes": 1737,
+      "sha256": "164f988081139b5b46c2e45a6cca8fd0d6e9051effd95cb23e718553f8f7999b",
+      "publishedSha256": "164f988081139b5b46c2e45a6cca8fd0d6e9051effd95cb23e718553f8f7999b"
     },
     {
       "source": "source/attraction-v2/console/after-dark-sound.mjs",
@@ -49,8 +49,8 @@
     {
       "source": "source/attraction-v2/console/haunt-loops.mjs",
       "destination": "haunt-loops.mjs",
-      "bytes": 11321,
-      "sha256": "ea659b3c461afe60f107d20b1f7fcd4e217d6c07e76788bc4460bfc8d8c14534",
+      "bytes": 12811,
+      "sha256": "196aefa9329b87fee63a39a27aa777a0884fd746eb0cddc21f29a2376420713c",
       "rewrites": [
         {
           "from": "'../../wisp-performance-reference/runway-pilots/wisp-film-output.js'",
@@ -61,7 +61,7 @@
           "to": "'/assets/phone-bridge.js'"
         }
       ],
-      "publishedSha256": "80cdb219ad90a90276a2adcc88abfe93e52564deb1052f822beb76cf2071d8a9"
+      "publishedSha256": "9d218280573c35c687c011be644980f9180c66100e487e63a64f240982fa3e92"
     },
     {
       "source": "source/attraction-v2/console/index.html",

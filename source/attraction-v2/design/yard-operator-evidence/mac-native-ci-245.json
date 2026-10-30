@@ -1,0 +1,17 @@
+{
+  "run": 41058642090,
+  "job": 124072454538,
+  "commit": "500d32700971ea33a6ef6918eb2be50e19e85ba6",
+  "status": "success",
+  "scope": "GitHub-hosted macOS native browser CI; not physical projection, real phone or human quality approval",
+  "checks": [
+    "built yard picture/saved audio/effects/silent popup",
+    "native catalog bridge",
+    "film soundtrack controls/actual decode",
+    "rehearsal autoplay",
+    "legacy composed output/effect layers",
+    "actual Chromium native future-audio cancellation",
+    "synthetic neural bridge with actual worklet/socket and320/390layout"
+  ],
+  "remaining": "Linux WebKit media failures remain unwaived"
+}

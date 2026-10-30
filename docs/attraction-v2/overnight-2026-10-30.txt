@@ -470,3 +470,29 @@ LC stereo48k; no evidence for changing picture assets/codecs on speculation.
 
 Next: push verified tree snapshot to PR13, inspect new Linux MSE diagnostics and
 Mac results. No production merge, new generation, paid calls or8902restart.
+
+
+HEARTBEAT13:06 — NATIVE MAC EVIDENCE AND UNATTENDED FAILURE CONTAINMENT
+CI245 Mac-native-media passed every targeted check, including yard/native bridges,
+soundtrack, autoplay, layered output, actual future-audio cancellation and synthetic
+neural bridge. All three general browser shards now pass after checksum repair.
+Eight jobs passed. LinuxyardWebKit still fails; silent Pulse sink did not repair it.
+Diagnostics show addSourceBuffer and appendBuffer succeed before play becomes
+unsupported. Legacy Linuxnative video/audio-clock failures remain. No changedcodec
+or artwork speculation, no waiver or production promotion.
+
+Implemented useful containment: a failed Wisp decoder disables only that scene
+until reload. During Night watch, a five-second black hold leads into remaining
+eyes/spider scenes. Manual scenes remain stopped; no repeated automatic attempts.
+Stop, manual takeover, page disposal and shared projector callbacks use the same
+cancellation epoch. No available scenes leaves black with Start/cycle disabled.
+Phone advertises remaining scenes and a plain recovery status, never audio.
+
+Chromium/MacWebKit fault regressions pass: native scene playback plus explicit
+synthetic first-ghost play rejection, recovery/black pixels, manual takeover, Stop
+during the hold, all-scenes unavailable and real native-film pause/stall detection.
+Fault test reorders first scene only to avoid waiting a whole story for the injected
+failure; separate normal-order124.1s native Night watch cycle also PASSES.
+61modelchecks+11publicationguards pass; publicbuild passes. New source reports and
+MacCI evidence saved. This is fault isolation, NOT a Linux decoder fix.
+No paid generation/provider calls or8902restart. Continue until16:53UTC.

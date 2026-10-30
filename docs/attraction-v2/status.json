@@ -252,7 +252,7 @@
     "soak": "PASS:7200.245seconds normal-speed native Wisp playback, silent projector, bounded buffer/cache. Harness includes Host actions; not pure Auto or physical projection.",
     "productionDeploy": false,
     "physicalProjection": "unavailable / not tested",
-    "latestCheckpointUTC": "2026-10-30T12:51:56.961981+00:00",
+    "latestCheckpointUTC": "2026-10-30T13:15:41.091049+00:00",
     "stabilityRefinements": [
       "Scene changes reverse opacity continuously when cancelled",
       "Missing eyes or ghost media disables only that program",
@@ -267,7 +267,7 @@
       "emptyHoldPeakAfter": 0,
       "scope": "native browser canvas, not physical projection"
     },
-    "modelTests": 60,
+    "modelTests": 61,
     "phoneController": {
       "status": "Implemented and real local backend upgraded",
       "localURL": "http://127.0.0.1:8902/source/attraction-v2/console/",
@@ -422,7 +422,7 @@
       "status": "Netlify draft PR13 deployed; actual hosted Chromium/Mac WebKit verified; broader Linux CI not yet green; not production",
       "path": "/assets/wisp-yard/",
       "files": 67,
-      "bytes": 3670344,
+      "bytes": 3672128,
       "releaseApproved": false,
       "capabilities": "native Wisp, spatial motion, lettering, mapping, three afterdark programs, Nightwatch, dry effects, saved auditions and silent popup",
       "excludedCapabilities": "new speech, private connect and phone pairing disabled; local8902 keeps these features",
@@ -435,7 +435,14 @@
       "deployId": "6ae48a35e1fa39eecb2c02dc",
       "hostedBytes": "63 non-HTML files exact SHA; four HTML exact normalized DOM allowing only Netlify preview drawer and pretty-URL href changes",
       "legacySourceManifest": "Old shared projector helper checksum refreshed; actual whole-character timed speech regression passes; source and public manifests now agree",
-      "ci": "Initial Linux CI finished: seven jobs passed, source-manifest shard failure repaired locally; yard WebKit startup and legacy native-film failures remain under investigation. Added clocked Linux yard sink, operation tracing and an additional Mac native-media job; no gates removed. Narrow legacy voice panel containment fixed; new run pending."
+      "ci": "CI245 Mac-native-media and eight jobs passed; Linux yard WebKit and legacy showdesk still fail native playback/audio-clock checks. Stale-manifest shard fixed. No gates removed and no production merge."
+    },
+    "decoderRecovery": {
+      "status": "implemented and locally tested; public preview followup pending",
+      "behavior": "A failed Wisp decoder is disabled until reload. Night watch holds black for five seconds and continues eyes/spider; Stop or manual takeover cancels recovery. With no remaining scene, playback stays black and Start is disabled.",
+      "tests": "Chromium and Mac WebKit native scene tests with explicit synthetic play rejection; real native ghost pause triggers stall isolation. Normal124.1second Night-watch cycle also passed.",
+      "limitation": "Fault isolation, not a fix or waiver of Linux WebKit decoder failures.",
+      "evidence": "../../source/attraction-v2/design/yard-operator-evidence/"
     }
   }
 }

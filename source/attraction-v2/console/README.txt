@@ -115,3 +115,10 @@ or reversed frames in the installed native Wisp/eyes package. Original painted
 Wisp assets remain intact. The proposed160second actor-led signature master,
 16completed performance families, coherent live mouth animation and physical dress
 rehearsal remain unfinished. Current story plan: docs/attraction-v2/yard-show-script-2026-10-30.txt.
+
+IF A FILM STOPS DURING NIGHT WATCH
+The failed ghost scene becomes unavailable until reload. The stage stays dark
+for five seconds, then the remaining eyes/spider sequence continues. Stop and
+manual scene selection cancel this recovery immediately. If no scene remains,
+the show stays black with Start disabled. This contains a playback failure; it
+does not repair a broken decoder. Reload to retry Wisp, or use Chrome on the laptop.
