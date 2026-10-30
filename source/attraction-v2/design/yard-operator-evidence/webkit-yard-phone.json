@@ -1,0 +1,21 @@
+{
+  "engine": "webkit",
+  "scope": "real loopback HTTP pairing/commands + native media; synthetic PCM; not LAN/physical phone/provider/physical projection",
+  "providerRequests": 2,
+  "errors": [],
+  "tests": [
+    "pair",
+    "bounded yard controls",
+    "silent lettering",
+    "locked character",
+    "native audio completion acknowledgement",
+    "stop during delayed response",
+    "silent projector",
+    "remote restart",
+    "mixed auto",
+    "phone draft preservation",
+    "revoke and disable",
+    "390/320 layout",
+    "axe AA"
+  ]
+}

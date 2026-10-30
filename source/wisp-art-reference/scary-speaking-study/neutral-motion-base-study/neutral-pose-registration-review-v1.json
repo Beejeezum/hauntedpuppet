@@ -1,0 +1,190 @@
+{
+  "status": "source-only landmark-bounded pose and jaw adapter; live/art/voice acceptance incomplete",
+  "sourceSha256": "27ac763bbf5d6349737b751a22abae5adba410872a5fd2d08b4bd483157750eb",
+  "correlationGate": 0.998,
+  "exactIdentityMargin": 0.00015,
+  "ambiguousPoseMaximumLandmarkSpreadPixels": 0.5,
+  "landmarks": "12 observed closed-lip seam points and2 eye material points; candidate optical-flow guides, not artist ground truth or full independent eyelid/gaze rig",
+  "interpretation": "Exact193-frame identity audit still fails and remains rejected. This different pose adapter may accept ambiguous pictures only when every reference within the original margin agrees on all14guidepoints within0.5sourcepixel. It returns representative poseFrame/identityProven/possibleFrames/spread, never a fake exact time. Unknown/incompatible poses keep the current picture unchanged and mouth closed.",
+  "colorExperiment": {
+    "observedChromeVideoFrame": {
+      "format": "I420",
+      "matrix": "smpte170m",
+      "fullRange": false
+    },
+    "sourceFFmpeg": "yuvj420p(pc,bt709/unknown/unknown)",
+    "independentDecoderReference": "Explicit limited-range bt601 RGB reference conversion still fails all193 identity gate:10accepted/183rejected inChrome; no gate lowered or artwork changed. Not proof of a browser decoder root cause."
+  },
+  "results": {
+    "chromium": {
+      "pictures": 193,
+      "accepted": 193,
+      "ambiguous": 76,
+      "maximumCandidateLandmarkSpread": 0.309836927159435,
+      "maximumSelectedPoseErrorAgainstObservedFrame": 0,
+      "incompatibleTieRejected": true,
+      "blankRejected": true,
+      "invalidSourceAndLandmarksRejected": true,
+      "frameOwnership": {
+        "created": 193,
+        "closed": 193,
+        "held": 0,
+        "maxHeld": 1,
+        "published": 193,
+        "duplicates": 0,
+        "unavailable": 0,
+        "discarded": 0,
+        "failures": 0,
+        "rgbaCopies": 0,
+        "canvasCopies": 193,
+        "cpuStagedCopies": 0,
+        "cpuStaging": false,
+        "cpuColorRange": "metadata",
+        "lastFailure": null,
+        "pending": false,
+        "ready": false,
+        "disposed": true,
+        "time": null
+      },
+      "connectedJaw": {
+        "pictures": 193,
+        "sourceBodyAndIrisPixelChecks": "PASS on11selected pictures and any differently indexed representative pose",
+        "unknownHeldClosed": true,
+        "unknownBlankPeak": 0,
+        "invalidOpeningRejected": true,
+        "frameOwnership": {
+          "created": 193,
+          "closed": 193,
+          "held": 0,
+          "maxHeld": 1,
+          "published": 193,
+          "duplicates": 0,
+          "unavailable": 0,
+          "discarded": 0,
+          "failures": 0,
+          "rgbaCopies": 0,
+          "canvasCopies": 193,
+          "cpuStagedCopies": 0,
+          "cpuStaging": false,
+          "cpuColorRange": "metadata",
+          "lastFailure": null,
+          "pending": false,
+          "ready": false,
+          "disposed": true,
+          "time": null
+        },
+        "retired": {
+          "disposed": true,
+          "draws": 194,
+          "heldClosed": 1,
+          "registration": {
+            "calls": 194,
+            "matches": 193,
+            "rejected": 1,
+            "cached": 0,
+            "poseFrame": null,
+            "candidate": null,
+            "disposed": true
+          },
+          "jaw": {
+            "disposed": true,
+            "draws": 193,
+            "resources": 0
+          }
+        },
+        "scope": "193 centered native seeks, synthetic opening0.6, actual shader draw. No realtime speech, human appearance or shared application graphics approval."
+      }
+    },
+    "webkit": {
+      "pictures": 193,
+      "accepted": 193,
+      "ambiguous": 83,
+      "maximumCandidateLandmarkSpread": 0.4785305449047685,
+      "maximumSelectedPoseErrorAgainstObservedFrame": 0.309836927159435,
+      "incompatibleTieRejected": true,
+      "blankRejected": true,
+      "invalidSourceAndLandmarksRejected": true,
+      "frameOwnership": {
+        "created": 193,
+        "closed": 193,
+        "held": 0,
+        "maxHeld": 1,
+        "published": 193,
+        "duplicates": 0,
+        "unavailable": 0,
+        "discarded": 0,
+        "failures": 0,
+        "rgbaCopies": 0,
+        "canvasCopies": 193,
+        "cpuStagedCopies": 0,
+        "cpuStaging": false,
+        "cpuColorRange": "metadata",
+        "lastFailure": null,
+        "pending": false,
+        "ready": false,
+        "disposed": true,
+        "time": null
+      },
+      "connectedJaw": {
+        "pictures": 193,
+        "sourceBodyAndIrisPixelChecks": "PASS on11selected pictures and any differently indexed representative pose",
+        "unknownHeldClosed": true,
+        "unknownBlankPeak": 0,
+        "invalidOpeningRejected": true,
+        "frameOwnership": {
+          "created": 193,
+          "closed": 193,
+          "held": 0,
+          "maxHeld": 1,
+          "published": 193,
+          "duplicates": 0,
+          "unavailable": 0,
+          "discarded": 0,
+          "failures": 0,
+          "rgbaCopies": 0,
+          "canvasCopies": 193,
+          "cpuStagedCopies": 0,
+          "cpuStaging": false,
+          "cpuColorRange": "metadata",
+          "lastFailure": null,
+          "pending": false,
+          "ready": false,
+          "disposed": true,
+          "time": null
+        },
+        "retired": {
+          "disposed": true,
+          "draws": 194,
+          "heldClosed": 1,
+          "registration": {
+            "calls": 194,
+            "matches": 193,
+            "rejected": 1,
+            "cached": 0,
+            "poseFrame": null,
+            "candidate": null,
+            "disposed": true
+          },
+          "jaw": {
+            "disposed": true,
+            "draws": 193,
+            "resources": 0
+          }
+        },
+        "scope": "193 centered native seeks, synthetic opening0.6, actual shader draw. No realtime speech, human appearance or shared application graphics approval."
+      }
+    }
+  },
+  "remaining": [
+    "Human mouth/cheek attachment review",
+    "OO/EE/consonant shapes and phoneme timing",
+    "Continuous playback/seek/stall/phone integration with shared graphics ownership and soak",
+    "Final character voice and real provider latency",
+    "Neutralbody loop/return ports and side views",
+    "Physical projection"
+  ],
+  "sources": [
+    "https://www.w3.org/TR/webcodecs/#videocolorspace",
+    "https://ffmpeg.org/ffmpeg-filters.html#scale"
+  ]
+}

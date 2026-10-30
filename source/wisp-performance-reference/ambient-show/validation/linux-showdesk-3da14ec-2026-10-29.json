@@ -1,0 +1,46 @@
+{
+  "run": 40967608634,
+  "commit": "3da14eccab2a62df772e8a7e1d49281845d3db69",
+  "status": "FAILURE: showdesk; all other7requiredjobs passed",
+  "evidence": "https://github.com/Beejeezum/hauntedpuppet/actions/runs/40967608634",
+  "autoplayFailure": {
+    "cue": "cute",
+    "phase": "playing",
+    "queued": null,
+    "compositionSuspended": true,
+    "visibleMs": 5891,
+    "media": [
+      {
+        "muted": true,
+        "paused": false,
+        "cue": "cute",
+        "currentTime": 0.011667763,
+        "loop": true
+      },
+      {
+        "muted": true,
+        "paused": true,
+        "cue": null,
+        "currentTime": 0,
+        "loop": false
+      }
+    ],
+    "trace": [
+      {
+        "id": "cute",
+        "mode": "cute"
+      }
+    ],
+    "observation": "Actual cute video clock stopped at0.011667763 after loop wrap while paused=false and loop=true; automatic visible-time budget paused at5891ms, with no cue queued. This is a native media-clock stall, not evidence of a skipped queue request. Underlying decoder cause not established.",
+    "next": "Isolate native-loop restart/seek lifecycle with the exact source and bounded cancellation; do not advance invisible show time or increase test deadlines to hide stall."
+  },
+  "otherFailures": [
+    "WebKit film-audio enable readiness timeout",
+    "WebKit catalog bridge readiness timeout",
+    "WebKit composed-output wait timeout",
+    "WebKit approved-catalog wait timeout",
+    "Native future-source ended event did not arrive promptly after cancellation",
+    "Legacy neural-voice browser assertion"
+  ],
+  "scope": "Downloaded actual CI failure log, screenshot and playback-state history; no physical projection/provider acceptance."
+}

@@ -1,0 +1,30 @@
+{
+  "status": "awaiting visual selection; mockups only, not implemented interfaces",
+  "method": "built-in image generation",
+  "requestedViewport": [
+    390,
+    844
+  ],
+  "displayOrder": [
+    {
+      "displayedOption": 1,
+      "file": "phone-concept-1.png",
+      "sha256": "8089649d448d6db4d690dd9f3717b817283e727c37ed1d0f544bca6cb7b85ad4"
+    },
+    {
+      "displayedOption": 2,
+      "file": "phone-concept-2.png",
+      "sha256": "22cc8073bb2cd78daa27c621ec971f89b52639877a4206c7ced63dacc44c1dc6"
+    },
+    {
+      "displayedOption": 3,
+      "file": "phone-concept-3.png",
+      "sha256": "bbef6520bc76152c886a30a2209ec4303dc5b5284b1a65f6512eeef9aadbf2d1"
+    }
+  ],
+  "references": [
+    "../../wisp-art-reference/approved-friendly-fog.png",
+    "../../../work/attraction-v2/current-console.png"
+  ],
+  "scope": "Existing painted identity used in preview. All scene/voice controls are design proposals; no new animation, working lipsync or projection readiness inferred."
+}

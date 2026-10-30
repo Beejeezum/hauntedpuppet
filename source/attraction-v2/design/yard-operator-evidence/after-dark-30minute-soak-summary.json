@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "startedAt": "2026-10-30T06:34:45.186Z",
+  "finishedAt": "2026-10-30T07:04:45.435Z",
+  "elapsedSeconds": 1800.03,
+  "samples": 120,
+  "scope": "normal-speed silent browser, three independent programs; no actual phone/projection/voice test",
+  "loadedCheckpoint": "30e7e80",
+  "programs": [
+    "apparitions",
+    "eyes",
+    "spider"
+  ],
+  "nativeMediaCount": [
+    4
+  ],
+  "allMediaMuted": true,
+  "silentOutput": true,
+  "errors": [],
+  "reportSHA256": "c15d7cf41f53e658add0abb6d46e5e36feda90341742ff15040eaa2180d0a853",
+  "rawLocalReport": "work/yard-operator/after-dark-soak/report.json",
+  "includesNewNightWatchSequencer": false,
+  "physicalProjection": false,
+  "humanArtAcceptance": false
+}

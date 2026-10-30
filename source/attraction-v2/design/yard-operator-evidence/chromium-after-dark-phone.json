@@ -1,0 +1,23 @@
+{
+  "engine": "chromium",
+  "scope": "real isolated loopback phone transport and native/raster browser render; no LAN/physical phone/projector/provider",
+  "errors": [],
+  "providerRequests": 0,
+  "tests": [
+    "four available cues",
+    "start from black",
+    "silent popup",
+    "native ghost",
+    "Night watch",
+    "manual takeover",
+    "Stop during transition",
+    "blackout/restart",
+    "phone 390/320 layout",
+    "laptop pairing 320 layout",
+    "axe AA",
+    "After dark to Stagehand to After dark without re-pairing",
+    "explicit ownership only",
+    "disable",
+    "no audio/capture"
+  ]
+}

@@ -1,0 +1,966 @@
+{
+  "engine": "webkit",
+  "scope": "actual browser raster comparison; same source identity/motion/alpha, no physical projection or human art approval",
+  "errors": [],
+  "lights": [
+    0,
+    0.1,
+    0.16,
+    0.24
+  ],
+  "problems": [],
+  "snapshots": [
+    {
+      "t": 3.5,
+      "phase": "emerge",
+      "summaries": [
+        {
+          "light": 0,
+          "litPixels": 0,
+          "opaqueMean": 0,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 523.7885102392112,
+            "maxX": 767.2974361677543,
+            "minY": 73.99215303714574,
+            "maxY": 353.5875238669699
+          }
+        },
+        {
+          "light": 0.1,
+          "litPixels": 24113,
+          "opaqueMean": 0,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 523.7885102392112,
+            "maxX": 767.2974361677543,
+            "minY": 73.99215303714574,
+            "maxY": 353.5875238669699
+          }
+        },
+        {
+          "light": 0.16,
+          "litPixels": 24587,
+          "opaqueMean": 0,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 523.7885102392112,
+            "maxX": 767.2974361677543,
+            "minY": 73.99215303714574,
+            "maxY": 353.5875238669699
+          }
+        },
+        {
+          "light": 0.24,
+          "litPixels": 25045,
+          "opaqueMean": 0,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 523.7885102392112,
+            "maxX": 767.2974361677543,
+            "minY": 73.99215303714574,
+            "maxY": 353.5875238669699
+          }
+        }
+      ]
+    },
+    {
+      "t": 6,
+      "phase": "descend",
+      "summaries": [
+        {
+          "light": 0,
+          "litPixels": 0,
+          "opaqueMean": 65.61677830614784,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 522.561848161921,
+            "maxX": 765.8248667870953,
+            "minY": 140.64543945391188,
+            "maxY": 419.62271565481285
+          }
+        },
+        {
+          "light": 0.1,
+          "litPixels": 24552,
+          "opaqueMean": 82.64887252646108,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 522.561848161921,
+            "maxX": 765.8248667870953,
+            "minY": 140.64543945391188,
+            "maxY": 419.62271565481285
+          }
+        },
+        {
+          "light": 0.16,
+          "litPixels": 25135,
+          "opaqueMean": 92.84788055427737,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 522.561848161921,
+            "maxX": 765.8248667870953,
+            "minY": 140.64543945391188,
+            "maxY": 419.62271565481285
+          }
+        },
+        {
+          "light": 0.24,
+          "litPixels": 25709,
+          "opaqueMean": 106.47532852687016,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 522.561848161921,
+            "maxX": 765.8248667870953,
+            "minY": 140.64543945391188,
+            "maxY": 419.62271565481285
+          }
+        }
+      ]
+    },
+    {
+      "t": 11,
+      "phase": "watch",
+      "summaries": [
+        {
+          "light": 0,
+          "litPixels": 0,
+          "opaqueMean": 65.70023759465334,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 526.5164486162807,
+            "maxX": 773.5505382093887,
+            "minY": 243.3572691152649,
+            "maxY": 522.2787877401231
+          }
+        },
+        {
+          "light": 0.1,
+          "litPixels": 24485,
+          "opaqueMean": 82.71864690699628,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 526.5164486162807,
+            "maxX": 773.5505382093887,
+            "minY": 243.3572691152649,
+            "maxY": 522.2787877401231
+          }
+        },
+        {
+          "light": 0.16,
+          "litPixels": 25083,
+          "opaqueMean": 92.91489325333805,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 526.5164486162807,
+            "maxX": 773.5505382093887,
+            "minY": 243.3572691152649,
+            "maxY": 522.2787877401231
+          }
+        },
+        {
+          "light": 0.24,
+          "litPixels": 25652,
+          "opaqueMean": 106.53903218638285,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 526.5164486162807,
+            "maxX": 773.5505382093887,
+            "minY": 243.3572691152649,
+            "maxY": 522.2787877401231
+          }
+        }
+      ]
+    },
+    {
+      "t": 17,
+      "phase": "reach",
+      "summaries": [
+        {
+          "light": 0,
+          "litPixels": 0,
+          "opaqueMean": 65.69783211753837,
+          "whitePixels": 1,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 508.33610905385365,
+            "maxX": 787.9235075430507,
+            "minY": 244.09618442420742,
+            "maxY": 508.90147232063487
+          }
+        },
+        {
+          "light": 0.1,
+          "litPixels": 24234,
+          "opaqueMean": 82.7141340456869,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 508.33610905385365,
+            "maxX": 787.9235075430507,
+            "minY": 244.09618442420742,
+            "maxY": 508.90147232063487
+          }
+        },
+        {
+          "light": 0.16,
+          "litPixels": 24763,
+          "opaqueMean": 92.91256549881878,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 508.33610905385365,
+            "maxX": 787.9235075430507,
+            "minY": 244.09618442420742,
+            "maxY": 508.90147232063487
+          }
+        },
+        {
+          "light": 0.24,
+          "litPixels": 25370,
+          "opaqueMean": 106.54188499606177,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 508.33610905385365,
+            "maxX": 787.9235075430507,
+            "minY": 244.09618442420742,
+            "maxY": 508.90147232063487
+          }
+        }
+      ]
+    },
+    {
+      "t": 19.4,
+      "phase": "recoil",
+      "summaries": [
+        {
+          "light": 0,
+          "litPixels": 0,
+          "opaqueMean": 65.6024174659352,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 522.5588215389951,
+            "maxX": 772.5576144854064,
+            "minY": 225.7270871670084,
+            "maxY": 503.09305646520636
+          }
+        },
+        {
+          "light": 0.1,
+          "litPixels": 24359,
+          "opaqueMean": 82.62900275256025,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 522.5588215389951,
+            "maxX": 772.5576144854064,
+            "minY": 225.7270871670084,
+            "maxY": 503.09305646520636
+          }
+        },
+        {
+          "light": 0.16,
+          "litPixels": 24960,
+          "opaqueMean": 92.8331025285944,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 522.5588215389951,
+            "maxX": 772.5576144854064,
+            "minY": 225.7270871670084,
+            "maxY": 503.09305646520636
+          }
+        },
+        {
+          "light": 0.24,
+          "litPixels": 25520,
+          "opaqueMean": 106.46224205433272,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 522.5588215389951,
+            "maxX": 772.5576144854064,
+            "minY": 225.7270871670084,
+            "maxY": 503.09305646520636
+          }
+        }
+      ]
+    },
+    {
+      "t": 22,
+      "phase": "climb",
+      "summaries": [
+        {
+          "light": 0,
+          "litPixels": 0,
+          "opaqueMean": 65.60692422449746,
+          "whitePixels": 1,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 519.1780810400273,
+            "maxX": 771.5096274737539,
+            "minY": 190.36074155341458,
+            "maxY": 475.85068535407356
+          }
+        },
+        {
+          "light": 0.1,
+          "litPixels": 24185,
+          "opaqueMean": 82.62806728741195,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 519.1780810400273,
+            "maxX": 771.5096274737539,
+            "minY": 190.36074155341458,
+            "maxY": 475.85068535407356
+          }
+        },
+        {
+          "light": 0.16,
+          "litPixels": 24768,
+          "opaqueMean": 92.82869489171256,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 519.1780810400273,
+            "maxX": 771.5096274737539,
+            "minY": 190.36074155341458,
+            "maxY": 475.85068535407356
+          }
+        },
+        {
+          "light": 0.24,
+          "litPixels": 25334,
+          "opaqueMean": 106.46331258466675,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 519.1780810400273,
+            "maxX": 771.5096274737539,
+            "minY": 190.36074155341458,
+            "maxY": 475.85068535407356
+          }
+        }
+      ]
+    },
+    {
+      "t": 25.7,
+      "phase": "leave",
+      "summaries": [
+        {
+          "light": 0,
+          "litPixels": 0,
+          "opaqueMean": 0,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 519.2230156068574,
+            "maxX": 766.331306478536,
+            "minY": 74.05387269211735,
+            "maxY": 352.8360194499409
+          }
+        },
+        {
+          "light": 0.1,
+          "litPixels": 23325,
+          "opaqueMean": 0,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 519.2230156068574,
+            "maxX": 766.331306478536,
+            "minY": 74.05387269211735,
+            "maxY": 352.8360194499409
+          }
+        },
+        {
+          "light": 0.16,
+          "litPixels": 23771,
+          "opaqueMean": 0,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 519.2230156068574,
+            "maxX": 766.331306478536,
+            "minY": 74.05387269211735,
+            "maxY": 352.8360194499409
+          }
+        },
+        {
+          "light": 0.24,
+          "litPixels": 24067,
+          "opaqueMean": 0,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 519.2230156068574,
+            "maxX": 766.331306478536,
+            "minY": 74.05387269211735,
+            "maxY": 352.8360194499409
+          }
+        }
+      ]
+    },
+    {
+      "t": 28,
+      "phase": "empty",
+      "summaries": [
+        {
+          "light": 0,
+          "litPixels": 0,
+          "opaqueMean": 0,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": null
+        },
+        {
+          "light": 0.1,
+          "litPixels": 0,
+          "opaqueMean": 0,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": null
+        },
+        {
+          "light": 0.16,
+          "litPixels": 0,
+          "opaqueMean": 0,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": null
+        },
+        {
+          "light": 0.24,
+          "litPixels": 0,
+          "opaqueMean": 0,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": null
+        }
+      ]
+    },
+    {
+      "t": 39.5,
+      "phase": "emerge",
+      "summaries": [
+        {
+          "light": 0,
+          "litPixels": 0,
+          "opaqueMean": 0,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 247.32108361769923,
+            "maxX": 492.3361454448139,
+            "minY": 73.14437541285825,
+            "maxY": 355.024332456413
+          }
+        },
+        {
+          "light": 0.1,
+          "litPixels": 24140,
+          "opaqueMean": 0,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 247.32108361769923,
+            "maxX": 492.3361454448139,
+            "minY": 73.14437541285825,
+            "maxY": 355.024332456413
+          }
+        },
+        {
+          "light": 0.16,
+          "litPixels": 24632,
+          "opaqueMean": 0,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 247.32108361769923,
+            "maxX": 492.3361454448139,
+            "minY": 73.14437541285825,
+            "maxY": 355.024332456413
+          }
+        },
+        {
+          "light": 0.24,
+          "litPixels": 25084,
+          "opaqueMean": 0,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 247.32108361769923,
+            "maxX": 492.3361454448139,
+            "minY": 73.14437541285825,
+            "maxY": 355.024332456413
+          }
+        }
+      ]
+    },
+    {
+      "t": 42,
+      "phase": "descend",
+      "summaries": [
+        {
+          "light": 0,
+          "litPixels": 0,
+          "opaqueMean": 65.44879281494363,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 240.9389537525616,
+            "maxX": 484.31298319357444,
+            "minY": 141.46954660741758,
+            "maxY": 418.5348764289202
+          }
+        },
+        {
+          "light": 0.1,
+          "litPixels": 24594,
+          "opaqueMean": 82.49328962196488,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 240.9389537525616,
+            "maxX": 484.31298319357444,
+            "minY": 141.46954660741758,
+            "maxY": 418.5348764289202
+          }
+        },
+        {
+          "light": 0.16,
+          "litPixels": 25152,
+          "opaqueMean": 92.71140252023355,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 240.9389537525616,
+            "maxX": 484.31298319357444,
+            "minY": 141.46954660741758,
+            "maxY": 418.5348764289202
+          }
+        },
+        {
+          "light": 0.24,
+          "litPixels": 25700,
+          "opaqueMean": 106.34747122904092,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 240.9389537525616,
+            "maxX": 484.31298319357444,
+            "minY": 141.46954660741758,
+            "maxY": 418.5348764289202
+          }
+        }
+      ]
+    },
+    {
+      "t": 47,
+      "phase": "watch",
+      "summaries": [
+        {
+          "light": 0,
+          "litPixels": 0,
+          "opaqueMean": 65.54127829560551,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 237.96447687780596,
+            "maxX": 486.2092361405819,
+            "minY": 244.0016687162523,
+            "maxY": 521.0359982879802
+          }
+        },
+        {
+          "light": 0.1,
+          "litPixels": 24456,
+          "opaqueMean": 82.57849363242161,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 237.96447687780596,
+            "maxX": 486.2092361405819,
+            "minY": 244.0016687162523,
+            "maxY": 521.0359982879802
+          }
+        },
+        {
+          "light": 0.16,
+          "litPixels": 25063,
+          "opaqueMean": 92.77732254429971,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 237.96447687780596,
+            "maxX": 486.2092361405819,
+            "minY": 244.0016687162523,
+            "maxY": 521.0359982879802
+          }
+        },
+        {
+          "light": 0.24,
+          "litPixels": 25642,
+          "opaqueMean": 106.41875789545611,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 237.96447687780596,
+            "maxX": 486.2092361405819,
+            "minY": 244.0016687162523,
+            "maxY": 521.0359982879802
+          }
+        }
+      ]
+    },
+    {
+      "t": 53,
+      "phase": "reach",
+      "summaries": [
+        {
+          "light": 0,
+          "litPixels": 0,
+          "opaqueMean": 65.68723666632363,
+          "whitePixels": 1,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 222.11894428938913,
+            "maxX": 503.3421513590596,
+            "minY": 243.39704866838576,
+            "maxY": 511.05794211900775
+          }
+        },
+        {
+          "light": 0.1,
+          "litPixels": 24234,
+          "opaqueMean": 82.7054944678521,
+          "whitePixels": 1,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 222.11894428938913,
+            "maxX": 503.3421513590596,
+            "minY": 243.39704866838576,
+            "maxY": 511.05794211900775
+          }
+        },
+        {
+          "light": 0.16,
+          "litPixels": 24793,
+          "opaqueMean": 92.90338437296558,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 222.11894428938913,
+            "maxX": 503.3421513590596,
+            "minY": 243.39704866838576,
+            "maxY": 511.05794211900775
+          }
+        },
+        {
+          "light": 0.24,
+          "litPixels": 25349,
+          "opaqueMean": 106.52856849244648,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 222.11894428938913,
+            "maxX": 503.3421513590596,
+            "minY": 243.39704866838576,
+            "maxY": 511.05794211900775
+          }
+        }
+      ]
+    },
+    {
+      "t": 55.4,
+      "phase": "recoil",
+      "summaries": [
+        {
+          "light": 0,
+          "litPixels": 0,
+          "opaqueMean": 65.53458861354791,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 239.36904943650725,
+            "maxX": 488.2250356900663,
+            "minY": 226.47325622142506,
+            "maxY": 503.87430456277974
+          }
+        },
+        {
+          "light": 0.1,
+          "litPixels": 24393,
+          "opaqueMean": 82.57327313460932,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 239.36904943650725,
+            "maxX": 488.2250356900663,
+            "minY": 226.47325622142506,
+            "maxY": 503.87430456277974
+          }
+        },
+        {
+          "light": 0.16,
+          "litPixels": 24973,
+          "opaqueMean": 92.77895780958762,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 239.36904943650725,
+            "maxX": 488.2250356900663,
+            "minY": 226.47325622142506,
+            "maxY": 503.87430456277974
+          }
+        },
+        {
+          "light": 0.24,
+          "litPixels": 25547,
+          "opaqueMean": 106.41576454089902,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 239.36904943650725,
+            "maxX": 488.2250356900663,
+            "minY": 226.47325622142506,
+            "maxY": 503.87430456277974
+          }
+        }
+      ]
+    },
+    {
+      "t": 58,
+      "phase": "climb",
+      "summaries": [
+        {
+          "light": 0,
+          "litPixels": 0,
+          "opaqueMean": 65.57579035941818,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 239.36278789819755,
+            "maxX": 491.7927220378029,
+            "minY": 189.50995715728894,
+            "maxY": 475.18272662649827
+          }
+        },
+        {
+          "light": 0.1,
+          "litPixels": 24160,
+          "opaqueMean": 82.6036096371476,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 239.36278789819755,
+            "maxX": 491.7927220378029,
+            "minY": 189.50995715728894,
+            "maxY": 475.18272662649827
+          }
+        },
+        {
+          "light": 0.16,
+          "litPixels": 24760,
+          "opaqueMean": 92.81070870468625,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 239.36278789819755,
+            "maxX": 491.7927220378029,
+            "minY": 189.50995715728894,
+            "maxY": 475.18272662649827
+          }
+        },
+        {
+          "light": 0.24,
+          "litPixels": 25285,
+          "opaqueMean": 106.44552058111341,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 239.36278789819755,
+            "maxX": 491.7927220378029,
+            "minY": 189.50995715728894,
+            "maxY": 475.18272662649827
+          }
+        }
+      ]
+    },
+    {
+      "t": 61.7,
+      "phase": "leave",
+      "summaries": [
+        {
+          "light": 0,
+          "litPixels": 0,
+          "opaqueMean": 0,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 245.79620470601492,
+            "maxX": 493.6182129621196,
+            "minY": 73.93486285536626,
+            "maxY": 351.9414865022252
+          }
+        },
+        {
+          "light": 0.1,
+          "litPixels": 23367,
+          "opaqueMean": 0,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 245.79620470601492,
+            "maxX": 493.6182129621196,
+            "minY": 73.93486285536626,
+            "maxY": 351.9414865022252
+          }
+        },
+        {
+          "light": 0.16,
+          "litPixels": 23807,
+          "opaqueMean": 0,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 245.79620470601492,
+            "maxX": 493.6182129621196,
+            "minY": 73.93486285536626,
+            "maxY": 351.9414865022252
+          }
+        },
+        {
+          "light": 0.24,
+          "litPixels": 24092,
+          "opaqueMean": 0,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": {
+            "minX": 245.79620470601492,
+            "maxX": 493.6182129621196,
+            "minY": 73.93486285536626,
+            "maxY": 351.9414865022252
+          }
+        }
+      ]
+    },
+    {
+      "t": 64,
+      "phase": "empty",
+      "summaries": [
+        {
+          "light": 0,
+          "litPixels": 0,
+          "opaqueMean": 0,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": null
+        },
+        {
+          "light": 0.1,
+          "litPixels": 0,
+          "opaqueMean": 0,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": null
+        },
+        {
+          "light": 0.16,
+          "litPixels": 0,
+          "opaqueMean": 0,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": null
+        },
+        {
+          "light": 0.24,
+          "litPixels": 0,
+          "opaqueMean": 0,
+          "whitePixels": 0,
+          "alphaChanges": 0,
+          "outside": 0,
+          "bounds": null
+        }
+      ]
+    }
+  ]
+}

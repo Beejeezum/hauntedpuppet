@@ -1,0 +1,165 @@
+CHARACTER VOICE — CAST FIRST, THEN CONNECT
+Primary-source review30October2026. This is an implementation decision record,
+not a claim that the new provider is already connected to the laptop runtime.
+
+CURRENT EVIDENCE
+Fable/Onyx generated successfully in1.429s/2.277s end-to-end in two observed local
+requests, but the user rejected both voices. Do not tune pitch/reverb and call
+that a solution. The earlier apology native-video performance remains the approved
+acting benchmark. Four new short Runway/Elevenv3 auditions cost8credits and are
+available on the local casting shelf. Human choice is still pending.
+
+RECOMMENDED ROUTE
+1. Hear those short auditions beside the apology. Judge personality, thought,
+   warmth/menace and consonant clarity. If none fit, write a custom Voice Design
+   brief and generate one small comparison, not another generic preset library.
+2. Keep a stable voice identifier for each form. Test a welcome, embarrassed
+   recovery and threat using the same identities; verify delivery across lines.
+3. For arbitrary typed lines, use a trusted server adapter. Runway's documented
+   text-to-speech API accepts eleven_v3 and a runway-preset voice; the official
+   Python SDK lists the Pip/Rachel/Monster/Grungle preset names. The connector's
+   voice IDs must not be assumed to be portable ElevenLabs account voice IDs.
+4. Runway generation is task-based. Its web workspace connector does not give the
+   running app an API key or prove API billing shares the web-credit balance.
+   Implement the job/cancel/error path before a private API connection. Never put
+   a key into browser code or claim a static audition is a live integration.
+5. If custom casting/response speed warrants a direct ElevenLabs account, its
+   documented Voice Design flow returns previews; create the chosen preview as
+   a saved voice, then request TTS against that voice ID. Streaming is documented
+   separately. Verify current account/model support before selecting it.
+
+FIRST LIVE ADAPTER CONTRACT
+Input: bounded exact text (240characters), form and a server-side admitted voice
+profile. Optional intent from a short allowlist: warm, conspiratorial, sheepish,
+menacing. No arbitrary user-supplied provider/model/voice URL or SSML.
+Output: bounded owned audio bytes, duration, actual provider/model/profile version,
+generation timing and format; never expose provider API keys or long-lived asset URLs.
+Cache key: exact text +form +model +voice identity +settings version. Bound cache
+bytes/entry count; keep dialogue memory-only unless user explicitly saves a show cue.
+Only one synthesis in flight per laptop queue. No automatic paid retry. A stop or
+form change invalidates late completion and audio, even if provider billing already
+occurred. Client disconnect should cancel/poll-stop where supported.
+Reuse one AudioContext, retain the existing form hold and effects duck. Audio plays
+only on the laptop; projector/phone get command/state and pictures, never speech ownership.
+Replay saved audition audio without making another provider call.
+
+TESTING
+Fake transport: completed/failed jobs, rate limit, malformed duration/audio, timeout,
+stale completion, Stop during wait/download/playback, bounded queue/cache, wrong-form
+completion and audio context recovery. Exactly-zero paid calls in default tests.
+Real opt-in: one short line per chosen voice. Measure click to first audible sample,
+full generation time, playback duration and cancellation behavior. Advertised model
+inference latency is not the app's end-to-end response time. Compare the returned
+voice to the audition; do not treat HTTP200 or decoded PCM as creative acceptance.
+No live mouth sync claim until coherent facial acting is actually integrated/tested.
+
+PRIMARY SOURCES
+https://docs.dev.runwayml.com/api/ (Text to speech, authenticated task-based API)
+https://github.com/runwayml/sdk-python/blob/main/src/runwayml/types/text_to_speech_create_params.py
+https://elevenlabs.io/docs/api-reference/text-to-voice/design/
+https://elevenlabs.io/docs/api-reference/text-to-voice/create
+https://elevenlabs.io/docs/eleven-api/guides/how-to/text-to-speech/streaming
+https://elevenlabs.io/docs/eleven-api/concepts/latency
+
+DO NOT DO
+Do not clone the actor from the earlier video as a shortcut. Do not silently accept
+one audition on the user's behalf. Do not switch the active key-owning server just
+to test new frontend code. Do not buy all show dialogue before the cast passes.
+
+
+CONNECTED CASTING ADDENDUM — 30 OCTOBER, 06:58 UTC
+Official OpenAI Speech documentation now recommends Marin/Cedar for quality.
+Two bounded, new auditions use those IDs with original emotional acting direction,
+not the rejected Fable/Onyx pair. Real WAVs: friendly-c4.3s, evil-c5.1s; whole request
+(including existing local alignment)1.963s/1.207s; neither clipped. These are NOT
+click-to-first-audio or a human quality verdict. No pitch, echo, music or sample-rate
+tricks. Full prompts, output SHA256 and timings in assets/wisp-casting-2026-10-30/
+openai-casting-attempts.json. Two new OpenAI calls; billing not returned by endpoint,
+exact monetary cost unknown. Zero additional Runway credits. No automatic retry.
+
+Casting page now separates Keep this direction (feedback) from Use for typed lines
+(explicit install of connected C candidate). No audition is selected automatically.
+Fable/Onyx are retired from yard speech, and missing/unapproved/invalid cast choices
+cannot enqueue a generation. Silent lettering still works without a voice choice.
+Live selections preserve each form separately, propagate to the already-open local
+console, and apply to newly queued laptop/phone lines only. An in-flight line keeps
+its original voice. Stop/cancel/form change still invalidate late audio. Runway A/B
+options remain feedback-only until a supported private provider connection exists.
+No server restart or new credential was required. The phone/projector stay silent.
+
+The same OpenAI guide announces Speech API model shutdown on6January2027 and directs
+future migration to a Realtime API workflow. That is a separate API migration:
+gpt-realtime-2.1-mini cannot be substituted as a model at /v1/audio/speech. Existing
+Speech API remains usable for this Halloween. Record this maintenance requirement;
+do not replace the working API solely to audition two voices. Runtime model is the
+existing server default gpt-4o-mini-tts; response does not confirm a provider snapshot.
+
+Primary source fetched30October2026:
+https://developers.openai.com/api/docs/guides/text-to-speech
+No guarantee that a recommended voice matches the user's character taste. Final
+voice direction still needs human selection; no Disney/Pixar quality claim.
+
+
+LOCAL ORIGINAL-VOICE STUDY — 30 OCTOBER, 11:57 UTC
+Two new D auditions use Qwen3-TTS VoiceDesign from original voice descriptions,
+without a reference recording, actor imitation, pitch shift, echo or music. These
+are a separate free local experiment, not more paid preset retries. Same lines as
+C permit a direct acting comparison. Added both saved WAVs to the casting shelf;
+Keep this direction remains feedback only. No D live-install control is present.
+
+Hardware: this Apple M4 Pro,24GiB. Pinned MLX Audio0.6.3/MLX0.32.4 in an isolated
+Python3.12 environment under work/voice-design-mlx. VoiceDesign4bit weights pinned
+to5c390979e4b93af5f2932f90742ca99c7dd04687,2.312GB downloaded; large weightSHA256s
+verified against the model repository. Package MIT; model card Apache2. A separate
+78.8MB tiny recognition model provides a coarse text check, not a listening verdict.
+The whole environment/models/studies use about2.82GiB;13.5GiB disk remains free.
+No changes to the existing voice server, systemPython, microphones or user tabs.
+
+Measured once per take, file-only streaming with0.32s chunks:
+  Model cold load:11.996s.
+  Friendly D:5.68s audio; firstchunk2.620s; complete4.048s.
+  Evil D, same loaded model:8.32s audio; firstchunk0.161s; complete2.248s.
+  Peak MLX allocation~2.91GB;0clipped samples. No postprocessing beyond PCM encoding.
+At the observed chunk arrival times, beginning at each reported firstchunk time
+would avoid buffer underruns for these two takes. This is not an end-to-end
+click-to-speaker measurement or a concurrent animation benchmark. First take has
+cold inference/compilation overhead; second benefits from warm execution. Do not
+advertise161ms live response based on one warm take. No rate/identity guarantees.
+
+Tiny ASR, without supplying expected words, recovered Evil D's entire line.
+Friendly D's I was was recognized as Oh was; requires listening to distinguish
+pronunciation from recognizer error. The same recognizer misheard I've as Eyes in
+the existing Evil C control. Actual speech/artistic quality remains unapproved.
+The isolated browser tests decode/play all nine saved files (eight candidates plus
+reference) muted, enforce exclusive playback, persist D feedback, leave live cast
+unchanged, restore from page cache and pass320/390layout and accessibility checks
+in Chromium/Mac WebKit. Real8902 serves both new WAVs; zero provider requests.
+
+REPRODUCTION AND NEXT GATE
+scripts/audition-local-wisp.py is explicitly opt-in, maximumtwo short takes and
+180tokens each,120second operation cap,8GiB MLX cap and exclusive attempt marker.
+Runs offline against already-downloaded local model; no automatic download,
+playback, retry, APIcall or app installation. Duplicate-run and no-opt-in guards
+verified without synthesis. Exact versions: local-voice-requirements-2026-10-30.txt.
+Exact model files/hashes: local-voice-models-2026-10-30.json. Original prompts,
+per-chunk timings, output hashes and measurements: assets/wisp-casting-2026-10-30/
+local-casting-attempts.json. Raw environment/weights stay ignored in work/.
+
+If the human selects D, prove stable identity across short different lines before
+runtime work. VoiceDesign describes a voice; a repeated description is not a
+stable speaker ID. Official Qwen's designed-voice-to-Base-reference workflow is a
+possible next experiment using ONLY our own generated original sample. It needs
+another model and a separate bounded disk/runtime decision. Do not clone the
+earlier approved actor video or assume exact identity retention. Then build a
+single warm local synthesis worker with bounded streaming/Stop/stale-result tests,
+measure while native films render, and listen. Keep current connected C voices
+and silent text available. Netlify functions cannot run this Apple-only MLX worker;
+the trusted laptop remains the proposed compute/audio owner.
+
+PRIMARY SOURCES
+https://github.com/QwenLM/Qwen3-TTS
+https://huggingface.co/mlx-community/Qwen3-TTS-12Hz-1.7B-VoiceDesign-4bit
+https://github.com/Blaizzy/mlx-audio/blob/main/mlx_audio/tts/models/qwen3_tts/README.md
+https://blaizzy.github.io/mlx-audio/guides/streaming/
+https://github.com/Blaizzy/mlx-audio/blob/main/mlx_audio/stt/models/whisper/README.md
+https://huggingface.co/mlx-community/whisper-tiny-asr-fp16

@@ -1,0 +1,322 @@
+{
+  "engine": "chromium",
+  "initial": {
+    "running": true,
+    "frames": 22,
+    "error": null,
+    "eyes": {
+      "ready": true,
+      "active": true,
+      "pending": false,
+      "visibility": 1,
+      "time": 1.0141,
+      "plays": 1,
+      "muted": true,
+      "error": null,
+      "disposed": false
+    },
+    "vapor": {
+      "ready": true,
+      "error": null,
+      "particles": 1,
+      "maxParticles": 48,
+      "bounds": {
+        "minX": 465.2436582490097,
+        "minY": 417.40900731688856,
+        "maxX": 529.2297686015141,
+        "maxY": 459.6398401495415
+      },
+      "source": "painted-raster-vapor",
+      "emission": "body-local origins, world-space wake",
+      "motion": "inherited velocity, drag and settling",
+      "frames": 22
+    },
+    "mapping": {
+      "renderer": "perspective-webgl",
+      "frames": 22,
+      "error": null
+    },
+    "settings": {
+      "schema": 1,
+      "ghost": {
+        "x": 43,
+        "y": 50,
+        "size": 82,
+        "opacity": 100,
+        "visible": true
+      },
+      "eyes": {
+        "x": 77,
+        "y": 35,
+        "size": 30,
+        "opacity": 90,
+        "visible": true
+      },
+      "fog": 18,
+      "mirror": false,
+      "brightness": 100,
+      "feather": 0,
+      "mask": "none",
+      "corners": [
+        [
+          0,
+          0
+        ],
+        [
+          100,
+          0
+        ],
+        [
+          100,
+          100
+        ],
+        [
+          0,
+          100
+        ]
+      ]
+    },
+    "disposed": false,
+    "playback": {
+      "running": true,
+      "loading": false,
+      "disposed": false,
+      "busy": false,
+      "error": null,
+      "black": false,
+      "time": 0.975501,
+      "current": "friendly",
+      "form": "friendly",
+      "next": [],
+      "pending": null,
+      "mode": "host",
+      "timeline": {
+        "duration": 5.083333333333333,
+        "windows": [
+          {
+            "id": "friendly",
+            "start": 0,
+            "end": 5.083333333333333
+          }
+        ],
+        "sourceLoads": 1,
+        "sealed": false,
+        "evictions": 0,
+        "cachedBytes": 298014,
+        "cacheEntries": 1
+      }
+    },
+    "draws": 57
+  },
+  "eyesOnly": {
+    "peak": 230,
+    "lit": 607,
+    "centerX": 957.7074935207801,
+    "cornerRGB": [
+      0,
+      0,
+      0
+    ]
+  },
+  "mirrored": {
+    "peak": 230,
+    "lit": 600,
+    "centerX": 320.8103851312512,
+    "cornerRGB": [
+      0,
+      0,
+      0
+    ]
+  },
+  "intentionalDark": {
+    "peak": 0,
+    "lit": 0,
+    "centerX": 0,
+    "cornerRGB": [
+      0,
+      0,
+      0
+    ]
+  },
+  "manualHideEnvelope": 0.7159999998978209,
+  "mapped": {
+    "peak": 253,
+    "lit": 2297,
+    "centerX": 565.3134214904884,
+    "cornerRGB": [
+      0,
+      0,
+      0
+    ]
+  },
+  "output": {
+    "silent": true,
+    "stopped": false,
+    "stale": false,
+    "stalls": 0,
+    "width": 1280,
+    "height": 720,
+    "owner": true,
+    "mediaElements": 0
+  },
+  "stop": {
+    "scene": {
+      "running": false,
+      "frames": 358,
+      "error": null,
+      "eyes": {
+        "ready": true,
+        "active": false,
+        "pending": false,
+        "visibility": 0,
+        "time": 3.1914,
+        "plays": 3,
+        "muted": true,
+        "error": null,
+        "disposed": false
+      },
+      "vapor": {
+        "ready": true,
+        "error": null,
+        "particles": 0,
+        "maxParticles": 48,
+        "bounds": null,
+        "source": "painted-raster-vapor",
+        "emission": "body-local origins, world-space wake",
+        "motion": "inherited velocity, drag and settling",
+        "frames": 105
+      },
+      "mapping": {
+        "renderer": "perspective-webgl",
+        "frames": 358,
+        "error": null
+      },
+      "settings": {
+        "schema": 1,
+        "ghost": {
+          "x": 38,
+          "y": 50,
+          "size": 60,
+          "opacity": 100,
+          "visible": true
+        },
+        "eyes": {
+          "x": 75,
+          "y": 50,
+          "size": 40,
+          "opacity": 90,
+          "visible": true
+        },
+        "fog": 30,
+        "mirror": false,
+        "brightness": 100,
+        "feather": 0,
+        "mask": "none",
+        "corners": [
+          [
+            10,
+            10
+          ],
+          [
+            90,
+            14
+          ],
+          [
+            85,
+            90
+          ],
+          [
+            15,
+            86
+          ]
+        ]
+      },
+      "disposed": false,
+      "playback": {
+        "running": false,
+        "loading": false,
+        "disposed": false,
+        "busy": false,
+        "error": null,
+        "black": true,
+        "time": 0,
+        "current": null,
+        "form": "friendly",
+        "next": [],
+        "pending": null,
+        "mode": "host",
+        "timeline": {
+          "duration": 0,
+          "windows": [],
+          "sourceLoads": 1,
+          "sealed": false,
+          "evictions": 0,
+          "cachedBytes": 0,
+          "cacheEntries": 0
+        }
+      },
+      "draws": 928
+    },
+    "paused": true
+  },
+  "saved": {
+    "schema": 1,
+    "ghost": {
+      "x": 38,
+      "y": 50,
+      "size": 60,
+      "opacity": 100,
+      "visible": true
+    },
+    "eyes": {
+      "x": 75,
+      "y": 50,
+      "size": 40,
+      "opacity": 90,
+      "visible": true
+    },
+    "fog": 30,
+    "mirror": false,
+    "brightness": 100,
+    "feather": 0,
+    "mask": "none",
+    "corners": [
+      [
+        10,
+        10
+      ],
+      [
+        90,
+        14
+      ],
+      [
+        85,
+        90
+      ],
+      [
+        15,
+        86
+      ]
+    ]
+  },
+  "accessibility": [],
+  "gpuLoss": {
+    "before": true,
+    "black": true,
+    "disposed": true,
+    "textureReleased": true,
+    "eyeRemoved": true
+  },
+  "changedEyes": {
+    "ready": false,
+    "active": false,
+    "pending": false,
+    "visibility": 0,
+    "time": 0,
+    "plays": 0,
+    "muted": true,
+    "error": "Eyes film changed; refresh before playing",
+    "disposed": false
+  },
+  "errors": []
+}

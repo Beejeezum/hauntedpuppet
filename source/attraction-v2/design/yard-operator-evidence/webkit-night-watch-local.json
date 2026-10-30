@@ -1,0 +1,9 @@
+{
+  "engine": "webkit",
+  "realLocalServer": true,
+  "mobileWidth": 320,
+  "blackoutRemainsVisibleAfterScroll": true,
+  "nightWatchStartStop": true,
+  "noPaidCalls": true,
+  "physicalPhone": false
+}

@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "date": "2026-10-29",
+  "title": "The Tree Stole Halloween",
+  "kind": "illustrated guest-play proposal",
+  "status": "concept only; no human acceptance or installation evidence",
+  "generator": "built-in image_gen imagegen",
+  "image": "guest-play-concept-v1.png",
+  "sha256": "6685362223bd8f1ccea9fd9ae06c0927142cc80b6edfcaccdf177b561ff64053",
+  "prompt": "guest-play-concept-v1-prompt.txt",
+  "references": [
+    {
+      "path": "source/wisp-art-reference/approved-friendly-fog.png",
+      "sha256": "42c2a586c05b69d596d136dae7f0500e5a567619b699d6e02bad0a4c765082f4"
+    },
+    {
+      "path": "source/wisp-art-reference/scary-fog-candidate-v2-safe.png",
+      "sha256": "66648a7d7f9796df6fe27c3b933f1908be8e5dffc6b52c128416d773d79d3e96"
+    }
+  ],
+  "review": {
+    "samePaintedIdentityDirection": true,
+    "guestViewInsteadOfOperatorUI": true,
+    "physicalLimit": "All projected ghost and field imagery remains on one real scrim plane. Apparent touch in the concept is an alignment illusion, not volume around guest hands.",
+    "notMeasured": [
+      "projection contrast",
+      "night sensing",
+      "input latency",
+      "practical lighting",
+      "human comprehension"
+    ]
+  },
+  "newRunwayCredits": 0,
+  "imageGenerationCalls": 1
+}

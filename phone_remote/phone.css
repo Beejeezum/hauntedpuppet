@@ -7,3 +7,10 @@ footer{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:.5rem}.welcome{backg
 #controls>.preview{position:sticky;top:0;z-index:3;background:#161421;box-shadow:0 4px 18px #0008}#controls>.preview img{max-height:120px;width:100%;object-fit:contain}#controls>.preview>p:last-child{font-size:.75rem;margin:.35rem 0}#controls button{scroll-margin-block:250px 110px}
 
 select,textarea{display:block;width:100%;font:17px system-ui;color:#fff;background:#111b2a;border:1px solid #72839d;border-radius:10px;padding:12px;min-height:52px}textarea{resize:vertical;line-height:1.5}select:focus-visible,textarea:focus-visible{outline:3px solid #ffd980;outline-offset:3px}#performSend{width:100%}#performHelp{font-size:13px}
+
+/* Typed yard direction needs the full small-screen editor, not an overlapping preview. */
+body[data-workspace=yard] #controls>.preview{position:static;box-shadow:none}
+body[data-workspace=yard] footer{grid-template-columns:1fr 1fr}
+body[data-workspace=yard] #controls button{scroll-margin-block:20px 110px}
+
+body[data-program=after-dark] #safety{grid-template-columns:repeat(2,minmax(0,1fr))}body[data-program=after-dark] #controls>.preview{position:static;box-shadow:none}body[data-program=after-dark] #controls button{scroll-margin-block:20px 110px}

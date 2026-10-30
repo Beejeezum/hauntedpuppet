@@ -1,0 +1,120 @@
+{
+  "file": "idle-wave-idle-review-v1.mp4",
+  "sha256": "9034c2389242fadc596960249c026c348e290546c400101651408aeb1d017b5a",
+  "status": "human rejected perceived pauses/stiff motion; technical native continuity does not approve acting",
+  "frames": 485,
+  "fps": 24,
+  "size": [
+    1280,
+    720
+  ],
+  "segments": [
+    {
+      "label": "friendly-idle",
+      "file": "source/wisp-performance-reference/button-cue-batch/wisp-morph-roundtrip-review-v7.mp4",
+      "sha256": "275acb319821ed88d9eda3220f6c9a61e59d484450537293588d601784de08dc",
+      "frames": 122,
+      "maximumConsecutiveExactRepeats": 0,
+      "adjacentForegroundDifference": {
+        "median": 8.481308379002517,
+        "p95": 14.19670746575669
+      }
+    },
+    {
+      "label": "resident-wave",
+      "file": "source/wisp-performance-reference/button-cue-batch/resident-wave-study/resident-wave-pilot-v1.mp4",
+      "sha256": "9d21a540a36670ac327d3c44aa3833e9cef4778e04106e9fbf87d52c8d690524",
+      "frames": 241,
+      "maximumConsecutiveExactRepeats": 0,
+      "adjacentForegroundDifference": {
+        "median": 2.4288454137607878,
+        "p95": 11.791879831275484
+      }
+    },
+    {
+      "label": "friendly-idle-return",
+      "file": "source/wisp-performance-reference/button-cue-batch/wisp-morph-roundtrip-review-v7.mp4",
+      "sha256": "275acb319821ed88d9eda3220f6c9a61e59d484450537293588d601784de08dc",
+      "frames": 122,
+      "maximumConsecutiveExactRepeats": 0,
+      "adjacentForegroundDifference": {
+        "median": 8.481308379002517,
+        "p95": 14.19670746575669
+      }
+    }
+  ],
+  "joins": [
+    {
+      "from": "friendly-idle",
+      "to": "resident-wave",
+      "seconds": 5.083333333333333,
+      "silhouetteIoU": 0.9889096185737977,
+      "foregroundMeanAbsoluteRGBDifference": 3.063094250967385
+    },
+    {
+      "from": "resident-wave",
+      "to": "friendly-idle-return",
+      "seconds": 15.125,
+      "silhouetteIoU": 0.9886726691838513,
+      "foregroundMeanAbsoluteRGBDifference": 8.290631094145471
+    }
+  ],
+  "processing": "First122 original V7 idle pictures, every native wave picture, then the same complete122-picture idle. Original24fps/order, only fixed whole-frame action resolution normalization if necessary. One picture encode. No fades, black handles, interpolation, reversed footage, body blending, animated resize, pose adjustment or frame trimming.",
+  "audio": "Silent picture/acting review only. Add dry effects after motion/joins pass; no music or dialogue.",
+  "humanApproval": false,
+  "runtimePublication": false,
+  "scope": "Cut pixel and adjacency measurements are diagnostic, not proof of velocity continuity, anatomy, approved action, audio or physical projection.",
+  "browserPlayback": {
+    "chromium": {
+      "passed": true,
+      "result": {
+        "width": 1280,
+        "height": 720,
+        "duration": 20.208333,
+        "uniqueTimes": 485,
+        "lastTime": 20.166667,
+        "minimumPeak": 236,
+        "muted": true,
+        "audioTracks": null,
+        "decodedAudioBytes": 0,
+        "retiredVideoElements": 0
+      },
+      "scope": "Complete native20second silent idle-wave-idle picture review, advancing native decoded pictures and continuously visible spirit, no baked audio where exposed, decoder retirement. No dynamic button scheduler, sound, human motion/joins, closing loop or physical projection approval."
+    },
+    "webkit": {
+      "passed": true,
+      "result": {
+        "width": 1280,
+        "height": 720,
+        "duration": 20.209,
+        "uniqueTimes": 484,
+        "lastTime": 20.166666666666668,
+        "minimumPeak": 245,
+        "muted": true,
+        "audioTracks": 0,
+        "decodedAudioBytes": null,
+        "retiredVideoElements": 0
+      },
+      "scope": "Complete native20second silent idle-wave-idle picture review, advancing native decoded pictures and continuously visible spirit, no baked audio where exposed, decoder retirement. No dynamic button scheduler, sound, human motion/joins, closing loop or physical projection approval."
+    }
+  },
+  "framing": {
+    "nativeWave": "All241frames pass20percent reserve; minimum21.94percent.",
+    "context": "Whole485frame review passes15percent hard reserve, minimum18.89percent.26frames from existing idle miss20percent target; no reframing applied to conceal the original matching scale.",
+    "nativeWaveEvidence": "envelope-v1.json",
+    "contextTargetEvidence": "idle-wave-idle-envelope-v1.json",
+    "contextHardReserveEvidence": "idle-wave-idle-hard-buffer-v1.json"
+  },
+  "humanReview": "revision-required",
+  "generation": {
+    "taskId": "4f780408-2195-4ec3-a706-d6e1683bea9d",
+    "workspaceId": 1709631,
+    "observedDebit": 170,
+    "scope": "New wave only; both full idles reused from existing painted review."
+  },
+  "humanFeedback": {
+    "quote": "It pauses or the motion feels stiff",
+    "scope": "20second idle-wave-idle motion review, no sound",
+    "next": "Keep continuous full-body/fog energy through handoff; remove long restrained settling/anticipation. Do not cover the pause with fades or reinterpret frame-difference tests as approval."
+  }
+}

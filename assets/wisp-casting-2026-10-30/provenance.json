@@ -1,0 +1,64 @@
+{
+  "runwayCredits": 8,
+  "workspace": "Bruce",
+  "files": [
+    {
+      "taskId": "f7b284c3-5491-4871-9f4e-b52459a92fc3",
+      "file": "friendly-a.mp3",
+      "bytes": 91994,
+      "sha256": "559b3ff5cc00da5cc4191ee0bca1ed4c7e30787b7e2b140ede39d101c22aa2c4",
+      "status": "audition; unapproved"
+    },
+    {
+      "taskId": "a2ece435-8519-4e6a-aaa0-b4569ab0bb26",
+      "file": "friendly-b.mp3",
+      "bytes": 95755,
+      "sha256": "eba696ab2831ee58651693f321b6defe05a1de768ff833daa1c14ae9d7123c6d",
+      "status": "audition; unapproved"
+    },
+    {
+      "taskId": "7cd2fa8f-169c-4f5a-956b-eef651cffdc7",
+      "file": "evil-a.mp3",
+      "bytes": 126684,
+      "sha256": "d6bd1b6722c505a7f84fe586c785d81ac5ed8e5a4a8b3e1e57356d00d870c76c",
+      "status": "audition; unapproved"
+    },
+    {
+      "taskId": "916c4ba1-4ec3-4c0d-9d24-8de6ba97bd6d",
+      "file": "evil-b.mp3",
+      "bytes": 148418,
+      "sha256": "49c7c2e40f5e3942197940e10ada9de2fb32251684845f73190059a5b930d21b",
+      "status": "audition; unapproved"
+    },
+    {
+      "file": "friendly-c.wav",
+      "bytes": 206444,
+      "sha256": "4add3a9f67bd7efee7386c70f4dbfaf7bbacf443b2f7f3903fb0e23d0223c8c9",
+      "status": "generated; human review pending",
+      "processing": "Unmodified provider WAV; no pitch, echo or music added",
+      "provider": "OpenAI",
+      "voice": "marin",
+      "promptAndMetrics": "openai-casting-attempts.json"
+    },
+    {
+      "file": "evil-c.wav",
+      "bytes": 244844,
+      "sha256": "1f667e1e29ec7deea0fbd973c1e6013bea2624ef51f5ec42fc17a97b5aa4c4cd",
+      "status": "generated; human review pending",
+      "processing": "Unmodified provider WAV; no pitch, echo or music added",
+      "provider": "OpenAI",
+      "voice": "cedar",
+      "promptAndMetrics": "openai-casting-attempts.json"
+    }
+  ],
+  "approvedReference": {
+    "file": "earlier-approved-apology.m4a",
+    "sha256": "c0773b46f3084e4986cd24615d0846a586684b27d5512a688fb7aa3600d27a29",
+    "source": "source/wisp-performance-reference/tonight-demo/apology-proof-v1.mp4",
+    "sourceSha256": "d4dfefcfb62bbff4f32ba7b047a28a4bda5ab7b4def711c368f08d23213e819d",
+    "processing": "Audio stream copied without re-encoding; no voice conversion or performance change.",
+    "approval": "Earlier user approved voice and acting. No reusable arbitrary-text voice ID inferred."
+  },
+  "openaiAuditionRequests": 2,
+  "openaiBilledCostUSD": null
+}

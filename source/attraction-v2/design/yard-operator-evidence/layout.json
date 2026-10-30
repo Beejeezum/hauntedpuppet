@@ -1,0 +1,40 @@
+{
+  "layout": {
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "controls": [
+      {
+        "id": "stop",
+        "top": 21,
+        "bottom": 65,
+        "height": 44
+      },
+      {
+        "id": "auto",
+        "top": 79,
+        "bottom": 123,
+        "height": 44
+      },
+      {
+        "id": "compose",
+        "top": 705.375,
+        "bottom": 757.875,
+        "height": 52.5
+      },
+      {
+        "id": "sequence-open",
+        "top": 765.875,
+        "bottom": 809.875,
+        "height": 44
+      },
+      {
+        "id": "settings-open",
+        "top": 765.875,
+        "bottom": 809.875,
+        "height": 44
+      }
+    ]
+  },
+  "accessibility": []
+}

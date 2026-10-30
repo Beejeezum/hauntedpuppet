@@ -42,12 +42,16 @@ function normalize(cues) {
   return normalized;
 }
 export class FiniteCueStudy {
-  constructor(video) {
+  constructor(video, {retentionSeconds=null, cacheBudgetBytes=0}={}) {
+    if(retentionSeconds!==null&&(!Number.isFinite(retentionSeconds)||retentionSeconds<10||retentionSeconds>60))throw Error('Invalid rolling retention');
+    if(!Number.isSafeInteger(cacheBudgetBytes)||cacheBudgetBytes<0||cacheBudgetBytes>32*1024*1024)throw Error('Invalid media cache budget');
+    this.retentionSeconds=retentionSeconds;this.cacheBudgetBytes=cacheBudgetBytes;this.cachedBytes=0;this.cache=new Map();this.evictions=0;
     this.video = video;
     this.disposed = false;
     this.epoch = 0;
     this.sourceLoads = 0;
     this.duration = 0;
+    this.frames=0;this.windows=[];this.ready=false;this.sealed=false;
     this.queue = Promise.resolve();
   }
   async prepare(cues, { open = false } = {}) {
@@ -89,20 +93,35 @@ export class FiniteCueStudy {
     if (signal.aborted || epoch !== this.epoch) throw cancelled();
   }
   snapshot() {
-    return { duration: this.duration, windows: this.windows.map(x => ({ ...x })), sourceLoads: this.sourceLoads, sealed: this.sealed };
+    return { duration: this.duration, windows: this.windows.map(x => ({ ...x })), sourceLoads: this.sourceLoads, sealed: this.sealed, evictions:this.evictions, cachedBytes:this.cachedBytes,cacheEntries:this.cache.size };
   }
   async appendNow(cues, seal, epoch, signal) {
     this.assertCurrent(epoch, signal);
     if (this.sealed) throw Error('Finite timeline already sealed');
-    if (this.windows.length + cues.length > 64 || this.duration + cues.reduce((sum, cue) => sum + cue.frames / cue.fps, 0) > 1800)
+    if(this.retentionSeconds!==null){
+      const cutoff=Math.max(0,this.video.currentTime-this.retentionSeconds);
+      if(cutoff>0&&this.buffer.buffered.length&&this.buffer.buffered.start(0)<cutoff){
+        await event(this.buffer,'updateend',signal,()=>this.buffer.remove(0,cutoff));this.assertCurrent(epoch,signal);
+        this.windows=this.windows.filter(window=>window.end>cutoff);this.evictions++;
+      }
+      if(cues.some(cue=>cue.frames/cue.fps>60)||this.duration-this.video.currentTime>this.retentionSeconds)throw Error('Resident timeline ahead limit');
+    }
+    if (this.windows.length + cues.length > 64 || this.retentionSeconds===null&&this.duration + cues.reduce((sum, cue) => sum + cue.frames / cue.fps, 0) > 1800)
       throw Error('Finite timeline limit');
     const media = this.media, buffer = this.buffer, controller = this.controller;
     const deadline = setTimeout(() => controller.abort(), 30000);
     try {
       for (const cue of cues) {
-        const response = await abortable(fetch(cue.url, { signal }), signal);
-        if (!response.ok) throw Error('Finite cue unavailable');
-        const bytes = await abortable(response.arrayBuffer(), signal);
+        let bytes=this.cache.get(cue.url);
+        if(!bytes){
+          const response = await abortable(fetch(cue.url, { signal }), signal);
+          if (!response.ok) throw Error('Finite cue unavailable');
+          bytes = await abortable(response.arrayBuffer(), signal);this.assertCurrent(epoch,signal);
+          if(bytes.byteLength<=this.cacheBudgetBytes){
+            while(this.cachedBytes+bytes.byteLength>this.cacheBudgetBytes&&this.cache.size){const [url,old]=this.cache.entries().next().value;this.cache.delete(url);this.cachedBytes-=old.byteLength;}
+            if(this.cacheBudgetBytes){this.cache.set(cue.url,bytes);this.cachedBytes+=bytes.byteLength;}
+          }
+        }
         this.assertCurrent(epoch, signal);
         const offset = this.frames / 24, nextFrames = this.frames + cue.frames, end = nextFrames / 24;
         buffer.appendWindowEnd = Infinity;
@@ -147,6 +166,7 @@ export class FiniteCueStudy {
     this.media = this.buffer = null;
     this.duration = this.frames = 0;
     this.windows = [];
+    this.cache.clear();this.cachedBytes=0;
     this.ready = this.sealed = false;
     this.queue = Promise.resolve();
   }

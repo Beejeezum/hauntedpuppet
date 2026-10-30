@@ -1,0 +1,189 @@
+{
+  "purpose": "Exact local weights, kept under ignored work/ only; never public build assets",
+  "downloads": [
+    {
+      "repo": "mlx-community/Qwen3-TTS-12Hz-1.7B-VoiceDesign-4bit",
+      "revision": "5c390979e4b93af5f2932f90742ca99c7dd04687",
+      "files": [
+        {
+          "file": ".gitattributes",
+          "bytes": 1519,
+          "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+          "seconds": 0.257
+        },
+        {
+          "file": "README.md",
+          "bytes": 1068,
+          "sha256": "40d213ae6ec58c48d4362a66a8e77bc8518b87acf6cd5e54b4aa2352a588a277",
+          "seconds": 0.235
+        },
+        {
+          "file": "config.json",
+          "bytes": 5437,
+          "sha256": "37e4e0d7b2b10b8f9946734ec808eab6045a435b5ec35219b5c07a153444675d",
+          "seconds": 0.228
+        },
+        {
+          "file": "generation_config.json",
+          "bytes": 245,
+          "sha256": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+          "seconds": 0.23
+        },
+        {
+          "file": "merges.txt",
+          "bytes": 1671839,
+          "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+          "seconds": 0.362
+        },
+        {
+          "file": "model.safetensors",
+          "bytes": 1625226859,
+          "sha256": "d8627de7ef411f6775182925059e140a9e1edb1fde8feeb540b4fba0edee1e58",
+          "seconds": 23.651
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "bytes": 71786,
+          "sha256": "8ea3f7115ca2b729e5af4e83b2580d1be97dd54d80e8ef7aa27257c04d84d325",
+          "seconds": 0.24
+        },
+        {
+          "file": "preprocessor_config.json",
+          "bytes": 127,
+          "sha256": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+          "seconds": 0.227
+        },
+        {
+          "file": "speech_tokenizer/config.json",
+          "bytes": 2336,
+          "sha256": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+          "seconds": 0.224
+        },
+        {
+          "file": "speech_tokenizer/configuration.json",
+          "bytes": 76,
+          "sha256": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+          "seconds": 0.244
+        },
+        {
+          "file": "speech_tokenizer/model.safetensors",
+          "bytes": 682293092,
+          "sha256": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+          "seconds": 9.941
+        },
+        {
+          "file": "speech_tokenizer/preprocessor_config.json",
+          "bytes": 234,
+          "sha256": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+          "seconds": 0.236
+        },
+        {
+          "file": "tokenizer_config.json",
+          "bytes": 7344,
+          "sha256": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+          "seconds": 0.239
+        },
+        {
+          "file": "vocab.json",
+          "bytes": 2776833,
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+          "seconds": 0.427
+        }
+      ],
+      "started": 1793361069.281893,
+      "completed": 1793361106.031136
+    },
+    {
+      "repo": "mlx-community/whisper-tiny-asr-fp16",
+      "revision": "77fa3f52b482ec80d086df55f893065a9baab172",
+      "files": [
+        {
+          "file": ".gitattributes",
+          "bytes": 1519,
+          "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+          "seconds": 0.235
+        },
+        {
+          "file": "README.md",
+          "bytes": 2812,
+          "sha256": "d68f867f75885b5fb22073dee9befb9bcb5586a4ba1cdfe39153f0335b2ca9e4",
+          "seconds": 0.232
+        },
+        {
+          "file": "added_tokens.json",
+          "bytes": 34604,
+          "sha256": "9715fd2243b6f06a5858b5e32950d2853f73dd5bc201aafcf76f5082a2d8acd1",
+          "seconds": 0.24
+        },
+        {
+          "file": "config.json",
+          "bytes": 2440,
+          "sha256": "cf7def105e7cc5ba77a0c8fae7e97aac1ca896b70b288dec3d64fad6d9c08f7a",
+          "seconds": 0.243
+        },
+        {
+          "file": "generation_config.json",
+          "bytes": 3747,
+          "sha256": "a5d5325911f16e74001a72fa13d6e208eee51548f994646de1f4b4cc8b35b512",
+          "seconds": 0.219
+        },
+        {
+          "file": "merges.txt",
+          "bytes": 493869,
+          "sha256": "2df2990a395e35e8dfbc7511e08c12d56018d8d04691e0133e5d63b21e154dc6",
+          "seconds": 0.296
+        },
+        {
+          "file": "model.safetensors",
+          "bytes": 74385959,
+          "sha256": "1267601753d2996d68dc065d1de786895a7ad9a874d1d3548a5274c1bc067444",
+          "seconds": 2.025
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "bytes": 10784,
+          "sha256": "093aa44f9a4ef9f403f29eb03f079f4c252cd78037fd4c1aced4c63625776b43",
+          "seconds": 0.28
+        },
+        {
+          "file": "normalizer.json",
+          "bytes": 52666,
+          "sha256": "bf1c507dc8724ca9cf9903640dacfb69dae2f00edee4f21ceba106a7392f26dd",
+          "seconds": 0.269
+        },
+        {
+          "file": "preprocessor_config.json",
+          "bytes": 184990,
+          "sha256": "9b5cd03a36fbb8a627c64d98a5b5b126ead95a77720723944487311f0110b666",
+          "seconds": 0.324
+        },
+        {
+          "file": "special_tokens_map.json",
+          "bytes": 2194,
+          "sha256": "e67ae3a0aaa99abcd9f187138e12db1f65c16a14761c50ef10eef2c174a7a691",
+          "seconds": 0.249
+        },
+        {
+          "file": "tokenizer.json",
+          "bytes": 2480466,
+          "sha256": "27fc476bfe7f17299480be2273fc0608e4d5a99aba2ab5dec5374b4482d1a566",
+          "seconds": 0.423
+        },
+        {
+          "file": "tokenizer_config.json",
+          "bytes": 282683,
+          "sha256": "2a4c4281cf9f51ac6ccc406fdc711a087afe6530f671fa7b80953edc498275ce",
+          "seconds": 0.325
+        },
+        {
+          "file": "vocab.json",
+          "bytes": 835550,
+          "sha256": "8f680bba319e01a653d2e8a5dbc17a9157179e0576e6ce74ce0c06356c6e24f9",
+          "seconds": 0.558
+        }
+      ],
+      "started": 1793361312.567894,
+      "completed": 1793361318.49245
+    }
+  ]
+}

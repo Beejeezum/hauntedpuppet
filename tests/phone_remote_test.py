@@ -92,4 +92,13 @@ class ServerTest(unittest.TestCase):
     def test_preview_restriction(self):
         self.assertEqual(self.req('/bridge/state',{'preview':'data:image/svg+xml;base64,abc'},bridge=True)[0],400)
         self.assertEqual(self.req('/bridge/state',{'preview':'data:image/jpeg;base64,/9j/','state':{}},bridge=True)[0],200)
+    def test_yard_capability_and_line_contract(self):
+        token=self.pair()
+        self.req('/bridge/state',{'state':{'workspace':'yard','speechReady':False,'transcript':'must-not-forward'},'cues':['friendly-stay']},bridge=True)
+        state=self.req('/api/state',token=token)[1]['state'];self.assertEqual(state,{'workspace':'yard','speechReady':False})
+        payload=dict(text='Welcome!',mode='lettering',character='friendly',animation='friendly-stay')
+        self.assertEqual(self.req('/api/command',{'id':'yard-silent-0001','command':'perform','value':payload},token)[0],202)
+        self.assertEqual(self.req('/api/command',{'id':'yard-voice-0001','command':'perform','value':dict(payload,mode='exact')},token)[0],400)
+        self.req('/bridge/state',{'state':{'workspace':'yard','speechReady':True},'cues':['friendly-stay']},bridge=True)
+        self.assertEqual(self.req('/api/command',{'id':'yard-voice-0002','command':'perform','value':dict(payload,mode='exact')},token)[0],202)
 if __name__=='__main__':unittest.main()

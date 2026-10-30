@@ -81,6 +81,9 @@ for (const item of tonight.files) {
   if(hash(bytes)!==item.publishedSha256)throw Error('Tonight publication checksum mismatch');
   fs.writeFileSync(path.join(tonightOut,item.destination),bytes);
 }
+// Yard experiments are a distinct picture-only preview; production entry stays intact.
+const yard = require('./compile-yard-preview.cjs').compileYardPreview(JSON.parse(fs.readFileSync(path.join(root,'scripts/public-yard-preview.json'),'utf8')),{root});
+for(const file of yard.files){const destination=path.join(out,'assets/wisp-yard',file.destination);fs.mkdirSync(path.dirname(destination),{recursive:true});fs.writeFileSync(destination,file.data);}
 fs.mkdirSync(path.join(out, 'phone_remote'), { recursive: true });
 for (const file of ['index.html', 'phone.js', 'phone.css']) {
   const source = path.join(root, 'phone_remote', file);

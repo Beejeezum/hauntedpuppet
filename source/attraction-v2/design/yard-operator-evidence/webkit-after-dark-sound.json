@@ -1,0 +1,30 @@
+{
+  "engine": "webkit",
+  "scope": "native AAC and Web Audio with test-only silent hardware bus, real native/raster browser animation; no physical projection or human listening approval",
+  "fullCycle": false,
+  "errors": [],
+  "requests": [],
+  "audio": {
+    "peak": 0.1518809199333191,
+    "samples": 385,
+    "maxActive": 1,
+    "quietPeaks": [],
+    "events": 3
+  },
+  "stopEvidence": "AudioContext suspended and all scheduled source nodes disconnected; frozen analyser history is not interpreted as playing audio.",
+  "violations": [],
+  "result": "passed",
+  "tests": [
+    "default silent/no AudioContext",
+    "actual decoded palette and audible-signal analysis",
+    "bounded sources",
+    "silent projector",
+    "stop/no tails",
+    "restart stays silent",
+    "optional sound independent of picture",
+    "mobile layout/axe",
+    "context disposal",
+    "corrupt audio fallback",
+    "Stop during delayed asset"
+  ]
+}

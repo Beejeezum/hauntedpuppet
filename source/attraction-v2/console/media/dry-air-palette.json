@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "url": "./media/dry-air-palette.mp4",
+  "sha256": "1433680e8c700df7b480a2b27764ced954811db3f8e497e60c029aaf58298664",
+  "bytes": 60771,
+  "cues": {
+    "wake": {
+      "offset": 0.2,
+      "duration": 0.55,
+      "sourceSeconds": [
+        1.5,
+        2.05
+      ],
+      "peak": 0.4
+    },
+    "drift": {
+      "offset": 0.95,
+      "duration": 1.15,
+      "sourceSeconds": [
+        6.45,
+        7.6
+      ],
+      "peak": 0.6
+    },
+    "vapor": {
+      "offset": 2.3,
+      "duration": 1.05,
+      "sourceSeconds": [
+        16.1,
+        17.150000000000002
+      ],
+      "peak": 0.6
+    }
+  },
+  "sampleRate": 48000,
+  "channels": 2,
+  "source": "source/wisp-performance-reference/button-cue-batch/wisp-morph-dry-swishes-v2.wav",
+  "sourceSha256": "040f3712ba542d39d2a587d6a11fbeb4e4ea4e87a61c7e2689eeb11e2e2ab715",
+  "scope": "Audio-only AAC container; repackaged original dry air gestures, no score, voice or new generation. New level/timing needs human listening acceptance.",
+  "humanApproval": false,
+  "generationCredits": 0,
+  "decodedPeak": 0.5953593254089355,
+  "decodedSamples": 197632
+}

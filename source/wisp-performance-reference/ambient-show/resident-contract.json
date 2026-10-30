@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "direction": "Persistent living character; actions return to their own idle. Empty stage only when authored as part of the cue.",
+  "rules": [
+    {"id":"friendly-drift","kind":"idle","entry":"friendly-rest","exit":"friendly-rest"},
+    {"id":"friendly-wave","kind":"action","entry":"friendly-rest","exit":"friendly-rest"},
+    {"id":"friendly-boo-fail","kind":"action","entry":"friendly-rest","exit":"friendly-rest"},
+    {"id":"friendly-depart","kind":"departure","entry":"friendly-rest","exit":"empty"},
+    {"id":"friendly-reform","kind":"arrival","entry":"empty","exit":"friendly-rest"},
+    {"id":"scary-drift","kind":"idle","entry":"scary-rest","exit":"scary-rest"},
+    {"id":"scary-pace","kind":"action","entry":"scary-rest","exit":"scary-rest"},
+    {"id":"scary-reach","kind":"action","entry":"scary-rest","exit":"scary-rest"},
+    {"id":"scary-eyes","kind":"action","entry":"scary-rest","exit":"scary-rest"},
+    {"id":"scary-retreat","kind":"departure","entry":"scary-rest","exit":"empty"},
+    {"id":"scary-fakeout","kind":"action","entry":"scary-rest","exit":"scary-rest"},
+    {"id":"scary-reform","kind":"arrival","entry":"empty","exit":"scary-rest"},
+    {"id":"cute-to-evil","kind":"morph","entry":"friendly-rest","exit":"scary-rest"},
+    {"id":"evil-to-cute","kind":"morph","entry":"scary-rest","exit":"friendly-rest"},
+    {"id":"fog-lettering","kind":"empty-stage-scene","entry":"empty","exit":"empty"},
+    {"id":"bats-through-letters","kind":"empty-stage-scene","entry":"empty","exit":"empty"}
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-30",
+  "approvedBaseline": "earlier-approved-apology.m4a",
+  "rejected": [
+    "OpenAI Fable friendly",
+    "OpenAI Onyx evil"
+  ],
+  "runwayCredits": 8,
+  "auditions": [
+    {
+      "voice": "Pip",
+      "name": "Wisp casting A \u2014 playful little spirit",
+      "text": "[excited] Oh! Hi! [giggles] I was trying to be terrifying. [whispers] Was it working?",
+      "taskId": "f7b284c3-5491-4871-9f4e-b52459a92fc3",
+      "credits": 2,
+      "status": "unapproved audition"
+    },
+    {
+      "voice": "Rachel",
+      "name": "Wisp casting B \u2014 warm mischievous spirit",
+      "text": "[excited] Oh! Hi! [giggles] I was trying to be terrifying. [whispers] Was it working?",
+      "taskId": "a2ece435-8519-4e6a-aaa0-b4569ab0bb26",
+      "credits": 2,
+      "status": "unapproved audition"
+    },
+    {
+      "voice": "Monster",
+      "name": "Wisp casting C \u2014 creature menace",
+      "text": "[whispers] Come a little closer. [growls] I've been waiting. [chuckles] Happy Halloween.",
+      "taskId": "7cd2fa8f-169c-4f5a-956b-eef651cffdc7",
+      "credits": 2,
+      "status": "unapproved audition"
+    },
+    {
+      "voice": "Grungle",
+      "name": "Wisp casting D \u2014 raspy imp menace",
+      "text": "[whispers] Come a little closer. [growls] I've been waiting. [chuckles] Happy Halloween.",
+      "taskId": "916c4ba1-4ec3-4c0d-9d24-8de6ba97bd6d",
+      "credits": 2,
+      "status": "unapproved audition"
+    },
+    {
+      "id": "friendly-c",
+      "voice": "marin",
+      "text": "Oh! Hi! I was trying to be terrifying. Was it working?",
+      "file": "friendly-c.wav",
+      "duration": 4.3,
+      "status": "generated; human review pending"
+    },
+    {
+      "id": "evil-c",
+      "voice": "cedar",
+      "text": "Come a little closer. I've been waiting. Happy Halloween.",
+      "file": "evil-c.wav",
+      "duration": 5.1,
+      "status": "generated; human review pending"
+    }
+  ],
+  "openaiAuditionRequests": 2,
+  "openaiBilledCostUSD": null
+}

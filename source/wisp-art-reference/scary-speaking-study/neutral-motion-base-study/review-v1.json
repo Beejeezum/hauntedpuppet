@@ -1,0 +1,148 @@
+{
+  "status": "source-only reusable neutral body and lip-observation foundation; speaking output unfinished",
+  "originalAuditionRejectionRetained": true,
+  "newGenerationCredits": 0,
+  "nativeMaster": {
+    "status": "source-only neutral full-body motion candidate; not a finished speech rig or loop",
+    "file": "scary-neutral-body-base-v1.mp4",
+    "sha256": "27ac763bbf5d6349737b751a22abae5adba410872a5fd2d08b4bd483157750eb",
+    "source": "source/wisp-performance-reference/runway-pilots/whole-character-talking-study/neutral-mouth-audio-pilot-v2.mp4",
+    "sourceSha256": "86c71acf6b44eee413afc6b756e32511d9a145f7d967431bd175ee72ca79ffae",
+    "frames": 193,
+    "fps": 24,
+    "dimensions": [
+      1088,
+      704
+    ],
+    "nativePictureRect": [
+      0,
+      0,
+      1088,
+      704
+    ],
+    "compressedVideoEssenceSha256": "8666d99c912332de7785d687e2b6c66789cc694c3665618a36021eb9e2c28484",
+    "processing": "Video stream copied exactly; all193decoded native RGB pictures identical. No scaling, re-encoding, retiming, reversal, interpolation or body/face replacement. Baked audition sound removed; future voice belongs to laptop speech playback.",
+    "nativeDecodedPictureDifference": {
+      "meanAbsoluteRGB": 0.0,
+      "maximumRGB": 0,
+      "threshold": 16
+    },
+    "paddedReview": "scary-neutral-body-review-v1.mp4",
+    "paddedReviewScope": "Constant black-padding/re-encoded viewing proxy only; separate from exact native master.",
+    "origin": "Earlier2credit whole-character speech audition, rejected for closed mouth through dialogue. Reuse is only for its moving closed-mouth body/fog, not a reversal of that speech rejection.",
+    "generationCreditsSpent": 0,
+    "humanApproval": false,
+    "runtimePublication": false,
+    "remaining": [
+      "Human character/material review",
+      "Connected jaw/cheek/teeth/OO mechanics",
+      "Verified picture-to-track registration before live use",
+      "Spoken motion/voice review",
+      "Authored loop and entrance/exit qualification",
+      "Browser/phone/projector integration and soak"
+    ]
+  },
+  "observationCorrection": {
+    "v1Accepted": 183,
+    "v1RejectedFrames": [
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      144,
+      145,
+      146,
+      147
+    ],
+    "v1Issue": "13thseed570,347extendsintoaweakcheekwrinkleoutsideconnectedlipcrease",
+    "v2Correction": "Finish the manually selected first-picture lip crease at565,345; do not lower gates or interpolate unseen points. Old13-point version retained and reproducible with --include-cheek-tail.",
+    "v2Accepted": 193,
+    "maximumLipForwardBackwardError": 0.3937273323535919,
+    "maximumLipPhotometricError": 10.201666831970215,
+    "absentFaceRejected": true,
+    "visualReview": "Viewed12spread-out native face crops and6specific former-failure frames111/113/116/144/145/147. The corrected guide follows the visible closed crease qualitatively. These are inferred material tracks, not independently labelled lip/jaw ground truth."
+  },
+  "reviewProxyBounds": {
+    "sha256": "a83d4656a50cd85ddf6d1edb2bd587f918a5b9471e3d73c34e8bb81a90ca8051",
+    "frameCount": 193,
+    "fps": 24.0,
+    "thresholdSummaries": {
+      "4": {
+        "emptyFrames": 0,
+        "reserveFailures": 0,
+        "minimumMarginsLTRB": [
+          0.4083333333333333,
+          0.2851851851851852,
+          0.425,
+          0.2962962962962963
+        ]
+      },
+      "8": {
+        "emptyFrames": 0,
+        "reserveFailures": 0,
+        "minimumMarginsLTRB": [
+          0.4083333333333333,
+          0.287962962962963,
+          0.425,
+          0.3
+        ]
+      },
+      "16": {
+        "emptyFrames": 0,
+        "reserveFailures": 0,
+        "minimumMarginsLTRB": [
+          0.409375,
+          0.287962962962963,
+          0.42604166666666665,
+          0.30092592592592593
+        ]
+      }
+    }
+  },
+  "nativeBrowserPlayback": {
+    "chromium": {
+      "passed": true,
+      "result": {
+        "width": 1088,
+        "height": 704,
+        "duration": 8.041667,
+        "uniqueTimes": 193,
+        "lastTime": 8,
+        "minimumPeak": 255,
+        "muted": true,
+        "audioTracks": null,
+        "decodedAudioBytes": 0,
+        "retiredVideoElements": 0
+      },
+      "scope": "Complete native8second silent source-only body base, actual advancing decoded pictures and visible spirit, no baked audio tracks where exposed, decoder retirement. No mouth rendering, human character/voice/loop or physical projection approval."
+    },
+    "webkit": {
+      "passed": true,
+      "result": {
+        "width": 1088,
+        "height": 704,
+        "duration": 8.042,
+        "uniqueTimes": 193,
+        "lastTime": 8,
+        "minimumPeak": 253,
+        "muted": true,
+        "audioTracks": 0,
+        "decodedAudioBytes": null,
+        "retiredVideoElements": 0
+      },
+      "scope": "Complete native8second silent source-only body base, actual advancing decoded pictures and visible spirit, no baked audio tracks where exposed, decoder retirement. No mouth rendering, human character/voice/loop or physical projection approval."
+    }
+  },
+  "requiredBeforeLiveUse": [
+    "Connected current-frame lip/cheek/jaw deformation and independently occluded upper/lower oral paint",
+    "Actual OO/EE corrective poses and closed consonants",
+    "Exact picture-to-observation matching; no timestamp-only or old attack-film profile",
+    "Voiced motion and human identity/material/voice review",
+    "Authored neutral loop, side views and ambient returns",
+    "Phone/laptop/projector integration, cancellation and soak"
+  ],
+  "runtimePublication": false,
+  "humanApproval": false
+}

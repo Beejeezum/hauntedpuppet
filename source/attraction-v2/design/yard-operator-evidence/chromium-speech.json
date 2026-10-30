@@ -1,0 +1,22 @@
+{
+  "engine": "chromium",
+  "provider": "mock PCM; no provider quality test",
+  "requests": 5,
+  "errors": [],
+  "passed": [
+    "evil startup",
+    "locked actions",
+    "friendly authored transition",
+    "explicit casting across tabs",
+    "distinct selected voice profiles",
+    "lettering",
+    "three-line queue",
+    "cancel active",
+    "cancel late preparation",
+    "mode-change cancels old voice",
+    "provider failure preserves film",
+    "saved evil restart",
+    "silent projector",
+    "global stop"
+  ]
+}

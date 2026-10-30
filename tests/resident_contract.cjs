@@ -1,0 +1,24 @@
+const assert=require('node:assert/strict'),fs=require('node:fs');
+(async()=>{
+ const base='../source/wisp-performance-reference/ambient-show/';
+ const contract=require(base+'resident-contract.json'),catalog=require(base+'catalog.json');
+ const {validateResidentDelivery,residentIntent}=await import(base+'resident-contract.mjs');
+ assert.equal(contract.rules.length,16);assert.equal(new Set(contract.rules.map(r=>r.id)).size,16);
+ assert.deepEqual(contract.rules.map(r=>r.id).sort(),catalog.clips.map(c=>c.id).sort(),'Same finite inventory, no extra generation scope');
+ assert.deepEqual(residentIntent({form:'friendly',action:'friendly-wave'},contract),['friendly-wave','friendly-drift']);
+ assert.deepEqual(residentIntent({form:'friendly',targetForm:'scary',action:'scary-pace'},contract),['cute-to-evil','scary-drift','scary-pace','scary-drift']);
+ assert.deepEqual(residentIntent({form:'scary',targetForm:'friendly'},contract),['evil-to-cute','friendly-drift']);
+ assert.throws(()=>residentIntent({form:'friendly',action:'scary-reach'},contract),/selected character/);
+ assert.throws(()=>residentIntent({form:'friendly',action:'friendly-depart'},contract),/selected character/,'Disappearance cannot masquerade as ordinary resident action');
+ const oldWave=catalog.clips.find(c=>c.id==='friendly-wave');
+ assert.throws(()=>validateResidentDelivery({...oldWave,status:'approved'},contract),/authored idle ports|resident performance review/,'Old empty-stage film cannot become a resident action by flipping approval');
+ const wave={id:'friendly-wave',entryPort:'friendly-rest',exitPort:'friendly-rest',media:{residentReviewEvidence:'SYNTHETIC fixture only',loop:false}};
+ validateResidentDelivery(wave,contract);assert.throws(()=>validateResidentDelivery({...wave,media:{...wave.media,loop:true}},contract),/play once/);
+ assert.throws(()=>validateResidentDelivery({...wave,media:{loop:false}},contract),/Missing resident/);
+ const idle={id:'scary-drift',entryPort:'scary-rest',exitPort:'scary-rest',media:{residentReviewEvidence:'SYNTHETIC fixture only',loop:true}};
+ assert.throws(()=>validateResidentDelivery(idle,contract),/reviewed living loop/);validateResidentDelivery({...idle,media:{...idle.media,loopReviewEvidence:'SYNTHETIC fixture only'}},contract);
+ const {compileLibrary}=require('../scripts/compile-wisp-library.cjs');
+ assert.throws(()=>compileLibrary({clips:[{...oldWave,status:'approved'}]}),/authored idle ports|resident performance review/);
+ assert.equal(compileLibrary(catalog).runtime.clips.length,0,'No real pending cue promoted by new intent planner');
+ console.log('PASS16 resident delivery contracts; action-return, form-morph-idle-action-return, explicit disappearances, reviewed-loop and legacy-rejection gates. Semantic/synthetic tests only, no new native joins claimed.');
+})().catch(error=>{console.error(error);process.exitCode=1;});

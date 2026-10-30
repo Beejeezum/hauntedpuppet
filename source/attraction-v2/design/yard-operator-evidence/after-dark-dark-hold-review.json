@@ -1,0 +1,33 @@
+{
+  "before": {
+    "frames": 777,
+    "darkHold41to46SecondsPeak": 73,
+    "peakBySecondDarkInterval": [
+      1,
+      0,
+      0,
+      21,
+      67,
+      73,
+      27,
+      0,
+      0
+    ]
+  },
+  "after": {
+    "frames": 776,
+    "darkHold41to46SecondsPeak": 0,
+    "peakBySecondDarkInterval": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "scope": "Decoded 320x180 grayscale native browser capture at10fps; fixes unintended second fog burst during a dark hold. Not projector footage."
+}

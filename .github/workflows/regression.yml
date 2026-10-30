@@ -13,6 +13,14 @@ on:
         description: Test source-only single-movie seeks instead of the normal native-media cases
         type: boolean
         default: false
+      native_loop_pilot:
+        description: Compare the original painted film native looping and explicit replay only
+        type: boolean
+        default: false
+      native_resident_pilot:
+        description: Test the private rolling resident action clock only
+        type: boolean
+        default: false
       native_finite_pilot:
         description: Test source-only finite-cue MediaSource playback (overrides the seek pilot)
         type: boolean
@@ -70,6 +78,35 @@ concurrency:
 permissions:
   contents: read
 jobs:
+  yard-preview:
+    if: github.event_name != 'workflow_dispatch' || !inputs.native_media_only
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps chromium webkit
+      - name: Validate the scoped picture-only package before opening browsers
+        run: |
+          node --test tests/attraction-v2/*.test.mjs tests/attraction-v2/yard-preview-publication.test.cjs
+          node tests/public_build.cjs
+      - name: Exercise built media, effects, Stop and silent projector
+        run: |
+          failed=0
+          node tests/attraction-v2/yard-public-preview-browser.cjs || failed=1
+          HAUNT_BROWSER=webkit node tests/attraction-v2/yard-public-preview-browser.cjs || failed=1
+          exit "$failed"
+      - name: Preserve yard browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yard-preview-evidence
+          path: work/yard-public/
+          if-no-files-found: ignore
   cue-bank-soak:
     if: github.event_name != 'workflow_dispatch' || !inputs.native_media_only
     runs-on: ubuntu-latest
@@ -475,7 +512,7 @@ jobs:
       - name: Build exact public fixtures
         run: node tests/public_build.cjs
       - name: Check actual native soundtrack and complete bridge
-        if: ${{ !inputs.native_atlas_pilot && !inputs.native_finite_pilot && !inputs.native_single_pipeline }}
+        if: ${{ !inputs.native_resident_pilot && !inputs.native_loop_pilot && !inputs.native_atlas_pilot && !inputs.native_finite_pilot && !inputs.native_single_pipeline }}
         env:
           DEBUG: pw:browser
           GST_DEBUG: autoaudiosink:5,pulsesink:4,webkitmediaplayer:3
@@ -486,6 +523,18 @@ jobs:
           HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/showdesk_film_audio.cjs || failed=1
           HAUNT_BROWSER=webkit node tests/catalog_bridge_browser.cjs || failed=1
           exit "$failed"
+      - name: Compare native movie loop restart (not release acceptance)
+        if: ${{ inputs.native_loop_pilot }}
+        run: |
+          failed=0
+          HAUNT_BROWSER=webkit node tests/native_film_loop.cjs || failed=1
+          HAUNT_BROWSER=webkit HAUNT_EXPLICIT_LOOP=1 node tests/native_film_loop.cjs || failed=1
+          exit "$failed"
+      - name: Check rolling resident action clock (not release acceptance)
+        if: ${{ inputs.native_resident_pilot }}
+        run: |
+          node tests/rolling_resident_timeline.cjs
+          HAUNT_BROWSER=webkit node tests/resident_action_player.cjs
       - name: Check one-decoder source study (not release acceptance)
         if: ${{ inputs.native_atlas_pilot && !inputs.native_finite_pilot && !inputs.native_single_pipeline }}
         run: |
@@ -589,5 +638,7 @@ jobs:
             test-results/authored-director-preparation-*.json
             work/scary-container/*.json
             work/native-video-switch/*.json
+            work/native-film-loop/*.json
+            work/resident-action-player/*.json
             work/native-media-gstreamer*.log
             work/owned-director-preparation/*.json

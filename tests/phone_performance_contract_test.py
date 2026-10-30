@@ -1,6 +1,14 @@
 import unittest
 from phone_remote.phone_server import Remote, valid_performance
 class PerformanceContract(unittest.TestCase):
+    def test_yard_exact_or_silent_is_bounded_and_form_matched(self):
+        state=dict(workspace='yard',speechReady=True);cues=['friendly-stay','scary-stay']
+        good=dict(text='Happy Halloween',mode='exact',character='friendly',animation='friendly-stay')
+        self.assertTrue(valid_performance(good,state,cues))
+        self.assertTrue(valid_performance(dict(good,mode='lettering'),dict(workspace='yard',speechReady=False),cues))
+        self.assertFalse(valid_performance(good,dict(workspace='yard',speechReady=False),cues))
+        for patch in [dict(text='x'*241),dict(mode='prompt'),dict(animation='scary-stay'),dict(text='bad\x7f'),dict(audio='not-allowed')]:
+            self.assertFalse(valid_performance(dict(good,**patch),state,cues))
     def test_bounded_and_workspace_owned(self):
         good=dict(text='Hello, little ghosts!',mode='exact',character='friendly',animation='friendly-wave')
         self.assertTrue(valid_performance(good,dict(workspace='director'),['friendly-wave']))

@@ -1,0 +1,11 @@
+RESIDENT CHARACTER DIRECTION — 2026-10-29
+
+The human rejects routine fade-out/fade-in between every action. The primary show is a persistent painted character: friendly living idle -> friendly action -> friendly living idle, or scary living idle -> scary action -> scary living idle. A form change plays a real authored cute/scary transformation, reaches the other form's living idle, then uses that form's actions. A momentary rest is still moving, not a frozen still.
+
+Only explicitly authored vanish/departure/arrival/poof scenes may leave an empty stage. Blackout remains an immediate operator safety/control action. Do not replace fades with two whole ghosts crossfading, a visible unmatched cut, a hard reset, or an invisible jump covered by screen fog.
+
+Ordinary action footage must be authored to depart from and land in the canonical living idle pose, with matching scale, heading, silhouette, hands, local fog motion and velocity. A button queues a safe handoff; it does not interrupt the body arbitrarily. Rapid requests replace the pending request while the current authored action finishes. Playlist/autopilot use the same handoffs. Sound remains attached to the native movie and laptop; projector and phone stay silent.
+
+The approved four visible joins in the25second morph review are a useful backbone; they do not approve closing idle loops or arbitrary wave/other-action joins. Current empty-stage wave/action films remain legacy rehearsal assets, not resident-action completions. No silent change of their port labels or removal of fades can manufacture missing animation.
+
+Keep the agreed16cue inventory, paired phone director, separate live interaction and no-dialogue ambient policy. This changes delivery requirements, not scope completion. Preserve the existing playable rehearsal workspace while the resident flow and missing media are built and verified. Pending lettering remains rejected for solid-looking smoke. No new credit budget is granted by this amendment.

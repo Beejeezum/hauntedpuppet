@@ -1,0 +1,434 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "productStatus": "yard apparition projection: floating ghosts, spooky eyes and atmospheric layers; guest-game proposal rejected as out of scope",
+  "productionSitePreserved": true,
+  "deliverables": [
+    {
+      "id": "01-bible",
+      "status": "re-scoped yard show and story proposal written",
+      "evidence": [
+        "product-blueprint.txt",
+        "technology-decisions.txt"
+      ]
+    },
+    {
+      "id": "02-director",
+      "status": "core-implemented-model-tested",
+      "evidence": [
+        "../../source/attraction-v2/show-director.mjs",
+        "../../tests/attraction-v2/show-director.test.mjs"
+      ],
+      "limits": "No decoder, phone bridge, persistence UI or actual playback integrated."
+    },
+    {
+      "id": "03-native-playback",
+      "status": "browser-native layered rehearsal integrated",
+      "limits": "Hero plus silent native eyes passage and painted vapor compose through calibrated output. No physical projection or final art acceptance. Native alternatives remain optional."
+    },
+    {
+      "id": "04-operator-ui",
+      "status": "local yard controls: character locks, spatial actions and speech queue implemented",
+      "limits": "Local typed speech, phone pairing and bounded yard controls implemented/tested. Final voice casting, native action library and physical-device acceptance remain unfinished.",
+      "evidence": [
+        "../../source/attraction-v2/console/index.html",
+        "../../source/attraction-v2/console/README.txt",
+        "../../tests/attraction-v2/stagehand-browser.cjs"
+      ]
+    },
+    {
+      "id": "05-media-package",
+      "status": "six-private-rehearsal-segments-packaged; production-admission-pending",
+      "evidence": [
+        "../../source/attraction-v2/console/media/manifest.json"
+      ],
+      "limits": "Existing paid source footage, no new generation. Shared constant85%framing, source hashes and exact frame counts. Human loop/action joins still pending."
+    },
+    {
+      "id": "06-friendly-pilot",
+      "status": "private-candidate",
+      "limits": "Shorter wave exists; motion/joins require human review. No new acceptance inferred."
+    },
+    {
+      "id": "07-morph-scary",
+      "status": "partial-source-evidence; resident-family-incomplete"
+    },
+    {
+      "id": "08-library-master",
+      "status": "incomplete",
+      "limits": "16 planned slots, not16 production-ready resident performances."
+    },
+    {
+      "id": "09-phone-handover",
+      "status": "local yard pairing and commands verified in isolated Chrome/WebKit clients",
+      "limits": "Real HTTP pairing/commands/acknowledgements on loopback, native films, synthetic voice. Physical Wi-Fi phone and hosted yard backend not tested or deployed."
+    },
+    {
+      "id": "10-talking",
+      "status": "typed voiceover plumbing and completion acknowledgement verified; character voice casting awaiting human choice",
+      "limits": "Eight auditions unapproved. C voices available after explicit choice; original local D voices remain listening studies. Rejected Fable/Onyx disabled. No live lip sync."
+    },
+    {
+      "id": "11-installation",
+      "status": "site-brief-drafted; physical-layout-pending",
+      "evidence": [
+        "mango-tree-installation.txt"
+      ]
+    },
+    {
+      "id": "12-dress-rehearsal",
+      "status": "not-started",
+      "limits": "Physical rehearsal not done. Two-hour native browser resource run and30minute three-program browser run passed; separate from physical projection/voice/phone acceptance."
+    }
+  ],
+  "validation": {
+    "command": "node --test tests/attraction-v2/show-director.test.mjs",
+    "scope": "Synthetic exact-join graph fixtures and accelerated logical clock; no media decoding, provider or hardware tests.",
+    "scenarios": [
+      "three simulated hours for each tone",
+      "operator takeover and lease expiry",
+      "queued request replacement",
+      "authored morph routing",
+      "no routine disappearance bridges",
+      "intentional empty-stage finale",
+      "peak-scare restrictions/cooldown",
+      "blackout/stale completion",
+      "bounded command anti-replay",
+      "saved program round-trip"
+    ],
+    "passedTests": 19,
+    "result": "passed locally on Node24"
+  },
+  "newGenerationCredits": 178,
+  "site": {
+    "confirmed": "front yard beneath a large mango tree; floating-free illusion",
+    "planningHardware": "Existing ViewSonic believed PJD7820HD from original user notes; exact model unconfirmed. Human indicates existing mesh usable.",
+    "evidence": "mango-tree-installation.txt",
+    "physicalAcceptance": false,
+    "mesh": "Human indicates existing material is usable; exact fabric, size and night contrast unverified."
+  },
+  "rehearsalVerification": {
+    "modelTests": 24,
+    "nativeBrowsers": [
+      "Chromium",
+      "Mac WebKit"
+    ],
+    "sameAdvancingSource": true,
+    "presentedBlankFrames": 0,
+    "silentProjector": true,
+    "blackoutAndRestart": true,
+    "staleLoadCancellation": true,
+    "packageHashesVerified": true,
+    "framesAudited": 728,
+    "reserve": 0.2,
+    "reserveFailures": 0,
+    "layoutAndAutomatedAccessibility": "passed",
+    "physicalProjection": "not tested",
+    "humanLoopAndWaveAcceptance": "pending",
+    "newRunwayCredits": 0,
+    "qa": "../../design-qa.md"
+  },
+  "currentDirection": {
+    "brief": "yard-apparitions-scope.txt",
+    "status": "Three local unattended modes including new articulated spider preview; typed phone control and stable Wisp modes working. Voice casting/human visual review remain pending.",
+    "nextDeliverable": "12-hour run: new character voice casting, independent roaming eyes/spider/quiet apparition screensavers, cohesive scripts/storyboards, regression and visual review",
+    "preserve": "approved painted identity, useful tested playback, sound ownership, manual/auto operation and projector popup",
+    "outOfScope": [
+      "lantern game",
+      "guest motion-sensing challenges",
+      "haunted-tree storyline",
+      "practical lighting installation"
+    ],
+    "previousProposal": {
+      "brief": "mechanics-reset.txt",
+      "status": "rejected as out of scope; do not implement"
+    },
+    "productionPlan": "product-blueprint.txt",
+    "signatureShow": "Proposed 2–3minute mixed story delivered as one local picture/audio file; Friendly and Spooky variants need only their permitted beats.",
+    "deliveryPlan": [
+      {
+        "id": "stage-proof",
+        "status": "implemented; Chromium/Mac WebKit verified; physical and human scene review pending",
+        "deliverable": "Calibrated ghost/eyes scene with independent bounded layers and silent projector output"
+      },
+      {
+        "id": "resident-mini-show",
+        "status": "planned; existing media candidates only",
+        "deliverable": "Approved friendly action, both morphs and compatible body/eyes path"
+      },
+      {
+        "id": "operation",
+        "status": "partial rehearsal; integration pending",
+        "deliverable": "Phone pairing, automatic profiles, saved ordered play, takeover and recovery"
+      },
+      {
+        "id": "signature-master",
+        "status": "planned",
+        "deliverable": "One complete story video with continuous embedded sound; three-cycle review"
+      },
+      {
+        "id": "library-expansion",
+        "status": "later; maximum16 performance families",
+        "deliverable": "Distinct admitted routines; optional smoke-lettering/bats; speaking tested independently"
+      },
+      {
+        "id": "yard-rehearsal",
+        "status": "not tested",
+        "deliverable": "Physical projection, sound, real phone and two-hour normal-speed run"
+      }
+    ]
+  },
+  "yardSceneVerification": {
+    "implementation": "../../source/attraction-v2/console/yard-scene.mjs",
+    "evidence": "../../source/attraction-v2/design/yard-evidence/",
+    "browsers": [
+      "Chromium",
+      "Mac WebKit"
+    ],
+    "nativeEyesFrames": 78,
+    "eyesCompleteEffectReserve": 0.2,
+    "sourceFrameRange": [
+      72,
+      150
+    ],
+    "independentPlacement": true,
+    "cornerCalibrationAndMirror": true,
+    "savedSettings": true,
+    "silentProjector": true,
+    "ownerRafStoppedOutputContinues": true,
+    "stopAndResourceDisposal": true,
+    "gentleHidesSinisterEyes": true,
+    "optionalChangedAssetBlocked": true,
+    "accessibilityViolations": 0,
+    "capture": "work/yard-scene/live-composite.mp4",
+    "captureScope": "25second silent browser-render capture; not physical projection",
+    "humanAcceptance": "pending",
+    "physicalProjection": "not tested",
+    "phonePairing": "not implemented in this rehearsal",
+    "newRunwayCredits": 0
+  },
+  "yardOperatorVerification": {
+    "date": "2026-10-30",
+    "modelTests": 47,
+    "lockedModes": "Three simulated hours each; not a real-time soak",
+    "browsers": [
+      "Chromium",
+      "Mac WebKit"
+    ],
+    "nativeFilmRegression": true,
+    "mockSpeechQueueCancellationFailures": true,
+    "silentProjector": true,
+    "phonePairing": "Real local HTTP service tested in isolated Chromium/WebKit; no physical LAN phone test.",
+    "liveLipSync": false,
+    "physicalProjection": "not tested",
+    "productionDeploy": false,
+    "newRunwayCredits": 0,
+    "voiceProvider": {
+      "calls": 2,
+      "friendlyClickToSpeechMs": 1429,
+      "evilClickToSpeechMs": 2277,
+      "playback": "real generated PCM in muted browser",
+      "keySavedInMacKeychain": true,
+      "voiceQualityHumanAcceptance": "REJECTED by user: voices suck; Pixar-level original character acting requested",
+      "liveLipSync": false
+    },
+    "evidence": "../../source/attraction-v2/design/yard-operator-evidence/"
+  },
+  "overnight20261030": {
+    "deadlineUTC": "2026-10-30T16:53:00Z",
+    "automation": "overnight-wisp-production",
+    "runwayCredits": 178,
+    "remainingSelfImposedEnvelope": 22,
+    "runtimePrograms": [
+      "Watching eyes",
+      "Quiet apparitions",
+      "Spider on silk (local preview)"
+    ],
+    "spider": "Two Runway movies remain rejected. New original painted RGBA articulation sheet and eight-leg silk rig integrated as a local preview; human/physical review pending.",
+    "voiceCasting": "Eight auditions plus approved apology. C candidates connect after explicit choice; D are new original locally designed listening studies, not live voices. No human cast choice yet.",
+    "script": "yard-show-script-2026-10-30.txt",
+    "storyboard": "../../source/attraction-v2/design/overnight-2026-10-30/yard-show-storyboard-v1.png",
+    "browserVerification": "Loops and casting passed Chromium and Mac WebKit; real muted media, no provider calls.",
+    "soak": "PASS:7200.245seconds normal-speed native Wisp playback, silent projector, bounded buffer/cache. Harness includes Host actions; not pure Auto or physical projection.",
+    "productionDeploy": false,
+    "physicalProjection": "unavailable / not tested",
+    "latestCheckpointUTC": "2026-10-30T12:09:39.917491+00:00",
+    "stabilityRefinements": [
+      "Scene changes reverse opacity continuously when cancelled",
+      "Missing eyes or ghost media disables only that program",
+      "Disposed pages restore cleanly after browser history cache",
+      "Fixed repeated vanish cue creating unwanted fog during the empty hold"
+    ],
+    "visualReview": {
+      "captureSeconds": 78.2,
+      "source": "work/yard-operator/after-dark-native-review.webm",
+      "review": "../../source/attraction-v2/design/yard-operator-evidence/after-dark-dark-hold-review.json",
+      "emptyHoldPeakBefore": 73,
+      "emptyHoldPeakAfter": 0,
+      "scope": "native browser canvas, not physical projection"
+    },
+    "modelTests": 60,
+    "phoneController": {
+      "status": "Implemented and real local backend upgraded",
+      "localURL": "http://127.0.0.1:8902/source/attraction-v2/console/",
+      "location": "Output > Pair a phone controller",
+      "serverSession": 20662,
+      "scope": "Chrome/WebKit real loopback HTTP pair/state/command/ack, native film, synthetic PCM; not physical phone",
+      "features": [
+        "stable form selection",
+        "Host/Auto",
+        "bounded existing actions",
+        "silent typed lettering",
+        "240-character exact voiceover with completion acknowledgement",
+        "Stop/Blackout",
+        "revocation",
+        "draft preservation"
+      ],
+      "noLiveLipSync": true,
+      "LANAutoEnabled": false,
+      "keychainRestoredPrivately": true,
+      "providerCallsThisCheckpoint": 0,
+      "newGenerationCreditsThisCheckpoint": 0,
+      "hostedYardSupport": false
+    },
+    "imageGenerationCount": 3,
+    "spiderRigEvidence": "../../source/attraction-v2/design/spider-rig-study/provenance.json",
+    "projectorHandover": "Stagehand and After dark reuse one named silent window; old owner detaches; Chromium/WebKit round trip tested.",
+    "afterDarkSoak": "PASS:1800.030seconds normal-speed three-program playback, four muted media elements, silent projector, bounds/Stop verified. Pre-Night-watch checkpoint30e7e80.",
+    "openaiCasting": {
+      "newCalls": 2,
+      "voices": [
+        "marin",
+        "cedar"
+      ],
+      "durationsSeconds": [
+        4.3,
+        5.1
+      ],
+      "requestToCompleteMs": [
+        1963,
+        1207
+      ],
+      "billedCostUSD": null,
+      "qualityApproval": "pending",
+      "runtimeSelection": "explicit opt-in for newly queued laptop/phone messages",
+      "pitchOrEchoAdded": false,
+      "serverRestarted": false,
+      "paidRetries": 0
+    },
+    "nightWatch": {
+      "status": "local implemented; normal-speed cycles passed Chrome/WebKit",
+      "durationObservedSeconds": [
+        124.107,
+        124.038
+      ],
+      "endingContract": "native eyes closure, spider canopy exit, ghost fog disappearance; empty holds before changes",
+      "actualWebKitDurationSource": "../../source/attraction-v2/design/yard-operator-evidence/webkit-night-watch.json",
+      "capture": "work/yard-operator/night-watch-chromium/cycle.webm",
+      "blackPixelChecks": true,
+      "voiceOrMusic": false,
+      "newGenerationCredits": 0,
+      "humanArtAcceptance": "pending"
+    },
+    "runtimeRecovery": {
+      "observedUTC": "2026-10-30T10:53Z",
+      "previousServerUnavailable": true,
+      "newServerSession": 20662,
+      "savedKeyRestoredPrivately": true,
+      "reason": "Execution interruption; no listener on8902. Restart was recovery, not a frontend reload.",
+      "noProviderCalls": true,
+      "gap": "No work claimed during the observed gap from approximately07:25 to10:53UTC."
+    },
+    "startupTimeoutSeconds": 15,
+    "afterDarkPhone": {
+      "status": "implemented; Chromium and Mac WebKit real loopback pairing/commands verified",
+      "controls": [
+        "Watching eyes",
+        "Spider on silk",
+        "Quiet apparitions",
+        "Night watch",
+        "Stop",
+        "Blackout"
+      ],
+      "handoff": "Paired phone survives explicit ownership transfer Stagehand -> After dark -> Stagehand; allow five seconds for old page lease to expire. No automatic LAN enable.",
+      "evidence": "../../source/attraction-v2/design/yard-operator-evidence/chromium-after-dark-phone.json",
+      "runtime": "existing local8902server; no restart required",
+      "providerCalls": 0,
+      "physicalPhone": false,
+      "hosted": false
+    },
+    "afterDarkSound": {
+      "status": "optional dry-effects listening preview implemented",
+      "default": "off; laptop gesture required; Stop disables until explicitly enabled again",
+      "source": "existing V7 nonmusical air gestures, three trimmed normalized excerpts, audio-only AAC palette60771bytes",
+      "humanListeningApproval": false,
+      "musicOrSpeech": false,
+      "generationCredits": 0,
+      "test": "Chrome123.78s captured fullcycle +WebKit three-spider-gesture/cancellation/decoder test; real Web Audio with hardware silenced by test-only tap",
+      "fullCycleEvents": 11,
+      "maximumObservedActiveSources": 1,
+      "plannedHoldAudioSamples": 360,
+      "plannedHoldPeak": 0,
+      "capturedAudioPeak": 0.2079881876707077,
+      "capturedClippedSamples": 0,
+      "recording": "work/yard-audio/chromium/night-watch-dry-effects.webm",
+      "recordingScope": "Browser capture with sparse audio packet timestamps preserved; not physical projection or human listening approval",
+      "projectorAndPhoneRemainSilent": true
+    },
+    "spiderLight": {
+      "status": "runtime painted-shadow lift selected after browser comparison; human/physical review pending",
+      "level": 0.16,
+      "artworkChanged": false,
+      "alphaChanges": 0,
+      "newWhiteClippedPixels": 0,
+      "reference": "../../source/attraction-v2/design/spider-rig-study/painted-light-comparison.png",
+      "comparison": "Original,10%,16%,24%; selected16% to reveal body/fur while retaining dark character.24% looked washed out.",
+      "engines": [
+        "Chromium",
+        "Mac WebKit"
+      ],
+      "nativeFilterAvoided": "Tested WebKit ignores Canvas2D.filter; source-atop composite works in both with exactly identical alpha and bounds.",
+      "study": "http://127.0.0.1:8902/source/attraction-v2/console/spider-study.html",
+      "physicalBrightnessNotMeasured": true
+    },
+    "localVoiceDesign": {
+      "status": "two original locally generated studies on casting shelf; no runtime adapter or quality approval",
+      "model": "Qwen3-TTS-1.7B-VoiceDesign,MLX4bit",
+      "takes": 2,
+      "newPaidCalls": 0,
+      "diskGiB": 2.815,
+      "modelLoadSeconds": 11.9958,
+      "firstChunkSeconds": [
+        2.6195,
+        0.1606
+      ],
+      "totalSeconds": [
+        4.0478,
+        2.2484
+      ],
+      "audioSeconds": [
+        5.68,
+        8.32
+      ],
+      "firstTakeCold": true,
+      "secondTakeWarm": true,
+      "browserLiveLatency": false,
+      "clippedSamples": 0,
+      "humanListening": "pending",
+      "record": "../../assets/wisp-casting-2026-10-30/local-casting-attempts.json",
+      "serverRestarted": false
+    },
+    "publicPreviewPackage": {
+      "status": "implemented and locally verified built dist; not pushed or deployed yet",
+      "path": "/assets/wisp-yard/",
+      "files": 67,
+      "bytes": 3670344,
+      "releaseApproved": false,
+      "capabilities": "native Wisp, spatial motion, lettering, mapping, three afterdark programs, Nightwatch, dry effects, saved auditions and silent popup",
+      "excludedCapabilities": "new speech, private connect and phone pairing disabled; local8902 keeps these features",
+      "tests": "11 publication guards,60 model checks, actual built Chromium/MacWebKit playback/Stop/popup/audio/mobiles; zero API requests",
+      "existingProductionEntry": "index/live/app copied byte-identically; no root UI change",
+      "legacyHelper": "existing optional windowName change validated via both browser output ownership tests; stale public hash refreshed"
+    }
+  }
+}

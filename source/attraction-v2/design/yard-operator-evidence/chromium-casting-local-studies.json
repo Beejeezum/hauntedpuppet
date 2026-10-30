@@ -1,0 +1,63 @@
+{
+  "engine": "chromium",
+  "media": [
+    {
+      "duration": 8.064,
+      "paused": true,
+      "label": "Earlier approved apology"
+    },
+    {
+      "duration": 5.68,
+      "paused": true,
+      "label": "Friendly audition A"
+    },
+    {
+      "duration": 5.92,
+      "paused": true,
+      "label": "Friendly audition B"
+    },
+    {
+      "duration": 7.84,
+      "paused": true,
+      "label": "Evil audition A"
+    },
+    {
+      "duration": 9.2,
+      "paused": true,
+      "label": "Evil audition B"
+    },
+    {
+      "duration": 4.3,
+      "paused": true,
+      "label": "Friendly audition C"
+    },
+    {
+      "duration": 5.1,
+      "paused": true,
+      "label": "Evil audition C"
+    },
+    {
+      "duration": 5.68,
+      "paused": true,
+      "label": "Friendly audition D"
+    },
+    {
+      "duration": 8.32,
+      "paused": true,
+      "label": "Evil audition D"
+    }
+  ],
+  "noAutoplay": true,
+  "onePlayback": true,
+  "newCandidateActualMutedPlayback": true,
+  "localStudiesNotLive": true,
+  "selection": true,
+  "explicitLiveCastSelection": true,
+  "feedbackDoesNotInstall": true,
+  "corruptStorageHandled": true,
+  "noProviderCalls": true,
+  "cleanup": true,
+  "restoredPageLifecycle": "simulated persisted pageshow reloads playable sources without autoplay; selections retained",
+  "violations": [],
+  "quality": "not judged by automated test"
+}

@@ -1,0 +1,406 @@
+WISP — 12-HOUR PRODUCTION BRIEF
+Requested 2026-10-30 04:53 UTC. Finish safely by 16:53 UTC /12:53pm New York.
+Automation: overnight-wisp-production, every20minutes, updated through Codex tool.
+
+LATEST HUMAN DIRECTION, IN ORDER
+- Keep building the yard projection; type text and have Wisp speak it and look good.
+- Stable Friendly/Evil modes with meaningful actions within each; Mixed can alternate.
+- Generic Fable/Onyx voices REJECTED. User wants original animated-feature/Pixar-level
+  acting and character identity, not pitch/echo processing or bland narration.
+- Add2–3 unattended screensaver-style modes: menacing eyes appearing in changing
+  places/times; spider lowering from above the tree, acting creepily and climbing
+  back up; quiet roaming apparition is a suitable third mode.
+- Continue fixing/building, animation/scripts/storyboards/full-show ideas12hours.
+
+SUCCESS GATES
+1. Calm use: choose character or a standalone screensaver; one obvious start/stop;
+   projector remains silent and black outside the intentional apparition. No giant
+   full-screen smoke blanket; projector mapper applies to every layer.
+2. Character integrity: Friendly/Evil locks; persistent native body/fog motion;
+   authored morphs for changes; no ordinary disappearance transitions or pasted faces.
+3. Screensavers have varied dwell/spacing/location and deliberate empty intervals.
+   Eyes do not teleport while visible. Spider legs/body act; no rigid clip-art bob.
+   Body/legs/smoke stay inside a safe stage reserve; thread may meet the top edge as
+   an intentional attachment. Each routine returns to its documented rest/empty state.
+4. Voice casting judged on recognizable original personality, dynamics, comic timing,
+   intelligible dialogue, connected cute/evil identity and repeatability. Technical
+   success is NOT quality acceptance. Use the earlier approved apology as reference:
+   source/wisp-performance-reference/tonight-demo/apology-proof-v1.mp4.
+5. Provider credentials server-only; no mic/webcam for this current control direction.
+   Phone pairing remains unfinished: don't claim narrow-screen UI is a remote.
+6. Native-media/browser/memory/stop/transition/output tests pass. Physical projection,
+   real-world sound and human art/voice acceptance remain explicitly unverified.
+
+WORK PACKAGES / ORDER
+A. Save the stable controls/voice-plumbing checkpoint. The two real OpenAI tests ran
+   successfully (1.429s/2.277s) but user rejected their voices. Keep evidence honest.
+B. Four short acting auditions via Runway, compare with approved apology. Budget8
+   credits spent; don't regenerate blindly or install an unapproved candidate.
+   Build a dedicated audition shelf accessible from speech controls. Runtime arbitrary
+   text still needs a provider adapter/credential path matching the chosen voice;
+   static Runway samples alone are not live speech integration.
+C. Implement Watchful Dark with existing filmed eyes, staggered appearances at
+   different safe placements, deliberate dark dwell, no new generations needed.
+D. Spider pilot: one small native-motion source against black, articulated8legs,
+   suspended thread, descent/listen/front-leg threat/retraction. Review boundaries,
+   anatomy, complete endpoint and pureblack. Don't commission a large library yet.
+E. Quiet Apparitions: original footage, slow bounded travel and planned vanish/dwell/
+   return; preserve locked character where selected. No new solid/vector Wisp.
+F. Integrate one narrow program selector and scene-specific controls without bloating
+   the main screen. Clear exit to character mode, queued requests can't leak across.
+G. Script/storyboard an understated2–3minute yard loop: watching dark -> cautious
+   visitor -> playful Wisp -> brief evil reveal -> sheepish recovery -> overhead
+   spider surprise -> eyes only -> ghost lettering/farewell -> intentional darkness.
+   Mostly nonverbal/effects, speech occasional. No game mechanics or extra hardware.
+H. Review captures, repair, regress, save checkpoint. At deadline report links,
+   spend, shipped-vs-local distinction and genuine remaining defects.
+
+CREDIT DISCIPLINE
+Bruce workspace explicitly authorized by user in earlier turn. 13,854 credits at
+start of new casting; four auditions cost2each ->13,846. This is balance evidence,
+not permission to burn the balance. Self-imposed overnight envelope: up to200 Runway
+credits for focused voice/one-spider tests and necessary revision, then continue
+implementation/review without further paid generation unless user authorizes more.
+Record every task, exact prompt, cost, acceptance/rejection. No repeated failed call.
+
+SERVER / STATE
+Voice-enabled local console http://127.0.0.1:8902/source/attraction-v2/console/
+python3 scripts/serve_yard.py is now running in exec session42366 and owns credentials.
+The tested backend upgrade at05:58 restored the saved Keychain key privately.
+Key privately connected and saved in Mac Keychain. Do not restart just for frontend
+reload. Existing static8901 console still works for pictures but has no API.
+Do not disturb the user's active tab; use silent isolated browsers for tests.
+Production Netlify unchanged. Branch wisp-story-tough-ghost. Preserve unrelated
+resident_action_player.cjs /resident_wave_review.cjs edits and private untracked art.
+
+PRIMARY RESEARCH FOR CASTING / RUNTIME
+https://elevenlabs.io/docs/eleven-creative/voices/voice-design/
+https://elevenlabs.io/docs/help-center/product/core-capabilities/text-to-speech/how-do-audio-tags-work-with-eleven-v3-and-v4
+https://docs.dev.runwayml.com/api/
+https://docs.dev.runwayml.com/guides/pricing/
+
+CHECKPOINT05:11UTC
+- Auditions/approved-apology comparison ready at console/voice-casting.html; no human verdict.
+- Watching eyes +Quiet apparitions ready at console/haunt-loops.html. Both native
+  browser test suites passed Chromium/WebKit; no physical approval.
+- Spider v1 metallic/clipped, v2 organic but nearly still: neither runtime admitted.
+  TotalRunway178credits,22remain in self-envelope. Do not blindly spend again.
+- Storyboard+160sec full script saved in design/overnight-2026-10-30 and
+  docs/attraction-v2/yard-show-script-2026-10-30.txt. Not a finished runtime master.
+- Two-hour real-time silent Chromium playback soak running session63881 since05:09:42;
+  report work/yard-operator/soak-two-hour/report.json. Inspect after~07:10UTC.
+- Do not restart8902. Existing local phone bridge can be reused after bounded adapter
+  validation; do not auto-enable LAN. Keep production untouched until verified.
+
+HEARTBEAT05:13 follow-through
+Continuous reversible scene fades, independent failed-program fallback, cachedpage
+recovery implemented/tested.78sec native capture revealed duplicate vanish emitted
+fog during emptyhold: fixed; blackpixels verified.34modeltests pass.
+Two-hour soak still running; see adjacent run-metadata.json for limits. No newspend.
+
+
+HEARTBEAT05:33 / CHECKPOINT05:59UTC
+Local phone direction implemented using existing paired bridge. New YardRemote
+adapts only advertised cues and bounded240character exact/lettering messages.
+Friendly/Evil/Mixed, Host/Auto, original wave, spatial actions, stop/restart,
+lettering and exact speech supported. Voiceover remains without live mouth sync.
+Four casting clips still unapproved; rejected voices not called for this work.
+
+Real loopback HTTP pairing/commands/ack and native films passed Chromium/WebKit;
+synthetic PCM completion, delayed-response Stop, silent output, revocation,
+mobile320/390/nooverflow/axeAA passed. Audio callbacks settle once for finish,
+queued cancel, failure and disposal.39unit/model checks +16Python transport checks
+pass. Main native speech/morph/cancellation regression passes both browsers;
+legacy phone-director UI regression passed. Inspected phone screenshot, removed
+sticky preview covering the editor and corrected the two-button safety footer.
+
+Backend8902 was deliberately upgraded for yard-specific phone validation and
+capability, after privately verifying Keychain restore and no active realtime
+calls. New process42366 restored configured/saved key, confirmed via metadata
+only. Isolated muted real-local native playback/phone controls health check passed;
+zero provider calls. LAN remains OFF until user clicks Enable. No active user tab
+was reloaded. Production Netlify unchanged. This is not a physical phone test.
+
+Next: finish longsoak around07:10UTC, investigate remaining spider motion without
+blind credit spend, develop source-reuse show/audio pieces and meaningful art
+review. Current total178 Runway credits; no new generation this checkpoint.
+Do not restart process42366 just for frontend changes. Keep casting unapproved,
+spider disabled, mouth sync/16-cue/fullmaster/physical rehearsal honestly incomplete.
+
+
+HEARTBEAT06:01 — ARTICULATED SPIDER + OUTPUT HANDOVER
+No further Runway spend:178 total. Both original spider movies remain rejected.
+One built-in imagegen transparent sheet made a coherent body plus four distinct
+leg parts (mirrored to eight). Actual raster skinning, independent articulated
+joints, silk attachment, damped sway, planned descent/reach/recoil/climb/dark hold
+now form a36second loop. It is enabled as Spider on silk · preview in After dark,
+not falsely described as new native video or approved final animation.
+Source/prompt/hash/provenance and frame evidence: design/spider-rig-study/.
+Study: console/spider-study.html. Actual mapped mode: console/haunt-loops.html.
+
+Fixed abrupt joint envelopes at descent/climb boundaries, corrected a silk-to-body
+gap, composed body-over-leg occlusion before fading.42model checks pass; actual
+bitmap/render scan144accelerated seconds in Chrome/WebKit found0body/leg reserve
+failures and0pixels during intentional empty holds. Native RAF/Stop/dispose/load
+cancellation/hash rejection tested.36.5second actual after-dark browser render
+recorded/reviewed; no physical projection/human art approval. Chrome p95 draw2.9ms,
+WebKit13ms in this local harness (not a hardware frame-rate guarantee).
+
+Three-program switching/independent failures/silent projector regression passed
+both browsers. Found extra-tab operator friction: After dark now navigates in the
+same control tab and reclaims the same named silent projector popup. Round trip
+Stagehand ->spider ->Stagehand passed in Chrome/WebKit without adding output
+windows. Corrected stale 'phone not connected' copy. Fixed320pixel header overflow;
+390/320 and axeAA passed. Key-owning server42366 unchanged; no restart or paid calls.
+
+Longtests: original2hour native Wisp soak63881 remains running. New30minute real-
+time After-dark3program soak42819 started06:34:45UTC; report work/yard-operator/
+after-dark-soak/report.json. Inspect final statuses before claiming either passed.
+Next priority: voice casting/runtime readiness and cohesive source-reuse show work.
+Four auditions still have no human choice. New imagegen total3images this run;
+exact image costs unmeasured. Runway178/200 remains unchanged. Production untouched.
+
+
+HEARTBEAT06:39 — CONNECTED CASTING, REJECTED VOICES RETIRED
+Two new short OpenAI auditions only: Marin friendly4.3s, Cedar evil5.1s. Original
+acting directions, no pitch/echo/music processing. Request-to-complete1.963s/1.207s,
+not click-to-first-audio;0clipped samples. Two requests, billing amount unknown,
+no retry. Runway unchanged178credits, builtin imagegen unchanged3images. Durable
+exclusive attempt log prevents accidentally paying again. Model is server default
+gpt-4o-mini-tts (response does not echo snapshot). Officialdocs recommend these
+voices; no inference that this makes the performances creatively approved.
+
+Casting shelf now6auditions+earlier approvedapology. Keep this direction remains
+feedback-only. C candidates also have explicit Use for typed lines: saves validated
+per-form identity and applies only to newly queued laptop/phone messages. A/B do
+not pretend to be live voices. No voice silently installed. Rejected Fable/Onyx
+removed from yard profiles; missing/invalid cast choice cannot enqueue a generation.
+Silent lettering still works. Old paid rejection test is deliberately retired.
+
+47unit/model tests pass. Real muted audition playback/decode, exclusivity, no
+provider calls on selection, persistedpage recovery, mobile320/390/axeAA pass in
+Chrome/WebKit. Mock-provider native-film regressions pass: cross-tab cast choice,
+exact text/new voiceIDs,3linequeue,Stop/delayedreply/formcancel,providerfailure,
+silentprojector. Real loopback phone transport with syntheticPCM and nativefilms
+passes both browsers; no physicalphone. NativeAudioContext completion tests pass.
+Isolated real8902 playback of saved samples passes, key configured/saved, no paid
+call/no restart. Actual human listening/characterquality remains pending.
+
+Maintenance note from fetched officialSpeechdocs: currentTTSmodels shut down
+6January2027; futureRealtime migration is a different API workflow. Do not change
+the current endpoint to a realtime model. See voice-casting-runtime record.
+
+Longsoaks63881(twohourWisp)and42819(30minAfterdark)still running at this checkpoint;
+inspect reports after~07:10/~07:05UTC before claiming pass. No productionpush/deploy,
+no physicalprojection, no live mouthsync. Next: complete soak evidence, then useful
+cohesive show/source-reuse work. Avoid further casting spend until human selection.
+Continue until16:53UTC; server42366 unchanged. No active usertab disturbed.
+
+
+HEARTBEAT07:00/07:20 FOLLOW-THROUGH — NIGHT WATCH + LONG TESTS
+Implemented optional Night watch in Afterdark: eyes finish naturally, spider lowers/
+acts/retracts, Wisp dwells/travels/vanishes, planned empty holds, repeats in~124s.
+Native eyes drain rather than cut. Missing programs omitted; stuck exit stops safely.
+Manual scene selection cancels sequence; Blackout stops all pending work. Retains
+last Friendly/Evil Wisp form; no autoform switch added. Same calibrated silentpopup.
+This is a silent runtime atmosphere sequence, NOT the unfinished160s voiced master.
+
+50unit/model tests pass. Full normal-speed cycle passed Chrome(Evil) and WebKit
+(Friendly); actual fullcanvas pixels zero before all3scenechanges. Actual Chromium
+124s canvas recording/contactsheet and WebKit scene frames reviewed. Independent
+loops/failure/fadecancel regression passed both. Mobile320/390/axeAA passed.
+Two harness races repaired: allow bounded native preparation during scene handoff;
+wait for the independent pixel observer to see the final transition before stopping
+it. No art/transition defect was hidden by those harness fixes.
+
+Long runs COMPLETE:2hourWisp7200.245s,172783nativeframecallbacks,0rewinds,
+minimum sampled sourcepeak244, maxbuffer31.542s, bounded4entry/1.36MBcachedmedia;
+1393evictions. Silent output/noerrors/no provider calls. Host action harness, not
+2hours pureAuto. Heap API returned constantquantized10MB, not memory-growth proof.
+Afterdark1800.030s/120samples passed3programs,4mutedvideos,silentpopup/Stop/bounds.
+Evidence summaries+rawreporthashes in yard-operator-evidence; no hardware claims.
+
+Execution interruption: last activityaround07:25UTC, next toolclock10:53UTC; no
+work claimed in that gap. Old8902serverwasnotlistening. Private Keychain check
+succeeded, restored existing server as exec20662, configured/saved/yardPhone true.
+No credential exposure, paidcall, LANautoenable or usertabreload. This is recovery
+of an already-stopped server, not a frontend-only restart. Do not restart20662.
+
+Found actual unbounded film verification path: whole startup now15second timeout,
+abort cleanup and clear retry message. Virtual-clock stalled-network tests +real
+native retry/Stop/latebytes cleanup pass both browsers. Current source modules
+are served without restarting the restored voice server.
+
+No newgeneration this pass: Runway178total, imagegen3, newcastingOpenAI2 plus earlier
+2rejectedproviderchecks. All six auditions remain human-unapproved; no more casting
+spend before a direction is chosen. No productionpush/deploy or physical test.
+Next: useful show/operator polish, cohesive source reuse, actual local health and
+final shipping readiness. Continue until16:53UTC; disable heartbeat at deadline.
+
+Local8902 Night watch start/Stop and320px blackout access verified Chrome/WebKit after service recovery; header now stays visible while scrolling. No paid calls. Loading cancellation tests rerun with explicit delayed-request handshake and pass. New currentserver20662 remains healthy.
+
+
+HEARTBEAT11:00 — PHONE CONTROL FOR AFTER DARK
+The same paired phone can now choose Watching eyes, Spider on silk, Quiet apparitions
+or Night watch. Scene commands use the existing paired transport with a narrow
+allowlist; no speech/capture/volume/provider path in this workspace. Starting from
+black, manual takeover, restarting after Blackout and Stop during the700ms scene
+change all tested. Old commands cannot restart after a local takeover or disposal.
+
+Phone controller button mounts pairing only on demand. LAN requires explicitEnable.
+Close the old desk, wait five seconds, then enable the new one; existing phone pairing
+survives Stagehand ->Afterdark ->Stagehand and the return journey. Same silent popup.
+Browser phone UI hides speech/legacy controls, exposes four scene buttons and keeps
+panic visible. Fixed stale 'Applied' feedback while a new command is still sending;
+old acknowledgements no longer masquerade as the latest request's completion.
+
+56unit/model checks pass. Real isolated HTTP phone pairing/lease/commands, actual
+native ghost playback and articulated spider, silent popup, stop/cancel,320/390layout,
+axeAA, session handover pass Chromium/Mac WebKit. Separate delayed-response feedback
+test passes both; existing yard phone synthetic-speech and legacy director regressions
+pass. Three-program failure/reversal/cleanup browser regression passes both. Actual
+mobile and pairing screenshots inspected. Not a physicalWi-Fi phone/projector test.
+
+Isolated real8902 health: new phone panel available, zero paidcalls, noLANenable.
+Key-owning server20662 preserved. No cast selected for user, no new generation:
+Runway178credits, builtinimagegen3, OpenAI2newcasting plus2earlier rejectedchecks.
+No push/deploy. Continue until16:53UTC. Remaining: human casting/art verdict,
+useful show/audio development and verified preview packaging; no live mouthsync,
+16completedcuefamily or finished160second voiced master claimed.
+
+Post-phone-integration full normal-speed Night watch regression passed Chromium124.2s: all3scene endings/blackholds, silent output, manualtakeover, Blackout and mobileaxe checks.13Python pairedtransport tests also pass. Local phone screenshot reviewed; pairing screenshots with ephemeral fixturecodes stay uncommitted. No active test sessions remain.
+
+
+HEARTBEAT11:20 — MOTION-TIMED DRY EFFECTS
+Optional Effects button and bounded0–80%level in Afterdark. Starts OFF. Explicit
+laptop click unlocks one60.8KB audio-only AAC palette reusing original V7 dry swishes.
+Three excerpts only: sparse emergence, drift and vapor air. No music/choir/voice,
+new noise synthesis, provider calls or credit spend. New timing/level is a listening
+preview, NOT human-approved. Original painted pictures are unchanged.
+
+Score follows actual scene clocks: alternating eye appearances; spider descent,
+reach and climb; ghost drift/departure. Quiet holds stay quiet. Missed events after
+background delays are skipped, never replayed in a burst. Sources are capped at3,
+observedmax1. Optical scene fade also lowers effects. Opt-in stays armed across
+ordinary scene changes; Stop/Blackout disables and disconnects allsources, suspends
+context and requires a fresh soundgesture. Missing/corrupt sound leaves pictures
+working. Phone and projector receive no audio/context. Local8902 served assets
+without restart or APIcall; currentkeyserver20662 remains unchanged.
+
+60unit/model checks pass. Chrome full normal-speed123.78s browsercapture has11audio
+gestures,360quiet-hold samples atzero, decodedpeak0.208,0clippedsamples. WebKit actual
+AAC/WebAudio3gesture test passes. Both verify explicitunlock, boundednodes, silent
+popup, volume,Stop/restart,loadcancel,corruptionfallback,contextcleanup,320/390layout
+andaxeAA. Phone integration regression and WebKit visual-loop regression pass.
+Actual124s picture/audio recording and contactframes reviewed; human listening and
+physicalprojection still pending. Spider reads darker thanWisp; nextvisualpass can
+compare a modest light lift on existingpaintedskin, preservingblack andsilhouette.
+
+Two QA corrections retained honestly: suspendedanalysers keep their last history,
+so Stop is verified via suspendedAudioContext and disconnectednodes instead of a
+false live-output reading. MediaRecorder omits some silentpackets; encodedcapture
+analysis expands silence fromoriginalPTS. Concatenated rawPCM11s was NOT the show
+length. Correct timestamp-aware analysis matches123.78s picture/audio.
+
+Runway178total, builtinimagegen3, OpenAI2newcasting+2earlierrejectedchecks unchanged.
+No push/deploy. Allnewvoicechoices remain unapproved; no further casting spend.
+No physicaltest or finished voiced160secondmaster claimed. Continue until16:53UTC.
+
+
+HEARTBEAT11:40 — PAINTED SPIDER READABILITY
+ActualNightwatch capture showed the spider substantially darker thanWisp. Compared
+four runtime ambient-light levels on the originalpainted rig:0,10,16,24percent.
+Selected16percent;24lookedwashed out. Surface detail reads more clearly without
+changingpaintedidentity,sourcefile,geometry,motion,alpha orstagebounds. No newart or
+credits. Study page has Shadow detail on/original toggle at the same pausedpose.
+
+RealChrome/MacWebKit pixel comparisons across16poses/twoplacements found EXACTLY
+identical alpha andbounds, no outsidepixels and no newlywhiteclipped details. At11s,
+opaque-pixel meanRGB rises64.55→92.17Chrome/65.70→92.91WebKit. This is browserdata,
+not projectorbrightness/physicalcontrast orhumanapproval.144secondaccelerated
+boundary/dark scans,actualRAF/Stop/disposal/corruption/cancel checks passboth.
+Chrome p95draw3.4ms/WebKit12ms inthisharness, nothardwareFPSguarantee.60modeltests
+pass; native3programregression passesChrome. Existing8902study/toggle/320px checked
+inboth, zeroAPIcalls/restart. Sourcepaintings unchanged; no generationcost.
+
+Implementationresearch: testedWebKit ignoresCanvas2D.filter, so used a small
+source-atop ambient composite on the alreadyassembledpainted body. Thispreserves
+transparentblack andsilhouette; it is not screenfog ornewproceduralcharacter.
+Primary reference https://html.spec.whatwg.org/multipage/canvas.html#compositing
+Compatibility reference https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/filter
+
+Next useful voice experiment identified inprimarysources: Qwen3-TTS VoiceDesign
+throughMLX Audio can makeoriginal describedvoices andemitstreamedchunks locally.
+Nocelebrity/referenceclone needed. Notinstalled/testedyet. ThisMacisM4Pro/24GB,
+withonly16GiBfree disk, so useisolatedenvironment andoneboundedmodeldownload only
+ifwithin~3GBtotaldiskbudget. Need actualquality/firstchunk measurementsbeforeany
+runtimeadoption. No claimedlowlatency basedonvendorbenchmarks. No newAPIspend.
+
+
+HEARTBEAT11:40 FOLLOW-THROUGH — ORIGINAL LOCAL VOICE STUDIES
+Found and actually ran Qwen3-TTS VoiceDesign via pinned MLX Audio0.6.3 on thisM4Pro.
+Two original described character voices (friendlyD/evilD), same words asC for
+comparison. No actor reference/clone, pitch, echo or music; no paidcalls. These are
+new local listening studies, NOT approved cast or live adapters. Eight auditions
+now on shelf plus approvedapology; C remains the only explicitlyconnected option.
+No more paidcasting. Runway178/imagegen3/OpenAI2new+2earlierrejected unchanged.
+
+Pinned voiceweights2.312GB plus78.8MB tinyASR andisolatedPython environment total
+~2.82GiB, within~3GiBexperiment envelope;13.5GiBfree remains. LargeweightSHA256s
+verified. No systempackage changes. All generationoffline; no audio playback or
+mic; key-owning8902server20662 unchanged. New WAVs served on8902withoutrestart.
+Modelcoldload11.996s. Friendlyfirstchunk2.620s,total4.048sfor5.68saudio; evilwarm
+firstchunk0.161s,total2.248sfor8.32saudio. Observedchunkswouldremainfilled after
+those first arrivals.0clips,~2.91GBMLXpeak. Two observations only, NOT app-live,
+concurrent-animation or click-to-speaker benchmark. A backgroundrenderregression
+ran AFTER inference completed; explicitly no simultaneousload claim.
+
+TinyASRblindtextcheck recovered evilDexactly; friendlyD I was recognizedOh was.
+ControlEvilC I've recognizedEyes. Listeningneeded; donotturnASR intoartapproval.
+ActualChrome/WebKit savedaudio decode/mutedplayback, exclusivity, feedback-onlyD,
+explicitliveCunchanged, persistedselection, lifecycle,320/390layout/axeAA allpass.
+Updatedcastingpage screenshotreviewed. WebKit3program/failure/Stop/silentpopup
+regressionpasses. Environmentdependencycheckclean. Explicitopt-in andduplicate-
+attemptguardsverifiedwithoutnewgeneration. New source script isfile-onlyoffline.
+
+Source/pricing/identitylimitsandnextgate invoice-casting-runtime record. Stable
+cross-lineidentityneedsproofandpossiblyBase-model own-generatedreference before
+runtimeadoption; do not clone priorapprovedactorvideo. Do notinstallDautomatically.
+Nohostedpush/deploy, physicalprojection orhumanqualityverdict. Nextfocus useful
+showoperatorcompletion/previewpackaging, no moregenerationsuntilhumanvoicechoice.
+Continueuntil16:53UTC, thenstop/deletetheheartbeat/reporthonestly.
+
+
+HEARTBEAT12:00 — REVIEWED PUBLIC YARD PACKAGE
+Built an opt-in /assets/wisp-yard/ preview containing67exacthash-linked files,
+3,670,344bytes. New compiler rejects traversal, private/unlisted sources, duplicate
+paths, changedbytes/rewrites, false releaseapproval and enabledlocalcapabilities.
+Only public package switches PICTURE_ONLY=true. New speech/privateconnect/phone
+pairing are disabled there, with clear UIcopy; local8902 retains them. Savedvoice
+samples, nativeWisp, threeafterdarkmodes, Nightwatch, dryeffects, silentlettering,
+mapping andsame silentprojectorpopup remain available. Productionrootindex/live/
+app are copied byte-identically. Entire source tree/models/privatefiles excluded.
+
+Found a pre-existing stale public hash: optional windowName parameter added to
+shared outputhelper atStagehand checkpoint. Onlydefault-preserving23bytechange;
+actuallegacy outputownership/Escape/rearm/disposal tests passChrome/WebKit, then
+registered exactcurrenthash. Allother oldpublicationhashes matched. Publicbuild
+passes. New11publicationguards +existing60modelchecks pass. Built-dist actualnative
+Chrome/WebKit exercises allprograms,sounddecode,Stop,Nightwatchcancel, savedDvoice,
+feedback-not-liveinstall,mobile/axe,samepopup; zeroAPIrequests/404s/errors. Local
+Chromesyntheticvoice regression andWebKit realpairedphone regression pass.
+
+Testharness corrections: initialbrowserlaunch overlapped the test that rebuilds
+output; subsequentruns startafterbuild. Sparseeffects testallows nextscheduled
+beat ratherthanassumingfirstbeatwasnotmissed. Finalabout:blank has no mediaDevices;
+guardtest-only microphoneblockthere. Rerunsbothpass. Fullpagescreenshot withsticky
+header firstcaptured scrolledstate; tooktop-of-page capture foractuallayoutreview.
+These aretestharness corrections, not hiddenproductionacceptance. NewCIyardjob
+runs publication/model/nativebuiltbrowser checks separately onLinux.
+
+Netlifydeployskillread; existingGitPR workflow used, no manualproductiondeploy.
+PR12hasALREADY MERGED,so a newpreviewPR is required. Currentremote-trackingmain
+wasstale; fetchbeforecreatingit. Gittrackedclosurecheck: allmedia/sharedsources
+tracked; newenvironmentmodule mustbestagedwiththischeckpoint. Newpublicpreview
+hasnotyetbeenshippedatthisentry. Existingproductionfallbackmustremainunchanged.
+No newcredits/providercalls/serverrestart. Continueuntil16:53UTC.

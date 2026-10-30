@@ -1,0 +1,19 @@
+{
+  "engine": "chromium",
+  "scope": "built dist package on isolated local HTTP; real media and audio decode, hardware muted; not hosted or physical projection",
+  "errors": [],
+  "bad": [],
+  "api": [],
+  "pictureOnly": true,
+  "nativeGhost": true,
+  "threeScenes": true,
+  "actualDryEffects": true,
+  "savedAudition": true,
+  "noLiveCastInstalled": true,
+  "silentPopup": true,
+  "sameOutputWindow": true,
+  "blackout": true,
+  "nightWatchCancellation": true,
+  "mobileLayout": true,
+  "accessibility": []
+}

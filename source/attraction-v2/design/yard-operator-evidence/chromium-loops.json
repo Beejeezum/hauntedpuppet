@@ -1,0 +1,17 @@
+{
+  "engine": "chromium",
+  "errors": [],
+  "nativeEyes": true,
+  "articulatedSpider": true,
+  "spiderIndependentFailure": true,
+  "variedPositions": true,
+  "insideBounds": true,
+  "silentPopup": true,
+  "programChange": true,
+  "cancelledTransition": true,
+  "continuousFadeReversal": true,
+  "independentMediaFailure": true,
+  "allUnavailableBlocksStart": true,
+  "dispose": true,
+  "restart": true
+}

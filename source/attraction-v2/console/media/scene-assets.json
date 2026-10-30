@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "status": "layered yard rehearsal; human visual and physical review pending",
+  "eyes": {
+    "url": "./media/eyes-watch.mp4",
+    "sha256": "e39333a48c6b5d0a7571bcc7f589cf2424f85c9b075a4fe11539d25b8d06ac18",
+    "bytes": 27807,
+    "frames": 78,
+    "fps": 24,
+    "size": [
+      512,
+      384
+    ],
+    "source": "source/wisp-performance-reference/button-cue-batch/scary-eyes-runtime-candidate-v1.mp4",
+    "sourceSha256": "8d30ec2f4d781fd8b663a04e855949d454e1d09948c1d913e8393437a3a4e1f3",
+    "sourceFrameRange": [
+      72,
+      150
+    ],
+    "crop": [
+      384,
+      160,
+      512,
+      384
+    ],
+    "processing": "Native sequential frames at original24fps; region contains eyes-only passage. No retiming, reversal, interpolation or body replacement. Audio removed; deliberate runtime opacity arrival/departure and empty interval hide rewind. Not a seamless body transition or loop.",
+    "approval": "Unapproved source candidate reused for scene proof; no human art acceptance inferred.",
+    "cropValidation": {
+      "framesAudited": 78,
+      "thresholdRGB": 4,
+      "minimumMarginsLTRB": [
+        0.328125,
+        0.2916666666666667,
+        0.35546875,
+        0.4088541666666667
+      ],
+      "reserve": 0.2,
+      "failures": 0
+    }
+  },
+  "vapor": {
+    "manifest": "../../../assets/spirit-effects/manifest.json",
+    "image": "../../../assets/spirit-effects/vapor-atlas.png",
+    "sha256": "359d74eb566bc8324d9fdfd64577ab7001849ac168e5d4d40ef3dc9e29a64100",
+    "method": "Existing painted alpha atlas, body-local emitters and world-space drag; no new image generation"
+  },
+  "newRunwayCredits": 0
+}
