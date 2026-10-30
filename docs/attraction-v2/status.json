@@ -252,7 +252,7 @@
     "soak": "PASS:7200.245seconds normal-speed native Wisp playback, silent projector, bounded buffer/cache. Harness includes Host actions; not pure Auto or physical projection.",
     "productionDeploy": false,
     "physicalProjection": "unavailable / not tested",
-    "latestCheckpointUTC": "2026-10-30T14:13:13.539678+00:00",
+    "latestCheckpointUTC": "2026-10-30T14:36:17.286642+00:00",
     "stabilityRefinements": [
       "Scene changes reverse opacity continuously when cancelled",
       "Missing eyes or ghost media disables only that program",
@@ -473,6 +473,12 @@
       "macFailures": "yard popup wait and legacy effect readiness; movie/recovery/audio paths passed",
       "candidate": "Native decoder now laid out under opaque canvas. LocalChrome/MacWebKit decode, pixel containment,Stop/silent output pass; Linux confirmation pending.",
       "evidence": "../../source/attraction-v2/design/yard-operator-evidence/ci-247-native-media.json"
+    },
+    "nativeCI248": {
+      "run": 41070042722,
+      "linuxYard": "Normal full flow and decoder recovery passed after covered-source change",
+      "remaining": "Linux movie analysis-tap seek stalled; legacy Mac effect import test timed out. Real file-chooser and direct-native path tests prepared; not all CI green.",
+      "evidence": "../../source/attraction-v2/design/yard-operator-evidence/ci-248-native-media.json"
     }
   }
 }

@@ -4,8 +4,9 @@ process.env.HAUNT_TONIGHT_ROOT='.';
 (async()=>{
  const fixture=await require('../tonight_fixture.cjs').start(),engine=process.env.HAUNT_BROWSER||'chromium',browser=await pw[engine].launch(engine==='chromium'?{args:['--mute-audio']}:{}),page=await browser.newPage(),errors=[];
  page.on('pageerror',e=>errors.push(e.message));
+ const deadline=require('./browser-deadline.cjs').browserDeadline({folder:'work/yard-operator/'+engine+'-recovery',label:engine+' decoder recovery'});
  const base=fixture.base+'/source/attraction-v2/console/';
- async function faultFirstGhost(){
+ async function faultFirstGhost(){deadline.phase('synthetic decoder failure and recovery');
   await page.goto(base+'haunt-loops.html');await page.waitForFunction(()=>window.WispAfterDark);
   await page.evaluate(async()=>{
    const {NightWatch}=await import('./night-watch.mjs'),start=NightWatch.prototype.start;
@@ -29,9 +30,9 @@ process.env.HAUNT_TONIGHT_ROOT='.';
   await faultFirstGhost();await page.locator('[data-program=spider]').click();await page.waitForTimeout(5500);assert(!(await page.evaluate(()=>WispAfterDark.inspect().running||WispAfterDark.inspect().recovering)));assert.equal(await page.evaluate(()=>WispAfterDark.inspect().program),'spider');
   await page.locator('#start').click();await page.waitForFunction(()=>WispAfterDark.inspect().spider.frames>20);await page.locator('#stop').click();
   await page.goto(base+'haunt-loops.html');await page.waitForFunction(()=>window.WispAfterDark);await page.locator('[data-program=apparitions]').click();await page.locator('#start').click();await page.waitForFunction(()=>WispAfterDark.inspect().player.time>1);
-  await page.locator('#film').evaluate(v=>v.pause());await page.waitForFunction(()=>!WispAfterDark.inspect().available.apparitions,null,{timeout:6000});assert(!(await page.evaluate(()=>WispAfterDark.inspect().running)));assert.match(await page.locator('#loop-status').innerText(),/other scenes are ready/);
+  deadline.phase('native pause and recovery');await page.locator('#film').evaluate(v=>v.pause());await page.waitForFunction(()=>!WispAfterDark.inspect().available.apparitions,null,{timeout:6000});assert(!(await page.evaluate(()=>WispAfterDark.inspect().running)));assert.match(await page.locator('#loop-status').innerText(),/other scenes are ready/);
   await page.route('**/media/eyes-watch.mp4',r=>r.fulfill({contentType:'video/mp4',body:'synthetic broken eyes'}));await page.route('**/media/spider-rig-sheet-v1.png',r=>r.fulfill({contentType:'image/png',body:'synthetic broken spider'}));
   await page.goto(base+'haunt-loops.html');await page.waitForFunction(()=>window.WispAfterDark);await page.locator('#film').evaluate(v=>v.play=()=>Promise.reject(new Error('Synthetic last decoder failure')));await page.locator('#start').click();await page.waitForFunction(()=>!WispAfterDark.inspect().available.apparitions);assert(await page.locator('#start').isDisabled());assert(await page.locator('#cycle').isDisabled());assert(!(await page.evaluate(()=>WispAfterDark.inspect().recovering)));assert.match(await page.locator('#loop-status').innerText(),/No scene is available/);
   assert.deepEqual(errors,[]);fs.mkdirSync('work/yard-operator',{recursive:true});fs.writeFileSync('work/yard-operator/'+engine+'-decoder-recovery.json',JSON.stringify({engine,scope:'Native films/eyes/spider with synthetic play rejection and test-only first-scene ordering; not a repair of the Linux decoder',ghostDisabled:true,nativeStallIsolation:true,blackHold:true,remainingNightWatch:true,manualTakeover:true,stopCancelsRecovery:true,allUnavailableStops:true,silentProjector:true,errors},null,2));console.log('PASS '+engine+' failed-ghost isolation, dark recovery, manual takeover, Stop and silent projector');
- }finally{await browser.close();await fixture.close();}
+ }finally{deadline.phase('closing browser and fixture');await browser.close();await fixture.close();deadline.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

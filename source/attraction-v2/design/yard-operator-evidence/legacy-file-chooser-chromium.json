@@ -1,0 +1,23 @@
+{
+  "result": "PASS",
+  "singlePipeline": false,
+  "scope": "isolated muted chromium with actual v28/v35 films and synthetic local image layer; no physical projection or human seam approval",
+  "projectorMediaElements": 0,
+  "ownerNavigationStopsOutput": true,
+  "composedLayerMirrored": true,
+  "layerPlacementMirrored": true,
+  "videoEffectAdvances": true,
+  "videoEffectRemovalReleasesMedia": true,
+  "stalledCharacterSuspendsWholeComposition": true,
+  "stallRecoveryCycles": 5,
+  "decodeRecovery": true,
+  "blackoutCancellation": true,
+  "rapidCueLatestWins": true,
+  "manualCancelsAuto": true,
+  "actualDwellFormChange": true,
+  "automaticHoldFreezesDuringStall": true,
+  "scaryExitsBeforeEndpoint": true,
+  "mobileOverflow": false,
+  "errors": [],
+  "outside": []
+}

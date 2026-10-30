@@ -551,3 +551,29 @@ Also joinedpopupwait/clickpromises so futuretimeoutsretainfailureevidence instea
 ofescapingas an unhandledpromise. No widenedtimeout orwaivedgate. Added a concise
 tonight-operator-card and corrected stale six/eight casting count in storyplan.
 No newgenerations/providercalls or8902restart. Productionremainsunchanged.
+
+
+HEARTBEAT14:21 — LINUX YARD FIX CONFIRMED; BOUNDED MEDIA CHECKS
+CI248 normalLinuxWebKit yardflow PASSED withoutdiagnosticoverride at14:19:48;
+actualfailed-decoder recoveryPASSED at14:20:23. Coverednative source solves this
+startupfailure. MacCIallnewyard/movie/pixelchecks alsoPASS. LegacyMac layered
+importstilltimedout; Linux moviewithtest-onlyWebAudioanalysisroutingstalledonseek
+andconsumedjobbudget. NotallCIgreen; evidencepreserved. No productionpromotion.
+
+Madelegacyfileimporttestfollowrealoperatorflow: activateoperatorwindow,clickAdd
+image/video,usefilechooser. ThenbringprojectorforegroundandrequireBOTH native
+clocksadvance; doesnotdropbackgroundplaybackcoverage. ActualChrome/MacWebKit
+fulllegacyflowpasses, including5stall/recoverycycles andStop. Changesaretestonly.
+The resilienceprojectorreopentesthad a5.2sdemofinishbeforesecondcoldpageload;
+nowuses30sofrealdecodedSILENTPCMforcontrollerlifetime, sameapp/painting/Stop
+assertions. Hardwaremuted; real8902read/statusonly plusinterceptedproviderroute;
+no paidcalls/keyrestart. Localtestpasses.
+
+Added90sNodeprocessdeadlinesfornativebrowserchecks soengineclockhangsfailwith
+evidenceinsteadofblockingartifactupload; full3cyclemoviegets480s. Intentional
+20mschilddeadlinecheckpassed. AddedseparateDIRECT nativeHTMLmoviepath withAAC
+decodedindependently; originalWebAudiotaptestremains. Macdirectpathpasses; Linux
+comparisonpendingnextCI. No codec changes on speculation.
+Askedonehumanvoice-selectionquestionwithsavedlocalcastinglinknowuserisawake;
+replayfree, no newcastingcreditsspent. Runway178/imagegen3/OpenAI2newcasting+
+2earlierrejected unchanged. Continueuntil16:53UTC.

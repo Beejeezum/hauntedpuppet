@@ -108,10 +108,12 @@ jobs:
           node tests/attraction-v2/yard-public-preview-browser.cjs || failed=1
           node tests/attraction-v2/after-dark-recovery-browser.cjs || failed=1
           node tests/attraction-v2/night-watch-movie-browser.cjs || failed=1
+          HAUNT_MOVIE_DIRECT=1 node tests/attraction-v2/night-watch-movie-browser.cjs || failed=1
           node tests/attraction-v2/covered-source-browser.cjs || failed=1
           HAUNT_BROWSER=webkit node tests/attraction-v2/yard-public-preview-browser.cjs || failed=1
           HAUNT_BROWSER=webkit node tests/attraction-v2/after-dark-recovery-browser.cjs || failed=1
           HAUNT_BROWSER=webkit node tests/attraction-v2/night-watch-movie-browser.cjs || failed=1
+          HAUNT_BROWSER=webkit HAUNT_MOVIE_DIRECT=1 node tests/attraction-v2/night-watch-movie-browser.cjs || failed=1
           HAUNT_BROWSER=webkit node tests/attraction-v2/covered-source-browser.cjs || failed=1
           exit "$failed"
       - name: Diagnose upstream hidden-source WebKit regression (not release acceptance)
@@ -127,6 +129,7 @@ jobs:
             work/yard-public/
             work/yard-night-movie/
             work/yard-covered-source/
+            work/yard-operator/
           if-no-files-found: ignore
   mac-native-media:
     if: github.event_name != 'workflow_dispatch' || !inputs.native_media_only
@@ -153,6 +156,7 @@ jobs:
           HAUNT_BROWSER=webkit node tests/attraction-v2/yard-public-preview-browser.cjs || failed=1
           HAUNT_BROWSER=webkit node tests/attraction-v2/after-dark-recovery-browser.cjs || failed=1
           HAUNT_BROWSER=webkit node tests/attraction-v2/night-watch-movie-browser.cjs || failed=1
+          HAUNT_BROWSER=webkit HAUNT_MOVIE_DIRECT=1 node tests/attraction-v2/night-watch-movie-browser.cjs || failed=1
           HAUNT_BROWSER=webkit node tests/attraction-v2/covered-source-browser.cjs || failed=1
           HAUNT_BROWSER=webkit node tests/catalog_bridge_browser.cjs || failed=1
           HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/showdesk_film_audio.cjs || failed=1
@@ -170,6 +174,7 @@ jobs:
             work/yard-public/
             work/yard-night-movie/
             work/yard-covered-source/
+            work/yard-operator/
             test-results/
           if-no-files-found: ignore
   cue-bank-soak:
