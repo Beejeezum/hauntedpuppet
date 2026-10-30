@@ -16,6 +16,9 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),pw=require('pla
  const report={engine,scope:'native AAC and Web Audio with test-only silent hardware bus, real native/raster browser animation; no physical projection or human listening approval',fullCycle:full,errors,requests};
  try{
   await page.goto(fixture.base+'/source/attraction-v2/console/haunt-loops.html');await page.waitForFunction(()=>window.WispAfterDark);assert.equal(await page.evaluate(()=>__contexts.length),0);
+  // Preparing effects while stopped is silent, cancellable, and avoids missing the opening beat.
+  await page.locator('#sound').click();await page.waitForFunction(()=>WispAfterDark.inspect().sound.enabled);await page.waitForTimeout(250);assert(!(await state()).running);assert.equal((await state()).sound.active,0);assert.equal((await state()).sound.played,0);
+  await page.locator('#stop').click();assert(!(await state()).sound.enabled);
   if(full)await page.locator('#cycle').check();else await page.locator('[data-program=spider]').click();
   await page.locator('#start').click();await page.waitForFunction(()=>WispAfterDark.inspect().running);await page.locator('#sound').click();await page.waitForFunction(()=>WispAfterDark.inspect().sound.enabled);
   const outPromise=page.waitForEvent('popup');await page.locator('#projector').click();const output=await outPromise;await output.waitForLoadState();assert.equal(await output.evaluate(()=>__contexts.length),0);assert(await output.evaluate(()=>WispFilmOutput.inspect().silent));

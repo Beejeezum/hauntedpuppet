@@ -42,15 +42,15 @@
     {
       "source": "source/attraction-v2/console/haunt-loops.html",
       "destination": "haunt-loops.html",
-      "bytes": 4493,
-      "sha256": "ae3070e7fc09134a3f21ec03d8205570537b819fcad157c44d1027f91e6e9642",
-      "publishedSha256": "ae3070e7fc09134a3f21ec03d8205570537b819fcad157c44d1027f91e6e9642"
+      "bytes": 4945,
+      "sha256": "37d3e0c8f9ecc5874aff364f738d70cd46e4fda943e11413c3bb410ae9828580",
+      "publishedSha256": "37d3e0c8f9ecc5874aff364f738d70cd46e4fda943e11413c3bb410ae9828580"
     },
     {
       "source": "source/attraction-v2/console/haunt-loops.mjs",
       "destination": "haunt-loops.mjs",
-      "bytes": 12811,
-      "sha256": "196aefa9329b87fee63a39a27aa777a0884fd746eb0cddc21f29a2376420713c",
+      "bytes": 12978,
+      "sha256": "3b070ba5966fcfc62fdad256ac10b24ecef65e94357cb2c1572f3c46c26dd696",
       "rewrites": [
         {
           "from": "'../../wisp-performance-reference/runway-pilots/wisp-film-output.js'",
@@ -61,7 +61,7 @@
           "to": "'/assets/phone-bridge.js'"
         }
       ],
-      "publishedSha256": "9d218280573c35c687c011be644980f9180c66100e487e63a64f240982fa3e92"
+      "publishedSha256": "0d9d516982b29f2263ac64324d1d9fe6939f3e90136dfc9b88327fe20ce13643"
     },
     {
       "source": "source/attraction-v2/console/index.html",
@@ -104,6 +104,13 @@
       "bytes": 4028,
       "sha256": "687955553179dfabfdfd0f17231d1bf86c61a767a04afbb4598fefaa4285f44c",
       "publishedSha256": "687955553179dfabfdfd0f17231d1bf86c61a767a04afbb4598fefaa4285f44c"
+    },
+    {
+      "source": "source/attraction-v2/console/media/night-watch-loop-v1.mp4",
+      "destination": "media/night-watch-loop-v1.mp4",
+      "bytes": 3476727,
+      "sha256": "a09cfbb06034c8fe4a673aab913ec05a1b86bd459f6444b568bd610b5159dd69",
+      "publishedSha256": "a09cfbb06034c8fe4a673aab913ec05a1b86bd459f6444b568bd610b5159dd69"
     },
     {
       "source": "source/attraction-v2/console/media/poster.png",
@@ -218,6 +225,27 @@
       "bytes": 2320,
       "sha256": "97ba4229bdfccf2a80e7b4f813589e6e9a9d570b348608807e0bb6ac29c693a0",
       "publishedSha256": "97ba4229bdfccf2a80e7b4f813589e6e9a9d570b348608807e0bb6ac29c693a0"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/single-movie-study/finite-cues/finite-player.mjs",
+      "destination": "shared/finite-player.mjs",
+      "bytes": 8607,
+      "sha256": "13246c70549df0c9bbbba682cdeb65e8a0010076ffff413bd1d767800fa5d4a0",
+      "publishedSha256": "13246c70549df0c9bbbba682cdeb65e8a0010076ffff413bd1d767800fa5d4a0"
+    },
+    {
+      "source": "source/wisp-performance-reference/ambient-show/pcm-voice.mjs",
+      "destination": "shared/pcm-voice.mjs",
+      "bytes": 2473,
+      "sha256": "a2274ee506c75ddd2fbef4dff70f97d0efed19baf90d1dd76e5c6b9b8b6a43a4",
+      "publishedSha256": "a2274ee506c75ddd2fbef4dff70f97d0efed19baf90d1dd76e5c6b9b8b6a43a4"
+    },
+    {
+      "source": "source/wisp-performance-reference/runway-pilots/wisp-film-output.js",
+      "destination": "shared/wisp-film-output.js",
+      "bytes": 4661,
+      "sha256": "3c047ea298c133942163df71059aae86769b53662052e11d948d8d7a7966afaf",
+      "publishedSha256": "3c047ea298c133942163df71059aae86769b53662052e11d948d8d7a7966afaf"
     },
     {
       "source": "source/attraction-v2/console/silk-spider.mjs",
@@ -513,27 +541,6 @@
         }
       ],
       "publishedSha256": "7bce99de4a0400f7a342c9f4655f38eb239456ef79deb1fd2f2faa9bf9c99516"
-    },
-    {
-      "source": "source/wisp-performance-reference/runway-pilots/wisp-film-output.js",
-      "destination": "shared/wisp-film-output.js",
-      "bytes": 4661,
-      "sha256": "3c047ea298c133942163df71059aae86769b53662052e11d948d8d7a7966afaf",
-      "publishedSha256": "3c047ea298c133942163df71059aae86769b53662052e11d948d8d7a7966afaf"
-    },
-    {
-      "source": "source/wisp-performance-reference/ambient-show/pcm-voice.mjs",
-      "destination": "shared/pcm-voice.mjs",
-      "bytes": 2473,
-      "sha256": "a2274ee506c75ddd2fbef4dff70f97d0efed19baf90d1dd76e5c6b9b8b6a43a4",
-      "publishedSha256": "a2274ee506c75ddd2fbef4dff70f97d0efed19baf90d1dd76e5c6b9b8b6a43a4"
-    },
-    {
-      "source": "source/wisp-performance-reference/ambient-show/single-movie-study/finite-cues/finite-player.mjs",
-      "destination": "shared/finite-player.mjs",
-      "bytes": 8607,
-      "sha256": "13246c70549df0c9bbbba682cdeb65e8a0010076ffff413bd1d767800fa5d4a0",
-      "publishedSha256": "13246c70549df0c9bbbba682cdeb65e8a0010076ffff413bd1d767800fa5d4a0"
     }
   ]
 }

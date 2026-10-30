@@ -15,7 +15,7 @@ const $=id=>document.getElementById(id),canvas=$('stage'),film=$('film'),scene=n
 let recovery=null;
 let player,output,remote,phoneMounted=false,phoneMounting=false,program='eyes',running=false,loading=false,disposed=false,epoch=0,frame,started=0,lastBeat=-1,switchSerial=0;
 const sound=new AfterDarkSound({onChange:syncSound});
-function syncSound(){const s=sound.inspect();$('sound').textContent=s.loading?'Preparing effects…':s.enabled?'Effects on':'Effects off';$('sound').setAttribute('aria-pressed',String(s.enabled));$('sound').disabled=!running||s.loading;$('sound-level').disabled=!s.enabled;$('sound-status').textContent=s.error||'';}
+function syncSound(){const s=sound.inspect();$('sound').textContent=s.loading?'Preparing effects…':s.enabled?'Effects on':'Effects off';$('sound').setAttribute('aria-pressed',String(s.enabled));$('sound').disabled=s.loading||disposed||!Object.values(available).some(Boolean);$('sound-level').disabled=!s.enabled;$('sound-status').textContent=s.error||(!running&&s.enabled?'Effects are ready. They start with the picture.':'');}
 const night=new NightWatch(),fade=new SceneFade(),available={eyes:false,apparitions:false,spider:false},failures={};
 let placement=scene.settings;try{placement=validateScene(JSON.parse(localStorage.getItem('wisp-yard-scene-v1')))}catch{}
 function status(text){if($('loop-status').textContent!==text)$('loop-status').textContent=text;}
@@ -62,7 +62,7 @@ function paint(){if(disposed)return;const t=performance.now()/1000;if(recovery&&
 
 function tick(){if(disposed)return;paint();frame=requestAnimationFrame(tick);}
 $('stop').onclick=()=>{remote?.invalidate();stop();};$('start').onclick=()=>{remote?.invalidate();void start();};
-$('sound').onclick=()=>{if(sound.enabled)sound.clear({disable:true});else if(running)void sound.enable();};
+$('sound').onclick=()=>{if(sound.enabled)sound.clear({disable:true});else if(!disposed&&Object.values(available).some(Boolean))void sound.enable();};
 $('sound-level').oninput=()=>{const level=Number($('sound-level').value);sound.setVolume(level/100);$('sound-level-value').textContent=level+'%';};
 $('cycle').onchange=()=>{$('start').textContent=$('cycle').checked?'Start Night watch':'Start loop';$('night-status').hidden=!$('cycle').checked;};
 async function chooseProgram(next){
@@ -103,7 +103,7 @@ try{
   const inspect=()=>({running,loading,program,recovering:!!recovery,sound:sound.inspect(),nightWatch:night.inspect(),opacity:fade.value,available:{...available},failures:{...failures},eyes:eyes.inspect(),spider:spider.inspect(),scene:scene.inspect(),player:player?.inspect()||null});
   remote=new AfterDarkRemote({inspect,select:chooseProgram,start,stop,nightWatch:runNightWatch});
   $('phone-open').disabled=PICTURE_ONLY;$('phone-open').hidden=PICTURE_ONLY;
-  window.WispAfterDark=Object.freeze({inspect});
+  window.WispAfterDark=Object.freeze({inspect});syncSound();
   status(Object.values(available).every(Boolean)?'Ready. Choose a loop, then Start.':available[program]?'Some artwork could not load. The available loops are ready.':'No loop could load. Refresh when the media package is available.');tick();
  }
 }catch(e){status(e.message);eyes.dispose();spider.dispose();scene.dispose();player?.dispose();}

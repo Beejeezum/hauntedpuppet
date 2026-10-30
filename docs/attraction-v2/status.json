@@ -252,7 +252,7 @@
     "soak": "PASS:7200.245seconds normal-speed native Wisp playback, silent projector, bounded buffer/cache. Harness includes Host actions; not pure Auto or physical projection.",
     "productionDeploy": false,
     "physicalProjection": "unavailable / not tested",
-    "latestCheckpointUTC": "2026-10-30T13:15:41.091049+00:00",
+    "latestCheckpointUTC": "2026-10-30T13:58:06.373787+00:00",
     "stabilityRefinements": [
       "Scene changes reverse opacity continuously when cancelled",
       "Missing eyes or ghost media disables only that program",
@@ -443,6 +443,29 @@
       "tests": "Chromium and Mac WebKit native scene tests with explicit synthetic play rejection; real native ghost pause triggers stall isolation. Normal124.1second Night-watch cycle also passed.",
       "limitation": "Fault isolation, not a fix or waiver of Linux WebKit decoder failures.",
       "evidence": "../../source/attraction-v2/design/yard-operator-evidence/"
-    }
+    },
+    "offlineNightWatch": {
+      "file": "../../source/attraction-v2/console/media/night-watch-loop-v1.mp4",
+      "seconds": 124.1,
+      "bytes": 3476727,
+      "content": "Eyes, painted spider, Evil Wisp;12dry effects in one embedded soundtrack; no voice or music",
+      "newProviderCredits": 0,
+      "browserEvidence": "Chrome three normal-speed cycles11168presentedframes,max83.4mscallbackgap; MacWebKit three seek-assisted loop joins; actual decoded audio with hardware muted",
+      "sourceCadence": "Capture visible means29.98/28.92/25.82fps. Encoded30fps by repeating frames; no interpolation.",
+      "limits": "Fixed recorded placement. Not the proposed actor-led story, physical test or human art/mix acceptance.",
+      "localDownload": "After dark > Save Night watch"
+    },
+    "nativeCI246": {
+      "run": 41062005396,
+      "passedJobs": 8,
+      "failedJobs": [
+        "Linux yard WebKit",
+        "Linux legacy showdesk"
+      ],
+      "macNativeMedia": "passed",
+      "evidence": "../../source/attraction-v2/design/yard-operator-evidence/ci-246-native-media.json",
+      "upstreamHiddenSourceHypothesis": "Separate visible-source diagnostic added; original gates unchanged."
+    },
+    "effectsPreparation": "Explicit effects button can prepare silently before Start; Stop disarms. Chrome/MacWebKit cancel/resource/silent-output regressions passed."
   }
 }

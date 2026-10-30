@@ -1,7 +1,7 @@
 const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const {compileYardPreview}=require('../../scripts/compile-yard-preview.cjs');
 const root=path.resolve(__dirname,'../..'),manifest=JSON.parse(fs.readFileSync(path.join(root,'scripts/public-yard-preview.json'),'utf8'));
-test('exact opt-in package includes all browser assets and disables local services',()=>{const p=compileYardPreview(manifest,{root});assert(p.files.length>30);assert(p.totalBytes<4*1024*1024);assert(p.files.some(f=>f.destination==='media/spider-rig-sheet-v1.png'));});
+test('exact opt-in package includes all browser assets and disables local services',()=>{const p=compileYardPreview(manifest,{root});assert(p.files.length>30);assert(p.totalBytes<8*1024*1024);assert(p.files.some(f=>f.destination==='media/spider-rig-sheet-v1.png'));assert(p.files.some(f=>f.destination==='media/night-watch-loop-v1.mp4'));});
 for(const [name,edit] of [
  ['changed source hash',m=>m.files[0].sha256='0'.repeat(64)],
  ['changed published hash',m=>m.files[0].publishedSha256='0'.repeat(64)],

@@ -30,10 +30,19 @@ repeating in about124seconds. Tapping a scene takes manual control. The ghost
 retains the last Friendly/Evil form; this separate spooky program includes eyes
 and spider even if the last Stagehand character was Friendly.
 
-Start a loop, then enable Effects on the laptop for sparse dry-air accents.
+Prepare Effects before Start, or enable them during a loop, for sparse dry-air accents.
+Preparing while stopped remains silent; sounds begin with the picture.
 Effects begin off and have a0–80%level. No choir, music or dialogue. Stop/Blackout
 clears scheduled sounds and requires another explicit effects gesture to rearm.
 Missing optional sound never stops the pictures. The new mix needs listening review.
+
+ONE-FILE OFFLINE NIGHT WATCH
+After dark -> Save Night watch downloads one124.1second MP4 with embedded effects.
+It contains watching eyes, the painted spider and Evil Wisp in one continuous
+picture/audio file. Set an ordinary video player to Repeat. The start/end are
+black and quiet. No voice, music, API or external audio file is required.
+The recorded framing is fixed; the live console retains yard placement controls.
+This reuses the current performances; it is not the proposed voiced signature story.
 
 PROJECTOR AND YARD PLACEMENT
 Open projector makes a separate silent picture window. Move it onto the second
@@ -87,10 +96,12 @@ Wisp/After-dark pictures, saved auditions, effects, lettering, mapping and silen
 projector work; new speech and phone pairing stay in the local8902console.
 It does not call the hosted site's old voice/status/pairing endpoints or pretend
 that they support the yard protocol. Existing production entry files stay unchanged.
-At this checkpoint the package is verified locally; deployment is not yet claimed.
+Draft PR13 hosts the opt-in preview at:
+https://deploy-preview-13--hauntedpuppet.netlify.app/assets/wisp-yard/
+Production root remains unchanged. Hosted phone/new speech remain unavailable.
 
 VALIDATION AND LIMITS
-60model checks plus11publication guards. Real Chromium/Mac WebKit native decoding,
+61model checks plus11publication guards. Real Chromium/Mac WebKit native decoding,
 form locks, source verification,15second startup timeout, interruption/reversal,
 Stop/stale completion, synthetic-voice queue, mapping, phone handoff, silent output,
 resource cleanup,320/390layout and automatedaccessibility have passed.

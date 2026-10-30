@@ -496,3 +496,34 @@ failure; separate normal-order124.1s native Night watch cycle also PASSES.
 61modelchecks+11publicationguards pass; publicbuild passes. New source reports and
 MacCI evidence saved. This is fault isolation, NOT a Linux decoder fix.
 No paid generation/provider calls or8902restart. Continue until16:53UTC.
+
+
+HEARTBEAT13:26 FOLLOW-THROUGH — ONE CONTINUOUS OFFLINE SHOW
+Built and verified a124.1second Night-watch MP4:eyes -> painted spider -> EvilWisp,
+with12existing dry effects embedded.3,476,727bytes,1280x720,H264/AAC. Download link
+onAfterdark; no extra player/autoplay/audio owner added. Effects can now be prepared
+silently beforeStart so the opening beat is not missed;Stopdisarms. No new generation
+orprovidercredits. This is the atmosphere loop, NOT the proposed actor-led story.
+
+Capture3retained3422frames; source visible mean cadence29.98/28.92/25.82fps with
+max49/80/79ms gaps. Exported30fps repeats frames; no interpolation or60fpsclaim.
+Rejected lower-cadence capture retained. Fixed exporter final-framepadding and
+explicit full-to-limited color range; blackholds remove smallcodecresidue without
+cuttingperformance. Full decode3723frames,124.117saudio,peak0.2209,zero clips.
+All12audiblegestureonsets match100ms eventcounter within91ms. Sourcecontactand
+nativeWebKitframe reviewed; humanmotion/mix/physicalacceptance stillpending.
+
+Chrome actual3normal-speed cycles passed11168presentedframes,max83.4mscallbackgap,
+no mediaerrors, embedded signal verified throughsilentsink. WebKit3seek-assisted
+loopjoins passed. Initialabout:blanktest introducedCORSblocking; correctedtoisolated
+same-originharness, noappfixclaimedforthat. Chrome/MacWebKit builtpreview andaudio
+preparation/cancel/Stop/layouttests pass.61models+11publicationguards,publicbuildpass.
+68filepublicpackage~7.15MB,underexisting16MiBlimit. Originalkeyserver8902unchanged.
+
+CI246finished8jobsPASS(includingMacnative),2LinuxjobsFAIL. Downloadnowworks. Linux
+yardnativefailure specificallymediaError4 Failedtopushbuffer atreadystate1 after
+MSEappend succeeded. FoundprimaryupstreamWebKitcommit3a7a2fc / bug327551 describing
+exactmuted-hidden-MSEstartupfailure. This is a root-causeHYPOTHESIS; addedseparate
+Linuxvisible-source diagnostic, originalgatesunchanged. Macdiagnosticharnesspasses.
+No runtimebrowserworkaround orcodecreencodeon speculation. Productionunchanged.
+Continue until16:53UTC; no paidcastinguntiluserdirection.

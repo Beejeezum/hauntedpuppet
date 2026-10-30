@@ -1,0 +1,49 @@
+{
+  "run": 41062005396,
+  "previewCommit": "6f6069d198eed67ff20c2b96faca01031b19c51c",
+  "macNativeMedia": "passed",
+  "otherPassedJobs": [
+    "cue-bank-soak",
+    "regression",
+    "browser-regression1/3",
+    "browser-regression2/3",
+    "browser-regression3/3",
+    "webkit",
+    "native-avatar-offline"
+  ],
+  "failedJobs": [
+    "yard-preview LinuxWebKit",
+    "showdesk Linuxnative media"
+  ],
+  "yardDiagnostic": [
+    {
+      "operation": "addSourceBuffer",
+      "ok": true
+    },
+    {
+      "operation": "appendBuffer",
+      "ok": true
+    },
+    {
+      "operation": "play-rejected",
+      "id": "film",
+      "readyState": 1,
+      "networkState": 3,
+      "mediaError": {
+        "code": 4,
+        "message": "Failed to push buffer"
+      },
+      "error": "NotSupportedError: The operation is not supported."
+    }
+  ],
+  "errors": [],
+  "networkFailures": [],
+  "apiRequests": [],
+  "containment": "Failed apparition disabled, scene black, eyes/spider still available. Not a decoder repair.",
+  "productionPromoted": false,
+  "upstreamHypothesis": {
+    "source": "https://github.com/WebKit/WebKit/commit/3a7a2fc7cfa015de245a11892a1f059ddc29e7e1",
+    "description": "Upstream GStreamer MSE regression for muted hidden video starting before its URI. Exact same Failed to push buffer message. Candidate explanation, not established root cause.",
+    "nextExperiment": "Test-only visible64px source in separate Linux diagnostic; normal release gates and application untouched."
+  }
+}

@@ -107,15 +107,23 @@ jobs:
           failed=0
           node tests/attraction-v2/yard-public-preview-browser.cjs || failed=1
           node tests/attraction-v2/after-dark-recovery-browser.cjs || failed=1
+          node tests/attraction-v2/night-watch-movie-browser.cjs || failed=1
           HAUNT_BROWSER=webkit node tests/attraction-v2/yard-public-preview-browser.cjs || failed=1
           HAUNT_BROWSER=webkit node tests/attraction-v2/after-dark-recovery-browser.cjs || failed=1
+          HAUNT_BROWSER=webkit node tests/attraction-v2/night-watch-movie-browser.cjs || failed=1
           exit "$failed"
+      - name: Diagnose upstream hidden-source WebKit regression (not release acceptance)
+        if: always()
+        continue-on-error: true
+        run: HAUNT_BROWSER=webkit HAUNT_VISIBLE_SOURCE_DIAGNOSTIC=1 node tests/attraction-v2/yard-public-preview-browser.cjs
       - name: Preserve yard browser evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: yard-preview-evidence
-          path: work/yard-public/
+          path: |
+            work/yard-public/
+            work/yard-night-movie/
           if-no-files-found: ignore
   mac-native-media:
     if: github.event_name != 'workflow_dispatch' || !inputs.native_media_only
@@ -141,6 +149,7 @@ jobs:
           failed=0
           HAUNT_BROWSER=webkit node tests/attraction-v2/yard-public-preview-browser.cjs || failed=1
           HAUNT_BROWSER=webkit node tests/attraction-v2/after-dark-recovery-browser.cjs || failed=1
+          HAUNT_BROWSER=webkit node tests/attraction-v2/night-watch-movie-browser.cjs || failed=1
           HAUNT_BROWSER=webkit node tests/catalog_bridge_browser.cjs || failed=1
           HAUNT_TONIGHT_ROOT=dist HAUNT_BROWSER=webkit node tests/showdesk_film_audio.cjs || failed=1
           HAUNT_BROWSER=webkit node tests/rehearsal_autoplay.cjs || failed=1
@@ -155,6 +164,7 @@ jobs:
           name: mac-native-media-evidence
           path: |
             work/yard-public/
+            work/yard-night-movie/
             test-results/
           if-no-files-found: ignore
   cue-bank-soak:

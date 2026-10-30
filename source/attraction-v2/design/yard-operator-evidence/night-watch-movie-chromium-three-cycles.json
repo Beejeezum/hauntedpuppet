@@ -1,0 +1,29 @@
+{
+  "engine": "chromium",
+  "fullNormalSpeedThreeCycles": true,
+  "errors": [],
+  "scope": "Native H264/AAC movie with real decoded effects through a test-only silent hardware sink. No physical projector or human mix approval.",
+  "decode": {
+    "wraps": 3,
+    "frames": 11168,
+    "peak": 0.21386942267417908,
+    "stopped": false,
+    "maxFrameGap": 0.08339999999996507,
+    "duration": 124.1,
+    "error": null,
+    "sampledTimesSummary": {
+      "count": 372,
+      "first": [
+        0.966667,
+        1.966667,
+        2.966667
+      ],
+      "last": [
+        121.833333,
+        122.833333,
+        123.833333
+      ]
+    }
+  },
+  "result": "passed"
+}
